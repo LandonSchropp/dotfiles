@@ -1,5 +1,16 @@
 -- A collection of applescripts which perform functions to an individual applescript.
 
+-- Closes the active window for the provided application name if it is open.  If the window is not
+-- open this handler does nothing.
+-- applicationName - The name of the application whose window should be closed.
+on closeWindow(applicationName)
+	tell application applicationName
+		if window 1 exists then
+			close window 1
+		end
+	end tell
+end closeWindow
+
 -- Closes all of the windows for the provided application name.
 -- applicationName - The name of the application whose windows should be closed.
 on closeAllWindows(applicationName)
@@ -58,11 +69,10 @@ end clickMenuItem
 -- modifiersList - A list of modifiers for the keyboard shortcut.  This could be something like
 -- { command down } or { command down, shift down, option down }.
 on runKeyboardShortcut(applicationName, key, modifiersList)
-	-- process the list and add down to every entry
 	tell application applicationName to activate
 	tell application "System Events"
 	  keystroke key using modifiersList
 	end tell
 end runKeyboardShortcut
 
-openNewWindows("Google Chrome", 3)
+closeWindow("Finder")
