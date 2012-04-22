@@ -74,5 +74,3 @@ on runKeyboardShortcut(applicationName, key, modifiersList)
 	  keystroke key using modifiersList
 	end tell
 end runKeyboardShortcut
-
-closeWindow("Finder")
