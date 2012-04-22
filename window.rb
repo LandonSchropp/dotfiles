@@ -44,7 +44,7 @@ end
 
 # Closes all of the windows for the provided application name.
 # application_name - The name of the application whose windows should be closed.
-def close_windows(application_name)
+def close_all_windows(application_name)
 	Appscript.app.by_name(application_name).windows.close
 end
 
@@ -57,7 +57,7 @@ def open_window(application_name)
 		# attempt to clikc on the "New Window" item
 		click_menu_item(application_name, "File", "New Window")
 	rescue
-		# fall back on the command + N keyboard shortcut
+		# fall back on the command + n keyboard shortcut
 		press_key(application_name, "n", [ :command_down ])
 	end
 end
@@ -71,14 +71,6 @@ def open_windows(application_name, number_of_windows)
 	number_of_windows.times do 
 		open_window(application_name)
 	end
-end
-
-# Centers the active window of the provided application name in the screen.
-# application_name - The name of the application whose window should be centered.
-def center_window(application_name)
-	# screen_size =  to bounds of window of desktop
- #    set screenWidth to item 3 of screenSize
- #    set screenHeight to item 4 of screenSize
 end
 
 # Centers the active window of the provided application name within the bounds provided to this
@@ -105,3 +97,17 @@ def center_window(application_name, x, y, width, height)
 	y2 = y1 + window_height
 	Appscript.app.by_name(application_name).windows[1].bounds.set([x1, y1, x2, y2])
 end
+
+# Centers the active window of the provided application name in the screen.
+# application_name - The name of the application whose window should be centered.
+def center_window_in_screen(application_name)
+	
+	# make sure a window is open
+	return unless open_window?(application_name)
+
+	# screen_size =  to bounds of window of desktop
+ #    set screenWidth to item 3 of screenSize
+ #    set screenHeight to item 4 of screenSize
+end
+
+center_window_in_screen("Finder")
