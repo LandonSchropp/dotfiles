@@ -1,8 +1,8 @@
 # A collection of functions for manipulating OS X application windows using the rb-appscript gem.
 
 require 'appscript'
-require 'keyboard'
-require 'menu'
+require './keyboard'
+require './menu'
 
 # Returns the number of open windows for the provided applicaiton name.
 # application_name - The name of the application whose windows should be counted.
@@ -10,15 +10,22 @@ def number_of_windows(application_name)
 	return Appscript.app.by_name(application_name).windows.count
 end
 
+# Returns true if the provided application name has at least one open window and false otherwise.
+# application_name The name of the application to check.
+def open_window?(application_name)
+	Appscript.app.by_name(application_name).windows[1].exists
+end
+
 # Closes the active window for the provided application name if it is open.  If the window is not
 # open, this handler does nothing.
 # application_name - The name of the application whose window should be closed.
 def close_window(application_name)
-	application = Appscript.app.by_name(application_name)
 
-	if (application.windows[1].exists)
-		application.windows[1].close
-	end
+	# make sure a window is open
+	return unless open_window?(application_name)
+
+	# close the window
+	Appscript.app.by_name(application_name).windows[1].close
 end
 
 # Closes the provided number of windows for the indicated application name.  If less windows are
@@ -51,7 +58,7 @@ def open_window(application_name)
 		click_menu_item(application_name, "File", "New Window")
 	rescue
 		# fall back on the command + N keyboard shortcut
-		trigger_key_event(application_name, "n", [ :command_down ])
+		press_key(application_name, "n", [ :command_down ])
 	end
 end
 
@@ -82,6 +89,19 @@ end
 # width The width of the bounds in which the window is centerd.
 # height The height of the bounds in which the window is centerd.
 def center_window(application_name, x, y, width, height)
-	puts 
-end
+	
+	# make sure a window is open
+	return unless open_window?(application_name)
 
+	# determine the size of the window
+	bounds = Appscript.app.by_name(application_name).windows[1].bounds.get
+	window_width = bounds[2] - bounds[0]
+	window_height = bounds[3] - bounds[1]
+
+	# center the window
+	x1 = ((width - window_width) / 2).floor
+	y1 = ((height - window_height) / 2).floor
+	x2 = x1 + window_width
+	y2 = y1 + window_height
+	Appscript.app.by_name(application_name).windows[1].bounds.set([x1, y1, x2, y2])
+end

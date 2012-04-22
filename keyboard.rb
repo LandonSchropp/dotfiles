@@ -10,7 +10,7 @@ require 'appscript'
 # this function will simulate the shift key being pressed down.
 # modifiers - An array of modifiers for the keyboard shortcut.  This should be something like
 # [ :command_down ] or [ :command_down, :shift_down, :option_down ].
-def trigger_key_event(application_name, key, modifiers)
+def press_key(application_name, key, modifiers)
 	Appscript.app.by_name(application_name).activate
 	Appscript.app.by_name("System Events").keystroke(key, :using => modifiers)
 end
