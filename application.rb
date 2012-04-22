@@ -65,7 +65,13 @@ end
 # modifiers_list - A list of modifiers for the keyboard shortcut.  This could be something like
 # { command down } or { command down, shift down, option down }.
 def runKeyboardShortcut(application_name, key, modifiers_list)
+	Appscript.app.by_name(application_name).activate
+	Appscript.app.by_name("System Events").keystroke(key).using(modifiers_list)
 
+	# tell application applicationName to activate
+	# tell application "System Events"
+	#   keystroke key using modifiersList
+	# end tell
 end
 
 click_menu_item("Finder", "File", "New Finder Window")
