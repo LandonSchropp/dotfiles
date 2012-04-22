@@ -13,7 +13,7 @@ end closeWindow
 
 -- Closes all of the windows for the provided application name.
 -- applicationName - The name of the application whose windows should be closed.
-on closeAllWindows(applicationName)
+on closeWindows(applicationName)
   tell application applicationName to close every window
 end closeAllWindows
 
