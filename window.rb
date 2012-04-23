@@ -3,6 +3,7 @@
 require 'appscript'
 require './keyboard'
 require './menu'
+require './desktop'
 
 # Returns the number of open windows for the provided applicaiton name.
 # application_name - The name of the application whose windows should be counted.
@@ -73,41 +74,149 @@ def open_windows(application_name, number_of_windows)
 	end
 end
 
-# Centers the active window of the provided application name within the bounds provided to this
-# function.
-# application_name - The name of the application whose window should be centered.
-# x The x-coordinate of the bounds in which the window is centerd.
-# y The y-coordinate of the bounds in which the window is centerd.
-# width The width of the bounds in which the window is centerd.
-# height The height of the bounds in which the window is centerd.
-def center_window(application_name, x, y, width, height)
-	
-	# make sure a window is open
-	return unless open_window?(application_name)
+def move_window(application_name, x, y)
 
 	# determine the size of the window
-	bounds = Appscript.app.by_name(application_name).windows[1].bounds.get
-	window_width = bounds[2] - bounds[0]
-	window_height = bounds[3] - bounds[1]
+	window_bounds = Appscript.app.by_name(application_name).windows[1].bounds.get
+	window_width = window_bounds[2] - window_bounds[0]
+	window_height = window_bounds[3] - window_bounds[1]
 
-	# center the window
-	x1 = ((width - window_width) / 2).floor
-	y1 = ((height - window_height) / 2).floor
-	x2 = x1 + window_width
-	y2 = y1 + window_height
-	Appscript.app.by_name(application_name).windows[1].bounds.set([x1, y1, x2, y2])
+	# move the window
+	Appscript.app.by_name(application_name).windows[1].bounds.set([x, y, x + window_width, y + 
+		window_height])
 end
 
-# Centers the active window of the provided application name in the screen.
-# application_name - The name of the application whose window should be centered.
-def center_window_in_screen(application_name)
-	
+# Moves and resizes the active window for the provided application name.  If no windows are open
+# for the application, this method does nothing.
+# application_name - The name of the application whose window will be moves and resized.
+# x - The new x-coordinate of the top left corner of the window.
+# y - The new x-coordinate of the top left corner of the window.
+def move_and_resize_window(application_name, x, y, width, height)
+
 	# make sure a window is open
 	return unless open_window?(application_name)
 
-	# screen_size =  to bounds of window of desktop
- #    set screenWidth to item 3 of screenSize
- #    set screenHeight to item 4 of screenSize
+	# move and resize the window
+	Appscript.app.by_name(application_name).windows[1].bounds.set([x, y, x + width, y + height])
 end
 
-center_window_in_screen("Finder")
+# Moves and resizes the active window of the provided application name to the entire screen, 
+# excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen(application_name, margin = 20)
+	bounds = desktop_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin
+	bounds[1] += margin
+	bounds[2] -= margin * 2
+	bounds[3] -= margin * 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the left half of the 
+# screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_left(application_name, margin = 20)
+	bounds = desktop_left_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin
+	bounds[1] += margin
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 2
+
+	puts bounds
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the right half of the 
+# screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_right(application_name, margin = 20)
+	bounds = desktop_left_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin * 0.5
+	bounds[1] += margin
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the top left quadrant of 
+# the screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_top_left(application_name, margin = 20)
+	bounds = desktop_top_left_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin
+	bounds[1] += margin
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 3 / 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the top right quadrant 
+# of the screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_top_right(application_name, margin = 20)
+	bounds = desktop_top_right_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin * 0.5
+	bounds[1] += margin
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 3 / 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the bottom left quadrant 
+# of the screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_bottom_left(application_name, margin = 20)
+	bounds = desktop_bottom_left_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin
+	bounds[1] += margin * 0.5
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 3 / 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+# Moves and resizes the active window of the provided application name to the bottom right 
+# quadrant of the screen, excluding the menu bar area.
+# application_name - The name of the application whose window should be centered.
+# margin - The margin around the window.
+def fit_window_to_screen_bottom_right(application_name, margin = 20)
+	bounds = desktop_bottom_right_bounds_excluding_menubar
+
+	# resize the bounds
+	bounds[0] += margin * 0.5
+	bounds[1] += margin * 0.5
+	bounds[2] -= margin * 3 / 2
+	bounds[3] -= margin * 3 / 2
+
+	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
+end
+
+open_window("Terminal")
+fit_window_to_screen_bottom_right("Terminal")
+open_window("Terminal")
+fit_window_to_screen_top_right("Terminal")
+open_window("Terminal")
+fit_window_to_screen_left("Terminal")
