@@ -1,6 +1,7 @@
 # A collection of functions for manipulating OS X application keyboard events using the 
 # rb-appscript gem.
 
+require 'rubygems'
 require 'appscript'
 
 # Triggers the keyboard event for the provided application name.

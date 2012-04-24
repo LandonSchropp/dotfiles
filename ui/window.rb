@@ -1,9 +1,9 @@
 # A collection of functions for manipulating OS X application windows using the rb-appscript gem.
 
 require 'appscript'
-require './keyboard'
-require './menu'
-require './desktop'
+require_relative 'keyboard'
+require_relative 'menu'
+require_relative 'desktop'
 
 # Returns the number of open windows for the provided applicaiton name.
 # application_name - The name of the application whose windows should be counted.
@@ -129,8 +129,6 @@ def fit_window_to_screen_left(application_name, margin = 20)
 	bounds[2] -= margin * 3 / 2
 	bounds[3] -= margin * 2
 
-	puts bounds
-
 	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
 end
 
@@ -213,10 +211,3 @@ def fit_window_to_screen_bottom_right(application_name, margin = 20)
 
 	move_and_resize_window(application_name, bounds[0], bounds[1], bounds[2], bounds[3])
 end
-
-open_window("Terminal")
-fit_window_to_screen_bottom_right("Terminal")
-open_window("Terminal")
-fit_window_to_screen_top_right("Terminal")
-open_window("Terminal")
-fit_window_to_screen_left("Terminal")
