@@ -1,3 +1,5 @@
+
+
 # A collection of functions for manipulating OS X application windows using the rb-appscript gem.
 
 require 'appscript'
@@ -14,7 +16,7 @@ end
 # Returns true if the provided application name has at least one open window and false otherwise.
 # application_name The name of the application to check.
 def open_window?(application_name)
-	Appscript.app.by_name(application_name).windows[1].exists
+	Appscript.app.by_name(application_name).windows.first.exists
 end
 
 # Closes the active window for the provided application name if it is open.  If the window is not
@@ -26,7 +28,7 @@ def close_window(application_name)
 	return unless open_window?(application_name)
 
 	# close the window
-	Appscript.app.by_name(application_name).windows[1].close
+	Appscript.app.by_name(application_name).windows.first.close
 end
 
 # Closes the provided number of windows for the indicated application name.  If less windows are
@@ -47,6 +49,17 @@ end
 # application_name - The name of the application whose windows should be closed.
 def close_all_windows(application_name)
 	Appscript.app.by_name(application_name).windows.close
+end
+
+# Closes all of the windows except the active window for the provided application name.  If the
+# application does not have any open windows, this function will open one.
+# application_name - The name of the application whose windows should be closed.
+def close_all_but_active_window(application_name)
+	while (Appscript.app.by_name(application_name).windows[2].exists)
+		Appscript.app.by_name(application_name).windows[2].close
+	end
+
+	open_window(application_name) unless open_window?(application_name)
 end
 
 # Opens a new window for the provided application name.  This method uses the "New Window" menu 
@@ -74,15 +87,19 @@ def open_windows(application_name, number_of_windows)
 	end
 end
 
+# Moves the active window for the specified appliation name to the provided coordinates.
+# application_name - The name of the application whose window should be moved.
+# x - The new x-coordinate of the top left corner of the window.
+# y - The new x-coordinate of the top left corner of the window.
 def move_window(application_name, x, y)
 
 	# determine the size of the window
-	window_bounds = Appscript.app.by_name(application_name).windows[1].bounds.get
+	window_bounds = Appscript.app.by_name(application_name).windows.first.bounds.get
 	window_width = window_bounds[2] - window_bounds[0]
 	window_height = window_bounds[3] - window_bounds[1]
 
 	# move the window
-	Appscript.app.by_name(application_name).windows[1].bounds.set([x, y, x + window_width, y + 
+	Appscript.app.by_name(application_name).windows.first.bounds.set([x, y, x + window_width, y + 
 		window_height])
 end
 
@@ -97,7 +114,7 @@ def move_and_resize_window(application_name, x, y, width, height)
 	return unless open_window?(application_name)
 
 	# move and resize the window
-	Appscript.app.by_name(application_name).windows[1].bounds.set([x, y, x + width, y + height])
+	Appscript.app.by_name(application_name).windows.first.bounds.set([x, y, x + width, y + height])
 end
 
 # Moves and resizes the active window of the provided application name to the entire screen, 
@@ -137,7 +154,7 @@ end
 # application_name - The name of the application whose window should be centered.
 # margin - The margin around the window.
 def fit_window_to_screen_right(application_name, margin = 20)
-	bounds = desktop_left_bounds_excluding_menubar
+	bounds = desktop_right_bounds_excluding_menubar
 
 	# resize the bounds
 	bounds[0] += margin * 0.5
