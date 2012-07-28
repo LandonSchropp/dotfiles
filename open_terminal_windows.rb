@@ -1,59 +1,38 @@
-# This script first closes all of the open terminal windows except for the currently open one.  It
-# opens the provided number of windows and arranges them around the screen.  Finally, it sets the
-# current directory of each window to the current directory of the first one.
+# Opens the provided number of Terminal windows and arranges them on the screen.  If any windows 
+# are open before this script is run, they will be closed.  Each open window will have its 
+# directory changed to the current directory.
+#
+# NOTE: This script closes all of the terminal windows, which is problematic when running this
+# script from a terminal window.  To solve this problem, run this script in the following way:
+#
+# screen ruby open_terminal_windows.rb 4 &
 
-require 'appscript'
-require_relative 'ui/window'
-require_relative 'application/terminal'
+require_relative 'terminal'
 
 # determine the nubmer of requested windows
 number_of_windows = ARGV.empty? ? 4 : ARGV[0].to_i
 
-# set up the current window
-close_all_but_active_window("Terminal")
-
-if (number_of_windows == 4)
-	fit_window_to_screen_top_left("Terminal")
-else
-	fit_window_to_screen_left("Terminal")
-end
-
-# TODO: replace this with determining the current directory from the front Terminal window
-current_directory = Dir.pwd
-
-# exit if no more windows are required
-exit(true) if number_of_windows < 2
-
-# place the second window
-# TODO: uncomment this
-# open_window("Terminal")
-run_terminal_command("cd #{current_directory}")
+# an array of the regions in which each window is placed
+regions = [ ]
 
 if number_of_windows == 2
-	fit_window_to_screen_right("Terminal")
+	regions = [ :left, :right ]
+elsif number_of_windows == 3
+	regions = [ :left, :top_right, :bottom_right ]
+elsif number_of_windows == 4
+	regions = [ :top_left, :top_right, :bottom_left, :bottom_right ]
 else
-	fit_window_to_screen_top_right("Terminal")
+	regions = [ nil ]
 end
 
-# exit if no more windows are required
-exit(true) if number_of_windows < 3
+# close all of the windows
+terminal = Terminal.new
+terminal.close_windows
 
-# place the third window
-# TODO: uncomment this
-# open_window("Terminal")
-run_terminal_command("cd #{current_directory}")
-
-if number_of_windows == 3
-	fit_window_to_screen_bottom_right("Terminal")
-else
-	fit_window_to_screen_bottom_left("Terminal")
+# create the new windows and change them to the current directory
+regions.each do |region|
+	terminal.new_window
+	terminal.move_and_resize_window_to_screen region
+	terminal.run("cd #{Dir.pwd}")
+	terminal.clear
 end
-
-# exit if no more windows are required
-exit(true) if number_of_windows < 4
-
-# place the fourth window
-# TODO: uncomment this
-# open_window("Terminal")
-run_terminal_command("cd #{current_directory}")
-fit_window_to_screen_bottom_right("Terminal")
