@@ -33,4 +33,9 @@ class Terminal < Application
 		# clear the screen
 		run("clear")
 	end
+
+	# Changes the active terminal window's current directory to the provided directory.
+	def cd(directory)
+	  run("cd #{Dir.pwd}")
+	end
 end

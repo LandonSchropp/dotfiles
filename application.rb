@@ -44,6 +44,12 @@ class Application
 		Appscript.app.by_name(@name).windows.close
 	end
 
+	# Closes all of the application's windows except the current one.  If no windows are open, this 
+	# method does nothing.
+	def close_background_windows
+		Appscript.app(@name).windows[2].close while number_of_windows > 1
+	end
+
 	# Opens a new window.  This method uses the "New Window" menu item.  If the menu item is not 
 	# available, this method falls back to the command + N keyboard shortcut.
 	def new_window

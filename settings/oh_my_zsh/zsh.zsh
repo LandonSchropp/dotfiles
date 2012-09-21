@@ -25,9 +25,9 @@ alias -g cur='~/Development/current'
 alias -g ip='ifconfig en1 | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 
 # alias the terminal commands
-alias -g ter2='screen ruby ~/Dropbox/Scripts/open_terminal_windows.rb 2 &'
-alias -g ter3='screen ruby ~/Dropbox/Scripts/open_terminal_windows.rb 3 &'
-alias -g ter4='screen ruby ~/Dropbox/Scripts/open_terminal_windows.rb 4 &'
+alias -g ter2='ruby ~/toolbox/open_terminal_windows.rb 2'
+alias -g ter3='ruby ~/toolbox/open_terminal_windows.rb 3'
+alias -g ter4='ruby ~/toolbox/open_terminal_windows.rb 4'
 
 # start up rbenv
 eval "$(rbenv init -)"

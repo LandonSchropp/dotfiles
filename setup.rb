@@ -3,7 +3,7 @@
 # This script installs all of the applications and configuration needed for my development 
 # environment.
 #
-# Prerequisites:
+# Installed prerequisites:
 #
 # * Xcode
 # * Xcode Command Line Tools
@@ -21,6 +21,7 @@ SUBLIME_TEXT_USER_PREFERENCES_DIRECTORY = Pathname.new(File.expand_path(
   "~/Library/Application Support/Sublime Text 2/Packages/User")).realpath.to_s
 SUBLIME_TEXT_USER_PREFERENCES_FILE = 
   "#{SUBLIME_TEXT_USER_PREFERENCES_DIRECTORY}/Preferences.sublime-settings"
+DROPBOX_DIRECTORY = Pathname.new(File.expand_path("~/Dropbox")).realpath.to_s
 
 # Install Homebrew.
 `ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)`
@@ -73,3 +74,8 @@ end
 FileUtils.rm(SUBLIME_TEXT_USER_PREFERENCES_FILE) if File.exists?(SUBLIME_TEXT_USER_PREFERENCES_FILE)
 File.symlink("#{SETTINGS_DIRECTORY}/sublime_text_2/Preferences.sublime-settings", 
   SUBLIME_TEXT_USER_PREFERENCES_FILE)
+`cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages`
+`git clone -b SublimeText2 git://github.com/kuroir/SCSS.tmbundle.git SCSS`
+
+# Set up the symbolic links.
+File.symlink("#{DROPBOX_DIRECTORY}/Development", "#{ENV["HOME"]}/Development")
