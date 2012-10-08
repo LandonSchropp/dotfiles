@@ -125,10 +125,6 @@ class Application
 	# margin - The margin around each window.
 	def move_and_resize_window_to_screen(region = nil, margin = 20)
 
-		# determine the dock height
-		# TODO: replace hard-coded dock height with calculated dock height
-		dock_height = @dock.height
-
 		# get the desktop bounds
 		desktop_bounds = Appscript.app.by_name("Finder").desktop.window.bounds.get
 		x = desktop_bounds[0]
