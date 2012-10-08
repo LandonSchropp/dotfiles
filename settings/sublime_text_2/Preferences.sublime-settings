@@ -6,7 +6,7 @@
 	"draw_centered": true,
 	"draw_minimap_border": true,
 	"fold_buttons": false,
-	"font_face": "Inconsolata",
+	"font_face": "Source Code Pro",
 	"font_size": 17.0,
 	"gutter": true,
 	"highlight_line": true,
