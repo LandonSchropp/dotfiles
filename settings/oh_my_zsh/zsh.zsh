@@ -35,3 +35,6 @@ alias -g ter4='macruby ~/toolbox/utilities/open_terminal_windows.rb 4'
 # Prints the current IP address.
 # Taken from: http://www.askdavetaylor.com/how_do_i_figure_out_my_ip_address_on_a_mac.html
 alias -g ip='ifconfig en1 | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
+
+# Starts a simple HTTP server in the current directory.
+alias server="python -m SimpleHTTPServer"
