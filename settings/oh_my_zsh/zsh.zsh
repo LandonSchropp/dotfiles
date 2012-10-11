@@ -4,6 +4,9 @@ eval "$(rbenv init -)"
 # set up NodeJS environment
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
+# set the default text editor
+export EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+
 # directory aliases
 alias -g ...='../..'
 alias -g ....='../../..'
