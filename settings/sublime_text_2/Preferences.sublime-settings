@@ -10,6 +10,10 @@
 	"font_size": 17.0,
 	"gutter": true,
 	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"margin": 0,
 	"rulers":
 	[
@@ -20,5 +24,6 @@
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
 	"word_wrap": true,
-	"wrap_width": 101
+	"wrap_width": 101,
+	"disable_formatted_linebreak": true
 }
