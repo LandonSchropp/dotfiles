@@ -6,14 +6,14 @@ require 'fileutils'
 require 'pathname'
 
 # define the directories
-FILE_DIRECTORY = Pathname.new(File.dirname(__FILE__)).realpath.to_s 
+FILE_DIRECTORY = Pathname.new(File.dirname(__FILE__)).to_s 
 SETTINGS_DIRECTORY = "#{FILE_DIRECTORY}/settings"
 SUBLIME_TEXT_USER_PREFERENCES_DIRECTORY = Pathname.new(File.expand_path(
-  "~/Library/Application Support/Sublime Text 2/Packages/User")).realpath.to_s
+  "~/Library/Application Support/Sublime Text 2/Packages/User")).to_s
 SUBLIME_TEXT_USER_PREFERENCES_FILE = 
   "#{SUBLIME_TEXT_USER_PREFERENCES_DIRECTORY}/Preferences.sublime-settings"
 
-# set up sublime text 2
+set up sublime text 2
 FileUtils.rm(SUBLIME_TEXT_USER_PREFERENCES_FILE) if File.exists?(SUBLIME_TEXT_USER_PREFERENCES_FILE)
 File.symlink("#{SETTINGS_DIRECTORY}/sublime_text_2/Preferences.sublime-settings", 
   SUBLIME_TEXT_USER_PREFERENCES_FILE)

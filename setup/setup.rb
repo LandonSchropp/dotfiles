@@ -9,6 +9,7 @@
 # * Xcode Command Line Tools
 # * Sublime Text 2
 # * Dropbox
+# * MacRuby
 
 require 'fileutils'
 require 'pathname'

@@ -8,7 +8,7 @@
 require 'fileutils'
 require 'pathname'
 
+DROPBOX_DIRECTORY = Pathname.new(File.expand_path("~/Dropbox")).realpath.to_s
+
 # Set up the symbolic links.
 File.symlink("#{DROPBOX_DIRECTORY}/Development", "#{ENV["HOME"]}/Development")
-
-DROPBOX_DIRECTORY = Pathname.new(File.expand_path("~/Dropbox")).realpath.to_s

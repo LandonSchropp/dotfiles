@@ -6,5 +6,6 @@
 # * GCC 4.2
 # * Ruby
 
+`gem install rdoc`
 `gem install sqlite3`
 `gem install rails`
