@@ -12,6 +12,6 @@
 # install ruby
 `CC="/usr/local/bin/gcc-4.2"`
 `CFLAGS="-I/opt/X11/include"`
-`rbenv install 1.9.3-p194`
-`rbenv global 1.9.3-p194`
+`rbenv install 1.9.3-p327`
+`rbenv global 1.9.3-p327`
 `eval "$(rbenv init -)"`

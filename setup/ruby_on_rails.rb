@@ -9,3 +9,4 @@
 `gem install rdoc`
 `gem install sqlite3`
 `gem install rails`
+`gem install bundler`

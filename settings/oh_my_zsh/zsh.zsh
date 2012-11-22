@@ -1,6 +1,3 @@
-# start up rbenv
-eval "$(rbenv init -)"
-
 # set up NodeJS environment
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
@@ -41,3 +38,8 @@ alias -g ip='ifconfig en1 | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 
 # Starts a simple HTTP server in the current directory.
 alias server="python -m SimpleHTTPServer"
+
+# start up rbenv
+eval "$(rbenv init -)"
+
+# BE SURE TO REMOVE THE PATH DELARATION IN THE ZSHRC FILE!
