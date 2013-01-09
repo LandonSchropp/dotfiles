@@ -29,9 +29,9 @@ alias migrate='bundle exec rake db:migrate && bundle exec rake db:test:prepare'
 alias populate='bundle exec rake db:populate'
 
 # alias the terminal commands
-alias -g ter2='macruby ~/toolbox/utilities/open_terminal_windows.rb 2'
-alias -g ter3='macruby ~/toolbox/utilities/open_terminal_windows.rb 3'
-alias -g ter4='macruby ~/toolbox/utilities/open_terminal_windows.rb 4'
+alias -g ter2='macruby ~/toolbox/open_terminal_windows.rb 2'
+alias -g ter3='macruby ~/toolbox/open_terminal_windows.rb 3'
+alias -g ter4='macruby ~/toolbox/open_terminal_windows.rb 4'
 
 # Prints the current IP address.
 # Taken from: http://www.askdavetaylor.com/how_do_i_figure_out_my_ip_address_on_a_mac.html
