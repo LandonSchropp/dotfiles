@@ -24,3 +24,4 @@ require 'pathname'
 `ruby dropbox.rb`
 `ruby miscellaneous.rb`
 `ruby node_js.rb`
+`ruby postgresql.rb`

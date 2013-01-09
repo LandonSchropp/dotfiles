@@ -3,11 +3,12 @@
 	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
 	"create_window_at_startup": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
+	"disable_formatted_linebreak": true,
 	"draw_centered": true,
 	"draw_minimap_border": true,
 	"fold_buttons": false,
 	"font_face": "Source Code Pro",
-	"font_size": 17.0,
+	"font_size": 14.0,
 	"gutter": true,
 	"highlight_line": true,
 	"ignored_packages":
@@ -24,6 +25,5 @@
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
 	"word_wrap": true,
-	"wrap_width": 101,
-	"disable_formatted_linebreak": true
+	"wrap_width": 101
 }

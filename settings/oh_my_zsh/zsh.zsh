@@ -19,8 +19,8 @@ alias cur='cd ~/Development/current'
 # git aliases
 alias gitc='git add . && git commit -a -m '
 
-# sublime text aliases
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+# sublime text symbolic link
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 #rails aliases
 alias grd='bundle exec guard --notify false'
@@ -43,3 +43,9 @@ alias server="python -m SimpleHTTPServer"
 eval "$(rbenv init -)"
 
 # BE SURE TO REMOVE THE PATH DELARATION IN THE ZSHRC FILE!
+
+# set up the path so brew programs override local programs
+export PATH=/usr/local/bin:$PATH
+
+export GMAIL_USERNAME=support@yavah.com
+export GMAIL_PASSWORD=AnchovyBasketballOreoMink
