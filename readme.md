@@ -76,8 +76,8 @@ git config --global push.default simple
 To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) and [toolbox](https://github.com/LandonSchropp/toolbox) repositories:
 
 ```
-git clone git@github.com:LandonSchropp/dotfiles.git ~/dotfiles
-git clone git@github.com:LandonSchropp/toolbox.git ~/toolbox
+git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
+git clone git@github.com:LandonSchropp/toolbox.git $HOME/toolbox
 ```
 
 ## Oh My ZSH
@@ -95,9 +95,9 @@ wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master
 Close the current Terminal window and open a new one to start zsh. Next, you'll need to link the custom Oh My ZSH configuration from the dotfiles repository:
 
 ```
-mkdir -p ~/.oh-my-zsh/custom
-rm -r ~/.oh-my-zsh/custom/*
-ln -s ~/dotfiles/oh_my_zsh/zsh.zsh ~/.oh-my-zsh/custom/
+mkdir -p $HOME/.oh-my-zsh/custom
+rm -r $HOME/.oh-my-zsh/custom/*
+ln -s $HOME/dotfiles/oh_my_zsh/zsh.zsh $HOME/.oh-my-zsh/custom/
 ```
 
 ## GCC
@@ -159,8 +159,9 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 Finally, symbolically link the Sublime Text 2 preferences files from the dotfiles repository:
 
 ```
-rm "~/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
-ln -s ~/dotfiles/sublime_text_2/Preferences.sublime-settings "~/Library/Application Support/Sublime Text 2/Packages/User/"
+rm -rf "$HOME/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
+ln -s $HOME/dotfiles/sublime_text_2/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
 ```
 
 ## NodeJS
@@ -186,7 +187,7 @@ initdb /usr/local/var/postgres
 In order to make sure PostgreSQL starts up when OS X starts up, we need to add a launch agent. Check to see what version of PostgreSQL you have installed by running `psql --version`. Then replace the version below with that version.
 
 ```
-mkdir -p ~/Library/LaunchAgents
-cp /usr/local/Cellar/postgresql/9.1.3/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+mkdir -p $HOME/Library/LaunchAgents
+cp /usr/local/Cellar/postgresql/9.1.3/homebrew.mxcl.postgresql.plist $HOME/Library/LaunchAgents
+launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
