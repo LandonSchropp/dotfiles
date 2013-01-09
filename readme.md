@@ -175,9 +175,9 @@ curl https://npmjs.org/install.sh | sh
 
 ## PostgreSQL
 
-[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. It's currently used by Heroku in production. The instructions for installing it were taken from the [Migrating to PostgreSQL Railscast](http://railscasts.com/episodes/342-migrating-to-postgresql?view=asciicast).
+[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. OS X ships with and old version of PostgreSQL preinstalled. Most of the instructions for installing PostgreSQL were borrowed from [this great Railscast](http://railscasts.com/episodes/342-migrating-to-postgresql?view=asciicast).
 
-OS X ships with PostgreSQL preinstalled, but it's old. To install the newest version, use:
+To install the newest version, use:
 
 ```
 brew install postgresql
