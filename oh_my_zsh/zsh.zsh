@@ -20,6 +20,7 @@ alias cur='cd ~/Development/current'
 alias gitc='git add . && git commit -a -m '
 
 # sublime text symbolic link
+rm -f /usr/local/bin/subl
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 #rails aliases
