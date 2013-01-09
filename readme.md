@@ -156,6 +156,13 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * Emmet
 * SCSS
 
+Finally, symbolically link the Sublime Text 2 preferences files from the dotfiles repository:
+
+```
+rm "~/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+ln -s ~/dotfiles/sublime_text_2/Preferences.sublime-settings "~/Library/Application Support/Sublime Text 2/Packages/User/"
+```
+
 ## NodeJS
 
 [NodeJS](http://nodejs.org/) is a web application framework written in JavaScript. [NPM](https://npmjs.org/) is the best NodeJS package manager. To install both, run:
