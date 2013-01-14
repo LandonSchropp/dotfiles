@@ -40,8 +40,8 @@ alias -g ip='ifconfig en1 | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 # Starts a simple HTTP server in the current directory.
 alias server="python -m SimpleHTTPServer"
 
-# start up rbenv
-eval "$(rbenv init -)"
-
 # set up the path so brew programs override local programs
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
+
+# start up rbenv
+eval "$(rbenv init -)"
