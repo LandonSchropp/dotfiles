@@ -121,10 +121,10 @@ brew install ruby-build
 OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. At the time this document was written, the newest stable Ruby release is `Ruby 1.9.3-p362`.  To install Ruby, run:
 
 ```
-CC="/usr/local/bin/gcc-4.2"
-CFLAGS="-I/opt/X11/include"
-rbenv install 1.9.3-p362
-rbenv global 1.9.3-p362
+export CC="/usr/local/bin/gcc-4.2"
+export CFLAGS="-I/opt/X11/include"
+rbenv install 1.9.3-p327
+rbenv global 1.9.3-p327
 eval "$(rbenv init -)"
 ```
 
