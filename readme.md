@@ -194,7 +194,7 @@ launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 ## Private Keys
 
-Several websites require secret keys and access tokens. Rather than have to type these in every time, we need a way to store them permanently. For security reasons, these should not be stored in a git repository.
+Some APIs require secret access keys and tokens for authentication. For security reasons, these values should not be stored in a git repository.
 
 Create a new Oh My ZSH configuration file.
 
