@@ -202,7 +202,7 @@ Create a new Oh My ZSH configuration file.
 touch ~/.oh-my-zsh/custom/private.zsh
 ```
 
-Add the Amazon Web Services access key id and secret access key to it. These keys can be found on the [Security Credentials](https://portal.aws.amazon.com/gp/aws/securityCredentials) page under Access Keys.
+Add the Amazon Web Services access key id and secret access key to this file. These keys can be found on the [Security Credentials](https://portal.aws.amazon.com/gp/aws/securityCredentials) page under Access Keys.
 
 ```
 export AMAZON_ACCESS_KEY_ID="<Access Key ID>"
