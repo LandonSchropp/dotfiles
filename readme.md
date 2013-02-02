@@ -191,3 +191,20 @@ mkdir -p $HOME/Library/LaunchAgents
 cp /usr/local/Cellar/postgresql/9.1.3/homebrew.mxcl.postgresql.plist $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
+
+## Private Keys
+
+Several websites require secret keys and access tokens. Rather than have to type these in every time, we need a way to store them permanently. For security reasons, these should not be stored in a git repository.
+
+Create a new Oh My ZSH configuration file.
+
+```
+touch ~/.oh-my-zsh/custom/private.zsh
+```
+
+Add the Amazon Web Services access key id and secret access key to it. These keys can be found on the [Security Credentials](https://portal.aws.amazon.com/gp/aws/securityCredentials) page under Access Keys.
+
+```
+export AMAZON_ACCESS_KEY_ID="<Access Key ID>"
+export AMAZON_SECRET_ACCESS_KEY="<Secret Access Key>"
+```
