@@ -97,7 +97,7 @@ Close the current Terminal window and open a new one to start zsh. Next, you'll 
 ```
 mkdir -p $HOME/.oh-my-zsh/custom
 rm -r $HOME/.oh-my-zsh/custom/*
-ln -s $HOME/dotfiles/oh_my_zsh/zsh.zsh $HOME/.oh-my-zsh/custom/
+ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
 ## GCC
