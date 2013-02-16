@@ -82,7 +82,7 @@ git clone git@github.com:LandonSchropp/toolbox.git $HOME/toolbox
 
 ## Oh My ZSH
 
-The [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell. It includes some awesome features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
+The [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
 
 [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) is a framework that manages ZSH, and includes several plugins for zsh as well as an automatic update tool. The installation information for Oh My ZSH was taken from this [Oh My ZSH Railscast](http://railscasts.com/episodes/308-oh-my-zsh).
 
