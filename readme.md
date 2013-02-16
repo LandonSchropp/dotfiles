@@ -100,7 +100,7 @@ rm -r $HOME/.oh-my-zsh/custom/*
 ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
-To reload the ZSH configuration, source the zshrc file.
+To load the ZSH configuration, source the .zshrc file.
 
 ```
 source ~/.zshrc
