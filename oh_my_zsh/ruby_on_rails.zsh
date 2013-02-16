@@ -13,7 +13,7 @@ alias migrate='bundle exec rake db:migrate && bundle exec rake db:test:prepare'
 alias reset='bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate'
 
 # Resets the test database.
-alias resett='bundle exec raked b:test:purge && bundle exec rake db:test:prepare'
+alias resett='bundle exec rake db:test:purge && bundle exec rake db:test:prepare'
 
 # Run the rake populate task.
 alias populate='bundle exec rake db:populate'
