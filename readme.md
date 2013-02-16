@@ -92,12 +92,18 @@ Install Oh My ZSH by using the following command:
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 ```
 
-Close the current Terminal window and open a new one to start zsh. Next, you'll need to link the custom Oh My ZSH configuration from the dotfiles repository:
+Close the current Terminal window and open a new one to start zsh. You'll need to link the custom Oh My ZSH configuration from the dotfiles repository:
 
 ```
 mkdir -p $HOME/.oh-my-zsh/custom
 rm -r $HOME/.oh-my-zsh/custom/*
 ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
+```
+
+To reload the ZSH configuration, source the zshrc file.
+
+```
+source ~/.zshrc
 ```
 
 ## GCC
