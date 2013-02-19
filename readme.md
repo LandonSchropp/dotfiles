@@ -44,6 +44,7 @@ Install some handy little command line utilities using Homebrew:
 brew install wget
 brew install tree
 brew install ack
+brew install tmux
 ```
 
 To browser all of the available Homebrew packages, check out [Braumeister](http://braumeister.org/).
