@@ -43,3 +43,6 @@ extract () {
 
 # Show hidden files only. Taken from: http://alias.sh/show-hidden-files-only.
 alias l.='ls -d .* --color=auto'
+
+# Alias the clear command.
+alias c='clear'
