@@ -181,6 +181,13 @@ brew install nodejs
 curl https://npmjs.org/install.sh | sh
 ```
 
+Be sure to install a few of the more useful packages:
+
+```
+npm install -g mocha
+npm install -g chai
+```
+
 ## PostgreSQL
 
 [PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. OS X ships with and old version of PostgreSQL preinstalled. Most of the instructions for installing PostgreSQL were borrowed from [this great Railscast](http://railscasts.com/episodes/342-migrating-to-postgresql?view=asciicast).
