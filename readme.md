@@ -44,7 +44,6 @@ Install some handy little command line utilities using Homebrew:
 brew install wget
 brew install tree
 brew install ack
-brew install tmux
 ```
 
 To browser all of the available Homebrew packages, check out [Braumeister](http://braumeister.org/).
@@ -106,6 +105,24 @@ To load the ZSH configuration, source the .zshrc file.
 
 ```
 source ~/.zshrc
+```
+
+## tmux
+
+tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
+
+To get started, install tmux with brew:
+
+``` shell
+brew install tmux
+```
+
+To enable mouse support, install [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php), and then install [MouseTerm](https://bitheap.org/mouseterm/). Be sure to restart Terminal before trying to use these new utilities.
+
+Finally, link the tmux configuration file.
+
+``` shell
+ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ```
 
 ## GCC
