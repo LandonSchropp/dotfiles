@@ -107,6 +107,10 @@ To load the ZSH configuration, source the .zshrc file.
 source ~/.zshrc
 ```
 
+## OS X
+
+Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
+
 ## tmux
 
 tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
