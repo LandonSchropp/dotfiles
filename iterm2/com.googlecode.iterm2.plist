@@ -332,9 +332,21 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 88 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>397 281 924 485 0 0 1440 878 </string>
+	<string>397 280 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>60 128 1058 740 0 0 1440 878 </string>
+	<string>226 111 994 764 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>183 104 1122 774 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>204 427 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>225 427 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>246 421 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>267 398 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>288 375 650 451 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1062,6 +1074,8 @@
 			<string>/Users/landonschropp/Development/current</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1126,7 +1140,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-05-12T20:26:05Z</date>
+	<date>2013-06-19T02:23:33Z</date>
 	<key>SUSkippedVersion</key>
 	<string>1.0.0.20130319</string>
 	<key>SavePasteHistory</key>
