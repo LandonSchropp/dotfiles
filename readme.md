@@ -71,6 +71,7 @@ git config --global alias.s status
 git config --global core.editor "subl -n -w"
 git config --global push.default simple
 git config --global color.ui true
+git config --global core.mergeoptions --no-edit
 ```
 
 ## Dotfiles and Toolbox
