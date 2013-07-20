@@ -1,5 +1,5 @@
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session 
-# is created and attached with session as its name.
+# is created and attached with the argument as its name.
 ta() {
 
   # create the session if it doesn't already exist
@@ -18,7 +18,7 @@ ta() {
 }
 
 # Kills the provided session, or the current session if no session is provided.
-tk () {
+tk() {
   if [[ $# == 0 ]]; then
     tmux kill-session
   else
@@ -26,5 +26,14 @@ tk () {
   fi
 }
 
+# Provides the tmux sessions for autofill.
+tmux-list-sessions-autofill() {
+  reply=( $(tmux list-sessions | cut -d: -f1) )
+}
+
 alias -g td='tmux detach'
 alias -g tl='tmux list-sessions'
+
+# Add autocomplete to the custom tmux functions.
+compctl -K tmux-list-sessions-autofill ta
+compctl -K tmux-list-sessions-autofill tk
