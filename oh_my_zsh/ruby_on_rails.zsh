@@ -3,8 +3,11 @@
 # Run a command through bundle execute.
 alias be='bundle exec'
 
+# Run a rake command through bundle execute.
+alias ber='bundle exec rake'
+
 # Run guard on the current directory.
-alias grd='bundle exec guard --notify false'
+alias guard='bundle exec guard --notify false'
 
 # Migrate a Rails database for both the development and test environments.
 alias migrate='bundle exec rake db:migrate && bundle exec rake db:test:prepare'
