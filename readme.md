@@ -10,7 +10,7 @@ Before you do anything else, run Software Update.
 
 Once that's done, install:
 
-* [Sublime Text 2](http://www.sublimetext.com/2)
+* [Sublime Text 2](http://www.sublimetext.com/3)
 * [Dropbox](https://www.dropbox.com/)
 * [MacRuby](http://macruby.org/)
 
@@ -170,29 +170,26 @@ gem install rails
 gem install bundler
 ```
 
-## Sublime Text 2
+## Sublime Text
 
-You should have already installed Sublime Text 2 earlier in this guide. Now you need to configure it and add some great packages.
-
-Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control) by opening Sublime Text 2, hitting Control + &#96; and pasting:
+Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control) by opening Sublime Text, hitting Control + &#96; and pasting:
 
 ```
-import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 ```
 
 When that's done, restart Sublime Text 2. Next, add the following packages by hitting Command + Shift + P and typing in Package Control: Install Package:
 
-* CoffeeScript
-* Dayle Rees Color Schemes
+* Better CoffeeScript
 * Emmet
 * SCSS
 
 Finally, symbolically link the Sublime Text 2 preferences files from the dotfiles repository:
 
 ```
-rm -rf "$HOME/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
-mkdir -p "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
-ln -s $HOME/dotfiles/sublime_text_2/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 2/Packages/User"
+rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+ln -s $HOME/dotfiles/sublime_text/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
 ```
 
 ## NodeJS
