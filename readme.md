@@ -80,11 +80,10 @@ git config --global core.mergeoptions --no-edit
 
 ## Dotfiles and Toolbox
 
-To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) and [toolbox](https://github.com/LandonSchropp/toolbox) repositories:
+To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles).
 
 ```
 git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
-git clone git@github.com:LandonSchropp/toolbox.git $HOME/toolbox
 ```
 
 ## Oh My ZSH
@@ -99,7 +98,7 @@ Install Oh My ZSH by using the following command:
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 ```
 
-Close the current Terminal window and open a new one to start zsh. You'll need to link the custom Oh My ZSH configuration from the dotfiles repository:
+Next, link the custom Oh My ZSH configuration from the dotfiles repository.
 
 ```
 mkdir -p $HOME/.oh-my-zsh/custom
@@ -107,29 +106,28 @@ rm -r $HOME/.oh-my-zsh/custom/*
 ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
-To load the ZSH configuration, source the .zshrc file.
-
-```
-source ~/.zshrc
-```
+Finally, in order to property change the shell, restart the system.
 
 ## OS X
 
 Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
 
+```
+source $HOME/dotfiles/osx/osx.zsh
+```
+
 ## tmux
 
 tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
 
-To get started, install tmux with brew:
+To get started, install tmux with Homebrew.
 
 ``` shell
+brew install reattach-to-user-namespace
 brew install tmux
 ```
 
-To enable mouse support, install [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php), and then install [MouseTerm](https://bitheap.org/mouseterm/). Be sure to restart Terminal before trying to use these new utilities.
-
-Finally, link the tmux configuration file.
+Next, link the tmux configuration file.
 
 ``` shell
 ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
@@ -198,18 +196,10 @@ ln -s $HOME/dotfiles/sublime_text/Preferences.sublime-settings "$HOME/Library/Ap
 
 ## NodeJS
 
-[NodeJS](http://nodejs.org/) is a web application framework written in JavaScript. [NPM](https://npmjs.org/) is the best NodeJS package manager. To install both, run:
+[NodeJS](http://nodejs.org/) is a web application framework written in JavaScript. [NPM](https://npmjs.org/) is the best NodeJS package manager. You can use Homebrew to install both:
 
 ```
-brew install nodejs
-curl https://npmjs.org/install.sh | sh
-```
-
-Be sure to install a few of the more useful packages:
-
-```
-npm install -g mocha
-npm install -g chai
+brew install nodejs npm
 ```
 
 ## PostgreSQL
@@ -223,11 +213,11 @@ brew install postgresql
 initdb /usr/local/var/postgres
 ```
 
-In order to make sure PostgreSQL starts up when OS X starts up, we need to add a launch agent. Check to see what version of PostgreSQL you have installed by running `psql --version`. Then replace the version below with that version.
+Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X starts up, we need to add a launch agent.
 
 ```
 mkdir -p $HOME/Library/LaunchAgents
-cp /usr/local/Cellar/postgresql/9.1.3/homebrew.mxcl.postgresql.plist $HOME/Library/LaunchAgents
+cp "/usr/local/Cellar/postgresql/$(psql --version | perl -wnE 'say for /\d+\.\d+\.\d+/g')/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
