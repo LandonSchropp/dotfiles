@@ -10,9 +10,10 @@ Before you do anything else, run Software Update.
 
 Once that's done, install:
 
+* [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
 * [Sublime Text 2](http://www.sublimetext.com/3)
-* [Dropbox](https://www.dropbox.com/)
-* [MacRuby](http://macruby.org/)
+* [Google Drive](https://tools.google.com/dlpage/drive)
+* [iStat Menus](http://bjango.com/mac/istatmenus/)
 
 Then install these from the AppStore:
 
@@ -22,6 +23,9 @@ Then install these from the AppStore:
 * The Unarchiver
 * Alfred
 * Clear
+* Caffine
+* ColorSnapper
+* Screenshot PSD
 
 Install the XCode Command Line Tools by opening XCode, navigating to Preferences > Downloads > Components and clicking on the Install button.
 
