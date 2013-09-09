@@ -167,6 +167,12 @@ rbenv global 1.9.3-p327
 eval "$(rbenv init -)"
 ```
 
+You may also want to disable `ri` and `rdoc` documentation from being installed by default.
+
+``` shell
+echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
+```
+
 ## Ruby on Rails
 
 [Ruby on Rails](http://rubyonrails.org/) is easy to install:
