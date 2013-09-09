@@ -78,9 +78,11 @@ git config --global color.ui true
 git config --global core.mergeoptions --no-edit
 ```
 
+In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
+
 ## Dotfiles and Toolbox
 
-To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles).
+To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
 
 ```
 git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
@@ -107,6 +109,10 @@ ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
 Finally, in order to property change the shell, restart the system.
+
+## iTerm2
+
+iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
 
 ## OS X
 
@@ -237,7 +243,3 @@ Add the Amazon Web Services access key id and secret access key to this file. Th
 export AMAZON_ACCESS_KEY_ID="<Access Key ID>"
 export AMAZON_SECRET_ACCESS_KEY="<Secret Access Key>"
 ```
-
-## iTerm2
-
-iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the iterm2 folder in the dotfiles repository.
