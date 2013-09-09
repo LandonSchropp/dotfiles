@@ -78,13 +78,14 @@ git config --global color.ui true
 git config --global core.mergeoptions --no-edit
 ```
 
+In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
+
 ## Dotfiles and Toolbox
 
-To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) and [toolbox](https://github.com/LandonSchropp/toolbox) repositories:
+To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
 
 ```
 git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
-git clone git@github.com:LandonSchropp/toolbox.git $HOME/toolbox
 ```
 
 ## Oh My ZSH
@@ -113,6 +114,10 @@ To load the ZSH configuration, source the .zshrc file.
 source ~/.zshrc
 ```
 
+## iTerm2
+
+iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
+
 ## OS X
 
 Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
@@ -127,9 +132,7 @@ To get started, install tmux with brew:
 brew install tmux
 ```
 
-To enable mouse support, install [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php), and then install [MouseTerm](https://bitheap.org/mouseterm/). Be sure to restart Terminal before trying to use these new utilities.
-
-Finally, link the tmux configuration file.
+Nexty, link the tmux configuration file.
 
 ``` shell
 ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
@@ -247,7 +250,3 @@ Add the Amazon Web Services access key id and secret access key to this file. Th
 export AMAZON_ACCESS_KEY_ID="<Access Key ID>"
 export AMAZON_SECRET_ACCESS_KEY="<Secret Access Key>"
 ```
-
-## iTerm2
-
-iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the iterm2 folder in the dotfiles repository.
