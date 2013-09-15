@@ -45,7 +45,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree ack rename
+brew install wget tree ack rename imagemagick
 ```
 
 To browser all of the available Homebrew packages, check out [Braumeister](http://braumeister.org/).
