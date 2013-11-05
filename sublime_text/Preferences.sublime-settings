@@ -1,29 +1,51 @@
 {
-	"auto_match_enabled": true,
-	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"always_show_minimap_viewport": true,
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 0,
+	"auto_complete_with_fields": false,
+	"binary_file_patterns":
+	[
+		".mobileprovision"
+	],
+	"color_scheme": "Packages/Dayle Rees Color Schemes/LastNight.tmTheme",
 	"create_window_at_startup": false,
-	"dictionary": "Packages/Language - English/en_US.dic",
-	"disable_formatted_linebreak": true,
 	"draw_centered": true,
-	"draw_minimap_border": true,
+	"draw_indent_guides": true,
+	"draw_white_space": "selection",
+	"file_exclude_patterns":
+	[
+		"*.sublime-workspace",
+		".repl_history",
+		"*.nib",
+		".DS_Store"
+	],
 	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".git"
+	],
 	"font_face": "Source Code Pro",
-	"font_size": 14.0,
-	"gutter": true,
+	"font_size": 14,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"margin": 0,
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"open_files_in_new_window": false,
+	"remember_open_files": false,
 	"rulers":
 	[
 		100
 	],
-	"save_on_focus_lost": false,
+	"shift_tab_unindent": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"use_tab_stops": true,
+	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,
 	"wrap_width": 101
 }
