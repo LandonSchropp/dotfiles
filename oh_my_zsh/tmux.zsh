@@ -1,11 +1,17 @@
-# If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session 
+# If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
 ta() {
 
   # create the session if it doesn't already exist
   tmux has-session -t $1 2>/dev/null
   if [[ $? != 0 ]]; then
-    tmux new-session -d -s $1
+
+    # create the session using tmuxinator if a project exists for it
+    tmuxinator start $1 2>/dev/null
+
+    if [[ $? != 0 ]]; then
+      tmux new-session -d -s $1
+    fi
   fi
 
   # if a tmux session is already attached, switch to the new session; otherwise, attach the new

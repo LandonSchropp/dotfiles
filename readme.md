@@ -139,6 +139,13 @@ Next, link the tmux configuration file.
 ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ```
 
+[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
+
+``` shell
+gem install tmuxinator
+```
+The tmuxinator projects files may be placed in the `~/.tmuxinator` directory.
+
 ## GCC
 
 The XCode Command Line Tools includes LLVM-GCC, which can cause problems when compiling Ruby. To fix this, we need to install GCC:
