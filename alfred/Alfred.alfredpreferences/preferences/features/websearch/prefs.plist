@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>39C6A556-CE7B-4F51-B8E8-E296208FF6D2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>dash</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Search Dash for '{query}'</string>
+			<key>url</key>
+			<string>dash://{query}</string>
+			<key>utf8</key>
+			<false/>
+		</dict>
+	</dict>
+</dict>
+</plist>
