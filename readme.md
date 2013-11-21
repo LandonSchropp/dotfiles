@@ -204,6 +204,12 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * Better CoffeeScript
 * Emmet
 * SCSS
+* Dayle Rees Color Schemes
+* EasyMotion
+* ruby-slim
+* Jade
+* Stylus
+* SublimeCodeIntel
 
 Finally, symbolically link the Sublime Text 2 preferences files from the dotfiles repository:
 
