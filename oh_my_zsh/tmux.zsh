@@ -11,6 +11,7 @@ ta() {
 
     if [[ $? != 0 ]]; then
       tmux new-session -d -s $1
+      tmux rename-window "working"
     fi
   fi
 
