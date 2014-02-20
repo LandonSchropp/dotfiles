@@ -7,7 +7,8 @@
 	[
 		".mobileprovision"
 	],
-	"color_scheme": "Packages/Dayle Rees Color Schemes/LastNight.tmTheme",
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Dayle Rees Color Schemes/legacy/LastNight.tmTheme",
 	"create_window_at_startup": false,
 	"draw_centered": true,
 	"draw_indent_guides": true,
@@ -28,6 +29,7 @@
 	"font_size": 14,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -47,6 +49,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,
-	"wrap_width": 101,
-	"close_windows_when_empty": true
+	"wrap_width": 101
 }
