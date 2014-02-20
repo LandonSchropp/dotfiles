@@ -19,6 +19,21 @@
 			<key>utf8</key>
 			<false/>
 		</dict>
+		<key>83500C6F-B3F8-4E21-AB61-96ACE68D3916</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Mozilla%20Developer%20Network%20Search</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/en-US/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
