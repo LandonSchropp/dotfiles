@@ -191,11 +191,7 @@ gem install bundler
 
 ## Sublime Text
 
-Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control) by opening Sublime Text, hitting Control + &#96; and pasting:
-
-```
-import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
-```
+Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
 
 When that's done, restart Sublime Text 2. Next, add the following packages by hitting Command + Shift + P and typing in Package Control: Install Package:
 
@@ -208,13 +204,22 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * Jade
 * Stylus
 * SublimeCodeIntel
+* SideBarEnchancements
+* ApplySyntax
 
-Finally, symbolically link the Sublime Text 2 preferences files from the dotfiles repository:
+By default, the multi-line selection keyboard shortcut (Control + Shift + Up/Down) is overridden by a dumb OS X keyboard shortcut. To get it back, disable this shortcut by going to System Preferences, then Keyboard, then Shortcuts. Uncheck the Mission Control and Application Windows shortcuts.
+
+To hook up the preferences and keybindings, symbolically link the Sublime dotfiles.
 
 ```
-rm -rf "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-mkdir -p "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-ln -s $HOME/dotfiles/sublime_text/Preferences.sublime-settings "$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
+PREFERENCES_DIRECTORY="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+rm -rf "$PREFERENCES_DIRECTORY/Preferences.sublime-settings"
+rm -rf "$PREFERENCES_DIRECTORY/Default (OSX).sublime-keymap"
+
+mkdir -p $PREFERENCES_DIRECTORY
+
+ln -s "$HOME/dotfiles/sublime_text/Preferences.sublime-settings" "$PREFERENCES_DIRECTORY/"
+ln -s "$HOME/dotfiles/sublime_text/Default (OSX).sublime-keymap" "$PREFERENCES_DIRECTORY/"
 ```
 
 ## NodeJS
