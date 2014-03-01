@@ -1,0 +1,33 @@
+[
+  // swap the paste and the paste and index keyboard shortcuts
+  {
+    "keys": [ "super+v" ],
+    "command": "paste_and_indent"
+  },
+  {
+    "keys": [ "super+shift+v" ],
+    "command": "paste"
+  },
+
+  // remap the command up and command down keys to move by paragraph
+  {
+    "keys": [ "super+up" ],
+    "command": "move",
+    "args": { "by": "stops", "empty_line": true, "forward": false }
+  },
+  {
+    "keys": [ "super+down" ],
+    "command": "move",
+    "args": { "by": "stops", "empty_line": true, "forward": true }
+  },
+  {
+    "keys": [ "shift+super+up" ],
+    "command": "move",
+    "args": { "by": "stops", "empty_line": true, "forward": false, "extend": true }
+  },
+  {
+    "keys": [ "shift+super+down" ],
+    "command": "move",
+    "args": { "by": "stops", "empty_line": true, "forward": true, "extend": true }
+  }
+]
