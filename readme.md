@@ -1,19 +1,18 @@
-# Setup
+# Dotfiles
 
-This is a guide to setting up my personal development environment. Its purpose is to allow me to get up and running as quick as possible.
-
-This guide assumes you're using a Mac with the latest version of OS X.
+This is a guide to setting up my personal development environment. It's purpose is to get me up and running as fast as possible on a clean install of OS X.
 
 ## Prerequisits
 
-Before you do anything else, run Software Update.
+Before anything else, run Software Update.
 
 Once that's done, install:
 
 * [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
 * [Sublime Text 2](http://www.sublimetext.com/3)
-* [Google Drive](https://tools.google.com/dlpage/drive)
+* [Dropbox](http://dropbox.com)
 * [iStat Menus](http://bjango.com/mac/istatmenus/)
+* [Spotify](http://www.spotify.com)
 
 Then install these from the AppStore:
 
@@ -45,10 +44,8 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree ack rename imagemagick
+brew install wget tree ack rename imagemagick android-sdk
 ```
-
-To browser all of the available Homebrew packages, check out [Braumeister](http://braumeister.org/).
 
 ## Git
 
@@ -88,9 +85,9 @@ git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
 
 ## Oh My ZSH
 
-The [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
+[Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
 
-[Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) is a framework that manages ZSH, and includes several plugins for zsh as well as an automatic update tool. The installation information for Oh My ZSH was taken from this [Oh My ZSH Railscast](http://railscasts.com/episodes/308-oh-my-zsh).
+[Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) is a framework that manages Zsh, and includes several plugins for zsh as well as an automatic update tool. The installation information for Oh My ZSH was taken from this [Oh My ZSH Railscast](http://railscasts.com/episodes/308-oh-my-zsh).
 
 Install Oh My ZSH by using the following command:
 
@@ -158,8 +155,7 @@ brew install apple-gcc42
 [rbenv](https://github.com/sstephenson/rbenv) is an awesome little Ruby environment manager. It does one thing really well. To install rbenv, run:
 
 ```
-brew install rbenv
-brew install ruby-build
+brew install rbenv ruby-build
 ```
 
 OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. At the time this document was written, the newest stable Ruby release is `Ruby 1.9.3-p362`.  To install Ruby, run:
@@ -183,7 +179,6 @@ echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
 [Ruby on Rails](http://rubyonrails.org/) is easy to install:
 
 ```
-gem install rdoc
 gem install sqlite3
 gem install rails
 gem install bundler
@@ -207,7 +202,7 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * SideBarEnchancements
 * ApplySyntax
 
-By default, the multi-line selection keyboard shortcut (Control + Shift + Up/Down) is overridden by a dumb OS X keyboard shortcut. To get it back, disable this shortcut by going to System Preferences, then Keyboard, then Shortcuts. Uncheck the Mission Control and Application Windows shortcuts.
+By default, the multi-line selection keyboard shortcut (Control + Shift + Up/Down) is overridden by OS X. To get it back, disable this shortcut by going to System Preferences, then Keyboard, then Shortcuts. Uncheck the Mission Control and Application Windows shortcuts.
 
 To hook up the preferences and keybindings, symbolically link the Sublime dotfiles.
 
@@ -255,13 +250,13 @@ Some APIs require secret access keys and tokens for authentication. For security
 
 Create a new Oh My ZSH configuration file.
 
-```
+``` shell
 touch ~/.oh-my-zsh/custom/private.zsh
 ```
 
-Add the Amazon Web Services access key id and secret access key to this file. These keys can be found on the [Security Credentials](https://portal.aws.amazon.com/gp/aws/securityCredentials) page under Access Keys.
+Store the keys as environment variables like this:
 
-```
-export AMAZON_ACCESS_KEY_ID="<Access Key ID>"
-export AMAZON_SECRET_ACCESS_KEY="<Secret Access Key>"
+``` shell
+export SERVICE_USERNAME="<Username>"
+export SERVICE_SECRET_KEY="<Secret Key>"
 ```
