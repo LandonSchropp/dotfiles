@@ -4,6 +4,7 @@ export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/sha
 # sublime text symbolic link
 rm -f /usr/local/bin/subl
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+alias sublp="subl *.sublime-project"
 
 # set the default text editor
 export EDITOR="/usr/local/bin/subl"
