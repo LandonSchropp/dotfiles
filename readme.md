@@ -139,13 +139,17 @@ ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ``` shell
 gem install tmuxinator
 ```
-The tmuxinator projects files may be placed in the `~/.tmuxinator` directory.
+To link to the tmuxinator project files, run:
+
+``` shell
+ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
+```
 
 ## GCC
 
 The XCode Command Line Tools includes LLVM-GCC, which can cause problems when compiling Ruby. To fix this, we need to install GCC:
 
-```
+``` shell
 brew tap homebrew/dupes
 brew install apple-gcc42
 ```
@@ -154,7 +158,7 @@ brew install apple-gcc42
 
 [rbenv](https://github.com/sstephenson/rbenv) is an awesome little Ruby environment manager. It does one thing really well. To install rbenv, run:
 
-```
+``` shell
 brew install rbenv ruby-build
 ```
 

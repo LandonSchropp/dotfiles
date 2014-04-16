@@ -1,0 +1,8 @@
+# ~/.tmuxinator/landonschropp.github.io.yml
+
+name: landonschropp.github.io
+root: /Users/landonschropp/Development/landonschropp.github.io
+
+windows:
+  - working:
+  - server: bundle exec middleman
