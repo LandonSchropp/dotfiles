@@ -1,6 +1,6 @@
 # ~/.tmuxinator/landonschropp.github.io.yml
 
-name: landonschropp.github.io
+name: landonschropp.com
 root: /Users/landonschropp/Development/landonschropp.github.io
 
 windows:
