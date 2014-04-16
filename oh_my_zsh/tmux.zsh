@@ -2,6 +2,12 @@
 # is created and attached with the argument as its name.
 ta() {
 
+  # ensure the name of a session was provided
+  if [[ $# -eq 0 ]]; then
+    echo "You must provide the name of the session to create or attach."
+    return 1
+  fi
+
   # create the session if it doesn't already exist
   tmux has-session -t $1 2>/dev/null
   if [[ $? != 0 ]]; then
@@ -9,15 +15,19 @@ ta() {
     # create the session using tmuxinator if a project exists for it
     tmuxinator start $1 2>/dev/null
 
-    if [[ $? != 0 ]]; then
-      tmux new-session -d -s $1
-      tmux rename-window "working"
+    # if the tmuxinator session was started successfully, we're done!
+    if [[ $? == 0 ]]; then
+      return 0
     fi
+
+    # if a tmuxinator project does not exist, create a new session
+    tmux new-session -d -s $1
+    tmux rename-window "working"
   fi
 
   # if a tmux session is already attached, switch to the new session; otherwise, attach the new
   # session
-  if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+  if { [ "$TERM" == "screen" ] && [ -n "$TMUX" ]; } then
     tmux switch -t $1
   else
     tmux attach -t $1
