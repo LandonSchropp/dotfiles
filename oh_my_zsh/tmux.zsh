@@ -27,7 +27,7 @@ ta() {
 
   # if a tmux session is already attached, switch to the new session; otherwise, attach the new
   # session
-  if { [ "$TERM" == "screen" ] && [ -n "$TMUX" ]; } then
+  if { [[ "$TERM" == "screen" ]] && [ -n "$TMUX" ]; } then
     tmux switch -t $1
   else
     tmux attach -t $1
