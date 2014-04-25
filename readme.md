@@ -182,9 +182,7 @@ ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
 [Ruby on Rails](http://rubyonrails.org/) is easy to install:
 
 ```
-gem install sqlite3
-gem install rails
-gem install bundler
+gem install sqlite3 rails bundler
 ```
 
 ## Sublime Text
