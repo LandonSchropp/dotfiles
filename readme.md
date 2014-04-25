@@ -139,8 +139,8 @@ OS X ships with an old version of Ruby. You'll want the latest stable one. Check
 ```
 export CC="/usr/local/bin/gcc-4.2"
 export CFLAGS="-I/opt/X11/include"
-rbenv install 1.9.3-p327
-rbenv global 1.9.3-p327
+rbenv install 2.1.1
+rbenv global 2.1.1
 eval "$(rbenv init -)"
 ```
 
@@ -148,7 +148,6 @@ You may also want to disable `ri` and `rdoc` documentation from being installed 
 
 ``` shell
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
-```
 ```
 
 ## tmux
