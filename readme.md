@@ -117,33 +117,6 @@ Run the OS X script to set some useful OS X preferences. Restart for all of the 
 source $HOME/dotfiles/osx/osx.zsh
 ```
 
-## tmux
-
-tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
-
-To get started, install tmux with Homebrew.
-
-``` shell
-brew install reattach-to-user-namespace tmux
-```
-
-Next, link the tmux configuration file.
-
-``` shell
-ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
-```
-
-[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
-
-``` shell
-gem install tmuxinator
-```
-To link to the tmuxinator project files, run:
-
-``` shell
-ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
-```
-
 ## GCC
 
 The XCode Command Line Tools includes LLVM-GCC, which can cause problems when compiling Ruby. To fix this, we need to install GCC:
@@ -175,6 +148,34 @@ You may also want to disable `ri` and `rdoc` documentation from being installed 
 
 ``` shell
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
+```
+```
+
+## tmux
+
+tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
+
+To get started, install tmux with Homebrew.
+
+``` shell
+brew install reattach-to-user-namespace tmux
+```
+
+Next, link the tmux configuration file.
+
+``` shell
+ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+```
+
+[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
+
+``` shell
+gem install tmuxinator
+```
+To link to the tmuxinator project files, run:
+
+``` shell
+ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
 ```
 
 ## Ruby on Rails
@@ -218,7 +219,6 @@ mkdir -p $PREFERENCES_DIRECTORY
 
 ln -s "$HOME/dotfiles/sublime_text/Preferences.sublime-settings" "$PREFERENCES_DIRECTORY/"
 ln -s "$HOME/dotfiles/sublime_text/Default (OSX).sublime-keymap" "$PREFERENCES_DIRECTORY/"
-```
 
 ## NodeJS
 
