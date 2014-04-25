@@ -196,7 +196,7 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * SCSS
 * Dayle Rees Color Schemes
 * EasyMotion
-* ruby-slim
+* Ruby Slim
 * Jade
 * Stylus
 * SublimeCodeIntel
