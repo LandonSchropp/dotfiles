@@ -45,7 +45,16 @@ tk() {
 
 # Provides the tmux sessions for autofill.
 tmux-list-sessions-autofill() {
-  reply=( $(tmux list-sessions | cut -d: -f1) )
+
+  # get the tmux and tmuxinator sessions
+  TMUX_SESSIONS=$( tmux list-sessions | cut -d: -f1 )
+  TMUXINATOR_SESSIONS=$( tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g' )
+
+  # remove duplicates
+  SESSIONS=$( echo "$TMUX_SESSIONS\n$TMUXINATOR_SESSIONS" | sort | uniq )
+
+  # set the autocomplete values
+  reply=( $(echo $SESSIONS) )
 }
 
 alias -g td='tmux detach'
