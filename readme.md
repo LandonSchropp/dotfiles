@@ -107,7 +107,7 @@ Finally, in order to property change the shell, restart the system.
 
 ## iTerm2
 
-iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
+[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To set up iTerm2, download and install it. You may have to perform an update to get the latest version. Open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
 
 ## OS X
 
@@ -124,8 +124,7 @@ tmux is a program that splits multiple terminals in the same window. The instruc
 To get started, install tmux with Homebrew.
 
 ``` shell
-brew install reattach-to-user-namespace
-brew install tmux
+brew install reattach-to-user-namespace tmux
 ```
 
 Next, link the tmux configuration file.
