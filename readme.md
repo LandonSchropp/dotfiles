@@ -216,6 +216,7 @@ mkdir -p $PREFERENCES_DIRECTORY
 
 ln -s "$HOME/dotfiles/sublime_text/Preferences.sublime-settings" "$PREFERENCES_DIRECTORY/"
 ln -s "$HOME/dotfiles/sublime_text/Default (OSX).sublime-keymap" "$PREFERENCES_DIRECTORY/"
+```
 
 ## NodeJS
 
