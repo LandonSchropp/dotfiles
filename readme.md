@@ -33,7 +33,7 @@ Install the XCode Command Line Tools by opening XCode, navigating to Preferences
 [Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run:
 
 ```
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 brew update
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
@@ -75,7 +75,7 @@ git config --global core.mergeoptions --no-edit
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
 
-## Dotfiles and Toolbox
+## Dotfiles
 
 To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
 
