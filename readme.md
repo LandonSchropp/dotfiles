@@ -103,11 +103,17 @@ rm -r $HOME/.oh-my-zsh/custom/*
 ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
+Comment out the following line in the .zshrc file:
+
+``` shell
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+```
+
 Finally, in order to property change the shell, restart the system.
 
 ## iTerm2
 
-iTerm2 is a nifty little terminal replacement. To set up iTerm2, download and install it and open up the preferences. Under the general tab, click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
+[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To set up iTerm2, download and install it. You may have to perform an update to get the latest version. Open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
 
 ## OS X
 
@@ -115,34 +121,6 @@ Run the OS X script to set some useful OS X preferences. Restart for all of the 
 
 ```
 source $HOME/dotfiles/osx/osx.zsh
-```
-
-## tmux
-
-tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
-
-To get started, install tmux with Homebrew.
-
-``` shell
-brew install reattach-to-user-namespace
-brew install tmux
-```
-
-Next, link the tmux configuration file.
-
-``` shell
-ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
-```
-
-[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
-
-``` shell
-gem install tmuxinator
-```
-To link to the tmuxinator project files, run:
-
-``` shell
-ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
 ```
 
 ## GCC
@@ -167,8 +145,8 @@ OS X ships with an old version of Ruby. You'll want the latest stable one. Check
 ```
 export CC="/usr/local/bin/gcc-4.2"
 export CFLAGS="-I/opt/X11/include"
-rbenv install 1.9.3-p327
-rbenv global 1.9.3-p327
+rbenv install 2.1.1
+rbenv global 2.1.1
 eval "$(rbenv init -)"
 ```
 
@@ -178,14 +156,39 @@ You may also want to disable `ri` and `rdoc` documentation from being installed 
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
 ```
 
+## tmux
+
+tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
+
+To get started, install tmux with Homebrew.
+
+``` shell
+brew install reattach-to-user-namespace tmux
+```
+
+Next, link the tmux configuration file.
+
+``` shell
+ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+```
+
+[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
+
+``` shell
+gem install tmuxinator
+```
+To link to the tmuxinator project files, run:
+
+``` shell
+ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
+```
+
 ## Ruby on Rails
 
 [Ruby on Rails](http://rubyonrails.org/) is easy to install:
 
 ```
-gem install sqlite3
-gem install rails
-gem install bundler
+gem install sqlite3 rails bundler
 ```
 
 ## Sublime Text
@@ -199,7 +202,7 @@ When that's done, restart Sublime Text 2. Next, add the following packages by hi
 * SCSS
 * Dayle Rees Color Schemes
 * EasyMotion
-* ruby-slim
+* Ruby Slim
 * Jade
 * Stylus
 * SublimeCodeIntel
