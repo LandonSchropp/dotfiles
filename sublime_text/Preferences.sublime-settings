@@ -8,7 +8,7 @@
 		".mobileprovision"
 	],
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Dayle Rees Color Schemes/legacy/LastNight.tmTheme",
+	"color_scheme": "Packages/User/LastNight (SL).tmTheme",
 	"create_window_at_startup": false,
 	"draw_centered": true,
 	"draw_indent_guides": true,
