@@ -103,6 +103,12 @@ rm -r $HOME/.oh-my-zsh/custom/*
 ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
+Comment out the following line in the .zshrc file:
+
+``` shell
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+```
+
 Finally, in order to property change the shell, restart the system.
 
 ## iTerm2
