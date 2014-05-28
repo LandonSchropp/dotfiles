@@ -1,5 +1,5 @@
 name: quve
-root: ~/quve
+root: ~/Development/quve
 
 windows:
   - working:
