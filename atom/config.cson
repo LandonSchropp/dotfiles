@@ -1,0 +1,23 @@
+'exception-reporting':
+  'userId': '7bb49c66-5904-b674-8d8e-e18cff1293f4'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': 'f50a9d7b89d275864375e05a0e26c4a98412a754'
+'editor':
+  'fontSize': 16
+  'fontFamily': 'Source Code Pro'
+  'preferredLineLength': 100
+  'showIndentGuide': true
+  'softWrap': true
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'base16-tomorrow-dark-theme'
+  ]
+  'projectHome': '/Users/landonschropp/Development'
+'tree-view':
+  'hideIgnoredNames': true
+  'hideVcsIgnoredFiles': true
+'whitespace':
+  'ensureSingleTrailingNewline': false
