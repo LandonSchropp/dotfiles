@@ -1,0 +1,7 @@
+name: quve
+root: ~/quve
+
+windows:
+  - working:
+  - guard: bundle exec guard
+  - server: spring rails s
