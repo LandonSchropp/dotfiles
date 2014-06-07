@@ -10,6 +10,7 @@
   'preferredLineLength': 100
   'showIndentGuide': true
   'softWrap': true
+  'softWrapAtPreferredLineLength': true
 'core':
   'themes': [
     'atom-dark-ui'
