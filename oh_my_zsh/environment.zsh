@@ -7,7 +7,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 alias sublp="subl *.sublime-project"
 
 # set the default text editor
-export EDITOR="/usr/local/bin/subl"
+export EDITOR="/usr/local/bin/atom"
 
 # set up the path so brew programs override local programs
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$NODE_PATH:$PATH
