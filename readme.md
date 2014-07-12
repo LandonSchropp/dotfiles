@@ -9,7 +9,7 @@ Before anything else, run Software Update.
 Once that's done, install:
 
 * [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
-* [Sublime Text 2](http://www.sublimetext.com/3)
+* [Atom](https://atom.io/)
 * [Dropbox](http://dropbox.com)
 * [iStat Menus](http://bjango.com/mac/istatmenus/)
 * [Spotify](http://www.spotify.com)
@@ -22,7 +22,7 @@ Then install these from the AppStore:
 * The Unarchiver
 * Alfred
 * Clear
-* Caffine
+* Caffeine
 * ColorSnapper
 * Screenshot PSD
 
@@ -67,7 +67,7 @@ git config --global alias.c commit
 git config --global alias.b branch
 git config --global alias.m merge
 git config --global alias.s status
-git config --global core.editor "subl -w"
+git config --global core.editor "atom --wait"
 git config --global push.default simple
 git config --global color.ui true
 git config --global core.mergeoptions --no-edit
@@ -191,38 +191,26 @@ ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
 gem install sqlite3 rails bundler
 ```
 
-## Sublime Text
+## Atom
 
-Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
-
-When that's done, restart Sublime Text 2. Next, add the following packages by hitting Command + Shift + P and typing in Package Control: Install Package:
-
-* Better CoffeeScript
-* Emmet
-* SCSS
-* Dayle Rees Color Schemes
-* EasyMotion
-* Ruby Slim
-* Jade
-* Stylus
-* SublimeCodeIntel
-* SideBarEnchancements
-* ApplySyntax
-
-By default, the multi-line selection keyboard shortcut (Control + Shift + Up/Down) is overridden by OS X. To get it back, disable this shortcut by going to System Preferences, then Keyboard, then Shortcuts. Uncheck the Mission Control and Application Windows shortcuts.
-
-To hook up the preferences and keybindings, symbolically link the Sublime dotfiles.
+To hook up the preferences and keybindings, symbolically link the Atom dotfiles.
 
 ```
-PREFERENCES_DIRECTORY="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-rm -rf "$PREFERENCES_DIRECTORY/Preferences.sublime-settings"
-rm -rf "$PREFERENCES_DIRECTORY/Default (OSX).sublime-keymap"
-
-mkdir -p $PREFERENCES_DIRECTORY
-
-ln -s "$HOME/dotfiles/sublime_text/Preferences.sublime-settings" "$PREFERENCES_DIRECTORY/"
-ln -s "$HOME/dotfiles/sublime_text/Default (OSX).sublime-keymap" "$PREFERENCES_DIRECTORY/"
+rm -rf "$HOME/.atom"
+ln -s "$HOME/dotfiles/atom" "$HOME/.atom"
 ```
+
+Then, open up the preferences and install the following packages:
+
+* ColorPicker
+* Command Logger
+* Editor Stats
+* Language Emblem
+* Language Handlebars
+* Language Haml
+* Language Slim
+* Sort Lines
+* Zen
 
 ## NodeJS
 
