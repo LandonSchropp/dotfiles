@@ -26,7 +26,7 @@ Then install these from the AppStore:
 * ColorSnapper
 * Screenshot PSD
 
-Install the XCode Command Line Tools by opening XCode, navigating to Preferences > Downloads > Components and clicking on the Install button.
+Open up Xcode, and when it prompts you install the Xcode Command Line Tools.
 
 ## Homebrew
 
