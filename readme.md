@@ -78,7 +78,7 @@ In order to connect with GitHub, you'll need to generate an SSH key. Follow the 
 To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
 
 ```
-git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
+git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
 ```
 
 ## Oh My ZSH
@@ -98,7 +98,7 @@ Next, link the custom Oh My ZSH configuration from the dotfiles repository.
 ```
 mkdir -p $HOME/.oh-my-zsh/custom
 rm -r $HOME/.oh-my-zsh/custom/*
-ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
+ln -s $HOME/.dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
 Comment out the following line in the `.zshrc` file:
@@ -118,7 +118,7 @@ Finally, in order to property change the shell, restart the system.
 Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
 
 ```
-source $HOME/dotfiles/osx/osx.zsh
+source $HOME/.dotfiles/osx/osx.zsh
 ```
 
 ## GCC
@@ -167,7 +167,7 @@ brew install reattach-to-user-namespace tmux
 Next, link the tmux configuration file.
 
 ``` shell
-ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ```
 
 [tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
@@ -178,7 +178,7 @@ gem install tmuxinator
 To link to the tmuxinator project files, run:
 
 ``` shell
-ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
+ln -s $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
 ```
 
 ## Ruby on Rails
@@ -195,7 +195,7 @@ To hook up the preferences and keybindings, symbolically link the Atom dotfiles.
 
 ```
 rm -rf "$HOME/.atom"
-ln -s "$HOME/dotfiles/atom" "$HOME/.atom"
+ln -s "$HOME/.dotfiles/atom" "$HOME/.atom"
 ```
 
 Then, open up the preferences and install the following packages:
