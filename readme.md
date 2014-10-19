@@ -143,6 +143,12 @@ You may also want to disable `ri` and `rdoc` documentation from being installed 
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
 ```
 
+Finally, install the [Bundler](http://bundler.io/) gem in order to gain access to the `bundle` command.
+
+``` shell
+gem install bundler
+```
+
 ## tmux
 
 tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
@@ -168,14 +174,6 @@ To link to the tmuxinator project files, run:
 
 ``` shell
 ln -s $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
-```
-
-## Ruby on Rails
-
-[Ruby on Rails](http://rubyonrails.org/) is easy to install:
-
-```
-gem install sqlite3 rails bundler
 ```
 
 ## Atom
