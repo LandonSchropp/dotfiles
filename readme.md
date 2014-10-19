@@ -13,6 +13,7 @@ Once that's done, install:
 * [Dropbox](http://dropbox.com)
 * [iStat Menus](http://bjango.com/mac/istatmenus/)
 * [Spotify](http://www.spotify.com)
+* [Mailbox](http://www.mailboxapp.com/download/mac/)
 
 Then install these from the AppStore:
 
