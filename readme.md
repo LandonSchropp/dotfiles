@@ -30,10 +30,9 @@ Open up Xcode, and when it prompts you install the Xcode Command Line Tools.
 
 ## Homebrew
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run:
+[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the install script on the homebrew site and then do:
 
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 brew update
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
