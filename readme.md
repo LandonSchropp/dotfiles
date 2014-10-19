@@ -121,15 +121,6 @@ Run the OS X script to set some useful OS X preferences. Restart for all of the 
 source $HOME/.dotfiles/osx/osx.zsh
 ```
 
-## GCC
-
-The XCode Command Line Tools includes LLVM-GCC, which can cause problems when compiling Ruby. To fix this, we need to install GCC:
-
-``` shell
-brew tap homebrew/dupes
-brew install apple-gcc42
-```
-
 ## Ruby
 
 [rbenv](https://github.com/sstephenson/rbenv) is an awesome little Ruby environment manager. It does one thing really well. To install rbenv, run:
@@ -138,13 +129,11 @@ brew install apple-gcc42
 brew install rbenv ruby-build
 ```
 
-OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. At the time this document was written, the newest stable Ruby release is `Ruby 1.9.3-p362`.  To install Ruby, run:
+OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. To install Ruby, run:
 
 ```
-export CC="/usr/local/bin/gcc-4.2"
-export CFLAGS="-I/opt/X11/include"
-rbenv install 2.1.1
-rbenv global 2.1.1
+rbenv install <version>
+rbenv global <version>
 eval "$(rbenv init -)"
 ```
 
