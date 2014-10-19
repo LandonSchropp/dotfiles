@@ -44,7 +44,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree ack rename imagemagick android-sdk coreutils
+brew install wget tree ack rename imagemagick android-sdk gnu-sed
 ```
 
 ## Git
