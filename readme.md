@@ -221,7 +221,7 @@ Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X
 
 ```
 mkdir -p $HOME/Library/LaunchAgents
-cp "/usr/local/Cellar/postgresql/$(psql --version | perl -wnE 'say for /\d+\.\d+\.\d+/g')/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
+cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
