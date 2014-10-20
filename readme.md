@@ -110,6 +110,28 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 Finally, in order to property change the shell, restart the system.
 
+# Vim
+
+First, install the latest version of Vim by running:
+
+``` shell
+brew install vim
+```
+
+Next,  link the `.vimrc` file from the dotfiles repository.
+
+``` shell
+ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
+``` 
+
+Then, install Vundle with:
+
+``` shell
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Finally, fire up Vim and run `:PluginInstall` to install all of the plugins in the `.vimrc` file.
+
 ## iTerm2
 
 [iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To set up iTerm2, download and install it. You may have to perform an update to get the latest version. Open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
