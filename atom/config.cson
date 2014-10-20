@@ -5,11 +5,12 @@
 'metrics':
   'userId': 'f50a9d7b89d275864375e05a0e26c4a98412a754'
 'editor':
-  'fontSize': 16
+  'fontSize': 15
   'fontFamily': 'Source Code Pro'
   'preferredLineLength': 100
   'showIndentGuide': true
   'softWrap': true
+  'softWrapAtPreferredLineLength': true
 'core':
   'themes': [
     'atom-dark-ui'

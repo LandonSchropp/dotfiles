@@ -342,7 +342,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/dotfiles/iterm2</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -360,22 +360,26 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>198</string>
+		<string>302</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>470 338 924 485 0 0 1440 878 </string>
+	<string>516 176 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 107 954 757 0 0 1440 878 </string>
+	<string>1387 9 1162 1403 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>409 427 650 451 0 0 1440 878 </string>
+	<string>198 378 650 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>204 461 650 417 0 0 1440 878 </string>
+	<string>225 22 650 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>380 359 650 417 0 0 1440 878 </string>
+	<string>225 22 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>246 427 650 451 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>267 427 650 451 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1897,7 +1901,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-02-20T22:46:48Z</date>
+	<date>2014-10-06T21:05:42Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1937,12 +1941,12 @@
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
-	<string>/-+\~_.</string>
+	<string>g</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140112</string>
+	<string>1.0.0.20140629</string>
 </dict>
 </plist>

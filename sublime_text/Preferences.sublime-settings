@@ -32,7 +32,9 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"Stylus",
+		"SublimeLinter"
 	],
 	"indent_guide_options":
 	[
