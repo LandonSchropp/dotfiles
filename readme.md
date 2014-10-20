@@ -9,10 +9,11 @@ Before anything else, run Software Update.
 Once that's done, install:
 
 * [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
-* [Sublime Text 2](http://www.sublimetext.com/3)
+* [Atom](https://atom.io/)
 * [Dropbox](http://dropbox.com)
 * [iStat Menus](http://bjango.com/mac/istatmenus/)
 * [Spotify](http://www.spotify.com)
+* [Mailbox](http://www.mailboxapp.com/download/mac/)
 
 Then install these from the AppStore:
 
@@ -22,18 +23,17 @@ Then install these from the AppStore:
 * The Unarchiver
 * Alfred
 * Clear
-* Caffine
+* Caffeine
 * ColorSnapper
 * Screenshot PSD
 
-Install the XCode Command Line Tools by opening XCode, navigating to Preferences > Downloads > Components and clicking on the Install button.
+Open up Xcode, and when it prompts you install the Xcode Command Line Tools.
 
 ## Homebrew
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run:
+[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the install script on the homebrew site and then do:
 
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 brew update
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
@@ -44,7 +44,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree ack rename imagemagick android-sdk
+brew install wget tree ack rename imagemagick android-sdk gnu-sed
 ```
 
 ## Git
@@ -67,8 +67,7 @@ git config --global alias.c commit
 git config --global alias.b branch
 git config --global alias.m merge
 git config --global alias.s status
-git config --global core.editor "subl -w"
-git config --global push.default simple
+git config --global core.editor "atom --wait"
 git config --global color.ui true
 git config --global core.mergeoptions --no-edit
 ```
@@ -80,7 +79,7 @@ In order to connect with GitHub, you'll need to generate an SSH key. Follow the 
 To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
 
 ```
-git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
+git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
 ```
 
 ## Oh My ZSH
@@ -92,7 +91,7 @@ git clone git@github.com:LandonSchropp/dotfiles.git $HOME/dotfiles
 Install Oh My ZSH by using the following command:
 
 ```
-wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
 
 Next, link the custom Oh My ZSH configuration from the dotfiles repository.
@@ -100,16 +99,38 @@ Next, link the custom Oh My ZSH configuration from the dotfiles repository.
 ```
 mkdir -p $HOME/.oh-my-zsh/custom
 rm -r $HOME/.oh-my-zsh/custom/*
-ln -s $HOME/dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
+ln -s $HOME/.dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
 ```
 
-Comment out the following line in the .zshrc file:
+Comment out the following line in the `.zshrc` file:
 
 ``` shell
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 ```
 
 Finally, in order to property change the shell, restart the system.
+
+# Vim
+
+First, install the latest version of Vim by running:
+
+``` shell
+brew install vim
+```
+
+Next,  link the `.vimrc` file from the dotfiles repository.
+
+``` shell
+ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
+``` 
+
+Then, install Vundle with:
+
+``` shell
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Finally, fire up Vim and run `:PluginInstall` to install all of the plugins in the `.vimrc` file.
 
 ## iTerm2
 
@@ -120,16 +141,7 @@ Finally, in order to property change the shell, restart the system.
 Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
 
 ```
-source $HOME/dotfiles/osx/osx.zsh
-```
-
-## GCC
-
-The XCode Command Line Tools includes LLVM-GCC, which can cause problems when compiling Ruby. To fix this, we need to install GCC:
-
-``` shell
-brew tap homebrew/dupes
-brew install apple-gcc42
+source $HOME/.dotfiles/osx/osx.zsh
 ```
 
 ## Ruby
@@ -140,13 +152,11 @@ brew install apple-gcc42
 brew install rbenv ruby-build
 ```
 
-OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. At the time this document was written, the newest stable Ruby release is `Ruby 1.9.3-p362`.  To install Ruby, run:
+OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. To install Ruby, run:
 
 ```
-export CC="/usr/local/bin/gcc-4.2"
-export CFLAGS="-I/opt/X11/include"
-rbenv install 2.1.1
-rbenv global 2.1.1
+rbenv install <version>
+rbenv global <version>
 eval "$(rbenv init -)"
 ```
 
@@ -154,6 +164,12 @@ You may also want to disable `ri` and `rdoc` documentation from being installed 
 
 ``` shell
 echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
+```
+
+Finally, install the [Bundler](http://bundler.io/) gem in order to gain access to the `bundle` command.
+
+``` shell
+gem install bundler
 ```
 
 ## tmux
@@ -169,7 +185,7 @@ brew install reattach-to-user-namespace tmux
 Next, link the tmux configuration file.
 
 ``` shell
-ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ```
 
 [tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
@@ -180,49 +196,29 @@ gem install tmuxinator
 To link to the tmuxinator project files, run:
 
 ``` shell
-ln -s $HOME/dotfiles/tmuxinator $HOME/.tmuxinator
+ln -s $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
 ```
 
-## Ruby on Rails
+## Atom
 
-[Ruby on Rails](http://rubyonrails.org/) is easy to install:
-
-```
-gem install sqlite3 rails bundler
-```
-
-## Sublime Text
-
-Install [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
-
-When that's done, restart Sublime Text 2. Next, add the following packages by hitting Command + Shift + P and typing in Package Control: Install Package:
-
-* Better CoffeeScript
-* Emmet
-* SCSS
-* Dayle Rees Color Schemes
-* EasyMotion
-* Ruby Slim
-* Jade
-* Stylus
-* SublimeCodeIntel
-* SideBarEnchancements
-* ApplySyntax
-
-By default, the multi-line selection keyboard shortcut (Control + Shift + Up/Down) is overridden by OS X. To get it back, disable this shortcut by going to System Preferences, then Keyboard, then Shortcuts. Uncheck the Mission Control and Application Windows shortcuts.
-
-To hook up the preferences and keybindings, symbolically link the Sublime dotfiles.
+To hook up the preferences and keybindings, symbolically link the Atom dotfiles.
 
 ```
-PREFERENCES_DIRECTORY="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-rm -rf "$PREFERENCES_DIRECTORY/Preferences.sublime-settings"
-rm -rf "$PREFERENCES_DIRECTORY/Default (OSX).sublime-keymap"
-
-mkdir -p $PREFERENCES_DIRECTORY
-
-ln -s "$HOME/dotfiles/sublime_text/Preferences.sublime-settings" "$PREFERENCES_DIRECTORY/"
-ln -s "$HOME/dotfiles/sublime_text/Default (OSX).sublime-keymap" "$PREFERENCES_DIRECTORY/"
+rm -rf "$HOME/.atom"
+ln -s "$HOME/.dotfiles/atom" "$HOME/.atom"
 ```
+
+Then, open up the preferences and install the following packages:
+
+* ColorPicker
+* Command Logger
+* Editor Stats
+* Language Emblem
+* Language Handlebars
+* Language Haml
+* Language Slim
+* Sort Lines
+* Zen
 
 ## NodeJS
 
@@ -247,7 +243,7 @@ Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X
 
 ```
 mkdir -p $HOME/Library/LaunchAgents
-cp "/usr/local/Cellar/postgresql/$(psql --version | perl -wnE 'say for /\d+\.\d+\.\d+/g')/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
+cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
