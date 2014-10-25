@@ -20,9 +20,6 @@ function mt() {
   mkdir -p $(dirname "$1") && touch "$1"
 }
 
-# Set the directory to the current development directory.
-alias cur='cd ~/Development/current'
-
 # Extract most known archives with one command. Taken from:
 # http://alias.sh/extract-most-know-archives-one-command.
 extract() {

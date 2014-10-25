@@ -3,20 +3,14 @@
 # Run a command through bundle execute.
 alias be='bundle exec'
 
-# Run a rake command through bundle execute.
+# Run a Rake command through bundle execute.
 alias ber='bundle exec rake'
 
-# Run guard on the current directory.
+# Run Guard on the current directory.
 alias guard='bundle exec guard --notify false'
 
-# Migrate a Rails database for both the development and test environments.
+# Migrates a Rails database.
 alias migrate='bundle exec rake db:migrate && bundle exec rake db:test:prepare'
 
-# Resets the development database.
-alias reset='bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate'
-
-# Resets the test database.
-alias resett='bundle exec rake db:test:purge && bundle exec rake db:test:prepare'
-
-# Run the rake populate task.
+# Run the Rake populate task.
 alias populate='bundle exec rake db:populate'
