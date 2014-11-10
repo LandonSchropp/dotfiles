@@ -5,7 +5,7 @@ export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules:/usr/local/sha
 export EDITOR="/usr/local/bin/atom"
 
 # set up the path so brew programs override local programs
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$NODE_PATH:$PATH
+export PATH=./bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$NODE_PATH:$PATH
 
 # start up rbenv
 eval "$(rbenv init -)"
