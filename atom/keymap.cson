@@ -17,4 +17,4 @@
 #   'ctrl-p': 'core:move-down'
 #
 'body':
-  'alt-cmd-i': ''
+  'cmd-;': 'easy-motion:start'
