@@ -246,20 +246,3 @@ mkdir -p $HOME/Library/LaunchAgents
 cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
-
-## Private Keys
-
-Some APIs require secret access keys and tokens for authentication. For security reasons, these values should not be stored in a git repository.
-
-Create a new Oh My ZSH configuration file.
-
-``` shell
-touch ~/.oh-my-zsh/custom/private.zsh
-```
-
-Store the keys as environment variables like this:
-
-``` shell
-export SERVICE_USERNAME="<Username>"
-export SERVICE_SECRET_KEY="<Secret Key>"
-```
