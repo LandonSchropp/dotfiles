@@ -3,5 +3,7 @@ root: ~/Development/quve
 
 windows:
   - working:
-  - guard: bundle exec guard
-  - server: spring rails s
+  - guard: guard
+  - server: rails server
+  - console: rails console
+  - delayed_job: rake jobs:work
