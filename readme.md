@@ -6,28 +6,18 @@ This is a guide to setting up my personal development environment. It's purpose 
 
 Before anything else, run Software Update.
 
-Once that's done, install:
-
-* [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
-* [Atom](https://atom.io/)
-* [Dropbox](http://dropbox.com)
-* [iStat Menus](http://bjango.com/mac/istatmenus/)
-* [Spotify](http://www.spotify.com)
-* [Mailbox](http://www.mailboxapp.com/download/mac/)
-
 Then install these from the AppStore:
 
 * Xcode
 * BetterSnapTool
 * iA Writer
 * The Unarchiver
-* Alfred
 * Clear
-* Caffeine
+* Caffine
 * ColorSnapper
 * Screenshot PSD
 
-Open up Xcode, and when it prompts you install the Xcode Command Line Tools.
+Open up Xcode, and when it prompts you, install the Xcode Command Line Tools.
 
 ## Homebrew
 
@@ -45,6 +35,24 @@ Install some handy little command line utilities using Homebrew:
 
 ```
 brew install wget tree ack rename imagemagick android-sdk gnu-sed
+```
+
+Install [Homebrew Cask](http://caskroom.io/):
+
+```
+brew install caskroom/cask/brew-cask
+```
+
+Then, install the OS X apps:
+
+```
+brew cask install google-chrome
+brew cask install atom
+brew cask install dropbox
+brew cask install spotify
+brew cask install mailbox
+brew cask install iterm2
+brew cask install istat-menus
 ```
 
 ## Git
