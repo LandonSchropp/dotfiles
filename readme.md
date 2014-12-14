@@ -142,7 +142,7 @@ Finally, fire up Vim and run `:PluginInstall` to install all of the plugins in t
 
 ## iTerm2
 
-[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To set up iTerm2, download and install it. You may have to perform an update to get the latest version. Open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
+[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To configure, iTerm2, first install the latest update from inside the application. Next, open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and manually enter the `/Users/<USERNAME>/.dotfiles/iterm2` directory.
 
 ## OS X
 
