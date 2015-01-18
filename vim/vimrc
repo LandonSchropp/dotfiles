@@ -1,0 +1,91 @@
+" A good chunk of this config file came from: http://c7.se/switching-to-vundle/
+
+
+
+" PLUGINS
+
+" vundle required junk
+set nocompatible
+filetype off
+
+" set up and initialize vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" load the plugins
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'slim-template/vim-slim'
+
+" tear down vundle
+call vundle#end()
+filetype plugin indent on
+
+
+
+" SETTINGS
+
+" indentation
+set tabstop=2
+set softtabstop=0
+set expandtab
+set shiftwidth=2
+set smarttab
+
+" highlight the current line
+set cursorline
+
+" turning off vim garbage
+set modelines=0
+
+" use the system clipboard
+set clipboard=unnamed
+
+" scrolling
+set ttyscroll=10
+
+" set the default encoding
+set encoding=utf-8
+
+" line wrapping
+set columns=100
+set colorcolumn=101
+" set wrap
+set linebreak
+set nolist
+" set textwidth=0
+set wrapmargin=0
+
+" backups
+set nowritebackup
+set noswapfile
+set nobackup
+
+" searching
+set hlsearch
+set smartcase
+
+" whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+au BufNewFile * set noeol
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_g = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
