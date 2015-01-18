@@ -44,7 +44,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree ack rename imagemagick android-sdk gnu-sed
+brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher
 ```
 
 ## Git
@@ -122,7 +122,7 @@ Next,  link the `.vimrc` file from the dotfiles repository.
 
 ``` shell
 ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
-``` 
+```
 
 Then, install Vundle with:
 
