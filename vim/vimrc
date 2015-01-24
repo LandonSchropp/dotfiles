@@ -61,10 +61,10 @@ set encoding=utf-8
 " line wrapping
 set columns=100
 set colorcolumn=101
-" set wrap
+set wrap
 set linebreak
 set nolist
-" set textwidth=0
+set textwidth=0
 set wrapmargin=0
 
 " backups
