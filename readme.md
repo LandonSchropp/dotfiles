@@ -6,28 +6,18 @@ This is a guide to setting up my personal development environment. It's purpose 
 
 Before anything else, run Software Update.
 
-Once that's done, install:
-
-* [Google Chrome](https://www.google.com/intl/en/chrome/browser/)
-* [Atom](https://atom.io/)
-* [Dropbox](http://dropbox.com)
-* [iStat Menus](http://bjango.com/mac/istatmenus/)
-* [Spotify](http://www.spotify.com)
-* [Mailbox](http://www.mailboxapp.com/download/mac/)
-
 Then install these from the AppStore:
 
 * Xcode
 * BetterSnapTool
 * iA Writer
 * The Unarchiver
-* Alfred
 * Clear
-* Caffeine
+* Caffine
 * ColorSnapper
 * Screenshot PSD
 
-Open up Xcode, and when it prompts you install the Xcode Command Line Tools.
+Open up Xcode, and when it prompts you, install the Xcode Command Line Tools.
 
 ## Homebrew
 
@@ -45,6 +35,24 @@ Install some handy little command line utilities using Homebrew:
 
 ```
 brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher
+```
+
+Install [Homebrew Cask](http://caskroom.io/):
+
+```
+brew install caskroom/cask/brew-cask
+```
+
+Then, install the OS X apps:
+
+```
+brew cask install google-chrome
+brew cask install atom
+brew cask install dropbox
+brew cask install spotify
+brew cask install mailbox
+brew cask install iterm2
+brew cask install istat-menus
 ```
 
 ## Git
@@ -134,7 +142,7 @@ Finally, fire up Vim and run `:PluginInstall` to install all of the plugins in t
 
 ## iTerm2
 
-[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To set up iTerm2, download and install it. You may have to perform an update to get the latest version. Open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and select the `iterm2` folder in the dotfiles repository.
+[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To configure, iTerm2, first install the latest update from inside the application. Next, open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and manually enter the `/Users/<USERNAME>/.dotfiles/iterm2` directory.
 
 ## OS X
 
@@ -245,21 +253,4 @@ Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X
 mkdir -p $HOME/Library/LaunchAgents
 cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-```
-
-## Private Keys
-
-Some APIs require secret access keys and tokens for authentication. For security reasons, these values should not be stored in a git repository.
-
-Create a new Oh My ZSH configuration file.
-
-``` shell
-touch ~/.oh-my-zsh/custom/private.zsh
-```
-
-Store the keys as environment variables like this:
-
-``` shell
-export SERVICE_USERNAME="<Username>"
-export SERVICE_SECRET_KEY="<Secret Key>"
 ```
