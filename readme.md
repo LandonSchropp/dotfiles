@@ -238,9 +238,9 @@ brew install nodejs npm
 
 ## PostgreSQL
 
-[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. OS X ships with and old version of PostgreSQL preinstalled.
+[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. 
 
-To install the newest version, use:
+OS X ships with an old version of PostgreSQL preinstalled. To install the newest version, use:
 
 ```
 brew install postgresql
