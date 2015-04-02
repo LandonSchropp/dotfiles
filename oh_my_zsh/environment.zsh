@@ -1,6 +1,9 @@
 # set the default text editor
 export EDITOR="/usr/local/bin/atom"
 
+# set the lolcommits delay
+export LOLCOMMITS_DELAY=1
+
 # start up rbenv and pyenv
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
