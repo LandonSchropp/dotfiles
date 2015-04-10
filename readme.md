@@ -17,7 +17,9 @@ Then install these from the AppStore:
 * ColorSnapper
 * Screenshot PSD
 
-Open up Xcode, and when it prompts you, install the Xcode Command Line Tools.
+## Xcode Comment Line Tools
+
+In the terminal, run `xcode-select --install` to install the Xcode Command Line Tools.
 
 ## Homebrew
 
@@ -42,7 +44,10 @@ Install [Homebrew Cask](http://caskroom.io/):
 ```
 brew install caskroom/cask/brew-cask
 ```
-
+Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions);
+```
+brew tap caskroom/versions
+````
 Then, install the OS X apps:
 
 ```
