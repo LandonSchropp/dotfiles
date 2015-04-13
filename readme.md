@@ -36,7 +36,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher
+brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher z
 ```
 
 Install [Homebrew Cask](http://caskroom.io/):
@@ -243,7 +243,7 @@ brew install nodejs npm
 
 ## PostgreSQL
 
-[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. 
+[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database.
 
 OS X ships with an old version of PostgreSQL preinstalled. To install the newest version, use:
 

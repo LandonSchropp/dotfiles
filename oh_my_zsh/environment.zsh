@@ -11,3 +11,6 @@ eval "$(pyenv init -)"
 # set up the local bin path
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=./bin:$PATH
+
+# start up z
+. /usr/local/Cellar/z/**/z.sh
