@@ -1,9 +1,0 @@
-name: surf_receptionist
-root: ~/Development/surf_receptionist
-
-windows:
-  - working:
-  - guard: bundle exec guard
-  - server: spring rails s
-  - console: spring rails c
-  - log: tail -f log/development.log

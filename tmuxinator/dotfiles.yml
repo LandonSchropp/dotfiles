@@ -1,5 +1,3 @@
-# ~/.tmuxinator/dotfiles.yml
-
 name: dotfiles
 root: ~/.dotfiles
 
