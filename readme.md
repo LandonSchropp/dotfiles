@@ -83,6 +83,7 @@ git config --global alias.s status
 git config --global core.editor "atom --wait"
 git config --global color.ui true
 git config --global core.mergeoptions --no-edit
+git config --global push.default current
 ```
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
