@@ -51,13 +51,7 @@ brew tap caskroom/versions
 Then, install the OS X apps:
 
 ```
-brew cask install google-chrome
-brew cask install atom
-brew cask install dropbox
-brew cask install spotify
-brew cask install mailbox
-brew cask install iterm2
-brew cask install istat-menus
+brew cask install google-chrome atom dropbox spotify mailbox iterm2 istat-menus
 ```
 
 ## Git
