@@ -17,7 +17,9 @@ Then install these from the AppStore:
 * ColorSnapper
 * Screenshot PSD
 
-Open up Xcode, and when it prompts you, install the Xcode Command Line Tools.
+## Xcode Comment Line Tools
+
+In the terminal, run `xcode-select --install` to install the Xcode Command Line Tools.
 
 ## Homebrew
 
@@ -34,7 +36,7 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher
+brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher z
 ```
 
 Install [Homebrew Cask](http://caskroom.io/):
@@ -42,7 +44,10 @@ Install [Homebrew Cask](http://caskroom.io/):
 ```
 brew install caskroom/cask/brew-cask
 ```
-
+Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions);
+```
+brew tap caskroom/versions
+````
 Then, install the OS X apps:
 
 ```
@@ -78,6 +83,7 @@ git config --global alias.s status
 git config --global core.editor "atom --wait"
 git config --global color.ui true
 git config --global core.mergeoptions --no-edit
+git config --global push.default current
 ```
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
@@ -238,9 +244,9 @@ brew install nodejs npm
 
 ## PostgreSQL
 
-[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database. OS X ships with and old version of PostgreSQL preinstalled. Most of the instructions for installing PostgreSQL were borrowed from [this great Railscast](http://railscasts.com/episodes/342-migrating-to-postgresql?view=asciicast).
+[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database.
 
-To install the newest version, use:
+OS X ships with an old version of PostgreSQL preinstalled. To install the newest version, use:
 
 ```
 brew install postgresql
