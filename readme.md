@@ -160,7 +160,7 @@ source $HOME/.dotfiles/osx/osx.zsh
 brew install rbenv ruby-build
 ```
 
-OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](http://www.ruby-lang.org/en/) to see what it might be. To install Ruby, run:
+OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it might be. To install Ruby, run:
 
 ```
 rbenv install <version>
