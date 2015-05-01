@@ -13,3 +13,6 @@ export PATH=./bin:$PATH
 
 # start up z
 . /usr/local/Cellar/z/**/z.sh
+
+# set up andoird path
+export ANDROID_HOME=/usr/local/opt/android-sdk
