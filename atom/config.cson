@@ -15,8 +15,8 @@
     invisibles: {}
   core:
     themes: [
-      "atom-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "atom-light-ui"
+      "base16-tomorrow-light-theme"
     ]
     projectHome: "/Users/landonschropp/Development"
   "tree-view":
