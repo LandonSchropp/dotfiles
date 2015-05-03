@@ -3,4 +3,5 @@ root: ~/Development/unraveling_flexbox
 
 windows:
   - working:
-  - server: gulp
+  - server: "rails server -b ::"
+  - ngrok: ngrok 3000
