@@ -52,6 +52,9 @@ Then, install the OS X apps:
 
 ```
 brew cask install google-chrome atom dropbox spotify mailbox iterm2 istat-menus firefox
+
+sketch-toolbox
+vlc
 ```
 
 ## Git
