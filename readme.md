@@ -47,6 +47,7 @@ brew install caskroom/cask/brew-cask
 Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions);
 ```
 brew tap caskroom/versions
+brew tap caskroom/fonts
 ````
 Then, install the OS X apps:
 
