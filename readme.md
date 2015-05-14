@@ -47,11 +47,25 @@ brew install caskroom/cask/brew-cask
 Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions);
 ```
 brew tap caskroom/versions
+brew tap caskroom/fonts
 ````
 Then, install the OS X apps:
 
 ```
-brew cask install google-chrome atom dropbox spotify mailbox iterm2 istat-menus firefox
+brew cask install google-chrome
+brew cask install atom
+brew cask install dropbox
+brew cask install spotify
+brew cask install mailbox
+brew cask install iterm2
+brew cask install istat-menus
+brew cask install firefox
+brew cask install sketch-toolbox
+brew cask install vlc
+brew cask install cyberduck
+brew cask install font-source-code-pro
+brew cask install bartender
+brew cask install imageoptim
 ```
 
 ## Git
