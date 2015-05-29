@@ -12,7 +12,8 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
-    invisibles: {}
+    invisibles:
+      {}
   core:
     themes: [
       "atom-light-ui"
