@@ -130,7 +130,7 @@ In order to property change the shell, restart the system.
 Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
 
 ```
-source $HOME/.dotfiles/osx/osx.zsh
+source $HOME/.dotfiles/osx.zsh
 ```
 
 ## Ruby
