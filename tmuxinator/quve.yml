@@ -1,9 +1,0 @@
-name: quve
-root: ~/Development/quve
-
-windows:
-  - working:
-  - guard: guard
-  - server: rails server
-  - console: rails console
-  - delayed_job: rake jobs:work

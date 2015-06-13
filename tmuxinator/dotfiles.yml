@@ -1,5 +1,0 @@
-name: dotfiles
-root: ~/.dotfiles
-
-windows:
-  - working:

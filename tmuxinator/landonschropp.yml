@@ -1,6 +1,0 @@
-name: landonschropp
-root: /Users/landonschropp/Development/landonschropp.github.io
-
-windows:
-  - working:
-  - server: bundle exec middleman

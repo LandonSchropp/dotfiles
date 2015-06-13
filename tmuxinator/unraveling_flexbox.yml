@@ -1,7 +1,0 @@
-name: unraveling_flexbox
-root: ~/Development/unraveling_flexbox
-
-windows:
-  - working:
-  - server: "rails server -b ::"
-  - ngrok: ngrok 3000
