@@ -1,21 +1,10 @@
 # Dotfiles
 
-This is a guide to setting up my personal development environment. It's purpose is to get me up and running as fast as possible on a clean install of OS X.
+This is a guide to setting up my personal development environment. It's meant get me up and running as fast as possible on a clean install of OS X.
 
 ## Prerequisits
 
-Before anything else, run Software Update.
-
-Then install these from the AppStore:
-
-* Xcode
-* BetterSnapTool
-* iA Writer
-* The Unarchiver
-* Clear
-* Caffine
-* ColorSnapper
-* Screenshot PSD
+Before anything else, run Software Update. Then, install all of your App Store purchases.
 
 ## Xcode Comment Line Tools
 
@@ -36,7 +25,14 @@ The last line sets the `$PATH` environment variable. This only needs to be done 
 Install some handy little command line utilities using Homebrew:
 
 ```
-brew install wget tree rename imagemagick android-sdk gnu-sed the_silver_searcher z
+brew install android-sdk
+brew install gnu-sed
+brew install imagemagick
+brew install rename
+brew install the_silver_searcher
+brew install tree
+brew install wget
+brew install z
 ```
 
 Install [Homebrew Cask](http://caskroom.io/):
@@ -44,28 +40,39 @@ Install [Homebrew Cask](http://caskroom.io/):
 ```
 brew install caskroom/cask/brew-cask
 ```
-Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions);
+
+Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions) and [Homebrew Cask fonts](https://github.com/caskroom/homebrew-fonts).
+
 ```
 brew tap caskroom/versions
 brew tap caskroom/fonts
 ````
-Then, install the OS X apps:
+
+Then, install the OS X apps and fonts:
 
 ```
-brew cask install google-chrome
 brew cask install atom
-brew cask install dropbox
-brew cask install spotify
-brew cask install mailbox
-brew cask install iterm2
-brew cask install istat-menus
-brew cask install firefox
-brew cask install sketch-toolbox
-brew cask install vlc
-brew cask install cyberduck
-brew cask install font-source-code-pro
 brew cask install bartender
+brew cask install cyberduck
+brew cask install dropbox
+brew cask install firefox
+brew cask install font-source-code-pro
+brew cask install google-chrome
 brew cask install imageoptim
+brew cask install istat-menus
+brew cask install iterm2
+brew cask install mailbox
+brew cask install sketch-toolbox
+brew cask install spotify
+brew cask install vlc
+```
+
+## Mackup
+
+Once Dropbox has finished downloading all of your files, copy the application settings by running:
+
+```
+mackup restore
 ```
 
 ## Git
@@ -116,47 +123,7 @@ Install Oh My ZSH by using the following command:
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
 
-Next, link the custom Oh My ZSH configuration from the dotfiles repository.
-
-```
-mkdir -p $HOME/.oh-my-zsh/custom
-rm -r $HOME/.oh-my-zsh/custom/*
-ln -s $HOME/.dotfiles/oh_my_zsh/* $HOME/.oh-my-zsh/custom/
-```
-
-Comment out the following line in the `.zshrc` file:
-
-``` shell
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-```
-
-Finally, in order to property change the shell, restart the system.
-
-# Vim
-
-First, install the latest version of Vim by running:
-
-``` shell
-brew install vim
-```
-
-Next,  link the `.vimrc` file from the dotfiles repository.
-
-``` shell
-ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
-```
-
-Then, install Vundle with:
-
-``` shell
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
-Finally, fire up Vim and run `:PluginInstall` to install all of the plugins in the `.vimrc` file.
-
-## iTerm2
-
-[iTerm2](http://www.iterm2.com/#/section/downloads) is a nifty little terminal replacement. To configure, iTerm2, first install the latest update from inside the application. Next, open up the preferences and navigate to the General tab. Click the checkbox labeled "Load preferences from a custom folder or URL" and manually enter the `/Users/<USERNAME>/.dotfiles/iterm2` directory.
+In order to property change the shell, restart the system.
 
 ## OS X
 
@@ -174,7 +141,7 @@ source $HOME/.dotfiles/osx/osx.zsh
 brew install rbenv ruby-build
 ```
 
-OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it might be. To install Ruby, run:
+OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it is. To install Ruby, run:
 
 ```
 rbenv install <version>
@@ -198,49 +165,14 @@ gem install bundler
 
 tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
 
-To get started, install tmux with Homebrew.
+Install tmux with Homebrew and tmuxinator with `gem`.
 
 ``` shell
 brew install reattach-to-user-namespace tmux
-```
-
-Next, link the tmux configuration file.
-
-``` shell
-ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+gem install tmuxinator
 ```
 
 [tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
-
-``` shell
-gem install tmuxinator
-```
-To link to the tmuxinator project files, run:
-
-``` shell
-ln -s $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
-```
-
-## Atom
-
-To hook up the preferences and keybindings, symbolically link the Atom dotfiles.
-
-```
-rm -rf "$HOME/.atom"
-ln -s "$HOME/.dotfiles/atom" "$HOME/.atom"
-```
-
-Then, open up the preferences and install the following packages:
-
-* ColorPicker
-* Command Logger
-* Editor Stats
-* Language Emblem
-* Language Handlebars
-* Language Haml
-* Language Slim
-* Sort Lines
-* Zen
 
 ## NodeJS
 
