@@ -62,6 +62,7 @@ brew cask install imageoptim
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install mailbox
+brew cask install sketch-tool
 brew cask install sketch-toolbox
 brew cask install spotify
 brew cask install vlc
