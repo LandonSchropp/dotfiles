@@ -214,3 +214,14 @@ Next, link up the lolcommits directory to the directory stored in Dropbox.
 ```
 ln -s $HOME/Dropbox/Development/lolcommits $HOME/.lolcommits
 ```
+
+## iBooks
+
+iBooks has an annoying habit of removing books that weren't purchased from the iBooks store. It also doesn't allow the library folder to be symbolically linked so it can be synced across devices.
+
+To get around it, restore the previous books back up and set up iBooks to back up the books to Dropbox.
+
+``` shell
+mv $HOME/Dropbox/Books $HOME/Library/Containers/com.apple.BKAgentService/Data/Documents/iBooks/Books
+ln -s $HOME/Library/Containers/com.apple.BKAgentService/Data/Documents/iBooks/Books $HOME/Dropbox/Books
+```
