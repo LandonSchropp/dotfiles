@@ -53,6 +53,7 @@ Then, install the OS X apps and fonts:
 ```
 brew cask install atom
 brew cask install bartender
+brew cask install calibre
 brew cask install cheatsheet
 brew cask install cyberduck
 brew cask install dropbox
