@@ -70,14 +70,6 @@ brew cask install spotify
 brew cask install vlc
 ```
 
-## Mackup
-
-Once Dropbox has finished downloading all of your files, copy the application settings by running:
-
-```
-mackup restore
-```
-
 ## Git
 
 The XCode Command Line Tools includes Git, but it's not the latest version. To install the current version, run:
@@ -134,6 +126,15 @@ Run the OS X script to set some useful OS X preferences. Restart for all of the 
 
 ```
 source $HOME/.dotfiles/osx.zsh
+```
+
+## Mackup
+
+Once Dropbox has finished downloading all of your files, copy the application settings by running:
+
+```
+brew install mackup
+mackup restore
 ```
 
 ## Ruby
