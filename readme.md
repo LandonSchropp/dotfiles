@@ -78,24 +78,6 @@ The XCode Command Line Tools includes Git, but it's not the latest version. To i
 brew install git
 ```
 
-Next, configure it:
-
-```
-git config --global credential.helper osxkeychain
-git config --global user.name "Landon Schropp"
-git config --global user.email schroppl@gmail.com
-git config --global alias.co checkout
-git config --global alias.a add
-git config --global alias.c commit
-git config --global alias.b branch
-git config --global alias.m merge
-git config --global alias.s status
-git config --global core.editor "atom --wait"
-git config --global color.ui true
-git config --global core.mergeoptions --no-edit
-git config --global push.default current
-```
-
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
 
 ## Dotfiles
