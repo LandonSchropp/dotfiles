@@ -1,2 +1,2 @@
-EXCLUDES="readme.md osx.zsh"
+EXCLUDES="readme.md osx.zsh zshrc zshenv aliases"
 DOTFILES_DIRS="$HOME/.dotfiles $HOME/.thoughtbot_dotfiles"
