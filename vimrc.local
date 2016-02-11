@@ -1,0 +1,108 @@
+" Enable text wrapping
+set textwidth=100
+set formatoptions-=l
+set linebreak
+set breakindent
+set breakindentopt=shift:2
+
+" Remap the default movement keys to work with wrapped lines
+nmap <buffer> <silent> k gk
+nmap <buffer> <silent> j gj
+nmap <buffer> <silent> 0 g0
+nmap <buffer> <silent> ^ g^
+nmap <buffer> <silent> $ g$
+
+" Prevent the cursor from jumping when joining lines
+nnoremap J mzJ`z
+
+" Change the cursor when in insert mode
+if $TERM == 'screen'
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" Ignore case when searching
+set ignorecase
+
+" Make Y's behavior match D and C
+nnoremap Y y$
+
+" Add wildcards for CtrlP and Vim to ignore
+set wildignore+=*/tmp/*,*.zip,*/build/*,*.png,*.gif,*.jpg
+let g:ctrlp_custom_ignore = {
+\  'file': '\v\.(zip,png,gif,jpg)$',
+\  'dir': '\v(build|tmp|log)'
+\ }
+
+" Strip trailing whitespace from files on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Automatically wrap lines when using the movement keys
+set whichwrap+=<,>,h,l,[,]
+
+" Prevent NERD Tree from opening when Vim opens
+let g:NERDTreeHijackNetrw=0
+
+" Automatically read changes to files edited outside of Vim
+set autoread
+
+" Remove the delay when hitting the escape key
+set timeoutlen=2000 ttimeoutlen=50
+
+" Adjust the colors
+highlight ColorColumn ctermbg=233 guibg=#181d34
+
+" Set relative line numbers
+set relativenumber
+
+" Ensure there's always a little space above and below the current line
+let scrolloff=2
+
+" Allow the windows to automatically adjust their width and height.
+" TODO: Fix the error when re-sourcing this file.
+set winwidth&
+set winminwidth&
+set winheight&
+set winminheight&
+
+set winwidth=10
+set winminwidth=10
+set winheight=10
+set winminheight=10
+set winheight=999
+
+" Override the default tComment shortcut for visual mode
+vmap gc gcc <Esc>
+
+" Set up Airline
+let g:airline_powerline_fonts = 1
+let g:airline#themes#custom#palette = {}
+
+let s:N1 = [ '#ffffff', '#ffffff', 0, 15 ]
+let s:N2 = [ '#ffffff', '#ffffff', 0, 13 ]
+let s:N3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let g:airline#themes#custom#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+
+let s:I1 = [ '#ffffff', '#ffffff', 0, 2 ]
+let s:I2 = [ '#ffffff', '#ffffff', 0, 13 ]
+let s:I3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let g:airline#themes#custom#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+let g:airline#themes#custom#palette.replace = copy(g:airline#themes#custom#palette.insert)
+
+let s:V1 = [ '#ffffff', '#ffffff', 0, 3 ]
+let s:V2 = [ '#ffffff', '#ffffff', 0, 13 ]
+let s:V3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let g:airline#themes#custom#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+
+let s:A1 = [ '#ffffff', '#ffffff', 0, 1 ]
+let s:A2 = [ '#ffffff', '#ffffff', 0, 13 ]
+let s:A3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let g:airline#themes#custom#palette.inactive = airline#themes#generate_color_map(s:A1, s:A2, s:A3)
+let g:airline_theme="custom"
+
+" Leader mappings
