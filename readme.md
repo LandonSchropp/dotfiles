@@ -2,7 +2,7 @@
 
 This is a guide to setting up my personal development environment. It's meant get me up and running as fast as possible on a clean install of OS X.
 
-## Prerequisits
+## Prerequisites
 
 Before anything else, run Software Update. Then, install all of your App Store purchases.
 
@@ -12,7 +12,7 @@ In the terminal, run `xcode-select --install` to install the Xcode Command Line 
 
 ## Homebrew
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the install script on the homebrew site and then do:
+[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the install script on the Homebrew site and then do:
 
 ```
 brew doctor
@@ -20,7 +20,7 @@ brew update
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
 ```
 
-The last line sets the `$PATH` environment variable. This only needs to be done for the current shell session. Once you set up Oh My ZSH later on in this guide, this variable will be set whenever the shell starts.
+The last line sets the `$PATH` environment variable. This only needs to be done for the current shell session. Once you set up Oh My Zsh later on in this guide, this variable will be set whenever the shell starts.
 
 Install some handy little command line utilities using Homebrew:
 
@@ -190,7 +190,7 @@ brew install nodejs npm
 
 [PostgreSQL](http://www.postgresql.org/) is an open-source SQL database.
 
-OS X ships with an old version of PostgreSQL preinstalled. To install the newest version, use:
+OS X ships with an old version of PostgreSQL pre-installed. To install the newest version, use:
 
 ```
 brew install postgresql
@@ -215,15 +215,4 @@ Next, link up the lolcommits directory to the directory stored in Dropbox.
 
 ```
 ln -s $HOME/Dropbox/Development/lolcommits $HOME/.lolcommits
-```
-
-## iBooks
-
-iBooks has an annoying habit of removing books that weren't purchased from the iBooks store. It also doesn't allow the library folder to be symbolically linked so it can be synced across devices.
-
-To get around it, restore the previous books back up and set up iBooks to back up the books to Dropbox.
-
-``` shell
-mv $HOME/Dropbox/Books $HOME/Library/Containers/com.apple.BKAgentService/Data/Documents/iBooks/Books
-ln -s $HOME/Library/Containers/com.apple.BKAgentService/Data/Documents/iBooks/Books $HOME/Dropbox/Books
 ```
