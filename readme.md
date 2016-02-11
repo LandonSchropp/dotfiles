@@ -82,10 +82,19 @@ In order to connect with GitHub, you'll need to generate an SSH key. Follow the 
 
 ## Dotfiles
 
-To get all of the settings and script files, clone the [dotfiles](https://github.com/LandonSchropp/dotfiles) repository.
+The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
 
-```
+``` shell
 git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
+git clone git@github.com:thoughtbot/dotfiles.git $HOME/.thoughtbot_dotfiles
+```
+
+Next, install [rcm](https://github.com/thoughtbot/rcm) and link the dotfiles.
+
+``` shell
+brew tap thoughtbot/formulae
+brew install rcm
+env RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
 ## Oh My ZSH
