@@ -1,0 +1,18 @@
+[credential]
+  helper = osxkeychain
+[user]
+  name = Landon Schropp
+  email = schroppl@gmail.com
+[alias]
+  l = log --pretty=colored
+  a = add
+  c = commit
+  b = branch
+  m = merge
+  s = status
+  cl = clone
+  p = push
+  pu = pull
+  r = reset
+[core]
+  mergeoptions = --no-edit
