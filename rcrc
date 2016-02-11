@@ -1,0 +1,2 @@
+EXCLUDES="readme.md osx.zsh"
+DOTFILES_DIRS="$HOME/.dotfiles $HOME/.thoughtbot_dotfiles"
