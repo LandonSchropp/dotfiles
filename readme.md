@@ -121,7 +121,7 @@ source $HOME/.dotfiles/osx.zsh
 
 ## Mackup
 
-Once Dropbox has finished downloading all of your files, copy the application settings by running:
+Mackup is used to back up all of the configuration files that aren't worth copying to this repository, such as tmuxinator's file or application configuration files. Once Dropbox has finished downloading all of your files, copy the application settings by running:
 
 ```
 brew install mackup
