@@ -58,7 +58,10 @@ set timeoutlen=2000 ttimeoutlen=50
 highlight ColorColumn ctermbg=233 guibg=#181d34
 
 " Set relative line numbers
+set number
 set relativenumber
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " Ensure there's always a little space above and below the current line
 let scrolloff=2
