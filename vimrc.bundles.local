@@ -1,5 +1,4 @@
 Plug 'scrooloose/nerdtree'
-Plug 'tomtom/tcomment_vim'
 Plug 'reedes/vim-pencil'
 Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'
