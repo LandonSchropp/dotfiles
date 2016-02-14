@@ -109,3 +109,6 @@ let g:airline#themes#custom#palette.inactive = airline#themes#generate_color_map
 let g:airline_theme="custom"
 
 " Leader mappings
+map <leader>t :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunCurrentSpecFile()<CR>
