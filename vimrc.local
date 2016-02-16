@@ -79,6 +79,9 @@ set winheight=10
 set winminheight=10
 set winheight=999
 
+" Turn off modelines
+set nomodeline
+
 " Override the default tComment shortcut for visual mode
 vmap gc gcc <Esc>
 
