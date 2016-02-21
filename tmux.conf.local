@@ -5,6 +5,11 @@ set-option -g mouse on
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
 bind -n WheelDownPane select-pane -t= \; send-keys -M
 
+# Change the prefix
+unbind-key C-b
+set -g prefix 'C-s'
+bind-key 'C-s' send-prefix
+
 # Set up the default command to ensure the window's name is empty if it's not already defined and
 # to reattach the user namespace to the current shell
 set-option -g default-command 'reattach-to-user-namespace -l $SHELL;'
@@ -12,8 +17,10 @@ set-option -g default-command 'reattach-to-user-namespace -l $SHELL;'
 # Modify the split pane keyboard shortcuts
 unbind %
 unbind '"'
-bind '"' split-window -h
-bind = split-window -v
+unbind c
+bind % split-window -v -c "#{pane_current_path}"
+bind '"' split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
 # Rebind the c shortcut so it creates a window with an empty name
 bind-key c new-window -n ''
@@ -47,6 +54,9 @@ set -g status-left '#[fg=colour0,bg=colour7,bold] #S '
 # Set up the window status
 set -g window-status-format "#[fg=colour0,bg=white] #I: #W "
 set -g window-status-current-format "#[fg=colour13,bg=colour10,noreverse,bold] #I: #W "
+
+# Turn off a setting that causes a memory leak in OS X Terminal
+set -g status-interval 0
 
 # KEYBOARD
 
