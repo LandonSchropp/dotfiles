@@ -42,8 +42,12 @@ let g:ctrlp_custom_ignore = {
 " Strip trailing whitespace from files on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Automatically wrap lines when using the movement keys
+" Include wrapped lines when using the movement keys
 set whichwrap+=<,>,h,l,[,]
+noremap <buffer> <silent> k gk
+noremap <buffer> <silent> j gj
+noremap <buffer> <silent> 0 g0
+noremap <buffer> <silent> $ g$
 
 " Prevent NERD Tree from opening when Vim opens
 let g:NERDTreeHijackNetrw=0
@@ -55,7 +59,24 @@ set autoread
 set timeoutlen=2000 ttimeoutlen=50
 
 " Adjust the colors
-highlight ColorColumn ctermbg=233 guibg=#181d34
+highlight Cursor ctermfg=0 ctermbg=7
+highlight iCursor ctermfg=0 ctermbg=15
+
+highlight Visual ctermfg=0
+highlight WildMenu ctermfg=15
+highlight Folded ctermfg=0
+highlight FoldColumn ctermfg=0
+highlight DiffAdd ctermfg=0
+highlight DiffChange ctermfg=0
+highlight DiffDelete ctermfg=0
+highlight SignColumn ctermfg=0
+highlight SpellBad ctermfg=0
+highlight SpellCap ctermfg=0
+highlight SpellRare ctermfg=0
+highlight PmenuSbar ctermfg=0
+highlight CursorColumn ctermfg=0
+highlight ColorColumn ctermbg=233
+highlight Todo ctermbg=6 ctermfg=10
 
 " Set relative line numbers
 set number
