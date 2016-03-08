@@ -5,13 +5,6 @@ set linebreak
 set breakindent
 set breakindentopt=shift:2
 
-" Remap the default movement keys to work with wrapped lines
-nmap <buffer> <silent> k gk
-nmap <buffer> <silent> j gj
-nmap <buffer> <silent> 0 g0
-nmap <buffer> <silent> ^ g^
-nmap <buffer> <silent> $ g$
-
 " Prevent the cursor from jumping when joining lines
 nnoremap J mzJ`z
 
@@ -44,10 +37,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Include wrapped lines when using the movement keys
 set whichwrap+=<,>,h,l,[,]
-noremap <buffer> <silent> k gk
-noremap <buffer> <silent> j gj
-noremap <buffer> <silent> 0 g0
-noremap <buffer> <silent> $ g$
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+nnoremap <silent> 0 g0
+nnoremap <silent> ^ g^
+nnoremap <silent> $ g$
+
 
 " Allow quick switching between buffers
 nnoremap <silent> gt :bnext<Enter>
