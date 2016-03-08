@@ -20,3 +20,6 @@ export KEYTIMEOUT=1
 # Configure cd paths
 setopt auto_cd
 cdpath=($HOME $HOME/Development)
+
+# Prevent Zsh from exiting the shell when Control-D is pressed
+set -o ignoreeof
