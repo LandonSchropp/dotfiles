@@ -6,7 +6,6 @@ bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft=
 bind -n WheelDownPane select-pane -t= \; send-keys -M
 
 # Change the prefix
-unbind-key C-b
 set -g prefix 'C-s'
 bind-key 'C-s' send-prefix
 
