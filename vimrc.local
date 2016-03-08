@@ -43,6 +43,11 @@ nnoremap <silent> 0 g0
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
+" Allow control plus the movement keys to navigate the user in insert mode
+imap <silent> <C-h> <C-o>h
+imap <silent> <C-j> <C-o>j
+imap <silent> <C-k> <C-o>k
+imap <silent> <C-l> <C-o>l
 
 " Allow quick switching between buffers
 nnoremap <silent> gt :bnext<Enter>
