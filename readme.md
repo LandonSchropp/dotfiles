@@ -97,6 +97,17 @@ brew install rcm
 env RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
+## Neovim
+
+Install Neovim with Homebrew.
+
+``` shell
+brew install neovim
+```
+
+Next, download [vim-plug](https://github.com/junegunn/vim-plug) by following the directions in the
+repo. Then, open up Neovim and run `:PlugInstall` to install the plugins.
+
 ## Oh My ZSH
 
 [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
@@ -207,3 +218,4 @@ Next, link up the lolcommits directory to the directory stored in Dropbox.
 ```
 ln -s $HOME/Dropbox/Development/lolcommits $HOME/.lolcommits
 ```
+
