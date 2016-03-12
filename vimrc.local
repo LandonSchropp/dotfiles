@@ -11,9 +11,15 @@ set ignorecase
 " Add wildcards for CtrlP and Vim to ignore
 set wildignore+=*/tmp/*,*.zip,*/build/*,*.png,*.gif,*.jpg
 let g:ctrlp_custom_ignore = {
-\  'file': '\v\.(zip,png,gif,jpg)$',
-\  'dir': '\v(build|tmp|log)'
-\ }
+  \  'file': '\v\.(zip,png,gif,jpg)$',
+  \  'dir': '\v(build|tmp|log)'
+  \ }
+
+" Make opening a file in a new tab the default in CtrlP.
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': ['<c-t>'],
+  \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+  \ }
 
 " Strip trailing whitespace from files on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -51,9 +57,6 @@ set winheight=999
 
 " Turn off modelines
 set nomodeline
-
-" Enable airline tabline
-let g:airline#extensions#tabline#enabled = 1
 
 source ~/.vimrc.keybindings.local
 source ~/.vimrc.theme.local
