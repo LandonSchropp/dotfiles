@@ -56,7 +56,7 @@ tmux-and-tmuxinator-sessions() {
 }
 
 tmux-sessions-autofill() {
-  reply=$( tmux-sessions )
+  reply=( $( tmux-sessions ) )
 }
 
 tmux-and-tmuxinator-sessions-autofill() {
