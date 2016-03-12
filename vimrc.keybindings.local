@@ -1,0 +1,35 @@
+" Prevent the cursor from jumping when joining lines
+nnoremap J mzJ`z
+
+" Make Y's behavior match D and C
+nnoremap Y y$
+
+" Include wrapped lines when using the movement keys
+set whichwrap+=<,>,h,l,[,]
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+nnoremap <silent> 0 g0
+nnoremap <silent> ^ g^
+nnoremap <silent> $ g$
+
+" Allow control plus the movement keys to navigate the user in insert mode
+imap <silent> <C-h> <C-o>h
+imap <silent> <C-j> <C-o>j
+imap <silent> <C-k> <C-o>k
+imap <silent> <C-l> <C-o>l
+
+" Allow quick switching between buffers
+nnoremap <silent> gt :bnext<Enter>
+nnoremap <silent> gT :bprevious<Enter>
+nnoremap <silent> <C-b> :bprevious<Enter>
+nnoremap <silent> <C-n> :bnext<Enter>
+nnoremap <silent> <C-q> :bd<Enter>
+
+" Override the default tComment shortcut for visual mode
+vmap gc gcc <Esc>
+
+" Leader mappings
+map <leader>t :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunCurrentSpecFile()<CR>
+map <leader>ag :Ag<Space>
