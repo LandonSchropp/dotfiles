@@ -26,3 +26,4 @@ map <leader>t :call RunNearestSpec()<CR>
 map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunCurrentSpecFile()<CR>
 map <leader>ag :Ag<Space>
+map <leader>nt :NERDTreeToggle<CR>

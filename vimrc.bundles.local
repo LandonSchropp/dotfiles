@@ -1,4 +1,4 @@
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'reedes/vim-pencil'
 Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'

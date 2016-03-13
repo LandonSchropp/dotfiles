@@ -24,9 +24,6 @@ let g:ctrlp_prompt_mappings = {
 " Strip trailing whitespace from files on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Prevent NERD Tree from opening when Vim opens
-let g:NERDTreeHijackNetrw=0
-
 " Automatically read changes to files edited outside of Vim
 set autoread
 
