@@ -57,3 +57,7 @@ set nomodeline
 
 source ~/.vimrc.keybindings.local
 source ~/.vimrc.theme.local
+
+" Ignore spell checking for camelcased items
+" Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
+autocmd Syntax * syn match CamelCase "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l\l*\)\%(\u\l*\)\{1,}\>" transparent containedin=.*Comment.*,.*String.*,VimwikiLink contains=@NoSpell contained
