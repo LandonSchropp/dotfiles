@@ -13,6 +13,9 @@ else
   endif
 endif
 
+" Set the colorscheme
+colorscheme base16-ateliersulphurpool
+
 " Adjust the colors
 highlight Cursor ctermfg=0 ctermbg=7
 highlight iCursor ctermfg=0 ctermbg=15
