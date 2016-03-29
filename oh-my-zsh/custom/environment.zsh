@@ -7,9 +7,8 @@ export LOLCOMMITS_DELAY=1
 # start up rbenv
 eval "$(rbenv init -)"
 
-# set up the local bin path
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH=./bin:$PATH
+# set up the local bin paths
+export PATH="./bin:./node_modules/.bin:/usr/local/heroku/bin:$PATH"
 
 # set up andoird path
 export ANDROID_HOME=/usr/local/opt/android-sdk
