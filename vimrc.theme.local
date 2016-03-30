@@ -26,6 +26,7 @@ highlight FoldColumn ctermfg=0
 highlight DiffAdd ctermfg=0
 highlight DiffChange ctermfg=0
 highlight DiffDelete ctermfg=0
+highlight Search ctermbg=13
 highlight SignColumn ctermfg=0
 highlight SpellBad ctermfg=0
 highlight SpellCap ctermfg=0
