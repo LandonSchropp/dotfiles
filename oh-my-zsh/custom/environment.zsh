@@ -1,5 +1,5 @@
 # set the default text editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # set the lolcommits delay
 export LOLCOMMITS_DELAY=1
