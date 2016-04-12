@@ -1,16 +1,20 @@
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'reedes/vim-pencil'
-Plug 'digitaltoad/vim-jade'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'moll/vim-bbye'
 Plug 'Raimondi/delimitMate'
-Plug 'vim-airline/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mattn/emmet-vim'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'benekastah/neomake'
+
+" Syntax Plugins
+Plug 'reedes/vim-pencil'
+Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'elzr/vim-json'
+
+" Themes
+Plug 'vim-airline/vim-airline'
 Plug 'zeis/vim-kolor'
 Plug 'atelierbram/vim-colors_atelier-schemes'
