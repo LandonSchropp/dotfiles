@@ -18,3 +18,6 @@ Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'zeis/vim-kolor'
 Plug 'atelierbram/vim-colors_atelier-schemes'
+
+" Prevent Syntastic from being run (in favor of Neomake)
+Plug 'scrooloose/syntastic', { 'on': [] }
