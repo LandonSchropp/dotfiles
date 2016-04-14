@@ -33,7 +33,7 @@ highlight SpellCap ctermfg=0
 highlight SpellRare ctermfg=0
 highlight PmenuSbar ctermfg=0
 highlight CursorColumn ctermfg=0
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=13
 highlight Todo ctermbg=6 ctermfg=10
 
 " Adjust warning and error colors
