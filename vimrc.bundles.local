@@ -13,6 +13,7 @@ Plug 'reedes/vim-pencil'
 Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
+Plug 'ap/vim-css-color'
 
 " Themes
 Plug 'vim-airline/vim-airline'
