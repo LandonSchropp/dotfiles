@@ -22,3 +22,7 @@ cdpath=($HOME $HOME/Development)
 
 # Prevent Zsh from exiting the shell when Control-D is pressed
 set -o ignoreeof
+
+# Enable source highlighting in less
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "

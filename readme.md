@@ -29,6 +29,7 @@ brew install android-sdk
 brew install gnu-sed
 brew install imagemagick
 brew install rename
+brew install source-highlight
 brew install the_silver_searcher
 brew install tree
 brew install wget
