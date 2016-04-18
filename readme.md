@@ -47,7 +47,7 @@ Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions) 
 ```
 brew tap caskroom/versions
 brew tap caskroom/fonts
-````
+```
 
 Then, install the OS X apps and fonts:
 
@@ -122,6 +122,15 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 ```
 
 In order to property change the shell, restart the system.
+
+## Italics
+
+To enable italic text in the terminal, you need to register italics with the TERM database.
+
+```
+tic $HOME/.dotfiles/xterm-256color-italic.terminfo
+tic $HOME/.dotfiles/tmux-256color-italic.terminfo
+```
 
 ## OS X
 
