@@ -1,6 +1,5 @@
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'moll/vim-bbye'
-Plug 'Raimondi/delimitMate'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mattn/emmet-vim'
@@ -8,12 +7,18 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 
+" Editing
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise'
+Plug 'alvan/vim-closetag'
+
 " Syntax Plugins
 Plug 'reedes/vim-pencil'
 Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'
 
 " Themes
 Plug 'vim-airline/vim-airline'
