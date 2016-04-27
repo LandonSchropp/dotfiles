@@ -217,6 +217,12 @@ cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxc
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
+Depending on your application, you may also have to create the traditional `postgres` role:
+
+```
+/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/bin/createuser -s postgres
+```
+
 ## lolcommits
 
 [lolcommits](https://github.com/mroth/lolcommits) is a little utility that takes pictures of you when you commit code. Install it by running `gem install lolcommits`. Then, turn off embedded commit messages by running `lolcommits --config`, selecting `loltext` and setting enabled to `false`.
