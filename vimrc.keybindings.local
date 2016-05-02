@@ -22,8 +22,21 @@ imap <silent> <C-l> <C-o>l
 vmap gc gcc <Esc>
 
 " Leader mappings
-map <leader>t :call RunNearestSpec()<CR>
-map <leader>l :call RunLastSpec()<CR>
-map <leader>a :call RunCurrentSpecFile()<CR>
+
+" Run the currently selected spec
+map <leader>tt :call RunNearestSpec()<CR>
+
+" Run the last spec
+map <leader>tl :call RunLastSpec()<CR>
+
+" Run the current spec file
+map <leader>ta :call RunCurrentSpecFile()<CR>
+
+" Sort the currently selected lines
+map <leader>abc :sort<CR>
+
+" Search the files
 map <leader>ag :Ag<Space>
+
+" Show/hide NERDTree
 map <leader>nt :NERDTreeToggle<CR>
