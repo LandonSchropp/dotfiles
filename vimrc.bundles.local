@@ -11,6 +11,8 @@ Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'alvan/vim-closetag'
+Plug 'easymotion/vim-easymotion'
+Plug 'danro/rename.vim'
 
 " Syntax Plugins
 Plug 'reedes/vim-pencil'

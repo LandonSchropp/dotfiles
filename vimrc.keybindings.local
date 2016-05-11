@@ -40,3 +40,6 @@ map <leader>ag :Ag<Space>
 
 " Show/hide NERDTree
 map <leader>nt :NERDTreeToggle<CR>
+
+" Remap EasyMotion
+map \ <Plug>(easymotion-prefix)
