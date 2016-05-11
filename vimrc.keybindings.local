@@ -12,34 +12,37 @@ nnoremap <silent> 0 g0
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
-" Allow control plus the movement keys to navigate the user in insert mode
+" Allow control plus the movement keys to navigate the user in insert mode and normal mode
 imap <silent> <C-h> <C-o>h
 imap <silent> <C-j> <C-o>j
 imap <silent> <C-k> <C-o>k
 imap <silent> <C-l> <C-o>l
 
 " Override the default tComment shortcut for visual mode
-vmap gc gcc <Esc>
+vnoremap gc gcc <Esc>
 
 " Leader mappings
 
 " Run the currently selected spec
-map <leader>tt :call RunNearestSpec()<CR>
+nnoremap <leader>tt :call RunNearestSpec()<CR>
 
 " Run the last spec
-map <leader>tl :call RunLastSpec()<CR>
+nnoremap <leader>tl :call RunLastSpec()<CR>
 
 " Run the current spec file
-map <leader>ta :call RunCurrentSpecFile()<CR>
+nnoremap <leader>ta :call RunCurrentSpecFile()<CR>
 
 " Sort the currently selected lines
-map <leader>abc :sort<CR>
+nnoremap <leader>abc :sort<CR>
 
 " Search the files
-map <leader>ag :Ag<Space>
+nnoremap <leader>ag :Ag<Space>
 
 " Show/hide NERDTree
-map <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 " Remap EasyMotion
-map \ <Plug>(easymotion-prefix)
+nnoremap \ <Plug>(easymotion-prefix)
+
+" Remap the paste key to set nopaste mode
+nnoremap <M-p> :set paste<CR>o<esc>"*]p:set nopaste<cr>
