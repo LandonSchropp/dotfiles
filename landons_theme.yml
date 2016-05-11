@@ -1,0 +1,19 @@
+# My personal Vim theem, based on Atelier Sulphurpool
+scheme: "Landon's Theme"
+author: "Landon Schropp (http://landonschropp.com)"
+base00: "202746"
+base01: "374375"
+base02: "5c689b"
+base03: "6b7394"
+base04: "898ea4"
+base05: "a4abc4"
+base06: "dfe2f1"
+base07: "f5f7ff"
+base08: "c94c60" # Red
+base09: "c76b29" # Orange
+base0A: "c08b30" # Yellow
+base0B: "5fb391" # Green
+base0C: "38bfef" # Aqua
+base0D: "4093d6" # Blue
+base0E: "6679cc" # Purple
+base0F: "aa5778" # Brown

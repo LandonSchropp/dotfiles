@@ -14,11 +14,22 @@ else
 endif
 
 " Set the colorscheme
+" TODO: Clean up the way the theme is sourced.
 colorscheme base16-ateliersulphurpool
+so ~/.nvim/landons_theme.vim
+
+" Enable truecolor
+" if has("nvim")
+"   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" endif
+
+" Highlight the current line
+set cursorline
 
 " Adjust the colors
 highlight Comment cterm=italic
 highlight Cursor ctermfg=0 ctermbg=7
+highlight CursorLine  ctermbg=13
 highlight iCursor ctermfg=0 ctermbg=15
 highlight Visual ctermfg=0
 highlight WildMenu ctermfg=15
@@ -46,24 +57,24 @@ highlight Warning ctermbg=3 ctermfg=13
 let g:airline_powerline_fonts = 1
 let g:airline#themes#custom#palette = {}
 
-let s:N1 = [ '#ffffff', '#ffffff', 0, 15 ]
-let s:N2 = [ '#ffffff', '#ffffff', 0, 13 ]
-let s:N3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let s:N1 = [ '#202746', '#f5f7ff', 0, 15 ]
+let s:N2 = [ '#202746', '#dfe2f1', 0, 13 ]
+let s:N3 = [ '#202746', '#a4abc4', 0, 7 ]
 let g:airline#themes#custom#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
-let s:I1 = [ '#ffffff', '#ffffff', 0, 2 ]
-let s:I2 = [ '#ffffff', '#ffffff', 0, 13 ]
-let s:I3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let s:I1 = [ '#202746', '#5fb391', 0, 2 ]
+let s:I2 = [ '#202746', '#dfe2f1', 0, 13 ]
+let s:I3 = [ '#202746', '#a4abc4', 0, 7 ]
 let g:airline#themes#custom#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#custom#palette.replace = copy(g:airline#themes#custom#palette.insert)
 
-let s:V1 = [ '#ffffff', '#ffffff', 0, 3 ]
-let s:V2 = [ '#ffffff', '#ffffff', 0, 13 ]
-let s:V3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let s:V1 = [ '#202746', '#c08b30', 0, 3 ]
+let s:V2 = [ '#202746', '#dfe2f1', 0, 13 ]
+let s:V3 = [ '#202746', '#a4abc4', 0, 7 ]
 let g:airline#themes#custom#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:A1 = [ '#ffffff', '#ffffff', 0, 1 ]
-let s:A2 = [ '#ffffff', '#ffffff', 0, 13 ]
-let s:A3 = [ '#ffffff', '#ffffff', 0, 7 ]
+let s:A1 = [ '#202746', '#c94c60', 0, 1 ]
+let s:A2 = [ '#202746', '#dfe2f1', 0, 13 ]
+let s:A3 = [ '#202746', '#a4abc4', 0, 7 ]
 let g:airline#themes#custom#palette.inactive = airline#themes#generate_color_map(s:A1, s:A2, s:A3)
 let g:airline_theme="custom"
