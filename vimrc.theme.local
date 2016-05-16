@@ -46,12 +46,13 @@ highlight SpellRare ctermfg=0
 highlight PmenuSbar ctermfg=0
 highlight CursorColumn ctermfg=0
 highlight ColorColumn ctermbg=13
-highlight Todo ctermbg=6 ctermfg=10
+highlight Todo ctermbg=15 ctermfg=6 cterm=reverse
 highlight Italic cterm=italic
 
 " Adjust warning and error colors
-highlight Error ctermbg=1 ctermfg=13
-highlight Warning ctermbg=3 ctermfg=13
+" NOTE: The reverse attribute fixes issues where the cursorline overrides the background colors.
+highlight Error ctermbg=13 ctermfg=1 cterm=reverse
+highlight Warning ctermbg=13 ctermfg=3 cterm=reverse
 
 " Set up Airline
 let g:airline_powerline_fonts = 1
