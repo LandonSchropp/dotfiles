@@ -24,3 +24,6 @@ autocmd Syntax * syn match CamelCase "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l
 
 " Set the filetypes for extensions Vim doesn't recognize by default
 autocmd BufRead,BufNewFile *.njs set filetype=jinja
+
+" Always use two spaces for tabs
+set tabstop=2 shiftwidth=2 expandtab
