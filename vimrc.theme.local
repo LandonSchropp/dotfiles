@@ -16,9 +16,12 @@ endif
 " Set the colorscheme
 " TODO: Clean up the way the theme is sourced.
 colorscheme base16-ateliersulphurpool
-so ~/.nvim/landons_theme.vim
+so ~/.config/nvim/landons_theme.vim
+" colorscheme base16-landons-theme
 
 " Enable truecolor
+" TODO: Find a way to reuse the color variables defined in landons_theme.yml without having to
+" hardcode the values.
 " if has("nvim")
 "   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " endif
@@ -27,7 +30,7 @@ so ~/.nvim/landons_theme.vim
 set cursorline
 
 " Adjust the colors
-highlight Comment cterm=italic
+highlight Comment cterm=italic gui=italic
 highlight Cursor ctermfg=0 ctermbg=7
 highlight CursorLine  ctermbg=13
 highlight iCursor ctermfg=0 ctermbg=15
