@@ -22,7 +22,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " Strip trailing whitespace from files on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e|norm!``
 
 " Automatically read changes to files edited outside of Vim
 set autoread
