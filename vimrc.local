@@ -1,6 +1,6 @@
 " Enable text wrapping
 set textwidth=100
-set formatoptions-=l
+set formatoptions-=lt
 set linebreak
 set breakindent
 set breakindentopt=shift:2
