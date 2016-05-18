@@ -13,6 +13,7 @@ Plug 'tpope/vim-endwise'
 Plug 'alvan/vim-closetag'
 Plug 'easymotion/vim-easymotion'
 Plug 'danro/rename.vim'
+Plug 'wellle/targets.vim'
 
 " Syntax Plugins
 Plug 'reedes/vim-pencil'
