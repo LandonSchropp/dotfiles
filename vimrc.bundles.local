@@ -14,6 +14,7 @@ Plug 'alvan/vim-closetag'
 Plug 'easymotion/vim-easymotion'
 Plug 'danro/rename.vim'
 Plug 'wellle/targets.vim'
+Plug 'roman/golden-ratio'
 
 " Syntax Plugins
 Plug 'reedes/vim-pencil'

@@ -39,19 +39,6 @@ autocmd InsertLeave * :set relativenumber
 " Ensure there's always a little space above and below the current line
 let scrolloff=2
 
-" Allow the windows to automatically adjust their width and height.
-" TODO: Fix the error when re-sourcing this file.
-set winwidth&
-set winminwidth&
-set winheight&
-set winminheight&
-
-set winwidth=10
-set winminwidth=10
-set winheight=10
-set winminheight=10
-set winheight=999
-
 " Turn off modelines
 set nomodeline
 
