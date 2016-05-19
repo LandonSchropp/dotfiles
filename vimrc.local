@@ -62,6 +62,9 @@ set nomodeline
 " Wrap Git commit messages at 72 characters.
 autocmd FileType gitcommit set textwidth=72
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
 source ~/.vimrc.keybindings.local
 source ~/.vimrc.theme.local
 source ~/.vimrc.syntax.local

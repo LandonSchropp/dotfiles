@@ -40,6 +40,12 @@ Plug 'easymotion/vim-easymotion'
 " Provides new motions to target when running operators
 Plug 'wellle/targets.vim'
 
+" Better auto-completion
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
 
 
 " SYNTAX PLUGINS

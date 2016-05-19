@@ -109,6 +109,13 @@ brew install neovim
 Next, download [vim-plug](https://github.com/junegunn/vim-plug) by following the directions in the
 repo. Then, open up Neovim and run `:PlugInstall` to install the plugins.
 
+Finally, some of the plugins require Python 3.
+
+``` shell
+brew install python3
+pip3 install neovim
+```
+
 ## Oh My ZSH
 
 [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
