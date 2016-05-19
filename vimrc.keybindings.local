@@ -12,11 +12,19 @@ nnoremap <silent> 0 g0
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
+" TODO: Don't include wrapped lines when jumping multiples (so relative line numbers work
+
 " Allow control plus the movement keys to navigate the user in insert mode and normal mode
 imap <silent> <C-h> <C-o>h
 imap <silent> <C-j> <C-o>j
 imap <silent> <C-k> <C-o>k
 imap <silent> <C-l> <C-o>l
+
+" BUG FIX: iTerm2 incorrectly interprets <C-h> as a backspace. To work around that issue, I'm
+" mapping backspace to the same action as <C-h>.
+if has('nvim')
+  nnoremap <bs> <C-w>h
+endif
 
 " Override the default tComment shortcut for visual mode
 vnoremap gc gcc <Esc>
