@@ -50,7 +50,7 @@ nnoremap <silent> <leader>ag :Ag<Space>
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Remap EasyMotion
-nnoremap <silent> \ <Plug>(easymotion-prefix)
+nmap \ <Plug>(easymotion-prefix)
 
 " Remap the paste key to set nopaste mode
 nnoremap <silent> <M-p> :set paste<CR>o<esc>"*]p:set nopaste<cr>
