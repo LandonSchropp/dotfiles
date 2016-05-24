@@ -44,7 +44,7 @@ nnoremap <silent> <leader>ta :call RunCurrentSpecFile()<CR>
 nnoremap <silent> <leader>abc :sort<CR>
 
 " Search the files
-nnoremap <silent> <leader>ag :Ag<Space>
+nnoremap <leader>ag :Ag<Space>
 
 " Show/hide NERDTree
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
