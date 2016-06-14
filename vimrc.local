@@ -1,9 +1,14 @@
 " Enable text wrapping
 set textwidth=100
-set formatoptions-=lt
 set linebreak
 set breakindent
 set breakindentopt=shift:2
+
+" NOTE: This has to be run with autocmd in order to override the ftplugins
+" l: Automatically wraps long lines in insert mode
+" t: Autowrap text using textwidth
+" r: Automatically continue comments when hitting enter
+autocmd BufNewFile,BufRead * setlocal formatoptions-=ltr
 
 " Ignore case when searching
 set ignorecase
