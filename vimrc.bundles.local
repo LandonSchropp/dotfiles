@@ -16,7 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 
 " Quickly rename files.
-Plug 'danro/rename.vim'
+Plug 'tpope/vim-eunuch'
 
 " Automatically resize open splits so the current is the biggest
 Plug 'roman/golden-ratio'
