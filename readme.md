@@ -26,6 +26,7 @@ Install some handy little command line utilities using Homebrew:
 
 ```
 brew install android-sdk
+brew install diff-so-fancy
 brew install gnu-sed
 brew install imagemagick
 brew install rename

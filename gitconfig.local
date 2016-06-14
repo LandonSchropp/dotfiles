@@ -16,3 +16,5 @@
   r = reset
 [core]
   mergeoptions = --no-edit
+  pager = diff-so-fancy | less --tabs=4 -R
+
