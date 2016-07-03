@@ -70,8 +70,10 @@ autocmd FileType gitcommit set textwidth=72
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
-" Update the file types for the close tag plugin
+" Update the file types for the close tag plugin and prevent HTML tags from being expanded in those
+" files in delimitMate.
 let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx"
+autocmd FileType html,erb,jsx,jade,pug let b:delimitMate_matchpairs = '(:),{:},[:]'
 
 source ~/.vimrc.keybindings.local
 source ~/.vimrc.theme.local
