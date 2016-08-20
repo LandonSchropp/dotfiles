@@ -231,16 +231,3 @@ Depending on your application, you may also have to create the traditional `post
 ```
 /usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/bin/createuser -s postgres
 ```
-
-## lolcommits
-
-[lolcommits](https://github.com/mroth/lolcommits) is a little utility that takes pictures of you when you commit code. Install it by running `gem install lolcommits`. Then, turn off embedded commit messages by running `lolcommits --config`, selecting `loltext` and setting enabled to `false`.
-
-Then, in each repository you'd like to enable it, run `lolcommits --enable`.
-
-Next, link up the lolcommits directory to the directory stored in Dropbox.
-
-```
-ln -s $HOME/Dropbox/Development/lolcommits $HOME/.lolcommits
-```
-

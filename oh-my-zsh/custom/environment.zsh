@@ -1,9 +1,6 @@
 # set the default text editor
 export EDITOR="nvim"
 
-# set the lolcommits delay
-export LOLCOMMITS_DELAY=1
-
 # start up rbenv
 eval "$(rbenv init -)"
 
