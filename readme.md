@@ -29,6 +29,7 @@ brew install android-sdk
 brew install diff-so-fancy
 brew install gnu-sed
 brew install imagemagick
+brew install jq
 brew install rename
 brew install source-highlight
 brew install the_silver_searcher
