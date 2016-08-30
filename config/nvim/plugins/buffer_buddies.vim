@@ -10,11 +10,9 @@ let g:buddy_buffer_substitutions = [
 " Makes sure the window is always split into the correct layout.
 function! EnsureProperLayout()
 
-  let l:number_of_windows = tabpagewinnr(tabpagenr(), '$')
-
   " Open a split, if necessary
   " TODO: Make this smart enough to ignore non-editable windows (e.g. help)
-  if l:number_of_windows < 2
+  if tabpagewinnr(tabpagenr(), '$') < 2
     vsp
   endif
 endfunction
