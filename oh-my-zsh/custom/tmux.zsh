@@ -2,6 +2,12 @@
 # is created and attached with the argument as its name.
 ta() {
 
+  # make sure tmuxinator is installed
+  if ! command -v tmuxinator 2>/dev/null; then
+    echo "Tmuxinator must be installed!"
+    return 1
+  fi
+
   # ensure the name of a session was provided
   if [[ $# -eq 0 ]]; then
     echo "You must provide the name of the session to create or attach."
