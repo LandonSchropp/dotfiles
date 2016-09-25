@@ -1,10 +1,17 @@
 set textwidth=100          " The maximum widht of the text being inserted
 set linebreak              " Wrap characters at the breakat point rather than the edge of the screen
 set breakindent            " When text wraps, it should continue to be indented
-set breakindentopt=shift:2 " The number of chracters to shift when indenting
 set ruler                  " Always show the ruler
 set autowrite              " Automatically :write before running commands
 set showcmd                " Display incomplete commands
+set nojoinspaces           " Only join with one space after punctuation
+
+" Use soft tabs (2 spaces)
+set tabstop=2              " The number of spaces a tab counts for
+set shiftwidth=2           " The number of spaces to use for indentation step
+set shiftround             " Round to multiples of the shift width
+set expandtab              " Use the correct number of spaces to insert a tab in insert mode
+set breakindentopt=shift:2 " Indent by two spaces when wrapping
 
 " NOTE: This has to be run with autocmd in order to override the ftplugins
 " l: Automatically wraps long lines in insert mode
@@ -56,6 +63,7 @@ set timeoutlen=2000 ttimeoutlen=50
 
 " Set relative line numbers
 set number
+set numberwidth=5
 set relativenumber
 autocmd InsertEnter * :set number norelativenumber
 autocmd InsertLeave * :set relativenumber
