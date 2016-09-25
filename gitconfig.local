@@ -14,6 +14,7 @@
   p = push
   pu = pull
   r = reset
+  cp = cherry-pick
 [core]
   mergeoptions = --no-edit
   pager = diff-so-fancy | less --tabs=4 -R
