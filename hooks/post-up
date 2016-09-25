@@ -12,3 +12,6 @@ nvim -u "$HOME"/.config/nvim/plugins.vim +PlugInstall +PlugClean! +qa
 # Remove the Thoughtbot dotfiles hooks
 # https://github.com/thoughtbot/rcm/issues/187
 rm -rf $HOME/.thoughtbot_dotfiles/hooks
+
+# Symbolically link the system dictionary to the vim spellfile
+ln -s $HOME/Library/Spelling/LocalDictionary $HOME/.vim-spell-en.utf-8.add

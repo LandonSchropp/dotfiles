@@ -108,12 +108,6 @@ Install Neovim with Homebrew.
 brew install neovim
 ```
 
-Symbolically link the OS X user dictionary so it's shared with Neovim.
-
-```
-ln -s $HOME/Library/Spelling/LocalDictionary $HOME/.vim-spell-en.utf-8.add
-```
-
 Next, download [vim-plug](https://github.com/junegunn/vim-plug) by following the directions in the
 repo. Then, open up Neovim and run `:PlugInstall` to install the plugins.
 
