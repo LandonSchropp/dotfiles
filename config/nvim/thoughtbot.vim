@@ -43,9 +43,6 @@ if executable('ag')
   endif
 endif
 
-" Make it obvious where 80 characters is
-set colorcolumn=+1
-
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning

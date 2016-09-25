@@ -3,6 +3,7 @@ set textwidth=100          " The maximum width of the text being inserted
 set linebreak              " Wrap characters at the breakat point rather than the edge of the screen
 set breakindent            " When text wraps, it should continue to be indented
 set ruler                  " Always show the ruler
+set colorcolumn=+1         " Highlight the line after the textwidth
 
 " Search
 set ignorecase             " Ignore case when searching
