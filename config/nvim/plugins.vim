@@ -20,7 +20,7 @@ Plug 'airblade/vim-gitgutter'
 " Linting
 Plug 'benekastah/neomake'
 
-" Quickly rename files.
+" Quickly run Unix commands.
 Plug 'tpope/vim-eunuch'
 
 " Automatically resize open splits so the current is the biggest
