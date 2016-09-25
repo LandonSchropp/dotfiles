@@ -12,11 +12,6 @@ augroup vimrcEx
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 augroup END
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
