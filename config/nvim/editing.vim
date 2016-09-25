@@ -34,6 +34,12 @@ set splitright             " Open vertical splits to the right of the current pa
 " r: Automatically continue comments when hitting enter
 autocmd BufNewFile,BufRead * setlocal formatoptions-=ltr
 
+" Use the_silver_searcher in CtrlP for listing files.
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+" the_silver_searcher is fast enough that CtrlP doesn't need to cache the files
+let g:ctrlp_use_caching = 0
+
 " Add wildcards for CtrlP and Vim to ignore
 set wildignore+=*/tmp/*,*.zip,*/build/*,*.png,*.gif,*.jpg
 let g:ctrlp_custom_ignore = {
@@ -46,6 +52,10 @@ let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': ['<c-t>'],
   \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
   \ }
+
+" Use the_silver_searcher over grep. I'm only setting this in case a plugin or an internal command
+" uses grep.
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Strip trailing whitespace from files on save
 autocmd BufWritePre * call <SID>StripWhitespace()
