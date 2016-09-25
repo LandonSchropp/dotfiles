@@ -32,3 +32,6 @@ set tabstop=2 shiftwidth=2 expandtab
 " When the type of shell script is /bin/sh, assume a POSIX-compatible shell for syntax highlighting
 " purposes.
 let g:is_posix = 1
+
+" Display extra whitespace characters
+set list listchars=tab:»·,trail:·,nbsp:·
