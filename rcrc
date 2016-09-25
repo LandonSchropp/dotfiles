@@ -1,2 +1,16 @@
-EXCLUDES="readme.md osx.zsh zshrc zshenv aliases landons_theme.yml"
+EXCLUDES=(
+  "$HOME/.thoughtbot_dotfiles:README.md"
+  "$HOME/.thoughtbot_dotfiles:LICENSE"
+  "$HOME/.thoughtbot_dotfiles:aliases"
+  "$HOME/.thoughtbot_dotfiles:zsh*"
+  "$HOME/.thoughtbot_dotfiles:*vim*"
+  "$HOME/.thoughtbot_dotfiles:hooks/*"
+  "readme.md"
+  "osx.zsh"
+  "landons_theme.yml"
+  "rcrc"
+  "xterm"
+)
+
+EXCLUDES=${EXCLUDES[@]}
 DOTFILES_DIRS="$HOME/.dotfiles $HOME/.thoughtbot_dotfiles"
