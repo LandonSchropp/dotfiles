@@ -21,6 +21,9 @@ Plug 'tpope/vim-eunuch'
 " Automatically resize open splits so the current is the biggest
 Plug 'roman/golden-ratio'
 
+" Better buffer deletion handling.
+Plug 'moll/vim-bbye'
+
 
 
 " TEXT EDITING
