@@ -1,4 +1,5 @@
 source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/thoughtbot.vim
 source ~/.config/nvim/editing.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/syntax.vim
