@@ -15,6 +15,10 @@ nnoremap <silent> $ g$
 " TODO: Don't include wrapped lines when jumping multiples (so relative line numbers work
 
 " Allow control plus the movement keys to navigate the user in insert mode and normal mode
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 imap <silent> <C-h> <C-o>h
 imap <silent> <C-j> <C-o>j
 imap <silent> <C-k> <C-o>k
@@ -49,6 +53,13 @@ nnoremap <leader>ag :Ag<Space>
 
 " Show/hide NERDTree
 nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
+
+" vim-test mappings
+nnoremap <silent> <Leader>tf :TestFile<CR>
+nnoremap <silent> <Leader>tt :TestNearest<CR>
+nnoremap <silent> <Leader>tl :TestLast<CR>
+nnoremap <silent> <Leader>ta :TestSuite<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
 
 " Remap EasyMotion
 nmap \ <Plug>(easymotion-prefix)
