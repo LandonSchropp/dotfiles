@@ -61,6 +61,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
