@@ -30,6 +30,7 @@ endif
 vnoremap gc gcc <Esc>
 
 " Leader mappings
+let mapleader = " "
 
 " Run the currently selected spec
 nnoremap <silent> <leader>tt :call RunNearestSpec()<CR>
