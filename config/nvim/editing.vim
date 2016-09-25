@@ -1,8 +1,10 @@
-" Enable text wrapping
-set textwidth=100
-set linebreak
-set breakindent
-set breakindentopt=shift:2
+set textwidth=100          " The maximum widht of the text being inserted
+set linebreak              " Wrap characters at the breakat point rather than the edge of the screen
+set breakindent            " When text wraps, it should continue to be indented
+set breakindentopt=shift:2 " The number of chracters to shift when indenting
+set ruler                  " Always show the ruler
+set autowrite              " Automatically :write before running commands
+set showcmd                " Display incomplete commands
 
 " NOTE: This has to be run with autocmd in order to override the ftplugins
 " l: Automatically wraps long lines in insert mode
