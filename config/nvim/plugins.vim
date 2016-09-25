@@ -94,6 +94,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
+Plug 'othree/html5.vim'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'

@@ -25,6 +25,8 @@ set nojoinspaces           " Only join with one space after punctuation
 set nomodeline             " Turn off modelines
 set autoread               " Automatically read changes to files edited outside of Vim
 set scrolloff=2            " Ensure there's always a little space above and below the current line
+set splitbelow             " Open horizontal splits below the current pane
+set splitright             " Open vertical splits to the right of the current pane
 
 " NOTE: This has to be run with autocmd in order to override the ftplugins
 " l: Automatically wraps long lines in insert mode
