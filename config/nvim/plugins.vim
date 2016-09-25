@@ -1,4 +1,9 @@
+call plug#begin('~/.vim/bundle')
+
 " GENERAL
+
+" Fast file switching
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Navigatable file tree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -23,6 +28,21 @@ Plug 'roman/golden-ratio'
 
 " Better buffer deletion handling.
 Plug 'moll/vim-bbye'
+
+" Run tests on the fly
+Plug 'janko-m/vim-test'
+
+" Automatically create any non-existent directories before writing the buffer
+Plug 'pbrisbin/vim-mkdir'
+
+" Tools for editing Rails projects
+Plug 'tpope/vim-rails'
+
+" Enable support for the repeat command with other plugins
+Plug 'tpope/vim-repeat'
+
+" Extra commands for surrounding text
+Plug 'tpope/vim-surround'
 
 
 
@@ -49,6 +69,13 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
+" Automatically add end in Ruby
+Plug 'tpope/vim-endwise'
+
+" Quick commenting
+Plug 'vim-scripts/tComment'
+
+
 
 
 " SYNTAX PLUGINS
@@ -62,6 +89,11 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go'
+Plug 'kchmck/vim-coffee-script'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-bundler'
+Plug 'vim-ruby/vim-ruby'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
@@ -77,9 +109,4 @@ Plug 'vim-airline/vim-airline'
 Plug 'zeis/vim-kolor'
 Plug 'atelierbram/vim-colors_atelier-schemes'
 
-
-
-" OVERRIDES
-
-" Prevent Syntastic from running (in favor of Neomake)
-Plug 'scrooloose/syntastic', { 'on': [] }
+call plug#end()

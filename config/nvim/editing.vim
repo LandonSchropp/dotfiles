@@ -74,7 +74,3 @@ let g:deoplete#enable_at_startup = 1
 " files in delimitMate.
 let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx"
 autocmd FileType html,erb,jsx,jade,pug let b:delimitMate_matchpairs = '(:),{:},[:]'
-
-source ~/.vimrc.keybindings.local
-source ~/.vimrc.theme.local
-source ~/.vimrc.syntax.local
