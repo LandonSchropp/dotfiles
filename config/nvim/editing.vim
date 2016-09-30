@@ -20,6 +20,8 @@ set numberwidth=5          " Make room for line numbers up to 9999
 set relativenumber         " Use relative line numbers
 
 " Other standard editor configuration
+set noswapfile             " Don't create swapfiles.
+set nowritebackup          " Don't create backups before overwriting files.
 set autowrite              " Automatically :write before running commands
 set nojoinspaces           " Only join with one space after punctuation
 set nomodeline             " Turn off modelines
