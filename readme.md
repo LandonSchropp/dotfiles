@@ -12,9 +12,7 @@ softwareupdate -ia
 
 Then, install [Google Chrome](https://www.google.com/chrome).
 
-## Xcode Comment Line Tools
-
-Install Xcode and accept its license.
+Finally, install Xcode and accept its license.
 
 ```
 xcode-select --install
