@@ -4,73 +4,92 @@ This is a guide to setting up my personal development environment. It's meant ge
 
 ## Prerequisites
 
-Before anything else, run Software Update. Then, install all of your App Store purchases.
+Before anything else, install the system updates.
+
+```
+softwareupdate -ia
+```
+
+Then, install [Google Chrome](https://www.google.com/chrome).
 
 ## Xcode Comment Line Tools
 
-In the terminal, run `xcode-select --install` to install the Xcode Command Line Tools.
+Install Xcode and accept its license.
+
+```
+xcode-select --install
+sudo xcodebuild -license accept
+```
 
 ## Homebrew
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the install script on the Homebrew site and then do:
+[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the following script:
 
 ```
-brew doctor
-brew update
-export PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin'
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-The last line sets the `$PATH` environment variable. This only needs to be done for the current shell session. Once you set up Oh My Zsh later on in this guide, this variable will be set whenever the shell starts.
+Next, install some handy little command line utilities with Homebrew:
 
-Install some handy little command line utilities using Homebrew:
-
-```
-brew install android-sdk
-brew install diff-so-fancy
-brew install gnu-sed
-brew install imagemagick
-brew install jq
-brew install rename
-brew install source-highlight
-brew install the_silver_searcher
-brew install tree
-brew install wget
-brew install z
-```
-
-Install [Homebrew Cask](http://caskroom.io/):
-
-```
-brew install caskroom/cask/brew-cask
+``` shell
+brew install \
+  diff-so-fancy \
+  gnu-sed \
+  imagemagick \
+  jq \
+  mas \
+  m-cli \
+  rename \
+  source-highlight \
+  the_silver_searcher \
+  tree \
+  wget \
+  z
 ```
 
-Install [Homebrew Cask versions](https://github.com/caskroom/homebrew-versions) and [Homebrew Cask fonts](https://github.com/caskroom/homebrew-fonts).
+Then, install the OS X apps and fonts via [Homebrew Cask](https://caskroom.github.io/):
 
 ```
-brew tap caskroom/versions
 brew tap caskroom/fonts
+brew cask install \
+  atom \
+  calibre \
+  cheatsheet \
+  dropbox \
+  firefox \
+  font-source-code-pro \
+  imageoptim \
+  istat-menus \
+  iterm2 \
+  sketch-tool \
+  sketch-toolbox \
+  spotify \
+  vlc \
 ```
 
-Then, install the OS X apps and fonts:
+Finally, install the apps from the App Store.
 
-```
-brew cask install atom
-brew cask install bartender
-brew cask install calibre
-brew cask install cheatsheet
-brew cask install cyberduck
-brew cask install dropbox
-brew cask install firefox
-brew cask install font-source-code-pro
-brew cask install google-chrome
-brew cask install imageoptim
-brew cask install istat-menus
-brew cask install iterm2
-brew cask install mailbox
-brew cask install sketch-tool
-brew cask install sketch-toolbox
-brew cask install spotify
-brew cask install vlc
+``` shell
+APPS=(
+  504544917 # Clear
+  892581529 # Tonality
+  917790450 # ScreenFlow
+  425424353 # The Unarchiver
+  412980789 # Full Deck Solitaire
+  409183694 # Keynote
+  443987910 # 1Password
+  411902645 # Braid
+  775737590 # iA Writer
+  852320343 # Sketch
+  557168941 # Tweetbot
+  803453959 # Slack
+  969418666 # ColorSnapper2
+  417375580 # BetterSnapTool
+  961632517 # Be Focused Pro
+  1074021862 # External Editors For Photos
+  414154107 # World of Goo
+)
+mas install ${APPS[@]}
 ```
 
 ## Git
