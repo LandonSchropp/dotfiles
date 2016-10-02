@@ -17,7 +17,7 @@ xcode-select --install
 sudo xcodebuild -license accept
 ```
 
-Finally, install [Google Chrome](https://www.google.com/chrome).
+Finally, install [Google Chrome](https://www.google.com/chrome). This is necessary because 1Password checks the MD5 hash of the installed binary and rejects Chrome if it's installed via Homebrew Cask.
 
 ## Homebrew
 
@@ -98,7 +98,24 @@ The XCode Command Line Tools includes Git, but it's not the latest version. To i
 brew install git
 ```
 
-In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-ssh-keys) on Github.
+In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
+
+## Neovim
+
+Install Neovim with Homebrew.
+
+``` shell
+brew install neovim/neovim/neovim
+```
+
+Some of the plugins I use require Python, so install that as well.
+
+``` shell
+brew install python3
+pip3 install neovim
+```
+
+Neovim is configured in the dotfiles.
 
 ## Dotfiles
 
@@ -115,24 +132,6 @@ Next, install [rcm](https://github.com/thoughtbot/rcm) and link the dotfiles.
 brew tap thoughtbot/formulae
 brew install rcm
 env RCRC=$HOME/.dotfiles/rcrc rcup
-```
-
-## Neovim
-
-Install Neovim with Homebrew.
-
-``` shell
-brew install neovim
-```
-
-Next, download [vim-plug](https://github.com/junegunn/vim-plug) by following the directions in the
-repo. Then, open up Neovim and run `:PlugInstall` to install the plugins.
-
-Finally, some of the plugins require Python 3.
-
-``` shell
-brew install python3
-pip3 install neovim
 ```
 
 ## Oh My ZSH
