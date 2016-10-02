@@ -10,14 +10,14 @@ Before anything else, install the system updates.
 softwareupdate -ia
 ```
 
-Then, install [Google Chrome](https://www.google.com/chrome).
-
-Finally, install Xcode and accept its license.
+Then, install Xcode and accept its license.
 
 ```
 xcode-select --install
 sudo xcodebuild -license accept
 ```
+
+Finally, install [Google Chrome](https://www.google.com/chrome).
 
 ## Homebrew
 
