@@ -209,12 +209,15 @@ gem install tmuxinator
 
 [tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
 
-## NodeJS
+## Node.js
 
-[NodeJS](http://nodejs.org/) is a web application framework written in JavaScript. [NPM](https://npmjs.org/) is the best NodeJS package manager. You can use Homebrew to install both:
+These days, the best way to install node with with [NVM](https://github.com/creationix/nvm). To install it, follow the instructions in the [readme file](https://github.com/creationix/nvm#install-script).
+
+Once NVM is installed, you'll want to install a global copy of Node.
 
 ```
-brew install nodejs npm
+npm install stable
+nvm use stable
 ```
 
 ## PostgreSQL
