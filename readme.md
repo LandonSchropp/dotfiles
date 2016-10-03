@@ -62,7 +62,7 @@ brew cask install \
   sketch-tool \
   sketch-toolbox \
   spotify \
-  vlc \
+  vlc
 ```
 
 Finally, install the apps from the App Store.
