@@ -12,6 +12,6 @@ export NVM_DIR="/Users/landon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Source the configuration files
-for config_file in $HOME/.dotfiles/zsh/*; do
-  source config_file
+for CONFIG_FILE in $HOME/.dotfiles/zsh/*; do
+  source $CONFIG_FILE
 done
