@@ -134,7 +134,7 @@ Next, install [rcm](https://github.com/thoughtbot/rcm) and link the dotfiles.
 ``` shell
 brew tap thoughtbot/formulae
 brew install rcm
-env RCRC=$HOME/.dotfiles/rcrc rcup
+RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
 ## Oh My ZSH
