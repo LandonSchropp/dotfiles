@@ -190,12 +190,6 @@ rbenv global <version>
 eval "$(rbenv init -)"
 ```
 
-You may also want to disable `ri` and `rdoc` documentation from being installed by default.
-
-``` shell
-echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
-```
-
 Finally, install the [Bundler](http://bundler.io/) gem in order to gain access to the `bundle` command.
 
 ``` shell
