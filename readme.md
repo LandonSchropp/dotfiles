@@ -234,12 +234,11 @@ initdb /usr/local/var/postgres
 Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X starts up, we need to add a launch agent.
 
 ```
-mkdir -p $HOME/Library/LaunchAgents
-cp "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
+ln -s "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 ```
 
-Depending on your application, you may also have to create the traditional `postgres` role:
+Depending on your application's set up, you may also have to create a traditional `postgres` role:
 
 ```
 /usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/bin/createuser -s postgres
