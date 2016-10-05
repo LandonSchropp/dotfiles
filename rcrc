@@ -10,6 +10,7 @@ EXCLUDES=(
   "landons_theme.yml"
   "rcrc"
   "xterm"
+  "prezto"
 )
 
 EXCLUDES=${EXCLUDES[@]}
