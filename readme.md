@@ -138,19 +138,19 @@ brew install rcm
 RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
-## Oh My ZSH
+## Zsh and Prezto
 
 [Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
 
-[Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) is a framework that manages Zsh, and includes several plugins for zsh as well as an automatic update tool. The installation information for Oh My ZSH was taken from this [Oh My ZSH Railscast](http://railscasts.com/episodes/308-oh-my-zsh).
+[Prezto](https://github.com/sorin-ionescu/prezto) is a framework that manages Zsh, and includes several plugins to make development easier.
 
-Install Oh My ZSH by using the following command:
+To set up and install Zsh and Prezto, start zsh, clone the Prezto repository and set zsh as the default shell.
 
 ```
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+zsh
+git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
+chsh -s /bin/zsh
 ```
-
-In order to property change the shell, restart the system.
 
 ## Italics
 
