@@ -1,10 +1,20 @@
 [credential]
   helper = osxkeychain
+
 [user]
   name = Landon Schropp
   email = schroppl@gmail.com
+
 [alias]
-  l = log --pretty=colored
+
+  # Custom commands
+  aliases = config --get-regexp alias
+  compact-log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  rebase-master = rebase -i master
+  what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
+
+  # Shortcuts
   a = add
   c = commit
   b = branch
@@ -15,11 +25,15 @@
   pu = pull
   r = reset
   cp = cherry-pick
+  l = "!git compact-log"
+
 [core]
   mergeoptions = --no-edit
   pager = diff-so-fancy | less --tabs=4 -R
+
 [color]
   ui = always
+
 [color "diff"]
   meta = yellow bold
   commit = green bold
@@ -27,6 +41,7 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = "black bold red"
