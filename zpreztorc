@@ -32,9 +32,6 @@ zstyle ':prezto:load' pmodule \
   'tmux' \
   'prompt' \
 
-# Set the key mapping style vi.
-zstyle ':prezto:module:editor' key-bindings 'vi'
-
 # Set the prompt theme to load.
 zstyle ':prezto:module:prompt' theme 'steeef'
 
