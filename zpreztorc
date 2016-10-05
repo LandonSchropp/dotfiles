@@ -1,3 +1,9 @@
+# Load custom Prezto modules from the dotfiles repository
+fpath=(
+  ${HOME}/.dotfiles/prezto
+  ${fpath}
+)
+
 # Enable color output
 zstyle ':prezto:*:*' color 'yes'
 
