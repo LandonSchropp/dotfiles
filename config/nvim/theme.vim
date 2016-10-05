@@ -1,17 +1,5 @@
 " Change the cursor when in insert mode
-if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-else
-  if $TERM == 'screen' || $TERM == 'screen-256color'
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-endif
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " Set the colorscheme
 " TODO: Clean up the way the theme is sourced.
