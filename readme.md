@@ -33,6 +33,7 @@ Next, install some handy little command line utilities with Homebrew:
 brew install \
   diff-so-fancy \
   gnu-sed \
+  heroku \
   imagemagick \
   jq \
   mas \
