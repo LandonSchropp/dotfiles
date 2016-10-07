@@ -31,6 +31,7 @@ Next, install some handy little command line utilities with Homebrew:
 
 ``` shell
 brew install \
+  coreutils \
   diff-so-fancy \
   gnu-sed \
   heroku \
