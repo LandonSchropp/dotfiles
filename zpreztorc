@@ -39,7 +39,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'landon'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
