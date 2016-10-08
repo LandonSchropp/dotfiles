@@ -1,0 +1,9 @@
+location: Seattle, WA
+units:imperial
+daylight:true
+dateformat:%a %b %d
+timeformat:%b %d %r
+
+# Text and Colors
+background:\030
+dashes:\\n
