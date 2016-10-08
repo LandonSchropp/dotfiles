@@ -1,6 +1,12 @@
 # Source Prezto.
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
+# Undo the Prezto -i aliases
+alias cp='nocorrect cp'
+alias ln='nocorrect ln'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+
 # Start up rbenv
 eval "$(rbenv init -)"
 
