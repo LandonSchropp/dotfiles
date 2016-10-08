@@ -38,15 +38,18 @@ prompt_end() {
 # Constructs the prompt.
 # Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
 function build_prompt {
-  prompt_segment black default '%(1?;%{%F{red}%}✘ ;)%(!;%{%F{yellow}%}⚡ ;)%(1j;%{%F{cyan}%}%j⚙ ;)%{%F{blue}%}%n%{%F{red}%}@%{%F{green}%}%M'
-  prompt_segment blue black '%2~'
+
+  # Display the symbols indicating the status of the command
+  # prompt_segment black default '%(1?;%{%F{red}%}✘ ;)%(!;%{%F{yellow}%}⚡ ;)%(1j;%{%F{cyan}%}%j⚙ ;)%{%F{blue}%}%n%{%F{red}%}@%{%F{green}%}%M'
+
+  prompt_segment magenta black '%2~'
+
   if $git_status; then
-    prompt_segment green black '${(e)git_info[prompt]}${git_info[status]}'
+    prompt_segment cyan black '${(e)git_info[prompt]}${git_info[status]}'
   fi
+
   prompt_end
 }
-
-# Add a hook to set the current time
 
 function prompt_landon_preexec {
   START_TIME=$SECONDS
@@ -142,9 +145,9 @@ function prompt_landon_setup {
     'status' ' %A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
-  PROMPT='%{%f%b%k%}$(build_prompt)${editor_info[keymap]} '
+  PROMPT='%{%f%b%k%}$(build_prompt) '
   RPROMPT='[%D{%L:%M:%S %p}]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
-# prompt_landon_setup "$@"
+prompt_landon_setup "$@"
