@@ -113,12 +113,6 @@ function prompt_landon_setup {
   add-zsh-hook preexec prompt_landon_preexec
   add-zsh-hook precmd prompt_landon_precmd
 
-  # Configure the editor styles
-  zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format '%B%F{blue}❯%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '%F{red}♺%f'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format '%B%F{red}❮%f%b'
-
   # Configrue the Git styles
   zstyle ':prezto:module:git:info:action' format ' %s'
   zstyle ':prezto:module:git:info:added' format '✚'
