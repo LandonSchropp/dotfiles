@@ -4,33 +4,38 @@
 # http://www.paradox.io/posts/9-my-new-zsh-prompt
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
 START_TIME=$SECONDS
 
-# Begin a segment. Takes two arguments, background and foreground. Both can be omitted, rendering
-# default background/foreground.
+# Begin a segment. This function takes two arguments: the background color and the foreground color.
+# Both can be omitted, which will render the default colors.
 # Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
 prompt_segment() {
   local bg fg
+
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
+    echo -n " %{$bg%F{$CURRENT_BG}%}%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
+
   CURRENT_BG=$1
+
   [[ -n $3 ]] && print -Pn $3
 }
 
 # End the prompt, closing any open segments.
 # Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
 prompt_end() {
+
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    echo -n " %{%k%F{$CURRENT_BG}%}"
   else
     echo -n "%{%k%}"
   fi
+
   echo -n "%{%f%}\n"
   CURRENT_BG=''
 }
@@ -38,9 +43,6 @@ prompt_end() {
 # Constructs the prompt.
 # Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
 function build_prompt {
-
-  # Display the symbols indicating the status of the command
-  # prompt_segment black default '%(1?;%{%F{red}%}✘ ;)%(!;%{%F{yellow}%}⚡ ;)%(1j;%{%F{cyan}%}%j⚙ ;)%{%F{blue}%}%n%{%F{red}%}@%{%F{green}%}%M'
 
   prompt_segment magenta black '%2~'
 
@@ -67,8 +69,8 @@ function prompt_landon_precmd {
   # Determine the how long the timer has run
   TIMER_RESULT=$(($SECONDS - $START_TIME))
 
-  if [[ $timer_result -gt 10 ]]; then
-    print -P "%B%F{cyan}🕐  Elapsed time: $( print_time $TIMER_RESULT)}"
+  if [[ $TIMER_RESULT -gt 10 ]]; then
+    print -P "%B%F{blue}🕐  Elapsed time: $( print_time TIMER_RESULT)"
   fi
 
   # Set the new start time
@@ -111,15 +113,6 @@ function prompt_landon_setup {
   add-zsh-hook preexec prompt_landon_preexec
   add-zsh-hook precmd prompt_landon_precmd
 
-  # Define the color palette
-  COLORS=(
-    "%F{81}"  # Turquoise
-    "%F{166}" # Orange
-    "%F{135}" # Purple
-    "%F{161}" # Hotpink
-    "%F{118}" # Limegreen
-  )
-
   # Configure the editor styles
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary' format '%B%F{blue}❯%f%b'
@@ -127,11 +120,11 @@ function prompt_landon_setup {
   zstyle ':prezto:module:editor:info:keymap:alternate' format '%B%F{red}❮%f%b'
 
   # Configrue the Git styles
-  zstyle ':prezto:module:git:info:action' format '! %s'
+  zstyle ':prezto:module:git:info:action' format ' %s'
   zstyle ':prezto:module:git:info:added' format '✚'
   zstyle ':prezto:module:git:info:ahead' format '⬆'
   zstyle ':prezto:module:git:info:behind' format '⬇'
-  zstyle ':prezto:module:git:info:branch' format '⭠ %b'
+  zstyle ':prezto:module:git:info:branch' format '⎇  %b'
   zstyle ':prezto:module:git:info:commit' format '➦ %.7c'
   zstyle ':prezto:module:git:info:deleted' format '✖'
   zstyle ':prezto:module:git:info:modified' format '✱'
@@ -142,7 +135,7 @@ function prompt_landon_setup {
   zstyle ':prezto:module:git:info:untracked' format '?'
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '$(coalesce "%b" "%p" "%c")%s' \
-    'status' ' %A%B%S%a%d%m%r%U%u'
+    'status' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
   PROMPT='%{%f%b%k%}$(build_prompt) '
