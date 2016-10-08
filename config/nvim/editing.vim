@@ -30,6 +30,9 @@ set scrolloff=2            " Ensure there's always a little space above and belo
 set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
 
+" Set the location of the spellfile
+set spellfile=~/.config/nvim/spelling/en.utf-8.add
+
 " NOTE: This has to be run with autocmd in order to override the ftplugins
 " l: Automatically wraps long lines in insert mode
 " t: Autowrap text using textwidth
