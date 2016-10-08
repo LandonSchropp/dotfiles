@@ -135,8 +135,8 @@ function prompt_landon_setup {
   # HACK: This is a dirty hack to achieve a newline between commands.
   PROMPT='
 %{%f%b%k%}$(build_prompt) '
-  RPROMPT='[%D{%L:%M:%S %p}]'
-  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+  RPROMPT='%F{11}[%D{%L:%M:%S %p}]'
+  SPROMPT='Correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
 prompt_landon_setup "$@"
