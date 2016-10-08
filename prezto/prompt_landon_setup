@@ -129,12 +129,11 @@ function prompt_landon_setup {
   zstyle ':prezto:module:git:info:untracked' format '?'
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '$(coalesce "%b" "%p" "%c")%s' \
-    'status' '%A%B%S%a%d%m%r%U%u'
+    'status' ' %A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
   # HACK: This is a dirty hack to achieve a newline between commands.
-  PROMPT='
-%{%f%b%k%}$(build_prompt) '
+  PROMPT='%{%f%b%k%}$(build_prompt) '
   RPROMPT='%F{11}[%D{%L:%M:%S %p}]'
   SPROMPT='Correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
