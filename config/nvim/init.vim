@@ -5,7 +5,7 @@ source ~/.config/nvim/syntax.vim
 source ~/.config/nvim/theme.vim
 
 " Plugins
-source ~/.config/nvim/plugins/cursor_position.vim
-source ~/.config/nvim/plugins/stamp.vim
-source ~/.config/nvim/plugins/strip_whitespace.vim
-source ~/.config/nvim/plugins/tab_completion.vim
+source ~/.config/nvim/plugin/cursor_position.vim
+source ~/.config/nvim/plugin/stamp.vim
+source ~/.config/nvim/plugin/strip_whitespace.vim
+source ~/.config/nvim/plugin/tab_completion.vim
