@@ -60,6 +60,7 @@ brew cask install \
   cheatsheet \
   dropbox \
   firefox \
+  font-open-sans \
   font-sauce-code-powerline \
   font-source-code-pro \
   imageoptim \
