@@ -10,7 +10,7 @@
   # Custom commands
   aliases = config --get-regexp alias
   compact-log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  delete-merged-branches = "!git co master && git branch --no-color --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   rebase-master = rebase -i master
   what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
 
