@@ -80,3 +80,7 @@ let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx"
 
 " Prevent HTML tags from being expanded in HTML-esque files in delimitMate
 autocmd FileType html,erb,jsx,jade,pug let b:delimitMate_matchpairs = '(:),{:},[:]'
+
+" Configure netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
