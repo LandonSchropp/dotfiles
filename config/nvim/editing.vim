@@ -33,6 +33,9 @@ set splitright             " Open vertical splits to the right of the current pa
 " Set the location of the spellfile
 set spellfile=~/.config/nvim/spelling/en.utf-8.add
 
+" Set the location of the dictionary
+set dictionary+=/usr/share/dict/words
+
 " NOTE: This has to be run with autocmd in order to override the ftplugins
 " l: Automatically wraps long lines in insert mode
 " t: Autowrap text using textwidth
