@@ -81,7 +81,7 @@ Plug 'vim-scripts/tComment'
 " SYNTAX PLUGINS
 
 " Better Markdown editing
-Plug 'reedes/vim-pencil'
+" Plug 'reedes/vim-pencil'
 
 " Language syntax highlighting
 Plug 'digitaltoad/vim-pug'
@@ -95,6 +95,7 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
+" Plug 'gabrielelana/vim-markdown'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'

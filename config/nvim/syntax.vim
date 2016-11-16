@@ -11,11 +11,11 @@ let g:vim_json_syntax_conceal = 0
 " Configure Vim Pencil
 let g:pencil#wrapModeDefault = 'soft'
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text call pencil#init()
-augroup END
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text call pencil#init()
+" augroup END
 
 " Ignore spell checking for camelcased items
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
