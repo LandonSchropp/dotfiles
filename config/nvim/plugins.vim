@@ -44,6 +44,9 @@ Plug 'tpope/vim-repeat'
 " Extra commands for surrounding text
 Plug 'tpope/vim-surround'
 
+" Interactive coding scratchpad
+Plug 'metakirby5/codi.vim'
+
 
 
 " TEXT EDITING
