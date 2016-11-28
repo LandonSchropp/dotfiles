@@ -66,6 +66,7 @@ brew cask install \
   imageoptim \
   istat-menus \
   iterm2 \
+  numi \
   sketch-tool \
   sketch-toolbox \
   spotify \
