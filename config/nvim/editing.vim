@@ -29,6 +29,7 @@ set autoread               " Automatically read changes to files edited outside 
 set scrolloff=2            " Ensure there's always a little space above and below the current line
 set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
+set inccommand=nosplit     " Incrementally show effects of commands
 
 " Set the location of the spellfile
 set spellfile=~/.config/nvim/spelling/en.utf-8.add
