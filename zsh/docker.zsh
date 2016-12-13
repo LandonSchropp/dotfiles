@@ -2,6 +2,8 @@ alias -g dc='docker-compose'
 alias -g dcr='docker-compose run'
 alias -g dcu='docker-compose up'
 
+alias -g docker-kill='pgrep -i -f docker | xargs kill'
+
 # Taken from: https://www.calazan.com/docker-cleanup-commands/
 function docker-clean-dangling {
   RUNNING_CONTAINERS=$(docker ps -q)
