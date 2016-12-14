@@ -1,6 +1,8 @@
 alias -g dc='docker-compose'
 alias -g dcr='docker-compose run'
-alias -g dcu='docker-compose up'
+alias -g dcu='docker-compose up -d'
+alias -g dcl='docker-compose logs -f'
+alias -g dcb='docker-compose build'
 
 alias -g docker-kill='pgrep -i -f docker | xargs kill'
 
@@ -37,5 +39,8 @@ function docker-clean {
     printf "\nDeleting all images\n\n"
     docker rmi $(echo $ALL_IMAGES)
   fi
+}
+
+function docker-clean-logs {
 
 }
