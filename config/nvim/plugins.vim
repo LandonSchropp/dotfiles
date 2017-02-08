@@ -78,9 +78,6 @@ Plug 'tpope/vim-endwise'
 " Quick commenting
 Plug 'vim-scripts/tComment'
 
-
-
-
 " SYNTAX PLUGINS
 
 " Better Markdown editing
@@ -113,5 +110,7 @@ Plug 'vim-airline/vim-airline'
 " Color schemes
 Plug 'zeis/vim-kolor'
 Plug 'atelierbram/vim-colors_atelier-schemes'
+Plug 'jdkanani/vim-material-theme'
+Plug 'raphamorim/lucario'
 
 call plug#end()
