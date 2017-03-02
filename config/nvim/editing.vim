@@ -22,6 +22,7 @@ set relativenumber         " Use relative line numbers
 " Other standard editor configuration
 set noswapfile             " Don't create swapfiles.
 set nowritebackup          " Don't create backups before overwriting files.
+set undofile               " Use an undo file for persistent undos
 set autowrite              " Automatically :write before running commands
 set nojoinspaces           " Only join with one space after punctuation
 set nomodeline             " Turn off modelines
