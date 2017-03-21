@@ -15,7 +15,9 @@ ta() {
   fi
 
   # create the session if it doesn't already exist
-  tmux has-session -t $1 2>/dev/null
+  # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
+  tmux ls -F "#{session_name}" | grep -Fx $1 > /dev/null
+
   if [[ $? != 0 ]]; then
 
     # create the session using tmuxinator if a project exists for it
