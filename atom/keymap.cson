@@ -1,5 +1,8 @@
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
 
+  # Make Y's behavior match D and C.
+  'Y': 'vim-mode-plus:yank-to-last-character-of-line'
+
   # Reverse the behavior of up and down movements.
   'g k': 'vim-mode-plus:move-up'
   'g j': 'vim-mode-plus:move-down'
