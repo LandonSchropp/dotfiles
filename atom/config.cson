@@ -58,9 +58,7 @@
     userId: "7bb49c66-5904-b674-8d8e-e18cff1293f4"
   "file-icons":
     onChanges: true
-  linter:
-    lintOnFly: false
-    showErrorInline: false
+  linter: {}
   metrics:
     userId: "f50a9d7b89d275864375e05a0e26c4a98412a754"
   pigments:
