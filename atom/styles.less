@@ -1,0 +1,25 @@
+@gray: #ccd7da;
+
+// Override the command mode cursor
+atom-text-editor.vim-mode-plus.normal-mode.is-focused .cursor,
+atom-text-editor.vim-mode-plus.visual-mode.is-focused .cursor {
+  background-color: darken(@gray, 12%);
+}
+
+// Change the border color of the find results
+atom-text-editor .find-result .region, atom-text-editor.editor .find-result .region {
+  border-color: @gray;
+}
+
+// Override the visual mode highlight color
+atom-text-editor .vim-mode-plus-search-match.last.current .region,
+atom-text-editor .vim-mode-plus-persistent-selection .region,
+atom-text-editor .vim-mode-plus-target-range .region,
+atom-text-editor.is-focused .selection .region {
+  background-color: lighten(@gray, 8%);
+}
+
+// Darken the default gray theme-gray
+.syntax--comment {
+  color: darken(@gray, 10%);
+}
