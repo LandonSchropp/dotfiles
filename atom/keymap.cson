@@ -1,0 +1,9 @@
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+
+  # Reverse the behavior of up and down movements.
+  'g k': 'vim-mode-plus:move-up'
+  'g j': 'vim-mode-plus:move-down'
+  'up': 'vim-mode-plus:move-up-screen'
+  'down': 'vim-mode-plus:move-down-screen'
+  'k': 'vim-mode-plus:move-up-screen'
+  'j': 'vim-mode-plus:move-down-screen'
