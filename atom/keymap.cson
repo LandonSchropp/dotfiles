@@ -23,3 +23,6 @@
 
   # Open the command palette.
   ':': 'command-palette:toggle'
+
+  # In normal mode, use the built-in comment toggling
+  'g /': 'editor:toggle-line-comments'
