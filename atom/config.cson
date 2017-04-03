@@ -35,6 +35,19 @@
       "language-gfm"
       "language-gfm"
     ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "*.meta"
+      "*.unity"
+      "*.png"
+      "*.asset"
+    ]
     packagesWithKeymapsDisabled: []
     projectHome: "/Users/landonschropp/Development"
     telemetryConsent: "no"
@@ -59,6 +72,7 @@
   "file-icons":
     onChanges: true
   linter: {}
+  "linter-ui-default": {}
   metrics:
     userId: "f50a9d7b89d275864375e05a0e26c4a98412a754"
   pigments:
