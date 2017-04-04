@@ -26,6 +26,7 @@
   r = reset
   cp = cherry-pick
   l = "!git compact-log"
+  fp = push --force-with-lease
 
 [core]
   mergeoptions = --no-edit
