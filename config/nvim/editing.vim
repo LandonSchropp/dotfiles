@@ -89,3 +89,14 @@ autocmd FileType html,erb,jsx,jade,pug let b:delimitMate_matchpairs = '(:),{:},[
 " Configure netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+
+" Leave a file mark whenever I exit a buffer so I can jump back to that position.
+" Taken from: http://stackoverflow.com/a/16084326/262125
+augroup VIMRC
+  autocmd!
+
+  autocmd BufLeave *.css  normal! mC
+  autocmd BufLeave *.html normal! mH
+  autocmd BufLeave *.js   normal! mJ
+  autocmd BufLeave *.php  normal! mP
+augroup END
