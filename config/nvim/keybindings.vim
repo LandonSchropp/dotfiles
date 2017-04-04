@@ -59,7 +59,6 @@ nnoremap <silent> <Leader>tf :TestFile<CR>
 nnoremap <silent> <Leader>tt :TestNearest<CR>
 nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>ta :TestSuite<CR>
-nnoremap <silent> <leader>gt :TestVisit<CR>
 
 " Remap EasyMotion
 nmap \ <Plug>(easymotion-prefix)
