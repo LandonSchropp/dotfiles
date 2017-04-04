@@ -41,18 +41,12 @@ Plug 'tpope/vim-repeat'
 " Extra commands for surrounding text
 Plug 'tpope/vim-surround'
 
-" Interactive coding scratchpad
-Plug 'metakirby5/codi.vim'
-
 
 
 " TEXT EDITING
 
 " Auto-completes quotes, brackets, etc.
 Plug 'Raimondi/delimitMate'
-
-" Automatically adds `end` in Ruby and has equivilents for other languages
-Plug 'tpope/vim-endwise'
 
 " Automatically close HTML tags
 Plug 'alvan/vim-closetag'
@@ -77,9 +71,6 @@ Plug 'vim-scripts/tComment'
 
 " SYNTAX PLUGINS
 
-" Better Markdown editing
-" Plug 'reedes/vim-pencil'
-
 " Language syntax highlighting
 Plug 'digitaltoad/vim-pug'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -92,7 +83,6 @@ Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
-" Plug 'gabrielelana/vim-markdown'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
