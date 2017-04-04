@@ -5,9 +5,6 @@ call plug#begin('~/.vim/bundle')
 " Fast file switching
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Navigatable file tree
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
 " Project searching
 Plug 'rking/ag.vim'
 

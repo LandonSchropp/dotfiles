@@ -51,9 +51,6 @@ nnoremap <silent> <leader>abc :sort<CR>
 " Search the files
 nnoremap <leader>ag :Ag<Space>
 
-" Show/hide NERDTree
-nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
-
 " vim-test mappings
 nnoremap <silent> <Leader>tf :TestFile<CR>
 nnoremap <silent> <Leader>tt :TestNearest<CR>
