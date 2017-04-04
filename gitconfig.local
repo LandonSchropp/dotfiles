@@ -47,3 +47,7 @@
   oldHighlight = "black bold red"
   newNormal = "green bold"
   newHighlight = "black bold green"
+
+[branch]
+  autosetupmerge = always
+  autosetuprebase = always
