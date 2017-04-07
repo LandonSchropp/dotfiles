@@ -61,13 +61,11 @@ brew cask install \
   dropbox \
   firefox \
   font-open-sans \
-  font-sauce-code-powerline \
   font-source-code-pro \
   imageoptim \
   istat-menus \
   iterm2 \
   numi \
-  sketch-tool \
   sketch-toolbox \
   spotify \
   vlc
