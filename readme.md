@@ -154,7 +154,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
 chsh -s /bin/zsh
 ```
 
-## Italics
+## Terminal Colors and Italics
 
 To enable italic text in the terminal, you need to register italics with the TERM database.
 
@@ -162,6 +162,8 @@ To enable italic text in the terminal, you need to register italics with the TER
 tic $HOME/.dotfiles/xterm-256color-italic.terminfo
 tic $HOME/.dotfiles/tmux-256color-italic.terminfo
 ```
+
+Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
 
 ## OS X
 
