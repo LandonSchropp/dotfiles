@@ -1,21 +1,22 @@
-# My personal Vim theem, based on Atelier Sulphurpool.
+# My personal Vim theme, based on Atelier Sulphurpool.
 # See the Base16 styleguide for details:
 # https://github.com/chriskempson/base16/blob/master/styling.md
+
 scheme: "Landon"
 author: "Landon Schropp (http://landonschropp.com)"
-base00: "202746" # #202746 (0)
-base01: "374375" # #374375 (10)
-base02: "5c699b" # #5c699b (11)
-base03: "6b7394" # #6b7394 (8)
-base04: "898ea4" # #898ea4 (12)
-base05: "a4abc4" # #a4abc4 (7)
-base06: "dfe2f1" # #dfe2f1 (13)
-base07: "f5f7ff" # #f5f7ff (15)
-base08: "c94d60" # #c94d60 (1)
-base09: "c76b29" # #c76b29 (9)
-base0A: "c08b30" # #c08b2f (3))
-base0B: "5fb391" # #5fb391 (2)
-base0C: "38bfee" # #38bfee (7)
-base0D: "4193d6" # #4193d6 (5)
-base0E: "6679cc" # #6679cc (6)
-base0F: "a95878" # #a95878 (14)
+base00: "202746" # #202746 black
+base01: "374375" # #374375 dark3
+base02: "5c699b" # #5c699b dark2
+base03: "6b7394" # #6b7394 dark1
+base04: "898ea4" # #898ea4 light1
+base05: "a4abc4" # #a4abc4 light2
+base06: "dfe2f1" # #dfe2f1 light3
+base07: "f5f7ff" # #f5f7ff white
+base08: "c94d60" # #c94d60 red
+base09: "c76b29" # #c76b29 orange
+base0A: "c08b30" # #c08b2f yellow
+base0B: "5fb391" # #5fb391 green
+base0C: "38bfee" # #38bfee aqua
+base0D: "4193d6" # #4193d6 blue
+base0E: "6679cc" # #6679cc purple
+base0F: "a95878" # #a95878 brown
