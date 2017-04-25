@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/bundle')
 
+
+
 " GENERAL
 
 " Fast file switching
@@ -69,6 +71,8 @@ Plug 'tpope/vim-endwise'
 " Quick commenting
 Plug 'vim-scripts/tComment'
 
+
+
 " SYNTAX PLUGINS
 
 " Language syntax highlighting
@@ -93,11 +97,5 @@ Plug 'ap/vim-css-color'
 
 " Better Vim status bar
 Plug 'vim-airline/vim-airline'
-
-" Color schemes
-Plug 'zeis/vim-kolor'
-Plug 'atelierbram/vim-colors_atelier-schemes'
-Plug 'jdkanani/vim-material-theme'
-Plug 'raphamorim/lucario'
 
 call plug#end()
