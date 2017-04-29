@@ -76,3 +76,7 @@ cabbrev sudoedit <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudoedit" : "s
 
 " Use the up arrow key to trigger a search through history.
 nnoremap <up> :<up>
+
+" Use _ and + for navigating tabs
+nnoremap _ gT
+nnoremap + gt
