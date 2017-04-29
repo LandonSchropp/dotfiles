@@ -12,6 +12,10 @@ nnoremap <silent> 0 g0
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
+" Remap H and L to beginning and end of lines (since ^ and $ are hard to type)
+nnoremap H ^
+nnoremap L $
+
 " TODO: Don't include wrapped lines when jumping multiples (so relative line numbers work
 
 " Allow control plus the movement keys to navigate the user in insert mode and normal mode
