@@ -68,7 +68,7 @@ let g:ctrlp_prompt_mappings = {
 set grepprg=ag\ --nogroup\ --nocolor
 
 " Remove the delay when hitting the escape key
-set timeoutlen=2000 ttimeoutlen=50
+set timeoutlen=2000 ttimeoutlen=0
 
 " Use regular line numbers in insert mode and relative numbers everywhere else
 autocmd InsertEnter * :set number norelativenumber
