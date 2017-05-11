@@ -6,41 +6,54 @@ alias -g dcb='docker-compose build'
 
 alias -g docker-kill='pgrep -i -f docker | xargs kill'
 
-# Taken from: https://www.calazan.com/docker-cleanup-commands/
-function docker-clean-dangling {
+function docker-stop-containers {
   RUNNING_CONTAINERS=$(docker ps -q)
 
   if [[ ! -z $RUNNING_CONTAINERS ]]; then
     printf "\nStopping running containers\n\n"
     docker stop $(echo $RUNNING_CONTAINERS)
   fi
+}
 
-  STOPPED_CONTAINERS=$(docker ps -a -q)
+function docker-clean-containers {
+  CONTAINERS=$(docker ps -a -q)
 
-  if [[ ! -z $STOPPED_CONTAINERS ]]; then
-    printf "\nDeleting stopped containers\n\n"
-    docker rm $(echo $STOPPED_CONTAINERS)
+  if [[ ! -z $CONTAINERS ]]; then
+    printf "\nRemoving containers\n\n"
+    docker rm $(echo $CONTAINERS)
   fi
+}
 
+function docker-clean-images {
+  IMAGES_=$(docker images -q -a)
+
+  if [[ ! -z $IMAGES_ ]]; then
+    printf "\nRemoving images\n\n"
+    docker rmi $(echo $IMAGES_)
+  fi
+}
+
+function docker-clean-dangling-images {
   DANGLING_IMAGES=$(docker images -q -f dangling=true)
 
   if [[ ! -z $DANGLING_IMAGES ]]; then
-    printf "\nDeleting dangling images\n\n"
+    printf "\nRemoving dangling images\n\n"
     docker rmi $(echo $DANGLING_IMAGES)
   fi
 }
 
-function docker-clean {
-  docker-clean-dangling
+function docker-clean-volumes {
+  VOLUMES=$(docker volume ls)
 
-  ALL_IMAGES=$(docker images -q -a)
-
-  if [[ ! -z $ALL_IMAGES ]]; then
-    printf "\nDeleting all images\n\n"
-    docker rmi $(echo $ALL_IMAGES)
+  if [[ ! -z $VOLUMES ]]; then
+    printf "\nRemoving volumes\n\n"
+    docker volume remove $(echo $VOLUMES)
   fi
 }
 
-function docker-clean-logs {
-
+function docker-clean {
+  docker-stop-containers
+  docker-clean-containers
+  docker-clean-images
+  docker-clean-volumes
 }
