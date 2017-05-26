@@ -2,14 +2,17 @@
 
 set -e
 
-# Generate the Vim themes
-# TODO: Ensure the base16-builder tool is installed before running the command below.
+# Ensure base16-builder is installed
+if ! command -v base16-builder 2>/dev/null; then
+  echo "Base16 Builder must be installed!"
+  return 1
+fi
+
+# Generate the custom theme
 mkdir -p $HOME/.config/nvim/themes
 
-base16-builder -t vim -s $HOME/.dotfiles/themes/landon.yml -b light \
+base16-builder \
+  -t nvim \
+  -s $HOME/.dotfiles/themes/landon.yml
+  -b light \
   > $HOME/.config/nvim/themes/landon.vim
-base16-builder -t $HOME/.dotfiles/themes/vim_custom.ejs -s $HOME/.dotfiles/themes/landon.yml \
-  -b light > $HOME/.config/nvim/themes/landon_custom.vim
-base16-builder -t vim -s tomorrow -b light > $HOME/.config/nvim/themes/tomorrow.vim
-base16-builder -t $HOME/.dotfiles/themes/vim_custom.ejs -s tomorrow \
-  -b light > $HOME/.config/nvim/themes/tomorrow_custom.vim

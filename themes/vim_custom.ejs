@@ -22,33 +22,6 @@ let s:colors = [
 \   { "gui": "#<%- base["07"]["hex"] %>", "cterm": 15 }
 \ ]
 
-" A helper function to set the properties.for the given highlight group. The properties dictionary
-" allows the following keys:
-"
-" * `foreground`: The index of the foreground color in the colors array.
-" * `background`: The index of the background color in the colors array.
-" * `attr`: The value for the `attrs-list` property on the `highlight` option.
-function <sid>highlight(group, properties)
-
-  if has_key(a:properties, 'foreground')
-    exec "highlight " . a:group
-      \ . " ctermfg=" . s:colors[a:properties['foreground']]["cterm"]
-      \ . " guifg=" . s:colors[a:properties['foreground']]["gui"]
-  endif
-
-  if has_key(a:properties, 'background')
-    exec "highlight " . a:group
-      \ . " ctermbg=" . s:colors[a:properties['background']]["cterm"]
-      \ . " guibg=" . s:colors[a:properties['background']]["gui"]
-  endif
-
-  if has_key(a:properties, 'attr')
-    exec "highlight " . a:group
-      \ . " cterm=" . a:properties['attr']
-      \ . " gui=" . a:properties['attr']
-  endif
-endfunction
-
 " Set and override the colors for different groups
 call <sid>highlight("Cursor", { "foreground": 0, "background": 7 })
 call <sid>highlight("CursorLine", { "background": 13 })
