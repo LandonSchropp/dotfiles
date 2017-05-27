@@ -11,8 +11,9 @@ fi
 # Generate the custom theme
 mkdir -p $HOME/.config/nvim/themes
 
+# Build the theme
 base16-builder \
   -t nvim \
-  -s $HOME/.dotfiles/themes/landon.yml
+  -s $HOME/.dotfiles/themes/landon.yml \
   -b light \
   > $HOME/.config/nvim/themes/landon.vim
