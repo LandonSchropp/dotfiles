@@ -2,7 +2,7 @@
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " Enable GUI colors
-" set termguicolors
+set termguicolors
 
 " Highlight the current line
 set cursorline

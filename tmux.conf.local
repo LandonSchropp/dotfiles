@@ -75,3 +75,5 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Run the plugin manager (this must go at the bottom)
 run '~/.tmux/plugins/tpm/tpm'
+
+set-option -ga terminal-overrides ",xterm-256color-italic:Tc"
