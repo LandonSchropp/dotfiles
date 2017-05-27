@@ -206,16 +206,32 @@ gem install bundler
 
 ## tmux
 
-tmux is a program that splits multiple terminals in the same window. The instructions for installing tmux were taken from [this gist](https://gist.github.com/simme/1297707).
+[tmux](https://tmux.github.io/) is a utility that allows you to run multiple windows inside one terminal.
 
-Install tmux with Homebrew and tmuxinator with `gem`.
+First, install tmux with Homebrew.
 
 ``` shell
-brew install reattach-to-user-namespace tmux
+brew install tmux
+```
+
+Next, install [tpm](https://github.com/tmux-plugins/tpm) and use it to install the tmux plugins.
+
+``` shell
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+$HOME/.tmux/plugins/tpm/bin/install_plugins
+```
+
+[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. You can install tmuxinator by installing its gem.
+
+``` shell
 gem install tmuxinator
 ```
 
-[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. Install the tmuxinator gem using the shell.
+Once all of this is done, you may have to tell tmux to reload the configuration file.
+
+``` shell
+tmux source-file ~/.tmux.conf
+```
 
 ## Node.js
 
