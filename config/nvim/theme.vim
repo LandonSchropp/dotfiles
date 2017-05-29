@@ -16,6 +16,9 @@ set background=light
 " Load the custom theme
 source ~/.config/nvim/themes/landon.vim
 
+" Customize the default syntax themes provided by Base16 Builder. To see all of the highlights, run:
+" :so $VIMRUNTIME/syntax/hitest.vim
+
 " Search
 Base16Highlight Search fg=blue bg=white
 Base16Highlight IncSearch fg=blue bg=white
@@ -51,6 +54,11 @@ Base16Highlight Warning fg=white bg=yellow
 Base16Highlight TabLine none
 Base16Highlight TabLineSel fg=white bg=dark2 none
 Base16Highlight TabLineFill none
+
+" Syntax
+Base16Highlight Statement fg=red
+Base16Highlight Constant fg=yellow
+Base16Highlight Identifier fg=blue
 
 " TODO: Style the cursor
 " TODO: Style Vim Airline
