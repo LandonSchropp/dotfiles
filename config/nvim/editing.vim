@@ -79,6 +79,7 @@ autocmd FileType gitcommit set textwidth=72
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 
 " Update the file types for the close tag plugin
 let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx"
