@@ -84,3 +84,6 @@ nnoremap <up> :<up>
 " Use _ and + for navigating tabs
 nnoremap _ gT
 nnoremap + gt
+
+" Automatically format JSON files using jq
+nnoremap <leader>jq :%!jq '.'<cr>
