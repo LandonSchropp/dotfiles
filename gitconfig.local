@@ -13,6 +13,7 @@
   delete-merged-branches = "!git co master && git branch --no-color --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   rebase-master = rebase -i master
   what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
+  dad = "!curl https://icanhazdadjoke.com/"
 
   # Shortcuts
   a = add
