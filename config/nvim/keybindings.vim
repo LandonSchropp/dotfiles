@@ -94,3 +94,6 @@ nnoremap <leader>jq :%!jq '.'<cr>
 " Fix the tab behavior for Deoplete (by reversing it)
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" Make the double register use the system clipboard
+nnoremap "" "*
