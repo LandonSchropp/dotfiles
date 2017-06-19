@@ -48,6 +48,7 @@ Base16Highlight GitGutterDeleteDefault fg=red bg=light3
 Base16Highlight NeomakeErrorDefault fg=white bg=red
 Base16Highlight NeomakeErrorSignDefault fg=white bg=red
 Base16Highlight NeomakeWarningSignDefault fg=white bg=yellow
+Base16Highlight TechWordsToAvoid fg=white bg=yellow
 Base16Highlight Warning fg=white bg=yellow
 
 " Tab bar
