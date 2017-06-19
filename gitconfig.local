@@ -14,6 +14,7 @@
   rebase-master = rebase -i master
   what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
   dad = "!curl https://icanhazdadjoke.com/"
+  stash-all = stash save --include-untracked
 
   # Shortcuts
   a = add
@@ -30,8 +31,14 @@
   fp = push --force-with-lease
 
 [core]
-  mergeoptions = --no-edit
+  mergeoptions = --no-edit --ff-only
   pager = diff-so-fancy | less --tabs=4 -R
+
+[push]
+  followTags = true
+
+[status]
+  showUntrackedFiles = all
 
 [color]
   ui = always
