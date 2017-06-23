@@ -43,7 +43,7 @@ function docker-clean-dangling-images {
 }
 
 function docker-clean-volumes {
-  VOLUMES=$(docker volume ls)
+  VOLUMES=$(docker volume ls -q)
 
   if [[ ! -z $VOLUMES ]]; then
     printf "\nRemoving volumes\n\n"
