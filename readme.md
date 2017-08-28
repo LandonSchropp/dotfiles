@@ -32,6 +32,7 @@ Next, install some handy little command line utilities with Homebrew:
 ``` shell
 brew install \
   ansiweather \
+  ccat \
   coreutils \
   diff-so-fancy \
   direnv \
@@ -56,19 +57,20 @@ Then, install the OS X apps and fonts via [Homebrew Cask](https://caskroom.githu
 brew tap caskroom/fonts
 brew cask install \
   atom \
+  beardedspice \
   calibre \
   cheatsheet \
   dropbox \
   firefox \
   font-open-sans \
   font-source-code-pro \
+  iina \
   imageoptim \
   istat-menus \
   iterm2 \
   numi \
   sketch-toolbox \
-  spotify \
-  vlc
+  spotify
 ```
 
 Finally, install the apps from the App Store.
