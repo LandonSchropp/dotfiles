@@ -55,6 +55,9 @@ nnoremap <silent> <leader>abc :sort<cr>
 " Search the files
 nnoremap <leader>ag :Ag<Space>
 
+" Toggle argwrap
+nnoremap <silent> <leader>aw :ArgWrap<CR>
+
 " vim-test mappings
 nnoremap <silent> <leader>tf :TestFile<cr>
 nnoremap <silent> <leader>tt :TestNearest<cr>

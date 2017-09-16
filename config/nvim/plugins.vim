@@ -71,6 +71,9 @@ Plug 'tpope/vim-endwise'
 " Quick commenting
 Plug 'vim-scripts/tComment'
 
+" Wrap and unwrap arguments and curly braces.
+Plug 'FooSoft/vim-argwrap'
+
 
 
 " SYNTAX PLUGINS

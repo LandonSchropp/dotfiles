@@ -101,3 +101,6 @@ augroup VIMRC
   autocmd BufLeave *.js   normal! mJ
   autocmd BufLeave *.php  normal! mP
 augroup END
+
+" Customize argwrap
+let g:argwrap_padded_braces = '[{'
