@@ -91,6 +91,7 @@ Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
 Plug 'elmcast/elm-vim'
+Plug 'elixir-lang/vim-elixir'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
