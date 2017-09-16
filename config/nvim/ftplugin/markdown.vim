@@ -6,7 +6,7 @@ setlocal textwidth=100
 " Highlight words to avoid in tech writing
 " http://css-tricks.com/words-avoid-educational-writing/
 
-function MatchTechWordsToAvoid()
+function! MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
