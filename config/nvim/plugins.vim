@@ -74,24 +74,21 @@ Plug 'vim-scripts/tComment'
 " Wrap and unwrap arguments and curly braces.
 Plug 'FooSoft/vim-argwrap'
 
+" TypeScript support
+Plug 'mhartington/nvim-typescript'
+
 
 
 " SYNTAX PLUGINS
 
 " Language syntax highlighting
-Plug 'digitaltoad/vim-pug'
+Plug 'sheerun/vim-polyglot'
+
+" Nunjucks
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'fatih/vim-go'
-Plug 'kchmck/vim-coffee-script'
-Plug 'slim-template/vim-slim'
+
+" Gemfiles
 Plug 'tpope/vim-bundler'
-Plug 'vim-ruby/vim-ruby'
-Plug 'othree/html5.vim'
-Plug 'elmcast/elm-vim'
-Plug 'elixir-lang/vim-elixir'
 
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
