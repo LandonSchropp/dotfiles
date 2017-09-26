@@ -57,7 +57,6 @@ Then, install the OS X apps and fonts via [Homebrew Cask](https://caskroom.githu
 brew tap caskroom/fonts
 brew cask install \
   atom \
-  beardedspice \
   calibre \
   cheatsheet \
   dropbox \
