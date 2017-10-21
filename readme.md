@@ -63,6 +63,7 @@ brew cask install \
   firefox \
   font-open-sans \
   font-source-code-pro \
+  google-cloud-sdk \
   iina \
   imageoptim \
   istat-menus \
