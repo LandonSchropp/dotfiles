@@ -8,7 +8,8 @@ source ~/.config/nvim/theme.vim
 source ~/.config/nvim/plugin/cursor_position.vim
 source ~/.config/nvim/plugin/stamp.vim
 source ~/.config/nvim/plugin/strip_whitespace.vim
-source ~/.config/nvim/plugin/tab_completion.vim
 
 " Thoughtbot Plugins
 source ~/.thoughtbot_dotfiles/vim/plugin/ctags.vim
+
+" Configuration

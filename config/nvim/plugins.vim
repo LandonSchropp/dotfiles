@@ -60,10 +60,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'wellle/targets.vim'
 
 " Better auto-completion
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Automatically add end in Ruby
 Plug 'tpope/vim-endwise'
