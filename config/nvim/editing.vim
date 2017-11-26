@@ -67,6 +67,9 @@ let g:ctrlp_prompt_mappings = {
 " uses grep.
 set grepprg=ag\ --nogroup\ --nocolor
 
+" User the silver searcher for Ack.
+let g:ackprg = 'ag --vimgrep'
+
 " Remove the delay when hitting the escape key
 set timeoutlen=2000 ttimeoutlen=0
 

@@ -52,8 +52,8 @@ nnoremap <silent> <leader>ta :call RunCurrentSpecFile()<cr>
 " Sort the currently selected lines
 nnoremap <silent> <leader>abc :sort<cr>
 
-" Search the files
-nnoremap <leader>ag :Ag<Space>
+" Search
+nnoremap <leader>f :Ack<Space>
 
 " Toggle argwrap
 nnoremap <silent> <leader>aw :ArgWrap<CR>

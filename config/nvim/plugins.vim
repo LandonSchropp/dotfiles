@@ -8,7 +8,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Project searching
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 
 " Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
