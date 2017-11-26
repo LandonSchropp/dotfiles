@@ -56,3 +56,10 @@
   oldHighlight = "black bold red"
   newNormal = "green bold"
   newHighlight = "black bold green"
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $MERGED $REMOTE -c '$wincmd w' -c 'wincmd J'
