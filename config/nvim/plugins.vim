@@ -69,7 +69,7 @@ Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/tComment'
 
 " Wrap and unwrap arguments and curly braces.
-Plug 'FooSoft/vim-argwrap'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " TypeScript support
 Plug 'mhartington/nvim-typescript'
