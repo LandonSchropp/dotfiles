@@ -12,4 +12,6 @@ source ~/.config/nvim/plugin/strip_whitespace.vim
 " Thoughtbot Plugins
 source ~/.thoughtbot_dotfiles/vim/plugin/ctags.vim
 
-" Configuration
+" Enable reading project-specific .nvimrc files
+set exrc
+set secure

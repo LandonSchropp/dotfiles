@@ -1,8 +1,7 @@
 " Create Stamp (S) operator
 nmap <silent> S :set opfunc=Stamp<CR>g@
-vmap <silent> S :<C-U>call Stamp(visualmode(), 1)<CR>
 
-function! Stamp()
+function! Stamp(type)
   let saved_register = @@
 
   " This command does the following:
