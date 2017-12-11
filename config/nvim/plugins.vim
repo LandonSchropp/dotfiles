@@ -28,9 +28,6 @@ Plug 'roman/golden-ratio'
 " Better buffer deletion handling.
 Plug 'moll/vim-bbye'
 
-" Run tests on the fly
-Plug 'janko-m/vim-test'
-
 " Automatically create any non-existent directories before writing the buffer
 Plug 'pbrisbin/vim-mkdir'
 

@@ -39,19 +39,6 @@ vnoremap gc gcc <Esc>
 
 " Leader mappings
 let mapleader = " "
-
-" Run the currently selected spec
-nnoremap <silent> <leader>tt :call RunNearestSpec()<cr>
-
-" Run the last spec
-nnoremap <silent> <leader>tl :call RunLastSpec()<cr>
-
-" Run the current spec file
-nnoremap <silent> <leader>ta :call RunCurrentSpecFile()<cr>
-
-" Sort the currently selected lines
-nnoremap <silent> <leader>abc :sort<cr>
-
 " Search
 nnoremap <leader>f :Ack<Space>
 
@@ -59,10 +46,8 @@ nnoremap <leader>f :Ack<Space>
 nnoremap <silent> <leader>aw :ArgWrap<CR>
 
 " vim-test mappings
-nnoremap <silent> <leader>tf :TestFile<cr>
-nnoremap <silent> <leader>tt :TestNearest<cr>
-nnoremap <silent> <leader>tl :TestLast<cr>
-nnoremap <silent> <leader>ta :TestSuite<cr>
+nnoremap <silent> <leader>tf :call TestFile()<cr>
+nnoremap <silent> <leader>ts :call TestSuite()<cr>
 
 " Remap EasyMotion
 nmap \ <Plug>(easymotion-prefix)
