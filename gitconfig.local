@@ -63,3 +63,6 @@
   prompt = true
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $MERGED $REMOTE -c '$wincmd w' -c 'wincmd J'
+
+[rerere]
+  enabled = true
