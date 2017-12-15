@@ -17,7 +17,7 @@ Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 
 " Linting
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 
 " Quickly run Unix commands.
 Plug 'tpope/vim-eunuch'

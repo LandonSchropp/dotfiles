@@ -45,9 +45,6 @@ Base16Highlight GitGutterChangeDefault fg=yellow bg=light3
 Base16Highlight GitGutterDeleteDefault fg=red bg=light3
 
 " Errors and warnings
-Base16Highlight NeomakeErrorDefault fg=white bg=red
-Base16Highlight NeomakeErrorSignDefault fg=white bg=red
-Base16Highlight NeomakeWarningSignDefault fg=white bg=yellow
 Base16Highlight TechWordsToAvoid fg=white bg=yellow
 Base16Highlight Warning fg=white bg=yellow
 

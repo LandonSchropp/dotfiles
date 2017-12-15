@@ -1,10 +1,3 @@
-" Configure Neomake
-autocmd! BufWritePost,BufReadPost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-
-let g:neomake_warning_sign={'text': '⚠', 'texthl': 'Warning'}
-let g:neomake_error_sign={'text': '⚠', 'texthl': 'Error'}
-
 " Prevent vim-json from concealing quotes
 let g:vim_json_syntax_conceal = 0
 
