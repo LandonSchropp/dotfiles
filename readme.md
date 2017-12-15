@@ -1,6 +1,6 @@
 # Dotfiles
 
-This is a guide to setting up my personal development environment. It's meant get me up and running as fast as possible on a clean install of OS X.
+This is a guide to setting up my personal development environment. It's meant get me up and running as fast as possible on a clean install of macOS.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Finally, install [Google Chrome](https://www.google.com/chrome). This is necessa
 
 ## Homebrew
 
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for OS X. To install it, run the following script:
+[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for macOS. To install it, run the following script:
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -50,7 +50,7 @@ brew install \
   z
 ```
 
-Then, install the OS X apps and fonts via [Homebrew Cask](https://caskroom.github.io/):
+Then, install the macOS apps and fonts via [Homebrew Cask](https://caskroom.github.io/):
 
 ```
 brew tap caskroom/fonts
@@ -143,7 +143,7 @@ RCRC=$HOME/.dotfiles/rcrc rcup
 
 ## Zsh and Prezto
 
-[Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with OS X. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
+[Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with macOS. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
 
 [Prezto](https://github.com/sorin-ionescu/prezto) is a framework that manages Zsh, and includes several plugins to make development easier.
 
@@ -166,12 +166,16 @@ tic $HOME/.dotfiles/tmux-256color-italic.terminfo
 
 Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
 
-## OS X
+## macOS
 
-Run the OS X script to set some useful OS X preferences. Restart for all of the changes to take effect.
+Paul Irish maintains a [useful script](https://github.com/paulirish/dotfiles/blob/master/.osx) for
+configuring macOS. This file is constantly updating, so pull it down, change anything you don't like
+and then run it.
 
 ```
-source $HOME/.dotfiles/osx.zsh
+curl -O https://github.com/paulirish/dotfiles/blob/master/.osx macOS
+nvim macOS
+./macOS
 ```
 
 ## Mackup
@@ -191,7 +195,7 @@ mackup restore
 brew install rbenv ruby-build
 ```
 
-OS X ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it is. To install Ruby, run:
+macOS ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it is. To install Ruby, run:
 
 ```
 rbenv install <version>
@@ -249,14 +253,14 @@ nvm use stable
 
 [PostgreSQL](http://www.postgresql.org/) is an open-source SQL database.
 
-OS X ships with an old version of PostgreSQL pre-installed. To install the newest version, use:
+macOS ships with an old version of PostgreSQL pre-installed. To install the newest version, use:
 
 ```
 brew install postgresql
 initdb /usr/local/var/postgres
 ```
 
-Next, restart the terminal. In order to make sure PostgreSQL starts up when OS X starts up, we need to add a launch agent.
+Next, restart the terminal. In order to make sure PostgreSQL starts up when macOS starts up, we need to add a launch agent.
 
 ```
 ln -s "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
