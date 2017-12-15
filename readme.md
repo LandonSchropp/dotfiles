@@ -31,7 +31,6 @@ Next, install some handy little command line utilities with Homebrew:
 
 ``` shell
 brew install \
-  ansiweather \
   ccat \
   coreutils \
   diff-so-fancy \
