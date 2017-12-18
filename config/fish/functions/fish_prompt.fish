@@ -4,7 +4,7 @@ function fish_prompt
   set_color -b magenta black
   printf ' %s ' (prompt_pwd)
 
-  # If the working directory is not contained in a Git repo, close out the status.
+  # If the working directory is not contained in a Git repo, close the prompt
   if not __fish_is_git_repository
     set_color -b normal magenta
     printf ' '
@@ -33,7 +33,7 @@ function fish_prompt
   set_color -b cyan black
   printf '%s ' (__fish_git_prompt)
 
-  # Close out the prompt.
+  # Close the prompt.
   set_color -b normal cyan
   printf ' '
 end
