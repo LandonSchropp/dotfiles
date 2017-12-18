@@ -6,10 +6,6 @@ rbenv rehash >/dev/null ^&1
 # Start up direnv
 eval (direnv hook fish)
 
-# Start up NVM
-# TODO: This seems to significantly slow down startup time. Investigate alternatives.
-test -e "$HOME/.nvm"; and bass source "$HOME/.nvm/nvm.sh"
-
 # Set the default text editor
 set -gx EDITOR nvim
 
