@@ -142,18 +142,24 @@ brew install rcm
 RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
-## Zsh and Prezto
+## Fish
 
-[Z shell (zsh)](http://en.wikipedia.org/wiki/Z_shell) is an awesome replacement for the default bash shell that ships with macOS. It includes some greate features such as auto-completion, spelling correction, glob file matching, custom prompts and more.
+[Fish]() is an awesome shell with a ton of useful features baked in out of the box. Many of the
+plugins required for Z Shell just work with Fish.
 
-[Prezto](https://github.com/sorin-ionescu/prezto) is a framework that manages Zsh, and includes several plugins to make development easier.
+First, install Fish and set it to the default shell.
 
-To set up and install Zsh and Prezto, start zsh, clone the Prezto repository and set zsh as the default shell.
-
+``` sh
+brew install fish
+sudo echo "/usr/local/bin/fish" >> /etc/shells
+chsh -s /usr/local/bin/fish
 ```
-zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
-chsh -s /bin/zsh
+
+Next, install [Fisherman](https://github.com/fisherman/fisherman) by following the instructions in
+the readme. Finally, install the plugins.
+
+``` sh
+fisher
 ```
 
 ## Terminal Colors and Italics
