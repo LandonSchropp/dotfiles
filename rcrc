@@ -6,11 +6,9 @@ EXCLUDES=(
   "$HOME/.thoughtbot_dotfiles:*vim*"
   "$HOME/.thoughtbot_dotfiles:hooks/*"
   "readme.md"
-  "osx.zsh"
   "landons_theme.yml"
   "rcrc"
   "xterm"
-  "prezto"
 )
 
 EXCLUDES=${EXCLUDES[@]}
