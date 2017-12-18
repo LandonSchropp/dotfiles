@@ -45,6 +45,7 @@ brew install \
   rename \
   source-highlight \
   the_silver_searcher \
+  thefuck \
   tldr \
   tree \
   wget \
