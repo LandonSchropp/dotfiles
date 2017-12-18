@@ -1,7 +1,4 @@
-# Source the other configuration files.
-source $HOME/.config/fish/docker.fish
-
-# Kick off rbenv
-set PATH $HOME/.rbenv/bin $PATH
-set PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
+# Source the configuration files
+for config_file in $HOME/.dotfiles/config/fish/config/**
+  source $config_file
+end
