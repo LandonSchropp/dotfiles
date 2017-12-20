@@ -50,11 +50,15 @@ function tk --description "A wrapper for tmux kill-session"
   end
 end
 
+function active_tmux_sessions --description 'Lists all of the active Tmux sessions'
+  tmux ls -F "#{session_name}" 2>/dev/null | cut -d: -f1
+end
+
 function tmux_sessions --description 'Lists all available sessions from Tmux and Tmuxinator'
   set tmuxinator_sessions (tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')
-  set tmux_sessions (tmux ls -F "#{session_name}" 2>/dev/null | cut -d: -f1)
 
-  echo $tmuxinator_sessions $tmux_sessions | gsed -e 's/\s\+/\n/g' | sort | uniq
+  echo $tmuxinator_sessions (active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
 end
 
 complete --no-files --command ta --arguments '(tmux_sessions)'
+complete --no-files --command tk --arguments '(active_tmux_sessions)'
