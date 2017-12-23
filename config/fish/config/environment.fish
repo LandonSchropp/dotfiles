@@ -1,3 +1,6 @@
+# Remove the greeting
+set fish_greeting ""
+
 # Start up rbenv
 set -gx PATH $HOME/.rbenv/bin $PATH
 set -gx PATH $HOME/.rbenv/shims $PATH
