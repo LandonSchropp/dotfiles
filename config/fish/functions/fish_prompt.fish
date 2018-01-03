@@ -21,14 +21,15 @@ function fish_prompt
   set -g __fish_git_prompt_showstashstate 1
   set -g __fish_git_prompt_showuntrackedfiles 1
   set -g __fish_git_prompt_showupstream 1
+  set -g __fish_git_prompt_showcleanstate 1
 
-  set -g __fish_git_prompt_char_upstream_prefix " "
+  set -g __fish_git_prompt_char_upstream_prefix ""
 
   set -g __fish_git_prompt_char_untrackedfiles "?"
   set -g __fish_git_prompt_char_upstream_equal ""
-  set -g __fish_git_prompt_char_upstream_behind "↓"
-  set -g __fish_git_prompt_char_upstream_ahead "↑"
-  set -g __fish_git_prompt_char_upstream_diverged "↑↓"
+  set -g __fish_git_prompt_char_upstream_behind " ↓"
+  set -g __fish_git_prompt_char_upstream_ahead " ↑"
+  set -g __fish_git_prompt_char_upstream_diverged " ↑↓"
 
   set_color -b cyan black
   printf '%s ' (__fish_git_prompt)
