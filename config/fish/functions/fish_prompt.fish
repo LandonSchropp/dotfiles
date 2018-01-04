@@ -32,7 +32,7 @@ function fish_prompt
   set -g __fish_git_prompt_char_upstream_diverged " ↑↓"
 
   set_color -b cyan black
-  printf '%s ' (__fish_git_prompt)
+  printf '%s ' (__fish_git_prompt " %s")
 
   # Close the prompt.
   set_color -b normal cyan
