@@ -16,6 +16,13 @@ set background=light
 " Load the custom theme
 source ~/.config/nvim/themes/landon.vim
 
+" Customize the ALE warnings and errors
+let g:ale_sign_error = '⚠ '
+let g:ale_sign_warning = '⚠ '
+
+highlight link ALEErrorSign Error
+highlight link ALEWarningSign Warning
+
 " Customize the default syntax themes provided by Base16 Builder. To see all of the highlights, run:
 " :so $VIMRUNTIME/syntax/hitest.vim
 
