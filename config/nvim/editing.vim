@@ -107,3 +107,6 @@ augroup END
 
 " Customize argwrap
 let g:argwrap_padded_braces = '[{'
+
+" Set comment configuration file formats
+autocmd BufNewFile,BufRead .babelrc set syntax=json
