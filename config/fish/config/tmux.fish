@@ -1,6 +1,6 @@
 # Alias common tmux functions.
 alias td='tmux detach'
-alias tl='tmux list-sessions'
+alias tl='tmux list-sessions 2>/dev/null'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -20,7 +20,7 @@ function ta --description "Create or attach a tmux session"
 
   # Create the session if it doesn't already exist.
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
-  if not tmux ls -F "#{session_name}" | grep -Fx $argv[1] > /dev/null
+  if not active_tmux_sessions | grep -Fx $argv[1] >/dev/null
 
     # Create the session using tmuxinator if a project exists for it. If the tmux session was
     # started successfully, we're done!
@@ -29,7 +29,7 @@ function ta --description "Create or attach a tmux session"
     end
 
     # If a tmuxinator project does not exist, create a new session
-    tmux new-session -d -s $argv[1]
+    tmux new-session -d -s $argv[1] 2>/dev/null
     tmux rename-window "working"
   end
 
