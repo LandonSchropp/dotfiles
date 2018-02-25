@@ -29,9 +29,10 @@ function ta --description "Create or attach a tmux session"
       return 0
     end
 
-    # If a tmuxinator project does not exist, create a new session
+    # If a tmuxinator project does not exist, create a new session using my preferred layout
     tmux new-session -d -s $argv[1] 2>/dev/null
     tmux rename-window "working"
+    tmux new-window -d -n vim 'nvim'
   end
 
   # If a tmux session is already attached, switch to the new session. Otherwise, attach the new
