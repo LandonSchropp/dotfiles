@@ -55,6 +55,13 @@ function active_tmux_sessions --description 'Lists all of the active Tmux sessio
 end
 
 function tmux_sessions --description 'Lists all available sessions from Tmux and Tmuxinator'
+
+  # Make sure tmuxinator is installed.
+  if not type -q tmuxinator
+    echo "Tmuxinator must be installed!"
+    return 1
+  end
+
   set tmuxinator_sessions (tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')
 
   echo $tmuxinator_sessions (active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
