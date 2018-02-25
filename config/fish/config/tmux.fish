@@ -25,7 +25,7 @@ function ta --description "Create or attach a tmux session"
 
     # Create the session using tmuxinator if a project exists for it. If the tmux session was
     # started successfully, we're done!
-    if tmuxinator start $argv[1] 2>/dev/null
+    if tmuxinator start $argv[1] 1>/dev/null 2>/dev/null
       return 0
     end
 
