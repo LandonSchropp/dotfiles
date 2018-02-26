@@ -189,7 +189,7 @@ gem install bundler
 First, install tmux with Homebrew.
 
 ``` shell
-brew install tmux
+brew install tmux reattach-to-user-namespace
 ```
 
 Next, install [tpm](https://github.com/tmux-plugins/tpm) and use it to install the tmux plugins.
