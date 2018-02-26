@@ -139,37 +139,6 @@ brew install rcm
 RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
-## Fish
-
-[Fish]() is an awesome shell with a ton of useful features baked in out of the box. Many of the
-plugins required for Z Shell just work with Fish.
-
-First, install Fish and set it to the default shell.
-
-``` sh
-brew install fish
-sudo echo "/usr/local/bin/fish" >> /etc/shells
-chsh -s /usr/local/bin/fish
-```
-
-Next, install [Fisherman](https://github.com/fisherman/fisherman) by following the instructions in
-the readme. Finally, install the plugins.
-
-``` sh
-fisher
-```
-
-## Terminal Colors and Italics
-
-To enable italic text in the terminal, you need to register italics with the TERM database.
-
-```
-tic $HOME/.dotfiles/xterm-256color-italic.terminfo
-tic $HOME/.dotfiles/tmux-256color-italic.terminfo
-```
-
-Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
-
 ## macOS
 
 Paul Irish maintains a [useful script](https://github.com/paulirish/dotfiles/blob/master/.osx) for
@@ -241,6 +210,37 @@ Once all of this is done, you may have to tell tmux to reload the configuration 
 ``` shell
 tmux source-file ~/.tmux.conf
 ```
+
+## Fish
+
+[Fish]() is an awesome shell with a ton of useful features baked in out of the box. Many of the
+plugins required for Z Shell just work with Fish.
+
+First, install Fish and set it to the default shell.
+
+``` sh
+brew install fish
+sudo echo "/usr/local/bin/fish" >> /etc/shells
+chsh -s /usr/local/bin/fish
+```
+
+Next, install [Fisherman](https://github.com/fisherman/fisherman) by following the instructions in
+the readme. Finally, install the plugins.
+
+``` sh
+fisher
+```
+
+## Terminal Colors and Italics
+
+To enable italic text in the terminal, you need to register italics with the TERM database.
+
+```
+tic $HOME/.dotfiles/xterm-256color-italic.terminfo
+tic $HOME/.dotfiles/tmux-256color-italic.terminfo
+```
+
+Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
 
 ## Node.js
 
