@@ -48,6 +48,7 @@ brew install \
   tldr \
   tree \
   wget \
+  yarn \
   z
 ```
 
@@ -57,6 +58,7 @@ Then, install the macOS apps and fonts via [Homebrew Cask](https://caskroom.gith
 brew tap caskroom/fonts
 brew cask install \
   atom \
+  docker \
   dropbox \
   firefox \
   font-open-sans \
