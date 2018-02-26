@@ -45,7 +45,6 @@ brew install \
   rename \
   source-highlight \
   the_silver_searcher \
-  thefuck \
   tldr \
   tree \
   wget \
@@ -58,15 +57,12 @@ Then, install the macOS apps and fonts via [Homebrew Cask](https://caskroom.gith
 brew tap caskroom/fonts
 brew cask install \
   atom \
-  calibre \
-  cheatsheet \
   dropbox \
   firefox \
   font-open-sans \
   font-source-code-pro \
   google-cloud-sdk \
   iina \
-  imageoptim \
   istat-menus \
   iterm2 \
   numi \
@@ -78,16 +74,13 @@ Finally, install the apps from the App Store.
 
 ``` shell
 APPS=(
-  504544917 # Clear
   892581529 # Tonality
-  917790450 # ScreenFlow
   425424353 # The Unarchiver
   412980789 # Full Deck Solitaire
   409183694 # Keynote
   443987910 # 1Password
   411902645 # Braid
   775737590 # iA Writer
-  852320343 # Sketch
   557168941 # Tweetbot
   803453959 # Slack
   969418666 # ColorSnapper2
@@ -95,6 +88,9 @@ APPS=(
   961632517 # Be Focused Pro
   1074021862 # External Editors For Photos
   414154107 # World of Goo
+  1284863847 # Unsplash Wallpapers
+  1055511498 # Day One
+  1055511498 # Amphetamine
 )
 mas install ${APPS[@]}
 ```
