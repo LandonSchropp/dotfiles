@@ -110,7 +110,7 @@ In order to connect with GitHub, you'll need to generate an SSH key. Follow the 
 Install Neovim with Homebrew.
 
 ``` shell
-brew install neovim/neovim/neovim
+brew install neovim
 ```
 
 Some of the plugins I use require Python, so install that as well.
