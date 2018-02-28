@@ -38,6 +38,7 @@ brew install \
   direnv \
   gnu-sed \
   heroku \
+  httpie \
   imagemagick \
   jq \
   mas \
@@ -68,7 +69,6 @@ brew cask install \
   istat-menus \
   iterm2 \
   numi \
-  sketch-toolbox \
   spotify
 ```
 
