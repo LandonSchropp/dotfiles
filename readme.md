@@ -43,6 +43,7 @@ brew install \
   jq \
   mas \
   m-cli \
+  pgcli \
   rename \
   source-highlight \
   the_silver_searcher \
