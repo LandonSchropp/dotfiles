@@ -110,3 +110,4 @@ let g:argwrap_padded_braces = '[{'
 
 " Set comment configuration file formats
 autocmd BufNewFile,BufRead .babelrc set syntax=json
+autocmd BufNewFile,BufRead Procfile set syntax=yaml
