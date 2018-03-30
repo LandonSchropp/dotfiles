@@ -2,6 +2,7 @@
 alias td='tmux detach'
 alias tl='tmux list-sessions 2>/dev/null; or true'
 alias ts='tmux swap-window -t'
+alias tm='tmux move-window -t'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
