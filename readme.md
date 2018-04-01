@@ -211,10 +211,9 @@ tmux source-file ~/.tmux.conf
 
 ## Fish
 
-[Fish]() is an awesome shell with a ton of useful features baked in out of the box. Many of the
-plugins required for Z Shell just work with Fish.
+[Fish]() is an awesome shell with a ton of useful features baked in out of the box.
 
-First, install Fish and set it to the default shell.
+To get up and running, install Fish and set it to the default shell.
 
 ``` sh
 brew install fish
