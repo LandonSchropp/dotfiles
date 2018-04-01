@@ -126,7 +126,6 @@ pip3 install neovim
 Neovim is configured in the dotfiles.
 
 ## Dotfiles
-
 The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
 
 ``` shell
@@ -144,15 +143,10 @@ RCRC=$HOME/.dotfiles/rcrc rcup
 
 ## macOS
 
-Paul Irish maintains a [useful script](https://github.com/paulirish/dotfiles/blob/master/.osx) for
-configuring macOS. This file is constantly updating, so pull it down, change anything you don't like
-and then run it.
-
-```
-curl -O https://github.com/paulirish/dotfiles/blob/master/.osx macOS
-nvim macOS
-./macOS
-```
+Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and 
+application settings in one go. Because macOS is constantly updating, it's probably a good idea to
+pull it down an modify every once in a while. My latest local iteration is kept in the
+[macos.sh](macos.sh) script.
 
 ## Mackup
 
