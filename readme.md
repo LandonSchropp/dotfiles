@@ -171,11 +171,12 @@ mackup restore
 brew install rbenv ruby-build
 ```
 
-macOS ships with an old version of Ruby. You'll want the latest stable one. Check the official [Ruby language website](https://www.ruby-lang.org/en/downloads/) to see what it is. To install Ruby, run:
+macOS ships with an old version of Ruby. To install the latest version, run the following:
 
 ```
-rbenv install <version>
-rbenv global <version>
+RUBY_VERSION=$(rbenv install -l | grep -v - | tail -1)
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
 eval "$(rbenv init -)"
 ```
 
