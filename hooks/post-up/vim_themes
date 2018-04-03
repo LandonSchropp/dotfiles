@@ -4,16 +4,24 @@ set -e
 
 # Ensure base16-builder is installed
 if ! command -v base16-builder 2>/dev/null; then
-  echo "Base16 Builder must be installed!"
-  return 1
+  echo "Installing Base16 Builder"
+  yarn global add base16-builder
 fi
 
-# Generate the custom theme
+# BUG FIX: The base16-builder is currently not bundled with the nvim theme. Until that's fixed, it's
+# simple to manually download the theme file.
+# https://github.com/base16-builder/base16-builder/issues/167<Paste>
+curl \
+  -L \
+  -o /tmp/nvim.ejs \
+  https://github.com/base16-builder/base16-builder/raw/master/db/templates/nvim/both.ejs \
+
+# Generate the themes folder
 mkdir -p $HOME/.config/nvim/themes
 
 # Build the theme
 base16-builder \
-  -t nvim \
+  -t /tmp/nvim.ejs \
   -s $HOME/.dotfiles/themes/landon.yml \
   -b light \
   > $HOME/.config/nvim/themes/landon.vim
