@@ -108,6 +108,17 @@ brew install git
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
 
+## Node.js
+
+These days, the best way to install node with with [NVM](https://github.com/creationix/nvm). To install it, follow the instructions in the [readme file](https://github.com/creationix/nvm#install-script).
+
+Once NVM is installed, you'll want to install a global copy of Node.
+
+```
+npm install stable
+nvm use stable
+```
+
 ## Neovim
 
 Install Neovim with Homebrew.
@@ -238,17 +249,6 @@ tic $HOME/.dotfiles/tmux-256color-italic.terminfo
 ```
 
 Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
-
-## Node.js
-
-These days, the best way to install node with with [NVM](https://github.com/creationix/nvm). To install it, follow the instructions in the [readme file](https://github.com/creationix/nvm#install-script).
-
-Once NVM is installed, you'll want to install a global copy of Node.
-
-```
-npm install stable
-nvm use stable
-```
 
 ## PostgreSQL
 
