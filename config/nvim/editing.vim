@@ -111,6 +111,7 @@ let g:argwrap_padded_braces = '[{'
 " Set comment configuration file formats
 autocmd BufNewFile,BufRead .babelrc set syntax=json
 autocmd BufNewFile,BufRead Procfile set syntax=yaml
+autocmd BufNewFile,BufRead .envrc set syntax=sh
 
 " Automatically read files when they change outside of Neovim
 " TODO: This currently doens't work very well. It requires me to manually run checktime whenever I
