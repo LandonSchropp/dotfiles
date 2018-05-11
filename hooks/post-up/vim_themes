@@ -8,9 +8,8 @@ if ! command -v base16-builder 2>/dev/null; then
   yarn global add base16-builder
 fi
 
-# BUG FIX: The base16-builder is currently not bundled with the nvim theme. Until that's fixed, it's
-# simple to manually download the theme file.
-# https://github.com/base16-builder/base16-builder/issues/167<Paste>
+# BUG FIX: The base16-builder is currently not bundled with the nvim theme. Until that's fixed, I'll
+# manually download the theme file. https://github.com/base16-builder/base16-builder/issues/167
 curl \
   -L \
   -o /tmp/nvim.ejs \
