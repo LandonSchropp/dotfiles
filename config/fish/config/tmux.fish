@@ -2,7 +2,6 @@
 alias td='tmux detach'
 alias tl='tmux list-sessions 2>/dev/null; or true'
 alias ts='tmux swap-window -t'
-alias tm='tmux move-window -t'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -53,6 +52,15 @@ function tk --description "A wrapper for tmux kill-session"
   end
 end
 
+function tm --description "Move a tmux window to another position"
+  set target_window (echo $argv[1])
+
+  if test $target_window -lt 1; or test $target_window -gt (tmux_number_of_windows)
+    echo -e "The target window must be between 1 and "(tmux_number_of_windows)"."
+    return 1
+  end
+end
+
 function active_tmux_sessions --description 'Lists all of the active Tmux sessions'
   tmux ls -F "#{session_name}" 2>/dev/null | cut -d: -f1
 end
@@ -68,6 +76,14 @@ function tmux_sessions --description 'Lists all available sessions from Tmux and
   set tmuxinator_sessions (tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')
 
   echo $tmuxinator_sessions (active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
+end
+
+function tmux_current_window
+  tmux display-message -p '#I'
+end
+
+function tmux_number_of_windows
+  tmux display-message -p '#{session_windows}'
 end
 
 complete --no-files --command ta --arguments '(tmux_sessions)'
