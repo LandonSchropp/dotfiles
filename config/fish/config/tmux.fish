@@ -1,7 +1,6 @@
 # Alias common tmux functions.
 alias td='tmux detach'
 alias tl='tmux list-sessions 2>/dev/null; or true'
-alias ts='tmux swap-window -t'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -59,6 +58,20 @@ function tm --description "Move a tmux window to another position"
     echo -e "The target window must be between 1 and "(tmux_number_of_windows)"."
     return 1
   end
+
+  if test $target_window -lt (tmux_current_window)
+    for i in (seq (math (tmux_current_window) - 1))
+      tmux swap-window -d -s (tmux_current_window) -t $i
+    end
+  end
+
+  if test $target_window -gt (tmux_current_window)
+    for i in (seq $target_window (math (tmux_current_window) + 1))
+      tmux swap-window -d -s (tmux_current_window) -t $i
+    end
+  end
+
+  tmux select-window -t $target_window
 end
 
 function active_tmux_sessions --description 'Lists all of the active Tmux sessions'
