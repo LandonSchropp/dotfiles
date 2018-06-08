@@ -82,3 +82,8 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Make the double register use the system clipboard
 nnoremap "" "*
+
+" Base64 encoding and decoding
+" TODO: Find a better register to use.
+Repeatable nnoremap <leader>t64 mzv$hc<c-r>=system('base64', @")<cr><esc>kJ$x`z
+Repeatable nnoremap <leader>f64 mzv$hc<c-r>=system('base64 --decode', @")<cr><esc>`z

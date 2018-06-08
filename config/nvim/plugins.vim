@@ -71,7 +71,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 " TypeScript support
 Plug 'mhartington/nvim-typescript'
 
-
+" Base 64 encoding/decoding
+Plug 'christianrondeau/vim-base64'
+Plug 'kreskij/Repeatable.vim', { 'on': 'Repeatable' }
 
 " SYNTAX PLUGINS
 
