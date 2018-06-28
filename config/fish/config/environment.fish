@@ -17,3 +17,6 @@ set -gx PATH ./bin ./node_modules/.bin $PATH
 # Enable source highlighting in less
 set -gx LESSOPEN "| /usr/local/bin/src-hilite-lesspipe.sh %s"
 set -gx LESS " -R "
+
+# Add the kubernetes utilities to the path
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
