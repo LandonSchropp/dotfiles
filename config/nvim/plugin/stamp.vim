@@ -6,7 +6,7 @@ function! Stamp(type)
 
   " This command does the following:
   "
-  " 1. visually select the last motion (which would be the motion used to call the Stamp script.
+  " 1. Visually select the last motion (which would be the motion used to call the Stamp script.
   " 2. Escape to de-select the motion. This populates the `< and `> marks.
   " 3. Insert a # character after the motion. This prevents the paste before from breaking when
   "    there are no characters after the current motion (e.g. $).
