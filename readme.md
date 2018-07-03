@@ -51,23 +51,14 @@ pull it down an modify every once in a while. My latest local iteration is kept 
 
 ## Fish
 
-[Fish](https://fishshell.com/) is an awesome shell with a ton of useful features baked in out of the box.
-
-To get up and running, install Fish and set it to the default shell.
+To get up and running, add Fish to the list of shells and set it as the default.
 
 ``` shell
 sudo bash -c 'echo "/usr/local/bin/fish" >> /etc/shells'
 chsh -s /usr/local/bin/fish
 ```
 
-Next, install [Fisherman](https://github.com/fisherman/fisherman) by following the instructions in
-the readme. Finally, install the plugins.
-
-``` shell
-fisher
-```
-
-## Terminal Colors and Italics
+### Terminal Colors and Italics
 
 To enable italic text in the terminal, you need to register italics with the TERM database.
 
