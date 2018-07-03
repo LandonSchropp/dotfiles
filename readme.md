@@ -19,6 +19,15 @@ sudo xcodebuild -license accept
 
 Finally, install [Google Chrome](https://www.google.com/chrome). This is necessary because 1Password checks the MD5 hash of the installed binary and rejects Chrome if it's installed via Homebrew Cask.
 
+## Dotfiles
+
+The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
+
+``` shell
+git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
+git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
+```
+
 ## Homebrew
 
 [Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for macOS. To install it, run the following script:
@@ -27,84 +36,24 @@ Finally, install [Google Chrome](https://www.google.com/chrome). This is necessa
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Next, install some handy little command line utilities with Homebrew:
+Then, install all of the brew dependencies using [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle).
+
+```
+cd $HOME/.dotfiles
+brew bundle --file=$HOME/.dotfiles/Brewfile
+```
+
+## RCM
+
+[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. 
 
 ``` shell
-brew install \
-  asciinema \
-  ccat \
-  coreutils \
-  diff-so-fancy \
-  direnv \
-  gnu-sed \
-  heroku \
-  httpie \
-  imagemagick \
-  jq \
-  mas \
-  m-cli \
-  pgcli \
-  rename \
-  source-highlight \
-  the_silver_searcher \
-  tldr \
-  tree \
-  wget \
-  yarn \
-  z
-```
-
-Then, install the macOS apps and fonts via [Homebrew Cask](https://caskroom.github.io/):
-
-```
-brew tap caskroom/fonts
-brew cask install \
-  atom \
-  docker \
-  dropbox \
-  firefox \
-  font-open-sans \
-  font-source-code-pro \
-  google-cloud-sdk \
-  iina \
-  istat-menus \
-  iterm2 \
-  numi \
-  spotify
-```
-
-Finally, install the apps from the App Store.
-
-``` shell
-APPS=(
-  892581529 # Tonality
-  425424353 # The Unarchiver
-  412980789 # Full Deck Solitaire
-  409183694 # Keynote
-  443987910 # 1Password
-  411902645 # Braid
-  775737590 # iA Writer
-  557168941 # Tweetbot
-  803453959 # Slack
-  969418666 # ColorSnapper2
-  417375580 # BetterSnapTool
-  961632517 # Be Focused Pro
-  1074021862 # External Editors For Photos
-  414154107 # World of Goo
-  1284863847 # Unsplash Wallpapers
-  1055511498 # Day One
-  1055511498 # Amphetamine
-)
-mas install ${APPS[@]}
+RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
 ## Git
 
-The XCode Command Line Tools includes Git, but it's not the latest version. To install the current version, run:
-
-```
-brew install git
-```
+The latest version of Git is installed with Homebrew.
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
 
@@ -135,22 +84,6 @@ pip3 install neovim
 ```
 
 Neovim is configured in the dotfiles.
-
-## Dotfiles
-The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
-
-``` shell
-git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
-git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
-```
-
-Next, install [rcm](https://github.com/thoughtbot/rcm) and link the dotfiles.
-
-``` shell
-brew tap thoughtbot/formulae
-brew install rcm
-RCRC=$HOME/.dotfiles/rcrc rcup
-```
 
 ## macOS
 
