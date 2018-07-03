@@ -40,8 +40,6 @@ run the `rcup` command as many times as you'd like.
 
 ## Git
 
-The latest version of Git is installed with Homebrew.
-
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
 
 ## Node.js
@@ -54,23 +52,6 @@ Once NVM is installed, you'll want to install a global copy of Node.
 npm install stable
 nvm use stable
 ```
-
-## Neovim
-
-Install Neovim with Homebrew.
-
-``` shell
-brew install neovim
-```
-
-Some of the plugins I use require Python, so install that as well.
-
-``` shell
-brew install python3
-pip3 install neovim
-```
-
-Neovim is configured in the dotfiles.
 
 ## macOS
 
