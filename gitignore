@@ -1,0 +1,10 @@
+.DS_Store
+*.sw[nop]
+.bundle
+.byebug_history
+.env
+.envrc
+db/*.sqlite3
+*.log
+tmp/**/*
+*.pyc
