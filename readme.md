@@ -42,17 +42,6 @@ run the `rcup` command as many times as you'd like.
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
 
-## Node.js
-
-These days, the best way to install node with with [NVM](https://github.com/creationix/nvm). To install it, follow the instructions in the [readme file](https://github.com/creationix/nvm#install-script).
-
-Once NVM is installed, you'll want to install a global copy of Node.
-
-``` shell
-npm install stable
-nvm use stable
-```
-
 ## macOS
 
 Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
