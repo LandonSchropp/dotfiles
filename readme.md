@@ -6,13 +6,13 @@ This is a guide to setting up my personal development environment. It's meant ge
 
 Before anything else, install the system updates.
 
-```
+``` shell
 softwareupdate -ia
 ```
 
 Then, install Xcode and accept its license.
 
-```
+``` shell
 xcode-select --install
 sudo xcodebuild -license accept
 ```
@@ -32,20 +32,20 @@ git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
 
 [Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for macOS. To install it, run the following script:
 
-```
+``` shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Then, install all of the brew dependencies using [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle).
 
-```
+``` shell
 cd $HOME/.dotfiles
 brew bundle --file=$HOME/.dotfiles/Brewfile
 ```
 
 ## RCM
 
-[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. 
+[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles.
 
 ``` shell
 RCRC=$HOME/.dotfiles/rcrc rcup
@@ -63,7 +63,7 @@ These days, the best way to install node with with [NVM](https://github.com/crea
 
 Once NVM is installed, you'll want to install a global copy of Node.
 
-```
+``` shell
 npm install stable
 nvm use stable
 ```
@@ -87,7 +87,7 @@ Neovim is configured in the dotfiles.
 
 ## macOS
 
-Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and 
+Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
 application settings in one go. Because macOS is constantly updating, it's probably a good idea to
 pull it down an modify every once in a while. My latest local iteration is kept in the
 [macos.sh](macos.sh) script.
@@ -96,7 +96,7 @@ pull it down an modify every once in a while. My latest local iteration is kept 
 
 Mackup is used to back up all of the configuration files that aren't worth copying to this repository, such as tmuxinator's file or application configuration files. Once Dropbox has finished downloading all of your files, copy the application settings by running:
 
-```
+``` shell
 brew install mackup
 mackup restore
 ```
@@ -111,7 +111,7 @@ brew install rbenv ruby-build
 
 macOS ships with an old version of Ruby. To install the latest version, run the following:
 
-```
+``` shell
 RUBY_VERSION=$(rbenv install -l | grep -v - | tail -1)
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
@@ -159,7 +159,7 @@ tmux source-file ~/.tmux.conf
 
 To get up and running, install Fish and set it to the default shell.
 
-``` sh
+``` shell
 sudo bash -c 'echo "/usr/local/bin/fish" >> /etc/shells'
 chsh -s /usr/local/bin/fish
 ```
@@ -167,7 +167,7 @@ chsh -s /usr/local/bin/fish
 Next, install [Fisherman](https://github.com/fisherman/fisherman) by following the instructions in
 the readme. Finally, install the plugins.
 
-``` sh
+``` shell
 fisher
 ```
 
@@ -187,6 +187,6 @@ Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html
 [PostgreSQL](http://www.postgresql.org/) is an open-source SQL database and is installed via Homebrew. It can be started and stopped with the following commands:
 
 ```
-brew services start postgresql 
+brew services start postgresql
 brew services stop postgresql
 ```
