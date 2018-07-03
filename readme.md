@@ -184,24 +184,9 @@ Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html
 
 ## PostgreSQL
 
-[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database.
-
-macOS ships with an old version of PostgreSQL pre-installed. To install the newest version, use:
+[PostgreSQL](http://www.postgresql.org/) is an open-source SQL database and is installed via Homebrew. It can be started and stopped with the following commands:
 
 ```
-brew install postgresql
-initdb /usr/local/var/postgres
-```
-
-Next, restart the terminal. In order to make sure PostgreSQL starts up when macOS starts up, we need to add a launch agent.
-
-```
-ln -s "/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/homebrew.mxcl.postgresql.plist" $HOME/Library/LaunchAgents
-launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-```
-
-Depending on your application's set up, you may also have to create a traditional `postgres` role:
-
-```
-/usr/local/Cellar/postgresql/$(ls /usr/local/Cellar/postgresql)/bin/createuser -s postgres
+brew services start postgresql 
+brew services stop postgresql
 ```
