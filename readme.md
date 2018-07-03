@@ -140,8 +140,8 @@ Neovim is configured in the dotfiles.
 The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
 
 ``` shell
-git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
-git clone git@github.com:thoughtbot/dotfiles.git $HOME/.thoughtbot_dotfiles
+git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
+git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
 ```
 
 Next, install [rcm](https://github.com/thoughtbot/rcm) and link the dotfiles.
