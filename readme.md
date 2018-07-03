@@ -49,13 +49,6 @@ application settings in one go. Because macOS is constantly updating, it's proba
 pull it down an modify every once in a while. My latest local iteration is kept in the
 [macos.sh](macos.sh) script.
 
-## Mackup
-
-Mackup is used to back up all of the configuration files that aren't worth copying to this repository, such as tmuxinator's file or application configuration files. Once Dropbox has finished downloading all of your files, copy the application settings by running:
-
-``` shell
-mackup restore
-```
 ## Fish
 
 [Fish](https://fishshell.com/) is an awesome shell with a ton of useful features baked in out of the box.
