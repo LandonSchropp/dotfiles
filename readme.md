@@ -65,31 +65,7 @@ pull it down an modify every once in a while. My latest local iteration is kept 
 Mackup is used to back up all of the configuration files that aren't worth copying to this repository, such as tmuxinator's file or application configuration files. Once Dropbox has finished downloading all of your files, copy the application settings by running:
 
 ``` shell
-brew install mackup
 mackup restore
-```
-
-## Ruby
-
-[rbenv](https://github.com/sstephenson/rbenv) is an awesome little Ruby environment manager. It does one thing really well. To install rbenv, run:
-
-``` shell
-brew install rbenv ruby-build
-```
-
-macOS ships with an old version of Ruby. To install the latest version, run the following:
-
-``` shell
-RUBY_VERSION=$(rbenv install -l | grep -v - | tail -1)
-rbenv install $RUBY_VERSION
-rbenv global $RUBY_VERSION
-eval "$(rbenv init -)"
-```
-
-Finally, install the [Bundler](http://bundler.io/) gem in order to gain access to the `bundle` command.
-
-``` shell
-gem install bundler
 ```
 
 ## tmux

@@ -9,3 +9,4 @@ rm -rf $HOME/.thoughtbot_dotfiles/hooks
 PRE_UP_HOOKS_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")/pre-up-hooks"
 
 source "$PRE_UP_HOOKS_DIRECTORY/homebrew.sh"
+source "$PRE_UP_HOOKS_DIRECTORY/ruby.sh"
