@@ -17,7 +17,8 @@ xcode-select --install
 sudo xcodebuild -license accept
 ```
 
-Finally, install [Google Chrome](https://www.google.com/chrome). This is necessary because 1Password checks the MD5 hash of the installed binary and rejects Chrome if it's installed via Homebrew Cask.
+Finally, install [Google Chrome](https://www.google.com/chrome). This is necessary because 1Password
+checks the MD5 hash of the installed binary and rejects Chrome if it's installed via Homebrew Cask.
 
 ## Dotfiles
 
@@ -28,28 +29,17 @@ git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
 git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
 ```
 
-## Homebrew
-
-[Homebrew](http://mxcl.github.com/homebrew/) is a bad ass little package manager for macOS. To install it, run the following script:
-
-``` shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-Then, install all of the brew dependencies using [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle).
-
-``` shell
-cd $HOME/.dotfiles
-brew bundle --file=$HOME/.dotfiles/Brewfile
-```
-
-## RCM
-
-[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles.
+[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. Most
+of the applications and utilities (including Homebrew) can be installed by running the following
+command.
 
 ``` shell
 RCRC=$HOME/.dotfiles/rcrc rcup
 ```
+
+This executes the [pre-up](hooks/pre-up-hooks) and [post-up](hooks/post-up-hooks) scripts, which
+install applications and configure the system. These scripts are also idempotent, so feel free to
+run the `rcup` command as many times as you'd like.
 
 ## Git
 
