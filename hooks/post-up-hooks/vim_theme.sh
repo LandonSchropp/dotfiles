@@ -1,7 +1,3 @@
-#!/bin/bash
-
-set -euo pipefail
-
 # Ensure base16-builder is installed
 if ! command -v base16-builder 2>/dev/null; then
   echo "Installing Base16 Builder"

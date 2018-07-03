@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -10,7 +10,3 @@ fi
 
 # Install the plugins listed in the plugins.vim file
 nvim -u "$HOME"/.config/nvim/plugins.vim +PlugInstall +PlugClean! +qa
-
-# Remove the Thoughtbot dotfiles hooks
-# https://github.com/thoughtbot/rcm/issues/187
-rm -rf $HOME/.thoughtbot_dotfiles/hooks

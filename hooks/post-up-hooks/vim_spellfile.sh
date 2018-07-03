@@ -1,7 +1,3 @@
-#!/bin/bash
-
-set -e
-
 # Symbolically link the system dictionary to the vim spellfile
 mkdir -p $HOME/Library/Spelling
 mkdir -p $HOME/.config/nvim/spelling
