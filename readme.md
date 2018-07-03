@@ -67,36 +67,6 @@ Mackup is used to back up all of the configuration files that aren't worth copyi
 ``` shell
 mackup restore
 ```
-
-## tmux
-
-[tmux](https://tmux.github.io/) is a utility that allows you to run multiple windows inside one terminal.
-
-First, install tmux with Homebrew.
-
-``` shell
-brew install tmux reattach-to-user-namespace
-```
-
-Next, install [tpm](https://github.com/tmux-plugins/tpm) and use it to install the tmux plugins.
-
-``` shell
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-$HOME/.tmux/plugins/tpm/bin/install_plugins
-```
-
-[tmuxinator](https://github.com/aziz/tmuxinator) allows you to rapidly create tmux workspaces by storing their configurations in files. You can install tmuxinator by installing its gem.
-
-``` shell
-gem install tmuxinator
-```
-
-Once all of this is done, you may have to tell tmux to reload the configuration file.
-
-``` shell
-tmux source-file ~/.tmux.conf
-```
-
 ## Fish
 
 [Fish](https://fishshell.com/) is an awesome shell with a ton of useful features baked in out of the box.
