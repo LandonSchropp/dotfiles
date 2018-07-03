@@ -155,13 +155,12 @@ tmux source-file ~/.tmux.conf
 
 ## Fish
 
-[Fish]() is an awesome shell with a ton of useful features baked in out of the box.
+[Fish](https://fishshell.com/) is an awesome shell with a ton of useful features baked in out of the box.
 
 To get up and running, install Fish and set it to the default shell.
 
 ``` sh
-brew install fish
-sudo echo "/usr/local/bin/fish" >> /etc/shells
+sudo bash -c 'echo "/usr/local/bin/fish" >> /etc/shells'
 chsh -s /usr/local/bin/fish
 ```
 
