@@ -4,9 +4,9 @@ set -euo pipefail
 
 # Remove the Thoughtbot dotfiles hooks so they don't run automatically.
 # https://github.com/thoughtbot/rcm/issues/187
-rm -rf $HOME/.thoughtbot_dotfiles/hooks
+rm -rf "$HOME/.thoughtbot_dotfiles/hooks"
 
 PRE_UP_HOOKS_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")/pre-up-hooks"
 
-source "$PRE_UP_HOOKS_DIRECTORY/homebrew.sh"
-source "$PRE_UP_HOOKS_DIRECTORY/ruby.sh"
+"$PRE_UP_HOOKS_DIRECTORY/homebrew.sh"
+"$PRE_UP_HOOKS_DIRECTORY/ruby.sh"

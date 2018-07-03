@@ -4,8 +4,8 @@ set -euo pipefail
 
 POST_UP_HOOKS_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")/post-up-hooks"
 
-source "$POST_UP_HOOKS_DIRECTORY/vim.sh"
-source "$POST_UP_HOOKS_DIRECTORY/tmux.sh"
-source "$POST_UP_HOOKS_DIRECTORY/nvm.sh"
-source "$POST_UP_HOOKS_DIRECTORY/mackup.sh"
-source "$POST_UP_HOOKS_DIRECTORY/fisherman.sh"
+"$POST_UP_HOOKS_DIRECTORY/vim.sh"
+"$POST_UP_HOOKS_DIRECTORY/tmux.sh"
+"$POST_UP_HOOKS_DIRECTORY/nvm.sh"
+"$POST_UP_HOOKS_DIRECTORY/mackup.sh"
+"$POST_UP_HOOKS_DIRECTORY/fisherman.sh"
