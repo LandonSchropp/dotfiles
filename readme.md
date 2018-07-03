@@ -17,9 +17,6 @@ xcode-select --install
 sudo xcodebuild -license accept
 ```
 
-Finally, install [Google Chrome](https://www.google.com/chrome). This is necessary because 1Password
-checks the MD5 hash of the installed binary and rejects Chrome if it's installed via Homebrew Cask.
-
 ## Dotfiles
 
 The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
