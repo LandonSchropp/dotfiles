@@ -1,6 +1,29 @@
 # Dotfiles
 
-This is a guide to setting up my personal development environment. It's meant get me up and running as fast as possible on a clean install of macOS.
+This is a guide to setting up my personal development environment. It's meant get me up and running
+as fast as possible on a clean install of macOS. After running through all of the installation
+scripts and instructions, you'll have an environment configured with the following tools.
+
+* [Homebrew](http://mxcl.github.com/homebrew/): A bad ass little package manager for macOS.
+* [Git](https://git-scm.com/): Everyone's favorite distributed version control system.
+* [Node.js](https://nodejs.org/en/): The JavaScript runtime.
+* [Neovim](https://neovim.io/): The world's best text editor.
+* [Mackup](https://github.com/lra/mackup): A utility for syncing application settings when they're
+  not worth copying into the dotfiles.
+* [Ruby](https://www.ruby-lang.org/en/): A programming language with a focus on simplicity and
+  productivity.
+* [tmux](https://tmux.github.io/): A utility that allows you to run multiple windows inside one
+  terminal.
+* [Fish](https://fishshell.com/): An awesome shell with a ton of useful features baked in out of the
+  box.
+* [PostgreSQL](http://www.postgresql.org/): An open-source SQL database.
+
+In addition, these dotfiles install a ton of small, useful utilities command-line utilities and
+system applications, which can be viewed in the [Brewfile](Brewfile). They also add several custom
+commands.
+
+Not every tool can be installed automatically. Some require manual configuration. Instructions for
+setting up these tools are listed below.
 
 ## Prerequisites
 
@@ -17,7 +40,7 @@ xcode-select --install
 sudo xcodebuild -license accept
 ```
 
-## Dotfiles
+## Setup
 
 The dotfiles in this repo are integrated with the [Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script files, you'll need to clone both repositories.
 
@@ -38,18 +61,18 @@ This executes the [pre-up](hooks/pre-up-hooks) and [post-up](hooks/post-up-hooks
 install applications and configure the system. These scripts are also idempotent, so feel free to
 run the `rcup` command as many times as you'd like.
 
-## Git
+### Git
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the [instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
 
-## macOS
+### macOS
 
 Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
 application settings in one go. Because macOS is constantly updating, it's probably a good idea to
 pull it down an modify every once in a while. My latest local iteration is kept in the
 [macos.sh](macos.sh) script.
 
-## Fish
+### Fish
 
 To get up and running, add Fish to the list of shells and set it as the default.
 
@@ -62,18 +85,18 @@ chsh -s /usr/local/bin/fish
 
 To enable italic text in the terminal, you need to register italics with the TERM database.
 
-```
+``` shell
 tic $HOME/.dotfiles/xterm-256color-italic.terminfo
 tic $HOME/.dotfiles/tmux-256color-italic.terminfo
 ```
 
 Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get colors working in Tmux.
 
-## PostgreSQL
+### PostgreSQL
 
 [PostgreSQL](http://www.postgresql.org/) is an open-source SQL database and is installed via Homebrew. It can be started and stopped with the following commands:
 
-```
+``` shell
 brew services start postgresql
 brew services stop postgresql
 ```
