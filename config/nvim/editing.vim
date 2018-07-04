@@ -113,7 +113,6 @@ autocmd BufNewFile,BufRead .babelrc set syntax=json
 autocmd BufNewFile,BufRead Procfile set syntax=yaml
 autocmd BufNewFile,BufRead .envrc set syntax=sh
 
-" Automatically read files when they change outside of Neovim
-" TODO: This currently doens't work very well. It requires me to manually run checktime whenever I
-" want the file to update. (https://github.com/neovim/neovim/issues/1380)
-set autoread
+" Automatically run checktime whenever the Neovim window gains focus. This should make the autoread
+" behavior work as expected. (https://github.com/neovim/neovim/issues/1380)
+autocmd FocusGained * :checktime
