@@ -6,4 +6,4 @@ EXCLUDES=(
 )
 
 EXCLUDES=${EXCLUDES[@]}
-DOTFILES_DIRS="$HOME/.dotfiles
+DOTFILES_DIRS="$HOME/.dotfiles"
