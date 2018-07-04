@@ -1,5 +1,0 @@
-# Expand log to console.log
-'.source.js':
- 'console.log':
-   'prefix': 'log'
-   'body': 'console.log($1);'
