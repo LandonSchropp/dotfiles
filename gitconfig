@@ -27,6 +27,7 @@
   # Shortcuts
   a = add
   c = commit
+  co = checkout
   b = branch
   m = merge
   s = status
