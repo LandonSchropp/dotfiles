@@ -1,1 +1,2 @@
-source ~/.thoughtbot_dotfiles/vim/ftplugin/css.vim
+" Add hyphens to words
+setlocal iskeyword+=-

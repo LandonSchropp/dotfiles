@@ -1,3 +1,5 @@
-source ~/.thoughtbot_dotfiles/vim/ftplugin/sass.vim
+" Add hyphens to words
+setlocal iskeyword+=-
 
+" Import the CSS3 syntax keywords
 runtime! syntax/css/*.vim

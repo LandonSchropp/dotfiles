@@ -1,10 +1,4 @@
 EXCLUDES=(
-  "$HOME/.thoughtbot_dotfiles:README.md"
-  "$HOME/.thoughtbot_dotfiles:LICENSE"
-  "$HOME/.thoughtbot_dotfiles:aliases"
-  "$HOME/.thoughtbot_dotfiles:zsh*"
-  "$HOME/.thoughtbot_dotfiles:*vim*"
-  "$HOME/.thoughtbot_dotfiles:hooks/*"
   "readme.md"
   "landons_theme.yml"
   "rcrc"
@@ -12,4 +6,4 @@ EXCLUDES=(
 )
 
 EXCLUDES=${EXCLUDES[@]}
-DOTFILES_DIRS="$HOME/.dotfiles $HOME/.thoughtbot_dotfiles"
+DOTFILES_DIRS="$HOME/.dotfiles

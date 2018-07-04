@@ -22,6 +22,10 @@ In addition, these dotfiles install a ton of small, useful utilities command-lin
 system applications, which can be viewed in the [Brewfile](Brewfile). They also add several custom
 commands.
 
+These dotfiles are heavily based on the
+[Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles) and
+[Paul Irish's dotfiles](https://github.com/paulirish/dotfiles).
+
 ## Prerequisites
 
 Before anything else, install the system updates.
@@ -39,18 +43,15 @@ sudo xcodebuild -license accept
 
 ## Installation
 
-The dotfiles in this repo are integrated with the
-[Thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles). To get all of the settings and script
-files, you'll need to clone both repositories.
+Start by cloning the dotfiles repo.
 
 ``` shell
 git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
-git clone https://github.com/thoughtbot/dotfiles $HOME/.thoughtbot_dotfiles
 ```
 
 [RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. Most
-of the applications and utilities (including Homebrew) can be installed by running the following
-command.
+of the applications and utilities in these dotfiles (including Homebrew) can be installed by running
+the following command.
 
 ``` shell
 RCRC=$HOME/.dotfiles/rcrc rcup
