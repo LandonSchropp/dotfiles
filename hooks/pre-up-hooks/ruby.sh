@@ -5,7 +5,7 @@ set -euo pipefail
 # If the version of Ruby that's installed isn't the system Ruby, then we can skip this step
 # completely.
 if [[ $(command -v ruby) =~ "rbenv" ]]; then
-  return 0
+  exit 0
 fi
 
 # Install the latest version of Ruby
