@@ -1,0 +1,10 @@
+#!/usr/bin/env osascript -l JavaScript
+
+// This is a simple script to move windows into pre-configured spaces that I typically use for
+// development. The goal is to automate moving things around, which is something I do constantly as
+// I move windows between spaces. Much of the JavaScript in this script was taken from here:
+// https://github.com/JXA-Cookbook/JXA-Cookbook
+
+function run(argv) {
+  console.log(JSON.stringify(argv))
+}

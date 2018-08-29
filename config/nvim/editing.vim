@@ -116,3 +116,7 @@ autocmd BufNewFile,BufRead .envrc set syntax=sh
 " Automatically run checktime whenever the Neovim window gains focus. This should make the autoread
 " behavior work as expected. (https://github.com/neovim/neovim/issues/1380)
 autocmd FocusGained * :checktime
+
+" Always enable indentation. This is necessary when piping commands through argdo, which disabled
+" indentation by default.
+filetype indent on
