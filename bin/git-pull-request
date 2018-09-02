@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Make sure the local references are up to date and the current branch is pushed up
+git fetch
+git push -u origin HEAD
+
+# Get the current branch.
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Create a title from the branch name.
+# NOTE: I'm using awk instead of the simpler sed expression because the sed command isn't compatible
+# with macOS (https://stackoverflow.com/a/31972726/262125).
+TITLE=$(
+  echo "$CURRENT_BRANCH" \
+    | sed 's/[^a-z]/ /g' \
+    | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
+)
+
+# Create a commit body composed of the subjects from previous commits.
+BODY=$(git log --pretty='* %s' origin/master..HEAD)
+
+# Open up a webpage for a new pull request (https://bit.ly/2Nma4VO)
+PULL_REQUEST_URL="https://github.com/LandonSchropp/dotfiles/compare/master...$CURRENT_BRANCH"
+open "$PULL_REQUEST_URL?quick_pull=1&title=$TITLE&body=$BODY"
