@@ -23,7 +23,7 @@
   what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
 
   # Custom script commands
-  delete-merged-branches = "!$HOME/.dotfiles/scripts/git-delete-merged-branches.sh"
+  delete-merged-branches = "!$HOME/.dotfiles/bin/git-delete-merged-branches"
   dad = "!curl https://icanhazdadjoke.com/"
 
   # Shortcuts
