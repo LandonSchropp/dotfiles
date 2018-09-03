@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Make sure the local references are up to date.
+git fetch
+
+# Push up the current branch.
+git push --force-with-lease -u origin HEAD
+
+# Create a commit message composed of the subjects from previous commits
+git --no-pager log --pretty "* %s" origin/master HEAD
