@@ -116,3 +116,7 @@ autocmd BufNewFile,BufRead .envrc set syntax=sh
 " Automatically run checktime whenever the Neovim window gains focus. This should make the autoread
 " behavior work as expected. (https://github.com/neovim/neovim/issues/1380)
 autocmd FocusGained * :checktime
+
+" Configure SplitJoin
+let g:splitjoin_ruby_hanging_args = 0
+let g:splitjoin_html_attributes_bracket_on_new_line = 1
