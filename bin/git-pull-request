@@ -7,7 +7,7 @@ git fetch
 git push -u origin HEAD
 
 # Get the current branch.
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+CURRENT_BRANCH=$(git current-branch)
 
 # Create a title from the branch name.
 # NOTE: I'm using awk instead of the simpler sed expression because the sed command isn't compatible
