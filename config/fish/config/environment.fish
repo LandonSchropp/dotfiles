@@ -20,3 +20,6 @@ set -gx LESS " -R "
 
 # Add the kubernetes utilities to the path
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+
+# Create a global way to determine the development directory
+set -gx DEVELOPMENT_DIRECTORY "$HOME/Development"
