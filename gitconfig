@@ -29,6 +29,10 @@
   local-repos= "!$HOME/.dotfiles/bin/git-local-repos"
   pull-request = "!$HOME/.dotfiles/bin/git-pull-request"
   pull-requests = "!$HOME/.dotfiles/bin/git-pull-requests"
+  what-i-did = "!$HOME/.dotfiles/bin/git-what-i-did"
+  what-i-did-today = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"3AM today\""
+  what-i-did-yesterday = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"3AM yesterday\" --until=\"3AM today\""
+  what-i-did-this-week = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"last Monday 3AM\""
 
   # Shortcuts
   a = add

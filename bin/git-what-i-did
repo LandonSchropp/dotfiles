@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Prints the commits since the given time period.
+if [ "$#" -eq 0 ]; then
+  >&2 echo "Usage: git-what-i-did [git-log-options...]"
+  exit 1
+fi
+
+# TODO: I've explicitly turned on coloring for this command because GIT isn't smart enough to
+# detect TTY when the command is piped through sort. In the future, I should probably check the
+# output manually for this script and set the value dynamically.
+RESULT=$(
+  while read -r git_directory; do
+    REPO=$(basename "$git_directory")
+
+    git \
+      -c color.ui=always \
+      --git-dir "$git_directory/.git" \
+      --no-pager \
+      log \
+      "$@" \
+      --all \
+      --author="Landon" \
+      --date=format:'%Y-%m-%d %H:%M:%S' \
+      --format="[%Cblue%ad%Creset] %Cgreen$REPO%Creset %s (%Cred%h%Creset)"
+  done <<< "$(git local-repos)" | sort -r
+)
+
+# Display the result in less if it's long enough
+echo "$RESULT" | less -X -F
