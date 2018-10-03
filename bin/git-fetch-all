@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+while read -r git_directory; do
+  git --git-dir "$git_directory/.git" fetch
+done <<< "$(git local-repos)"
