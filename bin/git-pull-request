@@ -8,7 +8,7 @@ git push -u origin HEAD
 
 # Get the current branch and origin URL.
 CURRENT_BRANCH=$(git current-branch)
-ORIGIN_URL=$(git config --get remote.origin.url)
+ORIGIN_URL=$(git config --get remote.origin.url | sed 's/.git$//')
 
 # Create a title from the branch name.
 # NOTE: I'm using awk instead of the simpler sed expression because the sed command isn't compatible
@@ -20,7 +20,7 @@ TITLE=$(
 )
 
 # Create a commit body composed of the subjects from previous commits.
-BODY=$(git log --pretty='* %s' origin/master..HEAD)
+BODY=$(git log --reverse --pretty='* %s' origin/master..HEAD)
 
 # Open up a webpage for a new pull request (https://bit.ly/2Nma4VO)
 PULL_REQUEST_URL="$ORIGIN_URL/compare/master...$CURRENT_BRANCH"
