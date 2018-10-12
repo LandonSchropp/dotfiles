@@ -101,3 +101,9 @@ end
 
 complete --no-files --command ta --arguments '(tmux_sessions)'
 complete --no-files --command tk --arguments '(active_tmux_sessions)'
+
+function tka --description 'Kill all tmux sessions'
+  for session in (active_tmux_sessions)
+    tk $session
+  end
+end
