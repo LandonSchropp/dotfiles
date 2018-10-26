@@ -46,7 +46,7 @@ sudo xcodebuild -license accept
 Start by cloning the dotfiles repo.
 
 ``` shell
-git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
+git clone https://github.com/jorge0136/dotfiles $HOME/.dotfiles
 ```
 
 [RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. Most
