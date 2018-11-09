@@ -2,8 +2,7 @@
 set fish_greeting ""
 
 # Start up rbenv
-set -gx PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
+status --is-interactive; and source (rbenv init -|psub)
 
 # Start up direnv
 eval (direnv hook fish)
