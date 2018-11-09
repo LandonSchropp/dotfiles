@@ -22,9 +22,11 @@ function ta --description "Create or attach a tmux session"
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
   if not active_tmux_sessions | grep -Fx $argv[1] >/dev/null
 
+    echo "STARTING '"(echo $argv[1])"'"
+
     # Create the session using tmuxinator if a project exists for it. If the tmux session was
     # started successfully, we're done!
-    if tmuxinator start $argv[1] 1>/dev/null 2>/dev/null
+    if global_tmuxinator start "$argv[1]"
       return 0
     end
 
@@ -86,7 +88,7 @@ function tmux_sessions --description 'Lists all available sessions from Tmux and
     return 1
   end
 
-  set tmuxinator_sessions (tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')
+  set tmuxinator_sessions (global_tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')
 
   echo $tmuxinator_sessions (active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
 end
@@ -106,4 +108,10 @@ function tka --description 'Kill all tmux sessions'
   for session in (active_tmux_sessions)
     tk $session
   end
+end
+
+function global_tmuxinator
+  rbenv shell (rbenv global)
+  rbenv exec tmuxinator $argv
+  rbenv shell --unset
 end
