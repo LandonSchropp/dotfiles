@@ -26,6 +26,7 @@
   # Custom script commands
   delete-merged-branches = "!$HOME/.dotfiles/bin/git-delete-merged-branches"
   dad = "!curl https://icanhazdadjoke.com/"
+  force-pull = "!$HOME/.dotfiles/bin/git-force-pull"
   fetch-all = "!$HOME/.dotfiles/bin/git-fetch-all"
   local-repos= "!$HOME/.dotfiles/bin/git-local-repos"
   pull-request = "!$HOME/.dotfiles/bin/git-pull-request"
