@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# This script updates all installed tools and applications. It prevents individual applications from
+# prompting for updates.
+
+# NOTE: For some reason, launchd doesn't include the full path. In order to run commands installed
+# by Homebrew, the Homebrew install path must be added.
+export PATH="/usr/local/bin:$PATH"
+
+set -euo pipefail
+
+# Update Homebrew and installed packages
+brew update
+brew upgrade
+
+# Update TL/DR definitions
+tldr --update
