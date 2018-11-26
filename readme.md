@@ -1,10 +1,11 @@
 # Dotfiles
 
-This is a guide to setting up my personal development environment. It's meant get me up and running
-as fast as possible on a clean install of macOS. After running through all of the installation
-scripts and instructions, you'll have an environment configured with the following tools.
+This is a guide to setting up my personal development environment. It's meant to get me up and
+running as fast as possible on a clean install of macOS. After running through all of the
+installation scripts and instructions, you'll have an environment configured with the following
+tools.
 
-* **[Homebrew](http://mxcl.github.com/homebrew/)**: A bad ass little package manager for macOS.
+* **[Homebrew](http://mxcl.github.com/homebrew/)**: A badass little package manager for macOS.
 * **[Git](https://git-scm.com/)**: Everyone's favorite distributed version control system.
 * **[Node.js](https://nodejs.org/en/)**: The JavaScript runtime.
 * **[Neovim](https://neovim.io/)**: The world's best text editor.
