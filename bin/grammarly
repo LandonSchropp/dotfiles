@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+# Opens a file in the Grammarly editor.
+
+if ARGV.empty?
+  puts 'Usage: grammarly <file>'
+  exit 1
+end
+
+file = ARGV[0]
+
+if File.extname(file) == ".md"
+
+  # Remove common markdown formatting and non-English content
+  content = File
+    .read(file)
+    .gsub(/(?<=\w)\n(?=\w)/m, ' ')
+    .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')
+    .gsub(/```.*?```/m, '<CODE REMOVED>')
+
+  file = "/tmp/#{ File.basename(file, File.extname(file)) }.txt"
+
+  File.write(file, content)
+end
+
+# Open the file
+`open -a Grammarly "#{ file }"`
