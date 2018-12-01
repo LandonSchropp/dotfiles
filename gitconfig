@@ -44,7 +44,7 @@
   m = merge
   s = status
   cl = clone
-  p = push
+  p = push --follow-tags
   pu = pull
   r = reset
   cp = cherry-pick
