@@ -85,10 +85,10 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
 
 " Update the file types for the close tag plugin
-let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk"
+let g:closetag_filenames = "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs"
 
 " Prevent HTML tags from being expanded in HTML-esque files in delimitMate
-autocmd FileType html,erb,jsx,jade,pug let b:delimitMate_matchpairs = '(:),{:},[:]'
+autocmd FileType html,erb,jsx,jade,pug,hbs let b:delimitMate_matchpairs = '(:),{:},[:]'
 
 " Configure netrw
 let g:netrw_liststyle = 3
