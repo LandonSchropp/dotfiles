@@ -8,5 +8,4 @@ if ! command -v brew 1>/dev/null; then
 fi
 
 # Install all of the Homebrew applications
-# BUG FIX: This command needs to be forced to exit 0 because some apps may already be installed.
-brew bundle --file="$HOME/.dotfiles/Brewfile" || :
+brew bundle --file="$HOME/.dotfiles/Brewfile" --force
