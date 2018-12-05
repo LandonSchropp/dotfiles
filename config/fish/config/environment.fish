@@ -23,5 +23,5 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.in
 # Create a global way to determine the development directory
 set -gx DEVELOPMENT_DIRECTORY "$HOME/Development"
 
-# Add nodenv to the path.
-set -Ux fish_user_paths $HOME/.nodenv/bin $fish_user_paths
+# Start up NVM
+nvm use default
