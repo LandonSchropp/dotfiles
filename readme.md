@@ -62,10 +62,25 @@ This executes the [pre-up](hooks/pre-up-hooks) and [post-up](hooks/post-up-hooks
 install applications and configure the system. These scripts are idempotent, so feel free to run the
 `rcup` command as many times as you'd like.
 
+### Kinesis Advantage2
+
+I use a Kinesis Advantage2 for my typing. This keyboard allows you to completely customize the
+layout to your taste.
+
+To load my [Kinesis Advantage2](https://www.kinesis-ergo.com/shop/advantage2/) custom layout:
+
+1. Reset the keyboard's current configuration by holding `Program` + `F9` until the lights flash.
+2. Put the keyboard in power user mode by pressing `Program` + `Shift` + `Esc`.
+3. Put the keyboard into Mac mode with `Program` + `F5`.
+4. Mount the keyboard's internal storage as a drive by pressing `Program` + `Shift` + `F1`.
+5. Run the `bin/advantage2` script.
+6. Load the custom keyboard layout with `Program` + `1` and check that it works.
+7. Unmount the internal storage by again pressing `Program` + `Shift` + `F1`.
+
 ### Git
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
-[instructions](https://help.github.com/articles/generating-an-ssh-key/) on Github.
+[instructions](https://help.github.com/articles/generating-an-ssh-key/) on GitHub.
 
 ### macOS
 

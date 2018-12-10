@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+BASE_DIRECTORY="$(realpath "$(dirname "${BASH_SOURCE[0]}")/..")"
+
+# Ensure the directroy exists
+if [ ! -d "/Volumes/ADVANTAGE2" ]; then
+  echo "Before the Kinesis Advantage2 custom layout can be loaded, you must first mount it. " \
+    "Follow the instructions in the readme."
+  exit 0
+fi
+
+cp "$BASE_DIRECTORY/advantage2/1_qwerty.txt" "/Volumes/ADVANTAGE2/"
+
+echo "Your Kinesis Advantage2 configuration was successfully copied!"
