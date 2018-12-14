@@ -75,6 +75,8 @@ Plug 'mhartington/nvim-typescript'
 Plug 'christianrondeau/vim-base64'
 Plug 'kreskij/Repeatable.vim', { 'on': 'Repeatable' }
 
+
+
 " SYNTAX PLUGINS
 
 " Language syntax highlighting
@@ -91,6 +93,9 @@ Plug 'ap/vim-css-color'
 
 " CSS3
 Plug 'LandonSchropp/vim-css3-syntax'
+
+" Jsonnet
+Plug 'google/vim-jsonnet'
 
 
 
