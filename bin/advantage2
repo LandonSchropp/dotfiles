@@ -11,6 +11,6 @@ if [ ! -d "/Volumes/ADVANTAGE2" ]; then
   exit 0
 fi
 
-cp "$BASE_DIRECTORY/advantage2/1_qwerty.txt" "/Volumes/ADVANTAGE2/"
+cp "$BASE_DIRECTORY/advantage2/1_qwerty.txt" "/Volumes/ADVANTAGE2/active/"
 
 echo "Your Kinesis Advantage2 configuration was successfully copied!"
