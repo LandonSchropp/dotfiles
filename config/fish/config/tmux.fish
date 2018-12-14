@@ -60,7 +60,7 @@ function tm --description "Move a tmux window to another position"
   end
 
   if test $target_window -lt (tmux_current_window)
-    for i in (seq (math (tmux_current_window) - 1))
+    for i in (seq $target_window (math (tmux_current_window) - 1))
       tmux swap-window -d -s (tmux_current_window) -t $i
     end
   end
