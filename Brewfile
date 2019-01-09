@@ -2,7 +2,7 @@ tap "caskroom/fonts"
 tap "thoughtbot/formulae"
 
 brew "asciinema"
-brew "ccat"
+brew "bat"
 brew "coreutils"
 brew "diff-so-fancy"
 brew "direnv"
