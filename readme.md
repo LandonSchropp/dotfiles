@@ -55,7 +55,7 @@ of the applications and utilities in these dotfiles (including Homebrew) can be 
 the following command.
 
 ``` shell
-RCRC=$HOME/.dotfiles/rcrc rcup
+bash -c 'RCRC=$HOME/.dotfiles/rcrc rcup'
 ```
 
 This executes the [pre-up](hooks/pre-up-hooks) and [post-up](hooks/post-up-hooks) scripts, which
