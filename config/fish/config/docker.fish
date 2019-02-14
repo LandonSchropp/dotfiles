@@ -10,6 +10,9 @@ alias dcu="docker-compose up -d"
 alias dcl="docker-compose logs -f (project_name)"
 alias dcb="docker-compose build (project_name)"
 
+# TODO: Genericize this.
+alias dco="$EDITOR ~/Development/tesla/docker-compose.override.yml"
+
 alias docker-kill='pgrep -i -f docker | xargs kill'
 
 alias k='kubectl'
