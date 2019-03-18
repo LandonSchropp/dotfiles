@@ -9,6 +9,7 @@ alias dcr="docker-compose run --rm (project_name)"
 alias dcu="docker-compose up -d"
 alias dcl="docker-compose logs -f (project_name)"
 alias dcb="docker-compose build (project_name)"
+alias dco="nvim ~/Development/tesla/docker-compose.override.yml"
 
 # TODO: Genericize this.
 alias dco="$EDITOR ~/Development/tesla/docker-compose.override.yml"
