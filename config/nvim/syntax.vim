@@ -28,3 +28,6 @@ let g:is_posix = 1
 
 " Display extra whitespace characters
 set list listchars=tab:»·,trail:·,nbsp:·
+
+" Add support for comments to JSON when writing JSONC.
+autocmd FileType json syntax match Comment +\/\/.\+$+
