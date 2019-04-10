@@ -25,3 +25,6 @@ set -gx DEVELOPMENT_DIRECTORY "$HOME/Development"
 
 # Start up NVM
 nvm use default
+
+# Make bat readable on a light terminal.
+set -gx BAT_THEME "OneHalfLight"
