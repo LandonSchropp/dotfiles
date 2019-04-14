@@ -40,6 +40,9 @@ Plug 'tpope/vim-repeat'
 " Extra commands for surrounding text
 Plug 'tpope/vim-surround'
 
+" Vim testing
+Plug 'junegunn/vader.vim'
+
 
 
 " TEXT EDITING
