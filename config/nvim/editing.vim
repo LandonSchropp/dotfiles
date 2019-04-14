@@ -120,3 +120,7 @@ autocmd FocusGained * :checktime
 " Configure SplitJoin
 let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_html_attributes_bracket_on_new_line = 1
+
+" Fix the *really* annoying nopaste bug in Neovim.
+" TODO: Turn this off when the issue is resolved. (https://github.com/neovim/neovim/issues/7994)
+autocmd InsertLeave * set nopaste
