@@ -15,4 +15,5 @@ yarn config set init-license UNLICENSED
 yarn config set --run.silent true
 
 # Set the default version of Node.js.
+nvm install --lts
 nvm use --lts
