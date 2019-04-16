@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -13,3 +13,6 @@ yarn config set init-author-email "schroppl@gmail.com"
 yarn config set init-author-name "Landon Schropp"
 yarn config set init-license UNLICENSED
 yarn config set --run.silent true
+
+# Set the default version of Node.js.
+nvm use --lts
