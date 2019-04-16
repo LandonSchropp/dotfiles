@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Ensure RCM is installed
+if ! [ -x "$(command -v "rcup")" ]; then
+  echo "You must install RCM before running this command. (https://github.com/thoughtbot/rcm)"
+  exit 1
+fi
+
+# Run the installation
+RCRC=$HOME/.dotfiles/rcrc rcup
