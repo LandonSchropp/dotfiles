@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Install Homebrew if it has not already been installed.
+if ! command -v brew 1>/dev/null; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Update Homebrew and installed packages.
+# brew update
+# brew upgrade
+
+# Install all of the Homebrew applications.
+brew bundle --file="$HOME/.dotfiles/Brewfile" --force
+
+# Update TL/DR definitions.
+tldr --update
+
+# Install Google Chrome and Firefox unless they're already installed. These can't be done in the
+# Brewfile because the autoupdater breaks Homebrew.
+if [ ! -d "/Applications/Google Chrome.app" ]; then
+  brew cask install google-chrome
+fi
+
+if [ ! -d "/Applications/Firefox.app" ]; then
+  brew cask install firefox
+fi

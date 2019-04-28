@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-PRE_UP_HOOKS_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")/pre-up-hooks"
-
-"$PRE_UP_HOOKS_DIRECTORY/homebrew.sh"
-"$PRE_UP_HOOKS_DIRECTORY/ruby.sh"

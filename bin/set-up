@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Change into the root directory of the dotfiles.
+cd "$(dirname "$0")/.."
+pwd
+
+# Install RCM via Homebrew
+bin/set-up-hooks/set-up-homebrew
+
+# Copy the dotfiles into the home directory
+RCRC=$HOME/.dotfiles/rcrc rcup
+
+# Set up the development dependencies.
+bin/set-up-hooks/set-up-ruby
