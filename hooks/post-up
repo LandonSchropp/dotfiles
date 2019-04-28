@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-POST_UP_HOOKS_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")/post-up-hooks"
-
-for file in "$POST_UP_HOOKS_DIRECTORY"/*; do
-  "$file"
-done

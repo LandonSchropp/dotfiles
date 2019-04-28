@@ -14,4 +14,8 @@ RCRC=$HOME/.dotfiles/rcrc rcup
 
 # Set up the development dependencies.
 bin/set-up-hooks/set-up-ruby
+bin/set-up-hooks/set-up-fisherman
+bin/set-up-hooks/set-up-mackup
 bin/set-up-hooks/set-up-node
+bin/set-up-hooks/set-up-tmux
+bin/set-up-hooks/set-up-vim
