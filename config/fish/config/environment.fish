@@ -23,10 +23,8 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.in
 # Create a global way to determine the development directory
 set -gx DEVELOPMENT_DIRECTORY "$HOME/Development"
 
-# Start up NVM (assuming it's installed)
-if type -q "nvm"
-  nvm use --lts
-end
-
 # Make bat readable on a light terminal.
 set -gx BAT_THEME "OneHalfLight"
+
+# Source the asdf keybindings
+source /usr/local/Cellar/asdf/*/asdf.fish
