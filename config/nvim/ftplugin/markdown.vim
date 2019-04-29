@@ -7,12 +7,12 @@ setlocal textwidth=100
 " Highlight words to avoid in tech writing
 " http://css-tricks.com/words-avoid-educational-writing/
 
-function! MatchTechWordsToAvoid()
+function! s:MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
-call MatchTechWordsToAvoid()
+call s:MatchTechWordsToAvoid()
 
-autocmd BufWinEnter * call MatchTechWordsToAvoid()
-autocmd InsertEnter * call MatchTechWordsToAvoid()
-autocmd InsertLeave * call MatchTechWordsToAvoid()
+autocmd BufWinEnter * call s:MatchTechWordsToAvoid()
+autocmd InsertEnter * call s:MatchTechWordsToAvoid()
+autocmd InsertLeave * call s:MatchTechWordsToAvoid()
