@@ -11,6 +11,7 @@ fi
 # BUG FIX: The base16-builder is currently not bundled with the nvim theme. Until that's fixed, I'll
 # manually download the theme file. https://github.com/base16-builder/base16-builder/issues/167
 curl \
+  --silent \
   -L \
   -o /tmp/nvim.ejs \
   https://github.com/base16-builder/base16-builder/raw/master/db/templates/nvim/both.ejs \
@@ -27,7 +28,7 @@ base16-builder \
 
 # Download Plug
 if [ ! -e "$HOME"/.config/nvim/autoload/plug.vim ]; then
-  curl -fLo "$HOME"/.config/nvim/autoload/plug.vim --create-dirs \
+  curl --silent -fLo "$HOME"/.config/nvim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
