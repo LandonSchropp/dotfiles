@@ -6,7 +6,6 @@ source ~/.config/nvim/theme.vim
 
 " Plugins
 source ~/.config/nvim/plugin/cursor_position.vim
-source ~/.config/nvim/plugin/stamp.vim
 source ~/.config/nvim/plugin/strip_whitespace.vim
 source ~/.config/nvim/plugin/test.vim
 source ~/.config/nvim/plugin/rename_extension.vim

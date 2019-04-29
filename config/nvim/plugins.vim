@@ -78,6 +78,9 @@ Plug 'mhartington/nvim-typescript'
 Plug 'christianrondeau/vim-base64'
 Plug 'kreskij/Repeatable.vim', { 'on': 'Repeatable' }
 
+" Easy text replacement.
+" Plug 'LandonSchropp/vim-stamp'
+
 
 
 " SYNTAX PLUGINS
