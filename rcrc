@@ -12,7 +12,6 @@ EXCLUDES=(
   macos.sh
   rcrc
   readme.md
-  themes
   xterm
   *.terminfo
 )
