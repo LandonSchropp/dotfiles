@@ -79,8 +79,9 @@ Plug 'christianrondeau/vim-base64'
 Plug 'kreskij/Repeatable.vim', { 'on': 'Repeatable' }
 
 " Easy text replacement.
-" Plug 'LandonSchropp/vim-stamp'
+Plug 'LandonSchropp/vim-stamp'
 
+" Easily convert from camel case to underscore and back again.
 
 
 " SYNTAX PLUGINS
