@@ -60,7 +60,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'wellle/targets.vim'
 
 " Better auto-completion
-Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Automatically add end in Ruby
 Plug 'tpope/vim-endwise'
