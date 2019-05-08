@@ -82,6 +82,8 @@ Plug 'kreskij/Repeatable.vim', { 'on': 'Repeatable' }
 Plug 'LandonSchropp/vim-stamp'
 
 " Easily convert from camel case to underscore and back again.
+Plug 'tpope/vim-abolish'
+
 
 
 " SYNTAX PLUGINS
