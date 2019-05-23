@@ -40,7 +40,6 @@ brew "z"
 
 cask "atom"
 cask "docker"
-cask "dropbox"
 cask "caskroom/fonts/font-open-sans"
 cask "caskroom/fonts/font-source-code-pro"
 cask "google-cloud-sdk"
