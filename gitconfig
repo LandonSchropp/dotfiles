@@ -24,18 +24,18 @@
   what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
 
   # Custom script commands
-  clean-branches = "!$HOME/.dotfiles/bin/git-clean-branches"
-  delete-merged-branches = "!$HOME/.dotfiles/bin/git-delete-merged-branches"
+  clean-branches = "!$HOME/.dotfiles/bin/git/git-clean-branches"
+  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
   dad = "!curl https://icanhazdadjoke.com/"
-  force-pull = "!$HOME/.dotfiles/bin/git-force-pull"
-  fetch-all = "!$HOME/.dotfiles/bin/git-fetch-all"
-  local-repos= "!$HOME/.dotfiles/bin/git-local-repos"
-  pull-request = "!$HOME/.dotfiles/bin/git-pull-request"
-  pull-requests = "!$HOME/.dotfiles/bin/git-pull-requests"
-  what-i-did = "!$HOME/.dotfiles/bin/git-what-i-did"
-  what-i-did-today = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"3AM today\""
-  what-i-did-yesterday = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"3AM yesterday\" --until=\"3AM today\""
-  what-i-did-this-week = "!$HOME/.dotfiles/bin/git-what-i-did --since=\"last Monday 3AM\""
+  force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
+  fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
+  local-repos= "!$HOME/.dotfiles/bin/git/git-local-repos"
+  pull-request = "!$HOME/.dotfiles/bin/git/git-pull-request"
+  pull-requests = "!$HOME/.dotfiles/bin/git/git-pull-requests"
+  what-i-did = "!$HOME/.dotfiles/bin/git/git-what-i-did"
+  what-i-did-today = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM today\""
+  what-i-did-yesterday = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM yesterday\" --until=\"3AM today\""
+  what-i-did-this-week = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"last Monday 3AM\""
 
   # Shortcuts
   a = add
