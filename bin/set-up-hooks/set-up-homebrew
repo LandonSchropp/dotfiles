@@ -12,7 +12,7 @@ fi
 # brew upgrade
 
 # Install all of the Homebrew applications.
-brew bundle --file="$HOME/.dotfiles/Brewfile" --force
+brew bundle --file="$HOME/.dotfiles/Brewfile" --force || true
 
 # Update TL/DR definitions.
 tldr --update
