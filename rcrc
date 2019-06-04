@@ -14,6 +14,7 @@ EXCLUDES=(
   readme.md
   xterm
   *.terminfo
+  bin
 )
 
 EXCLUDES="${EXCLUDES[@]}"

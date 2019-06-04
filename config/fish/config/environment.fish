@@ -13,6 +13,9 @@ set -gx EDITOR nvim
 # Set up the local bin paths
 set -gx PATH ./bin ./node_modules/.bin $PATH
 
+# Set up my custom bin paths.
+set -gx PATH $HOME/.dotfiles/bin $HOME/.dotfiles/bin/gcloud $PATH
+
 # Enable source highlighting in less
 set -gx LESSOPEN "| /usr/local/bin/src-hilite-lesspipe.sh %s"
 set -gx LESS " -R "
