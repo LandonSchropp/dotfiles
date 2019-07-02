@@ -38,6 +38,7 @@ brew "wget"
 brew "yarn"
 brew "z"
 
+cask "1password"
 cask "atom"
 cask "docker"
 cask "caskroom/fonts/font-open-sans"
