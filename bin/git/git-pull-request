@@ -8,7 +8,15 @@ git push -u origin HEAD
 
 # Get the current branch and origin URL.
 CURRENT_BRANCH=$(git current-branch)
-ORIGIN_URL=$(git config --get remote.origin.url | sed 's/.git$//')
+
+REPOSITORY=$(
+  git config --get remote.origin.url \
+    | sed 's/^https:\/\/github.com\///' \
+    | sed 's/^git@github.com://' \
+    | sed 's/.git$//'
+)
+
+ORIGIN_URL="https://github.com/$REPOSITORY"
 
 # Create a title from the branch name.
 # NOTE: I'm using awk instead of the simpler sed expression because the sed command isn't compatible
@@ -19,8 +27,18 @@ TITLE=$(
     | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
 )
 
-# Create a commit body composed of the subjects from previous commits.
+# If there are multiple commits, create a commit
+# body composed of the subjects from previous commits.
+
+# git log --reverse --pretty='' --pretty='* %s' origin/master..HEAD git log | wc -l
+
 BODY=$(git log --reverse --pretty='* %s' origin/master..HEAD)
+
+# If there's only one commit, use the commit title and body.
+if [ "$(echo "$BODY" | wc -l)" -le 1 ]; then
+  TITLE=$(git log --format=%s -n 1 "$CURRENT_BRANCH")
+  BODY=$(git log --format=%b -n 1 "$CURRENT_BRANCH" | tr '\n' ' ')
+fi
 
 # Open up a webpage for a new pull request (https://bit.ly/2Nma4VO)
 PULL_REQUEST_URL="$ORIGIN_URL/compare/master...$CURRENT_BRANCH"
