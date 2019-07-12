@@ -1,0 +1,141 @@
+# My custom Prezto prompt.
+
+# Most of the instructions on how to set this up come from here:
+# http://www.paradox.io/posts/9-my-new-zsh-prompt
+
+CURRENT_BG='NONE'
+START_TIME=$SECONDS
+
+# Begin a segment. This function takes two arguments: the background color and the foreground color.
+# Both can be omitted, which will render the default colors.
+# Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
+prompt_segment() {
+  local bg fg
+
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+
+  if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
+    echo -n " %{$bg%F{$CURRENT_BG}%}%{$fg%} "
+  else
+    echo -n "%{$bg%}%{$fg%} "
+  fi
+
+  CURRENT_BG=$1
+
+  [[ -n $3 ]] && print -Pn $3
+}
+
+# End the prompt, closing any open segments.
+# Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
+prompt_end() {
+
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n " %{%k%F{$CURRENT_BG}%}"
+  else
+    echo -n "%{%k%}"
+  fi
+
+  echo -n "%{%f%}\n"
+  CURRENT_BG=''
+}
+
+# Constructs the prompt.
+# Taken from: http://www.paradox.io/posts/9-my-new-zsh-prompt
+function build_prompt {
+
+  prompt_segment magenta black '%2~'
+
+  if $git_status; then
+    prompt_segment cyan black '${(e)git_info[prompt]}${git_info[status]}'
+  fi
+
+  prompt_end
+}
+
+function prompt_landon_preexec {
+  START_TIME=$SECONDS
+}
+
+function prompt_landon_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git_status=git-info
+  fi
+
+  # Determine the how long the timer has run
+  TIMER_RESULT=$(($SECONDS - $START_TIME))
+
+  if [[ $TIMER_RESULT -gt 10 ]]; then
+    print -P "%B%F{blue}🕐  Elapsed time: $( print_time TIMER_RESULT)"
+  fi
+
+  # Set the new start time
+  START_TIME=$SECONDS
+}
+
+# Given a number and a unit, this function concatenates them and pluralizes the unit. If the number
+# is 0, this function doesn't output anything.
+function pluralize {
+  if [[ $1 -eq 0 ]]; then return; fi
+  printf "%s %s%s" $1 $2 $([[ $1 -eq 1 ]] || echo -n "s")
+}
+
+# Given a number of seconds, this function prints the total time in a human-readable format.
+function print_time {
+  let "TIME_HOURS = $1 / 3600"
+  let "TIME_MINUTES = $1 / 60 % 60"
+  let "TIME_SECONDS = $1 % 60"
+
+  PLURALIZED_HOURS=$(pluralize $TIME_HOURS "hour")
+  PLURALIZED_MINUTES=$(pluralize $TIME_MINUTES "minute")
+  PLURALIZED_SECONDS=$(pluralize $TIME_SECONDS "second")
+
+  TIMES=($PLURALIZED_HOURS $PLURALIZED_MINUTES $PLURALIZED_SECONDS)
+  echo -n $TIMES
+}
+
+function prompt_landon_setup {
+
+  # Stuff that's required by Prezto
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load the dependencies
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  # Add the zsh hooks
+  add-zsh-hook preexec prompt_landon_preexec
+  add-zsh-hook precmd prompt_landon_precmd
+
+  # Configrue the Git styles
+  zstyle ':prezto:module:git:info:action' format ' %s'
+  zstyle ':prezto:module:git:info:added' format ' ✚'
+  zstyle ':prezto:module:git:info:ahead' format ' ⬆'
+  zstyle ':prezto:module:git:info:behind' format ' ⬇'
+  zstyle ':prezto:module:git:info:branch' format '⎇  %b'
+  zstyle ':prezto:module:git:info:commit' format '➦ %.7c'
+  zstyle ':prezto:module:git:info:deleted' format ' ✖'
+  zstyle ':prezto:module:git:info:modified' format ' ✱'
+  zstyle ':prezto:module:git:info:position' format '%p'
+  zstyle ':prezto:module:git:info:renamed' format ' ➙'
+  zstyle ':prezto:module:git:info:stashed' format ' ⓢ '
+  zstyle ':prezto:module:git:info:unmerged' format ' ═'
+  zstyle ':prezto:module:git:info:untracked' format ' ?'
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' '$(coalesce "%b" "%p" "%c")%s' \
+    'status' '%A%B%S%a%d%m%r%U%u'
+
+  # Define prompts.
+  # HACK: This is a dirty hack to achieve a newline between commands.
+  PROMPT='%{%f%b%k%}$(build_prompt) '
+  RPROMPT='%F{11}[%D{%L:%M:%S %p}]'
+  SPROMPT='Correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_landon_setup "$@"
