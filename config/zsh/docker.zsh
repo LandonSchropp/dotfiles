@@ -2,7 +2,7 @@
 # TODO: Genericize this.
 # TODO: Fix this function.
 function project_name {
-  string match -r '(tesla|edison)-(.+)' "$(basename "$(pwd)")" | sed -n 3p | sed 's/-/_/g'
+  basename "$(pwd)" | sed -E 's/^(tesla|edison)-(.*)$/\2/' | sed 's/-/_/g'
 }
 
 alias k='kubectl'

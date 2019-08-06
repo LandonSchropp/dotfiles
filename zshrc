@@ -27,6 +27,11 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.z
 # Make bat readable on a light terminal.
 export BAT_THEME="ansi-dark"
 
+# Enable Homebrew auto completions.
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Source the configuration files
 for CONFIG_FILE in $HOME/.config/zsh/*; do
   source $CONFIG_FILE
