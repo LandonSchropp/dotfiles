@@ -13,9 +13,19 @@ eval "$(rbenv init -)"
 # Start up direnv
 eval "$(direnv hook zsh)"
 
-# Set up and load NVM
-export NVM_DIR="/Users/landon/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# Start up NVM.
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+
+# Enable source highlighting in less.
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
+
+# Add the Kubernetes utilities to the path.
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+
+# Make bat readable on a light terminal.
+export BAT_THEME="ansi-dark"
 
 # Source the configuration files
 for CONFIG_FILE in $HOME/.config/zsh/*; do
