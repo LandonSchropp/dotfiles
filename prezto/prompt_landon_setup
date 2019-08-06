@@ -70,7 +70,7 @@ function prompt_landon_precmd {
   TIMER_RESULT=$(($SECONDS - $START_TIME))
 
   if [[ $TIMER_RESULT -gt 10 ]]; then
-    print -P "%B%F{blue}🕐  Elapsed time: $( print_time TIMER_RESULT)"
+    print -P "%B%F{blue}🕐 $(print_time TIMER_RESULT)"
   fi
 
   # Set the new start time
