@@ -84,6 +84,9 @@ Plug 'LandonSchropp/vim-stamp'
 " Easily convert from camel case to underscore and back again.
 Plug 'tpope/vim-abolish'
 
+" Automatically import JavaScript modules.
+Plug 'Galooshi/vim-import-js'
+
 
 
 " SYNTAX PLUGINS
