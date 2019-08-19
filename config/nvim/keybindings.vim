@@ -83,3 +83,7 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Make the double register use the system clipboard
 nnoremap "" "*
+
+" Remap [[ and ]] to jump to errors.
+nnoremap <silent> [[ :lnext<cr>
+nnoremap <silent> ]] :lprev<cr>
