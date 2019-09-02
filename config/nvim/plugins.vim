@@ -84,6 +84,12 @@ Plug 'tpope/vim-abolish'
 " Automatically import JavaScript modules.
 Plug 'Galooshi/vim-import-js'
 
+" Undo tree
+Plug 'mbbill/undotree'
+
+" Swapping arguments
+Plug 'machakann/vim-swap'
+
 
 
 " SYNTAX PLUGINS
