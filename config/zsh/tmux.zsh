@@ -116,7 +116,7 @@ function tka {
 
 # Runs the tmuxinator command installed globally.
 # NOTE: When tmux is distributed as an executable, this can be removed.
-#
+# https://github.com/tmuxinator/tmuxinator/issues/563
 function global_tmuxinator {
 
   rbenv shell $(rbenv global)
