@@ -6,12 +6,6 @@ alias tl='tmux list-sessions 2>/dev/null || 0'
 # is created and attached with the argument as its name.
 function ta {
 
-  # Make sure tmuxinator is installed.
-  if ! type tmuxinator &>/dev/null; then
-    echo "Tmuxinator must be installed!"
-    return 1
-  fi
-
   # Ensure the name of a session was provided.
   if [ $# -ne 1 ]; then
     echo "You must provide the name of the session to create or attach."
@@ -24,7 +18,7 @@ function ta {
 
     # Create the session using tmuxinator if a project exists for it. If the tmux session was
     # started successfully, we're done!
-    if global_tmuxinator start "$argv[1]"; then
+    if tmuxinator start "$argv[1]"; then
       return 0
     fi
 
@@ -91,7 +85,7 @@ function tmux_sessions {
     return 1
   fi
 
-  TMUXINATOR_SESSIONS="$(global_tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')"
+  TMUXINATOR_SESSIONS="$(tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')"
 
   echo $TMUXINATOR_SESSIONS $(active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
 }
@@ -112,20 +106,4 @@ function tka {
   for session in $(active_tmux_sessions); do
     tk $session
   done
-}
-
-# Runs the tmuxinator command installed globally.
-# NOTE: When tmux is distributed as an executable, this can be removed.
-# https://github.com/tmuxinator/tmuxinator/issues/563
-function global_tmuxinator {
-
-  rbenv shell $(rbenv global)
-
-  rbenv exec tmuxinator $argv
-
-  RESULT="$status"
-
-  rbenv shell --unset
-
-  return $RESULT
 }
