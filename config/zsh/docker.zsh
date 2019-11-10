@@ -7,10 +7,19 @@ function project_name {
 
 alias k='kubectl'
 alias dc='docker-compose'
-alias dcr='docker-compose run --rm $(project_name)'
 alias dcu='docker-compose up -d'
-alias dcl='docker-compose logs -f $(project_name)'
-alias dcb='docker-compose build $(project_name)'
+
+function dcr() {
+  docker-compose run --rm "$(project_name)"
+}
+
+function dcl() {
+  docker-compose logs -f "$(project_name)"
+}
+
+function dcb() {
+  docker-compose build "$(project_name)"
+}
 
 # TODO: Genericize this.
 alias dco="$EDITOR ~/Development/tesla/docker-compose.override.yml"
