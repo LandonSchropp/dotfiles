@@ -7,6 +7,19 @@ fpath=(
 # Enable color output
 zstyle ':prezto:*:*' color 'yes'
 
+# Enable all the syntax highlighters!
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'line' \
+  'cursor' \
+  'root'
+
+# Highlight aliases
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'alias' 'fg=green'
+
 # Set the Prezto modules to load (browse modules). The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
