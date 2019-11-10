@@ -14,16 +14,16 @@ function ta {
 
   # Create the session if it doesn't already exist.
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
-  if ! active_tmux_sessions | grep -Fx $argv[1] >/dev/null; then
+  if ! active_tmux_sessions | grep -Fx "$1" >/dev/null; then
 
     # Create the session using tmuxinator if a project exists for it. If the tmux session was
     # started successfully, we're done!
-    if tmuxinator start "$argv[1]"; then
+    if tmuxinator start "$1"; then
       return 0
     fi
 
     # If a tmuxinator project does not exist, create a new session using my preferred layout
-    tmux new-session -d -s $argv[1] 2>/dev/null
+    tmux new-session -d -s "$1" 2>/dev/null
     tmux rename-window "working"
     tmux new-window -d -n vim 'nvim'
   fi
