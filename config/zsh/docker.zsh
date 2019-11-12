@@ -7,7 +7,7 @@ function project_name {
 
 alias k='kubectl'
 alias dc='docker-compose'
-alias dcu='docker-compose up -d'
+alias dcu='docker-compose up'
 
 function dcr() {
   docker-compose run --rm "$(project_name)"
