@@ -4,4 +4,9 @@ function! s:SyntaxGroupUnderCursor()
   echo synIDattr(l:syntax_id, 'name') . ' → ' . synIDattr(synIDtrans(l:syntax_id), 'name')
 endfun
 
+function! s:SyntaxHighlightTest()
+  source $VIMRUNTIME/syntax/hitest.vim
+endfunction
+
 command! SyntaxGroupUnderCursor call s:SyntaxGroupUnderCursor()
+command! SyntaxHighlightTest call s:SyntaxHighlightTest()
