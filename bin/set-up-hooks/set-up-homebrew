@@ -8,8 +8,7 @@ if ! command -v brew 1>/dev/null; then
 fi
 
 # Update Homebrew and installed packages.
-# brew update
-# brew upgrade
+brew update
 
 # Install all of the Homebrew applications.
 brew bundle --file="$HOME/.dotfiles/Brewfile" --force || true
