@@ -65,5 +65,8 @@ Base16Highlight Statement fg=red
 Base16Highlight Constant fg=yellow
 Base16Highlight Identifier fg=blue
 
+" Spelling
+Base16Highlight SpellBad fg=red
+
 " Set the vim-airline theme to my custom theme.
 let g:airline_theme = 'landon'
