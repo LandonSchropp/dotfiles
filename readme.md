@@ -17,7 +17,7 @@ tools.
   terminal.
 * **[Fish](https://fishshell.com/)**: An awesome shell with a ton of useful features baked in out of
   the box.
-* **[PostgreSQL](http://www.postgresql.org/)**: An open-source SQL database.
+* **[Postgres](http://www.postgresql.org/)**: An open-source SQL database.
 
 In addition, these dotfiles install a ton of small, useful utilities command-line utilities and
 system applications, which can be viewed in the [Brewfile](Brewfile). They also add several custom
