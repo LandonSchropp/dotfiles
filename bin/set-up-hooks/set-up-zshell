@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Close the Prezto repository if it doesn't already exist.
+# Clone the Prezto repository if it doesn't already exist.
 if ! [ -d $HOME/.zprezto ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
