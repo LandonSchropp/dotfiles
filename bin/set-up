@@ -14,3 +14,6 @@ bin/set-up-hooks/set-up-mackup
 bin/set-up-hooks/set-up-node
 bin/set-up-hooks/set-up-tmux
 bin/set-up-hooks/set-up-vim
+
+echo
+echo "🤘 Done"
