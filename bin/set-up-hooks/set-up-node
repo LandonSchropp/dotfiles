@@ -1,32 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -euo pipefail
 
-# Install the Node.js asdf plugin unless it's already installed.
-if [[ "$(asdf list 2>/dev/null)" != *"nodejs"* ]]; then
-  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-fi
+# Note: The installation instructions for this script come from here:
+# https://github.com/Homebrew/homebrew-core/blob/master/Formula/nvm.rb
 
-# Install the current LTS version.
-LTS_VERSION=$(
-  curl --silent https://nodejs.org/en/ \
-    | grep -o "\\d*\\.\\d*\\.\\d* LTS" \
-    | head -n 1 \
-    | sed 's/ LTS//'
-)
+# Source NVM and set its installation directory to ~/.nvim.
+mkdir -p ~/.nvm
+export NVM_DIR="$HOME/.nvm"
+source "$(brew --prefix nvm)/nvm.sh"
+source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
-asdf install nodejs "$LTS_VERSION"
-asdf global nodejs "$LTS_VERSION"
-
-# Set the Yarn default configuration.
-yarn config set init-author-url "https://landonschropp.com"
-yarn config set init-author-email "schroppl@gmail.com"
-yarn config set init-author-name "Landon Schropp"
-yarn config set init-license UNLICENSED
-
-# Manually append the last option to the .yarnrc file. This should be replaced with a `yarn config
-# set` command when this issue is resolved: https://github.com/yarnpkg/yarn/issues/6499.
-if [[ "$(cat ~/.yarnrc)" != *"run.silent"* ]]; then
-  echo '"--run.silent"' true >> ~/.yarnrc
-fi
+# Install the latest LTS Node.js version and set the default to it.
+nvm install --lts

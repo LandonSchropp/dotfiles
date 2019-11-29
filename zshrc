@@ -13,8 +13,11 @@ eval "$(rbenv init -)"
 # Start up direnv
 eval "$(direnv hook zsh)"
 
-# Start up NVM.
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+# Start up NVM. These instructions come from the Homebrew caveats section.
+# https://github.com/Homebrew/homebrew-core/blob/master/Formula/nvm.rb
+export NVM_DIR="$HOME/.nvm"
+source "$(brew --prefix nvm)/nvm.sh"
+source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
 # Enable source highlighting in less.
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
