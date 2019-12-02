@@ -10,7 +10,7 @@ alias dc='docker-compose'
 alias dcu='docker-compose up'
 
 function dcr() {
-  docker-compose run --rm "$(project_name)"
+  docker-compose run --rm "$(project_name)" $@
 }
 
 function dcl() {
