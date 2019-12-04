@@ -2,5 +2,9 @@
 
 set -euo pipefail
 
+# Ensure the Google Drive Configuration folder is present, even if Google Drive hasn't been set up
+# yet.
+mkdir -p "$HOME/Google Drive/Configuration"
+
 # Configure the application settings
 mackup restore
