@@ -15,8 +15,6 @@ tools.
   productivity.
 * **[tmux](https://tmux.github.io/)**: A utility that allows you to run multiple windows inside one
   terminal.
-* **[Fish](https://fishshell.com/)**: An awesome shell with a ton of useful features baked in out of
-  the box.
 * **[Postgres](http://www.postgresql.org/)**: An open-source SQL database.
 
 In addition, these dotfiles install a ton of small, useful utilities command-line utilities and
@@ -35,12 +33,13 @@ Before anything else, install the system updates.
 softwareupdate -ia
 ```
 
-Then, install Xcode and accept its license.
+Then, install the Xcode CLI tools.
 
 ``` shell
 xcode-select --install
-sudo xcodebuild -license accept
 ```
+
+In order to do anything useful, you're going to need 1Password.
 
 ## Installation
 
@@ -73,15 +72,6 @@ Mathias Bynens maintains [a script](https://mths.be/osx) that configures several
 application settings in one go. Because macOS is constantly updating, it's probably a good idea to
 pull it down an modify every once in a while. My latest local iteration is kept in the
 [macos.sh](macos.sh) script.
-
-### Fish
-
-To get up and running, add Fish to the list of shells and set it as the default.
-
-``` shell
-sudo bash -c 'echo "/usr/local/bin/fish" >> /etc/shells'
-chsh -s /usr/local/bin/fish
-```
 
 ### Terminal Colors and Italics
 
