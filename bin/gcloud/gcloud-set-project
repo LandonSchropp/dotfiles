@@ -19,5 +19,8 @@ gcloud auth configure-docker
 kubectl config unset contexts
 
 # Set the Kubernetes context to the first of the available clusters.
-KUBERNETES_CLUSTER_NAME=$(gcloud container clusters list --format=json | jq -r '.[0].name')
-gcloud container clusters get-credentials "$KUBERNETES_CLUSTER_NAME"
+CLUSTER_JSON=$(gcloud container clusters list --format=json)
+CLUSTER_NAME=$(echo "$CLUSTER_JSON" | jq -r '.[0].name')
+CLUSTER_ZONE=$(echo "$CLUSTER_JSON" | jq -r '.[0].zone')
+
+gcloud container clusters get-credentials --zone "$CLUSTER_ZONE" "$CLUSTER_NAME"
