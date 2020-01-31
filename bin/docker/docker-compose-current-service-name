@@ -8,9 +8,8 @@ require 'yaml'
 # This script attempts to determine the service name of the current application in the
 # `docker-compose.yml` file.
 
+# Load the docker compose configuration
 docker_compose_configuration = YAML.load(`docker-compose config`)
-
-# Don't continue unless a docker-compose configuration was found.
 exit 1 unless $?.success?
 
 # Attempt to find a subset of the current directory in the services.
