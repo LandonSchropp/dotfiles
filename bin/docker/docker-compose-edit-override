@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'pathname'
+
+# NOTE: This methodology is how the `docker-compose config` command implements this in the Python
+# source.
+DOCKER_COMPOSE_FILES = %w(docker-compose.yml docker-compose.yaml)
+
+# This script copies the environment out of the docker-compose.yml and docker-compose.override.yml
+# files and converts it to an shell format for use with direnv.
+
+# First, make sure there's a parent `docker-compose.yml` file.
+`docker-compose config`
+exit 1 unless $?.success?
+
+# Attempt to find the parent docker-compose file.
+path = Pathname.new(Dir.pwd)
+  .descend
+  .to_a
+  .reverse
+  .map { |path| DOCKER_COMPOSE_FILES.map { |docker_compose_file| path.join(docker_compose_file) } }
+  .flatten
+  .find(&:exist?)
+  .to_s
+
+# Get the name of the override file.
+path.sub!(/.*\Kdocker-compose/, "docker-compose.override")
+
+# Open up the override
+system(ENV.fetch("EDITOR"), path)
