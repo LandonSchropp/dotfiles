@@ -46,7 +46,7 @@ In order to do anything useful, you're going to need 1Password.
 Start by cloning the dotfiles repo.
 
 ``` shell
-git clone https://github.com/LandonSchropp/dotfiles $HOME/.dotfiles
+git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
 ```
 
 [RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. Most
