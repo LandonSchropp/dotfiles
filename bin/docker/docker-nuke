@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+docker-kill
+docker-compose down -v --rmi all --remove-orphans
+docker system prune --all --force --volumes
