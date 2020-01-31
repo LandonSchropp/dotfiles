@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'pathname'
+require 'yaml'
+
+# This script attempts to determine the service name of the current application in the
+# `docker-compose.yml` file.
+
+docker_compose_config = YAML.load(`docker-compose config`)
+
+# Don't continue unless a docker-compose configuration was found.
+exit 1 unless $?.success?
+
+# Attempt to find a subset of the current directory in the services.
+directory = Pathname.new(Dir.pwd).basename.to_s
+
+matching_service = docker_compose_config["services"].find do |service|
+  directory =~ Regexp.new(service.first.gsub(/[^a-z0-9]+/i, "."), Regexp::IGNORECASE)
+end
+
+if matching_service.nil?
+  $stderr.puts "🧯 No matching service could be found."
+  exit 1
+end
+
+puts matching_service.first

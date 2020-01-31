@@ -1,24 +1,18 @@
-# Ignore project names that aren't prepended with `tesla` or `edison`.
-# TODO: Genericize this.
-# TODO: Fix this function.
-function project_name {
-  basename "$(pwd)" | sed -E 's/^(tesla|edison)-(.*)$/\2/' | sed 's/-/_/g'
-}
-
 alias k='kubectl'
 alias dc='docker-compose'
 alias dcu='docker-compose up'
+alias dcn='docker-compose-current-service-name'
 
 function dcr() {
-  docker-compose run --rm "$(project_name)" $@
+  docker-compose run --rm "$(docker-compose-current-service-name)" $@
 }
 
 function dcl() {
-  docker-compose logs -f "$(project_name)"
+  docker-compose logs -f "$(docker-compose-current-service-name)"
 }
 
 function dcb() {
-  docker-compose build "$(project_name)"
+  docker-compose build "$(docker-compose-current-service-name)"
 }
 
 # TODO: Genericize this.
