@@ -2,6 +2,7 @@ alias k='kubectl'
 alias dc='docker-compose'
 alias dcu='docker-compose up'
 alias dcn='docker-compose-current-service-name'
+alias dc-envrc='docker-compose-envrc > .envrc'
 
 function dcr() {
   docker-compose run --rm "$(docker-compose-current-service-name)" $@
