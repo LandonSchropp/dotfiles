@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-set -euo pipefail
-
-pgrep -i -f docker | xargs kill
