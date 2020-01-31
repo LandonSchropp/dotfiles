@@ -1,6 +1,6 @@
 alias k='kubectl'
 alias dc='docker-compose'
-alias dcu='docker-compose up'
+alias dcud='docker-compose-current-service-up-dependent'
 alias dcn='docker-compose-current-service-name'
 alias dc-envrc='docker-compose-envrc > .envrc'
 
@@ -14,6 +14,10 @@ function dcl() {
 
 function dcb() {
   docker-compose build "$(docker-compose-current-service-name)"
+}
+
+function dcu() {
+  docker-compose up "$(docker-compose-current-service-name)"
 }
 
 # TODO: Genericize this.

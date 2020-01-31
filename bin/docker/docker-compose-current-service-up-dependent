@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'yaml'
+require 'shellwords'
+
+# This script spins up all of the services that the current service is dependent upon, without
+# spinning up the current service. This useful for running the service locally.
+
+# Grab the current service configuration.
+service = YAML.load(`docker-compose-current-service-configuration`)
+exit 1 unless $?.success?
+
+# Start up the dependent services.
+`docker-compose up -d #{ Shellwords.join(service.fetch("links", [])) }`
