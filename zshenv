@@ -11,4 +11,7 @@ export EDITOR="nvim"
 export PATH="./bin:./node_modules/.bin:$PATH"
 
 # Add my custom bin scripts to the system path.
-export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/bin/gcloud:$HOME/.dotfiles/bin/docker:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin/gcloud:$PATH"
+export PATH="$HOME/.dotfiles/bin/docker:$PATH"
+export PATH="$HOME/.dotfiles/bin/git:$PATH"
