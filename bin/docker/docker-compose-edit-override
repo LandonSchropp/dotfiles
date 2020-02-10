@@ -1,19 +1,17 @@
 #!/usr/bin/env ruby
 
-# frozen_string_literal: true
-
-require 'pathname'
+require "pathname"
 
 # NOTE: This methodology is how the `docker-compose config` command implements this in the Python
 # source.
-DOCKER_COMPOSE_FILES = %w(docker-compose.yml docker-compose.yaml)
+DOCKER_COMPOSE_FILES = %w(docker-compose.yml docker-compose.yaml).freeze
 
 # This script copies the environment out of the docker-compose.yml and docker-compose.override.yml
 # files and converts it to an shell format for use with direnv.
 
 # First, make sure there's a parent `docker-compose.yml` file.
 `docker-compose config`
-exit 1 unless $?.success?
+exit 1 unless $CHILD_STATUS.success?
 
 # Attempt to find the parent docker-compose file.
 path = Pathname.new(Dir.pwd)

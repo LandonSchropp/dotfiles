@@ -1,18 +1,16 @@
 #!/usr/bin/env ruby
 
-# frozen_string_literal: true
-
-require 'yaml'
+require "yaml"
 
 # This script copies the environment out of the docker-compose.yml and docker-compose.override.yml
 # files and converts it to an shell format for use with direnv.
 
 # Grab the current service configuration.
-service = YAML.load(`docker-compose-current-service-configuration`)
-exit 1 unless $?.success?
+service = YAML.safe_load(`docker-compose-current-service-configuration`)
+exit 1 unless $CHILD_STATUS.success?
 
 # Convert the environment to a shell format.
 puts service
   .fetch("environment", {})
-  .map { |key, value| "export #{ key }=#{ (key =~ /_HOST\z/ ? "localhost" : value).to_s.dump }" }
+  .map { |key, value| "export #{ key }=#{ (key =~ /_HOST\z/ ? 'localhost' : value).to_s.dump }" }
   .join("\n")
