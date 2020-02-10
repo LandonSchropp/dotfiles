@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require "english"
 require "yaml"
 
 # This script outputs the configuration for the current service in JSON (which is a little faster to

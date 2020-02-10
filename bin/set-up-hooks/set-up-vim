@@ -40,4 +40,4 @@ nvim -u "$HOME/.config/nvim/plugins.vim" +PlugInstall +PlugClean! +qa
 
 # Symbolically link the system dictionary to the vim spellfile
 mkdir -p "$HOME/.config/nvim/spelling"
-ln -sf "$HOME/Library/Spelling/LocalDictionary" "$HOME/.config/nvim/spelling/en.utf-8.add"
+ln -sf "/Library/Spelling/LocalDictionary" "$HOME/.config/nvim/spelling/en.utf-8.add"

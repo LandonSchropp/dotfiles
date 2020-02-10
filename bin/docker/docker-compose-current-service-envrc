@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require "english"
 require "yaml"
 
 # This script copies the environment out of the docker-compose.yml and docker-compose.override.yml

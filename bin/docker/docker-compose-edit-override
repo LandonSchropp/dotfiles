@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require "english"
 require "pathname"
 
 # NOTE: This methodology is how the `docker-compose config` command implements this in the Python
@@ -18,7 +19,9 @@ path = Pathname.new(Dir.pwd)
   .descend
   .to_a
   .reverse
-  .map { |path| DOCKER_COMPOSE_FILES.map { |docker_compose_file| path.join(docker_compose_file) } }
+  .map do |directory|
+    DOCKER_COMPOSE_FILES.map { |docker_compose_file| directory.join(docker_compose_file) }
+  end
   .flatten
   .find(&:exist?)
   .to_s

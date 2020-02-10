@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-require "yaml"
+require "english"
 require "shellwords"
+require "yaml"
 
 # This script spins up all of the services that the current service is dependent upon, without
 # spinning up the current service. This useful for running the service locally.
