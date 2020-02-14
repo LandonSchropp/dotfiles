@@ -32,6 +32,7 @@ set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
 set inccommand=nosplit     " Incrementally show effects of commands
 set lazyredraw             " Do not redraw the screen in the middle of a macro
+set spell                  " Turn on spell checking in comments
 
 " Set the location of the spellfile
 set spellfile=~/.config/nvim/spelling/en.utf-8.add
