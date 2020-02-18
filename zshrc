@@ -19,6 +19,11 @@ export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
 source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
+# Add the local bin paths to the system path. This isn't included in the .zshenv file because it
+# *must* be done after rbenv and nvm have loaded. Since we likely don't want relative paths in
+# non-shell instances of zsh anyway, this is probably better anyway.
+export PATH="./bin:./node_modules/.bin:$PATH"
+
 # Enable source highlighting in less.
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
