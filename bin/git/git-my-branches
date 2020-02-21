@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Only output color if the command isn't being piped.
+if [ -t 1 ]; then
+  COLOR="always"
+else
+  COLOR="auto"
+fi
+
+"$HOME/.dotfiles/bin/git/git-branches" --color="$COLOR" | grep "$(git config user.name)"
