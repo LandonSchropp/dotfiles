@@ -40,18 +40,19 @@
 
   # Shortcuts
   a = add
-  c = commit
-  co = checkout
   b = branch
-  m = merge
-  s = status
+  bs = branches
+  c = commit
   cl = clone
+  co = checkout
+  cp = cherry-pick
+  fp = push --force-with-lease
+  l = compact-log
+  m = merge
   p = push --follow-tags
   pu = pull
   r = reset
-  cp = cherry-pick
-  l = "!git compact-log"
-  fp = push --force-with-lease
+  s = status
 
 [core]
   excludesfile = ~/.gitignore
