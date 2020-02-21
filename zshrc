@@ -7,6 +7,9 @@ alias ln='nocorrect ln'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 
+# Disable nomatch (https://github.com/ohmyzsh/ohmyzsh/issues/449)
+unsetopt nomatch
+
 # Start up rbenv
 eval "$(rbenv init -)"
 
