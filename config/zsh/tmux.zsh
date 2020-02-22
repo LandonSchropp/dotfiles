@@ -54,20 +54,22 @@ function tm {
 
   TARGET_WINDOW="$(echo $argv[1])"
 
-  if [ $TARGET_WINDOW -lt 1; or test $TARGET_WINDOW -gt $(tmux_number_of_windows) ]; then
+  if [ $TARGET_WINDOW -lt 1 ] || [ $TARGET_WINDOW -gt $(tmux_number_of_windows) ]; then
     echo -e "The target window must be between 1 and "$(tmux_number_of_windows)"."
     return 1
   fi
 
+  STARTING_WINDOW=$(tmux_current_window)
+
   if [ $TARGET_WINDOW -lt $(tmux_current_window) ]; then
-    for i in $(seq $TARGET_WINDOW $(math $(tmux_current_window) - 1)); do
-      tmux swap-window -d -s $(tmux_current_window) -t $i
+    for i in $(seq $TARGET_WINDOW $(tmux_current_window)); do
+      tmux swap-window -s $STARTING_WINDOW -t $i
     done
   fi
 
-  if [ $TARGET_WINDOW -gt $(tmux_current_window) ]; then
-    for i in $(seq $TARGET_WINDOW $(math $(tmux_current_window) + 1)); do
-      tmux swap-window -d -s $(tmux_current_window) -t $i
+  if [ $TARGET_WINDOW -gt $STARTING_WINDOW ]; then
+    for i in $(seq $TARGET_WINDOW $STARTING_WINDOW); do
+      tmux swap-window -s $STARTING_WINDOW -t $i
     done
   fi
 
