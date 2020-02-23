@@ -130,3 +130,12 @@ autocmd InsertLeave * set nopaste
 " Automatically format files on save.
 let g:ale_fixers = { 'javascript': [ 'eslint' ], 'ruby': [ 'rubocop' ] }
 let g:ale_fix_on_save = 1
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+" Configure the language servers
+let g:LanguageClient_serverCommands = {
+  \ 'javascript': [ './node_modules/.bin/javascript-typescript-stdio' ],
+  \ 'ruby': [ 'bundle', 'exec', 'solargraph', 'stdio' ],
+  \ }

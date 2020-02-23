@@ -88,3 +88,9 @@ nnoremap "" "*
 " Remap [[ and ]] to jump to errors.
 nnoremap <silent> [[ :lnext<cr>
 nnoremap <silent> ]] :lprev<cr>
+
+" Configure the language client commands
+nnoremap <silent> <leader>lc :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> <leader>ll :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> <leader>lg :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>

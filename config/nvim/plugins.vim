@@ -90,6 +90,12 @@ Plug 'mbbill/undotree'
 " Swapping arguments
 Plug 'machakann/vim-swap'
 
+" Language servers
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+
 
 
 " SYNTAX PLUGINS
