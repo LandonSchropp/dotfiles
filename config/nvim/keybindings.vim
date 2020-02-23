@@ -12,10 +12,6 @@ nnoremap <silent> 0 g0
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
-" Remap H and L to beginning and end of lines (since ^ and $ are hard to type)
-nnoremap H ^
-nnoremap L $
-
 " TODO: Don't include wrapped lines when jumping multiples (so relative line numbers work
 
 " Allow control plus the movement keys to navigate the user in insert mode and normal mode
@@ -71,9 +67,13 @@ cabbrev sudoedit <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudoedit" : "s
 " Use the up arrow key to trigger a search through history.
 nnoremap <up> :<up>
 
-" Use _ and + for navigating tabs
-nnoremap _ gT
-nnoremap + gt
+" Use left and right for navigating tabs
+nnoremap <left> gT
+nnoremap <right> gt
+
+" Remap H and L for navigating tabs
+nnoremap H gT
+nnoremap L gt
 
 " Automatically format JSON files using jq
 nnoremap <leader>jq :%!jq '.'<cr>
