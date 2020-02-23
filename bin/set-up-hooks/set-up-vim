@@ -36,7 +36,7 @@ fi
 pip3 install neovim
 
 # Install the plugins listed in the plugins.vim file
-nvim -u "$HOME/.config/nvim/plugins.vim" +PlugInstall +PlugClean! +qa
+nvim -u "$HOME/.config/nvim/plugins.vim" +PlugInstall +PlugClean! +UpdateRemotePlugins +qa
 
 # Symbolically link the system dictionary to the vim spellfile
 mkdir -p "$HOME/.config/nvim/spelling"
