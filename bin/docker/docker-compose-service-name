@@ -8,7 +8,7 @@ require "yaml"
 # provided service name. It ignores case and non-whitespace characters.
 
 # Grab the service name.
-if $ARGV.length != 1
+if ARGV.length != 1
   puts "Usage: #{ $0 } <service-name>"
   exit 1
 end
