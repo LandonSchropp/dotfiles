@@ -20,7 +20,7 @@ docker_compose_configuration = YAML.safe_load(`docker-compose config`)
 exit 1 unless $CHILD_STATUS.success?
 
 matching_services = docker_compose_configuration.fetch("services", []).keys.select do |service|
-  Regexp.new(service.gsub(/[^a-z0-9]+/i, "."), Regexp::IGNORECASE).match? service_name
+  Regexp.new(service.gsub(/[^a-z0-9]+/i, ".*"), Regexp::IGNORECASE).match? service_name
 end
 
 if matching_services.empty?

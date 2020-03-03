@@ -12,7 +12,10 @@ if ARGV.length != 1
   exit 1
 end
 
-service_name = ARGV.first.strip
+service_name =
+
+service_name = YAML.safe_load(`docker-compose-service-name #{ ARGV.first.strip }`)
+exit 1 unless $CHILD_STATUS.success?
 
 # Grab the current service configuration.
 docker_compose_configuration = YAML.safe_load(`docker-compose config`)
