@@ -1,17 +1,7 @@
 #!/usr/bin/env ruby
 
-require "english"
-require "yaml"
-
-# This script outputs the configuration for the current service in JSON (which is a little faster to
-# parse than YAML).
+# This script outputs the configuration for the current service in YAML.
 
 # Grab the current service name.
-service_name = `docker-compose-current-service-name`
-exit 1 unless $CHILD_STATUS.success?
-service_name.strip!
-
-# Grab the current service configuration.
-docker_compose_configuration = YAML.safe_load(`docker-compose config`)
-exit 1 unless $CHILD_STATUS.success?
-puts docker_compose_configuration["services"][service_name].to_yaml
+puts `docker-compose-service-configuration #{ `docker-compose-current-service-name`.strip }`
+exit 1 unless $?.success?
