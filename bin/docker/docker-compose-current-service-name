@@ -4,23 +4,8 @@ require "english"
 require "pathname"
 require "yaml"
 
-# This script attempts to determine the service name of the current application in the
-# `docker-compose.yml` file.
-
-# Load the docker compose configuration
-docker_compose_configuration = YAML.safe_load(`docker-compose config`)
-exit 1 unless $CHILD_STATUS.success?
+# This script attempts to determine the service name using the script's working directory.
 
 # Attempt to find a subset of the current directory in the services.
-directory = Pathname.new(Dir.pwd).basename.to_s
-
-matching_service = docker_compose_configuration.fetch("services", []).find do |service|
-  directory =~ Regexp.new(service.first.gsub(/[^a-z0-9]+/i, "."), Regexp::IGNORECASE)
-end
-
-if matching_service.nil?
-  warn "🧯 No matching service could be found."
-  exit 1
-end
-
-print matching_service.first
+puts `docker-compose-service-name #{ Pathname.new(Dir.pwd).basename.to_s }`
+exit 1 unless $CHILD_STATUS.success?
