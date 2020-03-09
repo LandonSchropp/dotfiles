@@ -32,9 +32,9 @@ set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
 set inccommand=nosplit     " Incrementally show effects of commands
 set lazyredraw             " Do not redraw the screen in the middle of a macro
-set spell                  " Turn on spell checking in comments
 
-" Set the location of the spellfile
+" Enable spell checking
+set spell
 set spellfile=~/.config/nvim/spelling/en.utf-8.add
 
 " Set the location of the dictionary
@@ -82,7 +82,7 @@ autocmd InsertLeave * :set relativenumber
 " Wrap Git commit messages at 72 characters.
 autocmd FileType gitcommit set textwidth=72
 
-" Use deoplete.
+" Use Deoplete.
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
 
