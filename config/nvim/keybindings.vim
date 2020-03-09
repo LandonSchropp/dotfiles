@@ -94,3 +94,8 @@ nnoremap <silent> <leader>lc :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> <leader>ll :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <leader>lg :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
+
+" Create more convenient shortcuts for yanking to the system keyboard and pasting from the system
+" keyboard.
+nnoremap <silent> gy "*y<cr>
+nnoremap <silent> gp "*p<cr>
