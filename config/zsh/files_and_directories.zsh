@@ -1,5 +1,5 @@
 function tree {
-  command tree -C -I "node_modules" $argv
+  git check-ignore * | paste -s -d '|' - | xargs -I _ tree -I _ $argv
 }
 
 function touch {
