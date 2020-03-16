@@ -10,7 +10,7 @@ let g:pencil#wrapModeDefault = 'soft'
 "   autocmd FileType text call pencil#init()
 " augroup END
 
-" Ignore spell checking for camelcased items.
+" Ignore spell checking for CamelCased items.
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
 autocmd Syntax * syn match CamelCase
   \ "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l\l*\)\%(\u\l*\)\{1,}\>" transparent
@@ -19,6 +19,13 @@ autocmd Syntax * syn match CamelCase
 " Ignore spell checking for URLs.
 autocmd Syntax * syn match UrlNoSpell
   \ '\w\+:\/\/[^[:space:]"\']\+' transparent
+  \ containedin=.*Comment.*,.*String.* contains=@NoSpell contained
+
+" Ignore spell checking for apostrophes.
+" TODO: Determine if this is only needed for the camel cased items above. If so, figure out how to
+" integrate it with that rule.
+autocmd Syntax * syn match UrlNoSpell
+  \ '['']s[[:space:]]' transparent
   \ containedin=.*Comment.*,.*String.* contains=@NoSpell contained
 
 " Set the filetypes for extensions Vim doesn't recognize by default
