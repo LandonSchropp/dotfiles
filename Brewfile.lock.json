@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask-fonts": {
-        "revision": "94f6f8f88b6ce4761faea7bd004a8dfedd1cfde3"
+        "revision": "776540228d9144de7156fc1fccbfdc8c2f9e47b5"
       },
       "thoughtbot/formulae": {
         "revision": "001833cb2c9d79296f2bdcd4caded62828640eff"
@@ -549,27 +549,6 @@
           }
         }
       },
-      "tmuxinator": {
-        "version": "1.1.4",
-        "bottle": {
-          "cellar": ":any_skip_relocation",
-          "prefix": "/usr/local",
-          "files": {
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/tmuxinator-1.1.4.catalina.bottle.tar.gz",
-              "sha256": "1b4ae8a2bde4b3ca809b8ef0d017b4b7cfe8f9e3f0d81f5bd22c9e48cede8100"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/tmuxinator-1.1.4.mojave.bottle.tar.gz",
-              "sha256": "aafc33584c60390e9dc7b29c1a74a6dc55e9235d9827bbb99c067a9b8e7eadd9"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/tmuxinator-1.1.4.high_sierra.bottle.tar.gz",
-              "sha256": "1b4ae8a2bde4b3ca809b8ef0d017b4b7cfe8f9e3f0d81f5bd22c9e48cede8100"
-            }
-          }
-        }
-      },
       "tree": {
         "version": "1.8.0",
         "bottle": {
@@ -717,7 +696,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.13",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "0f98a1534f9c4c9eb6d196742cc5c26fad299b87",
+        "Homebrew/homebrew-core": "0295d3e628326f1786b36d5f0e1a68fda6de8a80",
         "CLT": "11.3.1.0.1.1576735732",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
