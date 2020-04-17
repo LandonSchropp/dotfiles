@@ -688,6 +688,12 @@
         "options": {
           "full_name": "spotify"
         }
+      },
+      "bartender": {
+        "version": "3.1.07",
+        "options": {
+          "full_name": "bartender"
+        }
       }
     }
   },

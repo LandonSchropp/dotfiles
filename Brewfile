@@ -36,6 +36,7 @@ brew "yarn"
 
 cask "1password"
 cask "atom"
+cask "bartender"
 cask "docker"
 cask "font-open-sans"
 cask "font-roboto"
