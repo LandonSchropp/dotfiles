@@ -1,3 +1,5 @@
+TMUX_PRESETS_CONFIGURATION=~/Google\ Drive/Configuration/tmux-presets.json
+
 # Alias common tmux functions.
 alias td='tmux detach'
 
@@ -76,23 +78,19 @@ function tm {
   tmux select-window -t $TARGET_WINDOW
 }
 
-# Lists all of the active Tmux sessions
+# Lists all of the preset Tmux sessions.
+function preset_tmux_sessions {
+  jq -r 'map(.name) | sort | .[]' "$TMUX_PRESETS_CONFIGURATION"
+}
+
+# Lists all of the active Tmux sessions.
 function active_tmux_sessions {
   tmux ls -F "#{session_name}" 2>/dev/null | cut -d: -f1
 }
 
-# Lists all available sessions from Tmux and Tmuxinator
+# Lists all available sessions from Tmux and the Tmux presets.
 function tmux_sessions {
-
-  # Make sure tmuxinator is installed.
-  if ! type tmuxinator &>/dev/null; then
-    echo "Tmuxinator must be installed!"
-    return 1
-  fi
-
-  TMUXINATOR_SESSIONS="$(tmuxinator list | tail -n +2 | gsed -e 's/\s\+/\n/g')"
-
-  echo $TMUXINATOR_SESSIONS $(active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
+  echo $(preset_tmux_sessions) $(active_tmux_sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
 }
 
 function tmux_current_window {
