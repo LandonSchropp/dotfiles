@@ -33,45 +33,50 @@ Before anything else, install the system updates.
 softwareupdate -ia
 ```
 
-Then, install the Xcode CLI tools.
+Then, install the Xcode's CLI tools and accept the license.
 
 ``` shell
 xcode-select --install
+sudo xcodebuild -license accept
 ```
 
-In order to do anything useful, you're going to need 1Password.
+## 1Password
 
-## Installation
-
-Start by cloning the dotfiles repo.
-
-``` shell
-git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
-```
-
-[RCM](https://github.com/thoughtbot/rcm) is a handy utility to manage the linking of dotfiles. Most
-of the applications and utilities in these dotfiles (including Homebrew) can be installed by running
-the following command.
-
-``` shell
-~/.dotfiles/bin/set-up
-```
-
-This executes the [pre-up](hooks/pre-up-hooks) and [post-up](hooks/post-up-hooks) scripts, which
-install applications and configure the system. These scripts are idempotent, so feel free to run the
-`rcup` command as many times as you'd like.
+Before you can do anything useful, you’ll need to install 1Password manually to get access to all of
+your passwords. You can download it [here](https://1password.com/downloads/mac/). Configure it by
+scanning the QR codes from another instance of the app.
 
 ### Git
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
 [instructions](https://help.github.com/articles/generating-an-ssh-key/) on GitHub.
 
-### macOS
+## Google Drive
 
-Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
-application settings in one go. Because macOS is constantly updating, it's probably a good idea to
-pull it down an modify every once in a while. My latest local iteration is kept in the
-[macos.sh](macos.sh) script.
+Next, you’ll need to sync your application configurations. These are required by the dotfiles
+scripts.
+
+To do this, Download [Google Backup and Sync](https://www.google.com/drive/download/) and install
+it. Follow the prompts to set it up, and then let the files sync.
+
+## Dotfiles
+
+Clone this dotfiles repo.
+
+``` shell
+git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
+```
+
+Most of the applications and utilities in these dotfiles (including Homebrew) can be installed by
+running the following command.
+
+``` shell
+~/.dotfiles/bin/set-up
+```
+
+This executes the [set-up-hook](bin/set-up-hooks) scripts, which install applications and configure
+the system. These scripts are idempotent, so feel free to run the `set-up` command as many times as
+you'd like.
 
 ### Terminal Colors and Italics
 
@@ -82,8 +87,15 @@ tic $HOME/.dotfiles/xterm-256color-italic.terminfo
 tic $HOME/.dotfiles/tmux-256color-italic.terminfo
 ```
 
-Next, follow [these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage) to get
-colors working in Tmux.
+For more information, check out
+[these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage).
+
+### macOS
+
+Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
+application settings in one go. Because macOS is constantly updating, it's probably a good idea to
+pull it down an modify every once in a while. My latest local iteration is kept in the
+[macos.sh](macos.sh) script.
 
 ### PostgreSQL
 
