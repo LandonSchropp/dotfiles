@@ -17,18 +17,27 @@ function ta {
     return 1
   fi
 
+  SESSION_NAME="$1"
+
   # Create the session if it doesn't already exist.
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
   if ! active_tmux_sessions | grep -Fx "$1" >/dev/null; then
 
-    # Create the session using tmuxinator if a project exists for it. If the tmux session was
-    # started successfully, we're done!
-    if tmuxinator start "$1"; then
-      return 0
-    fi
+    # Grab the directory from the tmux presets if it exists.
+    DIRECTORY=$(
+      jq \
+        --arg name "$SESSION_NAME" \
+        -r \
+        '.[] | select(.name == $name) | .directory' \
+        $TMUX_PRESETS_CONFIGURATION
+    )
 
-    # If a tmuxinator project does not exist, create a new session using my preferred layout
-    tmux new-session -d -s "$1" 2>/dev/null
+    # If the directory is empty, then use the current working directory.
+    DIRECTORY=$(test -z "$DIRECTORY" && pwd || echo "$DIRECTORY")
+
+    # Create a new session using my preferred two-window layout.
+    tmux new-session -d -c "$DIRECTORY" -s "$SESSION_NAME"
+    # 2>/dev/null
     tmux rename-window "working"
     tmux new-window -d -n vim 'nvim'
   fi
