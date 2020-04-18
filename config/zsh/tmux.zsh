@@ -20,13 +20,15 @@ function ta {
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
   if ! active_tmux_sessions | grep -Fx "$1" >/dev/null; then
 
-    # Grab the directory from the tmux presets if it exists.
+    # Grab the directory from the tmux presets if it exists. Replace any tildes in the string with
+    # $HOME.
     DIRECTORY=$(
       jq \
         --arg name "$SESSION_NAME" \
         -r \
         '.[] | select(.name == $name) | .directory' \
-        $TMUX_PRESETS_CONFIGURATION
+        $TMUX_PRESETS_CONFIGURATION \
+        | gsed -e "s#^~#$HOME#"
     )
 
     # If the directory is empty, then use the current working directory.
@@ -34,9 +36,8 @@ function ta {
 
     # Create a new session using my preferred two-window layout.
     tmux new-session -d -c "$DIRECTORY" -s "$SESSION_NAME"
-    # 2>/dev/null
-    tmux rename-window "working"
-    tmux new-window -d -n vim 'nvim'
+    tmux rename-window working
+    tmux new-window -d -c "$DIRECTORY" -n vim nvim
   fi
 
   # If a tmux session is already attached, switch to the new session. Otherwise, attach the new
