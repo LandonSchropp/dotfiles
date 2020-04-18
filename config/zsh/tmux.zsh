@@ -2,10 +2,7 @@ TMUX_PRESETS_CONFIGURATION=~/Google\ Drive/Configuration/tmux-presets.json
 
 # Alias common tmux functions.
 alias td='tmux detach'
-
-function tl() {
-  tmux list-sessions 2>/dev/null || true
-}
+alias tl='active_tmux_sessions'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
