@@ -43,9 +43,9 @@ function ta {
   # If a tmux session is already attached, switch to the new session. Otherwise, attach the new
   # session.
   if test -n "$TMUX"; then
-    tmux switch -t $argv[1]
+    tmux switch -t "$SESSION_NAME"
   else
-    tmux attach -t $argv[1]
+    tmux attach -t "$SESSION_NAME"
   fi
 }
 
