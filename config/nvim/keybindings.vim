@@ -71,9 +71,11 @@ nnoremap <up> :<up>
 nnoremap <left> gT
 nnoremap <right> gt
 
-" Remap H and L for navigating tabs
+" Remap H and L for navigating tabs. Disable gt and gT to prevent hitting them by habit.
 nnoremap H gT
 nnoremap L gt
+nnoremap gT <nop>
+nnoremap gt <nop>
 
 " Automatically format JSON files using jq
 nnoremap <leader>jq :%!jq '.'<cr>
