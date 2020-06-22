@@ -122,6 +122,7 @@ autocmd FocusGained * :checktime
 " Configure SplitJoin
 let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_html_attributes_bracket_on_new_line = 1
+let g:splitjoin_ruby_options_as_arguments = 1
 
 " Automatically format files on save.
 let g:ale_fixers = { 'javascript': [ 'eslint' ], 'ruby': [ 'rubocop' ] }
