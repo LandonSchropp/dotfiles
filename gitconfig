@@ -34,6 +34,7 @@
   my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
   pull-request = "!$HOME/.dotfiles/bin/git/git-pull-request"
   pull-requests = "!$HOME/.dotfiles/bin/git/git-pull-requests"
+  stash-saved = "!$HOME/.dotfiles/bin/git/git-stash-staged"
   what-i-did = "!$HOME/.dotfiles/bin/git/git-what-i-did"
   what-i-did-today = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM today\""
   what-i-did-yesterday = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM yesterday\" --until=\"3AM today\""
