@@ -107,3 +107,6 @@
 
 [rerere]
   enabled = true
+
+[log]
+  abbrevCommit = true
