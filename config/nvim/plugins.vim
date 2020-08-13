@@ -16,6 +16,9 @@ Plug 'airblade/vim-rooter'
 " Shows the current git diff in the gutter.
 Plug 'airblade/vim-gitgutter'
 
+" Better Git conflict highlighting.
+Plug 'rhysd/conflict-marker.vim'
+
 " Linting
 Plug 'w0rp/ale'
 

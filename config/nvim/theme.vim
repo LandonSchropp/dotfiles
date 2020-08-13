@@ -70,3 +70,11 @@ Base16Highlight SpellBad fg=red
 
 " Set the vim-airline theme to my custom theme.
 let g:airline_theme = 'landon'
+
+" Change the colors of Conflict Market to match Atom's conflict resolution scheme.
+" NOTE: I'm using a color here that's a mixture of two of the default theme colors.
+Base16Highlight ConflictMarkerBegin fg=white bg=aqua
+highlight ConflictMarkerOurs guibg=#a6dcf7
+Base16Highlight ConflictMarkerSeparator bg=light3
+highlight ConflictMarkerTheirs guibg=#dfc6d5
+Base16Highlight ConflictMarkerEnd fg=white bg=brown
