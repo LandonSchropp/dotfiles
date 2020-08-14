@@ -9,6 +9,9 @@
   default = current
   followTags = true
 
+[pull]
+  ff = only
+
 [alias]
 
   # Command aliases
