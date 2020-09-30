@@ -288,3 +288,9 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 
 # Prompt the user to restart
 echo "Done. Please restart for the changes to take effect."
+
+# Absolutely prevent macOS from reopening windows on restart.
+# https://apple.stackexchange.com/questions/129327/avoiding-all-apps-reopening-when-os-x-crashes
+echo >! ~/Library/Preferences/ByHost/com.apple.loginwindow*
+sudo chown root ~/Library/Preferences/ByHost/com.apple.loginwindow*
+sudo chmod 000 ~/Library/Preferences/ByHost/com.apple.loginwindow*
