@@ -99,6 +99,9 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
+" Easy case correction
+Plug 'tpope/vim-abolish'
+
 
 
 " SYNTAX PLUGINS
