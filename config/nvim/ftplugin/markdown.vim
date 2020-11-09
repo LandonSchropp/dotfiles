@@ -4,6 +4,9 @@ setlocal spell
 " Always wrap at 100 characters
 setlocal textwidth=100
 
+" Automatically insert bullets when writing markdown
+let g:vim_markdown_auto_insert_bullets = 1
+
 " Highlight words to avoid in tech writing
 " http://css-tricks.com/words-avoid-educational-writing/
 
