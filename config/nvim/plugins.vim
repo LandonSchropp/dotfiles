@@ -7,9 +7,6 @@ call plug#begin('~/.vim/bundle')
 " Fast file switching
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Project searching
-Plug 'mileszs/ack.vim'
-
 " Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
 
@@ -45,6 +42,9 @@ Plug 'tpope/vim-surround'
 
 " Vim testing
 Plug 'junegunn/vader.vim'
+
+" Find and replace
+Plug 'brooth/far.vim'
 
 
 

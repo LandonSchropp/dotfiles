@@ -37,7 +37,8 @@ vnoremap gc gcc <Esc>
 let mapleader = " "
 
 " Search
-nnoremap <leader>f :Ack<Space>
+nnoremap <leader>f :F<Space>
+nnoremap <leader>r :Far<Space>
 
 " Toggle argwrap
 nnoremap <silent> <leader>aw :ArgWrap<CR>
