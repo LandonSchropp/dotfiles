@@ -1,4 +1,4 @@
-" Runs the tests for a project. Rather than trying to define all of thep possible test commands,
+" Runs the tests for a project. Rather than trying to define all of the possible test commands,
 " this repo provides simple variable hooks to provide commands to run tests at different scopes.
 "
 " This script provides the following hooks to run specs:
