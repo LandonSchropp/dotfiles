@@ -1,15 +1,6 @@
 " Prevent vim-json from concealing quotes
 let g:vim_json_syntax_conceal = 0
 
-" Configure Vim Pencil
-let g:pencil#wrapModeDefault = 'soft'
-
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd call pencil#init()
-"   autocmd FileType text call pencil#init()
-" augroup END
-
 " Ignore spell checking for CamelCased items.
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
 autocmd Syntax * syn match CamelCase
@@ -37,9 +28,6 @@ let g:is_posix = 1
 
 " Display extra whitespace characters
 set list listchars=tab:»·,trail:·,nbsp:·
-
-" Add support for comments to JSON when writing JSONC.
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Disable the default highlight group for Conflict Marker.
 let g:conflict_marker_highlight_group = ''
