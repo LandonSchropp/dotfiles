@@ -28,9 +28,6 @@ autocmd Syntax * syn match UrlNoSpell
   \ '['']s[[:space:]]' transparent
   \ containedin=.*Comment.*,.*String.* contains=@NoSpell contained
 
-" Set the filetypes for extensions Vim doesn't recognize by default
-autocmd BufRead,BufNewFile *.njk set filetype=jinja
-
 " Always use two spaces for tabs
 set tabstop=2 shiftwidth=2 expandtab
 

@@ -106,9 +106,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 " Language syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
-" Nunjucks
-Plug 'Glench/Vim-Jinja2-Syntax'
-
 " Gemfiles
 Plug 'tpope/vim-bundler'
 
