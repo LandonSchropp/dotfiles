@@ -26,9 +26,7 @@ imap <silent> <c-l> <c-o>l
 
 " BUG FIX: iTerm2 incorrectly interprets <c-h> as a backspace. To work around that issue, I'm
 " mapping backspace to the same action as <c-h>.
-if has('nvim')
-  nnoremap <bs> <c-w>h
-endif
+nnoremap <bs> <c-w>h
 
 " Override the default tComment shortcut for visual mode
 vnoremap gc gcc <Esc>
