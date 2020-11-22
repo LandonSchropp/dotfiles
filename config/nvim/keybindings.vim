@@ -34,9 +34,9 @@ vnoremap gc gcc <Esc>
 " Leader mappings
 let mapleader = " "
 
-" Search
-nnoremap <leader>f :F<Space>
-nnoremap <leader>r :Far<Space>
+" Search (setting default scope to all files)
+nnoremap <leader>f :F<space><space>**/*<left><left><left><left><left>
+nnoremap <leader>r :Far<space><space>**/*<left><left><left><left><left>
 
 " Toggle argwrap
 nnoremap <silent> <leader>aw :ArgWrap<CR>
