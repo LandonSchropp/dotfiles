@@ -1,6 +1,3 @@
-" Prevent vim-json from concealing quotes
-let g:vim_json_syntax_conceal = 0
-
 " Ignore spell checking for CamelCased items.
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
 autocmd Syntax * syn match CamelCase
