@@ -27,7 +27,7 @@
   branches = "!$HOME/.dotfiles/bin/git/git-branches"
   clean-branches = "!$HOME/.dotfiles/bin/git/git-clean-branches"
   delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
-  dad = "!curl https://icanhazdadjoke.com/"
+  dad = !curl https://icanhazdadjoke.com/ && echo
   force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
   fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
   local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
