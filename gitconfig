@@ -29,6 +29,7 @@
   delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
   dad = !curl https://icanhazdadjoke.com/ && echo
   force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
+  force-push = push --force-with-lease
   fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
   local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
   my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
@@ -48,7 +49,7 @@
   cl = clone
   co = checkout
   cp = cherry-pick
-  fp = push --force-with-lease
+  fp = force-push
   l = compact-log
   m = merge
   mbs = my-branches
