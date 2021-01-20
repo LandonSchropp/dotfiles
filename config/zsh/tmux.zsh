@@ -108,8 +108,8 @@ function tmux_number_of_windows {
   tmux display-message -p '#{session_windows}'
 }
 
-complete --no-files --command ta --arguments '(tmux_sessions)'
-complete --no-files --command tk --arguments '(active_tmux_sessions)'
+# complete --no-files --command ta --arguments '(tmux_sessions)'
+# complete --no-files --command tk --arguments '(active_tmux_sessions)'
 
 # Kill all tmux sessions.
 function tka {
