@@ -15,7 +15,6 @@ EXCLUDES=(
   xterm
   *.terminfo
   bin
-  prezto
 )
 
 EXCLUDES="${EXCLUDES[@]}"

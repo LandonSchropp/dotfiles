@@ -1,6 +1,3 @@
-# Import the Prezto runtime commands.
-source $HOME/.zprezto/runcoms/zshenv
-
 # Disable automatically setting the title.
 export DISABLE_AUTO_TITLE="true"
 
@@ -15,4 +12,3 @@ export PATH="$HOME/.dotfiles/bin/git:$PATH"
 
 # Set the man pager to Neovim.
 export MANPAGER='nvim +Man!'
-

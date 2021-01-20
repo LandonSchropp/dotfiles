@@ -1,17 +1,50 @@
-# Source Prezto.
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Set the path to Oh My Zsh.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Undo the Prezto -i aliases
-alias cp='nocorrect cp'
-alias ln='nocorrect ln'
-alias mv='nocorrect mv'
-alias rm='nocorrect rm'
+# Set name of the theme to load.
+ZSH_THEME="agnoster"
 
-# Disable nomatch. (https://github.com/ohmyzsh/ohmyzsh/issues/449)
-unsetopt nomatch
+# Oh My Zsh settings
+DISABLE_UPDATE_PROMPT="true"
+DISABLE_AUTO_TITLE="true"
+ENABLE_CORRECTION="true"
 
-# Disable autocorrection. (It produces annoying error messages).
-unsetopt correct
+# Oh My Zsh plugins
+plugins=(
+  alias-finder
+  brew
+  bundler
+  command-not-found
+  direnv
+  docker
+  docker-compose
+  git
+  github
+  httpie
+  iterm2
+  kubectl
+  node
+  npm
+  npx
+  nvm
+  osx
+  postgres
+  pyenv
+  python
+  rails
+  rake
+  rbenv
+  ripgrep
+  ruby
+  sudo
+  tmux
+  yarn
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# Source Oh My Zsh
+source $ZSH/oh-my-zsh.sh
 
 # Enable source highlighting in less.
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"

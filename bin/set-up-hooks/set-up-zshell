@@ -2,7 +2,18 @@
 
 set -euo pipefail
 
-# Clone the Prezto repository if it doesn't already exist.
-if ! [ -d $HOME/.zprezto ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+if ! [ -d $HOME/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if ! [ -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
+  git clone \
+    https://github.com/zsh-users/zsh-autosuggestions.git \
+    $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
+
+if ! [ -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
+  git clone \
+    https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
