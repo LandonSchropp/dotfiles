@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
-ZSH_THEME="agnoster"
+ZSH_THEME="landon"
 
 # Oh My Zsh settings
 DISABLE_UPDATE_PROMPT="true"
