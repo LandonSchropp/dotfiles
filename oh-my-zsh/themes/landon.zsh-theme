@@ -12,3 +12,6 @@ custom_build_prompt() {
 
 # Override the $PROMPT variable so it uses the custom prompt function.
 PROMPT='%{%f%b%k%}$(custom_build_prompt) '
+
+# Add color to the substitution prompt.
+SPROMPT='Correct %F{red}%R%f to %F{green}%r%f [nyae]? '
