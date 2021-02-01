@@ -25,7 +25,6 @@ plugins=(
   kubectl
   node
   npm
-  npx
   nvm
   osx
   postgres
