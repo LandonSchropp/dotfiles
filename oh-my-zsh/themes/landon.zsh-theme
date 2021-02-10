@@ -7,7 +7,11 @@ prompt_context() {}
 
 # Customize the build prompt, substituting colors so they match my personal theme.
 custom_build_prompt() {
-  build_prompt | sed -E 's/{blue}/{magenta}/g' | sed -E 's/{(yellow|green)}/{cyan}/g'
+  build_prompt \
+    | sed -E 's/{blue}/{magenta}/g' \
+    | sed -E 's/{(yellow|green)}/{cyan}/g' \
+    | sed -E 's/±/*/g' \
+    | sed -E 's/✚/+/g'
 }
 
 # Override the $PROMPT variable so it uses the custom prompt function.
