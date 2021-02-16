@@ -98,3 +98,6 @@
 
 [log]
   abbrevCommit = true
+
+[init]
+  defaultBranch = development
