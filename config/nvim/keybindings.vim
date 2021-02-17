@@ -99,6 +99,8 @@ nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
 " keyboard.
 nnoremap <silent> gy "*y<cr>
 nnoremap <silent> gp "*p<cr>
+xnoremap <silent> gy "*y<cr>
+xnoremap <silent> gp "*p<cr>
 
 " Disable Ex mode
 nnoremap Q <nop>
