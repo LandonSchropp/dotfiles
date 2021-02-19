@@ -101,4 +101,4 @@
   abbrevCommit = true
 
 [init]
-  defaultBranch = development
+  defaultBranch = main
