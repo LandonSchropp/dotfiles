@@ -2,5 +2,16 @@
 
 set -euo pipefail
 
+read \
+  -r \
+  -p \
+  "⚠️  This will wipe out all of your local changes. Are you sure you want to do this? [Yes/No] " \
+  RESPONSE
+
+if [[ ! "$RESPONSE" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  exit 0
+fi
+
 git fetch --all
-git reset --hard "origin/$(git current-branch)"
+git reset --hard "origin/$(git branch --show-current)"
+git clean -fd

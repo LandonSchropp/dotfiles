@@ -50,6 +50,7 @@
   co = checkout
   cp = cherry-pick
   fp = force-push
+  fpu = force-pull
   l = compact-log
   m = merge
   mbs = my-branches
