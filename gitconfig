@@ -53,7 +53,7 @@
   fpu = force-pull
   l = compact-log
   m = merge
-  mbs = my-branches
+  my-bs = my-branches
   p = push --follow-tags
   pu = pull
   r = reset
