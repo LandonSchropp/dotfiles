@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+echo "$HOME/.dotfiles"
+
 # NOTE: There's a faster way to find Git repositories, but this works for nested repos.
 # https://bit.ly/3pyUGDp
 find "$HOME/Development" -type d -exec test -e '{}/.git' ';' -print -prune
