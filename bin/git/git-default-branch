@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+comm -12 \
+  <(printf "development\nmain\nmaster\n") \
+  <(git "$@" branch --format "%(refname:short)" | sort)
