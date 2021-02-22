@@ -51,7 +51,7 @@
   pull-request = "!$HOME/.dotfiles/bin/git/git-pull-request"
   review = "!$HOME/.dotfiles/bin/git/git-review"
   stash-saved = "!$HOME/.dotfiles/bin/git/git-stash-staged"
-  what-i-did = "!$HOME/.dotfiles/bin/git/git-what-i-did"
+  what-did-i-do = "!$HOME/.dotfiles/bin/git/git-what-did-i-do"
 
 [core]
   excludesfile = ~/.gitignore

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Prints the commits since the given time period.
+if [ "$#" -eq 0 ]; then
+  >&2 echo "Usage: git what-did-i-do <date>"
+  exit 1
+fi
+
+git local-repos | sort -r | while read -r GIT_DIRECTORY; do
+  REPO=$(basename "$GIT_DIRECTORY")
+
+  git \
+    -C "$GIT_DIRECTORY" \
+    log \
+    --all \
+    --color \
+    --author="$(git config user.name)" \
+    --format="[%Cblue%ad%Creset] %Cgreen$REPO%Creset %s (%Cred%h%Creset)" \
+    --after "$1 0:00:00" \
+    --before "$1 23:59:59"
+done | git page
