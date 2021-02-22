@@ -4,9 +4,6 @@
 
 set -euo pipefail
 
-# Grab the default Git pager.
-PAGER="$(git config --get core.pager)"
-
 (
 
   # Output the diff of all of the files tracked by Git.
@@ -16,4 +13,4 @@ PAGER="$(git config --get core.pager)"
   git ls-files --others --exclude-standard | while read -r FILE_PATH; do
     git diff --color -- /dev/null "$FILE_PATH" || true
   done
-) | eval "$PAGER"
+) | git page
