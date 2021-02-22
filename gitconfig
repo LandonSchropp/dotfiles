@@ -14,33 +14,6 @@
 
 [alias]
 
-  # Command aliases
-  aliases = config --get-regexp alias
-  compact-log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  current-branch = "rev-parse --abbrev-ref HEAD"
-  my-branches = "!git branches | grep -i '$()'"
-  rebase-master = rebase -i master
-  stash-all = stash save --include-untracked
-  what-i-did-today = log --branches --remotes --tags --graph --oneline --author="Landon" --since="6am"
-
-  # Custom script commands
-  branches = "!$HOME/.dotfiles/bin/git/git-branches"
-  clean-branches = "!$HOME/.dotfiles/bin/git/git-clean-branches"
-  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
-  dad = !curl https://icanhazdadjoke.com/ && echo
-  force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
-  force-push = push --force-with-lease
-  fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
-  local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
-  my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
-  pull-request = "!$HOME/.dotfiles/bin/git/git-pull-request"
-  pull-requests = "!$HOME/.dotfiles/bin/git/git-pull-requests"
-  stash-saved = "!$HOME/.dotfiles/bin/git/git-stash-staged"
-  what-i-did = "!$HOME/.dotfiles/bin/git/git-what-i-did"
-  what-i-did-today = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM today\""
-  what-i-did-yesterday = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"3AM yesterday\" --until=\"3AM today\""
-  what-i-did-this-week = "!$HOME/.dotfiles/bin/git/git-what-i-did --since=\"last Monday 3AM\""
-
   # Shortcuts
   a = add
   b = branch
@@ -58,6 +31,26 @@
   pu = pull
   r = reset
   s = status
+
+  # Command aliases
+  aliases = "config --get-regexp alias"
+  compact-log = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  current-branch = "rev-parse --abbrev-ref HEAD"
+  dad = "!curl https://icanhazdadjoke.com/ && echo"
+  force-push = "push --force-with-lease"
+  my-branches = "!git branches | grep -i '$()'"
+
+  # Custom script aliases
+  branches = "!$HOME/.dotfiles/bin/git/git-branches"
+  clean-branches = "!$HOME/.dotfiles/bin/git/git-clean-branches"
+  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
+  force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
+  fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
+  local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
+  my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
+  pull-request = "!$HOME/.dotfiles/bin/git/git-pull-request"
+  stash-saved = "!$HOME/.dotfiles/bin/git/git-stash-staged"
+  what-i-did = "!$HOME/.dotfiles/bin/git/git-what-i-did"
 
 [core]
   excludesfile = ~/.gitignore
