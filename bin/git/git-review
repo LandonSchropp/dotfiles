@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# This approach was taken from this [Stack Overflow answer](https://bit.ly/37Dozwg) by Jo Liss.
+
+set -euo pipefail
+
+# Grab the default Git pager.
+PAGER="$(git config --get core.pager)"
+
+(
+
+  # Output the diff of all of the files tracked by Git.
+  git diff --color
+
+  # Show the diffs of the untracked files in Git against an empty file (/dev/null).
+  git ls-files --others --exclude-standard | while read -r FILE_PATH; do
+    git diff --color -- /dev/null "$FILE_PATH" || true
+  done
+) | eval "$PAGER"
