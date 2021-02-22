@@ -42,8 +42,9 @@
 
   # Custom script aliases
   branches = "!$HOME/.dotfiles/bin/git/git-branches"
-  clean-branches = "!$HOME/.dotfiles/bin/git/git-clean-branches"
-  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-merged-branches"
+  default-branch = "!$HOME/.dotfiles/bin/git/git-default-branch"
+  delete-all-branches = "!$HOME/.dotfiles/bin/git/git-delete-branches"
+  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-branches --merged"
   force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
   fetch-all = "!$HOME/.dotfiles/bin/git/git-fetch-all"
   local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
