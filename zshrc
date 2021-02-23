@@ -14,6 +14,7 @@ plugins=(
   alias-finder
   brew
   bundler
+  colored-man-pages
   command-not-found
   direnv
   docker

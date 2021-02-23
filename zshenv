@@ -9,6 +9,3 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin/gcloud:$PATH"
 export PATH="$HOME/.dotfiles/bin/docker:$PATH"
 export PATH="$HOME/.dotfiles/bin/git:$PATH"
-
-# Set the man pager to Neovim.
-export MANPAGER='nvim +Man!'
