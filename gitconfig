@@ -53,9 +53,12 @@
   what-did-i-do = "!$HOME/.dotfiles/bin/git/git-what-did-i-do"
 
 [core]
-  excludesfile = ~/.gitignore
-  mergeoptions = --no-edit
-  pager = diff-so-fancy | less --tabs=4 -R
+  excludesfile = "~/.gitignore"
+  mergeoptions = "--no-edit"
+  pager = "diff-so-fancy | less --tabs=2 -R"
+
+[interactive]
+  diffFilter = "diff-so-fancy --patch"
 
 [fetch]
   prune = true
@@ -70,15 +73,15 @@
   showUntrackedFiles = all
 
 [color "diff"]
-  meta = yellow bold
-  commit = green bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+  meta = "yellow bold"
+  commit = "green bold"
+  frag = "magenta bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
 
 [color "diff-highlight"]
-  oldNormal = red bold
+  oldNormal = "red bold"
   oldHighlight = "black bold red"
   newNormal = "green bold"
   newHighlight = "black bold green"
