@@ -1,5 +1,22 @@
 TMUX_PRESETS_CONFIGURATION=~/Google\ Drive/Configuration/tmux-presets.json
 
+function _validate-tmux-presets-configuration {
+  NAME_LENGTH=$(jq "map(.name) | length" "$TMUX_PRESETS_CONFIGURATION")
+  UNIQUE_NAME_LENGTH=$(jq "map(.name) | unique | length" "$TMUX_PRESETS_CONFIGURATION")
+  DIRECTORY_LENGTH=$(jq "map(.directory) | length" "$TMUX_PRESETS_CONFIGURATION")
+  UNIQUE_DIRECTORY_LENGTH=$(jq "map(.directory) | unique | length" "$TMUX_PRESETS_CONFIGURATION")
+
+  if [ "$NAME_LENGTH" -ne "$UNIQUE_NAME_LENGTH" ]; then
+    echo "⛔️ The tmux presets configuration file contains duplicate names."
+    return 1
+  fi
+
+  if [ "$DIRECTORY_LENGTH" -ne "$UNIQUE_DIRECTORY_LENGTH" ]; then
+    echo "⛔️ The tmux presets configuration file contains duplicate directories."
+    return 1
+  fi
+}
+
 # Creates a tmux session if it doesn't already exist.
 function tmux-create {
   SESSION_NAME="$1"
@@ -9,6 +26,9 @@ function tmux-create {
     echo "You must provide the name of the session to create or attach."
     return 1
   fi
+
+  # Ensure the configuration file is valid.
+  _validate-tmux-presets-configuration || return 1
 
   # If the session already exists, then don't do anything.
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
@@ -22,7 +42,7 @@ function tmux-create {
       --arg name "$SESSION_NAME" \
       -r \
       '.[] | select(.name == $name)' \
-      $TMUX_PRESETS_CONFIGURATION \
+      $TMUX_PRESETS_CONFIGURATION
   )
 
   # Grab the directory of the session from the tmux presets if it exists. Replace any tildes in
@@ -49,7 +69,7 @@ function tmux-create-and-attach {
   SESSION_NAME="$1"
 
   # Create the session if it doesn't already exist.
-  tmux-create "$SESSION_NAME"
+  tmux-create "$SESSION_NAME" || return 1
 
   # If a tmux session is already attached, switch to the new session. Otherwise, attach the new
   # session.
