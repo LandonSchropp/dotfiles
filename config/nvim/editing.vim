@@ -126,7 +126,12 @@ let g:splitjoin_html_attributes_bracket_on_new_line = 1
 let g:splitjoin_ruby_options_as_arguments = 1
 
 " Automatically format files on save.
-let g:ale_fixers = { 'javascript': [ 'eslint' ], 'ruby': [ 'rubocop' ] }
+let g:ale_fixers = {
+\ 'javascript': [ 'eslint' ],
+\ 'javascriptreact': [ 'eslint' ],
+\ 'ruby': [ 'rubocop' ]
+\ }
+
 let g:ale_fix_on_save = 1
 
 " Required for operations modifying multiple buffers like rename.
