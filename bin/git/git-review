@@ -5,7 +5,6 @@
 set -euo pipefail
 
 (
-
   # Output the diff of all of the files tracked by Git.
   git diff --color
 
