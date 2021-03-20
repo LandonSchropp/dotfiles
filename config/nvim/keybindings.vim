@@ -97,8 +97,8 @@ nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
 
 " Create more convenient shortcuts for yanking to the system keyboard and pasting from the system
 " keyboard.
-nnoremap <silent> gy "*y<cr>
-nnoremap <silent> gp "*p<cr>
+nnoremap <silent> gy "*y
+nnoremap <silent> gp "*p
 xnoremap <silent> gy "*y<cr>
 xnoremap <silent> gp "*p<cr>
 
