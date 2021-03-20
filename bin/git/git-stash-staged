@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-git stash -- "$(git diff --staged --name-only)"
+git diff --staged --name-only | xargs git stash push "$@" --
