@@ -132,6 +132,12 @@ let g:ale_fixers = {
 \ 'ruby': [ 'rubocop' ]
 \ }
 
+" Disable the TypeScript server in JavaScript files.
+let g:ale_linters_ignore = {
+\ 'javascript': [ 'tsserver' ],
+\ 'javascriptreact': [ 'tsserver' ]
+\ }
+
 let g:ale_fix_on_save = 1
 
 " Required for operations modifying multiple buffers like rename.
