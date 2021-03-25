@@ -99,6 +99,7 @@ nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
 " keyboard.
 nnoremap <silent> gy "*y
 nnoremap <silent> gp "*p
+nnoremap <silent> gY "*y$
 xnoremap <silent> gy "*y<cr>
 xnoremap <silent> gp "*p<cr>
 
