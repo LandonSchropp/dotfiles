@@ -153,3 +153,7 @@ let g:LanguageClient_serverCommands = {
 " Disable the language client's diagnostics
 let g:LanguageClient_useVirtualText = "No"
 let g:LanguageClient_diagnosticsEnable = 0
+
+" For some reason, Neovim has recently become dependent on the completeopt setting, showing the
+" preview window whenever a word is tab completed. This setting turns off that behavior.
+set completeopt=menu
