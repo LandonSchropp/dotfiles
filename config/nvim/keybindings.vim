@@ -86,8 +86,8 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 nnoremap "" "*
 
 " Remap [[ and ]] to jump to errors.
-nnoremap <silent> [[ :lnext<cr>
-nnoremap <silent> ]] :lprev<cr>
+nnoremap <silent> [[ :ALEPreviousWrap<cr>
+nnoremap <silent> ]] :ALENextWrap<cr>
 
 " Configure the language client commands
 nnoremap <silent> <leader>lc :call LanguageClient_contextMenu()<CR>
