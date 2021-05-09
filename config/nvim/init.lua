@@ -1,5 +1,5 @@
 vim.cmd("source ~/.config/nvim/plugins.vim")
-vim.cmd("source ~/.config/nvim/editing.vim")
+require("settings")
 vim.cmd("source ~/.config/nvim/keybindings.vim")
 vim.cmd("source ~/.config/nvim/syntax.vim")
 vim.cmd("source ~/.config/nvim/theme.vim")
