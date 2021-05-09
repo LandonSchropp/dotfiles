@@ -15,7 +15,7 @@ brew "jq"
 brew "m-cli"
 brew "mackup"
 brew "mas"
-brew "neovim"
+brew "neovim", args: ['HEAD']
 brew "nvm"
 brew "pgcli"
 brew "pidof"
