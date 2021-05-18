@@ -49,7 +49,7 @@
   local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
   my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
   review = "!$HOME/.dotfiles/bin/git/git-review"
-  stash-saved = "!$HOME/.dotfiles/bin/git/git-stash-staged"
+  stash-staged = "!$HOME/.dotfiles/bin/git/git-stash-staged"
   what-did-i-do = "!$HOME/.dotfiles/bin/git/git-what-did-i-do"
 
 [core]
