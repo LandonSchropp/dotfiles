@@ -47,7 +47,7 @@ set dictionary+=/usr/share/dict/words
 autocmd BufNewFile,BufRead * setlocal formatoptions-=ltr
 
 " Use the_silver_searcher in CtrlP for listing files.
-let g:ctrlp_user_command = 'rg %s --files --color=never --hidden --glob ""'
+let g:ctrlp_user_command = 'rg %s --files --color=never --hidden --glob "!.git/"'
 let g:ctrlp_use_caching = 0
 
 " the_silver_searcher is fast enough that CtrlP doesn't need to cache the files
