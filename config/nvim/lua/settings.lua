@@ -99,7 +99,7 @@ set_option("spell", true)
 auto_command("BufNewFile,BufRead", "*", "setlocal formatoptions-=ltr")
 
 -- Use Ripgrep in CtrlP for listing files.
-set_variable('ctrlp_user_command', 'rg %s --files --color=never --hidden --glob ""')
+set_variable('ctrlp_user_command', 'rg %s --files --color=never --hidden --glob "!.git/"')
 set_variable('ctrlp_use_caching', 0)
 
 -- Ripgrep is fast enough that CtrlP doesn't need to cache the files
