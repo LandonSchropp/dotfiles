@@ -114,7 +114,7 @@ set_variable('ctrlp_custom_ignore', {
 })
 
 -- Make opening a file in a new tab the default in CtrlP.
-set_variable('ctrlp_prompt_mappings ', {
+set_variable('ctrlp_prompt_mappings', {
   ['AcceptSelection("e")'] = { '<c-t>' },
   ['AcceptSelection("t")'] = { '<cr>', '<2-LeftMouse>' }
 })
@@ -184,7 +184,7 @@ auto_command("BufNewFile,BufRead", ".envrc", "set syntax=sh")
 auto_command("FocusGained", "*", ":checktime")
 
 -- Configure SplitJoin
-set_variable('splitjoin_ruby_hanging_args ', 0)
+set_variable('splitjoin_ruby_hanging_args', 0)
 set_variable('splitjoin_html_attributes_bracket_on_new_line', 1)
 set_variable('splitjoin_ruby_options_as_arguments', 1)
 
@@ -201,7 +201,7 @@ set_variable('ale_linters_ignore', {
   javascriptreact = { 'tsserver' }
 })
 
-set_variable('ale_fix_on_save ', 1)
+set_variable('ale_fix_on_save', 1)
 
 -- Required for operations modifying multiple buffers like rename.
 set_option("hidden", true)
@@ -214,8 +214,8 @@ set_variable('LanguageClient_serverCommands', {
 })
 
 -- Disable the language client's diagnostics
-set_variable('LanguageClient_useVirtualText ', 'No')
-set_variable('LanguageClient_diagnosticsEnable ', 0)
+set_variable('LanguageClient_useVirtualText', 'No')
+set_variable('LanguageClient_diagnosticsEnable', 0)
 
 -- For some reason, ALE has recently become dependent on the completeopt setting, showing the
 -- preview window whenever a word is tab completed. This setting turns off that behavior.
