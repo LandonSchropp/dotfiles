@@ -62,9 +62,6 @@ Plug 'easymotion/vim-easymotion'
 " Provides new motions to target when running operators
 Plug 'wellle/targets.vim'
 
-" Better auto-completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Automatically add end in Ruby
 Plug 'tpope/vim-endwise'
 
