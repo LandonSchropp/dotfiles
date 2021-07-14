@@ -139,9 +139,6 @@ auto_command("InsertLeave", "*", ":set relativenumber")
 -- Wrap Git commit messages at 72 characters.
 auto_command("FileType", "gitcommit", "set textwidth=72")
 
--- Use Deoplete.
-vim.cmd("call deoplete#custom#option('auto_complete_delay', 0)")
-
 -- Update the file types for the close tag plugin
 vim.api.nvim_set_var('closetag_filenames', '*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs')
 
@@ -185,6 +182,10 @@ auto_command("FocusGained", "*", ":checktime")
 vim.api.nvim_set_var('splitjoin_ruby_hanging_args', 0)
 vim.api.nvim_set_var('splitjoin_html_attributes_bracket_on_new_line', 1)
 vim.api.nvim_set_var('splitjoin_ruby_options_as_arguments', 1)
+
+-- Enable ALE auto completion.
+vim.api.nvim_set_var('ale_completion_enabled', 1)
+vim.api.nvim_set_var('ale_completion_delay', 0)
 
 -- Automatically format files on save.
 vim.api.nvim_set_var('ale_fixers', {

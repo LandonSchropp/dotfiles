@@ -78,7 +78,7 @@ nnoremap gt <nop>
 " Automatically format JSON files using jq
 nnoremap <leader>jq :%!jq '.'<cr>
 
-" Fix the tab behavior for Deoplete (by reversing it)
+" Enable the tab cycling behavior for completions
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
