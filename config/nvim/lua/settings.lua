@@ -195,6 +195,11 @@ vim.api.nvim_set_var('ale_fixers', {
   elixir = { 'mix_format' }
 })
 
+-- Enable extra linters.
+vim.api.nvim_set_var('ale_linters', {
+  elixir = { 'credo', 'dialyxir', 'elixir-ls', 'mix' }
+})
+
 -- Disable the TypeScript server in JavaScript files.
 vim.api.nvim_set_var('ale_linters_ignore', {
   javascript = { 'tsserver' },
@@ -203,6 +208,9 @@ vim.api.nvim_set_var('ale_linters_ignore', {
 
 -- Enable fixing files on save.
 vim.api.nvim_set_var('ale_fix_on_save', 1)
+
+-- Make sure ALE can find the Elixir Language Server.
+vim.api.nvim_set_var('ale_elixir_elixir_ls_release', '/usr/local/Cellar/elixir-ls')
 
 -- Required for operations modifying multiple buffers like rename.
 vim.opt.hidden = true
