@@ -190,7 +190,8 @@ vim.api.nvim_set_var('splitjoin_ruby_options_as_arguments', 1)
 vim.api.nvim_set_var('ale_fixers', {
   javascript = { 'eslint' },
   javascriptreact = { 'eslint' },
-  ruby = { 'rubocop' }
+  ruby = { 'rubocop' },
+  elixir = { 'mix_format' }
 })
 
 -- Disable the TypeScript server in JavaScript files.
@@ -199,6 +200,7 @@ vim.api.nvim_set_var('ale_linters_ignore', {
   javascriptreact = { 'tsserver' }
 })
 
+-- Enable fixing files on save.
 vim.api.nvim_set_var('ale_fix_on_save', 1)
 
 -- Required for operations modifying multiple buffers like rename.
