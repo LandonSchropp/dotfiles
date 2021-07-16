@@ -106,3 +106,6 @@ xnoremap <silent> gp "*p<cr>
 " Disable Ex mode
 nnoremap Q <nop>
 nnoremap gQ <nop>
+
+" Use double escape to clear the highlights.
+nnoremap <silent> <Esc><Esc> :nohlsearch<cr>
