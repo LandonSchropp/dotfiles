@@ -20,7 +20,7 @@ source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 # non-shell instances of zsh anyway, this is probably better anyway.
 export PATH="./bin:./node_modules/.bin:$PATH"
 
-# Add the Kubernetes utilities to the path.
+# Add the Google Cloud utilities to the path.
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
