@@ -186,6 +186,7 @@ vim.api.nvim_set_var('splitjoin_ruby_options_as_arguments', 1)
 -- Enable ALE auto completion.
 vim.api.nvim_set_var('ale_completion_enabled', 1)
 vim.api.nvim_set_var('ale_completion_delay', 0)
+vim.api.nvim_set_var('ale_completion_autoimport', 1)
 
 -- Automatically format files on save.
 vim.api.nvim_set_var('ale_fixers', {
@@ -196,8 +197,19 @@ vim.api.nvim_set_var('ale_fixers', {
 })
 
 -- Enable extra linters.
+-- vim.api.nvim_set_var('ale_linters', {
+--   elixir = { 'credo', 'elixir-ls', 'mix' }
+-- })
+
 vim.api.nvim_set_var('ale_linters', {
-  elixir = { 'credo', 'dialyxir', 'elixir-ls', 'mix' }
+  elixir = { 'elixir-ls' }
+})
+
+-- Prevent Dialyzer from eating up all of my CPU on every file save.
+vim.api.nvim_set_var('ale_elixir_elixir_ls_config', {
+  elixirLS = {
+    dialyzerEnabled = false
+  }
 })
 
 -- Disable the TypeScript server in JavaScript files.
