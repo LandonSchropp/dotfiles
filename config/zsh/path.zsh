@@ -28,3 +28,6 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.z
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
+# Add LunarVim to the path.
+export PATH="$HOME/.local/bin:$PATH"
