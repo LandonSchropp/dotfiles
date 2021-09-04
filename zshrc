@@ -36,7 +36,6 @@ plugins=(
   rbenv
   ripgrep
   ruby
-  sudo
   tmux
   yarn
   zsh-autosuggestions
