@@ -1,7 +1,5 @@
--- Simple helper function that runs an auto command, excluding newlines.
-local function auto_command(command)
-  vim.cmd("autocmd " .. string.gsub(command, "\n", " "))
-end
+local utilities = require('user.utilities')
+local auto_command = utilities.auto_command
 
 -- Ignore spell checking for CamelCased items.
 -- Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
