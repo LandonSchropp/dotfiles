@@ -1,5 +1,6 @@
 require("settings")
 require("keys")
+local plugins = require("plugins")
 
 -- General
 lvim.log.level = "warn"
@@ -29,16 +30,11 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
-
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+-- TODO: For some reason, the plugins have to be set in this file. Once this bug is fixed, the
+-- plugin assignment can be moved to plugins.lua
+lvim.plugins = plugins
