@@ -122,3 +122,6 @@ lvim.builtin.nvimtree.show_icons.git = 0
 -- Install all of the maintained language parsers.
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.highlight.enabled = true
+
+-- Ensure splits take the full window space.
+vim.opt.winwidth = 110
