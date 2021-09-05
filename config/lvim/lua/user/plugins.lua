@@ -13,9 +13,6 @@ lvim.plugins = {
   -- Quickly run Unix commands.
   {"tpope/vim-eunuch"},
 
-  -- Automatically resize open splits so the current is the biggest
-  -- Plug 'roman/golden-ratio'
-
   -- Automatically create any non-existent directories before writing the buffer
   {"pbrisbin/vim-mkdir"},
 
@@ -29,9 +26,6 @@ lvim.plugins = {
 
   -- TEXT EDITING
 
-  -- Auto-completes quotes, brackets, etc.
-  -- Plug 'Raimondi/delimitMate'
-  --
   -- Automatically close HTML tags
   {"windwp/nvim-ts-autotag"},
 
