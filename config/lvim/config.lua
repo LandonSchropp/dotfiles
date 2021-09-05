@@ -1,3 +1,4 @@
+require("settings")
 require("keys")
 
 -- General
