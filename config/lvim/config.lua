@@ -1,6 +1,7 @@
 require("user.settings")
 require("user.keys")
 require("user.plugins")
+require("user.theme")
 
 -- General
 lvim.log.level = "warn"
