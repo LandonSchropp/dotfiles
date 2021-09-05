@@ -107,3 +107,19 @@ vim.api.nvim_set_var('splitjoin_ruby_options_as_arguments', 1)
 
 -- Required for operations modifying multiple buffers like rename.
 vim.opt.hidden = true
+
+-- Configure LunarVim.
+lvim.log.level = "warn"
+
+-- Configure the file formatters.
+lvim.format_on_save = true
+
+-- Configure the LunarVim built-in plugins.
+lvim.builtin.dashboard.active = true
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.show_icons.git = 0
+
+-- Install all of the maintained language parsers.
+lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.highlight.enabled = true
