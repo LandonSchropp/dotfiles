@@ -43,7 +43,7 @@ vim.opt.undofile = true
 -- Automatically :write before running commands
 vim.opt.autowrite = true
 
--- Only join with one space after punctuation
+-- Only join with one space between words
 vim.opt.joinspaces = false
 
 -- Turn off modelines
@@ -76,10 +76,6 @@ vim.opt.spell = true
 -- r: Automatically continue comments when hitting enter
 
 -- auto_command("BufNewFile,BufRead", "*", "setlocal formatoptions-=ltr")
-
--- Remove the delay when hitting the escape key
-vim.opt.timeoutlen = 2000
-vim.opt.ttimeoutlen = 0
 
 -- Use regular line numbers in insert mode and relative numbers everywhere else
 -- auto_command("InsertEnter", "*", ":set number norelativenumber")
