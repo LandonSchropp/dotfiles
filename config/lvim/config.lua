@@ -1,6 +1,6 @@
-require("settings")
-require("keys")
-local plugins = require("plugins")
+require("user.settings")
+require("user.keys")
+require("user.plugins")
 
 -- General
 lvim.log.level = "warn"
@@ -34,7 +34,3 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
-
--- TODO: For some reason, the plugins have to be set in this file. Once this bug is fixed, the
--- plugin assignment can be moved to plugins.lua
-lvim.plugins = plugins
