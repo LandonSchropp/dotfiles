@@ -3,7 +3,7 @@ local auto_command = utilities.auto_command
 
 -- Ignore spell checking for CamelCased items.
 -- Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
-auto_command( [[
+auto_command([[
   Syntax * syn match CamelCase
     "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l\l*\)\%(\u\l*\)\{1,}\>" transparent
     containedin=.*Comment.*,.*String.*,VimwikiLink contains=@NoSpell contained
