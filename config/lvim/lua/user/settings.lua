@@ -1,3 +1,6 @@
+local utilities = require('user.utilities')
+local auto_command = utilities.auto_command
+
 -- The maximum width of the text being inserted
 vim.opt.textwidth = 100
 
@@ -75,30 +78,26 @@ vim.opt.spell = true
 -- t: Autowrap text using textwidth
 -- r: Automatically continue comments when hitting enter
 
--- auto_command("BufNewFile,BufRead", "*", "setlocal formatoptions-=ltr")
+auto_command("BufNewFile,BufRead * setlocal formatoptions-=ltr")
 
 -- Use regular line numbers in insert mode and relative numbers everywhere else
--- auto_command("InsertEnter", "*", ":set number norelativenumber")
--- auto_command("InsertLeave", "*", ":set relativenumber")
+auto_command("InsertEnter * :set number norelativenumber")
+auto_command("InsertLeave * :set relativenumber")
 
 -- Update the file types for the close tag plugin
 vim.api.nvim_set_var('closetag_filenames', '*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs')
 
 -- Prevent HTML tags from being expanded in HTML-esque files in delimitMate
--- auto_command(
-  -- "FileType",
-  -- "html,erb,jsx,jade,pug,hbs",
-  -- "let b:delimitMate_matchpairs = '(:),{:},[:]'"
--- )
+auto_command("FileType html,erb,jsx,jade,pug,hbs let b:delimitMate_matchpairs = '(:),{:},[:]'")
 
 -- Set common configuration file formats
--- auto_command("BufNewFile,BufRead", ".babelrc", "set syntax=json")
--- auto_command("BufNewFile,BufRead", "Procfile", "set syntax=yaml")
--- auto_command("BufNewFile,BufRead", ".envrc", "set syntax=sh")
+auto_command("BufNewFile,BufRead .babelrc set syntax=json")
+auto_command("BufNewFile,BufRead Procfile set syntax=yaml")
+auto_command("BufNewFile,BufRead .envrc set syntax=sh")
 
 -- Automatically run checktime whenever the Neovim window gains focus. This should make the autoread
 -- behavior work as expected. (https://github.com/neovim/neovim/issues/1380)
--- auto_command("FocusGained", "*", ":checktime")
+auto_command("FocusGained * :checktime")
 
 -- Configure SplitJoin
 vim.api.nvim_set_var('splitjoin_ruby_hanging_args', 0)
