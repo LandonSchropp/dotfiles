@@ -33,13 +33,15 @@ lvim.plugins = {
   -- Plug 'Raimondi/delimitMate'
   --
   -- Automatically close HTML tags
-  {"alvan/vim-closetag"},
+  {"windwp/nvim-ts-autotag"},
 
   -- Provides new motions to target when running operators
   {"wellle/targets.vim"},
 
   -- Automatically add end in Ruby
-  -- Plug 'tpope/vim-endwise'
+  -- TODO: Replace this with the [built-in](https://github.com/windwp/nvim-autopairs/wiki/Endwise)
+  -- functionality of nvim-autopairs at some point?
+  {"tpope/vim-endwise"},
 
   -- Wrap and unwrap arguments and curly braces.
   {"AndrewRadev/splitjoin.vim"},
