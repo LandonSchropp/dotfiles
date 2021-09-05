@@ -13,6 +13,9 @@ lvim.plugins = {
   -- Quickly run Unix commands.
   {"tpope/vim-eunuch"},
 
+  -- Automatically resize open splits so the current is the biggest
+  { 'roman/golden-ratio' },
+
   -- Automatically create any non-existent directories before writing the buffer
   {"pbrisbin/vim-mkdir"},
 
