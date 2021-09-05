@@ -32,7 +32,7 @@ lvim.plugins = {
   -- Provides new motions to target when running operators
   {"wellle/targets.vim"},
 
-  -- Automatically add end in Ruby
+  -- Automatically add the end keyword in Ruby and other similar languages
   -- TODO: Replace this with the [built-in](https://github.com/windwp/nvim-autopairs/wiki/Endwise)
   -- functionality of nvim-autopairs at some point?
   {"tpope/vim-endwise"},
