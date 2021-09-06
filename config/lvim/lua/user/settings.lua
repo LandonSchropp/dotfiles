@@ -1,6 +1,7 @@
 local components = require("core.lualine.components")
 local utilities = require("user.utilities")
 local auto_command = utilities.auto_command
+local actions = require("telescope.actions")
 
 -- The maximum width of the text being inserted
 vim.opt.textwidth = 100
@@ -154,3 +155,6 @@ lvim.builtin.lualine.sections.lualine_x = {
 }
 lvim.builtin.lualine.sections.lualine_y = { components.filetype }
 lvim.builtin.lualine.sections.lualine_z = { location }
+
+-- Configure Telescope.
+lvim.builtin.telescope.defaults.mappings.i["<esc>"] = actions.close
