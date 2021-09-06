@@ -111,9 +111,6 @@ vim.opt.hidden = true
 -- Configure LunarVim.
 lvim.log.level = "warn"
 
--- Configure the file formatters.
-lvim.format_on_save = true
-
 -- Configure the LunarVim built-in plugins.
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
