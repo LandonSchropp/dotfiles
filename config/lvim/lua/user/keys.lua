@@ -37,10 +37,6 @@ vim.cmd(
 -- Use the up arrow key to trigger a search through history.
 lvim.keys.normal_mode["<up>"] = ":<up>"
 
--- Automatically format JSON files using jq.
--- TODO: Add this to which-key?
-lvim.keys.normal_mode["<leader>jq"] = ":%!jq '.'<cr>"
-
 -- Create more convenient shortcuts for yanking to the system keyboard and pasting from the system
 -- keyboard.
 lvim.keys.normal_mode["gy"] = '"*y'
