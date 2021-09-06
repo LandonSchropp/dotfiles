@@ -1,5 +1,5 @@
-local components = require "core.lualine.components"
-local utilities = require('user.utilities')
+local components = require("core.lualine.components")
+local utilities = require("user.utilities")
 local auto_command = utilities.auto_command
 
 -- The maximum width of the text being inserted
@@ -86,7 +86,7 @@ auto_command("InsertEnter * :set number norelativenumber")
 auto_command("InsertLeave * :set relativenumber")
 
 -- Update the file types for the close tag plugin
-vim.api.nvim_set_var('closetag_filenames', '*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs')
+vim.api.nvim_set_var("closetag_filenames", "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs")
 
 -- Prevent HTML tags from being expanded in HTML-esque files in delimitMate
 auto_command("FileType html,erb,jsx,jade,pug,hbs let b:delimitMate_matchpairs = '(:),{:},[:]'")
@@ -101,9 +101,9 @@ auto_command("BufNewFile,BufRead .envrc set syntax=sh")
 auto_command("FocusGained * :checktime")
 
 -- Configure SplitJoin
-vim.api.nvim_set_var('splitjoin_ruby_hanging_args', 0)
-vim.api.nvim_set_var('splitjoin_html_attributes_bracket_on_new_line', 1)
-vim.api.nvim_set_var('splitjoin_ruby_options_as_arguments', 1)
+vim.api.nvim_set_var("splitjoin_ruby_hanging_args", 0)
+vim.api.nvim_set_var("splitjoin_html_attributes_bracket_on_new_line", 1)
+vim.api.nvim_set_var("splitjoin_ruby_options_as_arguments", 1)
 
 -- Required for operations modifying multiple buffers like rename.
 vim.opt.hidden = true
@@ -128,28 +128,29 @@ lvim.builtin.dashboard.custom_header = {
   "⢠⣿⠀⠀⠀⠀⠀⠀⣿⠃⠀⠀⣸⣿⠁⠀⣿⣿⠉⠀⠈⣿⡇⠀⠀⠛⠋⠀⠀⢹⣿⠀⠀⠀⣿⠏⠀⠸⠿⠃⠀⣿⣿⠀⣰⡟⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⣿⡟⢸⣿⡇⢀⣿",
   "⣸⡇⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⣿⡟⠀⢠⣿⡇⠀⠀⢰⣿⡇⠀⣰⣾⠟⠛⠛⣻⡇⠀⠀⢸⡿⠀⠀⠀⠀⠀⠀⢻⣿⢰⣿⠀⠀⠀⠀⠀⠀⣾⡇⠀⠀⠀⢸⣿⠇⢸⣿⠀⢸⡏",
   "⣿⣧⣤⣤⣤⡄⠀⠘⣿⣤⣤⡤⣿⠇⠀⢸⣿⠁⠀⠀⣼⣿⠀⠀⢿⣿⣤⣤⠔⣿⠃⠀⠀⣾⡇⠀⠀⠀⠀⠀⠀⢸⣿⣿⠋⠀⠀⠀⢠⣤⣤⣿⣥⣤⡄⠀⣼⣿⠀⣸⡏⠀⣿⠃",
-  "⠉⠉⠉⠉⠉⠁⠀⠀⠈⠉⠉⠀⠉⠀⠀⠈⠉⠀⠀⠀⠉⠉⠀⠀⠀⠉⠉⠁⠈⠉⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠀⠉⠁⠀⠉⠁⠀⠉⠀"
+  "⠉⠉⠉⠉⠉⠁⠀⠀⠈⠉⠉⠀⠉⠀⠀⠈⠉⠀⠀⠀⠉⠉⠀⠀⠀⠉⠉⠁⠈⠉⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠀⠉⠁⠀⠉⠁⠀⠉⠀",
 }
 
 -- Configure the status line.
 -- TODO: Enable the curved separator characters once the following bug is fixed:
 -- https://github.com/ryanoasis/nerd-fonts/issues/661
 lvim.builtin.lualine.options.icons_enabled = true
-lvim.builtin.lualine.options.section_separators = {"", ""}
-lvim.builtin.lualine.options.component_separators = {"", ""}
+lvim.builtin.lualine.options.section_separators = { "", "" }
+lvim.builtin.lualine.options.component_separators = { "", "" }
 -- lvim.builtin.lualine.options.section_separators = {"", ""}
 -- lvim.builtin.lualine.options.component_separators = {"", ""}
-lvim.builtin.lualine.sections.lualine_a = {"mode"}
-lvim.builtin.lualine.sections.lualine_b = {components.branch}
-lvim.builtin.lualine.sections.lualine_c = {components.filename}
+
+local function location()
+  return vim.fn.line(".") .. "/" .. vim.fn.line("$")
+end
+
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_b = { components.branch }
+lvim.builtin.lualine.sections.lualine_c = { components.filename }
 lvim.builtin.lualine.sections.lualine_x = {
   components.diagnostics,
   components.diff,
   separator = " ",
 }
-lvim.builtin.lualine.sections.lualine_y = {components.filetype}
-lvim.builtin.lualine.sections.lualine_z = {
-  function()
-    return vim.fn.line('.') .. "/" .. vim.fn.line('$')
-  end
-}
+lvim.builtin.lualine.sections.lualine_y = { components.filetype }
+lvim.builtin.lualine.sections.lualine_z = { location }
