@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 TMUX_PRESETS_CONFIGURATION=~/Google\ Drive/Configuration/tmux-presets.json
 
 function _validate-tmux-presets-configuration {
@@ -60,7 +62,7 @@ function tmux-create {
 
   # NOTE: This command is run using send instead of passing it into `new-window` because it
   # allows the command to be quit without affecting the window.
-  tmux send -t vim nvim ENTER
+  tmux send -t vim lvim ENTER
 }
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
