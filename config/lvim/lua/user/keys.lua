@@ -27,8 +27,12 @@ vim.cmd('cabbrev chmod <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Chmod" :
 vim.cmd('cabbrev mkdir <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Mkdir" : "mkdir"<cr>')
 vim.cmd('cabbrev find <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Find" : "find"<cr>')
 vim.cmd('cabbrev locate <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Locate" : "locate"<cr>')
-vim.cmd('cabbrev sudowrite <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudowrite" : "sudowrite"<cr>')
-vim.cmd('cabbrev sudoedit <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudoedit" : "sudoedit"<cr>')
+vim.cmd(
+  'cabbrev sudowrite <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudowrite" : "sudowrite"<cr>'
+)
+vim.cmd(
+  'cabbrev sudoedit <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Sudoedit" : "sudoedit"<cr>'
+)
 
 -- Use the up arrow key to trigger a search through history.
 lvim.keys.normal_mode["<up>"] = ":<up>"
@@ -56,7 +60,7 @@ lvim.keys.normal_mode["<esc><esc>"] = ":nohlsearch<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 lvim.builtin.telescope.on_config_done = function()
-  local actions = require "telescope.actions"
+  local actions = require("telescope.actions")
 
   -- Input mode
   lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
@@ -81,5 +85,5 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 -- Configure which-key to only open for the leader or if the ? key is pressed.
-lvim.builtin.which_key.setup.triggers = {'<leader>'}
-lvim.keys.normal_mode["?"] = ':WhichKey<cr>'
+lvim.builtin.which_key.setup.triggers = { "<leader>" }
+lvim.keys.normal_mode["?"] = ":WhichKey<cr>"

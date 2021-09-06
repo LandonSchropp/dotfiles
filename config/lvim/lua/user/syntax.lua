@@ -1,4 +1,4 @@
-local utilities = require('user.utilities')
+local utilities = require("user.utilities")
 local auto_command = utilities.auto_command
 
 -- Ignore spell checking for CamelCased items.
@@ -27,7 +27,7 @@ auto_command([=[
 
 -- When the type of shell script is /bin/sh, assume a POSIX-compatible shell for syntax highlighting
 -- purposes.
-vim.api.nvim_set_var('is_posix', 1)
+vim.api.nvim_set_var("is_posix", 1)
 
 -- Display extra whitespace characters
 vim.opt.listchars = "tab:»·,trail:·,nbsp:·"
