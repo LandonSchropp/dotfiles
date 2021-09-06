@@ -4,9 +4,6 @@ lvim.plugins = {
 
   -- GENERAL
 
-  -- Sets the project root to the current Git repository by default.
-  {'airblade/vim-rooter'},
-
   -- Displays diagnostics, references, telescope results, quickfix and location lists.
   {"folke/trouble.nvim"},
 
