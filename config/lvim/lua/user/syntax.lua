@@ -30,4 +30,5 @@ auto_command([=[
 vim.api.nvim_set_var("is_posix", 1)
 
 -- Display extra whitespace characters
+vim.opt.list = true
 vim.opt.listchars = "tab:»·,trail:·,nbsp:·"
