@@ -79,3 +79,7 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
+
+-- Configure which-key to only open for the leader or if the ? key is pressed.
+lvim.builtin.which_key.setup.triggers = {'<leader>'}
+lvim.keys.normal_mode["?"] = ':WhichKey<cr>'
