@@ -47,7 +47,7 @@ lvim.plugins = {
   {"tpope/vim-abolish"},
 
   -- Automatically import JavaScript modules.
-  -- Plug 'Galooshi/vim-import-js'
+  {'Galooshi/vim-import-js'},
 
   -- Undo tree
   {"mbbill/undotree"},
@@ -60,7 +60,7 @@ lvim.plugins = {
   -- SYNTAX HIGHLIGHTING
 
   -- Better Git conflict highlighting.
-  -- {'rhysd/conflict-marker.vim'}
+  {'rhysd/conflict-marker.vim'},
 
   -- A nice color scheme.
   {"folke/tokyonight.nvim"},
