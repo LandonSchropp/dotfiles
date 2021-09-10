@@ -17,6 +17,9 @@ lvim.plugins = {
   -- Extra commands for surrounding text
   { "tpope/vim-surround" },
 
+  -- Find and replace.
+  { "windwp/nvim-spectre" },
+
   -- TEXT EDITING
 
   -- Automatically close HTML tags
