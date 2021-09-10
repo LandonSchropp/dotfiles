@@ -61,8 +61,8 @@ lvim.builtin.telescope.on_config_done = function()
   -- Input mode
   lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
   lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
-  lvim.builtin.telescope.defaults.mappings.i["<down>"] = actions.cycle_history_next
-  lvim.builtin.telescope.defaults.mappings.i["<up>"] = actions.cycle_history_prev
+  lvim.builtin.telescope.defaults.mappings.i["<down>"] = actions.move_selection_next
+  lvim.builtin.telescope.defaults.mappings.i["<up>"] = actions.move_selection_previous
 
   -- Normal mode
   lvim.builtin.telescope.defaults.mappings.n["<down>"] = actions.move_selection_next
