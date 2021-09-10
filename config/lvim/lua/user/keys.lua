@@ -63,10 +63,7 @@ lvim.builtin.telescope.on_config_done = function()
   lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
   lvim.builtin.telescope.defaults.mappings.i["<down>"] = actions.move_selection_next
   lvim.builtin.telescope.defaults.mappings.i["<up>"] = actions.move_selection_previous
-
-  -- Normal mode
-  lvim.builtin.telescope.defaults.mappings.n["<down>"] = actions.move_selection_next
-  lvim.builtin.telescope.defaults.mappings.n["<up>"] = actions.move_selection_previous
+  lvim.builtin.telescope.defaults.mappings.i["<cr>"] = actions.file_tab
 end
 
 -- Extend the which-key builtins.
