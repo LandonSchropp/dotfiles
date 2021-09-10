@@ -69,3 +69,7 @@ end
 -- Configure which-key to only open for the leader or if the ? key is pressed.
 lvim.builtin.which_key.setup.triggers = { "<leader>" }
 lvim.keys.normal_mode["?"] = ":WhichKey<cr>"
+
+-- Use H and L to navigate tabs.
+lvim.keys.normal_mode["H"] = "gT"
+lvim.keys.normal_mode["L"] = "gt"
