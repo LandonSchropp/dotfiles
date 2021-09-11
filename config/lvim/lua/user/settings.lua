@@ -37,9 +37,6 @@ vim.opt.expandtab = true
 -- Indent by two spaces when wrapping
 vim.opt.breakindentopt = "shift:2"
 
--- Use relative line numbers
-vim.opt.relativenumber = true
-
 -- OTHER
 
 -- Use an undo file for persistent undos
