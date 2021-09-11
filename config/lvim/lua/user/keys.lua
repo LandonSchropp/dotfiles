@@ -71,5 +71,5 @@ lvim.builtin.which_key.setup.triggers = { "<leader>" }
 lvim.keys.normal_mode["?"] = ":WhichKey<cr>"
 
 -- Use H and L to navigate tabs.
-lvim.keys.normal_mode["H"] = "gT"
-lvim.keys.normal_mode["L"] = "gt"
+lvim.keys.normal_mode["<S-h>"] = "gT"
+lvim.keys.normal_mode["<S-l>"] = "gt"
