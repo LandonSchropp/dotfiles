@@ -31,9 +31,6 @@ lvim.plugins = {
 
   -- TEXT EDITING
 
-  -- Automatically close HTML tags
-  { "windwp/nvim-ts-autotag" },
-
   -- Provides new motions to target when running operators
   { "wellle/targets.vim" },
 
@@ -51,14 +48,23 @@ lvim.plugins = {
   -- Easily convert from camel case to underscore and back again.
   { "tpope/vim-abolish" },
 
-  -- Automatically import JavaScript modules.
-  { "Galooshi/vim-import-js" },
-
   -- Undo tree
   { "mbbill/undotree" },
 
   -- Swapping arguments
   { "machakann/vim-swap" },
+
+  -- Automatically close HTML tags.
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+
+  -- Better TypeScript support.
+  { "jose-elias-alvarez/nvim-lsp-ts-utils" },
 
   -- SYNTAX HIGHLIGHTING
 
