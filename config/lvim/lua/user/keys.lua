@@ -52,7 +52,7 @@ lvim.keys.normal_mode["Q"] = "<nop>"
 lvim.keys.normal_mode["gQ"] = "<nop>"
 
 -- Use double escape to clear the highlights.
-lvim.keys.normal_mode["<esc><esc>"] = ":nohlsearch<cr>"
+lvim.keys.normal_mode["<esc>"] = ":nohlsearch<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 lvim.builtin.telescope.on_config_done = function()
