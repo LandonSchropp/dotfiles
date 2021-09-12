@@ -20,6 +20,15 @@ lvim.plugins = {
   -- Find and replace.
   { "windwp/nvim-spectre" },
 
+  -- Quickly jump to words on the screen.
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+    end,
+  },
+
   -- TEXT EDITING
 
   -- Automatically close HTML tags

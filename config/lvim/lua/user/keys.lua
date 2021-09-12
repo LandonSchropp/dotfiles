@@ -73,3 +73,6 @@ lvim.keys.normal_mode["?"] = ":WhichKey<cr>"
 -- Use H and L to navigate tabs.
 lvim.keys.normal_mode["<S-h>"] = "gT"
 lvim.keys.normal_mode["<S-l>"] = "gt"
+
+-- Configure hop.
+vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })
