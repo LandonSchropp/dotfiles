@@ -41,6 +41,8 @@ lvim.plugins = {
     end,
   },
 
+  -- Improved quickfix list.
+  { "kevinhwang91/nvim-bqf" },
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
@@ -96,6 +98,9 @@ lvim.plugins = {
 
   -- Highlight CSS colors
   { "ap/vim-css-color" },
+
+  -- TODO: Remove this!
+  { "~/Development/open-source/bufferline.nvim" },
 
   {
     "folke/todo-comments.nvim",
