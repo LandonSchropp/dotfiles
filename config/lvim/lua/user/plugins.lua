@@ -96,4 +96,24 @@ lvim.plugins = {
 
   -- Highlight CSS colors
   { "ap/vim-css-color" },
+
+  {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup({
+        signs = false,
+        keywords = {
+          FIX = {
+            color = "error",
+            alt = { "FIXME", "BUG", "ISSUE", "BUG FIX" },
+          },
+        },
+        highlight = {
+          keyword = "bg",
+          after = "",
+        },
+      })
+    end,
+  },
 }
