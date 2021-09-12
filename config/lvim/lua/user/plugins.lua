@@ -66,6 +66,14 @@ lvim.plugins = {
   -- Better TypeScript support.
   { "jose-elias-alvarez/nvim-lsp-ts-utils" },
 
+  -- Generate documentation snippits.
+  {
+    "kkoomen/vim-doge",
+    run = function()
+      vim.cmd("call doge#install()")
+    end,
+  },
+
   -- SYNTAX HIGHLIGHTING
 
   -- Better Git conflict highlighting.

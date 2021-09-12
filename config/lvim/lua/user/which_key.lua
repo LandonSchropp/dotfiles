@@ -33,3 +33,7 @@ lvim.builtin.which_key.mappings["l"]["t"] = {
   r = { "<cmd>TSLspRenameFile<cr>", "Rename File" },
   i = { "<cmd>TSLspImportAll<cr>", "Import All" },
 }
+
+-- Add vim-doge
+vim.api.nvim_set_var("g:doge_enable_mappings", 0)
+lvim.builtin.which_key.mappings["l"]["d"] = { "<cmd>DogeGenerate<cr>", "Generate Documentation" }
