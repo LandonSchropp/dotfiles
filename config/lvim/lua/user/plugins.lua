@@ -29,6 +29,18 @@ lvim.plugins = {
     end,
   },
 
+  -- Always remember the last place when editing a file.
+  {
+    "ethanholz/nvim-lastplace",
+    event = "BufRead",
+    config = function()
+      require("nvim-lastplace").setup({
+        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+        lastplace_ignore_filetype = { "gitcommit", "gitrebase" },
+      })
+    end,
+  },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
