@@ -162,3 +162,6 @@ lvim.builtin.bufferline.active = false
 
 -- Use a longer time out length so vim-surround keyboard shortcuts have time to complete.
 vim.opt.timeoutlen = 500
+
+-- Dont use the system clipboard.
+vim.opt.clipboard = {}
