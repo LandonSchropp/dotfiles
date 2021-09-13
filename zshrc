@@ -56,3 +56,6 @@ export BAT_THEME="ansi-dark"
 for CONFIG_FILE in $HOME/.config/zsh/*; do
   source $CONFIG_FILE
 done
+
+# Disable autocorrect
+unsetopt correct_all
