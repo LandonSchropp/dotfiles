@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 DOTFILES_DIRECTORY=$(pwd)
 
-# Install the new version of 
+# Install the new version of
 cd "$HOME"
 
 # FIX: Remove any remanents of the old LunarVim installation.
@@ -16,9 +16,13 @@ rm -rf .config/lvim
 
 # Install LunarVim without the default config.
 # BUG FIX: For some reason, this script exits with a non-zero status, even when the installation succeeds.
-INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh"
-(yes y | bash <(curl -s "$INSTALL_SCRIPT")) || true
-rm .config/lvim/config.lua
+# INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh"
+# (yes y | bash <(curl -s "$INSTALL_SCRIPT")) || true
+
+# TODO: Remove this.
+(yes y | bash ~/Desktop/install.sh) || true
+cp .config/lvim/config.lua ~/Desktop/
+rm -f .config/lvim/config.lua
 
 # Reinstall the rcup configuration.
 # TODO: Once the installation has been stabilized, this can probably be removed.
