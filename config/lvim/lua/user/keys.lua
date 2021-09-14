@@ -1,3 +1,5 @@
+local actions = require("telescope.actions")
+
 -- Set the leader.
 lvim.leader = "space"
 
@@ -55,11 +57,9 @@ lvim.keys.normal_mode["gQ"] = "<nop>"
 -- Use double escape to clear the highlights.
 lvim.keys.normal_mode["<esc>"] = ":nohlsearch<cr>"
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
+-- Change Telescope navigation to use <C-j> and <C-k> for navigation, as well as disabling "normal
+-- mode".
 lvim.builtin.telescope.on_config_done = function()
-  local actions = require("telescope.actions")
-
-  -- Input mode
   lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
   lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
   lvim.builtin.telescope.defaults.mappings.i["<down>"] = actions.move_selection_next
