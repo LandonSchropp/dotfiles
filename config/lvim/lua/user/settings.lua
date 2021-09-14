@@ -150,9 +150,6 @@ lvim.builtin.lualine.sections.lualine_x = {
 lvim.builtin.lualine.sections.lualine_y = { components.filetype }
 lvim.builtin.lualine.sections.lualine_z = { location }
 
--- Configure Telescope.
-lvim.builtin.telescope.defaults.mappings.i["<esc>"] = actions.close
-
 -- Disable bufferline.
 -- TODO: If/when bufferline adds tab support, it can be reenabled.
 lvim.builtin.bufferline.active = false
