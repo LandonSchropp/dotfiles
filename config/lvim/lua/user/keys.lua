@@ -15,8 +15,9 @@ lvim.keys.normal_mode["^"] = "g^"
 lvim.keys.normal_mode["$"] = "g$"
 
 -- Add mappings for commenting.
-lvim.keys.normal_mode["gcc"] = ":ToggleComment<cr>"
-lvim.keys.visual_mode["gc"] = ":ToggleComment<cr>"
+lvim.builtin.comment.create_mappings = false
+lvim.keys.normal_mode["gc"] = ":CommentToggle<cr>"
+lvim.keys.visual_mode["gc"] = ":CommentToggle<cr>"
 
 -- Alias the Eunuch commands (expect for Move and Wall)
 vim.cmd('cabbrev remove <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Delete" : "remove"<cr>')
