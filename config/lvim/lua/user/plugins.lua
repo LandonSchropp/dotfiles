@@ -102,6 +102,7 @@ lvim.plugins = {
   -- TODO: Remove this!
   { "~/Development/open-source/bufferline.nvim" },
 
+  -- Highlight todos.
   {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
