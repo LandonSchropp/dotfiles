@@ -76,7 +76,6 @@ vim.opt.spell = true
 -- l: Automatically wraps long lines in insert mode
 -- t: Autowrap text using textwidth
 -- r: Automatically continue comments when hitting enter
-
 auto_command("BufNewFile,BufRead * setlocal formatoptions-=ltr")
 
 -- Use regular line numbers in insert mode and relative numbers everywhere else
@@ -86,9 +85,6 @@ auto_command("BufNewFile,BufRead * setlocal formatoptions-=ltr")
 
 -- Update the file types for the close tag plugin
 vim.api.nvim_set_var("closetag_filenames", "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs")
-
--- Prevent HTML tags from being expanded in HTML-esque files in delimitMate
-auto_command("FileType html,erb,jsx,jade,pug,hbs let b:delimitMate_matchpairs = '(:),{:},[:]'")
 
 -- Set common configuration file formats
 auto_command("BufNewFile,BufRead .babelrc set syntax=json")
@@ -166,5 +162,3 @@ vim.opt.timeoutlen = 500
 
 -- Dont use the system clipboard.
 vim.opt.clipboard = {}
-
-_G.PLENARY_DEBUG = true
