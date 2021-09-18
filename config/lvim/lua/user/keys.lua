@@ -78,3 +78,7 @@ lvim.keys.normal_mode["<S-l>"] = "gt"
 
 -- Configure hop.
 vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })
+
+-- Disable the annoying block visual mode keymappings.
+lvim.keys.visual_block_mode["J"] = ""
+lvim.keys.visual_block_mode["K"] = ""
