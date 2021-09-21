@@ -1,2 +1,4 @@
 " Fix fat fingerings
-Abolish descirbe describe
+if exists(':Absolish')
+  Abolish descirbe describe
+endif
