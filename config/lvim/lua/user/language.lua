@@ -1,6 +1,3 @@
--- FIX: Remove this after this issue is fixed: https://github.com/LunarVim/LunarVim/issues/1554.
-lvim.lang.markdown = {}
-
 -- Formatters
 lvim.lang.elixir.formatters = { { exe = "mix" } }
 lvim.lang.javascript.formatters = { { exe = "eslint_d" } }
