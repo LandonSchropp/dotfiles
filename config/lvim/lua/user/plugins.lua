@@ -99,9 +99,6 @@ lvim.plugins = {
   -- Highlight CSS colors
   { "ap/vim-css-color" },
 
-  -- TODO: Remove this!
-  { "~/Development/open-source/bufferline.nvim" },
-
   -- Highlight todos.
   {
     "folke/todo-comments.nvim",
