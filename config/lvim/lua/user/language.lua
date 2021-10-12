@@ -1,13 +1,19 @@
+local formatters = require("lvim.lsp.null-ls.formatters")
+local linters = require("lvim.lsp.null-ls.linters")
+
 -- Formatters
-lvim.lang.elixir.formatters = { { exe = "mix" } }
-lvim.lang.javascript.formatters = { { exe = "eslint_d" } }
-lvim.lang.javascriptreact.formatters = { { exe = "eslint_d" } }
-lvim.lang.json.formatters = { { exe = "fixjson" } }
-lvim.lang.lua.formatters = { { exe = "stylua" } }
+formatters.setup({
+  { exe = "mix" },
+  { exe = "eslint_d" },
+  { exe = "fixjson" },
+  { exe = "stylua" },
+})
 
 -- Linters
-lvim.lang.javascript.linters = { { exe = "eslint_d" } }
-lvim.lang.javascriptreact.linters = { { exe = "eslint_d" } }
-lvim.lang.ruby.linters = { { exe = "rubocop" } }
-lvim.lang.sh.linters = { { exe = "shellcheck" } }
-lvim.lang.markdown.linters = { { exe = "markdownlint" }, { exe = "write_good" } }
+linters.setup({
+  { exe = "eslint_d" },
+  { exe = "rubocop" },
+  { exe = "shellcheck" },
+  { exe = "markdownlint" },
+  { exe = "write_good" },
+})
