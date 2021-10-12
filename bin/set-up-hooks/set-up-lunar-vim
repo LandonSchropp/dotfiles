@@ -18,9 +18,20 @@ rm -rf .config/lvim
 # BUG FIX: For some reason, this script exits with a non-zero status, even when the installation succeeds.
 INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh"
 (yes y | LVBRANCH=rolling bash <(curl -s "$INSTALL_SCRIPT")) || true
-rm -f "$HOME/.config/lvim/config.lua"
 
-# Reinstall the rcup configuration.
-# TODO: Once the installation has been stabilized, this can probably be removed.
+# Temporarily create an empty configuration file. This is the closest I can get to a vanilla 
+# LunarVim setup with the default LunarVim configuration.
+rm -f "$HOME/.config/lvim/config.lua"
+# touch -f "$HOME/.config/lvim/config.lua"
+tee "$HOME/.config/lvim/config.lua" <<EOF > /dev/null
+dofile("/Users/landon/.dotfiles/config/lvim/lua/user/plugins.lua")
+vim.cmd("autocmd User PackerComplete quitall")
+EOF
+
+# Install the plugins.
+lvim --headless -c 'PackerSync'
+
+# Set up the symbolic links for my configuration files.
+rm -f "$HOME/.config/lvim/config.lua"
 cd "$DOTFILES_DIRECTORY"
 rcup -v config/lvim
