@@ -82,5 +82,6 @@ vim.cmd("cnoreabbrev wq w<bar>bd")
 vim.cmd("cnoreabbrev q bd")
 
 -- Add handy buffer keymappings.
+lvim.keys.normal_mode["bo"] = "<cmd>lua require('utilities.buffer_only').buffer_only()<cr>"
 lvim.keys.normal_mode["bmn"] = ":BufferLineMoveNext<cr>"
 lvim.keys.normal_mode["bmp"] = ":BufferLineMovePrev<cr>"
