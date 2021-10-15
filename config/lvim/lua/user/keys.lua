@@ -76,3 +76,11 @@ vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })
 -- Disable the annoying block visual mode keymappings.
 lvim.keys.visual_block_mode["J"] = ""
 lvim.keys.visual_block_mode["K"] = ""
+
+-- Remap :wq and :q to close buffers instead of windows.
+vim.cmd("cnoreabbrev wq w<bar>bd")
+vim.cmd("cnoreabbrev q bd")
+
+-- Add handy buffer keymappings.
+lvim.keys.normal_mode["bmn"] = ":BufferLineMoveNext<cr>"
+lvim.keys.normal_mode["bmp"] = ":BufferLineMovePrev<cr>"
