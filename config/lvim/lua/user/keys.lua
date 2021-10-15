@@ -64,17 +64,11 @@ lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_nex
 lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
 lvim.builtin.telescope.defaults.mappings.i["<down>"] = actions.move_selection_next
 lvim.builtin.telescope.defaults.mappings.i["<up>"] = actions.move_selection_previous
-lvim.builtin.telescope.defaults.mappings.i["<CR>"] = actions.file_tab
 lvim.builtin.telescope.defaults.mappings.i["<esc>"] = actions.close
 
 -- Configure which-key to only open for the leader or if the ? key is pressed.
 lvim.builtin.which_key.setup.triggers = { "<leader>" }
 lvim.keys.normal_mode["?"] = ":WhichKey<cr>"
-
--- Use H and L to navigate tabs.
--- TODO: Change these mappings to capital letters once this issue is fixed: https://bit.ly/3AaQxfd.
-lvim.keys.normal_mode["<S-h>"] = "gT"
-lvim.keys.normal_mode["<S-l>"] = "gt"
 
 -- Configure hop.
 vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })

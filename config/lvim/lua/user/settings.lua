@@ -124,10 +124,6 @@ lvim.builtin.dashboard.custom_header = {
   "⠉⠉⠉⠉⠉⠁⠀⠀⠈⠉⠉⠀⠉⠀⠀⠈⠉⠀⠀⠀⠉⠉⠀⠀⠀⠉⠉⠁⠈⠉⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠀⠉⠁⠀⠉⠁⠀⠉⠀",
 }
 
--- Disable bufferline.
--- TODO: If/when bufferline adds tab support, it can be reenabled.
-lvim.builtin.bufferline.active = false
-
 -- Use a longer time out length so vim-surround keyboard shortcuts have time to complete.
 vim.opt.timeoutlen = 500
 
