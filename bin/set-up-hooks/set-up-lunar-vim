@@ -17,12 +17,11 @@ rm -rf .config/lvim
 # Install LunarVim without the default config.
 # BUG FIX: For some reason, this script exits with a non-zero status, even when the installation succeeds.
 INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh"
-(yes y | LVBRANCH=rolling bash <(curl -s "$INSTALL_SCRIPT")) || true
+(yes y | LV_BRANCH=rolling bash <(curl -s "$INSTALL_SCRIPT")) || true
 
-# Temporarily create an empty configuration file. This is the closest I can get to a vanilla 
+# Temporarily create an empty configuration file. This is the closest I can get to a vanilla
 # LunarVim setup with the default LunarVim configuration.
 rm -f "$HOME/.config/lvim/config.lua"
-# touch -f "$HOME/.config/lvim/config.lua"
 tee "$HOME/.config/lvim/config.lua" <<EOF > /dev/null
 dofile("/Users/landon/.dotfiles/config/lvim/lua/user/plugins.lua")
 vim.cmd("autocmd User PackerComplete quitall")
