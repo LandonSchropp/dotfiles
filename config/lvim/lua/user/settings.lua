@@ -129,3 +129,6 @@ vim.opt.timeoutlen = 500
 
 -- Dont use the system clipboard.
 vim.opt.clipboard = {}
+
+-- Configure Trouble.
+lvim.lsp.diagnostics.virtual_text = false
