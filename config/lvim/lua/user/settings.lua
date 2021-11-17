@@ -132,3 +132,6 @@ vim.opt.clipboard = {}
 
 -- Configure Trouble.
 lvim.lsp.diagnostics.virtual_text = false
+
+-- Only use one line for commands.
+vim.opt.cmdheight = 1
