@@ -98,4 +98,12 @@ lvim.plugins = {
 
   -- Highlight CSS colors
   { "ap/vim-css-color" },
+
+  -- Display the diagnostics under the cursor.
+  {
+    "~/Development/open-source/echo-diagnostics.nvim",
+    config = function()
+      require("echo-diagnostics").setup({})
+    end,
+  },
 }
