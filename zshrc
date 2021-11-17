@@ -27,7 +27,7 @@ plugins=(
   node
   npm
   nvm
-  osx
+  macos
   postgres
   pyenv
   python
