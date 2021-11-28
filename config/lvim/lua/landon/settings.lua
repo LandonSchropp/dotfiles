@@ -1,4 +1,4 @@
-local utilities = require("user.utilities")
+local utilities = require("landon.utilities")
 local auto_command = utilities.auto_command
 
 -- The maximum width of the text being inserted

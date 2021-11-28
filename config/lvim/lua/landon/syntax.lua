@@ -1,4 +1,4 @@
-local utilities = require("user.utilities")
+local utilities = require("landon.utilities")
 local auto_command = utilities.auto_command
 
 -- Ignore spell checking for CamelCased items.
