@@ -76,11 +76,6 @@ vim.opt.spell = true
 -- r: Automatically continue comments when hitting enter
 auto_command("BufNewFile,BufRead * setlocal formatoptions-=ltr")
 
--- Use regular line numbers in insert mode and relative numbers everywhere else
--- TODO: I've disabled this setting for now to help debug the Dashboard issue.
--- auto_command("InsertEnter * :set number norelativenumber")
--- auto_command("InsertLeave * :set relativenumber")
-
 -- Update the file types for the close tag plugin
 vim.api.nvim_set_var("closetag_filenames", "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs")
 
