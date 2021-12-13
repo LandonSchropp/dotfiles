@@ -43,6 +43,10 @@ lvim.plugins = {
 
   -- Improved quickfix list.
   { "kevinhwang91/nvim-bqf" },
+
+  -- Automatically change project directory.
+  { "airblade/vim-rooter" },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators

@@ -130,3 +130,6 @@ lvim.lsp.diagnostics.virtual_text = false
 
 -- Only use one line for commands.
 vim.opt.cmdheight = 1
+
+-- Disable project.nvim. (It doesn't work as well as vim-rooter.)
+lvim.builtin.project.active = false
