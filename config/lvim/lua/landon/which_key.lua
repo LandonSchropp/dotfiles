@@ -25,6 +25,7 @@ lvim.builtin.which_key.mappings["l"]["t"] = {
   o = { "<cmd>TSLspOrganize<cr>", "Organize Imports" },
   r = { "<cmd>TSLspRenameFile<cr>", "Rename File" },
   i = { "<cmd>TSLspImportAll<cr>", "Import All" },
+  c = { "<cmd>TSLspImportCurrent<cr>", "Import Current" },
 }
 
 -- Add vim-doge
