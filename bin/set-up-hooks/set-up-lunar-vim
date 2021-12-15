@@ -23,7 +23,7 @@ INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/util
 # LunarVim setup with the default LunarVim configuration.
 rm -f "$HOME/.config/lvim/config.lua"
 tee "$HOME/.config/lvim/config.lua" <<EOF > /dev/null
-dofile("/Users/landon/.dotfiles/config/lvim/lua/user/plugins.lua")
+dofile("/Users/landon/.dotfiles/config/lvim/lua/landon/plugins.lua")
 vim.cmd("autocmd User PackerComplete quitall")
 EOF
 
