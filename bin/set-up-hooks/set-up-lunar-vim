@@ -19,16 +19,11 @@ rm -rf .config/lvim
 INSTALL_SCRIPT="https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh"
 (yes y | LV_BRANCH=rolling bash <(curl -s "$INSTALL_SCRIPT")) || true
 
-# Temporarily create an empty configuration file. This is the closest I can get to a vanilla
-# LunarVim setup with the default LunarVim configuration.
-rm -f "$HOME/.config/lvim/config.lua"
-tee "$HOME/.config/lvim/config.lua" <<EOF > /dev/null
-dofile("/Users/landon/.dotfiles/config/lvim/lua/landon/plugins.lua")
-vim.cmd("autocmd User PackerComplete quitall")
-EOF
-
 # Install the plugins.
-lvim --headless -c 'PackerSync'
+lvim --headless \
+  -c "lua dofile('$HOME/.dotfiles/config/lvim/lua/landon/plugins.lua')" \
+  -c 'autocmd User PackerComplete quitall' \
+  -c 'PackerSync'
 
 # Set up the symbolic links for my configuration files.
 rm -f "$HOME/.config/lvim/config.lua"
