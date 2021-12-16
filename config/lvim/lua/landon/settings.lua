@@ -133,3 +133,16 @@ vim.opt.cmdheight = 1
 
 -- Disable project.nvim. (It doesn't work as well as vim-rooter.)
 lvim.builtin.project.active = false
+
+-- Display hidden files in the file picker.
+lvim.builtin.telescope.pickers = { find_files = { hidden = true } }
+
+-- TODO: This can probably be removed after LunarVim/LunarVim#2088 is resolved.
+function git_files_with_fallback()
+  local builtin = require("telescope.builtin")
+  local ok = pcall(builtin.git_files)
+
+  if not ok then
+    builtin.find_files()
+  end
+end
