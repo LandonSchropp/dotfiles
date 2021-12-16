@@ -7,3 +7,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
   ~/.tmux/plugins/tpm/bin/install_plugins
 fi
+
+# Set up the tmuxinator directory.
+ln -s "$HOME/Google Drive/Configuration/tmuxinator" "SHOME/.config/tmuxinator"
