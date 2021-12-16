@@ -146,3 +146,7 @@ function git_files_with_fallback()
     builtin.find_files()
   end
 end
+
+-- Improve the Telescope display.
+lvim.builtin.telescope.defaults.layout_config.width = 0.999999
+lvim.builtin.telescope.defaults.path_display = { "smart" }
