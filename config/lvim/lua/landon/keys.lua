@@ -90,3 +90,6 @@ vim.cmd("cnoreabbrev q bd")
 lvim.keys.normal_mode["<leader>bo"] = "<cmd>lua require('utilities.buffer_only').buffer_only()<cr>"
 lvim.keys.normal_mode["<leader>bmn"] = ":BufferLineMoveNext<cr>"
 lvim.keys.normal_mode["<leader>bmp"] = ":BufferLineMovePrev<cr>"
+
+-- Disable the vim-doge default key mappings.
+vim.api.nvim_set_var("g:doge_enable_mappings", 0)
