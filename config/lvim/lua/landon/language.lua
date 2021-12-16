@@ -15,7 +15,6 @@ linters.setup({
   { exe = "rubocop" },
   { exe = "shellcheck" },
   { exe = "markdownlint" },
-  { exe = "write_good" },
 })
 
 -- Configure the ts-utils to use the TypeScript language server client.
