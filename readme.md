@@ -1,9 +1,8 @@
 # Dotfiles
 
 This is a guide to setting up my personal development environment. It's meant to get me up and
-running as fast as possible on a clean install of macOS. After running through all of the
-installation scripts and instructions, you'll have an environment configured with the following
-tools.
+running as fast as possible on a clean install of macOS. After running through the installation
+scripts and instructions, you'll have an environment configured with the following tools.
 
 * **[Homebrew](http://mxcl.github.com/homebrew/)**: A badass little package manager for macOS.
 * **[Git](https://git-scm.com/)**: Everyone's favorite distributed version control system.
@@ -59,7 +58,7 @@ scripts.
 To do this, Download [Google Backup and Sync](https://www.google.com/drive/download/) and install
 it. Follow the prompts to set it up, and then let the files sync.
 
-## Dotfiles
+## Dotfiles Respository
 
 Clone this dotfiles repo.
 
