@@ -19,9 +19,9 @@ function tmux-create {
   # If the session is available in tmuxinator, start it. Otherwise, fall back to the default
   # tmuxinator configuration.
   if tmuxinator-list-sessions | grep -Fx "$SESSION_NAME" >/dev/null; then
-    tmuxinator start "$SESSION_NAME"
+    tmuxinator start --no-attach "$SESSION_NAME"
   else
-    tmuxinator start -n "$SESSION_NAME" default
+    tmuxinator start --no-attach -n "$SESSION_NAME" default
   fi
 }
 
@@ -33,8 +33,8 @@ function tmux-create-and-attach {
   # Create the session if it doesn't already exist.
   tmux-create "$SESSION_NAME" || return 1
 
-  # If a tmux session is already attached, switch to the new session. Otherwise, attach the new
-  # session.
+  # If this command is being run from inside a session, switch to the target session. Otherwise,
+  # attach to target session.
   if test -n "$TMUX"; then
     tmux switch -t "$SESSION_NAME"
   else
