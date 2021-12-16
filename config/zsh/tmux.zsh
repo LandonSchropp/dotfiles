@@ -44,15 +44,12 @@ function tmux-create {
       --arg name "$SESSION_NAME" \
       -r \
       '.[] | select(.name == $name)' \
-      $TMUX_PRESETS_CONFIGURATION
+      "$TMUX_PRESETS_CONFIGURATION"
   )
 
   # Grab the directory of the session from the tmux presets if it exists. Replace any tildes in
-  # the string with $HOME.
+  # the string with $HOME. If the session is not in the presets, use the current working directory.
   DIRECTORY=$(echo "$CONFIGURATION" | jq -r '.directory' | gsed -e "s#^~#$HOME#")
-  SERVER=$(echo "$CONFIGURATION" | jq -r '.serverCommand')
-
-  # If the session is not in the presets, use the current working directory.
   DIRECTORY=$(test -z "$DIRECTORY" && pwd || echo "$DIRECTORY")
 
   # Create a new session using my preferred two-window layout.
@@ -62,7 +59,7 @@ function tmux-create {
 
   # NOTE: This command is run using send instead of passing it into `new-window` because it
   # allows the command to be quit without affecting the window.
-  tmux send -t vim lvim ENTER
+  tmux send -t vim nvim ENTER
 }
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
@@ -96,26 +93,26 @@ function tmux-move {
 
   TARGET_WINDOW="$(echo $argv[1])"
 
-  if [ $TARGET_WINDOW -lt 1 ] || [ $TARGET_WINDOW -gt $(tmux-number-of-windows) ]; then
+  if [ "$TARGET_WINDOW" -lt 1 ] || [ "$TARGET_WINDOW" -gt "$(tmux-number-of-windows)" ]; then
     echo -e "The target window must be between 1 and $(tmux-number-of-windows)."
     return 1
   fi
 
   STARTING_WINDOW=$(tmux-current-window)
 
-  if [ $TARGET_WINDOW -lt $(tmux-current-window) ]; then
-    for i in $(seq $TARGET_WINDOW $(tmux-current-window)); do
-      tmux swap-window -s $STARTING_WINDOW -t $i
+  if [ "$TARGET_WINDOW" -lt "$(tmux-current-window)" ]; then
+    for i in $(seq "$TARGET_WINDOW" "$(tmux-current-window)"); do
+      tmux swap-window -s "$STARTING_WINDOW" -t "$i"
     done
   fi
 
-  if [ $TARGET_WINDOW -gt $STARTING_WINDOW ]; then
-    for i in $(seq $TARGET_WINDOW $STARTING_WINDOW); do
-      tmux swap-window -s $STARTING_WINDOW -t $i
+  if [ "$TARGET_WINDOW" -gt "$STARTING_WINDOW" ]; then
+    for i in $(seq "$TARGET_WINDOW" "$STARTING_WINDOW"); do
+      tmux swap-window -s "$STARTING_WINDOW" -t "$i"
     done
   fi
 
-  tmux select-window -t $TARGET_WINDOW
+  tmux select-window -t "$TARGET_WINDOW"
 }
 
 # Lists all of the preset Tmux sessions.
@@ -130,7 +127,8 @@ function tmux-list-active-sessions {
 
 # Lists all available sessions from Tmux and the Tmux presets.
 function tmux-sessions {
-  echo $(tmux-list-available-sessions) $(tmux-list-active-sessions) | gsed -e 's/\s\+/\n/g' | sort | uniq
+  echo "$(tmux-list-available-sessions)" "$(tmux-list-active-sessions)" \
+    | gsed -e 's/\s\+/\n/g' | sort | uniq
 }
 
 # Returns the current window number.
@@ -146,7 +144,7 @@ function tmux-number-of-windows {
 # Kill all tmux sessions.
 function tmux-kill-all {
   for session in $(tmux-list-active-sessions); do
-    tmux-kill $session
+    tmux-kill "$session"
   done
 }
 
