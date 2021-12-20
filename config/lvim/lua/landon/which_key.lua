@@ -4,9 +4,6 @@ lvim.builtin.which_key.mappings["t"] = {
   "Trouble Diagnostics",
 }
 
--- TODO: This can probably be removed after LunarVim/LunarVim#2088 is resolved.
-lvim.builtin.which_key.mappings["f"] = { git_files_with_fallback, "Find File" }
-
 -- Add Spectre.
 lvim.builtin.which_key.mappings["F"] = {
   function()
