@@ -31,3 +31,13 @@ lvim.builtin.which_key.mappings["j"] = {
   c = { "<cmd>TSLspImportCurrent<cr>", "Import Current" },
   d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
 }
+
+-- Rebind the Treesitter key.
+lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
+
+-- Remove unused which key bindings.
+lvim.builtin.which_key.mappings["e"] = nil
+lvim.builtin.which_key.mappings["s"] = nil
+lvim.builtin.which_key.mappings["h"] = nil
+lvim.builtin.which_key.mappings[";"] = nil
+lvim.builtin.which_key.mappings["g"] = nil
