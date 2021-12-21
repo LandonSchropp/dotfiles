@@ -131,8 +131,8 @@ lvim.lsp.diagnostics.virtual_text = false
 -- Only use one line for commands.
 vim.opt.cmdheight = 1
 
--- Disable project.nvim. (It doesn't work as well as vim-rooter.)
-lvim.builtin.project.active = false
+-- Configure project.nvim so it doesn't change to subdirectories in monorepos.
+table.insert(lvim.builtin.project.detection_methods, 0, "!>packages")
 
 -- Display hidden files in the file picker.
 lvim.builtin.telescope.pickers = { find_files = { hidden = true } }
