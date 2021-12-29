@@ -19,6 +19,16 @@ function tmux-create {
   # If the session is available in tmuxinator, start it. Otherwise, fall back to the default
   # tmuxinator configuration.
   if tmuxinator-list-sessions | grep -Fx "$SESSION_NAME" >/dev/null; then
+    CONFIG_NAME=$(
+      ruby -r yaml -e 'print YAML.load(STDIN.read)["name"]' \
+        < "$HOME/.config/tmuxinator/$SESSION_NAME.yml"
+    )
+
+    if [ "$SESSION_NAME" != "$CONFIG_NAME" ]; then
+      echo "⛔️ The session name '$CONFIG_NAME' in $SESSION_NAME.yaml must match the file name."
+      return 1
+    fi
+
     tmuxinator start --no-attach "$SESSION_NAME"
   else
     tmuxinator start --no-attach -n "$SESSION_NAME" default
