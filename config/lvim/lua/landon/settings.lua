@@ -133,6 +133,7 @@ vim.opt.cmdheight = 1
 
 -- Configure project.nvim so it doesn't change to subdirectories in monorepos.
 table.insert(lvim.builtin.project.detection_methods, 0, "!>packages")
+table.insert(lvim.builtin.project.detection_methods, 0, "!>plugins")
 
 -- Display hidden files in the file picker.
 lvim.builtin.telescope.pickers = { find_files = { hidden = true } }
