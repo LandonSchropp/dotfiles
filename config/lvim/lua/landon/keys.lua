@@ -82,9 +82,9 @@ vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })
 lvim.keys.visual_block_mode["J"] = ""
 lvim.keys.visual_block_mode["K"] = ""
 
--- Remap :wq and :q to close buffers instead of windows.
-vim.cmd("cnoreabbrev wq w<bar>bd")
-vim.cmd("cnoreabbrev q bd")
+-- Get out of the habit of closing buffers with :q and :wq.
+vim.cmd("cnoreabbrev wq echo 'Use leader-c to save and close buffers!'<cr>")
+vim.cmd("cnoreabbrev q echo 'Use leader-x to close buffers!'<cr>")
 
 -- Add handy buffer keymappings.
 lvim.builtin.which_key.mappings["b"] = {
@@ -130,7 +130,11 @@ lvim.builtin.which_key.mappings["j"] = {
   d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
 }
 
--- Rebind the Treesitter key.
+-- Set up save and close buffer command.
+lvim.builtin.which_key.mappings["x"] = lvim.builtin.which_key.mappings["c"]
+lvim.builtin.which_key.mappings["c"] = { "<cmd>write<bar>BufferClose<cr>", "Save and Close Buffer" }
+
+-- Rebind some default key commands.
 lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
 
 -- Remove unused Which Key bindings.
