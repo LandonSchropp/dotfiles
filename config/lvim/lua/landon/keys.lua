@@ -88,8 +88,52 @@ vim.cmd("cnoreabbrev q bd")
 
 -- Add handy buffer keymappings.
 lvim.keys.normal_mode["<leader>bo"] = ":BufferCloseAllButCurrent<cr>"
+lvim.keys.normal_mode["<leader>bo"] = ":BufferCloseAllButCurrent<cr>"
 lvim.keys.normal_mode["<leader>bl"] = ":BufferMoveNext<cr>"
 lvim.keys.normal_mode["<leader>bh"] = ":BufferMovePrevious<cr>"
 
 -- Disable the vim-doge default key mappings.
 vim.api.nvim_set_var("g:doge_enable_mappings", 0)
+
+lvim.builtin.which_key.mappings["t"] = {
+  "<cmd>Trouble lsp_document_diagnostics<cr>",
+  "Trouble Diagnostics",
+}
+
+-- Use Spectre for find and replace.
+lvim.builtin.which_key.mappings["F"] = {
+  function()
+    require("spectre").open({
+      is_open_target_win = false,
+      is_insert_mode = true,
+    })
+  end,
+  "Find Text",
+}
+
+lvim.builtin.which_key.mappings["s"]["g"] = {
+  lvim.builtin.which_key.mappings["s"]["t"][1],
+  "Live Grep",
+}
+
+lvim.builtin.which_key.mappings["s"]["t"] = lvim.builtin.which_key.mappings["F"]
+
+-- Set up JavaScript/TypeScript helpers.
+lvim.builtin.which_key.mappings["j"] = {
+  name = "JavaScript/TypeScript",
+  o = { "<cmd>TSLspOrganize<cr>", "Organize Imports" },
+  r = { "<cmd>TSLspRenameFile<cr>", "Rename File" },
+  i = { "<cmd>TSLspImportAll<cr>", "Import All" },
+  c = { "<cmd>TSLspImportCurrent<cr>", "Import Current" },
+  d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
+}
+
+-- Rebind the Treesitter key.
+lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
+
+-- Remove unused Which Key bindings.
+lvim.builtin.which_key.mappings["e"] = nil
+lvim.builtin.which_key.mappings["s"] = nil
+lvim.builtin.which_key.mappings["h"] = nil
+lvim.builtin.which_key.mappings[";"] = nil
+lvim.builtin.which_key.mappings["g"] = nil
