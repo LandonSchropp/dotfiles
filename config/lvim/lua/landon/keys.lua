@@ -87,10 +87,12 @@ vim.cmd("cnoreabbrev wq w<bar>bd")
 vim.cmd("cnoreabbrev q bd")
 
 -- Add handy buffer keymappings.
-lvim.keys.normal_mode["<leader>bo"] = ":BufferCloseAllButCurrent<cr>"
-lvim.keys.normal_mode["<leader>bo"] = ":BufferCloseAllButCurrent<cr>"
-lvim.keys.normal_mode["<leader>bl"] = ":BufferMoveNext<cr>"
-lvim.keys.normal_mode["<leader>bh"] = ":BufferMovePrevious<cr>"
+lvim.builtin.which_key.mappings["b"] = {
+  name = "Buffer",
+  o = { "<cmd>BufferCloseAllButCurrent<cr>", "Close All Buffers Except Current" },
+  l = { "<cmd>BufferMoveNext<cr>", "Move Current Buffer to the Right" },
+  h = { "<cmd>BufferMovePrevious<cr>", "Move Current Buffer to the Left" },
+}
 
 -- Disable the vim-doge default key mappings.
 vim.api.nvim_set_var("g:doge_enable_mappings", 0)
