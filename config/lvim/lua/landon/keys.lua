@@ -130,14 +130,14 @@ lvim.builtin.which_key.mappings["j"] = {
   d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
 }
 
--- Set up save and close buffer command.
-lvim.builtin.which_key.mappings["x"] = lvim.builtin.which_key.mappings["c"]
-lvim.builtin.which_key.mappings["c"] = { "<cmd>write<bar>BufferClose<cr>", "Save and Close Buffer" }
+-- Set up close buffer commands.
+lvim.builtin.which_key.mappings["x"] = { "<cmd>bdelete<cr>", "Close Buffer" }
+lvim.builtin.which_key.mappings["z"] = { "<cmd>write<bar>bdelete<cr>", "Save and Close Buffer" }
 
--- Rebind some default key commands.
+-- Rebind a default key command.
 lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
 
--- Remove unused Which Key bindings.
+-- Remove unused key bindings.
 lvim.builtin.which_key.mappings["e"] = nil
 lvim.builtin.which_key.mappings["s"] = nil
 lvim.builtin.which_key.mappings["h"] = nil
