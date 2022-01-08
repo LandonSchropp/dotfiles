@@ -95,8 +95,9 @@ lvim.builtin.which_key.mappings["b"] = {
 }
 
 -- Disable the vim-doge default key mappings.
-vim.api.nvim_set_var("g:doge_enable_mappings", 0)
+vim.api.nvim_set_var("doge_enable_mappings", false)
 
+-- Add Trouble mapping.
 lvim.builtin.which_key.mappings["t"] = {
   "<cmd>Trouble lsp_document_diagnostics<cr>",
   "Trouble Diagnostics",
@@ -130,9 +131,12 @@ lvim.builtin.which_key.mappings["j"] = {
   d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
 }
 
--- Set up close buffer commands.
-lvim.builtin.which_key.mappings["x"] = { "<cmd>bdelete<cr>", "Close Buffer" }
-lvim.builtin.which_key.mappings["z"] = { "<cmd>write<bar>bdelete<cr>", "Save and Close Buffer" }
+-- Set up save and close buffer commands.
+lvim.keys.normal_mode["W"] = "<cmd>write<cr>"
+lvim.keys.normal_mode["X"] = "<cmd>bdelete<cr>"
+lvim.keys.normal_mode["Z"] = "<cmd>write<bar>bdelete<cr>"
+lvim.keys.normal_mode["ZZ"] = nil
+lvim.keys.normal_mode["ZQ"] = nil
 
 -- Rebind a default key command.
 lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
@@ -143,3 +147,7 @@ lvim.builtin.which_key.mappings["s"] = nil
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings[";"] = nil
 lvim.builtin.which_key.mappings["g"] = nil
+lvim.builtin.which_key.mappings["w"] = nil
+lvim.builtin.which_key.mappings["c"] = nil
+lvim.builtin.which_key.mappings["q"] = nil
+lvim.builtin.which_key.mappings["<leader>d"] = nil
