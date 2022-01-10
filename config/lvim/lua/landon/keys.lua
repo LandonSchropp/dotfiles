@@ -152,6 +152,10 @@ lvim.keys.normal_mode["ZQ"] = nil
 -- Rebind a default key command.
 lvim.builtin.which_key.mappings["T"] = lvim.builtin.which_key.mappings["e"]
 
+-- Bind my own quite commands.
+lvim.builtin.which_key.mappings["q"] = { "<cmd>wqa<cr>", "Save and Quit" }
+lvim.builtin.which_key.mappings["Q"] = { "<cmd>qa!<cr>", "Quit Without Saving" }
+
 -- Remove unused key bindings.
 lvim.builtin.which_key.mappings["e"] = nil
 lvim.builtin.which_key.mappings["s"] = nil
@@ -160,5 +164,4 @@ lvim.builtin.which_key.mappings[";"] = nil
 lvim.builtin.which_key.mappings["g"] = nil
 lvim.builtin.which_key.mappings["w"] = nil
 lvim.builtin.which_key.mappings["c"] = nil
-lvim.builtin.which_key.mappings["q"] = nil
 lvim.builtin.which_key.mappings["<leader>d"] = nil
