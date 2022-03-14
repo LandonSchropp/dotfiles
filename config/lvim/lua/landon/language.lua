@@ -4,14 +4,21 @@ local linters = require("lvim.lsp.null-ls.linters")
 -- Formatters
 formatters.setup({
   { exe = "mix" },
-  { exe = "eslint_d" },
+  {
+    exe = "eslint_d",
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  },
   { exe = "fixjson" },
+  { exe = "rubocop" },
   { exe = "stylua" },
 })
 
 -- Linters
 linters.setup({
-  { exe = "eslint_d" },
+  {
+    exe = "eslint_d",
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  },
   { exe = "rubocop" },
   { exe = "shellcheck" },
   { exe = "markdownlint" },
