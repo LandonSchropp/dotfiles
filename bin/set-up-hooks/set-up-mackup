@@ -2,19 +2,5 @@
 
 set -euo pipefail
 
-
-
-# Ensure the Google Drive folder is present.
-if [[ ! -d "$HOME/Google Drive/My Drive" ]]; then
-
-  # If the computer is using Google Drive File Stream, create a symlink.
-  if [[ -d "$HOME/Google Drive File Stream/My Drive" ]]; then
-    ln -s "$HOME/Google Drive File Stream/My Drive" "$HOME/Google Drive"
-  fi
-
-  echo "\033[0;31mGoogle Drive must be set up before Mackup can be configured.\033[0m"
-  exit 1
-fi
-
 # Configure the application settings
 mackup restore
