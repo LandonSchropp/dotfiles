@@ -9,6 +9,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 # Set up the tmuxinator directory.
-ln -s \
+ln -sf \
   "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Configuration/tmuxinator" \
   "$HOME/.config/tmuxinator"
