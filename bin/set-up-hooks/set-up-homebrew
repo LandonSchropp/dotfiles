@@ -19,9 +19,9 @@ tldr --update
 # Install Google Chrome and Firefox unless they're already installed. These can't be done in the
 # Brewfile because the autoupdater breaks Homebrew.
 if [ ! -d "/Applications/Google Chrome.app" ]; then
-  brew --cask install google-chrome
+  brew install --cask google-chrome
 fi
 
 if [ ! -d "/Applications/Firefox.app" ]; then
-  brew --cask install firefox
+  brew install --cask firefox
 fi
