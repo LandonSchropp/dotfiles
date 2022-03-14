@@ -50,14 +50,6 @@ scanning the QR codes from another instance of the app.
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
 [instructions](https://help.github.com/articles/generating-an-ssh-key/) on GitHub.
 
-## Google Drive
-
-Next, you’ll need to sync your application configurations. These are required by the dotfiles
-scripts.
-
-To do this, Download [Google Backup and Sync](https://www.google.com/drive/download/) and install
-it. Follow the prompts to set it up, and then let the files sync.
-
 ## Dotfiles Respository
 
 Clone this dotfiles repo.

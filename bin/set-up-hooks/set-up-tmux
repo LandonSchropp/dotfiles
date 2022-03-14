@@ -9,4 +9,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 # Set up the tmuxinator directory.
-ln -s "$HOME/Google Drive/Configuration/tmuxinator" "SHOME/.config/tmuxinator"
+ln -s \
+  "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Configuration/tmuxinator" \
+  "$HOME/.config/tmuxinator"
