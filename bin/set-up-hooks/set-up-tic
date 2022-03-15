@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+# Enable colors and styles in the terminal.
+# https://sunaku.github.io/tmux-24bit-color.html#usage
+tic $HOME/.dotfiles/xterm-256color-italic.terminfo
+tic $HOME/.dotfiles/tmux-256color-italic.terminfo

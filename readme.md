@@ -69,18 +69,6 @@ This executes the [set-up-hook](bin/set-up-hooks) scripts, which install applica
 the system. These scripts are idempotent, so feel free to run the `set-up` command as many times as
 you'd like.
 
-### Terminal Colors and Italics
-
-To enable italic text in the terminal, you need to register italics with the TERM database.
-
-``` shell
-tic $HOME/.dotfiles/xterm-256color-italic.terminfo
-tic $HOME/.dotfiles/tmux-256color-italic.terminfo
-```
-
-For more information, check out
-[these instructions](https://sunaku.github.io/tmux-24bit-color.html#usage).
-
 ### macOS
 
 Mathias Bynens maintains [a script](https://mths.be/osx) that configures several macOS system and
