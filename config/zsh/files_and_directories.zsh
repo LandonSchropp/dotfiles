@@ -1,6 +1,6 @@
 # This wraps tree, but ignores common directories we don't want to search.
 function tree {
-  /usr/local/bin/tree -I 'node_modules|.git|build|dist' "$@"
+  command tree -I 'node_modules|.git|build|dist' "$@"
 }
 
 # This function is just like the built-in though function, but it also automatically makes the
