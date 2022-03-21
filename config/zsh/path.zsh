@@ -13,8 +13,8 @@ source "$(brew --prefix nvm)/nvm.sh"
 source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
 # Add the Google Cloud utilities to the path.
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # Enable Homebrew auto completions.
 if type brew &>/dev/null; then
