@@ -46,7 +46,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Enable source highlighting in less.
-export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 
 # Make bat readable on a light terminal.
