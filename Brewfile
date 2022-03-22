@@ -18,7 +18,7 @@ brew "m-cli"
 brew "mackup"
 brew "markdownlint-cli"
 brew "mas"
-brew "neovim", args: ['HEAD']
+brew "neovim"
 brew "nvm"
 brew "pgcli"
 brew "pidof"
