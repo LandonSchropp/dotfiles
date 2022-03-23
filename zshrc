@@ -1,3 +1,7 @@
+# BUG FIX: tmuxinator mangles the $GEM_HOME environment variable. This is a quick and dirty fix.
+# https://github.com/tmuxinator/tmuxinator/issues/841
+unset GEM_HOME
+
 # Set the path to Oh My Zsh.
 export ZSH="$HOME/.oh-my-zsh"
 
