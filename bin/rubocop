@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# BUG FIX: This script is a fix for making Rubocop available in my Neovim configuration. Ideally,
+# this wouldn't be necessary, but right now it simplifies things.
+exec bundle exec rubocop "$@"
