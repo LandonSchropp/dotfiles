@@ -100,7 +100,6 @@ vim.opt.hidden = true
 lvim.log.level = "warn"
 
 -- Configure the LunarVim built-in plugins.
-lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
@@ -109,8 +108,8 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.highlight.enabled = true
 
--- Use a shorter header for the Dashboard so it doesn't take up the whole screen.
-lvim.builtin.dashboard.custom_header = {
+-- Use a shorter header for the dashboard so it doesn't take up the whole screen.
+lvim.builtin.alpha.dashboard.section.header.val = {
   "⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⠀⠀⠀⣺⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
   "⠀⣿⠇⠀⠀⠀⠀⠀⣤⡄⠀⠀⢠⣤⡄⠀⢨⣭⣠⣤⣤⣤⡀⠀⠀⢀⣤⣤⣤⣤⡄⠀⠀⠀⣤⣄⣤⣤⣤⠀⠀⣿⣯⠀⠀⣿⡟⠀⠀⠀⣤⣤⣤⠀⠀⠀⠀⣠⣤⣤⣤⣄⣤⣤",
   "⢠⣿⠀⠀⠀⠀⠀⠀⣿⠃⠀⠀⣸⣿⠁⠀⣿⣿⠉⠀⠈⣿⡇⠀⠀⠛⠋⠀⠀⢹⣿⠀⠀⠀⣿⠏⠀⠸⠿⠃⠀⣿⣿⠀⣰⡟⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⣿⡟⢸⣿⡇⢀⣿",
@@ -118,6 +117,18 @@ lvim.builtin.dashboard.custom_header = {
   "⣿⣧⣤⣤⣤⡄⠀⠘⣿⣤⣤⡤⣿⠇⠀⢸⣿⠁⠀⠀⣼⣿⠀⠀⢿⣿⣤⣤⠔⣿⠃⠀⠀⣾⡇⠀⠀⠀⠀⠀⠀⢸⣿⣿⠋⠀⠀⠀⢠⣤⣤⣿⣥⣤⡄⠀⣼⣿⠀⣸⡏⠀⣿⠃",
   "⠉⠉⠉⠉⠉⠁⠀⠀⠈⠉⠉⠀⠉⠀⠀⠈⠉⠀⠀⠀⠉⠉⠀⠀⠀⠉⠉⠁⠈⠉⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠀⠉⠁⠀⠉⠁⠀⠉⠀",
 }
+
+-- Customize the dashboard buttons.
+lvim.builtin.alpha.dashboard.section.buttons = {
+  entries = {
+    { "<leader>f", "  Find File", "<CMD>Telescope find_files<CR>" },
+    { "<leader>F", "  Find Text", "<CMD>Telescope live_grep<CR>" },
+    { "<leader>n", "  New File", "<CMD>ene!<CR>" },
+  },
+}
+
+-- Remove the branch SHA from the dashboard footer.
+table.remove(lvim.builtin.alpha.dashboard.section.footer.val)
 
 -- Use a longer time out length so vim-surround keyboard shortcuts have time to complete.
 vim.opt.timeoutlen = 500
