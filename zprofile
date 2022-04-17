@@ -1,5 +1,5 @@
 # Add Homebrew to the PATH.
-eval $(/opt/homebrew/bin/brew shellenv)
+eval $(brew shellenv)
 
 # Add Pyenv to the PATH.
 export PYENV_ROOT="$HOME/.pyenv"
