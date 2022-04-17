@@ -158,7 +158,6 @@ lvim.builtin.which_key.mappings["Q"] = { "<cmd>qa!<cr>", "Quit Without Saving" }
 
 -- Remove unused key bindings.
 lvim.builtin.which_key.mappings["e"] = nil
-lvim.builtin.which_key.mappings["s"] = nil
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings[";"] = nil
 lvim.builtin.which_key.mappings["g"] = nil
