@@ -41,10 +41,14 @@ lvim.lsp.on_attach_callback = function(client, buffer_number)
   ts_utils.setup_client(client)
 
   -- HACK: TypeScript diagnostics are required in order to enable ts-util's import functions.
-  -- However, these diagnostics also
   local filetype = vim.api.nvim_buf_get_option(buffer_number, "filetype")
 
   if filetype == "javascript" or filetype == "javascriptreact" then
     vim.diagnostic.disable(buffer_number, vim.lsp.diagnostic.get_namespace(client.id))
   end
 end
+
+-- Remove values from the LunarVim skipped servers.
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(value)
+  return value ~= "tailwindcss"
+end, lvim.lsp.automatic_configuration.skipped_servers)
