@@ -70,11 +70,29 @@ vim.opt.lazyredraw = true
 -- Enable spell checking
 vim.opt.spell = true
 
--- NOTE: This has to be run with autocmd in order to override the ftplugins
--- l: Automatically wraps long lines in insert mode
--- t: Autowrap text using textwidth
--- r: Automatically continue comments when hitting enter
-auto_command("BufNewFile,BufRead * setlocal formatoptions-=ltr")
+-- Override LunarVim's formatting options.
+lvim.autocommands._formatoptions = {}
+
+-- Configure the auto-formatting options while writing code.
+vim.api.nvim_create_autocmd("BufNewFile,BufRead", {
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions = {
+      ["1"] = false, -- It's okay to break lines after a one-letter words.
+      ["2"] = true, -- Use the indent value from 2nd line of a paragraph, not the first.
+      q = true, -- Continue comments when using gq.
+      c = true, -- Auto-wrap comments using textwidth.
+      r = true, -- Automatically continue comments when pressing enter.
+      n = true, -- Recognize numbered lists
+      t = false, -- Don't wrap text using textwidth. (I prefer to do this manually.)
+      j = true, -- Remove comment leaders when joining lines.
+      l = true, -- Don't break long lines in insert mode.
+      v = false, -- Don't auto-wrap lines in insert mode.
+      a = false, -- Don't automatically format paragraphs
+    }
+  end,
+  desc = "Automatically format text.",
+})
 
 -- Update the file types for the close tag plugin
 vim.api.nvim_set_var("closetag_filenames", "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs")
