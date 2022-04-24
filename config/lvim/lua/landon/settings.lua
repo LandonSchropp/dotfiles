@@ -1,6 +1,3 @@
-local utilities = require("landon.utilities")
-local auto_command = utilities.auto_command
-
 -- The maximum width of the text being inserted
 vim.opt.textwidth = 100
 
@@ -98,13 +95,29 @@ vim.api.nvim_create_autocmd("BufNewFile,BufRead", {
 vim.api.nvim_set_var("closetag_filenames", "*.html,*.erb,*.jade,*.pug,*.jsx,*.njk,*.hbs")
 
 -- Set common configuration file formats
-auto_command("BufNewFile,BufRead .babelrc set syntax=json")
-auto_command("BufNewFile,BufRead Procfile set syntax=yaml")
-auto_command("BufNewFile,BufRead .envrc set syntax=sh")
+local filetype_overrides = {
+  [".babelrc"] = "json",
+  Procfile = "json",
+  [".envrc"] = "sh",
+}
+
+for file_name, file_type in pairs(filetype_overrides) do
+  vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = file_name,
+    callback = function(args)
+      vim.api.nvim_buf_set_option(args.buf, "filetype", file_type)
+    end,
+  })
+end
 
 -- Automatically run checktime whenever the Neovim window gains focus. This should make the autoread
 -- behavior work as expected. (https://github.com/neovim/neovim/issues/1380)
-auto_command("FocusGained * :checktime")
+vim.api.nvim_create_autocmd("FocusGained", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_command("checktime")
+  end,
+})
 
 -- Configure SplitJoin
 vim.api.nvim_set_var("splitjoin_ruby_hanging_args", 0)
