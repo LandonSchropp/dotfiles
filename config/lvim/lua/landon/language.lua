@@ -1,27 +1,43 @@
 local formatters = require("lvim.lsp.null-ls.formatters")
 local linters = require("lvim.lsp.null-ls.linters")
+local null_ls = require("null-ls")
+
+-- Extend the format on save timeout (it's taking quite a while for Rubocop.)
+lvim.format_on_save.timeout = 10000
+
+-- Manually register the Rubocop sources with null-ls to override the command to use bundle.
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/400#issuecomment-1004888014
+for _, type in pairs({ "formatting", "diagnostics" }) do
+  local source_config = null_ls.builtins[type].rubocop.with({
+    command = "bundle",
+    args = vim.list_extend(
+      { "exec", "rubocop", "--disable-pending-cops" },
+      null_ls.builtins[type].rubocop._opts.args
+    ),
+  })
+
+  null_ls.register(source_config)
+end
 
 -- Formatters
 formatters.setup({
-  { exe = "mix" },
+  { name = "mix" },
   {
-    exe = "eslint_d",
+    name = "eslint_d",
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
-  { exe = "fixjson" },
-  { exe = "rubocop" },
-  { exe = "stylua" },
+  { name = "fixjson" },
+  { name = "stylua" },
 })
 
 -- Linters
 linters.setup({
   {
-    exe = "eslint_d",
+    name = "eslint_d",
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
-  { exe = "rubocop" },
-  { exe = "shellcheck" },
-  { exe = "markdownlint" },
+  { name = "shellcheck" },
+  { name = "markdownlint" },
 })
 
 lvim.lsp.on_attach_callback = function(client, buffer_number)
