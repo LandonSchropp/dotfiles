@@ -82,21 +82,6 @@ vim.api.nvim_set_keymap("n", "\\", ":HopWord<cr>", { silent = true })
 lvim.keys.visual_block_mode["J"] = ""
 lvim.keys.visual_block_mode["K"] = ""
 
--- Get out of the habit of saving and closing buffers with :w, :q and :wq.
-local function bind_abbreviation_with_warning(abbreviation, message)
-  vim.cmd(
-    "cnoreabbrev "
-      .. abbreviation
-      .. " echohl WarningMsg <bar> echo '"
-      .. message
-      .. "' <bar> echohl None<cr>"
-  )
-end
-
-bind_abbreviation_with_warning("w", "⚠️  Use W to save and close buffers!")
-bind_abbreviation_with_warning("q", "⚠️  Use X to close buffers!")
-bind_abbreviation_with_warning("wq", "⚠️  Use Z to save and close buffers!")
-
 -- Add handy buffer keymappings.
 lvim.builtin.which_key.mappings["b"] = {
   name = "Buffer",
