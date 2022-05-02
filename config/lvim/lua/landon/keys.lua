@@ -110,6 +110,13 @@ lvim.builtin.which_key.mappings["F"] = {
   "Find Text",
 }
 
+lvim.builtin.which_key.mappings["f"] = {
+  function()
+    require("telescope.builtin").find_files()
+  end,
+  "Find File",
+}
+
 lvim.builtin.which_key.mappings["s"]["g"] = {
   lvim.builtin.which_key.mappings["s"]["t"][1],
   "Live Grep",
