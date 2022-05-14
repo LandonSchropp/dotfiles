@@ -24,6 +24,7 @@
   cp = cherry-pick
   fp = force-push
   fpu = force-pull
+  fu = fixup
   l = compact-log
   m = merge
   my-bs = my-branches
@@ -31,6 +32,7 @@
   pu = pull
   r = reset
   s = status
+  sq = squash
 
   # Command aliases
   aliases = "config --get-regexp alias"
@@ -40,6 +42,7 @@
     --abbrev-commit
   current-branch = "rev-parse --abbrev-ref HEAD"
   dad = "!curl https://icanhazdadjoke.com/ && echo"
+  squash = "fixup --squash"
   force-push = "push --force-with-lease"
   my-branches = "!git branches | grep -i '$()'"
 
@@ -101,3 +104,12 @@
 
 [init]
   defaultBranch = main
+
+[fixup]
+  menu = fzf \
+    --bind 'tab:toggle-preview' \
+    --preview 'git show --color {+1}' \
+    --preview-window=up:50% \
+    --info hidden \
+    --prompt '🔍 Search for a commit: '
+	commit = true
