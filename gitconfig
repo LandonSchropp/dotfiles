@@ -34,7 +34,10 @@
 
   # Command aliases
   aliases = "config --get-regexp alias"
-  compact-log = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cs) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  compact-log = log \
+    --graph \
+    --pretty=format:'%Cred%h %Cgreen(%cs)%Creset%Creset %s %C(bold blue)<%an>%C(yellow)%d%Creset' \
+    --abbrev-commit
   current-branch = "rev-parse --abbrev-ref HEAD"
   dad = "!curl https://icanhazdadjoke.com/ && echo"
   force-push = "push --force-with-lease"
