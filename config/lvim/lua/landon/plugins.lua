@@ -44,6 +44,9 @@ lvim.plugins = {
   -- Improved quickfix list.
   { "kevinhwang91/nvim-bqf" },
 
+  -- Improved file type handling.
+  { "nathom/filetype.nvim" },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
