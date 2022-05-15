@@ -31,6 +31,8 @@
   p = push --follow-tags
   pu = pull
   r = reset
+  ri = !git fetch && git rebase -i
+  rio = !git fetch && git rebase -i origin/main
   s = status
   sq = squash
 
