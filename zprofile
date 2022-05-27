@@ -20,3 +20,6 @@ export PATH="./bin:./node_modules/.bin:$PATH"
 
 # Add LunarVim to the path.
 export PATH="$HOME/.local/bin:$PATH"
+
+# Increase the maximum number of open files.
+ulimit -n 10485760
