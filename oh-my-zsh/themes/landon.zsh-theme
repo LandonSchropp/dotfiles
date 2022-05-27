@@ -8,9 +8,9 @@ prompt_context() {}
 # Customize the build prompt, substituting colors so they match my personal theme.
 custom_build_prompt() {
   build_prompt \
-    | sed -E 's/{(yellow|green)}/{13}/g' \
-    | sed -E 's/±/*/g' \
-    | sed -E 's/✚/+/g'
+    | ruby -pe 'gsub(/yellow|green/, "13")' \
+    | ruby -pe 'gsub("±", "*")' \
+    | ruby -pe 'gsub("✚", "+")'
 }
 
 # Override the $PROMPT variable so it uses the custom prompt function.
