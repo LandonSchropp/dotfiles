@@ -47,6 +47,9 @@ lvim.plugins = {
   -- Improved file type handling.
   { "nathom/filetype.nvim" },
 
+  -- Provide a way to quickly open "alternate" files, such as specs.
+  { "tpope/vim-projectionist" },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
