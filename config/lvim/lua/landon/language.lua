@@ -75,7 +75,7 @@ filetype.setup({
   overrides = {
     literal = {
       gitconfig = "gitconfig",
-      ["justfile.nix"] = "just",
+      Guardfile = "ruby",
       zprofile = "zsh",
     },
   },
