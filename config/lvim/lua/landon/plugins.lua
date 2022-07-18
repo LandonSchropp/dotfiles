@@ -50,6 +50,14 @@ lvim.plugins = {
   -- Provide a way to quickly open "alternate" files, such as specs.
   { "tpope/vim-projectionist" },
 
+  -- Automatically resize splits so it's easier to see their content.
+  {
+    "beauwilliams/focus.nvim",
+    config = function()
+      require("focus").setup({ width = 102, minwidth = 0 })
+    end,
+  },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
