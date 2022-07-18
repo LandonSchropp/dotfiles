@@ -2,6 +2,7 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 local linters = require("lvim.lsp.null-ls.linters")
 local null_ls = require("null-ls")
 local filetype = require("filetype")
+local lsp_utils = require("lspconfig")["util"]
 
 -- Extend the format on save timeout (it's taking quite a while for Rubocop.)
 lvim.format_on_save.timeout = 10000
@@ -15,6 +16,9 @@ for _, type in pairs({ "formatting", "diagnostics" }) do
       { "exec", "rubocop", "--disable-pending-cops" },
       null_ls.builtins[type].rubocop._opts.args
     ),
+    cwd = function(params)
+      return lsp_utils.root_pattern(".rubocop.yml", ".git")(params.bufname)
+    end,
   })
 
   null_ls.register(source_config)
