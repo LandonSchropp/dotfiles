@@ -3,6 +3,9 @@ local actions = require("telescope.actions")
 -- Set the leader.
 lvim.leader = "space"
 
+-- Prevent Neovim's default ftplugins plugins from enabling keymaps for specific file types.
+vim.api.nvim_set_var("no_plugin_maps", true)
+
 -- Prevent the cursor from jumping when joining lines
 lvim.keys.normal_mode["J"] = "mzJ`z"
 
@@ -20,6 +23,10 @@ lvim.keys.normal_mode["$"] = "g$"
 lvim.builtin.comment.create_mappings = false
 lvim.keys.normal_mode["gc"] = ":CommentToggle<cr>"
 lvim.keys.visual_mode["gc"] = ":CommentToggle<cr>"
+
+-- Add mappings to jump between diagnostics.
+lvim.keys.normal_mode["[["] = "<cmd>lua vim.diagnostic.goto_prev()<cr>"
+lvim.keys.normal_mode["]]"] = "<cmd>lua vim.diagnostic.goto_prev()<cr>"
 
 -- Alias the Eunuch commands (expect for Move and Wall)
 vim.cmd('cabbrev remove <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Delete" : "remove"<cr>')
@@ -98,6 +105,10 @@ lvim.builtin.which_key.mappings["t"] = {
   "<cmd>Trouble lsp_document_diagnostics<cr>",
   "Trouble Diagnostics",
 }
+
+-- Add diagnostics mappings.
+lvim.keys.normal_mode["[["] = "<cmd>lua vim.diagnostic.goto_prev()<cr>"
+lvim.keys.normal_mode["]]"] = "<cmd>lua vim.diagnostic.goto_next()<cr>"
 
 -- Use Spectre for find and replace.
 lvim.builtin.which_key.mappings["F"] = {
