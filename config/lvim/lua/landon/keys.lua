@@ -138,10 +138,8 @@ lvim.builtin.which_key.mappings["s"]["t"] = lvim.builtin.which_key.mappings["F"]
 -- Set up JavaScript/TypeScript helpers.
 lvim.builtin.which_key.mappings["j"] = {
   name = "JavaScript/TypeScript",
-  o = { "<cmd>TSLspOrganize<cr>", "Organize Imports" },
-  r = { "<cmd>TSLspRenameFile<cr>", "Rename File" },
-  i = { "<cmd>TSLspImportAll<cr>", "Import All" },
-  c = { "<cmd>TSLspImportCurrent<cr>", "Import Current" },
+  i = { "<cmd>lua require('typescript').actions.addMissingImports()<cr>", "Import All" },
+  f = { "<cmd>lua require('typescript').actions.fixAll()<cr>", "Fix Issues" },
   d = { "<cmd>DogeGenerate<cr>", "Generate Documentation" },
 }
 

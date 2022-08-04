@@ -93,7 +93,12 @@ lvim.plugins = {
   },
 
   -- Better TypeScript support.
-  { "jose-elias-alvarez/nvim-lsp-ts-utils" },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+    config = function()
+      require("typescript").setup()
+    end,
+  },
 
   -- Generate documentation snippits.
   {
