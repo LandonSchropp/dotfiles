@@ -135,8 +135,8 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
--- Install all of the maintained language parsers.
-lvim.builtin.treesitter.ensure_installed = "maintained"
+-- Install all of the language parsers.
+lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- Use a shorter header for the dashboard so it doesn't take up the whole screen.
