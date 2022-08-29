@@ -11,7 +11,7 @@ cd "$HOME"
 
 # FIX: Remove any remanents of the old LunarVim installation.
 rm -rf .local/share/lunarvim*
-rm -f .local/bin/lvim
+rm -rf .local/bin/lvim
 rm -rf .config/lvim
 
 # Install LunarVim without the default config.
