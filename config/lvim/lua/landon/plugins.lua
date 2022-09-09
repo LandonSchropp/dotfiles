@@ -64,9 +64,12 @@ lvim.plugins = {
   { "wellle/targets.vim" },
 
   -- Automatically add the end keyword in Ruby and other similar languages
-  -- TODO: Replace this with the [built-in](https://github.com/windwp/nvim-autopairs/wiki/Endwise)
-  -- functionality of nvim-autopairs at some point?
-  { "tpope/vim-endwise" },
+  {
+    "RRethy/nvim-treesitter-endwise",
+    config = function()
+      require("nvim-treesitter.configs").setup({ endwise = { enable = true } })
+    end,
+  },
 
   -- Wrap and unwrap arguments and curly braces.
   { "AndrewRadev/splitjoin.vim" },
