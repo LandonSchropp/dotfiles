@@ -133,7 +133,6 @@ lvim.log.level = "warn"
 -- Configure the LunarVim built-in plugins.
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 
 -- Install all of the language parsers.
 lvim.builtin.treesitter.ensure_installed = "all"
