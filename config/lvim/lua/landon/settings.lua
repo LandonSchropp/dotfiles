@@ -138,6 +138,10 @@ lvim.builtin.nvimtree.side = "left"
 lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.highlight.enabled = true
 
+-- FIX: Prevent PHP doc installation warnings
+lvim.builtin.treesitter.ensure_installed = "all"
+lvim.builtin.treesitter.ignore_install = { "phpdoc" }
+
 -- Use a shorter header for the dashboard so it doesn't take up the whole screen.
 lvim.builtin.alpha.dashboard.section.header.val = {
   "⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⠀⠀⠀⣺⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
