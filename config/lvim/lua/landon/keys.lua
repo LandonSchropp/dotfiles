@@ -145,8 +145,8 @@ lvim.builtin.which_key.mappings["j"] = {
 
 -- Set up save and close buffer commands.
 lvim.keys.normal_mode["W"] = "<cmd>write<cr>"
-lvim.keys.normal_mode["X"] = "<cmd>bdelete!<cr>"
-lvim.keys.normal_mode["Z"] = "<cmd>write<bar>bdelete<cr>"
+lvim.keys.normal_mode["X"] = "<cmd>BufferKill<cr>"
+lvim.keys.normal_mode["Z"] = "<cmd>write<bar>BufferKill<cr>"
 lvim.keys.normal_mode["ZZ"] = nil
 lvim.keys.normal_mode["ZQ"] = nil
 
