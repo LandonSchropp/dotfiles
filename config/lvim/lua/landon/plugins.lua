@@ -51,12 +51,19 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
 
   -- Automatically resize splits so it's easier to see their content.
-  {
-    "beauwilliams/focus.nvim",
-    config = function()
-      require("focus").setup({ width = 102, minwidth = 0 })
-    end,
-  },
+  -- {
+  --   "anuvyklack/windows.nvim",
+  --   requires = {
+  --     "anuvyklack/middleclass",
+  --     "anuvyklack/animation.nvim",
+  --   },
+  --   config = function()
+  --     vim.o.winwidth = 10
+  --     vim.o.winminwidth = 10
+  --     vim.o.equalalways = false
+  --     require("windows").setup()
+  --   end,
+  -- },
 
   -- TEXT EDITING
 
