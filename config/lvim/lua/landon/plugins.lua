@@ -127,5 +127,5 @@ lvim.plugins = {
   { "folke/tokyonight.nvim" },
 
   -- Highlight CSS colors
-  { "ap/vim-css-color" },
+  { "NvChad/nvim-colorizer.lua" },
 }
