@@ -110,11 +110,19 @@ lvim.plugins = {
     end,
   },
 
-  -- Generate documentation snippits.
+  -- Generate documentation snippets.
   {
     "kkoomen/vim-doge",
     run = function()
       vim.cmd("call doge#install()")
+    end,
+  },
+
+  -- Correctly indent lists when editing markdown.
+  {
+    "gaoDean/autolist.nvim",
+    config = function()
+      require("autolist").setup({})
     end,
   },
 
