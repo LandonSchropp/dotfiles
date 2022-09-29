@@ -165,3 +165,7 @@ lvim.builtin.which_key.mappings["g"] = nil
 lvim.builtin.which_key.mappings["w"] = nil
 lvim.builtin.which_key.mappings["c"] = nil
 lvim.builtin.which_key.mappings["<leader>d"] = nil
+
+-- Switch between keys by default.
+lvim.keys.normal_mode["L"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["H"] = ":BufferLineCyclePrev<CR>"
