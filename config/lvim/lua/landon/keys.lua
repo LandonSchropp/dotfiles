@@ -158,6 +158,7 @@ lvim.builtin.which_key.mappings["q"] = { "<cmd>wqa<cr>", "Save and Quit" }
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>qa!<cr>", "Quit Without Saving" }
 
 -- Remove unused key bindings.
+lvim.builtin.which_key.mappings["/"] = nil
 lvim.builtin.which_key.mappings["e"] = nil
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings[";"] = nil
@@ -169,3 +170,9 @@ lvim.builtin.which_key.mappings["<leader>d"] = nil
 -- Switch between keys by default.
 lvim.keys.normal_mode["L"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["H"] = ":BufferLineCyclePrev<CR>"
+
+-- Add yank helpers.
+lvim.builtin.which_key.mappings["y"] = {
+  name = "Yank",
+  p = { "<cmd>let @+=expand('%:p')<cr>", "Copy Buffer Path" },
+}
