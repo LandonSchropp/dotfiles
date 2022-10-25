@@ -65,6 +65,14 @@ lvim.plugins = {
   --   end,
   -- },
 
+  -- Use a better sorting algorithm in Telescope.
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release "
+      .. "&& cmake --build build --config Release "
+      .. "&& cmake --install build --prefix build",
+  },
+
   -- TEXT EDITING
 
   -- Provides new motions to target when running operators
