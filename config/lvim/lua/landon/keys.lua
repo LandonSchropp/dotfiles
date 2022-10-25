@@ -121,10 +121,10 @@ lvim.builtin.which_key.mappings["F"] = {
   "Find Text",
 }
 
+-- Replace the built-in Telescope find_files matcher with something that will find hidden files,
+-- respect the .gitignore implementation, and not display the .git directory contents.
 lvim.builtin.which_key.mappings["f"] = {
-  function()
-    require("telescope.builtin").find_files()
-  end,
+  "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git/<cr>",
   "Find File",
 }
 
