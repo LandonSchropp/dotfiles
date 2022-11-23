@@ -106,7 +106,7 @@ lvim.plugins = {
   {
     "jose-elias-alvarez/typescript.nvim",
     config = function()
-      require("typescript").setup()
+      require("typescript").setup({})
     end,
   },
 
