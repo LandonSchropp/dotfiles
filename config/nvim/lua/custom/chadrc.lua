@@ -1,3 +1,4 @@
 return {
-  plugins = require("custom.plugins")
+  plugins = require("custom.plugins"),
+  mappings = require("custom.keys")
 }
