@@ -1,20 +1,9 @@
 return {
   ["nvim-treesitter/nvim-treesitter"] = {
-    override_options = {
-      ensure_installed = "all",
-    }
+    override_options = require("custom.plugins.treesitter")
   },
   ["folke/which-key.nvim"] = {
     disable = false,
-    override_options = {
-      plugins = {
-        spelling = {
-          enabled = true
-        },
-      },
-      window = {
-        border = "single",
-      },
-    },
+    override_options = require("custom.plugins.which_key")
   },
 }
