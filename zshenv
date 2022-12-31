@@ -2,7 +2,7 @@
 export DISABLE_AUTO_TITLE="true"
 
 # Set the default text editor
-export EDITOR="lvim"
+export EDITOR="nvim"
 
 # Add my custom bin scripts to the system path.
 export PATH="$HOME/.dotfiles/bin:$PATH"
