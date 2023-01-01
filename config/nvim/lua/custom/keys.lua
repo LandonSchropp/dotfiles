@@ -122,11 +122,11 @@ M.lspconfig = {
   }
 }
 
-M.tabufline = {
+M.bufferline = {
   n = {
     -- Alias the buffer commands.
-    H = {core_mappings.tabufline.n["<TAB>"][1], "Previous Buffer"},
-    L = {core_mappings.tabufline.n["<S-Tab>"][1], "Next Buffer"},
+    H = {"<cmd>BufferLineCyclePrev<cr>", "Previous Buffer"},
+    L = {"<cmd>BufferLineCycleNext<cr>", "Next Buffer"},
   }
 }
 

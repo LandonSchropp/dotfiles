@@ -35,6 +35,12 @@ return {
   -- Display a nifty start screen.
   ["goolord/alpha-nvim"] = require("custom.plugins.alpha"),
 
+  -- NvChad's built-in UI framework.
+  ["NvChad/ui"] = require("custom.plugins.ui"),
+
+  -- A better bufferline.
+  ["akinsho/bufferline.nvim"] = require("custom.plugins.bufferline"),
+
   ------------------
   -- Text Editing --
   ------------------
