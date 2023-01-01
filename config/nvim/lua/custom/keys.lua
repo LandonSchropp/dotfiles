@@ -14,8 +14,8 @@ for _, section_values in pairs(core_mappings) do
     if type(mode_values) == "table" then
       for mapping, _ in pairs(mode_values) do
         if mapping:match("^<leader>") then
-          M.disabled[mode] = M.disabled[mode] or {}
-          M.disabled[mode][mapping] = ""
+          -- M.disabled[mode] = M.disabled[mode] or {}
+          -- M.disabled[mode][mapping] = ""
         end
       end
     end
