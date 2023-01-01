@@ -11,10 +11,12 @@ M.disabled = {}
 
 for _, section_values in pairs(core_mappings) do
   for mode, mode_values in pairs(section_values) do
-    for mapping, _ in pairs(mode_values) do
-      if mapping:match("^<leader>") then
-        M.disabled[mode] = M.disabled[mode] or {}
-        M.disabled[mode][mapping] = ""
+    if type(mode_values) == "table" then
+      for mapping, _ in pairs(mode_values) do
+        if mapping:match("^<leader>") then
+          M.disabled[mode] = M.disabled[mode] or {}
+          M.disabled[mode][mapping] = ""
+        end
       end
     end
   end
@@ -41,7 +43,7 @@ M.general = {
 
     -- Set up save and close buffer commands.
     W = {"<cmd>write<cr>", "Write Buffer"},
-    X = {core_mappings.tabufline["<leader>gD"][1], "Close Buffer"},
+    X = {core_mappings.tabufline.n["<leader>x"][1], "Close Buffer"},
     Z = {"<cmd>write<bar>BufferKill<cr>", "Write and Close Buffer"},
 
     -- Open a new buffer.
@@ -63,58 +65,58 @@ M.lspconfig = {
 
     -- Add LSP Mappings.
     ["<leader>le"] = {
-      core_mappings.lspconfig["<leader>gD"][1],
+      core_mappings.lspconfig.n["gD"][1],
       "Declaration",
     },
 
     ["<leader>ld"] = {
-      core_mappings.lspconfig["<leader>gd"][1],
+      core_mappings.lspconfig.n["gd"][1],
       "Definition",
     },
 
     ["<leader>lh"] = {
-      core_mappings.lspconfig["K"][1],
+      core_mappings.lspconfig.n["K"][1],
       "Hover",
     },
 
     ["<leader>li"] = {
-      core_mappings.lspconfig["gi"][1],
+      core_mappings.lspconfig.n["gi"][1],
       "Hover",
     },
 
     ["<leader>ls"] = {
-      core_mappings.lspconfig["<leader>ls"][1],
+      core_mappings.lspconfig.n["<leader>ls"][1],
       "Signature",
     },
 
     ["<leader>lt"] = {
-      core_mappings.lspconfig["<leader>D"][1],
+      core_mappings.lspconfig.n["<leader>D"][1],
       "Type Definition",
     },
 
     ["<leader>lr"] = {
-      core_mappings.lspconfig["<leader>ra"][1],
+      core_mappings.lspconfig.n["<leader>ra"][1],
       "Rename",
     },
 
     ["<leader>lc"] = {
-      core_mappings.lspconfig["<leader>ca"][1],
+      core_mappings.lspconfig.n["<leader>ca"][1],
       "Code Action",
     },
 
     ["<leader>lR"] = {
-      core_mappings.lspconfig["gr"][1],
+      core_mappings.lspconfig.n["gr"][1],
       "References",
     },
 
     -- Add diagnostics mappings.
     ["[["] = {
-      core_mappings.lspconfig["[d"][1],
+      core_mappings.lspconfig.n["[d"][1],
       "Previous Diagnostic",
     },
 
     ["]]"] = {
-      core_mappings.lspconfig["d]"][1],
+      core_mappings.lspconfig.n["d]"][1],
       "Next Diagnostic",
     },
   }
@@ -123,21 +125,21 @@ M.lspconfig = {
 M.tabufline = {
   n = {
     -- Alias the buffer commands.
-    H = {core_mappings.tabufline["<TAB>"][1], "Previous Buffer"},
-    L = {core_mappings.tabufline["<S-Tab>"][1], "Next Buffer"},
+    H = {core_mappings.tabufline.n["<TAB>"][1], "Previous Buffer"},
+    L = {core_mappings.tabufline.n["<S-Tab>"][1], "Next Buffer"},
   }
 }
 
 -- Set up JavaScript/TypeScript mappings.
 M.typescript = {
   n = {
-    i = {
+    ["<leader>ji"] = {
       function()
         require('typescript').actions.addMissingImports()
       end,
       "Import All"
     },
-    f = {
+    ["<leader>jf"] = {
       function()
         require('typescript').actions.fixAll()
       end,
@@ -149,12 +151,8 @@ M.typescript = {
 -- Set up Doge mappings.
 M.doge = {
   n = {
-    d = { "<cmd>DogeGenerate<cr>", "Import All" },
+    ["<leader>jd"] = { "<cmd>DogeGenerate<cr>", "Import All" },
   }
-}
-
-M.telescope = {
-
 }
 
 return M
