@@ -32,6 +32,9 @@ return {
   -- Automatically resize splits so it's easier to see their content.
   ["anuvyklack/windows.nvim"] = require("custom.plugins.windows"),
 
+  -- Display a nifty start screen.
+  ["goolord/alpha-nvim"] = require("custom.plugins.alpha"),
+
   ------------------
   -- Text Editing --
   ------------------
