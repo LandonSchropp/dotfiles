@@ -17,7 +17,7 @@ return {
   ["ethanholz/nvim-lastplace"] = require("custom.plugins.lastplace"),
 
   -- Improved file type handling.
-  ["nathom/filetype.nvim"] = {},
+  ["nathom/filetype.nvim"] = require("custom.plugins.filetype"),
 
   --------------------
   -- User Interface --
