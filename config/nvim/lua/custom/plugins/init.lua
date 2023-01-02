@@ -19,6 +19,9 @@ return {
   -- Improved file type handling.
   ["nathom/filetype.nvim"] = require("custom.plugins.filetype"),
 
+  -- Automatically change into project root directories.
+  ["ahmedkhalf/project.nvim"] = require("custom.plugins.project"),
+
   --------------------
   -- User Interface --
   --------------------

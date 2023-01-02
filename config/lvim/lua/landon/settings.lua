@@ -7,10 +7,6 @@ lvim.builtin.alpha.dashboard.section.buttons = {
   },
 }
 
--- Configure project.nvim so it doesn't change to subdirectories in monorepos.
-table.insert(lvim.builtin.project.detection_methods, 0, "!>packages")
-table.insert(lvim.builtin.project.detection_methods, 0, "!>plugins")
-
 local telescope = require("telescope")
 
 -- Improve the Telescope display.
