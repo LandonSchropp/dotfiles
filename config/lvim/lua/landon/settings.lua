@@ -1,12 +1,3 @@
--- Customize the dashboard buttons.
-lvim.builtin.alpha.dashboard.section.buttons = {
-  entries = {
-    { "<leader>f", "  Find File", "<CMD>Telescope find_files<CR>" },
-    { "<leader>F", "  Find Text", "<CMD>Telescope live_grep<CR>" },
-    { "<leader>n", "  New File", "<CMD>ene!<CR>" },
-  },
-}
-
 local telescope = require("telescope")
 
 -- Improve the Telescope display.

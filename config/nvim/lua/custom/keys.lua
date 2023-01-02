@@ -162,6 +162,12 @@ M.telescope = {
     ["<leader>f"] = {
       "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git/<cr>",
       "Find File",
+    },
+
+    -- Add a command to open recent files.
+    ["<leader><c-f>"] = {
+      "<cmd>Telescope oldfiles<cr>",
+      "Recent Files",
     }
   }
 }
