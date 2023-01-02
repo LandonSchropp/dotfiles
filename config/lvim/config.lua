@@ -1,8 +1,0 @@
-require("landon.settings")
-require("landon.keys")
-require("landon.plugins")
-require("landon.theme")
-require("landon.syntax")
-require("landon.language")
--- require("landon.snippets")
-require("landon.lualine")
