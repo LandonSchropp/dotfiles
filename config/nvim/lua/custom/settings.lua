@@ -35,7 +35,7 @@ vim.opt.breakindentopt = "shift:2"
 vim.opt.spell = true
 
 -- Only use one line for commands.
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 
 -----------
 -- Other --

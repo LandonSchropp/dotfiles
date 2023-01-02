@@ -47,6 +47,9 @@ return {
   -- Fuzzy finder.
   ["nvim-telescope/telescope.nvim"] = require("custom.plugins.telescope"),
 
+  -- A better Telescope matching algorithm.
+  ["nvim-telescope/telescope-fzf-native.nvim"] = require("custom.plugins.fzf_telescope_native"),
+
   ------------------
   -- Text Editing --
   ------------------

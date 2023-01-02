@@ -13,6 +13,11 @@ return {
             ["<up>"] = actions.move_selection_previous,
             ["<esc>"] = actions.close,
           },
+        },
+        -- Improve the Telescope display.
+        layout_config = {
+          width = 0.9,
+          height = 0.9
         }
       }
     }
