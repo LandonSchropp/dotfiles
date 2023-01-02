@@ -14,8 +14,8 @@ for _, section_values in pairs(core_mappings) do
     if type(mode_values) == "table" then
       for mapping, _ in pairs(mode_values) do
         if mapping:match("^<leader>") then
-          -- M.disabled[mode] = M.disabled[mode] or {}
-          -- M.disabled[mode][mapping] = ""
+          M.disabled[mode] = M.disabled[mode] or {}
+          M.disabled[mode][mapping] = ""
         end
       end
     end
@@ -148,10 +148,37 @@ M.typescript = {
   }
 }
 
--- Set up Doge mappings.
 M.doge = {
   n = {
+    -- Set up Doge mappings.
     ["<leader>jd"] = { "<cmd>DogeGenerate<cr>", "Import All" },
+  }
+}
+
+M.telescope = {
+  n = {
+    -- Replace the built-in Telescope find_files matcher with something that will find hidden files,
+    -- respect the .gitignore implementation, and not display the .git directory contents.
+    ["<leader>f"] = {
+      "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git/<cr>",
+      "Find File",
+    }
+  }
+}
+
+
+M.spectre = {
+  n = {
+    -- Use Spectre for find and replace.
+    ["<leader>F"] = {
+      function()
+        require("spectre").open({
+          is_open_target_win = false,
+          is_insert_mode = true,
+        })
+      end,
+      "Find Text",
+    }
   }
 }
 

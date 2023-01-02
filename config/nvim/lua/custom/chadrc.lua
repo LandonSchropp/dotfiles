@@ -1,6 +1,6 @@
 return {
   ui = {
-    theme = "tokyonight", 
+    theme = "tokyonight",
   },
   plugins = require("custom.plugins"),
   mappings = require("custom.keys")

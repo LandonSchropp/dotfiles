@@ -41,6 +41,9 @@ return {
   -- A better bufferline.
   ["akinsho/bufferline.nvim"] = require("custom.plugins.bufferline"),
 
+  -- Fuzzy finder.
+  ["nvim-telescope/telescope.nvim"] = require("custom.plugins.telescope"),
+
   ------------------
   -- Text Editing --
   ------------------
