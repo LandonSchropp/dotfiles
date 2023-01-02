@@ -3,11 +3,11 @@ return {
   override_options = {
     plugins = {
       spelling = {
-        enabled = true
+        enabled = true,
       },
     },
     window = {
       border = "single",
     },
-  }
+  },
 }

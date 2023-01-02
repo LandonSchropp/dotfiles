@@ -17,9 +17,9 @@ return {
         -- Improve the Telescope display.
         layout_config = {
           width = 0.9,
-          height = 0.9
-        }
-      }
+          height = 0.9,
+        },
+      },
     }
-  end
+  end,
 }

@@ -4,5 +4,5 @@ return {
   },
   config = function()
     require("windows").setup()
-  end
+  end,
 }

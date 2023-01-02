@@ -1,6 +1,6 @@
-  return {
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-    end
-  }
+return {
+  event = "BufRead",
+  config = function()
+    require("hop").setup()
+  end,
+}

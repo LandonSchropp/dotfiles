@@ -16,14 +16,13 @@ local function button(value, shortcut)
       align_shortcut = "right",
       hl = "AlphaButtons",
       width = 35,
-    }
- }
+    },
+  }
 end
 
 return {
   disable = false,
-  override_options = function ()
-
+  override_options = function()
     -- Redefine the buttons.
     local buttons = {
       button(" Find File", "<leader>f"),
@@ -47,5 +46,5 @@ return {
       headerPaddingTop = { type = "padding", val = header_padding },
       headerPaddingBottom = { type = "padding", val = 1 },
     }
-  end
+  end,
 }

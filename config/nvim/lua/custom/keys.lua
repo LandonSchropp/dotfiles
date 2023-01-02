@@ -4,7 +4,7 @@ local core_mappings = require("core.mappings")
 -- TODO: Should this be moved somewhere else?
 vim.api.nvim_set_var("no_plugin_maps", true)
 
-local M = {};
+local M = {}
 
 -- Disable *all* of the default NvChad <leader> mappings.
 M.disabled = {}
@@ -27,24 +27,24 @@ M.general = {
   n = {
 
     -- Prevent the cursor from jumping when joining lines
-    J = {"mzJ`z", "Join Lines"},
+    J = { "mzJ`z", "Join Lines" },
 
     -- Add mappings to jump between diagnostics.
-    ["[["] = {"<cmd>lua vim.diagnostic.goto_prev()<cr>", "Previous Diagnostic"},
-    ["]]"] = {"<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic"},
+    ["[["] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Previous Diagnostic" },
+    ["]]"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic" },
 
     -- Create more convenient mappings for yanking to and pasting from the system clipboard.
-    gy = {'"*y', "Yank to System Clipboard"},
-    gp = {'"*p', "Paste From System Clipboard"},
-    gY = {'"*y$', "Yank Until End of Line to System Clipboard"},
+    gy = { '"*y', "Yank to System Clipboard" },
+    gp = { '"*p', "Paste From System Clipboard" },
+    gY = { '"*y$', "Yank Until End of Line to System Clipboard" },
 
     -- Use escape to clear the highlights.
-    ["<esc>"] = {":nohlsearch<cr>", "Clear Highlights"},
+    ["<esc>"] = { ":nohlsearch<cr>", "Clear Highlights" },
 
     -- Set up save and close buffer commands.
-    W = {"<cmd>write<cr>", "Write Buffer"},
-    X = {core_mappings.tabufline.n["<leader>x"][1], "Close Buffer"},
-    Z = {"<cmd>write<bar>BufferKill<cr>", "Write and Close Buffer"},
+    W = { "<cmd>write<cr>", "Write Buffer" },
+    X = { core_mappings.tabufline.n["<leader>x"][1], "Close Buffer" },
+    Z = { "<cmd>write<bar>BufferKill<cr>", "Write and Close Buffer" },
 
     -- Open a new buffer.
     ["<leader>n"] = { "<cmd>enew<cr>", "New Buffer" },
@@ -55,9 +55,9 @@ M.general = {
 
   v = {
     -- Create more convenient mappings for yanking to and pasting from the system clipboard.
-    gy = {'"*y', "Yank to System Clipboard"},
-    gp = {'"*p', "Paste From System Clipboard"},
-  }
+    gy = { '"*y', "Yank to System Clipboard" },
+    gp = { '"*p', "Paste From System Clipboard" },
+  },
 }
 
 M.lspconfig = {
@@ -119,15 +119,15 @@ M.lspconfig = {
       core_mappings.lspconfig.n["d]"][1],
       "Next Diagnostic",
     },
-  }
+  },
 }
 
 M.bufferline = {
   n = {
     -- Alias the buffer commands.
-    H = {"<cmd>BufferLineCyclePrev<cr>", "Previous Buffer"},
-    L = {"<cmd>BufferLineCycleNext<cr>", "Next Buffer"},
-  }
+    H = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
+    L = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
+  },
 }
 
 -- Set up JavaScript/TypeScript mappings.
@@ -135,24 +135,24 @@ M.typescript = {
   n = {
     ["<leader>ji"] = {
       function()
-        require('typescript').actions.addMissingImports()
+        require("typescript").actions.addMissingImports()
       end,
-      "Import All"
+      "Import All",
     },
     ["<leader>jf"] = {
       function()
-        require('typescript').actions.fixAll()
+        require("typescript").actions.fixAll()
       end,
-      "Fix Issues"
+      "Fix Issues",
     },
-  }
+  },
 }
 
 M.doge = {
   n = {
     -- Set up Doge mappings.
     ["<leader>jd"] = { "<cmd>DogeGenerate<cr>", "Import All" },
-  }
+  },
 }
 
 M.telescope = {
@@ -168,10 +168,9 @@ M.telescope = {
     ["<leader><c-f>"] = {
       "<cmd>Telescope oldfiles<cr>",
       "Recent Files",
-    }
-  }
+    },
+  },
 }
-
 
 M.spectre = {
   n = {
@@ -184,8 +183,8 @@ M.spectre = {
         })
       end,
       "Find Text",
-    }
-  }
+    },
+  },
 }
 
 return M

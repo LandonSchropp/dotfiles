@@ -1,7 +1,7 @@
 return {
   after = "telescope.nvim",
-  run = 'make',
+  run = "make",
   config = function()
-    require('telescope').load_extension('fzf')
-  end
+    require("telescope").load_extension("fzf")
+  end,
 }

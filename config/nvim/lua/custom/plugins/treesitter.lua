@@ -1,5 +1,5 @@
 return {
   override_options = {
-    ensure_installed = "all"
-  }
+    ensure_installed = "all",
+  },
 }

@@ -9,8 +9,8 @@ return {
           gitconfig = "gitconfig",
           Guardfile = "ruby",
           zprofile = "zsh",
-        }
-      }
+        },
+      },
     })
-  end
+  end,
 }
