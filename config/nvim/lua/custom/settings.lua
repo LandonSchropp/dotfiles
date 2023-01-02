@@ -37,6 +37,20 @@ vim.opt.spell = true
 -- Only use one line for commands.
 vim.opt.cmdheight = 0
 
+------------
+-- Syntax --
+------------
+
+-- Display extra whitespace characters
+vim.opt.list = true
+
+-- Define the whitespace characters to display.
+vim.opt.listchars = {
+  tab = "»·",
+  trail = "·",
+  nbsp = "·"
+}
+
 -----------
 -- Other --
 -----------
