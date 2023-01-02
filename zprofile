@@ -18,8 +18,5 @@ eval "$(rbenv init -)"
 # non-shell instances of zsh anyway, this is probably better anyway.
 export PATH="./bin:./node_modules/.bin:$PATH"
 
-# Add LunarVim to the path.
-export PATH="$HOME/.local/bin:$PATH"
-
 # Increase the maximum number of open files.
 ulimit -n 10485760
