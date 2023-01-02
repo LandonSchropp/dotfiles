@@ -22,6 +22,9 @@ return {
   -- Automatically change into project root directories.
   ["ahmedkhalf/project.nvim"] = require("custom.plugins.project"),
 
+  -- Linting and formatting.
+  ["jose-elias-alvarez/null-ls.nvim"] = require("custom.plugins.null_ls"),
+
   --------------------
   -- User Interface --
   --------------------

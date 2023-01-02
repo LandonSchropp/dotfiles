@@ -6,6 +6,9 @@ return {
           [".babelrc"] = "json",
           Procfile = "json",
           [".envrc"] = "sh",
+          gitconfig = "gitconfig",
+          Guardfile = "ruby",
+          zprofile = "zsh",
         }
       }
     })
