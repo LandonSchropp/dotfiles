@@ -7,11 +7,6 @@ vim.api.nvim_create_autocmd("FocusGained", {
   end,
 })
 
--- Configure SplitJoin
-vim.api.nvim_set_var("splitjoin_ruby_hanging_args", 0)
-vim.api.nvim_set_var("splitjoin_html_attributes_bracket_on_new_line", 1)
-vim.api.nvim_set_var("splitjoin_ruby_options_as_arguments", 1)
-
 -- Customize the dashboard buttons.
 lvim.builtin.alpha.dashboard.section.buttons = {
   entries = {
@@ -20,9 +15,6 @@ lvim.builtin.alpha.dashboard.section.buttons = {
     { "<leader>n", "  New File", "<CMD>ene!<CR>" },
   },
 }
-
--- Remove the branch SHA from the dashboard footer.
-table.remove(lvim.builtin.alpha.dashboard.section.footer.val)
 
 -- Configure project.nvim so it doesn't change to subdirectories in monorepos.
 table.insert(lvim.builtin.project.detection_methods, 0, "!>packages")
