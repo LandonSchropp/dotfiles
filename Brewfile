@@ -42,7 +42,6 @@ brew "tmux"
 brew "tmuxinator"
 brew "tree"
 brew "wget"
-brew "write-good"
 brew "yarn"
 
 cask "1password"
