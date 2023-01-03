@@ -12,6 +12,9 @@ return {
   -- Modify the dashboard header
   header = require("user.header"),
 
-  -- Add plugins.
+  -- Add/modify/disable mappings.
+  mappings = require("user.mappings"),
+
+  -- Add/modify/disable plugins.
   plugins = require("user.plugins"),
 }
