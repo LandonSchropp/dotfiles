@@ -130,12 +130,20 @@ return {
     { "folke/tokyonight.nvim" },
   },
 
-  -------------------------
+  ----------------------
   -- Disable Defaults --
-  -------------------------
+  ----------------------
 
   -- I don't use these plugins, so I'm removing them.
   ["mrjones2014/smart-splits.nvim"] = { disable = true },
   ["akinsho/toggleterm.nvim"] = { disable = true },
   ["Shatur/neovim-session-manager"] = { disable = true },
+
+  -----------------------------
+  -- Configuration Overrides --
+  -----------------------------
+
+  -- Override the configurations of these default plugins.
+  ["null-ls"] = require("user.plugins.null_ls"),
+  ["mason-null-ls"] = require("user.plugins.mason_null_ls"),
 }
