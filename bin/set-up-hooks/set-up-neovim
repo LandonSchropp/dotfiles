@@ -13,8 +13,11 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 
-# Install NvChad.
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 
+# Install AstroNvim.
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 # Set up the configuration.
 rcup config/nvim
+
+# Initialize Neovim.
+nvim  --headless -c 'autocmd User PackerComplete quitall'
