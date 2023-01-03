@@ -109,6 +109,9 @@ return {
       run = function()
         vim.cmd("call doge#install()")
       end,
+      config = function()
+        require("user.plugins.doge")
+      end,
     },
 
     -- Correctly indent lists when editing markdown.
