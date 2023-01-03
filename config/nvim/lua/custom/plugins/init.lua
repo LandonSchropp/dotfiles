@@ -53,6 +53,9 @@ return {
   -- A better Telescope matching algorithm.
   ["nvim-telescope/telescope-fzf-native.nvim"] = require("custom.plugins.fzf_telescope_native"),
 
+  -- Display lines for blank space.
+  ["lukas-reineke/indent-blankline.nvim"] = require("custom.plugins.indent_blankline"),
+
   ------------------
   -- Text Editing --
   ------------------
