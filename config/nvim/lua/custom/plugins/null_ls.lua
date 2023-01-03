@@ -23,11 +23,17 @@ return {
 
     local sources = {
 
+      -- Git
+      null_ls.builtins.diagnostics.commitlint,
+      null_ls.builtins.code_actions.gitrebase,
+      null_ls.builtins.code_actions.gitsigns,
+
       -- JavaScript/TypeScript
-      null_ls.builtins.formatting.deno_fmt,
-      null_ls.builtins.formatting.prettier,
+      null_ls.builtins.code_actions.eslint_d,
       null_ls.builtins.diagnostics.eslint_d,
+      null_ls.builtins.formatting.deno_fmt,
       null_ls.builtins.formatting.eslint_d,
+      null_ls.builtins.formatting.prettier,
 
       -- JSON
       null_ls.builtins.formatting.fixjson,
@@ -39,8 +45,38 @@ return {
       null_ls.builtins.formatting.mix,
 
       -- Shell
-      null_ls.builtins.formatting.shfmt,
+      null_ls.builtins.code_actions.shellcheck,
       null_ls.builtins.diagnostics.shellcheck,
+      null_ls.builtins.formatting.shfmt,
+      null_ls.builtins.diagnostics.zsh,
+
+      -- Nix
+      null_ls.builtins.code_actions.statix,
+
+      -- Spelling
+      null_ls.builtins.completion.spell,
+
+      -- Environment
+      null_ls.builtins.diagnostics.dotenv_linter,
+
+      -- Docker
+      null_ls.builtins.diagnostics.hadolint,
+
+      -- Markdown
+      null_ls.builtins.diagnostics.markdownlint,
+      null_ls.builtins.diagnostics.write_good,
+
+      -- Sass/Less/CSS
+      null_ls.builtins.diagnostics.stylelint,
+
+      -- HTML/XML
+      null_ls.builtins.diagnostics.tidy,
+
+      -- YAML
+      null_ls.builtins.diagnostics.yamllint,
+
+      -- Just
+      null_ls.builtins.formatting.just,
     }
 
     -- Create the autocommand group for formatting.
