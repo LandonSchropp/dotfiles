@@ -11,4 +11,7 @@ return {
 
   -- Modify the dashboard header
   header = require("user.header"),
+
+  -- Add plugins.
+  plugins = require("user.plugins"),
 }
