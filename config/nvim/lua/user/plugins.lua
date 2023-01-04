@@ -44,6 +44,9 @@ return {
       end,
     },
 
+    -- ASCII art library.
+    { "MaximilianLloyd/ascii.nvim" },
+
     ------------------
     -- Text Editing --
     ------------------

@@ -6,11 +6,8 @@ return {
     version = "v2.*", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
   },
 
-  -- Set colorscheme to use
+  -- Set the color scheme.
   colorscheme = "tokyonight",
-
-  -- Modify the dashboard header
-  header = require("user.header"),
 
   -- Add/modify/disable mappings.
   mappings = require("user.mappings"),
