@@ -122,6 +122,16 @@ return {
       end,
     },
 
+    -- A nicer status line.
+    {
+      "nvim-lualine/lualine.nvim",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+      event = "VimEnter",
+      config = function()
+        require("user.plugins.lualine")
+      end,
+    },
+
     -------------------------
     -- Syntax Highlighting --
     -------------------------
@@ -138,4 +148,5 @@ return {
   ["mrjones2014/smart-splits.nvim"] = { disable = true },
   ["akinsho/toggleterm.nvim"] = { disable = true },
   ["Shatur/neovim-session-manager"] = { disable = true },
+  ["rebelot/heirline.nvim"] = { disable = true },
 }
