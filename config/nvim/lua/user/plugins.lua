@@ -73,7 +73,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
       },
       config = function()
-        require("user.plugins.treesitter_endwise")
+        require("user.plugins.treesitter-endwise")
       end,
     },
 
