@@ -44,6 +44,14 @@ return {
       end,
     },
 
+    -- An interactive scrollbar.
+    {
+      "petertriho/nvim-scrollbar",
+      config = function()
+        require("user.plugins.scrollbar")
+      end,
+    },
+
     ------------------
     -- Text Editing --
     ------------------
