@@ -7,7 +7,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "tokyonight",
 
   -- Modify the dashboard header
   header = require("user.header"),
