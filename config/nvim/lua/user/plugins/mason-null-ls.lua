@@ -1,34 +1,7 @@
+-- When configuring Mason for use with null-ls, I've opted to use null-ls as the source of truth.
+-- This means the servers listed in the null-ls config will automatically be installed by Mason.
 return {
-  ensure_installed = {
-    -- Git
-    "gitrebase",
-    "gitsigns",
-
-    -- JSON
-    "fixjson",
-
-    -- Lua
-    "stylua",
-
-    -- Shell
-    "shellcheck",
-
-    -- Nix
-    "statix",
-
-    -- Docker
-    "hadolint",
-
-    -- Markdown
-    "markdownlint",
-
-    -- Sass/Less/CSS
-    "stylelint",
-
-    -- HTML/XML
-    "tidy",
-
-    -- Just
-    "just",
-  },
+  ensure_installed = nil,
+  automatic_installation = true,
+  automatic_setup = false,
 }
