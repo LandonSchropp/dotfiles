@@ -2,8 +2,8 @@ return {
 
   -- Configure AstroNvim updates
   updater = {
-    channel = "stable", -- "stable" or "nightly"
-    version = "v2.*", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    channel = "stable",
+    version = "v2.*",
   },
 
   -- Set the color scheme.
