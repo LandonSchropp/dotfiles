@@ -1,7 +1,14 @@
 return function()
 
-  -- Grab the header.
-  local header = require("ascii").art.text.neovim.ansi_shadow
+  -- Define a nice header.
+  local header = {
+    " █████╗  ███████╗ ████████╗ ██████╗   ██████╗      ███╗   ██╗ ██╗   ██╗ ██╗ ███╗   ███╗",
+    "██╔══██╗ ██╔════╝ ╚══██╔══╝ ██╔══██╗ ██╔═══██╗     ████╗  ██║ ██║   ██║ ██║ ████╗ ████║",
+    "███████║ ███████╗    ██║    ██████╔╝ ██║   ██║     ██╔██╗ ██║ ██║   ██║ ██║ ██╔████╔██║",
+    "██╔══██║      ██║    ██║    ██╔══██╗ ██║   ██║     ██║╚██╗██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+    "██║  ██║ ███████║    ██║    ██║  ██║ ╚██████╔╝     ██║ ╚████║  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+    "╚═╝  ╚═╝ ╚══════╝    ╚═╝    ╚═╝  ╚═╝  ╚═════╝      ╚═╝  ╚═══╝   ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+  }
 
   -- Define the buttons.
   local buttons = {
@@ -12,16 +19,20 @@ return function()
     astronvim.alpha_button("<leader>n", "  New File"),
   }
 
+  -- Define the padding between the items.
+  local middle_padding = 2
+
   -- Determine the top padding.
-  local top_padding = vim.fn.floor((vim.fn.winheight(0) - #header - 1 - #buttons) / 2)
+  local content_height = #header + middle_padding + (#buttons * 2 - 1)
+  local top_padding = vim.fn.floor((vim.fn.winheight(0) - content_height) / 2)
 
   -- Override the Alpha config.
   return {
     layout = {
       { type = "padding", val = vim.fn.max({ 1, top_padding }) },
       { type = "text", val = header, opts = { position = "center", hl = "DashboardHeader" }, },
-      { type = "padding", val = 1 },
-      { type = "group", val = buttons, opts = { spacing = 0 }, },
+      { type = "padding", val = middle_padding },
+      { type = "group", val = buttons, opts = { spacing = 1 }, },
     },
     opts = { noautocmd = true },
   }
