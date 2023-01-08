@@ -633,12 +633,6 @@
           "full_name": "font-source-code-pro"
         }
       },
-      "google-cloud-sdk": {
-        "version": "latest",
-        "options": {
-          "full_name": "google-cloud-sdk"
-        }
-      },
       "iina": {
         "version": "1.0.4",
         "options": {
