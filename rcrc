@@ -15,6 +15,7 @@ EXCLUDES=(
   xterm
   *.terminfo
   bin
+  stylua.toml
 )
 
 EXCLUDES="${EXCLUDES[@]}"
