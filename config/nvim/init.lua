@@ -9,7 +9,7 @@ if not vim.loop.fs_stat(lazy_nvim_path) then
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazy_nvim_path
+    lazy_nvim_path,
   })
 end
 
@@ -18,14 +18,16 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazy_nvim_path)
 
 -- Configure Lazy.nvim.
 require("lazy").setup({
+
+  -- Specify all of the plugin sources.
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.json" },
     { import = "plugins" },
   },
+
+  -- Override the Lazy.nvim settings.
   defaults = {
 
     -- Only lazy load LazyVim plugins.
@@ -41,12 +43,12 @@ require("lazy").setup({
   -- Automatically check for plugin updates.
   checker = { enabled = true },
 
-  -- Disable some unused plugins by default.
+  -- Disable some unused builtin plugins.
   performance = {
     rtp = {
       disabled_plugins = {
         "gzip",
-         "matchit",
+        "matchit",
         "matchparen",
         "netrwPlugin",
         "tarPlugin",
