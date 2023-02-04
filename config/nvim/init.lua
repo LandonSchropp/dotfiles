@@ -40,8 +40,13 @@ require("lazy").setup({
   -- Automatically install Tokyonight.
   install = { colorscheme = { "tokyonight" } },
 
-  -- Automatically check for plugin updates.
-  checker = { enabled = true },
+  checker = {
+    -- Automatically check for plugin updates.
+    enabled = true,
+
+    -- Don't notify when checking for plugin updates.
+    notify = false,
+  },
 
   -- Disable some unused builtin plugins.
   performance = {
