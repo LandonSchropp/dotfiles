@@ -2,12 +2,12 @@ local M = {}
 
 -- The default way the keys are extracted from the keymap.
 local function lazy_vim_keys_function(keymap)
-  return keymap.lhs
+  return keymap[1]
 end
 
 -- The default way the keys are extracted from the keymap.
 local function neovim_keys_function(keymap)
-  return keymap[1]
+  return keymap.lhs
 end
 
 -- A helper function that creates a normalized version of two keymaps.
