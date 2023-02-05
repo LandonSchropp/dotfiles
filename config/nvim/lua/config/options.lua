@@ -21,6 +21,9 @@ vim.opt.colorcolumn = "+1"
 -- Indenting --
 ---------------
 
+-- Round to multiples of the shift width
+vim.opt.shiftround = true
+
 -- Indent by two spaces when wrapping
 vim.opt.breakindentopt = "shift:2"
 
@@ -38,6 +41,9 @@ vim.opt.cmdheight = 0
 -- Syntax --
 ------------
 
+-- Display extra whitespace characters
+vim.opt.list = true
+
 -- Define the whitespace characters to display.
 vim.opt.listchars = {
   tab = "»·",
@@ -49,8 +55,14 @@ vim.opt.listchars = {
 -- Other --
 -----------
 
+-- Automatically :write before running commands
+vim.opt.autowrite = true
+
 -- Only join with one space between words
 vim.opt.joinspaces = false
+
+-- Ensure there's always a little space above and below the current line
+vim.opt.scrolloff = 2
 
 -- Dont use the system clipboard.
 vim.opt.clipboard = {}
