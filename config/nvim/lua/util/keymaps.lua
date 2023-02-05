@@ -83,14 +83,19 @@ M.remove = function(keymaps, keys)
   M.add(keymaps, keys, false)
 end
 
--- Given an array of keymaps, this function remaps one of the keymaps.
-M.remap = function(keymaps, old_keys, new_keys)
+-- Duplicates one of the mappings with a new set of keys.
+M.duplicate = function(keymaps, old_keys, new_keys)
   -- Find the old keymap.
   local keymap = vim.deepcopy(M.find_required(keymaps, old_keys))
 
-  -- Replace the existing keymap with the new one.
-  M.remove(keymaps, old_keys)
+  -- Add the new keymap.
   M.add(keymaps, new_keys, keymap[2], keymap)
+end
+
+-- Given an array of keymaps, this function remaps one of the keymaps.
+M.remap = function(keymaps, old_keys, new_keys)
+  M.duplicate(keymaps, old_keys, new_keys)
+  M.remove(keymaps, old_keys)
 end
 
 -- Remaps a Neovim keymap.
