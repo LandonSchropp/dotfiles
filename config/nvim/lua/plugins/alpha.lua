@@ -19,7 +19,7 @@ return {
       dashboard.button("<leader>ff", "  Find File"),
       dashboard.button("<leader>fr", "  Find and Replace"),
       dashboard.button("<leader>fo", "  Recents"),
-      dashboard.button("<leader>fw", "  Find Word"),
+      dashboard.button("<leader>ft", "  Find Text"),
       dashboard.button("<leader>n", "  New File"),
     }
 
