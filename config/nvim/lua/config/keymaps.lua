@@ -34,3 +34,20 @@ vim.keymap.del("n", "<leader>xq")
 vim.keymap.del("n", "<leader>|")
 vim.keymap.del("n", "[b")
 vim.keymap.del("n", "]b")
+
+-- Prevent the cursor from jumping when joining lines
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join" })
+
+-- Create more convenient mappings for yanking to and pasting from the system clipboard.
+vim.keymap.set("n", "gy", '"*y', { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "gp", '"*p', { desc = "Paste from system clipboard" })
+vim.keymap.set("n", "gY", '"*y$', { desc = "Yank until end of line to system clipboard" })
+vim.keymap.set("v", "gy", '"*y', { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "gp", '"*p', { desc = "Paste from system clipboard" })
+
+-- Set up save and close buffer commands.
+vim.keymap.set("n", "W", "<cmd>write<cr>", { desc = "Write buffer" })
+vim.keymap.set("n", "Z", "WX", { desc = "Write and close buffer" })
+
+-- Add buffer yank helper.
+vim.keymap.set("n", "<leader>by", "<cmd>let @+=expand('%:p')<cr>", { desc = "Yank buffer path" })
