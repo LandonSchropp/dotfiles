@@ -51,6 +51,9 @@ require("lazy").setup({
   -- Add a border.
   ui = { border = "rounded" },
 
+  -- Disable change detection (because it's really annoying)
+  change_detection = { enabled = false },
+
   -- Disable some unused builtin plugins.
   performance = {
     rtp = {
