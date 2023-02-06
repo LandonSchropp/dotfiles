@@ -99,15 +99,18 @@ M.remap = function(keymaps, old_keys, new_keys)
 end
 
 -- Remaps a Neovim keymap.
-M.remap_nvim = function(mode, old_keys, new_keys)
+M.remap_nvim = function(mode, old_keys, new_keys, attributes)
+  -- Provide a default for the optional attributes.
+  attributes = attributes or {}
+
   -- Find the old keymap.
   local old_keymap = M.find_required(vim.api.nvim_get_keymap(mode), old_keys, neovim_keys_function)
 
-  -- Set the new keymap using the old keymap's implementation.
-  vim.keymap.set(mode, new_keys, old_keymap.rhs or old_keymap.command)
-
   -- Remove the old keymap.
   vim.keymap.del(mode, old_keys)
+
+  -- Set the new keymap using the old keymap's implementation.
+  vim.keymap.set(mode, new_keys, old_keymap.rhs or old_keymap.callback, attributes)
 end
 
 return M
