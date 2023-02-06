@@ -48,6 +48,9 @@ require("lazy").setup({
     notify = false,
   },
 
+  -- Add a border.
+  ui = { border = "rounded" },
+
   -- Disable some unused builtin plugins.
   performance = {
     rtp = {
