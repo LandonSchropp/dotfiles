@@ -2,6 +2,15 @@ local keymap_utils = require("util.keymaps")
 
 return {
   "folke/todo-comments.nvim",
+  -- TODO: hello there buddy!
+  opts = {
+    highlight = {
+      keyword = "bg",
+    },
+    keywords = {
+      BUGFIX = { icon = " ", color = "warning" },
+    },
+  },
   keys = function(_, keymaps)
     keymap_utils.remove(keymaps, "<leader>xT")
 
