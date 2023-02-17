@@ -14,8 +14,6 @@ return {
     local luasnip = require("luasnip")
     local cmp = require("cmp")
 
-    print(vim.inspect(options))
-
     options.mapping["<tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
