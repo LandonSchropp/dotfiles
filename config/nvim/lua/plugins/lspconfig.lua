@@ -13,4 +13,11 @@ return {
     keymap_utils.remove(keymaps, "<c-k>")
     keymap_utils.remove(keymaps, "<leader>cf")
   end,
+  opts = {
+    format = {
+      -- This is _required_ in order to get Rubocop formatting to work. Without it, the autoformat
+      -- command fails silently.
+      timeout_ms = 5000,
+    },
+  },
 }
