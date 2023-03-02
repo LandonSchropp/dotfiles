@@ -9,8 +9,9 @@ return {
     {
       "<leader>ld",
       function()
-        require("neogen").generate()
+        require("neogen").generate({})
       end,
+      desc = "Generate documentation",
     },
   },
 }
