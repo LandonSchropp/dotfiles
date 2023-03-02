@@ -66,3 +66,6 @@ vim.opt.scrolloff = 2
 
 -- Dont use the system clipboard.
 vim.opt.clipboard = {}
+
+-- Don't conceal text (especially in JSON files.)
+vim.opt.conceallevel = 0
