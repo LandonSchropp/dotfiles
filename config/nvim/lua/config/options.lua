@@ -34,8 +34,8 @@ vim.opt.breakindentopt = "shift:2"
 -- Enable spell checking
 vim.opt.spell = true
 
--- Only use one line for commands.
-vim.opt.cmdheight = 1
+-- Hide the command bar unless it's being used.
+vim.opt.cmdheight = 0
 
 ------------
 -- Syntax --
