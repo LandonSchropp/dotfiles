@@ -63,3 +63,10 @@ done
 
 # Disable autocorrect
 unsetopt correct_all
+
+# Prevent OA from getting typed when hitting <esc><up> in the terminal.
+# https://superuser.com/a/1546939
+bindkey "^[^[OA" up-line-or-beginning-search
+bindkey "^[^[OB" down-line-or-beginning-search
+bindkey "^[^[OC" forward-char
+bindkey "^[^[OD" backward-char
