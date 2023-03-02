@@ -19,5 +19,30 @@ return {
       -- command fails silently.
       timeout_ms = 5000,
     },
+    setup = {
+      -- This rebinds the Typescript language server commands. Ideally, I wouldn't need to do this.
+      -- https://github.com/LazyVim/LazyVim/issues/182
+      tsserver = function(_, opts)
+        require("lazyvim.util").on_attach(function(client, buffer)
+          if client.name == "tsserver" then
+            vim.keymap.set(
+              "n",
+              "<leader>lo",
+              "TypescriptOrganizeImports",
+              { desc = "Organize imports", buffer = buffer }
+            )
+            vim.keymap.set(
+              "n",
+              "<leader>lR",
+              "TypescriptRenameFile",
+              { desc = "Rename file", buffer = buffer }
+            )
+          end
+        end)
+
+        require("typescript").setup({ server = opts })
+        return true
+      end,
+    },
   },
 }
