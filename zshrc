@@ -53,8 +53,8 @@ source $ZSH/oh-my-zsh.sh
 export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 
-# Make bat readable on a light terminal.
-export BAT_THEME="ansi-dark"
+# Make bat more readable.
+export BAT_THEME="ansi"
 
 # Source the configuration files
 for CONFIG_FILE in $HOME/.config/zsh/*; do
