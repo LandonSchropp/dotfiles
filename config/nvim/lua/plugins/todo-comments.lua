@@ -2,10 +2,10 @@ local keymap_utils = require("util.keymaps")
 
 return {
   "folke/todo-comments.nvim",
-  -- TODO: hello there buddy!
   opts = {
     highlight = {
       keyword = "bg",
+      after = "",
     },
     keywords = {
       BUGFIX = { icon = " ", color = "warning" },
