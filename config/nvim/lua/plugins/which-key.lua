@@ -16,6 +16,7 @@ return {
       ["<leader>l"] = { name = "+Language/LSP" },
       ["<leader>f"] = { name = "+Find" },
       ["<leader>g"] = { name = "+Git" },
+      ["<leader>t"] = { name = "+Test" },
       ["<leader>gh"] = { name = "+Hunks" },
     })
   end,
