@@ -1,7 +1,7 @@
 local keymap_utils = require("util.keymaps")
 
 -- Remap built-in keybindings that I don't like.
-keymap_utils.remap_nvim("n", "<leader>l", "<leader>L", { desc = "Open Lazy.nvim" })
+keymap_utils.remap_nvim("n", "<leader>l", "<leader>L", { desc = "Lazy.nvim" })
 keymap_utils.remap_nvim("n", "<leader>gg", "<leader>gg", { desc = "Lazygit" })
 
 -- Delete the keymaps I don't like or don't use.

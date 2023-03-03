@@ -41,6 +41,8 @@ return {
     keymap_utils.remove(keymaps, "<leader>sG")
     keymap_utils.remove(keymaps, "<leader>sH")
     keymap_utils.remove(keymaps, "<leader>sM")
+    keymap_utils.remove(keymaps, "<leader>sR")
+    keymap_utils.remove(keymaps, "<leader>sS")
     keymap_utils.remove(keymaps, "<leader>sW")
     keymap_utils.remove(keymaps, "<leader>sa")
     keymap_utils.remove(keymaps, "<leader>sc")
