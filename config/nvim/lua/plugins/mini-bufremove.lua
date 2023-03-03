@@ -13,8 +13,6 @@ return {
     delete_keymap[2] = function()
       delete_buffer()
 
-      print("OPENING ALPHA?")
-
       local buffer_id = vim.api.nvim_get_current_buf()
       local is_empty = vim.api.nvim_buf_get_name(buffer_id) == ""
         and vim.bo[buffer_id].filetype == ""
