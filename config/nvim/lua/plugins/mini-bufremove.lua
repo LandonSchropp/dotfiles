@@ -29,5 +29,16 @@ return {
     end
 
     keymap_utils.duplicate(keymaps, "<leader>bd", "X")
+
+    keymap_utils.add(keymaps, "<leader>bo", function()
+      local bufremove = require("mini.bufremove")
+      local current_buffer_id = vim.api.nvim_get_current_buf()
+
+      for _, buffer_id in ipairs(vim.api.nvim_list_bufs()) do
+        if buffer_id ~= current_buffer_id then
+          bufremove.delete(current_buffer_id, true)
+        end
+      end
+    end, { desc = "Close all buffers except current" })
   end,
 }
