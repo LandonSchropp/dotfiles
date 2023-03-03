@@ -15,6 +15,9 @@ return {
         -- https://github.com/ryanoasis/nerd-fonts/issues/661
         section_separators = { left = "", right = "" },
         component_separators = "|",
+        disabled_filetypes = {
+          "alpha",
+        },
       },
       sections = {
         lualine_a = { "mode" },
