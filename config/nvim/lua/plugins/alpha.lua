@@ -10,16 +10,16 @@ return {
       "            ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    ",
       "            ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       ",
       "            ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         ",
-      "            ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║",
-      "            ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝",
+      "            ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           ",
+      "            ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           ",
     }
 
     -- Redefine the buttons.
     dashboard.section.buttons.val = {
       dashboard.button("<leader>ff", "  Find File"),
       dashboard.button("<leader>fr", "  Find and Replace"),
-      dashboard.button("<leader>fo", "  Recents"),
       dashboard.button("<leader>fg", "  Grep"),
+      dashboard.button("<leader>fo", "  Recents"),
       dashboard.button("<leader>n", "  New File"),
     }
 
