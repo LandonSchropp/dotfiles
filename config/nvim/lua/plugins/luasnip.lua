@@ -14,7 +14,7 @@ return {
   config = load_snippets,
   keys = {
     {
-      "<c-n>",
+      "<c-t>",
       function()
         local luasnip = require("luasnip")
 
