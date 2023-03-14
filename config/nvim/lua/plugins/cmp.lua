@@ -36,6 +36,14 @@ return {
       end
     end, { "i", "s" })
 
+    options.mapping["<esc>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.close()
+      else
+        fallback()
+      end
+    end, { "i", "s" })
+
     return options
   end,
 }
