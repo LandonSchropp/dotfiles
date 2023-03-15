@@ -1,6 +1,7 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local table_utils = require("util.table")
+local string_node = require("util.snippet").string_node
 
 local choice = luasnip.c
 local insert = luasnip.i
@@ -23,22 +24,6 @@ local block_node = function(jump_index, key, options)
   return choice(jump_index, choices, { restore_cursor = true })
 end
 
--- Creates a reusable node for Ruby strings.
-local string_node = function(jump_index, key, options)
-  options = vim.tbl_extend("force", { include_quoteless = false }, options or {})
-
-  local choices = {
-    format('"<>"', restore(1, key)),
-    format("'<>'", restore(1, key)),
-  }
-
-  if options.include_quoteless then
-    table.insert(choices, format("<>", restore(1, key)))
-  end
-
-  return choice(jump_index, choices, { restore_cursor = true })
-end
-
 -- A wrapper for the snippet function that configures stores in a more concise way.
 local snippet_with_stores = function(trigger, node, keys)
   local stored = {}
@@ -54,7 +39,7 @@ return {
   snippet_with_stores(
     "describe",
     format("describe <> <>", {
-      string_node(1, "description", { include_quoteless = true }),
+      string_node(1, "description", { "double", "single", "bare" }),
       block_node(2, "text"),
     }),
     { "description", "text" }
