@@ -11,9 +11,9 @@ local M = {}
 ---| '"double"' # A string with double quotes
 ---| '"bare"' # A value without any quotes
 
----Creates a choice node for strings.
----@param jump_index number The index the string's choice node should use for jumping.
----@param key string The key of the restore node to use for the string's content.
+---Creates a node for strings.
+---@param jump_index number The index the node should use for jumping.
+---@param key string The key of the restore node to use for the node's content.
 ---@param types? stringNodeType[] A list of types to allow for the string node. Defaults to `{
 ---"double", "single" }`
 ---@return unknown Returns a Luasnip node for a string.
