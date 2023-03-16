@@ -1,10 +1,12 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
-local string_node = require("util.snippet").string_node
+local snippet_utils = require("util.snippet")
+
+local snippet_with_stores = snippet_utils.snippet_with_stores
+local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
 local insert = luasnip.i
-local snippet = luasnip.s
 local restore = luasnip.r
 
 ---@alias blockNodeType
@@ -29,17 +31,6 @@ local block_node = function(jump_index, key, types)
   end, types)
 
   return choice(jump_index, choices, { restore_cursor = true })
-end
-
--- A wrapper for the snippet function that configures stores in a more concise way.
-local snippet_with_stores = function(trigger, node, keys)
-  local stored = {}
-
-  for index, key in ipairs(keys) do
-    stored[key] = insert(index)
-  end
-
-  return snippet(trigger, node, { stored = stored })
 end
 
 return {
