@@ -5,8 +5,15 @@ local choice = luasnip.c
 local insert = luasnip.i
 local restore = luasnip.r
 local snippet = luasnip.s
+local func = luasnip.f
 
 local M = {}
+
+M.constantize = function(index)
+  return func(function(args)
+    return args[1][1]:upper():gsub("\\S+", "_")
+  end, { index })
+end
 
 -- A wrapper for the snippet function that configures stores in a more concise way.
 ---Creates a snippet that contains insert nodes in the specified stores.
