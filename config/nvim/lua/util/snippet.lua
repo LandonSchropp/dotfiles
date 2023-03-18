@@ -11,7 +11,8 @@ local M = {}
 
 M.constantize = function(index)
   return func(function(args)
-    return args[1][1]:upper():gsub("\\S+", "_")
+    local result = args[1][1]:upper():gsub("%W+", "_")
+    return result
   end, { index })
 end
 
