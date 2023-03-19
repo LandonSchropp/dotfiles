@@ -9,6 +9,18 @@ local func = luasnip.f
 
 local M = {}
 
+---Returns the same value as the provided node's index.
+---@param index number The index of node to duplicate.
+---@return unknown The function node that duplicate the provided node's value.
+M.same = function(index)
+  return func(function(args)
+    return args[1][1]
+  end, { index })
+end
+
+---Returns an underscored uppercase version of the provided node's index.
+---@param index number The index of node to be constantized.
+---@return unknown The function node that constantizes the provided node's value.
 M.constantize = function(index)
   return func(function(args)
     local result = args[1][1]:upper():gsub("%W+", "_")
