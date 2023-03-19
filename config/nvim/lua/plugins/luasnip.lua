@@ -9,9 +9,11 @@ return {
   opts = {
     history = true,
     update_events = { "TextChanged", "TextChangedI" },
-    enable_autosnippets = true,
   },
-  config = load_snippets,
+  config = function(_, options)
+    require("luasnip").setup(options)
+    load_snippets()
+  end,
   keys = {
     {
       "<c-t>",
