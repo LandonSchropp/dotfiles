@@ -27,6 +27,12 @@ return {
           if client.name == "tsserver" then
             vim.keymap.set(
               "n",
+              "<leader>li",
+              "TypescriptAddMissingImports",
+              { desc = "Add missing imports", buffer = buffer }
+            )
+            vim.keymap.set(
+              "n",
               "<leader>lo",
               "TypescriptOrganizeImports",
               { desc = "Organize imports", buffer = buffer }
