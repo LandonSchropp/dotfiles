@@ -35,7 +35,7 @@ vim.opt.breakindentopt = "shift:2"
 vim.opt.spell = true
 
 -- Hide the command bar unless it's being used.
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 ------------
 -- Syntax --
