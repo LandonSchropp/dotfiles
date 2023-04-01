@@ -30,7 +30,6 @@ plugins=(
   kubectl
   node
   npm
-  nvm
   macos
   postgres
   pyenv
@@ -70,3 +69,7 @@ bindkey "^[^[OA" up-line-or-beginning-search
 bindkey "^[^[OB" down-line-or-beginning-search
 bindkey "^[^[OC" forward-char
 bindkey "^[^[OD" backward-char
+
+# fnm
+export PATH="/Users/landon/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"

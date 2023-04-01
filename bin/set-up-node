@@ -5,14 +5,8 @@ set -euo pipefail
 # Note: The installation instructions for this script come from here:
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/nvm.rb
 
-# Set NVM's installation directory to ~/.nvim and install it.
-mkdir -p ~/.nvm
-export NVM_DIR="$HOME/.nvm"
-source "$(brew --prefix nvm)/nvm.sh"
-source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
-
 # Install the latest LTS Node.js version and set the default to it.
-nvm install --lts
+fnm install --lts
 
 # Set the Yarn default configuration.
 rm -f $HOME/.yarnrc
@@ -20,8 +14,3 @@ yarn config set init-author-url "https://landonschropp.com"
 yarn config set init-author-email "schroppl@gmail.com"
 yarn config set init-author-name "Landon Schropp"
 yarn config set init-license UNLICENSED
-
-# Set the silent flag globally.
-# TODO: There's currently no way to set a flag value using the Yarn CLI. This is a workaround.
-# https://github.com/yarnpkg/yarn/issues/6499
-echo '"--silent" true' >> ~/.yarnrc
