@@ -8,6 +8,7 @@ local string_node = snippet_utils.string_node
 local choice = luasnip.c
 local insert = luasnip.i
 local restore = luasnip.r
+local snippet = luasnip.s
 
 local FUNCTION_TYPE_TEMPLATE = { regular = "function() ", arrow = "() =>> " }
 local FUNCTION_BLOCK_TEMPLATE = { single = "{ <> }", multi = "{\n  <>\n}" }
@@ -94,4 +95,5 @@ return {
     }),
     { "target" }
   ),
+  snippet("/**", format("/**\n * <>\n */", { insert(0) })),
 }
