@@ -36,6 +36,15 @@ return {
       end
     end, { "i", "s" })
 
+    -- Override the sources to customize the ordering and include additional sources.
+    options.sources = cmp.config.sources({
+      { name = "copilot" },
+      { name = "luasnip" },
+      { name = "nvim_lsp" },
+      { name = "buffer" },
+      { name = "path" },
+    })
+
     return options
   end,
 }
