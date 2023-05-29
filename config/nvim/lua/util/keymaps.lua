@@ -10,6 +10,17 @@ local function neovim_keys_function(keymap)
   return keymap.lhs
 end
 
+-- Returns the index of the keys in the keymaps table.
+local function find_index(keymaps, keys)
+  for index, keymap in ipairs(keymaps) do
+    if keymap[1] == keys then
+      return index
+    end
+  end
+
+  return nil
+end
+
 -- A helper function that creates a normalized version of two keymaps.
 M.normalize_keys = function(keys)
   -- HACK: I couldn't find a way to cleanly set determine the keymap value, so for now I'm
@@ -80,7 +91,8 @@ end
 
 -- Removes the given keymap from the array of keymaps.
 M.remove = function(keymaps, keys)
-  M.add(keymaps, keys, false)
+  local index = find_index(keymaps, keys)
+  table.remove(keymaps, index)
 end
 
 -- Duplicates one of the mappings with a new set of keys.
