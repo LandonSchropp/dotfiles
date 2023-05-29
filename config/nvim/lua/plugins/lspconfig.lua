@@ -4,14 +4,14 @@ return {
     local keymap_utils = require("util.keymaps")
     local keymaps = require("lazyvim.plugins.lsp.keymaps").get()
 
+    keymap_utils.remove(keymaps, "<c-k>")
+    keymap_utils.remove(keymaps, "<leader>cf")
+
     keymap_utils.remap(keymaps, "<leader>cd", "gd")
     keymap_utils.remap(keymaps, "]d", "]]")
     keymap_utils.remap(keymaps, "[d", "[[")
-    keymap_utils.remap(keymaps, "<leader>ca", "<leader>la")
-    keymap_utils.remap(keymaps, "<leader>cr", "<leader>lr")
 
-    keymap_utils.remove(keymaps, "<c-k>")
-    keymap_utils.remove(keymaps, "<leader>cf")
+    keymap_utils.remap_prefix(keymaps, "<leader>c", "<leader>l")
   end,
   opts = {
     format = {

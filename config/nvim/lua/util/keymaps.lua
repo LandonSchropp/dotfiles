@@ -110,6 +110,18 @@ M.remap = function(keymaps, old_keys, new_keys)
   M.remove(keymaps, old_keys)
 end
 
+-- Remaps _all_ of the keymaps with the given prefix.
+M.remap_prefix = function(keymaps, old_prefix, new_prefix)
+  for _, keymap in pairs(vim.deepcopy(keymaps)) do
+    local old_keymap = keymap[1]
+
+    if vim.startswith(old_keymap, "<leader>c") then
+      local new_keymap = old_keymap:gsub(old_prefix, new_prefix)
+      M.remap(keymaps, old_keymap, new_keymap)
+    end
+  end
+end
+
 -- Remaps a Neovim keymap.
 M.remap_nvim = function(mode, old_keys, new_keys, attributes)
   -- Provide a default for the optional attributes.
