@@ -25,24 +25,15 @@ return {
       tsserver = function(_, opts)
         require("lazyvim.util").on_attach(function(client, buffer)
           if client.name == "tsserver" then
-            vim.keymap.set(
-              "n",
-              "<leader>li",
-              "TypescriptAddMissingImports",
-              { desc = "Add missing imports", buffer = buffer }
-            )
-            vim.keymap.set(
-              "n",
-              "<leader>lo",
-              "TypescriptOrganizeImports",
-              { desc = "Organize imports", buffer = buffer }
-            )
-            vim.keymap.set(
-              "n",
-              "<leader>lR",
-              "TypescriptRenameFile",
-              { desc = "Rename file", buffer = buffer }
-            )
+            vim.keymap.set("n", "<leader>li", function()
+              require("typescript").actions.addMissingImports()
+            end, { desc = "Add missing imports", buffer = buffer })
+            vim.keymap.set("n", "<leader>lo", function()
+              require("typescript").actions.organizeImports()
+            end, { desc = "Organize imports", buffer = buffer })
+            vim.keymap.set("n", "<leader>lR", function()
+              require("typescript").actions.rename()
+            end, { desc = "Rename symbol", buffer = buffer })
           end
         end)
 
