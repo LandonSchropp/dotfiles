@@ -13,6 +13,7 @@ return {
 
     local luasnip = require("luasnip")
     local cmp = require("cmp")
+    local default = require("cmp.config.default")()
 
     options.mapping["<tab>"] = cmp.mapping(function(fallback)
       if luasnip.expand_or_locally_jumpable() then
@@ -44,6 +45,15 @@ return {
       { name = "buffer" },
       { name = "path" },
     })
+
+    -- Override the sorting algorithm so that copilot suggestions are prioritized.
+    -- https://github.com/zbirenbaum/copilot-cmp#comparators
+    options.sorting = {
+      comparators = {
+        require("copilot_cmp.comparators").prioritize,
+        unpack(default.sorting.comparators),
+      },
+    }
 
     return options
   end,
