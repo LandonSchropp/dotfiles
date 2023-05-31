@@ -55,9 +55,7 @@ return {
     keymap_utils.remove(keymaps, "<leader>uC")
 
     -- Remap some of the bindings.
-    keymap_utils.remap(keymaps, "<leader>sb", "<leader>fb")
-    keymap_utils.remap(keymaps, "<leader>sg", "<leader>fg")
-    keymap_utils.remap(keymaps, "<leader>sh", "<leader>fh")
+    keymap_utils.remap_prefix(keymaps, "<leader>s", "<leader>f")
 
     -- Change the descriptions of some of the built-in keymaps.
     keymap_utils.find_required(keymaps, "<leader><space>").desc = "Find files"
