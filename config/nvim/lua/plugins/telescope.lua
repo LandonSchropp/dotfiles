@@ -28,6 +28,14 @@ return {
           },
         },
       },
+
+      -- Override the Git file picker so it doesn't duplicate files. (I don't know why anyone thinks this
+      -- is a good default. 🤷)
+      pickers = {
+        git_files = {
+          git_command = { "git", "ls-files", "--exclude-standard", "--cached", "--deduplicate" },
+        },
+      },
     }
   end,
   keys = function(_, keymaps)
