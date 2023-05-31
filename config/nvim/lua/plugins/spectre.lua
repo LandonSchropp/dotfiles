@@ -1,7 +1,7 @@
 local keymap_utils = require("util.keymaps")
 
 return {
-  "windwp/nvim-spectre",
+  "nvim-pack/nvim-spectre",
   keys = function(_, keymaps)
     keymap_utils.remove(keymaps, "<leader>sr")
 
