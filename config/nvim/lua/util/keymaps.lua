@@ -115,7 +115,7 @@ M.remap_prefix = function(keymaps, old_prefix, new_prefix)
   for _, keymap in pairs(vim.deepcopy(keymaps)) do
     local old_keymap = keymap[1]
 
-    if vim.startswith(old_keymap, "<leader>c") then
+    if vim.startswith(old_keymap, old_prefix) then
       local new_keymap = old_keymap:gsub(old_prefix, new_prefix)
       M.remap(keymaps, old_keymap, new_keymap)
     end
