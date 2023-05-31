@@ -52,7 +52,6 @@ return {
     keymap_utils.remove(keymaps, "<leader>so")
     keymap_utils.remove(keymaps, "<leader>ss")
     keymap_utils.remove(keymaps, "<leader>sw")
-    keymap_utils.remove(keymaps, "<leader>uC")
 
     -- Remap some of the bindings.
     keymap_utils.remap_prefix(keymaps, "<leader>s", "<leader>f")

@@ -11,13 +11,14 @@ return {
       mode = { "n", "v" },
       ["g"] = { name = "+Goto" },
       ["]"] = { name = "+Next" },
-      ["["] = { name = "+Prevous" },
+      ["["] = { name = "+Previous" },
       ["<leader>b"] = { name = "+Buffer" },
-      ["<leader>l"] = { name = "+Language/LSP" },
       ["<leader>f"] = { name = "+Find" },
       ["<leader>g"] = { name = "+Git" },
-      ["<leader>t"] = { name = "+Test" },
       ["<leader>gh"] = { name = "+Hunks" },
+      ["<leader>l"] = { name = "+Language/LSP" },
+      ["<leader>t"] = { name = "+Test" },
+      ["<leader>u"] = { name = "+UI" },
     })
   end,
 }
