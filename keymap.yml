@@ -34,40 +34,40 @@ default_layer:
 keypad:
   left: |2
     ╭─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────╮
-    │&kp EQUAL│&kp N1   │&kp N2   │&kp N3   │&kp N4   │&kp N5   │&tog 1   │
+    │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-    │&kp TAB  │&kp Q    │&kp W    │&kp E    │&kp R    │&kp T    │&none    │
+    │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤         
-    │&kp ESC  │&kp A    │&kp S    │&kp D    │&kp F    │&kp G    │&none    │         
+    │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │         
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────╯         
-    │&kp LSHFT│&kp Z    │&kp X    │&kp C    │&kp V    │&kp B    │                   
+    │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │                   
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────╯                   
-    │&mo 2    │&kp GRAVE│&kp CAPS │&kp LEFT │&kp RIGHT│                             
+    │&trans   │&trans   │&trans   │&trans   │&trans   │                             
     ╰─────────┴─────────┴─────────┴─────────┴─────────╯                             
   center: |2
               ╭─────────┬─────────╮ ╭─────────┬─────────╮
-              │&kp LCTRL│&kp LALT │ │&kp RCTRL│&kp LGUI │
+              │&trans   │&trans   │ │&trans   │&trans   │
     ╭─────────┼─────────┼─────────┤ ├─────────┼─────────┼─────────╮
-    │         │         │&kp HOME │ │&kp PG_UP│         │         │
+    │         │         │&trans   │ │&trans   │         │         │
     │         │         ├─────────┤ ├─────────┤         │         │
-    │&kp BSPC │&kp DEL  │&kp END  │ │&kp PG_DN│&kp ENTER│&kp SPACE│
+    │&trans   │&trans   │&trans   │ │&trans   │&trans   │&trans   │
     ╰─────────┴─────────┴─────────╯ ╰─────────┴─────────┴─────────╯
   right: |2
     ╭─────────┬─────────┬──────────┬────────────┬─────────────┬───────────────┬─────────╮
-    │&mo 3    │&kp N6   │&kp KP_NUM│&kp KP_EQUAL│&kp KP_DIVIDE│&kp KP_MULTIPLY│&trans   │
+    │&trans   │&trans   │&kp KP_NUM│&kp KP_EQUAL│&kp KP_DIVIDE│&kp KP_MULTIPLY│&trans   │
     ├─────────┼─────────┼──────────┼────────────┼─────────────┼───────────────┼─────────┤
-    │&none    │&kp Y    │&kp KP_N7 │&kp KP_N8   │&kp KP_N9    │&kp KP_MINUS   │&kp BSLH │
+    │&trans   │&trans   │&kp KP_N7 │&kp KP_N8   │&kp KP_N9    │&kp KP_MINUS   │&trans   │
     ├─────────┼─────────┼──────────┼────────────┼─────────────┼───────────────┼─────────┤         
-    │&none    │&kp H    │&kp KP_N4 │&kp KP_N5   │&kp KP_N6    │&kp KP_PLUS    │&kp SQT  │         
+    │&trans   │&trans   │&kp KP_N4 │&kp KP_N5   │&kp KP_N6    │&kp KP_PLUS    │&trans   │         
     ╰─────────┼─────────┼──────────┼────────────┼─────────────┼───────────────┼─────────┤         
-              │&kp N    │&kp KP_N1 │&kp KP_N2   │&kp KP_N3    │&kp KP_ENTER   │&kp RSHFT│                   
+              │&trans   │&kp KP_N1 │&kp KP_N2   │&kp KP_N3    │&kp KP_ENTER   │&trans   │                   
               ╰─────────┼──────────┼────────────┼─────────────┼───────────────┼─────────┤                   
-                        │&kp up    │&kp DOWN    │&kp KP_DOT   │&kp RBKT       │&mo 2    │                             
+                        │&trans    │&trans      │&kp KP_DOT   │&trans         │&trans   │                             
                         ╰──────────┴────────────┴─────────────┴───────────────┴─────────╯                             
 fn:
   left: |2
     ╭─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────╮
-    │&kp F1   │&kp F2   │&kp F3   │&kp F4   │&kp F5   │&kp F6   │&tog 1   │
+    │&kp F1   │&kp F2   │&kp F3   │&kp F4   │&kp F5   │&kp F6   │&trans   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤         
@@ -87,7 +87,7 @@ fn:
     ╰─────────┴─────────┴─────────╯ ╰─────────┴─────────┴─────────╯
   right: |2
     ╭─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────╮
-    │&mo 3    │&kp F7   │&kp F8   │&kp F9   │&kp F10  │&kp F11  │&kp F12  │
+    │&trans   │&kp F7   │&kp F8   │&kp F9   │&kp F10  │&kp F11  │&kp F12  │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │&trans   │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤         
