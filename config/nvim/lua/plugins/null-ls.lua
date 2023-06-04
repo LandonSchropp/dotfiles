@@ -4,7 +4,6 @@ return {
   "jose-elias-alvarez/null-ls.nvim",
   opts = function()
     local null_ls = require("null-ls")
-    local lsp_utils = require("lspconfig")["util"]
 
     return {
       sources = {
