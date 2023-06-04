@@ -1,0 +1,112 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require "fileutils"
+require "tmpdir"
+require "yaml"
+
+REPO = "KinesisCorporation/Adv360-Pro-ZMK.git"
+IGNORED_CHARACTERS = /[^\w& ]+/
+
+def system(command)
+  unless Kernel.system(command, out: $stdout, err: $stderr)
+    puts "\n☠️  Command failed: '#{command}'"
+    exit(1)
+  end
+end
+
+def split_binding_line(line)
+  line
+    .gsub(/^#{IGNORED_CHARACTERS}|#{IGNORED_CHARACTERS}$/, "")
+    .split(IGNORED_CHARACTERS)
+    .map(&:strip)
+    .reject(&:empty?)
+end
+
+def split_binding(binding)
+  binding
+    .strip
+    .split("\n")
+    .map { split_binding_line(_1) }
+    .reject(&:empty?)
+end
+
+def split_bindings(bindings)
+  bindings.values.map { split_binding(_1) }
+end
+
+def fill_bindings(bindings)
+  max_length = bindings.map(&:length).max
+  bindings.map { [""] * (max_length - _1.length) + _1 }
+end
+
+def join_bindings(bindings)
+  bindings.transpose.map(&:flatten)
+end
+
+def stringify_bindings(bindings)
+  bindings.map { _1.join(" ") }.join("\n")
+end
+
+def replace_bidings(config, name, bindings)
+  layer_regex = /(#{name}\s*{\s*bindings\s*=\s*<)[^>]+/
+
+  replacement_bindings = bindings
+    .then { split_bindings(_1) }
+    .then { fill_bindings(_1) }
+    .then { join_bindings(_1) }
+    .then { stringify_bindings(_1) }
+
+  config.sub(layer_regex, "\\1\n#{replacement_bindings}\n")
+end
+
+# Make sure Docker is running.
+unless Kernel.system("docker stats --no-stream &> /dev/null")
+  puts "🐳 Docker is not running. Please start Docker and try again."
+  exit 1
+end
+
+# Download the Kinesis repository.
+repo_directory = Dir.mktmpdir("Adv360-Pro-ZMK")
+puts "🐈 Cloning Kinesis Advantage 360 Pro ZMK repo..."
+puts
+system("git clone git@github.com:#{REPO} #{repo_directory}")
+
+# Ensure the repository is cleaned up once the script is done running.
+at_exit do
+  puts "\n🗑  Removing repository directory."
+  FileUtils.rm_rf(repo_directory)
+end
+
+# Read the config file.
+config_path = File.join(repo_directory, "config/adv360.keymap")
+config = File.read(config_path)
+
+# Replace the keymaps in the config with the updated keymaps from this repo.
+layers = YAML.load_file(File.join(__dir__, "../keymap.yml"))
+
+config = layers.reduce(config) do |config, (name, bindings)|
+  replace_bidings(config, name, bindings)
+end
+
+# Write the config file.
+puts "\n✍️  Writing updated config.\n\n"
+File.write(config_path, config)
+puts config_path
+
+# Generate the ZMK firmware.
+puts "\n🔨 Building the ZMK firmware...\n"
+Dir.chdir(repo_directory)
+system("bash -c 'make all'")
+
+# Copy the firmware to the keyboard directory.
+puts "\n🐑 Copying the builds to the dotfiles.\n"
+
+Dir[File.join(repo_directory, "firmware/*")].each do
+  destination_path = File.join(__dir__, "..", File.basename(_1).sub(/^.*-/, ""))
+  FileUtils.cp(_1, destination_path)
+end
+
+# Let the user know the script has completed.
+puts "✅ Done."
