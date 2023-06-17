@@ -1,10 +1,14 @@
 -- Automatically change into project root directories.
 return {
   "ahmedkhalf/project.nvim",
-  config = function()
-    require("project_nvim").setup({
-      -- Don't change into subdirectories in monorepos.
-      exclude_dirs = { "packages/*", "plugins/*" },
-    })
+  opts = {
+    -- Display a message when changing the project root.
+    silent_chdir = false,
+
+    -- Don't change to child packages in monorepos.
+    exclude_dirs = { "packages/*", "plugins/*" },
+  },
+  config = function(_, options)
+    require("project_nvim").setup(options)
   end,
 }
