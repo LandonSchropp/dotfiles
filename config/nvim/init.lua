@@ -22,6 +22,7 @@ require("lazy").setup({
   -- Specify all of the plugin sources.
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.util.project" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "plugins" },
