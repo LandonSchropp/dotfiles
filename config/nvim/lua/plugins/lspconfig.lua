@@ -37,7 +37,21 @@ return {
           end
         end)
 
-        require("typescript").setup({ server = opts })
+        -- Override the server options to disable the "File is a CommonJS module" error. This error
+        -- is annoying because it's applied to configuration files that are required to be CommonJS
+        -- modules.
+        opts = vim.tbl_deep_extend("force", opts, {
+          settings = {
+            diagnostics = {
+              ignoredCodes = { 80001 },
+            },
+          },
+        })
+
+        require("typescript").setup({
+          server = opts,
+        })
+
         return true
       end,
     },
