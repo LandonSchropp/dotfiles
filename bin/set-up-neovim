@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Grab the root directory.
+ROOT_DIRECTORY="$(dirname "$0")/.."
+
+# Wipe out the previous config.
+rm -rf ~/.config/nvim
+
+# Clone AstroNvim
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+# Link the config files.
+"$ROOT_DIRECTORY/bin/set-up-rcup" "$ROOT_DIRECTORY/config/nvim/user/init.lua"
+
+# Run Neovim to do a headless installation.
+nvim --headless +q
