@@ -48,6 +48,7 @@ return {
 
     -- Override the sorting algorithm so that copilot suggestions are prioritized.
     -- https://github.com/zbirenbaum/copilot-cmp#comparators
+    -- TODO: Sort copilot under the import suggestion so that I can auto-import suggestions instead.
     options.sorting = {
       comparators = {
         require("copilot_cmp.comparators").prioritize,
