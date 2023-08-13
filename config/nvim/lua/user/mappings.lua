@@ -7,6 +7,8 @@ return function(mappings)
     require("user.mappings.comments")(mappings),
     require("user.mappings.file-explorer")(mappings),
     require("user.mappings.find")(mappings),
-    require("user.mappings.home")(mappings)
+    require("user.mappings.home")(mappings),
+    require("user.mappings.text")(mappings),
+    require("user.mappings.yank")(mappings)
   )
 end
