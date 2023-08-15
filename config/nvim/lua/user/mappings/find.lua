@@ -18,10 +18,11 @@ return function(mappings)
       ["<leader>fo"] = false,
       ["<leader>ft"] = false,
       ["<leader>fw"] = false,
+      ["<leader>fr"] = false,
 
       -- Remap mappings
       ["<leader><leader>"] = mappings.n["<leader>ff"],
-      ["<leader>fr"] = mappings.n["<leader>fo"],
+      ["<leader>fR"] = mappings.n["<leader>fo"],
       ["<leader>fg"] = extend(mappings.n["<leader>fw"], { desc = "Grep" }),
     },
   }
