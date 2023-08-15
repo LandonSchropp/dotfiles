@@ -7,7 +7,10 @@ return function(mappings)
       ["<leader>o"] = false,
 
       -- Remap mappings
-      ["<leader>e"] = extend(mappings.n["<leader>e"], { desc = "File explorer" }),
+      ["<leader>Ft"] = extend(mappings.n["<leader>e"], { desc = "Tree" }),
+
+      -- Which Key
+      ["<leader>F"] = { name = "󰈔 Files" },
     },
   }
 end

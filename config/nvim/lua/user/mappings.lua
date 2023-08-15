@@ -5,7 +5,7 @@ return function(mappings)
     mappings,
     require("user.mappings.buffers")(mappings),
     require("user.mappings.comments")(mappings),
-    require("user.mappings.file-explorer")(mappings),
+    require("user.mappings.files")(mappings),
     require("user.mappings.find")(mappings),
     require("user.mappings.home")(mappings),
     require("user.mappings.text")(mappings),

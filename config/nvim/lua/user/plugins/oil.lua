@@ -4,4 +4,13 @@ return {
   config = function()
     require("oil").setup()
   end,
+  keys = {
+    {
+      "<leader>Fo",
+      function()
+        require("oil").open()
+      end,
+      desc = "Oil",
+    },
+  },
 }
