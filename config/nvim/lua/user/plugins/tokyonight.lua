@@ -1,3 +1,4 @@
 return {
-  "folke/tokyonight.nvim",
+  { "AstroNvim/astrocommunity" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
 }
