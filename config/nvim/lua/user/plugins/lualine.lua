@@ -7,9 +7,11 @@ end
 
 -- A nicer status line.
 return {
-  "nvim-lualine/lualine.nvim",
-  config = function()
-    require("lualine").setup({
+  { "AstroNvim/astrocommunity" },
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
       options = {
         -- TODO: Enable the curved separator characters ("" and "") once the following bug is fixed:
         -- https://github.com/ryanoasis/nerd-fonts/issues/661
@@ -24,13 +26,13 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           { "filename", color = {}, cond = nil, left = 0, right = 0, file_status = false },
-          { "filetype", left = 0, right = 0 },
+          { "filetype", left = 0,   right = 0 },
         },
 
         lualine_x = { "diff" },
         lualine_y = { "diagnostics" },
         lualine_z = { location },
       },
-    })
-  end,
+    },
+  },
 }
