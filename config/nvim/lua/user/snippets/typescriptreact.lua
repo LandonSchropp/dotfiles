@@ -1,6 +1,6 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
-local snippet_utils = require("util.snippet")
+local snippet_utils = require("user.utilities.snippet")
 
 local same = snippet_utils.same
 
