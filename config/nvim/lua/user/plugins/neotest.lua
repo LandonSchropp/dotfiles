@@ -1,3 +1,35 @@
+local function run_nearest_test()
+  vim.cmd("write")
+  require("neotest").run.run()
+end
+
+local function debug_nearest_test()
+  vim.cmd("write")
+  require("neotest").run.run({ strategy = "dap" })
+end
+
+local function attach_to_nearest_test()
+  vim.cmd("write")
+  require("neotest").run.attach()
+end
+
+local function run_file()
+  vim.cmd("write")
+  require("neotest").run.run(vim.fn.expand("%"))
+end
+
+local function open_test_summary()
+  require("neotest").summary.open()
+end
+
+local function stop_nearest_test()
+  require("neotest").run.stop()
+end
+
+local function open_test_output()
+  require("neotest").output.open()
+end
+
 return {
   "nvim-neotest/neotest",
   dependencies = {
@@ -11,55 +43,37 @@ return {
   keys = {
     {
       "<leader>tt",
-      function()
-        vim.cmd("write")
-        require("neotest").run.run()
-      end,
+      run_nearest_test,
       desc = "Run nearest test",
     },
     {
       "<leader>td",
-      function()
-        vim.cmd("write")
-        require("neotest").run.run({ strategy = "dap" })
-      end,
+      debug_nearest_test,
       desc = "Debug nearest test",
     },
     {
       "<leader>ta",
-      function()
-        vim.cmd("write")
-        require("neotest").run.attach()
-      end,
+      attach_to_nearest_test,
       desc = "Attach to nearest test",
     },
     {
       "<leader>tf",
-      function()
-        vim.cmd("write")
-        require("neotest").run.run(vim.fn.expand("%"))
-      end,
+      run_file,
       desc = "Run file",
     },
     {
       "<leader>ts",
-      function()
-        require("neotest").summary.open()
-      end,
+      open_test_summary,
       desc = "Open test summary",
     },
     {
       "<leader>tS",
-      function()
-        require("neotest").run.stop()
-      end,
+      stop_nearest_test,
       desc = "Stop the nearest test",
     },
     {
       "<leader>to",
-      function()
-        require("neotest").output.open()
-      end,
+      open_test_output,
       desc = "Open test output",
     },
   },
