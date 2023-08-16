@@ -1,1 +1,0 @@
-return { "dmmulroy/tsc.nvim" }
