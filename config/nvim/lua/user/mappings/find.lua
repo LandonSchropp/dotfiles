@@ -24,6 +24,7 @@ return function(mappings)
       ["<leader><leader>"] = mappings.n["<leader>ff"],
       ["<leader>fR"] = mappings.n["<leader>fo"],
       ["<leader>fg"] = extend(mappings.n["<leader>fw"], { desc = "Grep" }),
+      ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", desc = "Highlights" },
     },
   }
 end
