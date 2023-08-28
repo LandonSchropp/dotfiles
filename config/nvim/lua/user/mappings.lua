@@ -9,7 +9,6 @@ return function(mappings)
     require("user.mappings.find")(mappings),
     require("user.mappings.home")(mappings),
     require("user.mappings.text")(mappings),
-    require("user.mappings.yank")(mappings),
-    require("user.mappings.session")(mappings)
+    require("user.mappings.yank")(mappings)
   )
 end
