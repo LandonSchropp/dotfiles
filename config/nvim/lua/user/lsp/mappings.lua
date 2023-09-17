@@ -5,6 +5,9 @@ return function(mappings)
     n = {
       -- Remove mappings
       ["<leader>li"] = false,
+      ["<leader>uf"] = false,
+      ["<leader>uF"] = false,
+      ["<leader>uY"] = false,
 
       -- Remap
       ["<leader>lIl"] = mappings.n["<leader>li"],
