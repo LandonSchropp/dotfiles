@@ -9,6 +9,7 @@ return function(mappings)
       -- Remap
       ["<leader>lIl"] = mappings.n["<leader>li"],
       ["<leader>lIn"] = mappings.n["<leader>lI"],
+      ["gd"] = mappings.n["<leader>ld"],
     },
   })
 
