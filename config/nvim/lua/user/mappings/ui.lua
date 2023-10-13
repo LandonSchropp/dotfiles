@@ -1,14 +1,17 @@
-local PREFIX = "<leader>u"
+local MAPPINGS_TO_KEEP = { "<leader>ui", "<leader>uS", "<leader>uh", "<leader>uw" }
 
 return function(mappings)
-  local removed_mappings = { n = {} }
+  local updated_mappings = { n = {} }
 
-  -- Remove all of the UI mappings.
+  -- Remove mappings
   for key, _ in pairs(mappings.n) do
-    if type(key) == "string" and key:sub(1, #PREFIX) == PREFIX then
-      removed_mappings.n[key] = false
+    if not vim.tbl_contains(MAPPINGS_TO_KEEP, key) then
+      updated_mappings.n[key] = false
     end
   end
 
-  return removed_mappings
+  -- Add mappings
+  updated_mappings.n["<leader>uc"] = { ":Copilot toggle<cr>", desc = "Toggle Copilot" }
+
+  return updated_mappings
 end
