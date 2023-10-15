@@ -1,7 +1,7 @@
 local extend = require("user.utilities.table").extend
 
 local function git_files()
-  require("telescope.builtin").git_files({ prompt_title = "Find Files" })
+  require("telescope.builtin").git_files({ prompt_title = "Find Files", show_untracked = true })
 end
 
 local GIT_FILES_MAPPING = { git_files, desc = "Find Files" }
