@@ -13,6 +13,9 @@ return function(mappings)
       ["<leader>lIl"] = mappings.n["<leader>li"],
       ["<leader>lIn"] = mappings.n["<leader>lI"],
       ["gd"] = mappings.n["<leader>ld"],
+
+      -- Add
+      ["<leader>lm"] = { "<cmd>Mason<cr>", desc = "Mason" },
     },
   })
 
