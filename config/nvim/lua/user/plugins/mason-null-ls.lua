@@ -1,10 +1,6 @@
 return {
   "jay-babu/mason-null-ls.nvim",
   opts = function(_, opts)
-    local utils = require("astronvim.utils")
-
-    opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, "rubocop")
-
     local has_rubocop = function(util)
       return util.root_has_file(".rubocop.yml")
     end
