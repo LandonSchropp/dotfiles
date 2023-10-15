@@ -73,3 +73,8 @@ bindkey "^[^[OD" backward-char
 # fnm
 export PATH="/Users/landon/Library/Application Support/fnm:$PATH"
 eval "`fnm env`"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
