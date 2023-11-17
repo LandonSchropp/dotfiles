@@ -55,6 +55,9 @@ return {
     -- Ensure there's always a little space above and below the current line
     scrolloff = 2,
 
+    -- Prevent annoying horizontal scrolling
+    startofline = false,
+
     -- Dont use the system clipboard.
     clipboard = {},
   },
