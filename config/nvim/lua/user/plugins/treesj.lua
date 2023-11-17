@@ -31,7 +31,7 @@ return {
     {
       "gS",
       function()
-        require("treesj").split({ split = { recursive = true } })
+        require("treesj").split({ split = { recursive = false } })
       end,
       desc = "Split recursively",
     },
