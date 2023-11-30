@@ -4,6 +4,30 @@ local has_rubocop = function(util)
   return util.root_has_file(".rubocop.yml")
 end
 
+local has_prettier = function(util)
+  return util.root_has_file(".prettierrc")
+    or util.root_has_file(".prettierrc.json")
+    or util.root_has_file(".prettierrc.yml")
+    or util.root_has_file(".prettierrc.yaml")
+    or util.root_has_file(".prettierrc.json5")
+    or util.root_has_file(".prettierrc.js")
+    or util.root_has_file(".prettierrc.cjs")
+    or util.root_has_file("prettier.config.js")
+    or util.root_has_file(".prettierrc.mjs")
+    or util.root_has_file("prettier.config.mjs")
+    or util.root_has_file("prettier.config.cjs")
+    or util.root_has_file(".prettierrc.toml")
+end
+
+local has_eslint = function(util)
+  return util.root_has_file(".eslintrc.js")
+    or util.root_has_file(".eslintrc.cjs")
+    or util.root_has_file(".eslintrc.yaml")
+    or util.root_has_file(".eslintrc.yml")
+    or util.root_has_file(".eslintrc.json")
+    or util.root_has_file(".eslintrc")
+end
+
 return {
   "jose-elias-alvarez/null-ls.nvim",
   opts = function(_, opts)
@@ -21,10 +45,10 @@ return {
       null_ls.builtins.code_actions.gitsigns,
 
       -- JavaScript/TypeScript
-      null_ls.builtins.code_actions.eslint_d,
-      null_ls.builtins.diagnostics.eslint_d,
-      null_ls.builtins.formatting.eslint_d,
-      null_ls.builtins.formatting.prettier,
+      null_ls.builtins.code_actions.eslint_d.with({ condition = has_eslint }),
+      null_ls.builtins.diagnostics.eslint_d.with({ condition = has_eslint }),
+      null_ls.builtins.formatting.eslint_d.with({ condition = has_eslint }),
+      null_ls.builtins.formatting.prettier.with({ condition = has_prettier }),
 
       -- JSON
       null_ls.builtins.formatting.fixjson,
