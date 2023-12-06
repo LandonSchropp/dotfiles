@@ -4,7 +4,6 @@ return {
   opts = {
     use_default_keymaps = false,
     check_syntax_error = false,
-    max_join_length = 100,
   },
   keys = {
     {
