@@ -8,7 +8,11 @@ return function(mappings)
 
   -- Remove UI mappings
   for key, _ in pairs(mappings.n) do
-    if starts_with(key, UI_PREFIX) and not vim.tbl_contains(MAPPINGS_TO_KEEP, key) then
+    if
+      key ~= UI_PREFIX
+      and starts_with(key, UI_PREFIX)
+      and not vim.tbl_contains(MAPPINGS_TO_KEEP, key)
+    then
       updated_mappings.n[key] = false
     end
   end
