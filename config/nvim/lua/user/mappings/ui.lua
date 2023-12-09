@@ -1,7 +1,7 @@
 local starts_with = require("user.utilities.string").starts_with
 
 local UI_PREFIX = "<leader>u"
-local MAPPINGS_TO_KEEP = { "<leader>ui", "<leader>uS", "<leader>uh", "<leader>uw" }
+local MAPPINGS_TO_KEEP = { "<leader>ui", "<leader>uS", "<leader>uh", "<leader>uw", "<leader>un" }
 
 return function(mappings)
   local updated_mappings = { n = {} }
