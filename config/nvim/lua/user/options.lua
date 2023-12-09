@@ -11,6 +11,9 @@ return {
     -- Highlight the line after the textwidth
     colorcolumn = "+1",
 
+    -- Enable soft wrapping.
+    wrap = true,
+
     ---------------
     -- Indenting --
     ---------------
