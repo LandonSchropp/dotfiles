@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require "english"
-
-# This script outputs the configuration for the current service in YAML.
-
-# Grab the current service name.
-puts `docker-compose-service-configuration #{ `docker-compose-current-service-name` }`
-exit 1 unless $CHILD_STATUS.success?

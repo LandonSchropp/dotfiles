@@ -21,8 +21,6 @@ plugins=(
   colored-man-pages
   command-not-found
   direnv
-  docker
-  docker-compose
   git
   github
   httpie
