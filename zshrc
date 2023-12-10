@@ -5,14 +5,6 @@ unset GEM_HOME
 # Set the path to Oh My Zsh.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load.
-ZSH_THEME="landon"
-
-# Oh My Zsh settings
-DISABLE_UPDATE_PROMPT="true"
-DISABLE_AUTO_TITLE="true"
-ENABLE_CORRECTION="true"
-
 # Oh My Zsh plugins
 plugins=(
   alias-finder
@@ -45,6 +37,10 @@ plugins=(
 
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
+
+# Set the prompt to Starship
+eval "$(starship init zsh)"
+autoload -U promptinit; promptinit
 
 # Enable source highlighting in less.
 export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
