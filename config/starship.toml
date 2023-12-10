@@ -4,6 +4,16 @@
 success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
 
+[gcloud]
+disabled = true
+
+[git_status]
+format = '([\[$conflicted$ahead_behind\]]($style) )'
+style = 'bold purple'
+conflicted = ' conflict'
+ahead = '󰁝 ahead'
+behind = '󰁅 behind'
+diverged = '󰹹 diverged'
 
 # All of the settings below this commenter were generated from calling `starship preset
 # nerd-font-symbols`. Hopefully this is turned into a simpler option in the future and I don't need
