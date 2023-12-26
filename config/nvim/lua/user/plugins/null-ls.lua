@@ -19,15 +19,6 @@ local has_prettier = function(util)
     or util.root_has_file(".prettierrc.toml")
 end
 
-local has_eslint = function(util)
-  return util.root_has_file(".eslintrc.js")
-    or util.root_has_file(".eslintrc.cjs")
-    or util.root_has_file(".eslintrc.yaml")
-    or util.root_has_file(".eslintrc.yml")
-    or util.root_has_file(".eslintrc.json")
-    or util.root_has_file(".eslintrc")
-end
-
 return {
   "jose-elias-alvarez/null-ls.nvim",
   opts = function(_, opts)
@@ -45,9 +36,6 @@ return {
       null_ls.builtins.code_actions.gitsigns,
 
       -- JavaScript/TypeScript
-      null_ls.builtins.code_actions.eslint_d.with({ condition = has_eslint }),
-      null_ls.builtins.diagnostics.eslint_d.with({ condition = has_eslint }),
-      null_ls.builtins.formatting.eslint_d.with({ condition = has_eslint }),
       null_ls.builtins.formatting.prettier.with({ condition = has_prettier }),
 
       -- JSON

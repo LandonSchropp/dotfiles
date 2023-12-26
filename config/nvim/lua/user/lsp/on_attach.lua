@@ -16,13 +16,4 @@ return function(client, buffer)
       require("typescript").actions.removeUnused()
     end, { desc = "Remove unused", buffer = buffer })
   end
-
-  -- TODO: This can be removed once this is added to AstronvimCommunity.
-  -- https://github.com/AstroNvim/astrocommunity/issues/608
-  if client.name == "eslint" then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = buffer,
-      command = "EslintFixAll",
-    })
-  end
 end
