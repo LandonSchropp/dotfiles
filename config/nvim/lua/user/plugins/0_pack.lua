@@ -1,5 +1,6 @@
 return {
   { "AstroNvim/astrocommunity" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.html-css" },
