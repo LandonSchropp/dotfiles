@@ -38,9 +38,6 @@ return {
       -- JavaScript/TypeScript
       null_ls.builtins.formatting.prettier.with({ condition = has_prettier }),
 
-      -- JSON
-      null_ls.builtins.formatting.fixjson,
-
       -- Lua
       null_ls.builtins.formatting.stylua,
 
