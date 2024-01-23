@@ -1,6 +1,14 @@
 return {
 
   opt = {
+
+    -------------
+    -- Editing --
+    -------------
+
+    -- Disable swap files
+    swapfile = false,
+
     --------------
     -- Wrapping --
     --------------
