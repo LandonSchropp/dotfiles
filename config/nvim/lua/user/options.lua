@@ -69,7 +69,7 @@ return {
     -- Prevent annoying horizontal scrolling
     startofline = false,
 
-    -- Dont use the system clipboard.
+    -- Don't use the system clipboard.
     clipboard = {},
   },
 }
