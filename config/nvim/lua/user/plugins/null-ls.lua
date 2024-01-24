@@ -41,9 +41,6 @@ return {
       -- Lua
       null_ls.builtins.formatting.stylua,
 
-      -- Elixir
-      null_ls.builtins.formatting.mix,
-
       -- Shell
       null_ls.builtins.code_actions.shellcheck,
       null_ls.builtins.diagnostics.shellcheck,
