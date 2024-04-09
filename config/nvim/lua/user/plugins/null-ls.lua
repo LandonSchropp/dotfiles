@@ -43,9 +43,6 @@ return {
       -- Docker
       null_ls.builtins.diagnostics.hadolint,
 
-      -- HTML/XML
-      null_ls.builtins.diagnostics.tidy,
-
       -- Just
       null_ls.builtins.formatting.just,
     }
