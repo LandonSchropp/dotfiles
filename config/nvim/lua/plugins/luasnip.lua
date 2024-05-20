@@ -5,6 +5,6 @@ return {
     require("plugins.configs.luasnip")(...)
 
     -- Load my custom snippets.
-    require("luasnip.loaders.from_lua").load({ paths = "./lua/user/snippets" })
+    require("luasnip.loaders.from_lua").load({ paths = { "./lua/snippets" } })
   end,
 }
