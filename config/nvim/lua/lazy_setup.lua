@@ -1,9 +1,11 @@
-require("lazy").setup({
+---@type LazySpec
+local plugins = {
   {
     "AstroNvim/AstroNvim",
     version = "^4",
     import = "astronvim.plugins",
     opts = {
+
       -- This ensures the leader key must be configured before Lazy is set up
       mapleader = " ",
 
@@ -16,18 +18,6 @@ require("lazy").setup({
   },
   { import = "community" },
   { import = "plugins" },
-} --[[@as LazySpec]], {
-  install = { colorscheme = { "astrodark", "habamax" } },
-  ui = { backdrop = 100 },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "zipPlugin",
-      },
-    },
-  },
-} --[[@as LazyConfig]])
+}
+
+require("lazy").setup(plugins, {})
