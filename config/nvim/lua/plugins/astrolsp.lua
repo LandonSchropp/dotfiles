@@ -6,7 +6,7 @@ return {
   opts = function(_, opts)
     ---@type AstroLSPOpts
     return deep_extend(opts, {
-      servers = {
+      config = {
         jsonls = {
           init_options = {
 
