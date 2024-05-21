@@ -1,7 +1,7 @@
 return function(_)
   return {
     n = {
-      ["<leader>/"] = false,
+      ["<Leader>h"] = false,
     },
   }
 end

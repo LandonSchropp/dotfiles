@@ -2,7 +2,7 @@ return function(_)
   return {
     n = {
       -- Which Key
-      ["<leader>t"] = { name = " Test" },
+      ["<Leader>c"] = { name = " Coliplot" },
     },
   }
 end
