@@ -29,20 +29,20 @@ return {
 
         n = {
           -- Remove mappings
-          ["<leader>li"] = false,
-          ["<leader>uf"] = false,
-          ["<leader>uF"] = false,
-          ["<leader>uY"] = false,
+          ["<Leader>li"] = false,
+          ["<Leader>uf"] = false,
+          ["<Leader>uF"] = false,
+          ["<Leader>uY"] = false,
 
           -- Remap the info maps to leave space for TypeScript-specific import mapping.
-          ["<leader>lI"] = opts.mappings.n["<leader>li"],
-          ["<leader>lN"] = opts.mappings.n["<leader>lI"],
+          ["<Leader>lI"] = opts.mappings.n["<Leader>li"],
+          ["<Leader>lN"] = opts.mappings.n["<Leader>lI"],
 
           -- Remap the diagnostic mapping to something shorter.
-          ["gd"] = opts.mappings.n["<leader>ld"],
+          ["gd"] = opts.mappings.n["<Leader>ld"],
 
           -- Add a handy Mason mapping.
-          ["<leader>lm"] = { "<cmd>Mason<cr>", desc = "Mason" },
+          ["<Leader>lm"] = { "<cmd>Mason<cr>", desc = "Mason" },
         },
       },
     })

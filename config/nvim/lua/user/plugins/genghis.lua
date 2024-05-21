@@ -26,11 +26,11 @@ return {
   "chrisgrieser/nvim-genghis",
   dependencies = "stevearc/dressing.nvim",
   keys = {
-    { "<leader>Fy", copy_path,     desc = "Copy path" },
-    { "<leader>FY", copy_filename, desc = "Copy name" },
-    { "<leader>Fx", chmodx,        desc = "chmod +x" },
-    { "<leader>Fr", rename_file,   desc = "Rename" },
-    { "<leader>Fm", move,          desc = "Move" },
-    { "<leader>Fd", delete,        desc = "Delete" },
+    { "<Leader>Fy", copy_path,     desc = "Copy path" },
+    { "<Leader>FY", copy_filename, desc = "Copy name" },
+    { "<Leader>Fx", chmodx,        desc = "chmod +x" },
+    { "<Leader>Fr", rename_file,   desc = "Rename" },
+    { "<Leader>Fm", move,          desc = "Move" },
+    { "<Leader>Fd", delete,        desc = "Delete" },
   },
 }

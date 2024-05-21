@@ -11,6 +11,6 @@ return {
     },
   },
   keys = {
-    { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find todos" },
+    { "<Leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find todos" },
   },
 }

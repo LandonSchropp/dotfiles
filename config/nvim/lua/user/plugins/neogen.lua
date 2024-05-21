@@ -10,6 +10,6 @@ return {
   },
   version = "*",
   keys = {
-    { "<leader>ld", generate, desc = "Generate documentation" },
+    { "<Leader>ld", generate, desc = "Generate documentation" },
   },
 }

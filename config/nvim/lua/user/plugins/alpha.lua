@@ -15,12 +15,12 @@ return {
 
     -- Redefine the buttons.
     dashboard.section.buttons.val = {
-      dashboard.button("<leader>n", "  New File"),
-      dashboard.button("<leader>ff", "  Find File"),
-      dashboard.button("<leader>fr", "  Find and Replace"),
-      dashboard.button("<leader>fg", "󰈭  Grep"),
-      dashboard.button("<leader>fR", "󰈙  Recents"),
-      dashboard.button("<leader>Sl", "  Last Session"),
+      dashboard.button("<Leader>n", "  New File"),
+      dashboard.button("<Leader>ff", "  Find File"),
+      dashboard.button("<Leader>fr", "  Find and Replace"),
+      dashboard.button("<Leader>fg", "󰈭  Grep"),
+      dashboard.button("<Leader>fR", "󰈙  Recents"),
+      dashboard.button("<Leader>Sl", "  Last Session"),
     }
 
     -- Shrink the padding

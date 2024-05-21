@@ -13,36 +13,36 @@ return {
   event = "VeryLazy",
   keys = {
     {
-      "<leader>cb",
+      "<Leader>cb",
       ":CopilotChatBuffer ",
       desc = "Chat with current buffer",
     },
-    { "<leader>ce", "<cmd>CopilotChatExplain<cr>", desc = "Explain code" },
-    { "<leader>ct", "<cmd>CopilotChatTests<cr>", desc = "Generate tests" },
+    { "<Leader>ce", "<cmd>CopilotChatExplain<cr>", desc = "Explain code" },
+    { "<Leader>ct", "<cmd>CopilotChatTests<cr>", desc = "Generate tests" },
     {
-      "<leader>cT",
+      "<Leader>cT",
       "<cmd>CopilotChatVsplitToggle<cr>",
       desc = "Toggle vertical split",
     },
     {
-      "<leader>cv",
+      "<Leader>cv",
       ":CopilotChatVisual ",
       mode = "x",
       desc = "Open vertical split",
     },
     {
-      "<leader>cx",
+      "<Leader>cx",
       ":CopilotChatInPlace<cr>",
       mode = "x",
       desc = "Run in-place code",
     },
     {
-      "<leader>cf",
+      "<Leader>cf",
       "<cmd>CopilotChatFixDiagnostic<cr>", -- Get a fix for the diagnostic message under the cursor.
       desc = "Fix diagnostic",
     },
     {
-      "<leader>cr",
+      "<Leader>cr",
       "<cmd>CopilotChatReset<cr>", -- Reset chat history and clear buffer.
       desc = "Reset chat and buffer",
     },

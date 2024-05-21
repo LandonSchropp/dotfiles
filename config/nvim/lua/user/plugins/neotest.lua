@@ -42,37 +42,37 @@ return {
   },
   keys = {
     {
-      "<leader>tt",
+      "<Leader>tt",
       run_nearest_test,
       desc = "Run nearest test",
     },
     {
-      "<leader>td",
+      "<Leader>td",
       debug_nearest_test,
       desc = "Debug nearest test",
     },
     {
-      "<leader>ta",
+      "<Leader>ta",
       attach_to_nearest_test,
       desc = "Attach to nearest test",
     },
     {
-      "<leader>tf",
+      "<Leader>tf",
       run_file,
       desc = "Run file",
     },
     {
-      "<leader>ts",
+      "<Leader>ts",
       open_test_summary,
       desc = "Open test summary",
     },
     {
-      "<leader>tS",
+      "<Leader>tS",
       stop_nearest_test,
       desc = "Stop the nearest test",
     },
     {
-      "<leader>to",
+      "<Leader>to",
       open_test_output,
       desc = "Open test output",
     },

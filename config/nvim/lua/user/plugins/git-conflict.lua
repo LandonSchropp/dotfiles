@@ -10,6 +10,6 @@ return {
     },
   },
   keys = {
-    { "<leader>gq", "<cmd>GitConflictListQf<cr>", desc = "Git conflict list" },
+    { "<Leader>gq", "<cmd>GitConflictListQf<cr>", desc = "Git conflict list" },
   },
 }

@@ -2,7 +2,7 @@ return {
   "nvim-pack/nvim-spectre",
   keys = {
     {
-      "<leader>fr",
+      "<Leader>fr",
       function()
         require("spectre").toggle()
       end,
