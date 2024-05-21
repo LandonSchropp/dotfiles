@@ -2,7 +2,7 @@ local luasnip = require("luasnip")
 local parse_snippet = luasnip.parser.parse_snippet
 
 local format = require("luasnip.extras.fmt").fmta
-local snippet_utils = require("user.utilities.snippet")
+local snippet_utils = require("utilities.snippet")
 
 local constantize = snippet_utils.constantize
 

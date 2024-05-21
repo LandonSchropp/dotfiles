@@ -1,4 +1,4 @@
-local concatenate = require("user.utilities.table").concatenate
+local concatenate = require("utilities.table").concatenate
 
 return {
   "hrsh7th/nvim-cmp",
