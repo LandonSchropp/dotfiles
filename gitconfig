@@ -32,10 +32,12 @@
   p = push --follow-tags
   pu = pull
   r = reset
+  re = restore
   ri = !git fetch && git rebase -i
   rio = !git fetch && git rebase -i origin/main
   s = status
   sq = squash
+  sw = switch
 
   # Command aliases
   aliases = "config --get-regexp alias"
@@ -45,9 +47,11 @@
     --abbrev-commit
   current-branch = "rev-parse --abbrev-ref HEAD"
   dad = "!curl https://icanhazdadjoke.com/ && echo"
+  discard = git restore --staged --worktree
   squash = "fixup --squash"
   force-push = "push --force-with-lease"
   my-branches = "!git branches | grep -i '$()'"
+  unstage = git restore --staged 
 
   # Custom script aliases
   branches = "!$HOME/.dotfiles/bin/git/git-branches"
@@ -60,6 +64,7 @@
   review = "!$HOME/.dotfiles/bin/git/git-review"
   stash-staged = "!$HOME/.dotfiles/bin/git/git-stash-staged"
   what-did-i-do = "!$HOME/.dotfiles/bin/git/git-what-did-i-do"
+
 
 [core]
   excludesfile = "~/.gitignore"
