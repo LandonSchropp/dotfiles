@@ -13,9 +13,7 @@ return {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
-        -- TODO: Enable the curved separator characters ("" and "") once the following bug is fixed:
-        -- https://github.com/ryanoasis/nerd-fonts/issues/661
-        section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         component_separators = "|",
         disabled_filetypes = {
           "alpha",
@@ -26,7 +24,7 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           { "filename", color = {}, cond = nil, left = 0, right = 0, file_status = false },
-          { "filetype", left = 0,   right = 0 },
+          { "filetype", left = 0, right = 0 },
         },
 
         lualine_x = { "diff" },
