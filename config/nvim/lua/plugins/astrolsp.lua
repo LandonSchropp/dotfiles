@@ -30,8 +30,6 @@ return {
         n = {
           -- Remove mappings
           ["<Leader>li"] = false,
-          ["<Leader>uf"] = false,
-          ["<Leader>uF"] = false,
           ["<Leader>uY"] = false,
 
           -- Remap the info maps to leave space for TypeScript-specific import mapping.
@@ -40,11 +38,25 @@ return {
 
           -- Remap the diagnostic mapping to something shorter.
           ["gd"] = opts.mappings.n["<Leader>ld"],
-
-          -- Add a handy Mason mapping.
-          ["<Leader>lm"] = { "<cmd>Mason<cr>", desc = "Mason" },
         },
       },
+      on_attach = function(client, buffer)
+        if client.name == "vtsls" then
+          vim.keymap.set(
+            "n",
+            "<leader>li",
+            "<cmd>VtsExec add_missing_imports<cr>",
+            { desc = "Add missing imports", buffer = buffer }
+          )
+
+          vim.keymap.set(
+            "n",
+            "<leader>lu",
+            "<cmd>VtsExec remove_unused_imports<cr>",
+            { desc = "Remove unused imports", buffer = buffer }
+          )
+        end
+      end,
     })
   end,
 }
