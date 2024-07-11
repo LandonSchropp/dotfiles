@@ -1,4 +1,4 @@
-# BUG FIX: tmuxinator mangles the $GEM_HOME environment variable. This is a quick and dirty fix.
+# FIX: tmuxinator mangles the $GEM_HOME environment variable. This is a quick and dirty fix.
 # https://github.com/tmuxinator/tmuxinator/issues/841
 unset GEM_HOME
 
@@ -76,3 +76,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Eza
 alias ls="eza --icons --git-ignore"
 alias tree="eza --tree --icons --git-ignore"
+
+# Zoxide
+eval "$(zoxide init zsh)"
+alias cd="z"
