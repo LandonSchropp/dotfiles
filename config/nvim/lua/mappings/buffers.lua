@@ -35,7 +35,8 @@ return function(mappings)
       ["<Leader>bsp"] = false,
       ["<Leader>bsr"] = false,
       ["<Leader>b|"] = false,
-      ["<Leader>c"] = false,
+      ["<Leader>c"] = { desc = " Copilot" },
+      ["<Leader>q"] = false,
 
       -- Remap mappings
       ["<Leader>bD"] = extend(mappings.n["<Leader>c"], { desc = "Delete buffer (force)" }),
@@ -53,6 +54,7 @@ return function(mappings)
       W = { "<cmd>write<cr>", desc = "Write buffer" },
       X = { close_buffer, desc = "Close buffer" },
       Z = { "WX", desc = "Write and close buffer" },
+      ["<Leader>Q"] = extend(mappings.n["<Leader>Q"], { desc = "Quit" }),
 
       -- Yank the current buffer path
       ["<Leader>by"] = { "<cmd>let @+=expand('%:p')<cr>", desc = "Yank buffer path" },

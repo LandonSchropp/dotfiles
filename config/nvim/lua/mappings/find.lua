@@ -24,14 +24,15 @@ return function(mappings)
       ["<Leader>fo"] = false,
       ["<Leader>ft"] = false,
       ["<Leader>fw"] = false,
-      ["<Leader>fr"] = false,
+      ["<Leader>r"] = false,
 
       -- Remap mappings
       ["<Leader><Leader>"] = GIT_FILES_MAPPING,
-      ["<Leader>ff"] = GIT_FILES_MAPPING,
-      ["<Leader>fR"] = mappings.n["<Leader>fo"],
-      ["<Leader>fg"] = extend(mappings.n["<Leader>fw"], { desc = "Grep" }),
       ["<Leader>fH"] = { "<cmd>Telescope highlights<cr>", desc = "Highlights" },
+      ["<Leader>fR"] = mappings.n["<Leader>fo"],
+      ["<Leader>ff"] = GIT_FILES_MAPPING,
+      ["<Leader>fg"] = extend(mappings.n["<Leader>fw"], { desc = "Grep" }),
+      ["<Leader>fr"] = mappings.n["<Leader>r"],
     },
   }
 end
