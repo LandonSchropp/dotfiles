@@ -74,8 +74,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
 
 # Eza
-alias ls="eza --icons --git-ignore"
-alias tree="eza --tree --icons --git-ignore"
+alias ls="eza --all --icons --git-ignore"
+alias tree="eza --tree --all --icons --git-ignore"
 
 # Zoxide
 eval "$(zoxide init zsh)"
