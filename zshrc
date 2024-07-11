@@ -80,3 +80,6 @@ alias tree="eza --tree --icons --git-ignore"
 # Zoxide
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# thefuck
+eval $(thefuck --alias)
