@@ -72,3 +72,7 @@ eval "`fnm env`"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
+
+# Eza
+alias ls="eza --icons --git-ignore"
+alias tree="eza --tree --icons --git-ignore"
