@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd ~/.config
+
+if [ ! -d "fzf-git.sh" ]; then
+  git clone git@github.com:junegunn/fzf-git.sh.git
+fi

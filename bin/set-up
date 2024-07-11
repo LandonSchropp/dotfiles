@@ -14,6 +14,7 @@ bin/set-up-mackup
 bin/set-up-node
 bin/set-up-tmux
 bin/set-up-tic
+bin/set-up-fzf
 
 echo
 echo "🤘 Done"
