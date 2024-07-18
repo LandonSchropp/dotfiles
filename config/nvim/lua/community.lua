@@ -2,7 +2,6 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
-  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
