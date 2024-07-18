@@ -3,4 +3,4 @@
 set -euo pipefail
 
 # Create links for the dotfiles
-RCRC=$HOME/.dotfiles/rcrc rcup -v "$@"
+RCRC=$HOME/.dotfiles/rcrc rcup -v -f "$@"
