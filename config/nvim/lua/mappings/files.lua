@@ -11,7 +11,7 @@ return function(mappings)
       ["<Leader>Ft"] = extend(mappings.n["<Leader>e"], { desc = "Tree" }),
 
       -- Which Key
-      ["<Leader>F"] = { name = "󰈔 Files" },
+      ["<Leader>F"] = { desc = "󰈔 Files" },
     },
   }
 end
