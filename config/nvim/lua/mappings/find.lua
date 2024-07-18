@@ -1,10 +1,11 @@
 local extend = require("utilities.table").extend
 
-local function git_files()
-  require("telescope.builtin").git_files({ prompt_title = "Find Files", show_untracked = true })
-end
-
-local GIT_FILES_MAPPING = { git_files, desc = "Find Files" }
+local FIND_FILES_MAPPING = {
+  function()
+    require("telescope.builtin").git_files({ prompt_title = "Find Files", show_untracked = true })
+  end,
+  desc = "Find Files",
+}
 
 return function(mappings)
   return {
@@ -27,12 +28,20 @@ return function(mappings)
       ["<Leader>r"] = false,
 
       -- Remap mappings
-      ["<Leader><Leader>"] = GIT_FILES_MAPPING,
+      ["<Leader><Leader>"] = FIND_FILES_MAPPING,
       ["<Leader>fH"] = { "<cmd>Telescope highlights<cr>", desc = "Highlights" },
       ["<Leader>fR"] = mappings.n["<Leader>fo"],
-      ["<Leader>ff"] = GIT_FILES_MAPPING,
+      ["<Leader>ff"] = FIND_FILES_MAPPING,
       ["<Leader>fg"] = extend(mappings.n["<Leader>fw"], { desc = "Grep" }),
-      ["<Leader>fr"] = mappings.n["<Leader>r"],
+      ["<Leader>fr"] = {
+        function()
+          require("grug-far").toggle_instance({
+            instanceName = "far",
+            staticTitle = "Find/Replace",
+          })
+        end,
+        desc = "Find/replace",
+      },
     },
   }
 end
