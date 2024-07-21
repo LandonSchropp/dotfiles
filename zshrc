@@ -38,22 +38,6 @@ plugins=(
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# Set the prompt to Starship
-eval "$(starship init zsh)"
-autoload -U promptinit; promptinit
-
-# Enable source highlighting in less.
-export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
-export LESS=" -R "
-
-# Make bat more readable.
-export BAT_THEME="tokyonight_moon"
-
-# Source the configuration files
-for CONFIG_FILE in $HOME/.config/zsh/*; do
-  source $CONFIG_FILE
-done
-
 # Disable autocorrect
 unsetopt correct_all
 
@@ -64,41 +48,7 @@ bindkey "^[^[OB" down-line-or-beginning-search
 bindkey "^[^[OC" forward-char
 bindkey "^[^[OD" backward-char
 
-# fnm
-export PATH="/Users/landon/Library/Application Support/fnm:$PATH"
-eval "`fnm env`"
-
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
-
-# Eza
-alias ls="eza --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
-alias lsg="eza --all --icons --git-ignore --ignore-glob .DS_Store"
-alias tree="eza --tree --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
-alias treeg="eza --tree --all --icons --git-ignore --ignore-glob .DS_Store"
-
-# Zoxide
-eval "$(zoxide init zsh)"
-alias cd="z"
-
-# thefuck
-eval $(thefuck --alias)
-
-# fzf
-source <(fzf --zsh)
-
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
-
-_fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
-}
-
-_fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
-}
-
-source ~/.config/fzf-git.sh/fzf-git.sh
+# Source the configuration files
+for CONFIG_FILE in $HOME/.config/zsh/*; do
+  source $CONFIG_FILE
+done

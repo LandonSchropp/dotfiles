@@ -1,15 +1,26 @@
-# Start up pyenv
+# pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Start up direnv
+# direnv
 eval "$(direnv hook zsh)"
 
-# Start up fnm.
+# fnm
 eval "$(fnm env --use-on-cd)"
 
-# Enable Homebrew auto completions.
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# thefuck
+eval $(thefuck --alias)
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
+
+# Homebrew
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
