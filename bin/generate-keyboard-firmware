@@ -61,16 +61,9 @@ def replace_bidings(config, name, bindings)
   config.sub(layer_regex, "\\1\n#{replacement_bindings}\n")
 end
 
-# Make sure Docker is running.
-unless Kernel.system("docker stats --no-stream &> /dev/null")
-  puts "🐳 Docker is not running. Please start Docker and try again."
-  exit 1
-end
-
 # Download the Kinesis repository.
 repo_directory = Dir.mktmpdir("Adv360-Pro-ZMK")
-puts "🐈 Cloning Kinesis Advantage 360 Pro ZMK repo..."
-puts
+puts "🐈 Cloning Kinesis Advantage 360 Pro ZMK repo...\n\n"
 system("git clone git@github.com:#{REPO} #{repo_directory}")
 
 # Ensure the repository is cleaned up once the script is done running.
@@ -96,12 +89,12 @@ File.write(config_path, config)
 puts config_path
 
 # Generate the ZMK firmware.
-puts "\n🔨 Building the ZMK firmware...\n"
+puts "\n🔨 Building the ZMK firmware...\n\n"
 Dir.chdir(repo_directory)
 system("bash -c 'make all'")
 
 # Copy the firmware to the keyboard directory.
-puts "\n🐑 Copying the builds to the dotfiles.\n"
+puts "\n🐑 Copying the firmware build files to the dotfiles.\n\n"
 
 Dir[File.join(repo_directory, "firmware/*")].each do
   destination_path = File.join(__dir__, "..", File.basename(_1).sub(/^.*-/, ""))
