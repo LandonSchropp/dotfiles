@@ -74,8 +74,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
 
 # Eza
-alias ls="eza --all --icons --git-ignore --ignore-glob .DS_Store"
-alias tree="eza --tree --all --icons --git-ignore --ignore-glob .DS_Store"
+alias ls="eza --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
+alias lsg="eza --all --icons --git-ignore --ignore-glob .DS_Store"
+alias tree="eza --tree --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
+alias treeg="eza --tree --all --icons --git-ignore --ignore-glob .DS_Store"
 
 # Zoxide
 eval "$(zoxide init zsh)"
