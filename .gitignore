@@ -1,4 +1,4 @@
 .DS_Store
 .envrc
 *.log
-*.uf2
+firmware/*.uf2

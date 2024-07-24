@@ -72,24 +72,14 @@ at_exit do
   FileUtils.rm_rf(repo_directory)
 end
 
-# Read the config file.
-config_path = File.join(repo_directory, "config/adv360.keymap")
-config = File.read(config_path)
-
-# Replace the keymaps in the config with the updated keymaps from this repo.
-layers = YAML.load_file(File.join(__dir__, "../keymap.yml"))
-
-config = layers.reduce(config) do |config, (name, bindings)|
-  replace_bidings(config, name, bindings)
-end
-
 # Write the config file.
-puts "\n✍️  Writing updated config.\n\n"
-File.write(config_path, config)
-puts config_path
+puts "\n✍️  Copying config.\n\n"
+source_path = File.join(File.dirname(__FILE__), "../advantage-360.keymap")
+destination_path = File.join(repo_directory, "config/adv360.keymap")
+FileUtils.cp(source_path, destination_path)
 
 # Generate the ZMK firmware.
-puts "\n🔨 Building the ZMK firmware...\n\n"
+puts "🔨 Building the ZMK firmware...\n\n"
 Dir.chdir(repo_directory)
 system("bash -c 'make all'")
 
@@ -97,7 +87,8 @@ system("bash -c 'make all'")
 puts "\n🐑 Copying the firmware build files to the dotfiles.\n\n"
 
 Dir[File.join(repo_directory, "firmware/*")].each do
-  destination_path = File.join(__dir__, "..", File.basename(_1).sub(/^.*-/, ""))
+  FileUtils.mkdir_p(File.join(__dir__, "../firmware"))
+  destination_path = File.join(__dir__, "../firmware", File.basename(_1).sub(/^.*-/, ""))
   FileUtils.cp(_1, destination_path)
 end
 
