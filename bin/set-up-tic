@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-# Enable colors and styles in the terminal.
-# https://sunaku.github.io/tmux-24bit-color.html#usage
-tic $HOME/.dotfiles/xterm-256color-italic.terminfo
-tic $HOME/.dotfiles/tmux-256color-italic.terminfo
+# Instead of maintaining my own terminfo fils, download and use the WezTerm one.
+tempfile=$(mktemp) 
+curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo 
+tic -x -o ~/.terminfo $tempfile 
+rm $tempfile

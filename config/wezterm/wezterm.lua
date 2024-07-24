@@ -11,6 +11,7 @@ return {
 
   -- Colors
   color_scheme = "Tokyo Night Moon",
+  term = "wezterm",
 
   -- Appearance
   enable_tab_bar = false,
