@@ -16,51 +16,6 @@ def system(command)
   end
 end
 
-def split_binding_line(line)
-  line
-    .gsub(/^#{IGNORED_CHARACTERS}|#{IGNORED_CHARACTERS}$/, "")
-    .split(IGNORED_CHARACTERS)
-    .map(&:strip)
-    .reject(&:empty?)
-end
-
-def split_binding(binding)
-  binding
-    .strip
-    .split("\n")
-    .map { split_binding_line(_1) }
-    .reject(&:empty?)
-end
-
-def split_bindings(bindings)
-  bindings.values.map { split_binding(_1) }
-end
-
-def fill_bindings(bindings)
-  max_length = bindings.map(&:length).max
-  bindings.map { [""] * (max_length - _1.length) + _1 }
-end
-
-def join_bindings(bindings)
-  bindings.transpose.map(&:flatten)
-end
-
-def stringify_bindings(bindings)
-  bindings.map { _1.join(" ") }.join("\n")
-end
-
-def replace_bidings(config, name, bindings)
-  layer_regex = /(#{name}\s*{\s*bindings\s*=\s*<)[^>]+/
-
-  replacement_bindings = bindings
-    .then { split_bindings(_1) }
-    .then { fill_bindings(_1) }
-    .then { join_bindings(_1) }
-    .then { stringify_bindings(_1) }
-
-  config.sub(layer_regex, "\\1\n#{replacement_bindings}\n")
-end
-
 # Download the Kinesis repository.
 repo_directory = Dir.mktmpdir("Adv360-Pro-ZMK")
 puts "🐈 Cloning Kinesis Advantage 360 Pro ZMK repo...\n\n"
@@ -88,8 +43,8 @@ puts "\n🐑 Copying the firmware build files to the dotfiles.\n\n"
 
 Dir[File.join(repo_directory, "firmware/*")].each do
   FileUtils.mkdir_p(File.join(__dir__, "../firmware"))
-  destination_path = File.join(__dir__, "../firmware", File.basename(_1).sub(/^.*-/, ""))
-  FileUtils.cp(_1, destination_path)
+  firmware_path = File.join(__dir__, "../firmware", File.basename(_1).sub(/^.*-/, ""))
+  FileUtils.cp(_1, firmware_path)
 end
 
 # Let the user know the script has completed.
