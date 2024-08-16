@@ -89,8 +89,8 @@ ctrl-alt-shift-l = 'join-with right'
 # Reset the layout
 ctrl-alt-shift-r = 'flatten-workspace-tree'
 
-# Toggle between floating and tiling layout
-alt-shift-f = 'layout floating tiling'
+# Toggle fullscreen
+alt-shift-f = 'fullscreen'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
