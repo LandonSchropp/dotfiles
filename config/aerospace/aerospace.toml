@@ -57,12 +57,12 @@ alt-shift-equal = 'resize smart +50'
 #
 # https://github.com/nikitabobko/AeroSpace/issues/2
 
-alt-b = 'workspace Browser'
-alt-c = 'workspace Calendar'
-alt-m = 'workspace Music'
-alt-n = 'workspace Notes'
-alt-s = 'workspace Slack'
-alt-t = 'workspace Terminal'
+alt-b = ['workspace Browser', 'exec-and-forget open -a Arc']
+alt-c = ['workspace Calendar', 'exec-and-forget open -a Calendar']
+alt-m = ['workspace Music', 'exec-and-forget open -a Spotify']
+alt-n = ['workspace Notes', 'exec-and-forget open -a Notes']
+alt-s = ['workspace Slack', 'exec-and-forget open -a Slack']
+alt-t = ['workspace Terminal', 'exec-and-forget open -a iTerm']
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
