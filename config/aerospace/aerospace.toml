@@ -80,9 +80,6 @@ alt-shift-3 = 'move-node-to-workspace 3'
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'reload-config'
-
 # Join the layouts into containers.
 ctrl-alt-shift-h = 'join-with left'
 ctrl-alt-shift-j = 'join-with down'
