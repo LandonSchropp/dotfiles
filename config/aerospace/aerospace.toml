@@ -1,0 +1,96 @@
+# Start AeroSpace at login
+start-at-login = true
+
+# TODO: Determine if these options (reflected in the default config) are actually required.
+#
+# https://github.com/nikitabobko/AeroSpace/issues/421
+
+# Enable normalizations.
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Set the accordion padding. 
+accordion-padding = 30
+
+# Ensure the default container displays in tile mode.
+default-root-container-layout = 'tiles'
+
+# Set the default container orientation to 'auto', which will use either horizontal or vertical
+# depending on which is bigger.
+default-root-container-orientation = 'auto'
+
+# Set a consistent gap between monitors.
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
+
+# Define the bindings.
+#
+# NOTE: Unlike the default configuration, I don't use a "service" mode. Instead, I've remapped these
+# configurations to simplify them
+[mode.main.binding]
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+# TODO: Come up with some way to open _the_ browser window in the current workspace. This can't be a
+# different window, since I might want to work across multiple spaces. I _think_ I want something
+# like a sticky window that I can optionally toggle on and off. However, I'm not sure.
+#
+# https://github.com/nikitabobko/AeroSpace/issues/2
+
+alt-b = 'workspace Browser'
+alt-c = 'workspace Calendar'
+alt-m = 'workspace Music'
+alt-n = 'workspace Notes'
+alt-s = 'workspace Slack'
+alt-t = 'workspace Terminal'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+
+alt-shift-b = 'move-node-to-workspace Browser'
+alt-shift-c = 'move-node-to-workspace Calendar'
+alt-shift-m = 'move-node-to-workspace Music'
+alt-shift-n = 'move-node-to-workspace Notes'
+alt-shift-s = 'move-node-to-workspace Slack'
+alt-shift-t = 'move-node-to-workspace Terminal'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#mode
+alt-shift-semicolon = 'reload-config'
+
+# Join the layouts into containers.
+ctrl-alt-shift-h = 'join-with left'
+ctrl-alt-shift-j = 'join-with down'
+ctrl-alt-shift-k = 'join-with up'
+ctrl-alt-shift-l = 'join-with right'
+
+# Reset the layout
+ctrl-alt-shift-r = 'flatten-workspace-tree'
+
+# Toggle between floating and tiling layout
+alt-shift-f = 'layout floating tiling'
