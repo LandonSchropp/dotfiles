@@ -94,3 +94,23 @@ ctrl-alt-shift-r = 'flatten-workspace-tree'
 
 # Toggle between floating and tiling layout
 alt-shift-f = 'layout floating tiling'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace Calendar'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace Music'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace Notes'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace Slack'
+
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = 'move-node-to-workspace Terminal'
