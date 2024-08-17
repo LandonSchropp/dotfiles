@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Define the Workspaces in my preferred order.
+#
+# TODO: Differentiate between my work and personal workspaces. I don't use Slack outside of work, so
+# it doesn't make sense to have it in the list.
+WORKSPACES=(Browser Terminal Slack Music Notes Calendar 1 2 3)
+
+# Exit unless the argument "next" or "previous" is provided.
+if [ "$#" -ne 1 ]; then
+  echo "Switches to the next or previous AeroSpace workspace using a predefined order."
+  echo
+  echo "Usage: $0 <next|previous>"
+  exit 1
+fi
+
+if [ "$1" == "next" ]; then
+  DIRECTION="next"
+elif [ "$1" == "previous" ]; then
+  DIRECTION="prev"
+else
+  echo "Invalid workspace direction: $1"
+  exit 1
+fi
+
+# Echo the workspaces separated by newlines and pipe it into aerospace.
+printf '%s\n' "${WORKSPACES[@]}" | aerospace workspace "$DIRECTION"
