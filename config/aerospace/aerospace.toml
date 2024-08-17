@@ -1,24 +1,6 @@
 # Start AeroSpace at login
 start-at-login = true
 
-# TODO: Determine if these options (reflected in the default config) are actually required.
-#
-# https://github.com/nikitabobko/AeroSpace/issues/421
-
-# Enable normalizations.
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
-
-# Set the accordion padding. 
-accordion-padding = 30
-
-# Ensure the default container displays in tile mode.
-default-root-container-layout = 'tiles'
-
-# Set the default container orientation to 'auto', which will use either horizontal or vertical
-# depending on which is bigger.
-default-root-container-orientation = 'auto'
-
 # Define the bindings.
 #
 # NOTE: Unlike the default configuration, I don't use a "service" mode. Instead, I've remapped these
