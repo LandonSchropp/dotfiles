@@ -69,6 +69,13 @@ alt-shift-f = 'fullscreen'
 ctrl-left = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-switch-workspace prev'
 ctrl-right = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-switch-workspace next'
 
+# Add shortcuts to quickly switch my browser to different workspaces.
+#
+# TODO: Come up with better shortcuts.
+alt-shift-6 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-application-to-workspace Arc Browser'
+alt-shift-7 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-application-to-workspace Arc Terminal'
+alt-shift-8 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-application-to-workspace Arc Slack'
+
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace Calendar'
