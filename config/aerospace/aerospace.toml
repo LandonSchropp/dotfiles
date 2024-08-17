@@ -19,15 +19,6 @@ default-root-container-layout = 'tiles'
 # depending on which is bigger.
 default-root-container-orientation = 'auto'
 
-# Set a consistent gap between monitors.
-[gaps]
-inner.horizontal = 10
-inner.vertical = 10
-outer.left = 10
-outer.bottom = 10
-outer.top = 10
-outer.right = 10
-
 # Define the bindings.
 #
 # NOTE: Unlike the default configuration, I don't use a "service" mode. Instead, I've remapped these
