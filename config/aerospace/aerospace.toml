@@ -83,6 +83,10 @@ ctrl-alt-shift-r = 'flatten-workspace-tree'
 # Toggle fullscreen
 alt-shift-f = 'fullscreen'
 
+# Emulate macOS's built-in space switching shortcuts using my preferred workspaces order.
+ctrl-left = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-switch-workspace prev'
+ctrl-right = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-switch-workspace next'
+
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace Calendar'
