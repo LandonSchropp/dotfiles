@@ -36,9 +36,9 @@ alt-m = ['workspace Music', 'exec-and-forget open -a Spotify']
 alt-n = ['workspace Notes', 'exec-and-forget open -a Notes']
 alt-s = ['workspace Slack', 'exec-and-forget open -a Slack']
 alt-t = ['workspace Terminal', 'exec-and-forget open -a iTerm']
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
+alt-1 = 'workspace Extra1'
+alt-2 = 'workspace Extra2'
+alt-3 = 'workspace Extra3'
 
 alt-shift-b = 'move-node-to-workspace Browser'
 alt-shift-c = 'move-node-to-workspace Calendar'
@@ -46,9 +46,9 @@ alt-shift-m = 'move-node-to-workspace Music'
 alt-shift-n = 'move-node-to-workspace Notes'
 alt-shift-s = 'move-node-to-workspace Slack'
 alt-shift-t = 'move-node-to-workspace Terminal'
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-1 = 'move-node-to-workspace Extra1'
+alt-shift-2 = 'move-node-to-workspace Extra2'
+alt-shift-3 = 'move-node-to-workspace Extra3'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
