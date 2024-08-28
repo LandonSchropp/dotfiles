@@ -30,25 +30,45 @@ alt-shift-equal = 'resize smart +50'
 #
 # https://github.com/nikitabobko/AeroSpace/issues/2
 
-alt-b = ['workspace Browser', 'exec-and-forget open -a Arc']
-alt-c = ['workspace Calendar', 'exec-and-forget open -a Calendar']
-alt-m = ['workspace Music', 'exec-and-forget open -a Spotify']
-alt-n = ['workspace Notes', 'exec-and-forget open -a Notes']
-alt-s = ['workspace Slack', 'exec-and-forget open -a Slack']
-alt-t = ['workspace Terminal', 'exec-and-forget open -a iTerm']
+alt-b = 'workspace Browser'
+alt-c = ['workspace Calendar', 'exec-and-forget open -g -a Calendar']
+alt-m = ['workspace Music', 'exec-and-forget open -g -a Spotify']
+alt-n = ['workspace Notes', 'exec-and-forget open -g -a Notes']
+alt-s = ['workspace Slack', 'exec-and-forget open -g -a Slack']
+alt-t = ['workspace Terminal', 'exec-and-forget open -g -a iTerm']
 alt-1 = 'workspace Extra1'
 alt-2 = 'workspace Extra2'
 alt-3 = 'workspace Extra3'
 
-alt-shift-b = 'move-node-to-workspace Browser'
-alt-shift-c = 'move-node-to-workspace Calendar'
-alt-shift-m = 'move-node-to-workspace Music'
-alt-shift-n = 'move-node-to-workspace Notes'
-alt-shift-s = 'move-node-to-workspace Slack'
-alt-shift-t = 'move-node-to-workspace Terminal'
-alt-shift-1 = 'move-node-to-workspace Extra1'
-alt-shift-2 = 'move-node-to-workspace Extra2'
-alt-shift-3 = 'move-node-to-workspace Extra3'
+alt-shift-b = ['move-node-to-workspace Browser', 'workspace Browser']
+alt-shift-c = [
+  'move-node-to-workspace Calendar',
+  'workspace Calendar',
+  'exec-and-forget open -g -a Calendar',
+]
+alt-shift-m = [
+  'move-node-to-workspace Music',
+  'workspace Music',
+  'exec-and-forget open -g -a Spotify',
+]
+alt-shift-n = [
+  'move-node-to-workspace Notes',
+  'workspace Notes',
+  'exec-and-forget open -g -a Notes',
+]
+alt-shift-s = [
+  'move-node-to-workspace Slack',
+  'workspace Slack',
+  'exec-and-forget open -g -a Slack',
+]
+alt-shift-t = [
+  'move-node-to-workspace Terminal',
+  'workspace Terminal',
+  'exec-and-forget open -g -a iTerm',
+]
+alt-shift-1 = ['move-node-to-workspace Extra1', 'workspace Extra1']
+alt-shift-2 = ['move-node-to-workspace Extra2', 'workspace Extra2']
+alt-shift-3 = ['move-node-to-workspace Extra3', 'workspace Extra3']
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
