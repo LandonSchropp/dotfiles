@@ -36,9 +36,8 @@ alt-m = ['workspace Music', 'exec-and-forget open -g -a Spotify']
 alt-n = ['workspace Notes', 'exec-and-forget open -g -a Notes']
 alt-s = ['workspace Slack', 'exec-and-forget open -g -a Slack']
 alt-t = ['workspace Terminal', 'exec-and-forget open -g -a iTerm']
-alt-1 = 'workspace Extra1'
-alt-2 = 'workspace Extra2'
-alt-3 = 'workspace Extra3'
+alt-3 = 'workspace 3D_Printing'
+alt-e = 'workspace Extra'
 
 alt-shift-b = ['move-node-to-workspace Browser', 'workspace Browser']
 alt-shift-c = [
@@ -66,9 +65,8 @@ alt-shift-t = [
   'workspace Terminal',
   'exec-and-forget open -g -a iTerm',
 ]
-alt-shift-1 = ['move-node-to-workspace Extra1', 'workspace Extra1']
-alt-shift-2 = ['move-node-to-workspace Extra2', 'workspace Extra2']
-alt-shift-3 = ['move-node-to-workspace Extra3', 'workspace Extra3']
+alt-shift-3 = ['move-node-to-workspace 3D_Printing', 'workspace 3D_Printing']
+alt-shift-e = ['move-node-to-workspace Extra', 'workspace Extra']
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -109,9 +107,17 @@ if.app-id = 'com.apple.Notes'
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
+if.app-id = 'net.shinyfrog.bear'
+run = 'move-node-to-workspace Notes'
+
+[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace Slack'
 
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace Terminal'
+
+[[on-window-detected]]
+if.app-id = 'com.softfever3d.orca-slicer'
+run = 'move-node-to-workspace 3D_Printing'
