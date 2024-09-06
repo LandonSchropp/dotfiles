@@ -24,3 +24,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
+# Rust
+source "$HOME/.cargo/env"
