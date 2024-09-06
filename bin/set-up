@@ -15,6 +15,8 @@ bin/set-up-node
 bin/set-up-tmux
 bin/set-up-tic
 bin/set-up-fzf
+bin/set-up-bat
+bin/set-up-neovim
 
 echo
 echo "🤘 Done"
