@@ -14,7 +14,7 @@ fi
 #
 # TODO: Differentiate between my work and personal workspaces. I don't use Slack outside of work, so
 # it doesn't make sense to have it in the list.
-WORKSPACES=(Browser Terminal Slack Music Notes Calendar 1 2 3)
+WORKSPACES=(Browser Terminal Slack Music Notes Calendar 3D_Printing Extra)
 
 # Exit unless the argument "next" or "prev" is provided.
 if [ "$1" != "next" ] && [ "$1" != "prev" ]; then
