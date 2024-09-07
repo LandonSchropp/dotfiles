@@ -94,6 +94,8 @@ alt-shift-6 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-appl
 alt-shift-7 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-application-to-workspace Arc Terminal'
 alt-shift-8 = 'exec-and-forget $HOME/.dotfiles/bin/aerospace/aerospace-move-application-to-workspace Arc Slack'
 
+# Automatically move some applications to specific workspaces.
+
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace Calendar'
@@ -121,3 +123,13 @@ run = 'move-node-to-workspace Terminal'
 [[on-window-detected]]
 if.app-id = 'com.softfever3d.orca-slicer'
 run = 'move-node-to-workspace 3D_Printing'
+
+# Automatically float some applications.
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'layout floating'
