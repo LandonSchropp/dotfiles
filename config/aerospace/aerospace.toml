@@ -133,3 +133,10 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'layout floating'
+
+# TODO: Create multiple "layouts", where each application arranges itself to a different workspace.
+# Layouts are togglable, and example of one might be one window per workspacce.
