@@ -27,3 +27,9 @@ fi
 
 # Rust
 source "$HOME/.cargo/env"
+
+# Add my custom bin scripts to the system path. This must go at the bottom to have a higher
+# precedence than other directories in the path.
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin/gcloud:$PATH"
+export PATH="$HOME/.dotfiles/bin/git:$PATH"
