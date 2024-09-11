@@ -11,3 +11,6 @@ export PATH="$HOME/.dotfiles/bin/git:$PATH"
 
 # Disable Spring 😡
 export DISABLE_SPRING=true
+
+# Disable Homebrew hints.
+export HOMEBREW_NO_ENV_HINTS=1
