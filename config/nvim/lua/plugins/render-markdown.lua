@@ -5,6 +5,8 @@ return {
     heading = {
       position = "inline",
       icons = { "󰉫", "󰉬", "󰉭", "󰉮", "󰉯", "󰉰" },
+      width = "block",
+      min_width = 100,
     },
     bullet = {
       icons = { "•" },
@@ -46,14 +48,24 @@ return {
         down = { raw = "[d]", rendered = "󰔳", highlight = "RenderMarkdownDown" },
       },
     },
+    code = {
+      style = "normal",
+      -- border = "thick",
+      width = "block",
+      min_width = 100,
+    },
     quote = {
       icon = "▎",
+      repeat_linebreak = true,
     },
     link = {
       email = " ",
       custom = {
         web = { pattern = "^http[s]?://", icon = " ", highlight = "RenderMarkdownLink" },
       },
+    },
+    pipe_table = {
+      preset = "round",
     },
   },
 }
