@@ -33,7 +33,7 @@ alt-shift-equal = 'resize smart +50'
 alt-b = 'workspace Browser'
 alt-c = ['workspace Calendar', 'exec-and-forget open -g -a Calendar']
 alt-m = ['workspace Music', 'exec-and-forget open -g -a Spotify']
-alt-n = ['workspace Notes', 'exec-and-forget open -g -a Notes']
+alt-n = ['workspace Notes', 'exec-and-forget open -g -a Obsidian']
 alt-s = ['workspace Slack', 'exec-and-forget open -g -a Slack']
 alt-t = ['workspace Terminal', 'exec-and-forget open -g -a iTerm']
 alt-3 = 'workspace 3D_Printing'
@@ -53,7 +53,7 @@ alt-shift-m = [
 alt-shift-n = [
   'move-node-to-workspace Notes',
   'workspace Notes',
-  'exec-and-forget open -g -a Notes',
+  'exec-and-forget open -g -a Obsidian',
 ]
 alt-shift-s = [
   'move-node-to-workspace Slack',
@@ -105,11 +105,7 @@ if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace Music'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = 'move-node-to-workspace Notes'
-
-[[on-window-detected]]
-if.app-id = 'net.shinyfrog.bear'
+if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
