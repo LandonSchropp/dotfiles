@@ -27,7 +27,6 @@ plugins=(
   rails
   rake
   rbenv
-  ripgrep
   ruby
   tmux
   yarn
