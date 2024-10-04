@@ -26,7 +26,9 @@ if type brew &>/dev/null; then
 fi
 
 # Rust
-source "$HOME/.cargo/env"
+if test -f "$HOME/.cargo/env"; then
+  source "$HOME/.cargo/env"
+fi
 
 # Add my custom bin scripts to the system path. This must go at the bottom to have a higher
 # precedence than other directories in the path.
