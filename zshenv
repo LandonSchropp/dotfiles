@@ -16,3 +16,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # The directory where the Obsidian vault is stored.
 export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Landon's Notes"
+
+# Disable the GitHub CLI notification updates. (They're super annoying.)
+export GH_NO_UPDATE_NOTIFIER=1
