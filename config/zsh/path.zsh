@@ -9,9 +9,6 @@ eval "$(direnv hook zsh)"
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-# Zoxide
-eval "$(zoxide init zsh)"
-
 # thefuck
 eval $(thefuck --alias)
 

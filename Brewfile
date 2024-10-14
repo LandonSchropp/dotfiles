@@ -43,7 +43,6 @@ brew "tmuxinator"
 brew "tree"
 brew "wget"
 brew "yarn"
-brew "zoxide"
 
 cask "1password"
 cask "font-open-sans"
