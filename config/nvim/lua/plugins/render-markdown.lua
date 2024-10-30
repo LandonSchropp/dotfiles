@@ -1,6 +1,7 @@
 -- NOTE: This plugin is installed via AstroCommunity. It's included here for configuration.
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  enabled = false,
   opts = {
     heading = {
       position = "inline",
