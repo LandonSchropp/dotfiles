@@ -61,6 +61,10 @@ return {
 
           -- Don't use the system clipboard.
           clipboard = {},
+
+          -- Disable modelines because they're pointless and problematic.
+          -- https://github.com/AstroNvim/AstroNvim/issues/2725
+          modeline = false,
         },
       },
       mappings = mappings(opts.mappings),
