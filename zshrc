@@ -2,6 +2,10 @@
 # https://github.com/tmuxinator/tmuxinator/issues/841
 unset GEM_HOME
 
+# Configure the ZSH cache directory for autocompletion so Zsh doesn't create a bunch of files in the
+# home directory.
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # Set the path to Oh My Zsh.
 export ZSH="$HOME/.oh-my-zsh"
 
