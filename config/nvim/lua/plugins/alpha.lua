@@ -28,8 +28,8 @@ return {
 
     -- Vertically center the layout.
     -- TODO: Figure out how to do this dynamically.
-    local content_height = #opts.section.header.val + (#opts.section.buttons.val * 2 - 1) + 3
-    opts.opts.layout[1].val = vim.fn.floor((vim.fn.winheight(0) - content_height + 2) / 2)
+    -- local content_height = #opts.section.header.val + (#opts.section.buttons.val * 2 - 1) + 3
+    -- opts.opts.layout[1].val = vim.fn.floor((vim.fn.winheight(0) - content_height + 2) / 2)
 
     -- TODO: Figure out why the highlights disappeared and fix them.
     opts.section.header.opts.hl = "AlphaHeader"
