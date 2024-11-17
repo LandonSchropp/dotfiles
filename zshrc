@@ -11,29 +11,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Oh My Zsh plugins
 plugins=(
-  alias-finder
-  brew
-  bundler
   colored-man-pages
   command-not-found
-  direnv
-  git
-  github
   httpie
-  iterm2
-  kubectl
-  node
-  npm
-  macos
-  postgres
-  pyenv
-  python
   rails
-  rake
-  rbenv
-  ruby
-  tmux
-  yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -51,7 +32,7 @@ bindkey "^[^[OB" down-line-or-beginning-search
 bindkey "^[^[OC" forward-char
 bindkey "^[^[OD" backward-char
 
-# Source the configuration files
+# Source the configuration files (except the path)
 for CONFIG_FILE in $HOME/.config/zsh/*; do
   source $CONFIG_FILE
 done
