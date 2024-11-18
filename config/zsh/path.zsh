@@ -1,3 +1,7 @@
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
 # rbenv
 eval "$(rbenv init -)"
 
@@ -18,16 +22,14 @@ eval $(thefuck --alias)
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/Users/landon/.bun/_bun" ] && source "/Users/landon/.bun/_bun"
+
+if [ -s "/Users/landon/.bun/_bun" ]; then 
+  source "/Users/landon/.bun/_bun"
+fi
 
 # Rust
 if test -f "$HOME/.cargo/env"; then
   source "$HOME/.cargo/env"
-fi
-
-# Homebrew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # Add my custom bin scripts to the path. This must go at the bottom to have a higher precedence than
