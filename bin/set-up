@@ -7,13 +7,12 @@ cd "$(dirname "$0")/.."
 
 # Set up the development dependencies.
 bin/set-up-homebrew
-bin/set-up-ruby
 bin/set-up-zshell
 bin/set-up-rcup
-bin/set-up-mackup
-bin/set-up-node
-bin/set-up-tmux
 bin/set-up-tic
+bin/set-up-tmux
+bin/set-up-ruby
+bin/set-up-node
 bin/set-up-fzf
 bin/set-up-bat
 bin/set-up-rust
