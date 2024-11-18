@@ -13,7 +13,6 @@ bin/set-up-tic
 bin/set-up-tmux
 bin/set-up-ruby
 bin/set-up-node
-bin/set-up-rust
 bin/set-up-fzf
 bin/set-up-neovim
 bin/set-up-bat
