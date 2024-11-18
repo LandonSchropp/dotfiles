@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# ColorSnapper2
+mas install 969418666
+
+# GarageBand
+mas install 682658836
+
+# Hidden Bar
+mas install 1452453066
+
+# The Unarchiver
+mas install 425424353
