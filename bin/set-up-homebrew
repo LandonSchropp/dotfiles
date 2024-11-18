@@ -14,17 +14,7 @@ fi
 brew update
 
 # Install all of the Homebrew applications.
-brew bundle --file="$HOME/.dotfiles/Brewfile" --force || true
+brew bundle --no-lock --file="$HOME/.dotfiles/Brewfile" --force || true
 
 # Update TL/DR definitions.
 tldr --update
-
-# Install Google Chrome and Firefox unless they're already installed. These can't be done in the
-# Brewfile because the autoupdater breaks Homebrew.
-if [ ! -d "/Applications/Google Chrome.app" ]; then
-  brew install --cask google-chrome
-fi
-
-if [ ! -d "/Applications/Firefox.app" ]; then
-  brew install --cask firefox
-fi
