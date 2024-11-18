@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-# Prints the commits since the given time period.
+# Prints the commits since the given time period across _all_ of my local repos. This is a great
+# way to see what I did on any given day.
+
 if [ "$#" -eq 0 ]; then
   >&2 echo "Usage: git what-did-i-do <date>"
   exit 1
