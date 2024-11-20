@@ -32,11 +32,6 @@ if test -f "$HOME/.cargo/env"; then
   source "$HOME/.cargo/env"
 fi
 
-# Add my custom bin scripts to the path. This must go at the bottom to have a higher precedence than
-# other directories in the path.
-export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="$HOME/.dotfiles/bin/git:$PATH"
-
 # Add local bin scripts to the path
 export PATH="./bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"

@@ -6,13 +6,7 @@
 # NOTE: Due to the nature of how RCM works, this script can't use `set -euo pipefail`.
 
 EXCLUDES=(
-  *.keymap
   Brewfile
-  bin
-  bin
-  firmware
-  landons_theme.yml
-  macos.sh
   rcrc
   readme.md
   stylua.toml

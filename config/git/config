@@ -54,17 +54,16 @@
   unstage = git restore --staged 
 
   # Custom script aliases
-  branches = "!$HOME/.dotfiles/bin/git/git-branches"
-  default-branch = "!$HOME/.dotfiles/bin/git/git-default-branch"
-  delete-all-branches = "!$HOME/.dotfiles/bin/git/git-delete-branches"
-  delete-merged-branches = "!$HOME/.dotfiles/bin/git/git-delete-branches --merged"
-  force-pull = "!$HOME/.dotfiles/bin/git/git-force-pull"
-  local-repos = "!$HOME/.dotfiles/bin/git/git-local-repos"
-  my-branches = "!$HOME/.dotfiles/bin/git/git-my-branches"
-  review = "!$HOME/.dotfiles/bin/git/git-review"
-  stash-staged = "!$HOME/.dotfiles/bin/git/git-stash-staged"
-  what-did-i-do = "!$HOME/.dotfiles/bin/git/git-what-did-i-do"
-
+  branches = "!$HOME/.config/git/bin/branches"
+  default-branch = "!$HOME/.config/git/bin/default-branch"
+  delete-all-branches = "!$HOME/.config/git/bin/delete-branches"
+  delete-merged-branches = "!$HOME/.config/git/bin/delete-branches --merged"
+  force-pull = "!$HOME/.config/git/bin/force-pull"
+  local-repos = "!$HOME/.config/git/bin/local-repos"
+  my-branches = "!$HOME/.config/git/bin/my-branches"
+  review = "!$HOME/.config/git/bin/review"
+  stash-staged = "!$HOME/.config/git/bin/stash-staged"
+  what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
 
 [core]
   excludesfile = "~/.config/git/ignore"
@@ -120,9 +119,10 @@
     --preview-window=up:50% \
     --info hidden \
     --prompt '🔍 Search for a commit: '
-	commit = true
+  commit = true
+
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
