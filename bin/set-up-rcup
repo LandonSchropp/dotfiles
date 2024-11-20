@@ -3,4 +3,10 @@
 set -euo pipefail
 
 # Create links for the dotfiles
-RCRC=$HOME/.dotfiles/rcrc rcup -v -f "$@" -x bin -I config/git/bin
+rcup \
+  -v \
+  config \
+  tmux.conf \
+  zprofile \
+  zshenv \
+  zshrc
