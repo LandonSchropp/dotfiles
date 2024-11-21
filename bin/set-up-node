@@ -8,9 +8,6 @@ set -euo pipefail
 # Install the latest LTS Node.js version and set the default to it.
 fnm install --lts
 
-# Set the Yarn default configuration.
-rm -f $HOME/.yarnrc
-yarn config set init-author-url "https://landonschropp.com"
-yarn config set init-author-email "schroppl@gmail.com"
-yarn config set init-author-name "Landon Schropp"
-yarn config set init-license UNLICENSED
+# Install pnpm
+corepack enable pnpm
+corepack use pnpm@latest
