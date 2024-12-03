@@ -12,7 +12,7 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.toml" },
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
