@@ -44,6 +44,7 @@ brew "yarn"
 
 cask "1password"
 cask "arc"
+cask "cold-turkey-blocker"
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-open-sans"
