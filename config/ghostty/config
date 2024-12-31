@@ -20,13 +20,13 @@ auto-update = download
 
 # Override the default cursor style
 cursor-style = "block"
-shell-integration-features = no-cursorpick
+shell-integration-features = no-cursor
 
-# Add more accessible keybindings for tmux commands. The `\x13` string is the `ctrl+s` ASDII
+# Add more accessible keybindings for tmux commands. The `\x13` string is the `control+s` ASDII
 # character.
 #
 # TODO: Figure out how to run the tmux commands directly rather than triggering tmux keybindings
 # directly.
-keybind = super+h=text:\x13p
-keybind = super+l=text:\x13n
-keybind = super+m=text:\x13s
+keybind = command+h=text:\x13p
+keybind = command+l=text:\x13n
+keybind = command+m=text:\x13s
