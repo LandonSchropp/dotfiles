@@ -1,0 +1,28 @@
+# Set the font to my preferences
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 19
+font-style = Medium
+
+# Set the theme to Tokyo Night Storm
+theme = "tokyonight-storm"
+
+# Increase the window padding so the characters don't bump up against the edge
+window-padding-x = 2
+
+# Don't display the resize overlay
+resize-overlay = never
+
+# Increase the line height
+adjust-cell-height = 25%
+
+# Automatically download updates
+auto-update = download
+
+# Add more accessible keybindings for tmux commands. The `\x13` string is the `ctrl+s` ASDII
+# character.
+#
+# TODO: Figure out how to run the tmux commands directly rather than triggering tmux keybindings
+# directly.
+keybind = super+h=text:\x13p
+keybind = super+l=text:\x13n
+keybind = super+m=text:\x13s
