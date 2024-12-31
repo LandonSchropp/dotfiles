@@ -18,6 +18,10 @@ adjust-cell-height = 25%
 # Automatically download updates
 auto-update = download
 
+# Override the default cursor style
+cursor-style = "block"
+shell-integration-features = no-cursorpick
+
 # Add more accessible keybindings for tmux commands. The `\x13` string is the `ctrl+s` ASDII
 # character.
 #
