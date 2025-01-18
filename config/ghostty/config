@@ -25,8 +25,7 @@ shell-integration-features = no-cursor
 # Add more accessible keybindings for tmux commands. The `\x13` string is the `control+s` ASDII
 # character.
 #
-# TODO: Figure out how to run the tmux commands directly rather than triggering tmux keybindings
-# directly.
+# TODO: Figure out how to run the tmux commands directly rather than triggering tmux keybindings.
 keybind = command+h=text:\x13p
 keybind = command+l=text:\x13n
 keybind = command+m=text:\x13s
