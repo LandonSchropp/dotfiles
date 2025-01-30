@@ -44,6 +44,7 @@ brew "wget"
 brew "yarn"
 
 cask "1password"
+cask "alfred"
 cask "arc"
 cask "cold-turkey-blocker"
 cask "firefox"
