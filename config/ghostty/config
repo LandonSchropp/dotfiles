@@ -7,7 +7,7 @@ font-style = Medium
 theme = "tokyonight-storm"
 
 # Increase the window padding so the characters don't bump up against the edge
-window-padding-x = 2
+window-padding-x = 4
 
 # Don't display the resize overlay
 resize-overlay = never
