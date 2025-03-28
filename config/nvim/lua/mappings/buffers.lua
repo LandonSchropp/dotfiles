@@ -1,21 +1,15 @@
 local extend = require("utilities.table").extend
 
 local function close_buffer()
-  local current_buffer = vim.api.nvim_get_current_buf()
-  local number_of_buffers = #vim.fn.getbufinfo({ buflisted = 1 })
+  local buffers = vim.fn.getbufinfo({ buflisted = true })
 
-  -- If alpha.nvim is already open, don't to anything.
-  if vim.bo.ft == "alpha" then
-    return
+  -- Close the last buffer.
+  require("astrocore.buffer").close(0)
+
+  -- If no buffers are open, ope  up the Snacks dashboard.
+  if not buffers[2] then
+    require("snacks").dashboard()
   end
-
-  -- Start alpha.nvim if there's only one buffer currently open.
-  if number_of_buffers == 1 and require("astrocore").is_available("alpha-nvim") then
-    require("alpha").start()
-  end
-
-  -- Close the current buffer.
-  require("astrocore.buffer").close(current_buffer)
 end
 
 return function(mappings)
