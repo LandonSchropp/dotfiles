@@ -1,12 +1,5 @@
 local extend = require("utilities.table").extend
 
-local FIND_FILES_MAPPING = {
-  function()
-    require("telescope.builtin").git_files({ prompt_title = "Find Files", show_untracked = true })
-  end,
-  desc = "Find Files",
-}
-
 return function(mappings)
   return {
     n = {
@@ -28,10 +21,9 @@ return function(mappings)
       ["<Leader>r"] = false,
 
       -- Remap mappings
-      ["<Leader><Leader>"] = FIND_FILES_MAPPING,
+      ["<Leader><Leader>"] = mappings.n["<Leader>ff"],
       ["<Leader>fH"] = { "<cmd>Telescope highlights<cr>", desc = "Highlights" },
       ["<Leader>fR"] = mappings.n["<Leader>fo"],
-      ["<Leader>ff"] = FIND_FILES_MAPPING,
       ["<Leader>fg"] = extend(mappings.n["<Leader>fw"], { desc = "Grep" }),
       ["<Leader>fr"] = {
         function()
