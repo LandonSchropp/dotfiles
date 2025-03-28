@@ -16,7 +16,7 @@ return {
         section_separators = { left = "", right = "" },
         component_separators = "|",
         disabled_filetypes = {
-          "alpha",
+          "snacks_dashboard",
         },
       },
       sections = {

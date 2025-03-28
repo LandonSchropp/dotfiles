@@ -1,7 +1,8 @@
--- lazy.nvim
 return {
   "folke/snacks.nvim",
   opts = {
+
+    -- Customize the file picker
     picker = {
       layout = {
         -- Make the picker take up the full window by default.
@@ -15,6 +16,56 @@ return {
             ["<Esc>"] = { "close", mode = { "n", "i" } },
           },
         },
+      },
+    },
+
+    -- Customize the dashboard.
+    dashboard = {
+      preset = {
+        -- Redefine the header.
+        header = table.concat({
+          " ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
+          " ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
+          " ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
+          " ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+          " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+          " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+        }, "\n"),
+
+        -- Redefine the buttons.
+        keys = {
+          {
+            key = "<leader>n",
+            action = function() end,
+            icon = "",
+            desc = "New File",
+          },
+          {
+            key = "<leader>ff",
+            action = function() end,
+            icon = "󰱽",
+            desc = "Find File",
+          },
+          {
+            key = "<leader>fg",
+            action = function() end,
+            icon = "",
+            desc = "Find",
+          },
+          {
+            key = "<leader>fr",
+            action = function() end,
+            icon = "",
+            desc = "Find and Replace",
+          },
+        },
+      },
+
+      -- Override the padding and gaps
+      sections = {
+        { section = "header", padding = 0, gap = 1 },
+        { section = "keys", gap = 1, padding = 2 },
+        { section = "startup" },
       },
     },
   },
