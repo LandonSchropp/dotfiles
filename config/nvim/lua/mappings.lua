@@ -3,6 +3,7 @@ local deep_extend = require("utilities.table").deep_extend
 return function(mappings)
   return deep_extend(
     mappings,
+    require("mappings.ai")(mappings),
     require("mappings.buffers")(mappings),
     require("mappings.comments")(mappings),
     require("mappings.files")(mappings),
