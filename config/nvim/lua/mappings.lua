@@ -12,6 +12,7 @@ return function(mappings)
     require("mappings.test")(mappings),
     require("mappings.text")(mappings),
     require("mappings.ui")(mappings),
+    require("mappings.which-key")(mappings),
     require("mappings.yank")(mappings)
   )
 end
