@@ -5,9 +5,6 @@ return function(mappings)
     n = {
       ["<Leader>o"] = false,
       ["<Leader>e"] = false,
-
-      -- Remap mappings
-      ["<Leader>Ft"] = extend(mappings.n["<Leader>e"], { desc = "Tree" }),
     },
   }
 end
