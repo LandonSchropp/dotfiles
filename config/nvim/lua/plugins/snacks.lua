@@ -8,15 +8,6 @@ return {
         -- Make the picker take up the full window by default.
         fullscreen = true,
       },
-
-      win = {
-        -- Close the picker on escape instead of going into normal mode.
-        input = {
-          keys = {
-            ["<Esc>"] = { "close", mode = { "n", "i" } },
-          },
-        },
-      },
     },
 
     -- Customize the dashboard.
@@ -64,7 +55,7 @@ return {
       -- Override the padding and gaps
       sections = {
         { section = "header", padding = 0, gap = 1 },
-        { section = "keys", gap = 1, padding = 2 },
+        { section = "keys",   gap = 1,     padding = 2 },
         { section = "startup" },
       },
     },
