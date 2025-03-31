@@ -11,10 +11,6 @@ return {
     ---@type AstroCoreOpts
     local updated_opts = deep_extend(opts, {
       commands = require("commands"),
-      features = {
-        -- Disable notifications
-        notifications = false,
-      },
       options = {
         opt = {
           -- Disable swap files
