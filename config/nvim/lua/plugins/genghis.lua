@@ -10,10 +10,6 @@ local function chmodx()
   require("genghis").chmodx()
 end
 
-local function rename_file()
-  require("genghis").renameFile()
-end
-
 local function move()
   require("genghis").moveAndRenameFile()
 end
@@ -29,7 +25,6 @@ return {
     { "<Leader>Fy", copy_path,     desc = "Copy path" },
     { "<Leader>FY", copy_filename, desc = "Copy name" },
     { "<Leader>Fx", chmodx,        desc = "chmod +x" },
-    { "<Leader>Fr", rename_file,   desc = "Rename" },
     { "<Leader>Fm", move,          desc = "Move" },
     { "<Leader>Fd", delete,        desc = "Delete" },
   },
