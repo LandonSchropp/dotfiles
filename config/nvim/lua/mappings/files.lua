@@ -4,10 +4,9 @@ return function(mappings)
       ["<Leader>O"] = false,
       ["<Leader>e"] = false,
       ["<Leader>o"] = false,
-      ["<Leader>Fo"] = {
-        mappings.n["<Leader>O"][1],
-        desc = "Oil",
-      },
+      ["<Leader>R"] = false,
+      ["<Leader>Fr"] = { mappings.n["<Leader>R"][1], desc = "Rename" },
+      ["<Leader>Fo"] = { mappings.n["<Leader>O"][1], desc = "Oil" },
     },
   }
 end

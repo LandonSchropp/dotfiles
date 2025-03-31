@@ -59,5 +59,15 @@ return {
         { section = "startup" },
       },
     },
+
+    -- Customize the input prompt
+    styles = {
+      input = {
+        keys = {
+          -- Close the input when escape is pressed (instead of entering normal mode)
+          i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
+        },
+      },
+    },
   },
 }
