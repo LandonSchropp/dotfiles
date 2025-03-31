@@ -1,5 +1,3 @@
-local extend = require("utilities.table").extend
-
 return function(mappings)
   return {
     n = {
