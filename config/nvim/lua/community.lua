@@ -7,6 +7,7 @@ return {
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.html-css" },
