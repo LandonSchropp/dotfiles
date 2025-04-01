@@ -1,7 +1,7 @@
 local extend = require("utilities.table").extend
 
 local function close_buffer()
-  local buffers = vim.fn.getbufinfo({ buflisted = true })
+  local buffers = vim.fn.getbufinfo({ buflisted = 1 })
 
   -- Close the last buffer.
   require("astrocore.buffer").close(0)
