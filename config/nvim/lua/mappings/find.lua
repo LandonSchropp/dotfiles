@@ -23,6 +23,9 @@ return function(mappings)
           require("grug-far").toggle_instance({
             instanceName = "far",
             staticTitle = "Find and Replace",
+            prefills = {
+              flags = "--hidden --smart-case",
+            },
           })
         end,
         desc = "Find and replace",
