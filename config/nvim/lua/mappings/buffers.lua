@@ -6,7 +6,7 @@ local function close_buffer()
   -- Close the last buffer.
   require("astrocore.buffer").close(0)
 
-  -- If no buffers are open, ope  up the Snacks dashboard.
+  -- If all of the buffers are closed, open up the Snacks dashboard.
   if not buffers[2] then
     require("snacks").dashboard()
   end
