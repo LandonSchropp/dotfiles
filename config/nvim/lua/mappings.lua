@@ -9,6 +9,7 @@ return function(mappings)
     require("mappings.files")(mappings),
     require("mappings.find")(mappings),
     require("mappings.home")(mappings),
+    require("mappings.language-tools")(mappings),
     require("mappings.search-replace")(mappings),
     require("mappings.test")(mappings),
     require("mappings.text")(mappings),
