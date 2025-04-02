@@ -5,8 +5,8 @@ return function(mappings)
       ["<Leader>e"] = false,
       ["<Leader>o"] = false,
       ["<Leader>R"] = false,
-      ["<Leader>Fr"] = { mappings.n["<Leader>R"][1], desc = "Rename" },
-      ["<Leader>Fo"] = { mappings.n["<Leader>O"][1], desc = "Oil" },
+      ["<Leader>Fr"] = { mappings.n["<Leader>R"][1], desc = "Rename file" },
+      ["<Leader>Fo"] = { mappings.n["<Leader>O"][1], desc = "Open Oil" },
     },
   }
 end
