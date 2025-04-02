@@ -63,7 +63,7 @@ return {
       -- Override the padding and gaps
       sections = {
         { section = "header", padding = 0, gap = 1 },
-        { section = "keys",   gap = 1,     padding = 2 },
+        { section = "keys",   padding = 2, gap = 1 },
         { section = "startup" },
       },
     },
