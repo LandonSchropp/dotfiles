@@ -29,3 +29,6 @@ shell-integration-features = no-cursor
 keybind = command+h=text:\x13p
 keybind = command+l=text:\x13n
 keybind = command+m=text:\x13s
+
+# Make alt keys behave normally
+macos-option-as-alt = false
