@@ -76,6 +76,16 @@ return {
           i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
         },
       },
+
+      dashboard = {
+        relative = "editor",
+        -- Prevent the dashboard from closing when <esc> is pressed
+        on_win = function(self)
+          vim.schedule(function()
+            vim.keymap.del("n", "<Esc>", { buffer = self.buf })
+          end)
+        end,
+      },
     },
   },
 }
