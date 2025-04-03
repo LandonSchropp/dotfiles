@@ -6,6 +6,7 @@ local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
+local func = luasnip.f
 local insert = luasnip.i
 local restore = luasnip.r
 local snippet = luasnip.s
@@ -104,4 +105,16 @@ return {
     { condition = is_test, show_condition = is_test }
   ),
   snippet("/**", format("/**\n * <>\n */", { insert(0) })),
+  snippet_with_stores(
+    "eslint-disable-next-line",
+    format("<>eslint-disable-next-line <>\n<>", {
+      func(function(_, _)
+        local line = vim.api.nvim_get_current_line()
+        return line:match("^%s*//") and "" or "// "
+      end),
+      insert(1),
+      insert(2),
+    }),
+    { "text" }
+  ),
 }
