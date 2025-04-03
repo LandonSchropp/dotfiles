@@ -39,13 +39,17 @@ local FUNCTION_SYNCHRONICITY_TEMPLATE = { sync = "", async = "async " }
 local function_node = function(jump_index, key, options)
   local choices = vim.tbl_map(function(option)
     local template = FUNCTION_SYNCHRONICITY_TEMPLATE[option.synchronicity]
-      .. FUNCTION_TYPE_TEMPLATE[option.type]
-      .. FUNCTION_BLOCK_TEMPLATE[option.block]
+        .. FUNCTION_TYPE_TEMPLATE[option.type]
+        .. FUNCTION_BLOCK_TEMPLATE[option.block]
 
     return format(template, { restore(1, key) })
   end, options)
 
   return choice(jump_index, choices, { restore_cursor = true })
+end
+
+local function is_test()
+  return vim.fn.expand("%:t"):match("%.test%.tsx?$") ~= nil
 end
 
 return {
@@ -57,7 +61,8 @@ return {
         { type = "arrow", block = "multi", synchronicity = "sync" },
       }),
     }),
-    { "description", "text" }
+    { "description", "text" },
+    { condition = is_test, show_condition = is_test }
   ),
   snippet_with_stores(
     "it",
@@ -68,19 +73,21 @@ return {
         { type = "arrow", block = "multi", synchronicity = "async" },
       }),
     }),
-    { "description", "text" }
+    { "description", "text" },
+    { condition = is_test, show_condition = is_test }
   ),
   snippet_with_stores(
     "beforeEach",
     format("beforeEach(<>);", {
       function_node(1, "text", {
         { type = "arrow", block = "single", synchronicity = "sync" },
-        { type = "arrow", block = "multi", synchronicity = "sync" },
+        { type = "arrow", block = "multi",  synchronicity = "sync" },
         { type = "arrow", block = "single", synchronicity = "async" },
-        { type = "arrow", block = "multi", synchronicity = "async" },
+        { type = "arrow", block = "multi",  synchronicity = "async" },
       }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_test, show_condition = is_test }
   ),
   snippet_with_stores(
     "expect",
@@ -93,7 +100,8 @@ return {
       insert(2, "toEqual"),
       insert(3),
     }),
-    { "target" }
+    { "target" },
+    { condition = is_test, show_condition = is_test }
   ),
   snippet("/**", format("/**\n * <>\n */", { insert(0) })),
 }
