@@ -124,12 +124,13 @@ return {
   ),
   snippet_with_stores(
     "rubocop:disable",
-    format("<>rubocop:disable <>\n# rubocop:enable <>", {
+    format("<>rubocop:disable <>\n<>\n# rubocop:enable <>", {
       func(function(_, _)
         local line = vim.api.nvim_get_current_line()
         return line:match("^%s*#") and "" or "# "
       end),
       insert(1),
+      insert(2),
       rep(1),
     }),
     { "text" }

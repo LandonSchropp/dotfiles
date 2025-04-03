@@ -1,6 +1,7 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
+local rep = require("luasnip.extras").rep
 
 local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
@@ -105,6 +106,23 @@ return {
     { condition = is_test, show_condition = is_test }
   ),
   snippet("/**", format("/**\n * <>\n */", { insert(0) })),
+  snippet_with_stores(
+    "eslint-disable",
+    format("<>eslint-disable <><>\n<>\n/* eslint-enable <> */", {
+      func(function(_, _)
+        local line = vim.api.nvim_get_current_line()
+        return line:match("^%s*/%*") and "" or "/* "
+      end),
+      insert(1),
+      func(function(_, _)
+        local line = vim.api.nvim_get_current_line()
+        return line:match("%*/$") and "" or " */"
+      end),
+      insert(2),
+      rep(1),
+    }),
+    { "text" }
+  ),
   snippet_with_stores(
     "eslint-disable-next-line",
     format("<>eslint-disable-next-line <>\n<>", {
