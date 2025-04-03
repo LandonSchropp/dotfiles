@@ -7,6 +7,11 @@ return {
     ---@type AstroLSPOpts
     return deep_extend(opts, {
       config = {
+        -- Disable emmet-ls to prevent annoying autocompletions in `.tsx` files.
+        emmet_ls = {
+          enabled = false,
+        },
+
         jsonls = {
           init_options = {
 
