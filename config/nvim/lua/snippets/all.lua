@@ -1,5 +1,4 @@
 local luasnip = require("luasnip")
-local parse_snippet = luasnip.parser.parse_snippet
 
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
@@ -15,8 +14,20 @@ local text = luasnip.t
 local BASH_SHEBANG = "#!/usr/bin/env bash"
 local RUBY_SHEBANG = "#!/usr/bin/env ruby"
 
+local function is_bash_or_empty()
+  return vim.bo.filetype == "bash" or vim.bo.filetype == "sh" or vim.bo.filetype == ""
+end
+
+local function is_ruby_or_empty()
+  return vim.bo.filetype == "ruby" or vim.bo.filetype == ""
+end
+
 return {
-  parse_snippet("bash-shebang", BASH_SHEBANG .. "\n\n$0"),
+  snippet(
+    "bash-shebang",
+    text(BASH_SHEBANG),
+    { condition = is_bash_or_empty, show_condition = is_bash_or_empty }
+  ),
   snippet(
     "bash-script",
     format(
@@ -48,18 +59,23 @@ return {
           end
 
           local template = '  >>&2 echo "Usage: $0'
-            .. usage_template
-            .. '"\n  exit 1\nfi\n'
-            .. arguments_template
-            .. "\n"
+              .. usage_template
+              .. '"\n  exit 1\nfi\n'
+              .. arguments_template
+              .. "\n"
 
           return snippet_node(nil, format(template, nodes, { dedent = false }))
         end, { 1 }),
         insert(0, "# TODO: Implement the script!"),
       }
-    )
+    ),
+    { condition = is_bash_or_empty, show_condition = is_bash_or_empty }
   ),
-  parse_snippet("ruby-shebang", RUBY_SHEBANG .. "\n\n$0"),
+  snippet(
+    "ruby-shebang",
+    text(RUBY_SHEBANG),
+    { condition = is_ruby_or_empty, show_condition = is_ruby_or_empty }
+  ),
   snippet(
     "ruby-script",
     format(
@@ -91,15 +107,16 @@ return {
           end
 
           local template = '  warn "Usage: #{$PROGRAM_NAME}'
-            .. usage_template
-            .. '"\n  exit 1\nend\n'
-            .. arguments_template
-            .. "\n"
+              .. usage_template
+              .. '"\n  exit 1\nend\n'
+              .. arguments_template
+              .. "\n"
 
           return snippet_node(nil, format(template, nodes, { dedent = false }))
         end, { 1 }),
         insert(0, "# TODO: Implement the script!"),
       }
-    )
+    ),
+    { condition = is_ruby_or_empty, show_condition = is_ruby_or_empty }
   ),
 }
