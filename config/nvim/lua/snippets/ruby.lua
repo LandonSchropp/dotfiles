@@ -1,6 +1,7 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
+local rep = require("luasnip.extras").rep
 
 local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
@@ -119,5 +120,13 @@ return {
     }),
     { "text" },
     { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "rubocop:disable",
+    format("# rubocop:disable <>\n# rubocop:enable <>", {
+      insert(1),
+      rep(1),
+    }),
+    { "text" }
   ),
 }
