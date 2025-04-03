@@ -1,5 +1,6 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
+local extend = require("utilities.table").extend
 
 local choice = luasnip.c
 local insert = luasnip.i
@@ -32,17 +33,17 @@ end
 ---Creates a snippet that contains insert nodes in the specified stores.
 ---@param trigger string The trigger for the snippet.
 ---@param node unknown The snippet's node.
----@param keys string[] A list of stores to create insert nodes for. The order of the keys dictates
----the order of the jumps for the inserts.
+---@param keys string[] A list of stores to create insert nodes for. The order of the keys dictates the order of the jumps for the inserts.
+---@param options? table A table of options to pass to the snippet.
 ---@return unknown The snippet.
-M.snippet_with_stores = function(trigger, node, keys)
+M.snippet_with_stores = function(trigger, node, keys, options)
   local stored = {}
 
   for index, key in ipairs(keys) do
     stored[key] = insert(index)
   end
 
-  return snippet(trigger, node, { stored = stored })
+  return snippet(trigger, node, extend({ stored = stored }, options or {}))
 end
 
 ---@alias stringNodeType

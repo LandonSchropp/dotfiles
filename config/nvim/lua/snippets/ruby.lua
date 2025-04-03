@@ -29,6 +29,12 @@ local block_node = function(jump_index, key, types)
   return choice(jump_index, choices, { restore_cursor = true })
 end
 
+--- Returns true if the current buffer is a spec file.
+--- @return boolean True if the current buffer is a spec file, false otherwise.
+local function is_spec()
+  return vim.fn.expand("%:t"):match("_spec%.rb$") ~= nil
+end
+
 return {
   snippet_with_stores(
     "describe",
@@ -36,7 +42,8 @@ return {
       string_node(1, "description", { "double", "single", "bare" }),
       block_node(2, "text", { "multi-line" }),
     }),
-    { "description", "text" }
+    { "description", "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "context",
@@ -44,7 +51,8 @@ return {
       string_node(1, "description"),
       block_node(2, "text", { "multi-line" }),
     }),
-    { "description", "text" }
+    { "description", "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "it",
@@ -52,21 +60,24 @@ return {
       string_node(1, "description"),
       block_node(2, "text", { "multi-line", "inline" }),
     }),
-    { "description", "text" }
+    { "description", "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "subject",
     format("subject <>", {
       block_node(1, "text", { "inline", "multi-line" }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "before",
     format("before <>", {
       block_node(1, "text", { "inline", "multi-line" }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "let",
@@ -74,7 +85,8 @@ return {
       insert(1),
       block_node(2, "text", { "inline", "multi-line" }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "let!",
@@ -82,7 +94,8 @@ return {
       insert(1),
       block_node(2, "text", { "inline", "multi-line" }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "expect",
@@ -93,7 +106,8 @@ return {
         format(".not_to <>", restore(1, "text")),
       }, { restore_cursor = true }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
     "it { is_expected.to }",
@@ -103,6 +117,7 @@ return {
         format(".not_to <>", restore(1, "text")),
       }, { restore_cursor = true }),
     }),
-    { "text" }
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
   ),
 }
