@@ -1,8 +1,6 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
-local snippet_utils = require("utilities.snippet")
-
-local same = snippet_utils.same
+local rep = require("luasnip.extras").rep
 
 local choice = luasnip.c
 local dynamic = luasnip.d
@@ -42,7 +40,7 @@ return {
             return ""
           end
         end, { 2 }),
-        same(1),
+        rep(1),
         dynamic(3, function(args)
           local props = vim.split(args[1][1], "%W+", { trimempty = true })
           local nodes = {}
@@ -70,7 +68,7 @@ return {
         end, { 2 }),
         insert(1),
         insert(2),
-        same(1),
+        rep(1),
         insert(4, "div"),
         func(function(args)
           if args[2][1]:match("className") then
@@ -80,7 +78,7 @@ return {
           end
         end, { 1, 2 }),
         insert(0),
-        same(4),
+        rep(4),
       }
     )
   ),

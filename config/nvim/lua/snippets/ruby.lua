@@ -1,7 +1,7 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
-local same = snippet_utils.same
+local rep = require("luasnip.extras").rep
 
 local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
@@ -130,7 +130,7 @@ return {
         return line:match("^%s*#") and "" or "# "
       end),
       insert(1),
-      same(1),
+      rep(1),
     }),
     { "text" }
   ),
