@@ -31,16 +31,16 @@ local FUNCTION_SYNCHRONICITY_TEMPLATE = { sync = "", async = "async " }
 ---@field block functionNodeBlock
 ---@field synchronicity functionNodeSynchronicity
 
----Creates a node for TypeScript functions.
+---Creates a node for JavaScript functions.
 ---@param jump_index number The index the node should use for jumping.
 ---@param key string The key of the restore node to use for the node's content.
 ---@param options FunctionNodeOption[] Configures the function nodes the user can choose from.
 ---@return unknown
-local function_node = function(jump_index, key, options)
+local javascript_function_node = function(jump_index, key, options)
   local choices = vim.tbl_map(function(option)
     local template = FUNCTION_SYNCHRONICITY_TEMPLATE[option.synchronicity]
-        .. FUNCTION_TYPE_TEMPLATE[option.type]
-        .. FUNCTION_BLOCK_TEMPLATE[option.block]
+      .. FUNCTION_TYPE_TEMPLATE[option.type]
+      .. FUNCTION_BLOCK_TEMPLATE[option.block]
 
     return format(template, { restore(1, key) })
   end, options)
@@ -49,7 +49,7 @@ local function_node = function(jump_index, key, options)
 end
 
 local function is_test()
-  return vim.fn.expand("%:t"):match("%.test%.tsx?$") ~= nil
+  return vim.fn.expand("%:t"):match("%.test%.[jt]sx?$") ~= nil
 end
 
 return {
@@ -57,7 +57,7 @@ return {
     "describe",
     format("describe(<>, <>);", {
       string_node(1, "description"),
-      function_node(2, "text", {
+      javascript_function_node(2, "text", {
         { type = "arrow", block = "multi", synchronicity = "sync" },
       }),
     }),
@@ -68,7 +68,7 @@ return {
     "it",
     format("it(<>, <>);", {
       string_node(1, "description"),
-      function_node(2, "text", {
+      javascript_function_node(2, "text", {
         { type = "arrow", block = "multi", synchronicity = "sync" },
         { type = "arrow", block = "multi", synchronicity = "async" },
       }),
@@ -79,11 +79,11 @@ return {
   snippet_with_stores(
     "beforeEach",
     format("beforeEach(<>);", {
-      function_node(1, "text", {
+      javascript_function_node(1, "text", {
         { type = "arrow", block = "single", synchronicity = "sync" },
-        { type = "arrow", block = "multi",  synchronicity = "sync" },
+        { type = "arrow", block = "multi", synchronicity = "sync" },
         { type = "arrow", block = "single", synchronicity = "async" },
-        { type = "arrow", block = "multi",  synchronicity = "async" },
+        { type = "arrow", block = "multi", synchronicity = "async" },
       }),
     }),
     { "text" },
