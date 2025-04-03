@@ -11,7 +11,22 @@ return {
         emoji = {
           module = "blink-emoji",
           name = "Emoji",
-          -- score_offset = 15,
+        },
+      },
+    },
+    completion = {
+      menu = {
+        draw = {
+          columns = {
+            {
+              "label",
+            },
+            {
+              "kind_icon",
+              "kind",
+              gap = 1,
+            },
+          },
         },
       },
     },
