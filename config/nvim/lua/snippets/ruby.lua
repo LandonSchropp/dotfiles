@@ -9,15 +9,11 @@ local choice = luasnip.c
 local insert = luasnip.i
 local restore = luasnip.r
 
----@alias blockNodeType
----| '"inline"' # A block enclosed in curly braces (`{}`)
----| '"multi-line"' # A block spread over multiple lines and enclosed in `do` and `end`
-
 ---Creates a node for Ruby blocks.
 ---@param jump_index number The index the node should use for jumping.
 ---@param key string The key of the restore node to use for the node's content.
----@param types blockNodeType[] A list of types to allow for the block node. Defaults to `{
----"multi-line", "inline" }`
+---@param types ("inline" | "multi-line")[] A list of types to allow for the block node. Defaults to
+---  `{ "multi-line", "inline" }`
 ---@return unknown
 local block_node = function(jump_index, key, types)
   local choices = vim.tbl_map(function(type)
