@@ -2,3 +2,5 @@
 .envrc
 *.log
 firmware/*.uf2
+repro.lua
+.repro
