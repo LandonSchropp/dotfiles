@@ -5,6 +5,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.nvim-surround" },

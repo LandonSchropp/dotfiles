@@ -8,6 +8,7 @@ return function(mappings)
     require("mappings.comments")(mappings),
     require("mappings.files")(mappings),
     require("mappings.find")(mappings),
+    require("mappings.git")(mappings),
     require("mappings.home")(mappings),
     require("mappings.language-tools")(mappings),
     require("mappings.search-replace")(mappings),
