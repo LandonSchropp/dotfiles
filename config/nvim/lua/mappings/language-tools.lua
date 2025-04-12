@@ -1,5 +1,3 @@
-local extend = require("utilities.table").extend
-
 local function generate_documentation()
   require("neogen").generate()
 end
@@ -20,10 +18,20 @@ local function previous_choice()
   end
 end
 
-return function(_)
+local function next_diagnostic()
+  vim.diagnostic.jump({ count = 1, float = true })
+end
+
+local function previous_diagnostic()
+  vim.diagnostic.jump({ count = -1, float = true })
+end
+
+return function()
   return {
     n = {
       ["<Leader>ld"] = { generate_documentation, desc = "Generate documentation" },
+      ["]]"] = { next_diagnostic, desc = "Next diagnostic" },
+      ["[["] = { previous_diagnostic, desc = "Previous diagnostic" },
     },
     i = {
       ["<C-e>"] = { next_choice, desc = "Next choice" },
