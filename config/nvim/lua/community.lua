@@ -24,5 +24,4 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
-  { import = "astrocommunity.workflow.hardtime-nvim" },
 }
