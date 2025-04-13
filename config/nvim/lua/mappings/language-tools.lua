@@ -26,7 +26,7 @@ local function previous_diagnostic()
   vim.diagnostic.jump({ count = -1, float = true })
 end
 
-return function()
+return function(_)
   return {
     n = {
       ["<Leader>ld"] = { generate_documentation, desc = "Generate documentation" },

@@ -1,4 +1,4 @@
-return function()
+return function(_)
   return {
     n = {
       ["<Leader>gnt"] = false,
