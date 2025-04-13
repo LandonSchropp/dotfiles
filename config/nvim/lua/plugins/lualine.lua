@@ -27,7 +27,7 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           { "filename", color = {}, cond = nil, left = 0, right = 0, file_status = false },
-          { "filetype", left = 0, right = 0 },
+          { "filetype", left = 0,   right = 0 },
         },
 
         lualine_x = { "diff" },

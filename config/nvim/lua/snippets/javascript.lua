@@ -41,8 +41,8 @@ local FUNCTION_SYNCHRONICITY_TEMPLATE = { sync = "", async = "async " }
 local javascript_function_node = function(jump_index, key, options)
   local choices = vim.tbl_map(function(option)
     local template = FUNCTION_SYNCHRONICITY_TEMPLATE[option.synchronicity]
-      .. FUNCTION_TYPE_TEMPLATE[option.type]
-      .. FUNCTION_BLOCK_TEMPLATE[option.block]
+        .. FUNCTION_TYPE_TEMPLATE[option.type]
+        .. FUNCTION_BLOCK_TEMPLATE[option.block]
 
     return format(template, { restore(1, key) })
   end, options)
@@ -83,9 +83,9 @@ return {
     format("beforeEach(<>);", {
       javascript_function_node(1, "text", {
         { type = "arrow", block = "single", synchronicity = "sync" },
-        { type = "arrow", block = "multi", synchronicity = "sync" },
+        { type = "arrow", block = "multi",  synchronicity = "sync" },
         { type = "arrow", block = "single", synchronicity = "async" },
-        { type = "arrow", block = "multi", synchronicity = "async" },
+        { type = "arrow", block = "multi",  synchronicity = "async" },
       }),
     }),
     { "text" },

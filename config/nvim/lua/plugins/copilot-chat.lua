@@ -21,7 +21,7 @@ return {
       desc = "Chat with current buffer",
     },
     { "<Leader>ce", "<cmd>CopilotChatExplain<cr>", desc = "Explain code" },
-    { "<Leader>ct", "<cmd>CopilotChatTests<cr>", desc = "Generate tests" },
+    { "<Leader>ct", "<cmd>CopilotChatTests<cr>",   desc = "Generate tests" },
     {
       "<Leader>cT",
       "<cmd>CopilotChatVsplitToggle<cr>",
