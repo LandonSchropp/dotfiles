@@ -1,4 +1,5 @@
 ---@module "lazy"
+---@module "astrocore"
 
 local deep_extend = require("utilities.table").deep_extend
 local mappings = require("mappings")

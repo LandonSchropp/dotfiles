@@ -1,4 +1,5 @@
 ---@module "lazy"
+---@module "astroui"
 
 ---@type LazySpec
 return {
