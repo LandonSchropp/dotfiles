@@ -16,27 +16,27 @@ local FUNCTION_TYPE_TEMPLATE = { regular = "function() ", arrow = "() =>> " }
 local FUNCTION_BLOCK_TEMPLATE = { single = "{ <> }", multi = "{\n  <>\n}" }
 local FUNCTION_SYNCHRONICITY_TEMPLATE = { sync = "", async = "async " }
 
----@alias functionNodeType
+---@alias FunctionNodeTypeOption
 ---| '"regular"' # A plain old JavaScript function (`function() {}`)
 ---| '"arrow"' # An arrow function (`() => {}`).
 
----@alias functionNodeBlock
+---@alias FunctionNodeBlockOption
 ---| '"single"' # A function whose curly braces are on a single line
 ---| '"multi"' # A function whose curly braces are on multiple lines
 
----@alias functionNodeSynchronicity
+---@alias FunctionNodeSynchronicityOption
 ---| '"sync"' # A synchronous function.
 ---| '"async"' # An asynchronous function.
 
----@class FunctionNodeOption
----@field type functionNodeType
----@field block functionNodeBlock
----@field synchronicity functionNodeSynchronicity
+---@class FunctionNodeOptions
+---@field type FunctionNodeTypeOption
+---@field block FunctionNodeBlockOption
+---@field synchronicity FunctionNodeSynchronicityOption
 
 ---Creates a node for JavaScript functions.
 ---@param jump_index number The index the node should use for jumping.
 ---@param key string The key of the restore node to use for the node's content.
----@param options FunctionNodeOption[] Configures the function nodes the user can choose from.
+---@param options FunctionNodeOptions[] Configures the function nodes the user can choose from.
 ---@return unknown
 local javascript_function_node = function(jump_index, key, options)
   local choices = vim.tbl_map(function(option)
