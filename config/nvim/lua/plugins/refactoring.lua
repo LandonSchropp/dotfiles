@@ -1,3 +1,5 @@
+---@module "lazy"
+
 local function extract_function()
   return require("refactoring").refactor("Extract Function")
 end
@@ -30,6 +32,7 @@ local function select_refactor()
   require("refactoring").select_refactor()
 end
 
+---@type LazySpec
 return {
   "ThePrimeagen/refactoring.nvim",
   dependencies = {

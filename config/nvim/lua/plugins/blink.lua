@@ -1,3 +1,6 @@
+---@module "lazy"
+
+---@type LazySpec
 return {
   "Saghen/blink.cmp",
   dependencies = {

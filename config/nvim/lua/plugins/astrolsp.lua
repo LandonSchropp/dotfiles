@@ -1,3 +1,6 @@
+---@module "lazy"
+---@module "astrolsp"
+
 local deep_extend = require("utilities.table").deep_extend
 
 ---@type LazySpec

@@ -1,3 +1,6 @@
+---@module "lazy"
+
+---@type LazySpec
 return {
   "echasnovski/mini.ai",
   opts = function(_, opts)

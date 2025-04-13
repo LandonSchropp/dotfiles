@@ -1,3 +1,5 @@
+---@module "lazy"
+
 local function substitute_operator()
   require("substitute").operator()
 end
@@ -10,6 +12,7 @@ local function substitute_visual()
   require("substitute").visual()
 end
 
+---@type LazySpec
 return {
   "gbprod/substitute.nvim",
   keys = {

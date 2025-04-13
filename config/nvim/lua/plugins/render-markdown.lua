@@ -1,4 +1,7 @@
+---@module "lazy"
+
 -- NOTE: This plugin is installed via AstroCommunity. It's included here for configuration.
+---@type LazySpec
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   enabled = true,

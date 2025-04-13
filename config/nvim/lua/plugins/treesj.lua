@@ -1,3 +1,6 @@
+---@module "lazy"
+
+---@type LazySpec
 return {
   "Wansmer/treesj",
   dependencies = { "nvim-treesitter/nvim-treesitter" },

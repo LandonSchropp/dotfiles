@@ -1,3 +1,6 @@
+---@module "lazy"
+
+---@type LazySpec
 return {
   "jinh0/eyeliner.nvim",
   opts = {

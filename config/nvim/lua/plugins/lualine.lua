@@ -1,3 +1,5 @@
+---@module "lazy"
+
 local function location()
   local line = vim.fn.line(".")
   local number_of_lines = vim.fn.line("$")
@@ -6,6 +8,7 @@ local function location()
 end
 
 -- A nicer status line.
+---@type LazySpec
 return {
   { "AstroNvim/astrocommunity" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },

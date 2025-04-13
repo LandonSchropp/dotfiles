@@ -1,3 +1,5 @@
+---@module "lazy"
+
 local function run_nearest_test()
   vim.cmd("write")
   require("neotest").run.run()
@@ -30,6 +32,7 @@ local function open_test_output()
   require("neotest").output.open()
 end
 
+---@type LazySpec
 return {
   "nvim-neotest/neotest",
   dependencies = {

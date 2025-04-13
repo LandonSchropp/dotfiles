@@ -1,3 +1,5 @@
+---@module "lazy"
+
 local function chmodx()
   require("genghis").chmodx()
 end
@@ -10,6 +12,7 @@ local function delete()
   require("genghis").trashFile()
 end
 
+---@type LazySpec
 return {
   "chrisgrieser/nvim-genghis",
   dependencies = "stevearc/dressing.nvim",
