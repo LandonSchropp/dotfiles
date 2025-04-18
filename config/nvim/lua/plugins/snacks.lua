@@ -7,6 +7,10 @@ return {
 
     -- Customize the file picker
     picker = {
+      sort = {
+        -- Disable sorting by file length
+        fields = { "score:desc", "idx" },
+      },
       layout = {
         -- Make the picker take up the full window by default.
         fullscreen = true,
@@ -66,7 +70,7 @@ return {
       -- Override the padding and gaps
       sections = {
         { section = "header", padding = 0, gap = 1 },
-        { section = "keys",   padding = 2, gap = 1 },
+        { section = "keys", padding = 2, gap = 1 },
         { section = "startup" },
       },
     },
