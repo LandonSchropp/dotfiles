@@ -7,5 +7,9 @@ rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+# Set up a symbolic link to the spellfile
+mkdir -p ~/.config/nvim/spell
+ln -s "$HOME/Documents/Configuration/spell/en.utf-8.add" "$HOME/.config/nvim/spell/en.utf-8.add"
+
 # Run Neovim to do a headless installation.
 nvim --headless +q
