@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-git diff --staged --name-only --diff-filter=ACMRD | xargs git stash push "$@" --

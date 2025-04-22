@@ -51,7 +51,8 @@
   squash = "fixup --squash"
   force-push = "push --force-with-lease"
   my-branches = "!git branches | grep -i '$()'"
-  unstage = git restore --staged 
+  unstage = restore --staged 
+  stash-staged = stash push --staged
 
   # Custom script aliases
   branches = "!$HOME/.config/git/bin/branches"
@@ -62,7 +63,6 @@
   local-repos = "!$HOME/.config/git/bin/local-repos"
   my-branches = "!$HOME/.config/git/bin/my-branches"
   review = "!$HOME/.config/git/bin/review"
-  stash-staged = "!$HOME/.config/git/bin/stash-staged"
   what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
 
 [core]
