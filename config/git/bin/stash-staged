@@ -2,5 +2,4 @@
 
 set -euo pipefail
 
-# Use --diff-filter=ACMRD to include Added, Copied, Modified, Renamed, and Deleted files
 git diff --staged --name-only --diff-filter=ACMRD | xargs git stash push "$@" --
