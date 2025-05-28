@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-crontab -u "$HOME/.dotfiles/config/cron/crontab"
+crontab "$HOME/.dotfiles/config/crontab/crontab"

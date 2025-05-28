@@ -55,6 +55,7 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-bat
 ~/.dotfiles/bin/set-up-mas
+~/.dotfiles/bin/set-up-cron
 ```
 
 ### Git
