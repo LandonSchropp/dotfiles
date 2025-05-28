@@ -1,38 +1,37 @@
 #!/usr/bin/env bash
-#
-# Combines local dictionary with Neovim dictionary
-# Runs daily via cron
+
+# Combines the local system dictionary with the Neovim dictionary.
 
 set -euo pipefail
 
-# Define paths to dictionaries
-LOCAL_DICT="$HOME/Library/Spelling/LocalDictionary"
-NVIM_DICT="$HOME/.config/nvim/spell/en.utf-8.add"
+# Define the paths to the dictionaries
+LOCAL_DICTIONARY="$HOME/Library/Spelling/LocalDictionary"
+NVIM_DICTIONARY="$HOME/.config/nvim/spell/en.utf-8.add"
 
-# Ensure directories exist
-mkdir -p "$(dirname "$LOCAL_DICT")"
-mkdir -p "$(dirname "$NVIM_DICT")"
+# Ensure the directories exist
+mkdir -p "$(dirname "$LOCAL_DICTIONARY")"
+mkdir -p "$(dirname "$NVIM_DICTIONARY")"
 
-# Create files if they don't exist
-touch "$LOCAL_DICT"
-touch "$NVIM_DICT"
+# Create the files if they don't exist
+touch "$LOCAL_DICTIONARY"
+touch "$NVIM_DICTIONARY"
 
 # Create a temporary file for the merged dictionary
-TEMP_DICT=$(mktemp)
+TEMP_DICTIONARY=$(mktemp)
 
 # Combine both dictionaries, sort, and remove duplicates
-cat "$LOCAL_DICT" "$NVIM_DICT" | sort | uniq > "$TEMP_DICT"
+cat "$LOCAL_DICTIONARY" "$NVIM_DICTIONARY" | sort | uniq >"$TEMP_DICTIONARY"
 
 # Write the combined dictionary back to both files
-cp "$TEMP_DICT" "$LOCAL_DICT"
-cp "$TEMP_DICT" "$NVIM_DICT"
+cp "$TEMP_DICTIONARY" "$LOCAL_DICTIONARY"
+cp "$TEMP_DICTIONARY" "$NVIM_DICTIONARY"
 
 # Clean up
-rm "$TEMP_DICT"
+rm "$TEMP_DICTIONARY"
 
-# Regenerate Neovim spell file
-if command -v nvim &> /dev/null; then
-  nvim --headless -c "mkspell! $NVIM_DICT" -c "quit"
+# Regenerate the Neovim spell file
+if command -v nvim &>/dev/null; then
+  nvim --headless -c "mkspell! $NVIM_DICTIONARY" -c "quit"
 fi
 
-echo "Dictionary synchronization completed at $(date)"
+echo "Dictionary synchronization completed at $(date)."

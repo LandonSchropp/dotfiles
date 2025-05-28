@@ -1,2 +1,0 @@
-# Run dictionary sync script daily at 3:00 AM
-0 3 * * * $HOME/bin/sync-dictionaries >> $HOME/.logs/dictionary-sync.log 2>&1
