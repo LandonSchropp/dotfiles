@@ -13,6 +13,7 @@ return {
   opts = function(_, opts)
     ---@type AstroCoreOpts
     local updated_opts = deep_extend(opts, {
+      autocmds = require("auto-commands"),
       commands = require("commands"),
       options = {
         opt = {
