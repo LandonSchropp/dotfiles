@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+crontab -u "$HOME/.dotfiles/config/cron/crontab"
