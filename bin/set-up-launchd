@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+for PLIST in "$HOME"/.dotfiles/config/launchd/*.plist; do
+  # Extract the label from the plist file
+  LABEL=$(/usr/libexec/PlistBuddy -c "Print :Label" "$PLIST")
+
+  # Unload if already loaded (suppress error if not)
+  (launchctl list | grep -q "$LABEL" && launchctl unload "$PLIST") || true
+
+  # Load the plist into launchd
+  launchctl load "$PLIST"
+done
