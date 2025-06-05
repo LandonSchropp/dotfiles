@@ -5,6 +5,7 @@ set -euo pipefail
 # Create links for the dotfiles
 rcup \
   -v \
+  -x config/launchd \
   config \
   tmux.conf \
   zprofile \
