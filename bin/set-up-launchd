@@ -2,13 +2,29 @@
 
 set -euo pipefail
 
+# The domain, required by launchctl
+DOMAIN="gui/$(id -u)"
+
 for PLIST in "$HOME"/.dotfiles/config/launchd/*.plist; do
+  # Print an empty line to space things out.
+  echo
+
   # Extract the label from the plist file
   LABEL=$(/usr/libexec/PlistBuddy -c "Print :Label" "$PLIST")
 
-  # Unload if already loaded (suppress error if not)
-  (launchctl list | grep -q "$LABEL" && launchctl unload "$PLIST") || true
+  # Validate the plist file
+  if ! plutil -lint "$PLIST" &>/dev/null; then
+    echo "Error: Invalid plist file: '$PLIST'"
+    exit 1
+  fi
+
+  # Try to bootout the service if it's already loaded
+  if launchctl print "$DOMAIN/$LABEL" &>/dev/null; then
+    echo "⏪ Unloading service: $LABEL"
+    launchctl bootout "$DOMAIN" "$PLIST" || true
+  fi
 
   # Load the plist into launchd
-  launchctl load "$PLIST"
+  echo "⏩ Loading service: $LABEL"
+  launchctl bootstrap "$DOMAIN" "$PLIST"
 done
