@@ -21,7 +21,6 @@
   bs = branches
   c = commit
   cl = clone
-  co = checkout
   cp = cherry-pick
   fp = force-push
   fpu = force-pull
@@ -64,6 +63,9 @@
   my-branches = "!$HOME/.config/git/bin/my-branches"
   review = "!$HOME/.config/git/bin/review"
   what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
+
+  # Deprecated aliases
+  co = "!$HOME/.config/git/bin/checkout"
 
 [core]
   excludesfile = "~/.config/git/ignore"
