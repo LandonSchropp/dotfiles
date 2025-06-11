@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-set -euo pipefail
-
-# Instead of maintaining my own terminfo fils, download and use the WezTerm one.
-tempfile=$(mktemp) 
-curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo 
-tic -x -o ~/.terminfo $tempfile 
-rm $tempfile
