@@ -30,6 +30,17 @@ return {
           },
         },
 
+        -- Give vtsls more memory to work with.
+        vtsls = {
+          settings = {
+            typescript = {
+              tsserver = {
+                maxTsServerMemory = 8192,
+              },
+            },
+          },
+        },
+
         tsserver = {
           settings = {
             diagnostics = {
