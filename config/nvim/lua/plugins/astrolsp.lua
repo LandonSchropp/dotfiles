@@ -23,6 +23,13 @@ return {
           },
         },
 
+        -- Disable the requirement for using flat config in ESLint.
+        eslint = {
+          settings = {
+            useFlatConfig = false,
+          },
+        },
+
         tsserver = {
           settings = {
             diagnostics = {
