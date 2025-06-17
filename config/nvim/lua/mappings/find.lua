@@ -24,7 +24,7 @@ return function(mappings)
             instanceName = "far",
             staticTitle = "Find and Replace",
             prefills = {
-              flags = "--hidden --smart-case --glob=!.git",
+              flags = "--hidden --smart-case --pcre2 --glob=!.git",
             },
           })
         end,
