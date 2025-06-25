@@ -8,9 +8,7 @@
     <array>
       <string>sh</string>
       <string>-c</string>
-      <string>shortcuts</string>
-      <string>run</string>
-      <string>Disable Screen Tint</string>
+      <string>shortcuts run "Disable Screen Tint"</string>
     </array>
     <key>StartCalendarInterval</key>
     <array>

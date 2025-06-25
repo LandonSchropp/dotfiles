@@ -5,7 +5,7 @@ set -euo pipefail
 # The domain, required by launchctl
 DOMAIN="gui/$(id -u)"
 
-for PLIST in "$HOME"/.dotfiles/config/launchd/*.plist; do
+for PLIST in "$HOME"/Library/LaunchAgents/com.landonschropp.*.plist; do
   # Print an empty line to space things out.
   echo
 

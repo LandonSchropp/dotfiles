@@ -6,8 +6,10 @@ set -euo pipefail
 rcup \
   -v \
   -x config/launchd \
+  -U Library \
   config \
   tmux.conf \
   zprofile \
   zshenv \
-  zshrc
+  zshrc \
+  Library
