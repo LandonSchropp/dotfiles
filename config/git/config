@@ -49,7 +49,6 @@
   dad = "!curl https://icanhazdadjoke.com/ && echo"
   discard = git restore --staged --worktree
   squash = "fixup --squash"
-  force-push = "push --force-with-lease"
   my-branches = "!git branches | grep -i '$()'"
   unstage = restore --staged 
   stash-staged = stash push --staged
@@ -60,6 +59,7 @@
   delete-all-branches = "!$HOME/.config/git/bin/delete-branches"
   delete-merged-branches = "!$HOME/.config/git/bin/delete-branches --merged"
   force-pull = "!$HOME/.config/git/bin/force-pull"
+  force-push = "!$HOME/.config/git/bin/force-push"
   local-repos = "!$HOME/.config/git/bin/local-repos"
   my-branches = "!$HOME/.config/git/bin/my-branches"
   review = "!$HOME/.config/git/bin/review"
