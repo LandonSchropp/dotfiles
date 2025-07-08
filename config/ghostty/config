@@ -42,3 +42,6 @@ keybind = super+enter=unbind
 
 # Make alt keys behave normally
 macos-option-as-alt = false
+
+# Always open the Development directory
+working-directory = ~/Development
