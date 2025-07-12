@@ -16,6 +16,12 @@ alias lsg="eza --all --icons --git-ignore --ignore-glob .DS_Store"
 alias tree="eza --tree --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
 alias treeg="eza --tree --all --icons --git-ignore --ignore-glob .DS_Store"
 
+# Add aliases for common docker-compose commands.
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dcps='docker-compose ps'
+
 # Enable source highlighting in less.
 export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
