@@ -3,6 +3,9 @@ font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 19
 font-style = Medium
 
+# Disable ligatures
+font-feature = -calt, -liga, -dlig
+
 # Set the theme to Tokyo Night Storm
 theme = "tokyonight-storm"
 
