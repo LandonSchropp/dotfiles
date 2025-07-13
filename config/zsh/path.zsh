@@ -23,7 +23,7 @@ eval $(thefuck --alias)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-if [ -s "/Users/landon/.bun/_bun" ]; then 
+if [ -s "/Users/landon/.bun/_bun" ]; then
   source "/Users/landon/.bun/_bun"
 fi
 
@@ -34,7 +34,7 @@ fi
 
 # Deno
 if test -f "$HOME/.deno/env"; then
-  if [[ ":$FPATH:" != *":/Users/landon/.zsh/completions:"* ]]; then 
+  if [[ ":$FPATH:" != *":/Users/landon/.zsh/completions:"* ]]; then
     export FPATH="/Users/landon/.zsh/completions:$FPATH"
   fi
 
