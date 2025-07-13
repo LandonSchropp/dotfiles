@@ -9,6 +9,10 @@ font-feature = -calt, -liga, -dlig
 # Set the theme to Tokyo Night Storm
 theme = "tokyonight-storm"
 
+# Ensure that new windows take up the full screen size.
+window-width = 1000
+window-height = 1000
+
 # Increase the window padding so the characters don't bump up against the edge
 window-padding-x = 4
 
