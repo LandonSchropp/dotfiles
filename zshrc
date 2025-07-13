@@ -14,6 +14,7 @@ plugins=(
   colored-man-pages
   command-not-found
   httpie
+  mise
   rails
   zsh-autosuggestions
   zsh-syntax-highlighting
