@@ -33,5 +33,8 @@ keybind = command+h=text:\x13p
 keybind = command+l=text:\x13n
 keybind = command+m=text:\x13s
 
+# Disable the toggle fullscreen keybinding.
+keybind = super+enter=unbind
+
 # Make alt keys behave normally
 macos-option-as-alt = false
