@@ -1,0 +1,9 @@
+[tools]
+bun = "latest"
+elixir = "latest"
+erlang = "latest"
+node = "latest"
+pnpm = "latest"
+python = "latest"
+ruby = "latest"
+rust = "latest"
