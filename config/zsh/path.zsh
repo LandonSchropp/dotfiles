@@ -2,19 +2,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-# rbenv
-eval "$(rbenv init -)"
-
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# direnv
-eval "$(direnv hook zsh)"
-
-# fnm
-eval "$(fnm env --use-on-cd)"
+# mise-en-place
+eval "$(mise activate zsh)"
 
 # thefuck
 eval $(thefuck --alias)
