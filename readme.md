@@ -47,15 +47,15 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-homebrew
 ~/.dotfiles/bin/set-up-zshell
 ~/.dotfiles/bin/set-up-rcup
-~/.dotfiles/bin/set-up-tic
-~/.dotfiles/bin/set-up-tmux
-~/.dotfiles/bin/set-up-ruby
-~/.dotfiles/bin/set-up-node
-~/.dotfiles/bin/set-up-fzf
-~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-bat
+~/.dotfiles/bin/set-up-fzf
+~/.dotfiles/bin/set-up-launchd
 ~/.dotfiles/bin/set-up-mas
-~/.dotfiles/bin/set-up-cron
+~/.dotfiles/bin/set-up-mise-en-place
+~/.dotfiles/bin/set-up-neovim
+~/.dotfiles/bin/set-up-node
+~/.dotfiles/bin/set-up-tmux
+
 ```
 
 ### Git
