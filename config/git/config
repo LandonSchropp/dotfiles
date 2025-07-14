@@ -122,6 +122,7 @@
     --info hidden \
     --prompt '🔍 Search for a commit: '
   commit = true
+  rebase = true
 
 [filter "lfs"]
   smudge = git-lfs smudge -- %f
