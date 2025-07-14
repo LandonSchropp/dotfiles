@@ -55,7 +55,6 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-node
 ~/.dotfiles/bin/set-up-tmux
-
 ```
 
 ### Git
