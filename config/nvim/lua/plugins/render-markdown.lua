@@ -28,6 +28,7 @@ return {
       style = "normal",
       width = "block",
       min_width = 100,
+      border = "thin",
     },
     quote = {
       icon = "▎",
