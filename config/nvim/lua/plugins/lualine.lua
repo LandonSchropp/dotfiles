@@ -27,7 +27,7 @@ return {
     opts = {
       options = {
         section_separators = { left = "", right = "" },
-        component_separators = "|",
+        component_separators = "%#LineNr#|",
         disabled_filetypes = {
           "snacks_dashboard",
         },
