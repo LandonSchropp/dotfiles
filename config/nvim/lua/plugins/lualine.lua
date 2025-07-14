@@ -13,6 +13,10 @@ local function location()
   return format_fraction(current_line, number_of_lines)
 end
 
+local function format_search_count(search_count)
+  return search_count:gsub("[[%]]", "")
+end
+
 -- A nicer status line.
 ---@type LazySpec
 return {
@@ -35,8 +39,10 @@ return {
           { "filename", color = {}, cond = nil, left = 0, right = 0, file_status = false },
           { "filetype", left = 0,   right = 0 },
         },
-
-        lualine_x = { "diff" },
+        lualine_x = {
+          { "searchcount", icon = "", color = "Function", fmt = format_search_count },
+          { "diff" },
+        },
         lualine_y = { "diagnostics" },
         lualine_z = { { location, icon = "" } },
       },
