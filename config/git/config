@@ -40,6 +40,7 @@
 
   # Command aliases
   aliases = "config --get-regexp alias"
+  amend = "commit --amend"
   compact-log = log \
     --graph \
     --pretty=format:'%Cred%h %Cgreen(%cs)%Creset%Creset %s %C(bold blue)<%an>%C(yellow)%d%Creset' \
