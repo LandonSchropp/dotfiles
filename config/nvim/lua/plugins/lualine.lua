@@ -1,10 +1,16 @@
 ---@module "lazy"
 
+-- Formats a fraction so the numerator and denominator have the same number of digits.
+local function format_fraction(numerator, denominator)
+  local number_of_digits = string.len(tostring(denominator))
+  local formatted_numerator = string.format("%0" .. number_of_digits .. "d", numerator)
+  return formatted_numerator .. "/" .. denominator
+end
+
 local function location()
-  local line = vim.fn.line(".")
+  local current_line = vim.fn.line(".")
   local number_of_lines = vim.fn.line("$")
-  local formatted_line = string.format("%0" .. string.len(tostring(number_of_lines)) .. "d", line)
-  return " " .. formatted_line .. "/" .. number_of_lines
+  return format_fraction(current_line, number_of_lines)
 end
 
 -- A nicer status line.
@@ -32,7 +38,7 @@ return {
 
         lualine_x = { "diff" },
         lualine_y = { "diagnostics" },
-        lualine_z = { location },
+        lualine_z = { { location, icon = "" } },
       },
     },
   },
