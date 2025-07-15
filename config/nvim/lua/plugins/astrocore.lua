@@ -66,6 +66,27 @@ return {
           -- Disable modelines because they're pointless and problematic.
           -- https://github.com/AstroNvim/AstroNvim/issues/2725
           modeline = false,
+
+          -- Configure hit enter messages
+          shortmess = {
+            -- Don't show search match messages
+            S = true,
+
+            -- Don't show swap file messages
+            A = true,
+
+            -- Don't show recording macro messages
+            q = true,
+
+            -- Don't shorten lines and bytes messages
+            l = false,
+
+            -- Don't truncate file messages
+            t = false,
+
+            -- Don't truncate messages if they're too long
+            T = false,
+          },
         },
       },
       mappings = mappings(opts.mappings),
