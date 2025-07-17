@@ -70,7 +70,7 @@ return {
       -- Override the padding and gaps
       sections = {
         { section = "header", padding = 0, gap = 1 },
-        { section = "keys", padding = 2, gap = 1 },
+        { section = "keys",   padding = 2, gap = 1 },
         { section = "startup" },
       },
     },
@@ -92,6 +92,13 @@ return {
             vim.keymap.del("n", "<Esc>", { buffer = self.buf })
           end)
         end,
+      },
+
+      notification = {
+        wo = {
+          -- Make the notifications wrap.
+          wrap = true,
+        },
       },
     },
   },
