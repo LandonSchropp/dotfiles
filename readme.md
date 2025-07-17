@@ -20,13 +20,13 @@ system applications, which can be viewed in the [Brewfile](Brewfile).
 
 Before anything else, install any pending system updates.
 
-```shell
+```sh
 softwareupdate -ia
 ```
 
 Then, install the Xcode's CLI tools and accept the license.
 
-```shell
+```sh
 xcode-select --install
 sudo xcodebuild -license accept
 ```
@@ -35,7 +35,7 @@ sudo xcodebuild -license accept
 
 First, clone this repo.
 
-```shell
+```sh
 git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
 ```
 
@@ -43,7 +43,7 @@ Next, you'll want to run each of the following scripts in-order. Over the years,
 _something_ usually breaks every year or two, so it's best to run them individually and debug
 anything that pops up.
 
-```shell
+```sh
 ~/.dotfiles/bin/set-up-homebrew
 ~/.dotfiles/bin/set-up-zshell
 ~/.dotfiles/bin/set-up-rcup
