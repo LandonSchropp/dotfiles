@@ -20,6 +20,7 @@ return function(mappings)
   -- Add mappings
   updated_mappings.n["<Leader>uc"] = { ":Copilot toggle<cr>", desc = "Toggle Copilot" }
   updated_mappings.n["<Leader>ue"] = { ":Neotree toggle<cr>", desc = "Toggle Explorer" }
+  updated_mappings.n["<Leader>uh"] = { ":Inspect<cr>", desc = "Highlight Group" }
   updated_mappings.n["<Leader>u2"] =
   { "<cmd>ReformatToTwoSpaces<cr>", desc = "Reformat to 2 spaces" }
 
