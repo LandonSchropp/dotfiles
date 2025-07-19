@@ -63,10 +63,13 @@ return {
       },
     },
     code = {
-      style = "normal",
+      style = "full",
       width = "block",
       min_width = 100,
-      border = "thin",
+      border = "none",
+      conceal_delimiters = false,
+      language_icon = false,
+      language_name = false,
     },
     quote = {
       icon = "▎",

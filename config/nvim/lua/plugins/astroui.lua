@@ -17,6 +17,10 @@ return {
 
       -- Style markdown lists
       vim.api.nvim_set_hl(0, "RenderMarkdownCancelled", { fg = non_text.fg, strikethrough = true })
+
+      -- Style code blocks
+      local code = vim.api.nvim_get_hl(0, { name = "RenderMarkdownCode" })
+      vim.api.nvim_set_hl(0, "@markup.raw.block.markdown", { bg = code.bg })
     end)
   end,
   ---@type AstroUIOpts
