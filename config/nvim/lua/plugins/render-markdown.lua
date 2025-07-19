@@ -73,10 +73,7 @@ return {
       repeat_linebreak = true,
     },
     link = {
-      email = " ",
-      custom = {
-        web = { pattern = "^http[s]?://", icon = " ", highlight = "RenderMarkdownLink" },
-      },
+      enabled = false,
     },
     pipe_table = {
       preset = "round",
