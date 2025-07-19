@@ -14,6 +14,7 @@ return {
   -- 4. Avoid concealed text that causes layout jumps on hover (checkboxes, inline links)
   opts = {
     file_types = { "markdown", "codecompanion" },
+    win_options = { conceallevel = { rendered = 0 } },
     heading = {
       position = "inline",
       icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
