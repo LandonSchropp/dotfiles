@@ -14,6 +14,9 @@ return {
       local non_text = vim.api.nvim_get_hl(0, { name = "NonText" })
       vim.api.nvim_set_hl(0, "RenderMarkdownTableHead", { fg = non_text.fg })
       vim.api.nvim_set_hl(0, "RenderMarkdownTableRow", { fg = non_text.fg })
+
+      -- Style markdown lists
+      vim.api.nvim_set_hl(0, "RenderMarkdownCancelled", { fg = non_text.fg, strikethrough = true })
     end)
   end,
   ---@type AstroUIOpts
