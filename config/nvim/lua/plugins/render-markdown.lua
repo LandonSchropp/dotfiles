@@ -4,7 +4,14 @@
 ---@type LazySpec
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  enabled = true,
+
+  -- Markdown rendering principles:
+  --
+  -- 1. Use non-intrusive character replacements (e.g. dashes → bullets, pipes/dashes → table chars,
+  -- greater thans → lines)
+  -- 2. Add background colors to structural elements (headers, code blocks) for readability
+  -- 3. Display element type indicators in side column for easy document scanning
+  -- 4. Avoid concealed text that causes layout jumps on hover (checkboxes, inline links)
   opts = {
     file_types = { "markdown", "codecompanion" },
     heading = {
