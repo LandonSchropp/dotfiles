@@ -17,7 +17,8 @@ return {
     win_options = { conceallevel = { rendered = 0 } },
     heading = {
       position = "inline",
-      icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
+      icons = {},
+      signs = { "󰉫", "󰉬", "󰉭", "󰉮", "󰉯", "󰉰" },
       width = "block",
       min_width = 100,
     },
