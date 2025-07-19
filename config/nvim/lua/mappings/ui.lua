@@ -9,9 +9,9 @@ return function(mappings)
   -- Remove UI mappings
   for key, _ in pairs(mappings.n) do
     if
-      key ~= UI_PREFIX
-      and starts_with(key, UI_PREFIX)
-      and not vim.tbl_contains(MAPPINGS_TO_KEEP, key)
+        key ~= UI_PREFIX
+        and starts_with(key, UI_PREFIX)
+        and not vim.tbl_contains(MAPPINGS_TO_KEEP, key)
     then
       updated_mappings.n[key] = false
     end
@@ -21,7 +21,7 @@ return function(mappings)
   updated_mappings.n["<Leader>uc"] = { ":Copilot toggle<cr>", desc = "Toggle Copilot" }
   updated_mappings.n["<Leader>ue"] = { ":Neotree toggle<cr>", desc = "Toggle Explorer" }
   updated_mappings.n["<Leader>u2"] =
-    { "<cmd>ReformatToTwoSpaces<cr>", desc = "Reformat to 2 spaces" }
+  { "<cmd>ReformatToTwoSpaces<cr>", desc = "Reformat to 2 spaces" }
 
   return updated_mappings
 end
