@@ -41,6 +41,8 @@ brew "yarn"
 
 cask "1password"
 cask "arc"
+cask "claude"
+cask "claude-code"
 cask "cold-turkey-blocker"
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
