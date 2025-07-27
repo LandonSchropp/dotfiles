@@ -1,15 +1,14 @@
 local extend = require("utilities.table").extend
 
+-- https://docs.astronvim.com/recipes/dashboard/#open-dashboard-automatically-when-no-more-buffers
 local function close_buffer()
-  -- local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
 
-  -- Close the last buffer.
   require("astrocore.buffer").close(0)
 
-  -- If all of the buffers are closed, open up the Snacks dashboard.
-  -- if not buffers[2] then
-  --   require("snacks").dashboard()
-  -- end
+  if not bufs[2] then
+    require("snacks").dashboard()
+  end
 end
 
 return function(mappings)
