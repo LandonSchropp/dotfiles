@@ -40,6 +40,9 @@ keybind = command+m=text:\x13s
 # Disable the toggle fullscreen keybinding.
 keybind = super+enter=unbind
 
+# Make the shift+enter keybinding insert a newline
+keybind = shift+enter=text:\n
+
 # Make alt keys behave normally
 macos-option-as-alt = false
 
