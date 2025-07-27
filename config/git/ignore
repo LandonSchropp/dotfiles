@@ -10,3 +10,4 @@ tmp/**/*
 *.pyc
 .aider*
 **/.claude/settings.local.json
+mise.toml
