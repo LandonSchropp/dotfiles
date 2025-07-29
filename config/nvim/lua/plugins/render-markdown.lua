@@ -71,6 +71,9 @@ return {
       language_icon = false,
       language_name = false,
     },
+    dash = {
+      width = 100,
+    },
     quote = {
       icon = "▎",
       repeat_linebreak = true,
