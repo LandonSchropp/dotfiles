@@ -7,9 +7,10 @@ rcup \
   -v \
   -x config/launchd \
   -U Library \
+  Library \
+  claude \
   config \
   tmux.conf \
   zprofile \
   zshenv \
-  zshrc \
-  Library
+  zshrc
