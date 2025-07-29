@@ -36,7 +36,10 @@ Run these setup scripts in order after cloning the repository:
 The Neovim configuration is based on AstroNvim v5 with extensive customization:
 
 - **Base**: AstroNvim template with custom plugin configurations
-- **Plugins**: Located in `config/nvim/lua/plugins/`
+- **Plugins**: Located in `config/nvim/lua/plugins/` - each plugin has its own config file
+- **Mappings**: Modular system in `config/nvim/lua/mappings/` with 14+ specialized mapping modules (ai, buffers, comments, files, find, git, language-tools, search-replace, test, text, ui, yank, etc.)
+- **Utilities**: Common functions in `config/nvim/lua/utilities/` for LSP, snippets, strings, tables
+- **Snippets**: Language-specific snippets organized in `config/nvim/lua/snippets/`
 - **Initialization**: `config/nvim/init.lua` bootstraps Lazy.nvim
 - **Setup**: `config/nvim/lua/lazy_setup.lua` configures AstroNvim
 
@@ -70,6 +73,24 @@ Brewfile                # Homebrew package definitions
 2. **Applying changes**: Run the appropriate setup script or use `rcup` to relink dotfiles
 3. **Testing Neovim changes**: Restart Neovim or use `:Lazy reload` for plugin changes
 4. **Package updates**: Edit `Brewfile` and run `brew bundle` to install new packages
+
+## Architecture Details
+
+### Git Integration
+
+- Custom Git commands in `config/git/bin/` (branches, checkout, default-branch, delete-branches, force-pull, force-push, local-repos, my-branches, page, review, what-did-i-do)
+- Git configuration and global ignore patterns in `config/git/`
+
+### System Automation
+
+- LaunchAgent services in `Library/LaunchAgents/` for system automation (screen tint control, dictionary sync)
+- Karabiner keyboard remapping configuration in `config/karabiner/karabiner.json`
+
+### Development Tools
+
+- **mise**: Runtime version management for multiple languages (Node, Ruby, Python, etc.) configured in `config/mise/config.toml`
+- **rcm**: Dotfile symlinking with exclusions for specific directories (excludes `config/launchd`, includes `Library`, `claude`, `config`, etc.)
+- **Brewfile**: Comprehensive package definitions including development tools, CLI utilities, and applications
 
 ## Important Notes
 
