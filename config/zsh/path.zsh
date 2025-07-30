@@ -2,6 +2,9 @@
 export PATH="/opt/homebrew/bin:$PATH"
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # mise-en-place
 eval "$(mise activate zsh)"
 
