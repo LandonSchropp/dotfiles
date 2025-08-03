@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
