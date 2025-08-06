@@ -25,7 +25,7 @@ allowed-tools: Bash(git status:*), Grep, Read
 - **Single purpose:** One clear function per command
 - **Dynamic input:** Use `$ARGUMENTS` for flexibility
 - **File references:** Point to files with `@path/to/file`
-- **Shell commands:** Include with !\`command\`
+- **Shell commands:** Include with a bang and backticks
 - **Decision points:** Add where needed
 
 ## Process
@@ -71,5 +71,5 @@ Refactor $ARGUMENTS for better performance.
 
 ```markdown
 Apply style guide from @Areas/AI/Style Guide/Structure and Formatting.md to $ARGUMENTS.
-Check structure with !`tree -d` if location unclear.
+Check structure with !\`tree -d\` if location unclear.
 ```
