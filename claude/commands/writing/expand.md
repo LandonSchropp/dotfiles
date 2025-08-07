@@ -1,6 +1,6 @@
 ---
 description: Expand and organize fragmented notes or stream-of-consciousness writing
-argument-hint: path/to/notes.md
+argument-hint: <path>
 ---
 
 Take the quick fragments, notes, or stream-of-consciousness content in $ARGUMENTS and expand them into well-organized, coherent writing. Ignore content that is already coherent and well-organized.

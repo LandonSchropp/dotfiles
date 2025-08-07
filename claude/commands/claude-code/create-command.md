@@ -13,7 +13,7 @@ Example:
 ```markdown
 ---
 description: An example description of what this command does
-argument-hint: path/to/file.js
+argument-hint: <path>
 allowed-tools: Bash(git status:*), Grep, Read
 ---
 
