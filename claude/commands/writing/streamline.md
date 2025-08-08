@@ -1,9 +1,9 @@
 ---
 description: Analyze file to identify and remove redundant, verbose, or low-value content
-argument-hint: <path>
+argument-hint: [path]
 ---
 
-Analyze the $ARGUMENTS file to identify content that clutters context without adding value. The goal is to identify context bloat and remove redundancy.
+Analyze the $ARGUMENTS (or current context if no path provided) to identify content that clutters context without adding value. The goal is to identify context bloat and remove redundancy.
 
 ## Process
 

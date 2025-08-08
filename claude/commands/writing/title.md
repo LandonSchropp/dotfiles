@@ -1,9 +1,9 @@
 ---
 description: Generate compelling titles for content
-argument-hint: <path>
+argument-hint: [path]
 ---
 
-Generate 5-10 compelling title options for the content in $ARGUMENTS.
+Generate 5-10 compelling title options for the content in $ARGUMENTS (or current context if no path provided).
 
 Create titles that are:
 

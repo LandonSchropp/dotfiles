@@ -1,9 +1,9 @@
 ---
 description: Generate a detailed outline from content
-argument-hint: <path>
+argument-hint: [path]
 ---
 
-Create a comprehensive outline for the content in $ARGUMENTS using numbered list format with sub-bullets for section content.
+Create a comprehensive outline for the content in $ARGUMENTS (or current context if no path provided) using numbered list format with sub-bullets for section content.
 
 Structure the outline with:
 

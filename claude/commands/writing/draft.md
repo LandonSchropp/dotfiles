@@ -1,9 +1,9 @@
 ---
 description: Transform an outline into a fully developed document
-argument-hint: <path>
+argument-hint: [path]
 ---
 
-Transform the outline in $ARGUMENTS into a complete document, expanding concepts and ideas into coherent prose.
+Transform the outline in $ARGUMENTS (or current context if no path provided) into a complete document, expanding concepts and ideas into coherent prose.
 
 Follow the formatting conventions from @~/Notes/Areas/AI/Style Guide/Structure and Formatting.md and language guidelines from @~/Notes/Areas/AI/Style Guide/Language and Voice.md.
 

@@ -1,9 +1,9 @@
 ---
 description: Provides direct, actionable writing critique focused on making technical content more compelling and memorable
-argument-hint: <path>
+argument-hint: [path]
 ---
 
-Analyze $ARGUMENTS and provide honest, constructive feedback on how to make technical content more compelling. Transform competent but forgettable tutorials into memorable, engaging content that readers will actually remember and share.
+Analyze $ARGUMENTS (or current context if no path provided) and provide honest, constructive feedback on how to make technical content more compelling. Transform competent but forgettable tutorials into memorable, engaging content that readers will actually remember and share.
 
 ## Process
 
