@@ -1,4 +1,4 @@
-Generate a new Claude Code command.
+Create or update a Claude Code command in the `claude/commands/` directory.
 
 ## Metadata
 
@@ -30,8 +30,9 @@ allowed-tools: Bash(git status:*), Grep, Read
 
 ## Process
 
-1. **Define Purpose:** What does the command do with `$ARGUMENTS`?
-2. **Write Command:** Follow this structure:
+1. **Determine Action:** Create new command or update existing one based on `$ARGUMENTS`
+2. **Define Purpose:** What does the command do with its input?
+3. **Write/Update Command:** Follow this structure:
 
    ```markdown
    [Clear instruction for the $ARGUMENTS file/input]
@@ -44,7 +45,7 @@ allowed-tools: Bash(git status:*), Grep, Read
    2. **Next step:** What follows
    ```
 
-3. **Save:** Use descriptive filename like `action-target.md`
+4. **Save:** Use descriptive filename like `action-target.md`. Place the command in an appropriate subdirectory if necessary.
 
 ## Patterns
 
