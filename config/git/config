@@ -35,6 +35,7 @@
   ri = !git fetch && git rebase -i
   rio = !git fetch && git rebase -i origin/main
   s = status
+  sc = smart-commit
   sq = squash
   sw = switch
 
@@ -63,6 +64,7 @@
   local-repos = "!$HOME/.config/git/bin/local-repos"
   my-branches = "!$HOME/.config/git/bin/my-branches"
   review = "!$HOME/.config/git/bin/review"
+  smart-commit = "!$HOME/.config/git/bin/smart-commit"
   what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
 
   # Deprecated aliases
