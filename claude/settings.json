@@ -12,5 +12,18 @@
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/prettier"
+          }
+        ]
+      }
+    ]
   }
 }
