@@ -35,10 +35,6 @@ if test -f "$HOME/.deno/env"; then
   compinit
 fi
 
-# uv
-# TODO: Can this be migrated to mise-en-place?
-. "$HOME/.local/bin/env"
-
 # Add local bin scripts to the path
 export PATH="./bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
