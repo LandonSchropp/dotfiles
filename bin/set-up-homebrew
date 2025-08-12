@@ -14,7 +14,7 @@ fi
 brew update
 
 # Install all of the Homebrew applications.
-brew bundle --no-lock --file="$HOME/.dotfiles/Brewfile" --force || true
+brew bundle --file="$HOME/.dotfiles/Brewfile" --force || true
 
 # Update TL/DR definitions.
 tldr --update
