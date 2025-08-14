@@ -47,4 +47,4 @@ keybind = shift+enter=text:\n
 macos-option-as-alt = false
 
 # Always open the Development directory
-working-directory = ~/Development
+working-directory = /Users/landon/Development
