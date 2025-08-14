@@ -108,6 +108,10 @@
   tool = vimdiff
   ff = only
 
+[merge "rails-schema-resolver"]
+	name = Rails db/schema.rb version conflict resolver
+	driver = ~/.config/git/bin/resolve-rails-schema-conflict %A
+
 [rerere]
   enabled = true
 

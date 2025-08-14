@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# This is a Git merge driver for resolving Rails schema.rb version conflicts. It automatically
+# resolves version conflicts by choosing the highest Rails version and database version.
+#
+# Usage: git config merge.schema-resolver.driver "resolve-schema-conflict %A"
+
+CONFLICTED_FILE = ARGV[0]
+
+if ARGV.length != 1
+  exit 1
+end
+
+# Read the conflicted file
+schema = File.read(CONFLICTED_FILE)
+
+SCHEMA_REGEX = /ActiveRecord::Schema\[([\d.]+)\]\.define\(version: ([\d_]+)\) do/
+CONFLICT_REGEX = /<<<<<<< HEAD\n(#{SCHEMA_REGEX})\n=======\n(#{SCHEMA_REGEX})\n>>>>>>> [^\n]+/
+
+# Check if there's a schema version conflict to resolve
+exit 0 unless schema =~ CONFLICT_REGEX
+
+# Resolve only the schema version conflicts
+schema = schema.sub(CONFLICT_REGEX) do
+  rails_version = [$2, $5].max
+  database_version = [$3, $6].max
+  
+  "ActiveRecord::Schema[#{rails_version}].define(version: #{database_version}) do"
+end
+
+# Write the resolved file back
+File.write(CONFLICTED_FILE, schema)
