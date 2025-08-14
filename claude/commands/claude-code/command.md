@@ -6,7 +6,7 @@ Use the following fields:
 
 - **description (required):** What the command does
 - **argument-hint (optional):** Expected input format
-- **allowed-tools (optional):** Only when command needs specific tools
+- **allowed-tools (optional):** Only when command needs specific tools. For Bash, specify the exact command with wildcards if needed (e.g., `Bash(git status:*)`) and only allow read-only commands unless explicitly told otherwise
 
 Example:
 
