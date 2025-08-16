@@ -12,3 +12,4 @@ tmp/**/*
 **/.claude/settings.local.json
 mise.toml
 claude.local.md
+/.ai
