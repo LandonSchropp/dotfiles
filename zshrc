@@ -20,6 +20,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# Disable the Oh My Zsh update prompt (always update automatically)
+export DISABLE_UPDATE_PROMPT=true
+
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
