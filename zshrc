@@ -1,3 +1,9 @@
+# TODO: Currently, Shellcheck can't follow dynamic paths in the source command, even ones with
+# relatively simple expansions like $HOME. In order to avoid `Not following` errors repeatedly, I'm
+# disabling the check for this file. See https://github.com/koalaman/shellcheck/issues/2710 for a
+# feature request to fix this.
+# shellcheck disable=SC1090,SC1091
+
 # FIX: tmuxinator mangles the $GEM_HOME environment variable. This is a quick and dirty fix.
 # https://github.com/tmuxinator/tmuxinator/issues/841
 unset GEM_HOME
@@ -10,6 +16,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export ZSH="$HOME/.oh-my-zsh"
 
 # Oh My Zsh plugins
+# shellcheck disable=SC2034
 plugins=(
   colored-man-pages
   command-not-found
@@ -24,7 +31,7 @@ plugins=(
 export DISABLE_UPDATE_PROMPT=true
 
 # Source Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Disable autocorrect
 unsetopt correct_all
@@ -44,6 +51,6 @@ source "$HOME/.config/zsh/fzf.zsh"
 source "$HOME/.config/zsh/prompt.zsh"
 source "$HOME/.config/zsh/tmux.zsh"
 
-for CONFIG_FILE in $HOME/.config/zsh/*; do
-  source $CONFIG_FILE
+for CONFIG_FILE in "$HOME"/.config/zsh/*; do
+  source "$CONFIG_FILE"
 done
