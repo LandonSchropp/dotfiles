@@ -11,7 +11,8 @@
       "Read(**/*.cert)",
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
-    ]
+    ],
+    "additionalDirectories": ["~/Notes/Areas/AI"]
   },
   "hooks": {
     "PostToolUse": [
