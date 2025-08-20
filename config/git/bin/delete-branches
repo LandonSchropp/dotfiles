@@ -3,7 +3,7 @@
 set -euo pipefail
 
 git fetch
-git checkout -q "$(git default-branch)"
+git checkout -q "$(git default-base-branch)"
 
 branches="$(git branch --no-color "$@" | grep -v "^\\* ")"
 

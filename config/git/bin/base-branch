@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Get current branch name
+CURRENT_BRANCH=$(git branch --show-current)
+
+# Get the default branch (main, master, or development)
+DEFAULT_BRANCH=$(git default-base-branch)
+
+# If on the default branch, exit with error
+if [[ "$CURRENT_BRANCH" == "$DEFAULT_BRANCH" ]]; then
+  echo "Error: Cannot determine base branch while on the default branch ($DEFAULT_BRANCH)" >&2
+  exit 1
+fi
+
+# Try to get pull request base branch first
+if command -v gh >/dev/null 2>&1; then
+  PULL_REQUEST_BASE=$(gh pr view --json baseRefName --jq .baseRefName 2>/dev/null || echo "")
+  if [[ -n "$PULL_REQUEST_BASE" ]]; then
+    echo "$PULL_REQUEST_BASE"
+    exit 0
+  fi
+fi
+
+# Fall back to default branch
+echo "$DEFAULT_BRANCH"

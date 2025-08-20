@@ -55,8 +55,10 @@
   stash-staged = stash push --staged
 
   # Custom script aliases
+  base-branch = "!$HOME/.config/git/bin/base-branch"
   branches = "!$HOME/.config/git/bin/branches"
-  default-branch = "!$HOME/.config/git/bin/default-branch"
+  default-base-branch = "!$HOME/.config/git/bin/default-base-branch"
+  default-branch = "!$HOME/.config/git/bin/default-base-branch"
   delete-all-branches = "!$HOME/.config/git/bin/delete-branches"
   delete-merged-branches = "!$HOME/.config/git/bin/delete-branches --merged"
   force-pull = "!$HOME/.config/git/bin/force-pull"

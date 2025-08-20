@@ -78,7 +78,7 @@ Brewfile                # Homebrew package definitions
 
 ### Git Integration
 
-- Custom Git commands in `config/git/bin/` (branches, checkout, default-branch, delete-branches, force-pull, force-push, local-repos, my-branches, page, review, what-did-i-do)
+- Custom Git commands in `config/git/bin/` (base-branch, branches, checkout, default-base-branch, delete-branches, force-pull, force-push, local-repos, my-branches, page, review, what-did-i-do)
 - Git configuration and global ignore patterns in `config/git/`
 
 ### System Automation
