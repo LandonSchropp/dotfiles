@@ -7,20 +7,20 @@ Create a pull request by analyzing the current branch's changes and generating a
 
 ## Process
 
-1. **Branch Analysis:** Analyze current git state:
+1. **Branch analysis:** Analyze current git state
 
-   - Check current branch name with `git branch --show-current`
-   - Verify we're not on the `main`/`master` branch
+   - Check current branch name with `git branch --show-current`, the base branch with `git base-branch` and the default base branch with `git default-base-branch`
+   - Verify we're not on the default base branch (if we are, then stop)
    - Check if branch has upstream tracking
    - Get the base branch (default: main)
 
-2. **Change Analysis:** Analyze changes since branching:
+2. **Change analysis:** Analyze changes since branching
 
-   - Run `git diff main...HEAD` to see all changes
-   - Run `git log main..HEAD --oneline` to see commit history
+   - Run `git diff <base-branch>...HEAD` to see all changes
+   - Run `git log <base-branch>..HEAD --oneline` to see commit history
    - Analyze file patterns and content to understand the scope of changes
 
-3. **PR Title Generation:** Create a clear, descriptive title that explains what the PR accomplishes
+3. **PR title generation:** Create a clear, descriptive title that explains what the PR accomplishes
 
    Examples:
 
@@ -30,10 +30,14 @@ Create a pull request by analyzing the current branch's changes and generating a
    - Simplify database connection logic
    - Update build configuration and dependencies
 
-4. **PR Description Generation:** Create description based on repository setup. Include enough detail for reviewers to understand changes without being overly verbose.
+4. **PR description generation:** Create description based on repository setup. Include enough detail for reviewers to understand changes without being overly verbose.
 
    - **If PR template exists:** Use template, excluding screenshots and ticking/removing hidden checklists
-   - **If no template:** Use structured format with Summary, Changes, and Notes sections
+   - **If no template:** Use structured format with Summary, Changes and Notes sections
    - **For simple PRs:** Use a concise summary instead of full structure
 
-5. **PR Creation:** Execute `gh pr create --web --title "<descriptive title>" --body "<generated description>" --base main`
+5. **PR handling:** Handle PR creation or update
+
+   - **Check for existing PR:** Run `gh pr view --json url,title,body` to check if PR exists for current branch
+   - **If no PR exists:** Execute `gh pr create --web --title "<descriptive title>" --body "<generated description>" --base main`
+   - **If PR exists:** Open GitHub web interface for editing with `gh pr edit --web --body "<generated description>"` to pre-populate the new description
