@@ -1,11 +1,16 @@
-Create or update a Claude Code command in the `claude/commands/` directory.
+---
+description: Create or update a Claude Code command in the claude/commands/ directory
+argument-hint: [path]
+---
+
+Create or update a Claude Code command in the `claude/commands/` directory based on $ARGUMENTS (or current context if no path provided).
 
 ## Metadata
 
 Use the following fields:
 
 - **description (required):** What the command does
-- **argument-hint (optional):** Expected input format
+- **argument-hint (optional):** Expected input format (defaults to `[path]`)
 - **allowed-tools (optional):** Only when command needs specific tools. For Bash, specify the exact command with wildcards if needed (e.g., `Bash(git status:*)`) and only allow read-only commands unless explicitly told otherwise
 
 Example:
@@ -13,7 +18,7 @@ Example:
 ```markdown
 ---
 description: An example description of what this command does
-argument-hint: <path>
+argument-hint: [path]
 allowed-tools: Bash(git status:*), Grep, Read
 ---
 
@@ -30,7 +35,7 @@ allowed-tools: Bash(git status:*), Grep, Read
 
 ## Process
 
-1. **Determine Action:** Create new command or update existing one based on `$ARGUMENTS`
+1. **Determine Action:** Create new command or update existing one based on `$ARGUMENTS` (or current context if no path provided)
 2. **Define Purpose:** What does the command do with its input?
 3. **Write/Update Command:** Follow this structure:
 
@@ -52,14 +57,24 @@ allowed-tools: Bash(git status:*), Grep, Read
 ### Simple Commands
 
 ```markdown
-Fix all import statements in $ARGUMENTS following project conventions.
+---
+description: Fix import statements following project conventions
+argument-hint: [path]
+---
+
+Fix all import statements in $ARGUMENTS (or current context if no path provided) following project conventions.
 Remove unused imports and add missing ones.
 ```
 
 ### Multi-Step Commands
 
 ```markdown
-Refactor $ARGUMENTS for better performance.
+---
+description: Refactor code for better performance
+argument-hint: [path]
+---
+
+Refactor $ARGUMENTS (or current context if no path provided) for better performance.
 
 ## Process
 
@@ -71,6 +86,11 @@ Refactor $ARGUMENTS for better performance.
 ### Context-Aware Commands
 
 ```markdown
-Apply style guide from @Areas/AI/Style Guide/Structure and Formatting.md to $ARGUMENTS.
+---
+description: Apply style guide conventions to code
+argument-hint: [path]
+---
+
+Apply style guide from @Areas/AI/Style Guide/Structure and Formatting.md to $ARGUMENTS (or current context if no path provided).
 Check structure with !\`tree -d\` if location unclear.
 ```
