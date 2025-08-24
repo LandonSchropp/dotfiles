@@ -7,24 +7,30 @@ set -euo pipefail
 # Define the paths to the dictionaries
 local_dictionary="$HOME/Library/Spelling/LocalDictionary"
 nvim_dictionary="$HOME/.config/nvim/spell/en.utf-8.add"
+icloud_dictionary="$HOME/Library/Mobile Documents/com~apple~CloudDocs/dictionaries/LocalDictionary"
 
-# Ensure the directories exist
-mkdir -p "$(dirname "$local_dictionary")"
-mkdir -p "$(dirname "$nvim_dictionary")"
+dictionaries=(
+  "$local_dictionary"
+  "$nvim_dictionary"
+  "$icloud_dictionary"
+)
 
-# Create the files if they don't exist
-touch "$local_dictionary"
-touch "$nvim_dictionary"
+# Ensure the directories exist and create files if they don't exist
+for dict in "${dictionaries[@]}"; do
+  mkdir -p "$(dirname "$dict")"
+  touch "$dict"
+done
 
 # Create a temporary file for the merged dictionary
 temp_dictionary=$(mktemp)
 
-# Combine both dictionaries, sort, and remove duplicates
-cat "$local_dictionary" "$nvim_dictionary" | sort | uniq >"$temp_dictionary"
+# Combine all dictionaries, sort, and remove duplicates
+cat "${dictionaries[@]}" | sort | uniq >"$temp_dictionary"
 
-# Write the combined dictionary back to both files
-cp "$temp_dictionary" "$local_dictionary"
-cp "$temp_dictionary" "$nvim_dictionary"
+# Write the combined dictionary back to all files
+for dict in "${dictionaries[@]}"; do
+  cp "$temp_dictionary" "$dict"
+done
 
 # Clean up
 rm "$temp_dictionary"
