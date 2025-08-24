@@ -3,5 +3,5 @@
 file_path=$(jq -r '.tool_input.file_path')
 
 if [[ "$file_path" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]; then
-  npx prettier --write "$file_path"
+  npx prettier --write "$(readlink -f "$file_path")"
 fi
