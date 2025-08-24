@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+LOG_FILE="$HOME/Library/Logs/com.landonschropp.daily-update.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+
+log() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+}
+
+# Runs an update command if the specified command exists on the system
+# Args:
+#   $1 - Name of the thing being updated (for logging)
+#   $2 - Command to check for existence
+#   $3 - Update command to run if the command exists
+update() {
+  local name="$1"
+  local command_to_check="$2"
+  local update_command="$3"
+
+  log "Updating $name..."
+  if command -v "$command_to_check" >/dev/null 2>&1; then
+    eval "$update_command" >>"$LOG_FILE" 2>&1
+  else
+    log "$command_to_check not found, skipping..."
+  fi
+}
+
+log "Starting daily update..."
+
+update "TL/DR" "tldr" "tldr --update"
+update "Claude Code" "brew" "brew upgrade --cask claude"
+update "Mise" "mise" "mise install"
+update "GitHub CLI" "brew" "brew upgrade gh"
+
+log "Daily update completed successfully"
