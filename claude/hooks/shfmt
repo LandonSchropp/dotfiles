@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+file_path=$(jq -r '.tool_input.file_path')
+
+is_bash_file() {
+  file=$1
+
+  # .sh extension
+  if [[ "$file" =~ \.sh$ ]]; then
+    return 0
+  fi
+
+  # bash/sh shebangs
+  first_line=$(read -r first_line <"$(readlink -f "$file")" 2>/dev/null)
+  [[ "$first_line" =~ ^#!.*(bash|sh)($|[[:space:]]) ]]
+}
+
+if is_bash_file "$file_path" && which shfmt >/dev/null; then
+  shfmt -w "$(readlink -f "$file_path")"
+fi

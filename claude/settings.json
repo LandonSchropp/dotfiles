@@ -26,6 +26,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/rubocop"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/shfmt"
           }
         ]
       }
