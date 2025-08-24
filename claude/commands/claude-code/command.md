@@ -1,9 +1,9 @@
 ---
 description: Create or update a Claude Code command in the claude/commands/ directory
-argument-hint: [path]
+argument-hint: [description]
 ---
 
-Create or update a Claude Code command based on $ARGUMENTS (or current context if no path provided).
+Create or update a Claude Code command based on $ARGUMENTS (or current context if no description provided).
 
 Use `claude/commands/` for global commands (dotfiles repo only) or `.claude/commands/` for project-specific commands.
 
