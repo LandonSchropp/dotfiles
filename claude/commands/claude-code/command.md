@@ -3,7 +3,9 @@ description: Create or update a Claude Code command in the claude/commands/ dire
 argument-hint: [path]
 ---
 
-Create or update a Claude Code command in the `claude/commands/` directory based on $ARGUMENTS (or current context if no path provided).
+Create or update a Claude Code command based on $ARGUMENTS (or current context if no path provided).
+
+Use `claude/commands/` for global commands (dotfiles repo only) or `.claude/commands/` for project-specific commands.
 
 ## Metadata
 
