@@ -68,7 +68,7 @@
   what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
 
   # Deprecated aliases
-  co = "!$HOME/.config/git/bin/checkout"
+  co = "!$HOME/.config/git/bin/block-checkout"
 
 [core]
   excludesfile = "~/.config/git/ignore"
