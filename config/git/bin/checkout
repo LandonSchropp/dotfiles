@@ -2,4 +2,23 @@
 
 set -euo pipefail
 
-echo -e "\\033[33mUse 'git switch' to change branches and 'git restore' to restore files.\\033[0m" >&2
+echo_warning() {
+  echo -e "\\033[33m$1\\033[0m" >&2
+}
+
+is_branch() {
+  git show-ref --verify --quiet "refs/heads/$1" 2>/dev/null ||
+    git show-ref --verify --quiet "refs/remotes/origin/$1" 2>/dev/null
+}
+
+is_file() {
+  [[ -e "$1" ]] || git ls-files --error-unmatch "$1" >/dev/null 2>&1
+}
+
+if [[ $# -gt 0 ]] && is_branch "$1"; then
+  echo_warning "Use 'git switch $1' to change branches."
+elif [[ $# -gt 0 ]] && is_file "$1"; then
+  echo_warning "Use 'git restore $1' to restore files."
+else
+  echo_warning "Use 'git switch' to change branches and 'git restore' to restore files."
+fi
