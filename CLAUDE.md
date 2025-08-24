@@ -98,3 +98,15 @@ Brewfile                # Homebrew package definitions
 - Neovim configuration is heavily customized on top of AstroNvim
 - All setup scripts are idempotent and can be run multiple times safely
 - The `mise` tool manages runtime versions for multiple programming languages
+
+## Symbolic Links
+
+**CRITICAL**: When editing dotfiles or configuration files, ALWAYS edit the files directly in this repository (`~/.dotfiles/`), NOT their symlinked locations in the home directory. The `rcup` tool automatically creates symlinks from this repository to the appropriate locations in the home directory, prepending dots to directory names as needed.
+
+For example:
+
+- Edit `~/.dotfiles/zshrc` (NOT `~/.zshrc`)
+- Edit `~/.dotfiles/config/nvim/init.lua` (NOT `~/.config/nvim/init.lua`)
+- Edit `~/.dotfiles/tmux.conf` (NOT `~/.tmux.conf`)
+
+After making changes, run `rcup` to update the symlinks if needed.
