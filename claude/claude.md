@@ -11,3 +11,11 @@
 ## Terminal and System Best Practices
 
 - Use the native `trash` command in place of the `rm` command when removing files.
+
+## Shell Script Validation
+
+When editing bash/shell scripts (`.sh` files or files with bash/sh shebangs), run `shellcheck` on the file when you finish editing (not after every change) to ensure code quality and catch potential issues:
+
+```bash
+shellcheck path/to/script.sh
+```
