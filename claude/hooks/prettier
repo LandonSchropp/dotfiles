@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-FILE_PATH=$(jq -r '.tool_input.file_path')
+file_path=$(jq -r '.tool_input.file_path')
 
-if [[ "$FILE_PATH" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]; then
-  npx prettier --write "$FILE_PATH"
+if [[ "$file_path" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]; then
+  npx prettier --write "$file_path"
 fi

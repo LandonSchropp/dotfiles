@@ -9,7 +9,7 @@ set -euo pipefail
   git diff --color
 
   # Show the diffs of the untracked files in Git against an empty file (/dev/null).
-  git ls-files --others --exclude-standard | while read -r FILE_PATH; do
-    git diff --color -- /dev/null "$FILE_PATH" || true
+  git ls-files --others --exclude-standard | while read -r file_path; do
+    git diff --color -- /dev/null "$file_path" || true
   done
 ) | git page

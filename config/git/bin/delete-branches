@@ -5,12 +5,12 @@ set -euo pipefail
 git fetch
 git checkout -q "$(git default-branch)"
 
-BRANCHES="$(git branch --no-color "$@" | grep -v "^\\* ")"
+branches="$(git branch --no-color "$@" | grep -v "^\\* ")"
 
 # If there are no branches to delete, don't do anything.
-if [ -z "$BRANCHES" ]; then
+if [ -z "$branches" ]; then
   echo "There are no branches to delete. 😎"
   exit 0
 fi
 
-echo "$BRANCHES" | xargs -n 1 git branch -D
+echo "$branches" | xargs -n 1 git branch -D

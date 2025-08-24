@@ -6,9 +6,9 @@ read \
   -r \
   -p \
   "⚠️  This will wipe out all of your local changes. Are you sure you want to do this? [Yes/No] " \
-  RESPONSE
+  response
 
-if [[ ! "$RESPONSE" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   exit 0
 fi
 

@@ -4,9 +4,9 @@ set -euo pipefail
 
 # Only output color if the command isn't being piped.
 if [ -t 1 ]; then
-  COLOR="always"
+  color="always"
 else
-  COLOR="auto"
+  color="auto"
 fi
 
-"$HOME/.dotfiles/config/git/bin/branches" --color="$COLOR" | grep "$(git config user.name)"
+"$HOME/.dotfiles/config/git/bin/branches" --color="$color" | grep "$(git config user.name)"

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Generate commit message using claude
-COMMIT_MESSAGE=$(claude --print "/git:commit-message")
+commit_message=$(claude --print "/git:commit-message")
 
 # Create commit with generated message but allow editing
-git commit --message "$COMMIT_MESSAGE" --edit
+git commit --message "$commit_message" --edit

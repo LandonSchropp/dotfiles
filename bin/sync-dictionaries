@@ -5,33 +5,33 @@
 set -euo pipefail
 
 # Define the paths to the dictionaries
-LOCAL_DICTIONARY="$HOME/Library/Spelling/LocalDictionary"
-NVIM_DICTIONARY="$HOME/.config/nvim/spell/en.utf-8.add"
+local_dictionary="$HOME/Library/Spelling/LocalDictionary"
+nvim_dictionary="$HOME/.config/nvim/spell/en.utf-8.add"
 
 # Ensure the directories exist
-mkdir -p "$(dirname "$LOCAL_DICTIONARY")"
-mkdir -p "$(dirname "$NVIM_DICTIONARY")"
+mkdir -p "$(dirname "$local_dictionary")"
+mkdir -p "$(dirname "$nvim_dictionary")"
 
 # Create the files if they don't exist
-touch "$LOCAL_DICTIONARY"
-touch "$NVIM_DICTIONARY"
+touch "$local_dictionary"
+touch "$nvim_dictionary"
 
 # Create a temporary file for the merged dictionary
-TEMP_DICTIONARY=$(mktemp)
+temp_dictionary=$(mktemp)
 
 # Combine both dictionaries, sort, and remove duplicates
-cat "$LOCAL_DICTIONARY" "$NVIM_DICTIONARY" | sort | uniq >"$TEMP_DICTIONARY"
+cat "$local_dictionary" "$nvim_dictionary" | sort | uniq >"$temp_dictionary"
 
 # Write the combined dictionary back to both files
-cp "$TEMP_DICTIONARY" "$LOCAL_DICTIONARY"
-cp "$TEMP_DICTIONARY" "$NVIM_DICTIONARY"
+cp "$temp_dictionary" "$local_dictionary"
+cp "$temp_dictionary" "$nvim_dictionary"
 
 # Clean up
-rm "$TEMP_DICTIONARY"
+rm "$temp_dictionary"
 
 # Regenerate the Neovim spell file
 if command -v nvim &>/dev/null; then
-  nvim --headless -c "mkspell! $NVIM_DICTIONARY" -c "quit"
+  nvim --headless -c "mkspell! $nvim_dictionary" -c "quit"
 fi
 
 echo "Dictionary synchronization completed at $(date)."

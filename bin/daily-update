@@ -2,11 +2,11 @@
 
 set -euo pipefail
 
-LOG_FILE="$HOME/Library/Logs/com.landonschropp.daily-update.log"
-mkdir -p "$(dirname "$LOG_FILE")"
+log_file="$HOME/Library/Logs/com.landonschropp.daily-update.log"
+mkdir -p "$(dirname "$log_file")"
 
 log() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$log_file"
 }
 
 # Runs an update command if the specified command exists on the system
@@ -21,7 +21,7 @@ update() {
 
   log "Updating $name..."
   if command -v "$command_to_check" >/dev/null 2>&1; then
-    eval "$update_command" >>"$LOG_FILE" 2>&1
+    eval "$update_command" >>"$log_file" 2>&1
   else
     log "$command_to_check not found, skipping..."
   fi

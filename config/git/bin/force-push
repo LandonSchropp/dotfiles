@@ -2,20 +2,20 @@
 
 set -euo pipefail
 
-CURRENT_BRANCH=$(git branch --show-current)
+current_branch=$(git branch --show-current)
 
 # If the current branch contains master or main, prompt the user for confirmation.
-if [[ "$CURRENT_BRANCH" =~ (master|main) ]]; then
-  echo -e "⚠️ You are on the '$CURRENT_BRANCH' branch. This branch is typically protected and" \
+if [[ "$current_branch" =~ (master|main) ]]; then
+  echo -e "⚠️ You are on the '$current_branch' branch. This branch is typically protected and" \
     "force-pushing can lead to data loss.\n"
 
   read \
     -r \
     -p \
     "Are you sure you want to do this? [Yes/No] " \
-    RESPONSE
+    response
 
-  if [[ ! "$RESPONSE" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  if [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     exit 0
   fi
 fi
