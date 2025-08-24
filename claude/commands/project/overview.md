@@ -1,15 +1,17 @@
 ---
 allowed-tools: Bash(git ls-files)
-description: Loads the details of the current repository
+description: Loads the details of a repository (specified path or current directory)
+argument-hint: [directory]
 ---
 
-You are tasked with analyzing a current software project's file structure and architecture. Follow
-these steps carefully:
+You are tasked with analyzing a software project's file structure and architecture. The project directory is the argument provided by the user, or the current working directory if no argument is provided.
 
-1. Read the content of the @readme.md file.
-2. Examine the content of files from the /.context directory for project status context (if it
-   exists)
-3. Review the output of running the !`git ls-files` command.
+Follow these steps carefully:
+
+1. If a directory argument is provided, change to that directory first using the Bash tool: `cd "{{directory}}"` (where directory is the provided argument)
+2. Read the content of the @readme.md file (from the target directory).
+3. Examine the content of files from the /.context directory for project status context (if it exists in the target directory)
+4. Review the output of running the !`git ls-files` command (from the target directory).
 4. Carefully read and analyze all the information provided above. Pay attention to:
 
    - Project description and purpose in the README
