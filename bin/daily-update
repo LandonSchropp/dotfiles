@@ -33,5 +33,6 @@ update "TL/DR" "tldr" "tldr --update"
 update "Claude Code" "brew" "brew upgrade --cask claude"
 update "Mise" "mise" "mise install"
 update "GitHub CLI" "brew" "brew upgrade gh"
+update "Oh My Zsh" "omz" "omz update --unattended"
 
 log "Daily update completed successfully"
