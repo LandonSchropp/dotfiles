@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Execute rebase with the base branch and any additional arguments
+exec git rebase "$(git base-branch)" "$@"
