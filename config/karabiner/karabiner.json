@@ -4,7 +4,7 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Change globe to hyper (space if pressed alone)",
+            "description": "Change globe to meh",
             "manipulators": [
               {
                 "from": {
@@ -14,11 +14,14 @@
                 "to": [
                   {
                     "key_code": "left_shift",
-                    "modifiers": ["left_command", "left_control", "left_option"]
+                    "modifiers": ["left_control", "left_option"]
                   }
                 ],
                 "to_if_alone": [
-                  { "apple_vendor_top_case_key_code": "keyboard_fn" }
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": ["left_option"]
+                  }
                 ],
                 "type": "basic"
               }
