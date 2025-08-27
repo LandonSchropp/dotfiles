@@ -8,19 +8,22 @@ Create a pull request by analyzing the current branch's changes and generating a
 ## Process
 
 1. **Branch analysis:** Analyze current git state
+
    - Check current branch name with `git branch --show-current`, the base branch with `git base-branch` and the default base branch with `git default-base-branch`
    - Verify we're not on the default base branch (if we are, then stop)
    - Check if branch has upstream tracking
    - Get the base branch (default: main)
 
 2. **Change analysis:** Analyze changes since branching
-   - Run `git diff <base-branch>...HEAD` to see all changes
-   - Run `git log <base-branch>..HEAD --oneline` to see commit history
+
+   - Run `git diff origin/<base-branch>...HEAD` to see all changes
+   - Run `git log origin/<base-branch>..HEAD --oneline` to see commit history
    - Analyze file patterns and content to understand the scope of changes
 
 3. **PR title generation:** Create a clear, descriptive title that explains what the PR accomplishes
 
    Examples:
+
    - Add user profile management system
    - Resolve authentication timeout issues
    - Update API documentation with examples
@@ -28,6 +31,7 @@ Create a pull request by analyzing the current branch's changes and generating a
    - Update build configuration and dependencies
 
 4. **PR description generation:** Create concise descriptions that focus on the essential information. Keep descriptions brief and focused.
+
    - **If PR template exists:** Use template, excluding screenshots and ticking/removing hidden checklists
    - **If no template:** Use structured format with Summary and Changes sections:
      - **Summary:** Short paragraph explaining what and why
