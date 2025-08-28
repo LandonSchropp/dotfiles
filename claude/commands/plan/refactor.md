@@ -6,22 +6,14 @@ allowed-tools: Read, Write, Bash(git branch:*), Bash(git switch:*), Bash(git bas
 
 Create a plan for refactoring the scope described in $ARGUMENTS.
 
-## Process
-
-1. **Check branch:** Use `git branch --show-current` to get current branch name. If you're on the same branch as `git default-base-branch`, create a new feature branch using a hyphenated version of the refactoring you're doing (e.g. `refactor-user-service-layer`) and switch to it using `git switch -c <branch-name>`.
-
-2. **Get base branch:** Use `git base-branch` to get the base branch of the current branch.
-
-3. **Analyze context:** Read `~/.claude/commands/context/branch.md` and follow its instructions to understand the current state of the branch and any existing work.
-
-4. **Create plan:** Write a structured plan to `.ai/plans/<branch>/<datetime>-refactor.md` (use `!date +"%Y-%m-%dT%H-%M-%S"` for datetime) using the template below. Follow the instructions in the comments within the template, then remove all comments from the final output
+Read `~/.claude/commands/plan/_base.md` and follow all sections. Use the template below.
 
 ## Template
 
 The plan will serve as a roadmap for systematically refactoring code while maintaining functionality and improving code quality.
 
 ```markdown
-# [Scope] Refactoring Plan
+# [Scope] Refactor
 
 <!-- Replace [Scope] with the specific area of code you're refactoring (e.g., User Service Layer, Authentication Module, etc.) -->
 
@@ -29,24 +21,17 @@ The plan will serve as a roadmap for systematically refactoring code while maint
 
 <!-- Write a brief description of what code is being refactored and the overall approach to improve its structure and maintainability. -->
 
-## Refactoring Goals
-
-<!-- Define the scope of the refactor. -->
-
-**Refactoring Type:** <!-- Architecture, Code Structure, Performance, Testing, Design Patterns, etc. -->
-**Complexity:** <!-- Simple, Moderate, Complex -->
-
 ## Context
 
 <!-- Summarize existing work and recent changes on the branch. -->
 
 ## Scope
 
-<!-- Document the specific problems the refactor aims to address. -->
+<!-- Define the scope of the refactor and document the specific problems it aims to address. -->
 
-## Refactoring Plan
+## Plan
 
-<!-- Break down the refactoring into logical phases. For simple refactoring, a single phase may suffice. For complex refactoring, multiple phases help manage risk and ensure functionality is preserved. -->
+<!-- Break down the refactoring into logical phases. For simple refactoring, a single phase may suffice. For complex refactoring, multiple phases help manage risk and ensure functionality is preserved. Phases can be subdivided into steps if necessary. -->
 
 ### Phase 1: [Title]
 
@@ -56,9 +41,9 @@ The plan will serve as a roadmap for systematically refactoring code while maint
 
 <!-- ... -->
 
-## Safety Measures
+## Safety
 
-<!-- Copy this Safety Measures section exactly as written, without modification: -->
+<!-- Copy this Safety section exactly as written, without modification: -->
 
 To ensure safe refactoring:
 
