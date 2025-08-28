@@ -12,7 +12,7 @@ Create a plan for investigating and fixing a bug described in $ARGUMENTS by syst
 
 2. **Get base branch:** Use `git base-branch` to get the base branch of the current branch.
 
-3. **Analyze context:** Run `~/.claude/commands/context/branch.md` to understand what changes on the current branch might be related to the bug.
+3. **Analyze context:** Read `~/.claude/commands/context/branch.md` and follow its instructions to understand what changes on the current branch might be related to the bug.
 
 4. **Categorize bug:** Determine the bug category and priority:
    - **Type:** UI/UX, Logic, Performance, Security, Integration, Data, etc.

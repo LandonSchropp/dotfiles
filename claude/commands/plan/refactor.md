@@ -12,7 +12,7 @@ Create a plan for refactoring the scope described in $ARGUMENTS.
 
 2. **Get base branch:** Use `git base-branch` to get the base branch of the current branch.
 
-3. **Analyze context:** Run `~/.claude/commands/context/branch.md` to understand the current state of the branch and any existing work.
+3. **Analyze context:** Read `~/.claude/commands/context/branch.md` and follow its instructions to understand the current state of the branch and any existing work.
 
 4. **Create plan:** Write a structured plan to `.ai/plans/<branch>/<datetime>-refactor.md` (use `!date +"%Y-%m-%dT%H-%M-%S"` for datetime) using the template below. Follow the instructions in the comments within the template, then remove all comments from the final output
 

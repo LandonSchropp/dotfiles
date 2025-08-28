@@ -12,7 +12,7 @@ Create a plan for fixing failing tests in $ARGUMENTS (or from current context if
 
 2. **Get base branch:** Use `git base-branch` to get the base branch of the current branch.
    .
-3. **Analyze context:** Run `~/.claude/commands/context/branch.md` to understand what changes on the current branch might be causing test failures.
+3. **Analyze context:** Read `~/.claude/commands/context/branch.md` and follow its instructions to understand what changes on the current branch might be causing test failures.
 
 4. **Order tests:** Examine each test path and order them from lowest to highest:
    - First by testing pyramid level: unit → integration → end-to-end

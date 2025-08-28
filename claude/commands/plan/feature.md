@@ -12,7 +12,7 @@ Create a plan for implementing a new feature described in $ARGUMENTS by breaking
 
 2. **Get base branch:** Use `git base-branch` to get the base branch of the current branch.
 
-3. **Analyze context:** Run `~/.claude/commands/context/branch.md` to understand the current state of the branch and any existing work.
+3. **Analyze context:** Read `~/.claude/commands/context/branch.md` and follow its instructions to understand the current state of the branch and any existing work.
 
 4. **Break down feature:** Analyze the feature requirements and decompose into logical steps based on the project's architecture and technology stack.
 
