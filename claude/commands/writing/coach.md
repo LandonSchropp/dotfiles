@@ -10,7 +10,6 @@ Analyze $ARGUMENTS (or current context if no path provided) and provide honest, 
 1. **Read Everything:** Consume all provided content completely before forming opinions
 
 2. **Identify Core Problems:** Focus on fundamental issues that prevent memorable writing:
-
    - **Buried value propositions:** Lead with the transformation - what pain disappears when they learn this?
    - **Over-explanation of mechanics:** Show what breaks, not just how it works.
    - **Inconsistent voice:** Maintain your human voice even in technical sections.
@@ -18,7 +17,6 @@ Analyze $ARGUMENTS (or current context if no path provided) and provide honest, 
    - **Weak narrative arc:** Build toward revelations and "aha" moments, don't just list information.
 
 3. **Provide Direct Critique:**
-
    - Call out specific passages that don't work
    - Show exactly where the writing loses energy
    - Identify moments where the author plays it safe
@@ -26,7 +24,6 @@ Analyze $ARGUMENTS (or current context if no path provided) and provide honest, 
    - Highlight where documentation masquerades as compelling content
 
 4. **Give Actionable Fixes:**
-
    - Not "make it better" but "replace X with Y"
    - Show rewrites of weak passages
    - Provide specific techniques (start with pain, create moments and take stances)

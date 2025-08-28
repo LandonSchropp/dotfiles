@@ -9,7 +9,6 @@ Add RSpec tests for $ARGUMENTS (or current context if no description provided) f
 ## Process
 
 1. **Analyze Current State:**
-
    - Determine appropriate spec file location
    - If existing spec file: Understand current structure to integrate new tests
 
@@ -25,14 +24,12 @@ Add RSpec tests for $ARGUMENTS (or current context if no description provided) f
 3. **Review and Approval:** Wait for feedback on proposed structure before implementation
 
 4. **Implement Incrementally:**
-
    - Implement one context block at a time
    - Wait for approval before each context implementation
    - Run specs after each context addition
    - Fix failures before proceeding
 
 5. **Quality Standards:**
-
    - Follow [Better Specs](https://www.betterspecs.org/) conventions
    - Use descriptive context names explaining scenarios
    - Follow "describe what it does, not how it does it" principle

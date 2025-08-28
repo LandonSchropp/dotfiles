@@ -12,21 +12,18 @@ Follow these steps carefully:
 2. Read the content of the @readme.md file (from the target directory).
 3. Examine the content of files from the /.context directory for project status context (if it exists in the target directory)
 4. Review the output of running the !`git ls-files` command (from the target directory).
-4. Carefully read and analyze all the information provided above. Pay attention to:
-
+5. Carefully read and analyze all the information provided above. Pay attention to:
    - Project description and purpose in the README
    - Any setup instructions or dependencies mentioned
    - The current state of the project as reflected in the context files
    - The overall file structure and organization of the project
 
-5. Provide insights based on the file structure:
-
+6. Provide insights based on the file structure:
    - Identify the main components or modules of the project
    - Note any patterns in file organization
    - Highlight any interesting or unusual aspects of the project structure
 
-6. Format your final output as follows:
-
+7. Format your final output as follows:
    1. Project Overview: A brief description of the project and its purpose
    2. Key Components: List of main components or modules identified
    3. File Structure Insights: Notable observations about the project's organization
