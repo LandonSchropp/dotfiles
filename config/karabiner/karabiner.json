@@ -4,7 +4,7 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Change globe to meh",
+            "description": "Change globe to COC (Command + Option + Control)",
             "manipulators": [
               {
                 "from": {
@@ -13,7 +13,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
+                    "key_code": "left_command",
                     "modifiers": ["left_control", "left_option"]
                   }
                 ],
