@@ -15,6 +15,7 @@ return {
   opts = {
     file_types = { "markdown", "codecompanion" },
     win_options = { conceallevel = { rendered = 0 } },
+    nested = false,
     heading = {
       position = "inline",
       icons = {},
