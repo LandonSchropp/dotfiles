@@ -44,13 +44,6 @@ bindkey "^[^[OC" forward-char
 bindkey "^[^[OD" backward-char
 
 # Source the configuration files
-source "$HOME/.config/zsh/path.zsh"
-source "$HOME/.config/zsh/aliases-and-commands.zsh"
-source "$HOME/.config/zsh/fancy-control-z.zsh"
-source "$HOME/.config/zsh/fzf.zsh"
-source "$HOME/.config/zsh/prompt.zsh"
-source "$HOME/.config/zsh/tmux.zsh"
-
 for CONFIG_FILE in "$HOME"/.config/zsh/*; do
   source "$CONFIG_FILE"
 done
