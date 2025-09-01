@@ -21,3 +21,7 @@ alias dc='docker-compose'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dcps='docker-compose ps'
+
+# TODO: For some reason pnpx isn't aliasing correctly when installed via mise. For now, I'll alias
+# it manually.
+alias pnpx='pnpm dlx'
