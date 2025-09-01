@@ -21,10 +21,3 @@ alias dc='docker-compose'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dcps='docker-compose ps'
-
-# Enable source highlighting in less.
-export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
-export LESS=" -R "
-
-# Make bat more readable.
-export BAT_THEME="tokyonight_moon"
