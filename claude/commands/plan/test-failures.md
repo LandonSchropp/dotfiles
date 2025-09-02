@@ -7,7 +7,7 @@ allowed-tools: Read, Write, Bash(git branch:*), Bash(git switch:*), Bash(git bas
 Create a plan for fixing failing tests in $ARGUMENTS (or from current context if no tests
 specified).
 
-Read `~/.claude/commands/plan/_base.md` and follow all sections. Use the template below.
+Follow the process defined in @~/.claude/commands/plan/\_base.md. Use the template below.
 
 ## Order
 

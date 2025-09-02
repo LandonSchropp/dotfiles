@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Bash(git branch:*), Bash(git switch:*), Bash(git bas
 
 Create a plan for refactoring the scope described in $ARGUMENTS.
 
-Read `~/.claude/commands/plan/_base.md` and follow all sections. Use the template below.
+Follow the process defined in @~/.claude/commands/plan/\_base.md. Use the template below.
 
 ## Template
 

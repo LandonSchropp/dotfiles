@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Bash(git branch:*), Bash(git switch:*), Bash(git bas
 
 Create a plan for implementing a new feature described in $ARGUMENTS by breaking it down into manageable components and defining a systematic development approach.
 
-Read `~/.claude/commands/plan/_base.md` and follow all sections. Use the template below.
+Follow the process defined in @~/.claude/commands/plan/\_base.md. Use the template below.
 
 ## Template
 

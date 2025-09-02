@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Bash(git branch:*), Bash(git switch:*), Bash(git bas
 
 Create a plan for investigating and fixing a bug described in $ARGUMENTS by systematically identifying the root cause and implementing a proper fix.
 
-Read `~/.claude/commands/plan/_base.md` and follow all sections. Use the template below.
+Follow the process defined in @~/.claude/commands/plan/\_base.md. Use the template below.
 
 ## Template
 
