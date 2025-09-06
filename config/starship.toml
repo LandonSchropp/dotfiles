@@ -21,6 +21,9 @@ diverged = '󰹹 diverged'
 [aws]
 symbol = "  "
 
+[bun]
+symbol = " "
+
 [buf]
 symbol = " "
 
