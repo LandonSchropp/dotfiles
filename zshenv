@@ -10,6 +10,9 @@ export DISABLE_SPRING="true"
 # Disable Homebrew hints.
 export HOMEBREW_NO_ENV_HINTS="1"
 
+# Disable Homebrew new formulae and cask messages on update.
+export HOMEBREW_NO_UPDATE_REPORT_NEW="1"
+
 # The home directory for configuration. This isn't required, but some apps will use it if it's
 # defined.
 export XDG_CONFIG_HOME="$HOME/.config"
