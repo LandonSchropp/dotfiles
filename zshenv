@@ -20,6 +20,13 @@ export OBSIDIAN_VAULT="$HOME/Notes"
 # Disable the GitHub CLI notification updates. (They're super annoying.)
 export GH_NO_UPDATE_NOTIFIER=1
 
+# Set the bat theme.
+export BAT_THEME="tokyonight_moon"
+
+# Enable source highlighting in less.
+export LESSOPEN="| $(brew --prefix)/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
+
 # Set the Cross-Desktop Group (XDG) directories. This standard is used by a lot of applications.
 # Most will look in the following directory even if these environment variables aren't set, but it's
 # still nice to have it available.
