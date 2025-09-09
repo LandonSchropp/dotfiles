@@ -15,10 +15,9 @@ return {
           enabled = false,
         },
 
+        -- Disable the JSON formatter so Prettier can step in.
         jsonls = {
           init_options = {
-
-            -- Disable the formatter so Prettier can step in.
             provideFormatter = false,
           },
         },
@@ -41,12 +40,23 @@ return {
           },
         },
 
+        -- Disable the "File is a CommonJS module" error. This error is annoying because it's
+        -- applied to configuration files that must be CommonJS modules.
         tsserver = {
           settings = {
             diagnostics = {
-              -- Disable the "File is a CommonJS module" error. This error is annoying because it's
-              -- applied to configuration files that must be CommonJS modules.
               ignoredCodes = { 80001 },
+            },
+          },
+        },
+
+        -- Prevent Ruby LSP from prompting to run migrations.
+        ruby_lsp = {
+          init_options = {
+            addonSettings = {
+              ["Ruby LSP Rails"] = {
+                enablePendingMigrationsPrompt = false,
+              },
             },
           },
         },
