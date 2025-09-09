@@ -3,5 +3,5 @@
 file_path=$(jq -r '.tool_input.file_path')
 
 if [[ "$file_path" =~ \.rb$ ]] && which rubocop >/dev/null; then
-  rubocop --autocorrect "$(readlink -f "$file_path")"
+  bundle exec rubocop --autocorrect "$(readlink -f "$file_path")" || true
 fi
