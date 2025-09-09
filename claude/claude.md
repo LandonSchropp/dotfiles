@@ -19,3 +19,5 @@ When editing bash/shell scripts (`.sh` files or files with bash/sh shebangs), ru
 ```bash
 shellcheck path/to/script.sh
 ```
+
+- For GitHub-related resource information, use the `gh` command when possible.
