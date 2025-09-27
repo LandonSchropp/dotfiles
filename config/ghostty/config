@@ -7,7 +7,7 @@ font-style = Medium
 font-feature = -calt, -liga, -dlig
 
 # Set the theme to Tokyo Night Storm
-theme = "tokyonight-storm"
+theme = "TokyoNight Storm"
 
 # Ensure that new windows take up the full screen size.
 window-width = 1000
