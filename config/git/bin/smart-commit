@@ -2,8 +2,24 @@
 
 set -euo pipefail
 
-# Generate commit message using claude
-commit_message=$(claude --print "/git:commit-message")
+# Hardcode the commit message prompt.
+commit_message_prompt=$(
+  cat <<PROMPT
+Analyze !\`git diff --cached\` and generate a clear, descriptive commit message.
 
-# Create commit with generated message but allow editing
+- Write the title in present tense, imperative mood (e.g., "Add feature" not "Added feature").
+- Be specific—describe what the change actually does.
+- Keep it concise. Only add a description if the change isn't clear from the title, and don't add
+  unnecessary details.
+- Keep the message under 72 characters wide.
+
+Return only the commit message, nothing else. **Do not create the commit.**
+PROMPT
+)
+
+# Generate commit message using claude. Use the --strict-mcp-config flag to prevent MCP servers from
+# loading.
+commit_message=$(claude --print --strict-mcp-config "$commit_message_prompt")
+
+# Create commit with generated message but allow editing.
 git commit --message "$commit_message" --edit
