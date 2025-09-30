@@ -1,0 +1,88 @@
+# Layouts (in order of preference)
+layouts:
+  - tall
+  - column
+  - middle-wide
+  - floating
+  - fullscreen
+
+# Modifier keys (required for shortcuts to work)
+mod1:
+  - control
+  - option
+  - command
+
+mod2:
+  - control
+  - option
+  - command
+  - shift
+
+# Keyboard shortcuts
+
+# Note: cycle-layout uses default mod1+space
+
+cycle-layout-backward:
+  mod: mod2
+  key: space
+
+# Custom layout selection
+select-tall-layout:
+  mod: mod1
+  key: 1
+
+select-column-layout:
+  mod: mod1
+  key: 2
+
+select-middle-wide-layout:
+  mod: mod1
+  key: 3
+
+select-floating-layout:
+  mod: mod1
+  key: 4
+
+select-fullscreen-layout:
+  mod: mod1
+  key: f
+
+expand-main:
+  mod: mod1
+  key: "="
+
+shrink-main:
+  mod: mod1
+  key: "-"
+
+# Window management settings
+window-margins: true
+window-margin-size: 10
+
+# Behavior settings
+floating-is-blacklist: false
+
+# Mouse settings
+mouse-swaps-windows: true
+mouse-resizes-windows: true
+
+# Floating applications (these are the only apps that will not flue due to floating-is-blacklist)
+floating:
+  - id: com.busymac.busycal3
+    window-titles: []
+  - id: com.mitchellh.ghostty
+    window-titles: []
+  - id: com.tinyspeck.slackmacgap
+    window-titles: []
+  - id: com.spotify.client
+    window-titles: []
+  - id: company.thebrowser.Browser
+    window-titles: []
+  - id: com.apple.Music
+    window-titles: []
+  - id: md.obsidian
+    window-titles: []
+  - id: com.linear
+    window-titles: []
+  - id: com.anthropic.claudefordesktop
+    window-titles: []
