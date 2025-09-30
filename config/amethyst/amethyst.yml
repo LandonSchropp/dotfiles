@@ -20,13 +20,16 @@ mod2:
 
 # Keyboard shortcuts
 
-# Note: cycle-layout uses default mod1+space
+# Note: cycle-layout uses default mod1 + space shortcut
 
 cycle-layout-backward:
   mod: mod2
   key: space
 
-# Custom layout selection
+toggle-tiling:
+  mod: mod2
+  key: t
+
 select-tall-layout:
   mod: mod1
   key: 1
