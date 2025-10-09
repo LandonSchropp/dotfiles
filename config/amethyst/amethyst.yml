@@ -58,9 +58,10 @@ shrink-main:
   mod: mod1
   key: "-"
 
-# Window management settings
+# Window margins
 window-margins: true
 window-margin-size: 10
+smart-window-margins: true
 
 # Behavior settings
 floating-is-blacklist: false
