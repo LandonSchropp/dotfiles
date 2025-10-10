@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Toggle Amethyst tiling off (Command + Option + Control + Shift + T)
+# Toggle Amethyst tiling off (Command + Option + Control + Shift + D)
 osascript <<'END'
 tell application "System Events"
   keystroke "d" using {command down, option down, control down, shift down}

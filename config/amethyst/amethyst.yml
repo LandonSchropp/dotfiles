@@ -30,6 +30,14 @@ toggle-tiling:
   mod: mod2
   key: t
 
+enable-tiling:
+  mod: mod2
+  key: e
+
+disable-tiling:
+  mod: mod2
+  key: d
+
 select-tall-layout:
   mod: mod1
   key: 1
