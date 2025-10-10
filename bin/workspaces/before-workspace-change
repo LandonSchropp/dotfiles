@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -euo pipefail
 
 # Toggle Amethyst tiling off (Command + Option + Control + Shift + T)
 osascript <<'END'
 tell application "System Events"
-  keystroke "t" using {command down, option down, control down, shift down}
+  keystroke "d" using {command down, option down, control down, shift down}
 end tell
 END
 
