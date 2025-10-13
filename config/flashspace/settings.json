@@ -32,7 +32,7 @@
   "runScriptAfterWorkspaceChange" : "/Users/landon/.dotfiles/bin/workspaces/after-workspace-change",
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
-  "runScriptOnWorkspaceChange" : "/Users/landon/.dotfiles/bin/workspaces/before-workspace-change",
+  "runScriptOnWorkspaceChange" : "",
   "showFloatingNotifications" : true,
   "showMenuBarIcon" : true,
   "showMenuBarTitle" : true,
