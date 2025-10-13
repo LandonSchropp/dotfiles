@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-# Toggle Amethyst tiling off (Command + Option + Control + Shift + E)
+# Reset the Phoenix layout (Command + Option + Control + Shift + R)
 osascript <<'END'
 tell application "System Events"
-  keystroke "e" using {command down, option down, control down, shift down}
+  keystroke "r" using {command down, option down, control down}
 end tell
 END
