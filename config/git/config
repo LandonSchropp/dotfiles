@@ -87,6 +87,7 @@
 [rebase]
   autosquash = true
 	empty = drop
+	updateRefs = true
 
 [diff]
   colorMoved = zebra
