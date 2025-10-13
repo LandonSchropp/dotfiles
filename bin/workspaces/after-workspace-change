@@ -5,6 +5,6 @@ set -euo pipefail
 # Reset the Phoenix layout (Command + Option + Control + Shift + R)
 osascript <<'END'
 tell application "System Events"
-  keystroke "r" using {command down, option down, control down}
+  keystroke "r" using {command down, option down, control down, shift down}
 end tell
 END
