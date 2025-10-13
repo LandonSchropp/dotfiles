@@ -1,1 +1,1 @@
-db/schema.rb merge=rails-schema-resolver
+**/db/schema.rb merge=rails-schema-resolver

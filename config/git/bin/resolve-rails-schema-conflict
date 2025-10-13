@@ -4,30 +4,64 @@
 # This is a Git merge driver for resolving Rails schema.rb version conflicts. It automatically
 # resolves version conflicts by choosing the highest Rails version and database version.
 #
-# Usage: git config merge.schema-resolver.driver "resolve-schema-conflict %A"
+# Usage: git config merge.schema-resolver.driver "resolve-schema-conflict %O %A %B %L %P"
 
-CONFLICTED_FILE = ARGV[0]
+require 'fileutils'
 
-if ARGV.length != 1
+LOG_DIR = '/tmp/rails-schema-resolver'
+
+if ARGV.length != 5
+  $stderr.puts "Usage: #{$0} %O %A %B %L %P"
   exit 1
 end
 
-# Read the conflicted file
-schema = File.read(CONFLICTED_FILE)
+ancestor, current, other, marker_size, final_path = ARGV
+
+# This is a logging helper that makes it easier to debug issues with the merge driver.
+# It logs the schema content to a file in /tmp/rails-schema-resolver with the current
+# git SHA and a suffix indicating whether it's before or after resolution.
+def log_schema(path, suffix, content)
+  git_sha = `git rev-parse --short HEAD 2>/dev/null`.strip
+  git_sha = 'unknown' if git_sha.empty?
+
+  # Create a safe filename from the schema file path
+  safe_path = path.gsub(/[\/\.]/, '_').gsub(/^_+|_+$/, '')
+
+  FileUtils.mkdir_p(LOG_DIR)
+
+  File.write("#{LOG_DIR}/#{git_sha}_#{safe_path}_#{suffix}.rb", content)
+end
+
+# Log the three input files before merging
+log_schema(final_path, 'base', File.read(ancestor))
+log_schema(final_path, 'current', File.read(current))
+log_schema(final_path, 'other', File.read(other))
+
+# Use git merge-file to create the conflict markers
+system('git', 'merge-file', "--marker-size=#{marker_size}", current, ancestor, other)
+
+# Read the file with conflict markers
+schema = File.read(current)
+
+# Log the conflicted result
+log_schema(final_path, 'conflicted', schema)
 
 SCHEMA_REGEX = /ActiveRecord::Schema\[([\d.]+)\]\.define\(version: ([\d_]+)\) do/
-CONFLICT_REGEX = /<<<<<<< HEAD\n(#{SCHEMA_REGEX})\n=======\n(#{SCHEMA_REGEX})\n>>>>>>> [^\n]+/
-
-# Check if there's a schema version conflict to resolve
-exit 0 unless schema =~ CONFLICT_REGEX
+CONFLICT_REGEX = /<<<<<<< .*?\n(#{SCHEMA_REGEX})\n=======\n(#{SCHEMA_REGEX})\n>>>>>>> [^\n]+/
 
 # Resolve only the schema version conflicts
 schema = schema.sub(CONFLICT_REGEX) do
   rails_version = [$2, $5].max
   database_version = [$3, $6].max
-  
+
   "ActiveRecord::Schema[#{rails_version}].define(version: #{database_version}) do"
 end
 
 # Write the resolved file back
-File.write(CONFLICTED_FILE, schema)
+File.write(current, schema)
+
+# Log the resolved result
+log_schema(final_path, 'resolved', schema)
+
+# Exit with 1 if there are still conflict markers remaining
+exit 1 if schema.include?('<<<<<<<')
