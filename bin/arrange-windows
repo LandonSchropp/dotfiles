@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/window-manager/window_manager'
+
+unless ARGV.length == 2
+  warn "Usage: #{$PROGRAM_NAME} <profile> <workspace>"
+  exit 1
+end
+
+profile = ARGV[0]
+workspace = ARGV[1]
+
+WindowManager.arrange(profile, workspace)
