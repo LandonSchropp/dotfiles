@@ -24,7 +24,16 @@ module WindowManager
     end
 
     def position_window(window, rectangle)
-      # TODO: implement
+      script = <<~APPLESCRIPT
+        tell application "System Events"
+          tell process "#{window[:application]}"
+            set position of window #{window[:index]} to {#{rectangle.x}, #{rectangle.y}}
+            set size of window #{window[:index]} to {#{rectangle.width}, #{rectangle.height}}
+          end tell
+        end tell
+      APPLESCRIPT
+
+      AppleScript.run(script)
     end
   end
 end
