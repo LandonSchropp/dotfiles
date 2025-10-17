@@ -13,7 +13,9 @@
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
     ],
-    "additionalDirectories": ["~/Notes/Areas/AI"]
+    "additionalDirectories": [
+      "~/Notes/Areas/AI"
+    ]
   },
   "hooks": {
     "PostToolUse": [
@@ -35,5 +37,6 @@
         ]
       }
     ]
-  }
+  },
+  "alwaysThinkingEnabled": false
 }
