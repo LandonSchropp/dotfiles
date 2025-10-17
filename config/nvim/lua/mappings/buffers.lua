@@ -1,9 +1,5 @@
 local extend = require("utilities.table").extend
 
-local function close_buffer()
-  require("astrocore.buffer").close(0)
-end
-
 return function(mappings)
   return {
     n = {
@@ -27,7 +23,6 @@ return function(mappings)
       -- Remap mappings
       ["<Leader>bD"] = extend(mappings.n["<Leader>c"], { desc = "Delete buffer (force)" }),
       ["<Leader>bS"] = extend(mappings.n["<Leader>bsm"], { desc = "Sort by modification" }),
-      ["<Leader>bc"] = mappings.n["<Leader>bC"],
       ["<Leader>bd"] = extend(mappings.n["<Leader>c"], { desc = "Delete buffer" }),
       ["<Leader>bo"] = mappings.n["<Leader>bc"],
       ["<Leader>bs"] = extend(mappings.n["<Leader>bsp"], { desc = "Sort by path" }),
@@ -37,8 +32,10 @@ return function(mappings)
       L = mappings.n["]b"],
 
       -- Save and close buffers
+      ["<Leader>bx"] = mappings.n["<Leader>c"],
+      ["<Leader>bX"] = mappings.n["<Leader>bC"],
+      X = mappings.n["<Leader>c"],
       W = { "<cmd>write<cr>", desc = "Write buffer" },
-      X = { close_buffer, desc = "Close buffer" },
       Z = { "WX", desc = "Write and close buffer" },
       ["<Leader>Q"] = extend(mappings.n["<Leader>Q"], { desc = "Quit" }),
 
