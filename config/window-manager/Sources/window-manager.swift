@@ -2,7 +2,7 @@ import Foundation
 
 struct WindowManager {
     static func arrange(profile: String, workspace: String) {
-        guard let config = Configuration.findWorkspace(profile: profile, workspace: workspace) else {
+        guard let config = Configuration.shared.findWorkspace(profile: profile, workspace: workspace) else {
             fatalError("No configuration found for workspace '\(workspace)' and profile '\(profile)'")
         }
 

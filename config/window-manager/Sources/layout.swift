@@ -24,8 +24,8 @@ struct Layout {
         }
 
         return screenRectangle
-            .inset(Configuration.margin)
-            .splitIntoColumns(numberOfWindows, gap: Configuration.margin)
+            .inset(Configuration.shared.margin)
+            .splitIntoColumns(numberOfWindows, gap: Configuration.shared.margin)
     }
 
     private static func mainStack(_ screenRectangle: Rectangle, _ numberOfWindows: Int) -> [Rectangle] {
@@ -35,6 +35,6 @@ struct Layout {
 
         let columnRectangles = columns(screenRectangle, 2)
 
-        return [columnRectangles[0]] + columnRectangles[1].splitIntoRows(numberOfWindows - 1, gap: Configuration.margin)
+        return [columnRectangles[0]] + columnRectangles[1].splitIntoRows(numberOfWindows - 1, gap: Configuration.shared.margin)
     }
 }

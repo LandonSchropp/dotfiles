@@ -11,19 +11,20 @@ struct Workspace: Codable {
     }
 }
 
-struct Configuration {
-    static let margin: Double = 10
+struct Configuration: Codable {
+    let margin: Double
+    let workspaces: [Workspace]
 
-    private static let workspaces: [Workspace] = {
+    static let shared: Configuration = {
         let url = URL(fileURLWithPath: #filePath)
             .deletingLastPathComponent()
             .appendingPathComponent("configuration.json")
 
         let data = try! Data(contentsOf: url)
-        return try! JSONDecoder().decode([Workspace].self, from: data)
+        return try! JSONDecoder().decode(Configuration.self, from: data)
     }()
 
-    static func findWorkspace(profile: String, workspace: String) -> Workspace? {
+    func findWorkspace(profile: String, workspace: String) -> Workspace? {
         return workspaces.first { $0.matches(profile: profile, workspace: workspace) }
     }
 }
