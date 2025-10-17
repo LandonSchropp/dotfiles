@@ -11,9 +11,9 @@ function touch {
 }
 
 # Override the ls and tree command with better version from Eza.
-alias ls="eza --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
+alias ls="eza --all --icons --ignore-glob '.DS_Store|.git|node_modules|.build'"
 alias lsg="eza --all --icons --git-ignore --ignore-glob .DS_Store"
-alias tree="eza --tree --all --icons --ignore-glob '.DS_Store|.git|node_modules'"
+alias tree="eza --tree --all --icons --ignore-glob '.DS_Store|.git|node_modules|.build'"
 alias treeg="eza --tree --all --icons --git-ignore --ignore-glob .DS_Store"
 
 # Add aliases for common docker-compose commands.
