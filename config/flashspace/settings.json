@@ -29,7 +29,7 @@
   "pipScreenCornerOffset" : 15,
   "restartAppOnWakeUp" : false,
   "restoreHiddenAppsOnSwitch" : true,
-  "runScriptAfterWorkspaceChange" : "/Users/landon/.dotfiles/bin/workspaces/after-workspace-change",
+  "runScriptAfterWorkspaceChange" : "$HOME/.dotfiles/bin/window-manager $PROFILE $WORKSPACE",
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
   "runScriptOnWorkspaceChange" : "",
