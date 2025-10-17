@@ -1,0 +1,74 @@
+[
+  {
+    "profile": "Full",
+    "workspace": "Browser",
+    "layout": "Fullscreen",
+    "applications": ["Arc"]
+  },
+  {
+    "profile": "Full",
+    "workspace": "Terminal",
+    "layout": "Fullscreen",
+    "applications": ["Ghostty"]
+  },
+  {
+    "profile": "Full",
+    "workspace": "Notes",
+    "layout": "Fullscreen",
+    "applications": ["Obsidian"]
+  },
+  {
+    "profile": "Full",
+    "workspace": "Calendar",
+    "layout": "Fullscreen",
+    "applications": ["BusyCal"]
+  },
+  {
+    "profile": "Full",
+    "workspace": "Music",
+    "layout": "Fullscreen",
+    "applications": ["Spotify", "Music"]
+  },
+  {
+    "profile": "Full",
+    "workspace": "Slack",
+    "layout": "Fullscreen",
+    "applications": ["Slack"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Browser",
+    "layout": "Fullscreen",
+    "applications": ["Arc"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Terminal",
+    "layout": "Main Stack",
+    "applications": ["Arc", "Ghostty"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Notes",
+    "layout": "Main Stack",
+    "applications": ["Arc", "Obsidian"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Calendar",
+    "layout": "Fullscreen",
+    "applications": ["BusyCal"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Music",
+    "layout": "Fullscreen",
+    "applications": ["Spotify", "Music"]
+  },
+  {
+    "profile": "Split",
+    "workspace": "Slack",
+    "layout": "Main Stack",
+    "applications": ["Arc", "Slack"]
+  }
+]
