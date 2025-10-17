@@ -4,3 +4,7 @@
 firmware/*.uf2
 repro.lua
 .repro
+
+# window-manager build artifacts
+config/window-manager/.build
+config/window-manager/window-manager
