@@ -40,7 +40,7 @@ return function(mappings)
       ["<Leader>Q"] = extend(mappings.n["<Leader>Q"], { desc = "Quit" }),
 
       -- Yank the current buffer path
-      ["<Leader>by"] = { "<cmd>let @+=expand('%')<cr>", desc = "Yank buffer path" },
+      ["<Leader>by"] = { "<cmd>let @+=expand('%:.')<cr>", desc = "Yank buffer path" },
       ["<Leader>bY"] = { "<cmd>let @+=expand('%:p')<cr>", desc = "Yank buffer absolute path" },
     },
   }
