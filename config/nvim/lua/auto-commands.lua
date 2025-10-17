@@ -1,5 +1,8 @@
+---@module "astrocore"
+
 local is_lsp_client_active = require("utilities.lsp").is_lsp_client_active
 
+---@type AstroCoreOpts["autocmds"]
 return {
   AutoRemoveUnusedImports = {
     {
@@ -10,6 +13,15 @@ return {
         if is_lsp_client_active("vtsls") then
           vim.cmd("VtsExec remove_unused_imports")
         end
+      end,
+    },
+  },
+  DisableFocusNvim = {
+    {
+      event = { "WinEnter" },
+      desc = "Disable focus.nvim for certain filetypes",
+      callback = function(_)
+        vim.b.focus_disable = vim.tbl_contains({ "neo-tree" }, vim.bo.filetype)
       end,
     },
   },
