@@ -1,5 +1,9 @@
 margin: 10
 
+# TODO: It would be better to query these values dynamically rather than hardcoding them.
+menu_bar_height: 34
+dock_height: 0
+
 workspaces:
   - workspace: Browser
     profile: Full
