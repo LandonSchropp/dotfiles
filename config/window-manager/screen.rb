@@ -14,6 +14,9 @@ class Screen
     def visible_rectangle
       rectangle.inset(Configuration.menu_bar_height, 0, Configuration.dock_height)
     end
+
+    def built_in_display?
+      rectangle.width <= Configuration.full_display_width
     end
   end
 end
