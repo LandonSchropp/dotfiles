@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# This is a wrapper script for the profile-switcher command. If the binary doesn't exist, it builds
+# it from source.
+
+SOURCE_DIR="$HOME/.dotfiles/config/window-manager"
+BINARY="$SOURCE_DIR/.build/release/profile-switcher"
+
+if [ ! -f "$BINARY" ]; then
+  cd "$SOURCE_DIR"
+  swift build -c release
+fi
+
+exec "$BINARY" "$@"
