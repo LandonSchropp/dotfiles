@@ -13,11 +13,11 @@ class Configuration
     end
 
     def menu_bar_height
-      config['menu_bar_height'] || 34
+      config['menu_bar_height']
     end
 
     def dock_height
-      config['dock_height'] || 0
+      config['dock_height']
     end
 
     def workspaces
