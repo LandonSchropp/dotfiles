@@ -18,7 +18,6 @@ brew "httpie"
 brew "imagemagick"
 brew "jq"
 brew "lazygit"
-brew "mas"
 brew "mise"
 brew "neovim"
 brew "pgcli"
@@ -64,3 +63,13 @@ cask "raycast"
 cask "spotify"
 cask "the-unarchiver"
 cask "visual-studio-code"
+
+mas "Amphetamine", id: 937984704
+mas "BetterSnapTool", id: 417375580
+mas "ColorSnapper2", id: 969418666
+mas "Dropover", id: 1355679052
+mas "GoodLinks", id: 1474335294
+mas "Kindle", id: 302584613
+mas "Meeter", id: 1510445899
+mas "QuickShade", id: 931571202
+mas "Signal Shifter", id: 6446061552
