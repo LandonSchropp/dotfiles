@@ -12,6 +12,14 @@ class Configuration
       config['margin']
     end
 
+    def menu_bar_height
+      config['menu_bar_height'] || 34
+    end
+
+    def dock_height
+      config['dock_height'] || 0
+    end
+
     def workspaces
       @workspaces ||= config['workspaces'].map do |ws|
         Workspace.new(**ws.transform_keys(&:to_sym))

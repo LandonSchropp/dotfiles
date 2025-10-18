@@ -1,39 +1,33 @@
-require_relative 'applescript'
+require_relative 'rectangle'
+require 'json'
 
-Window = Data.define(:application, :index) do
+Window = Data.define(:application, :id, :rectangle) do
   class << self
     def visible
-      script = <<~APPLESCRIPT
-        tell application "System Events"
-          set output to ""
+      json = `yabai -m query --windows`
+      windows = JSON.parse(json)
 
-          repeat with proc in (every process whose visible is true)
-            repeat with index from 1 to (count of windows of proc)
-              set output to output & (displayed name of proc) & "|" & index & linefeed
-            end repeat
-          end repeat
+      windows
+        .map do |w|
+          rectangle = Rectangle.new(
+            x: w['frame']['x'],
+            y: w['frame']['y'],
+            width: w['frame']['w'],
+            height: w['frame']['h']
+          )
 
-          return output
-        end tell
-      APPLESCRIPT
-
-      AppleScript.run(script).lines.map(&:strip).reject(&:empty?).map do |line|
-        application, index = line.split('|')
-        Window.new(application:, index: index.to_i)
-      end
+          Window.new(
+            application: w['app'],
+            id: w['id'],
+            rectangle: rectangle
+          )
+        end
     end
   end
 
   def update_position(rectangle)
-    script = <<~APPLESCRIPT
-      tell application "System Events"
-        tell process "#{application}"
-          set position of window #{index} to {#{rectangle.x}, #{rectangle.y}}
-          set size of window #{index} to {#{rectangle.width}, #{rectangle.height}}
-        end tell
-      end tell
-    APPLESCRIPT
-
-    AppleScript.run(script)
+    `yabai -m window #{id} \
+      --move abs:#{rectangle.x}:#{rectangle.y} \
+      --resize abs:#{rectangle.width}:#{rectangle.height}`
   end
 end
