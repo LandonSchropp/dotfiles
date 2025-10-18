@@ -14,7 +14,7 @@ module WindowManager
       windows = Window
         .visible
         .filter { config.applications.include?(_1.application) }
-        .sort_by { config.applications.index(_1.application) || windows.length }
+        .sort_by { config.applications.index(_1.application) || config.applications.length }
 
       # Calculate the layout rectangles
       rectangles = Layout.calculate(config.layout, Screen.visible_rectangle, windows.length)
