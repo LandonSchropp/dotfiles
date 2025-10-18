@@ -5,7 +5,7 @@ set -euo pipefail
 # Create links for the dotfiles
 rcup \
   -v \
-  -x config/launchd \
+  -x config/window-manager \
   -U Library \
   Library \
   claude \
