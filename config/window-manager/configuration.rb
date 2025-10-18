@@ -20,6 +20,10 @@ class Configuration
       config['dock_height']
     end
 
+    def full_display_width
+      config['full_display_width']
+    end
+
     def workspaces
       @workspaces ||= config['workspaces'].map { Workspace.new(**_1) }
     end

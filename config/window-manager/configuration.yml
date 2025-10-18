@@ -1,8 +1,11 @@
-margin: 10
+margin: 10.0
 
 # TODO: It would be better to query these values dynamically rather than hardcoding them.
-menu_bar_height: 34
-dock_height: 0
+menu_bar_height: 34.0
+dock_height: 0.0
+
+# The width under which the FlashSpace profile should be set to Full.
+full_display_width: 1496.0
 
 workspaces:
   - workspace: Browser
