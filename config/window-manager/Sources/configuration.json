@@ -38,6 +38,18 @@
       "applications": ["Slack"]
     },
     {
+      "profile": "Full",
+      "workspace": "Engineering",
+      "layout": "Main Stack",
+      "applications": ["Obsidian", "Ghostty"]
+    },
+    {
+      "profile": "Full",
+      "workspace": "Project",
+      "layout": "Fullscreen",
+      "applications": ["Linear"]
+    },
+    {
       "profile": "Split",
       "workspace": "Browser",
       "layout": "Fullscreen",
@@ -72,6 +84,18 @@
       "workspace": "Slack",
       "layout": "Main Stack",
       "applications": ["Arc", "Slack"]
+    },
+    {
+      "profile": "Split",
+      "workspace": "Engineering",
+      "layout": "Columns",
+      "applications": ["Arc", "Obsidian", "Ghostty"]
+    },
+    {
+      "profile": "Split",
+      "workspace": "Project",
+      "layout": "Columns",
+      "applications": ["Arc", "Ghostty", "Linear"]
     }
   ]
 }

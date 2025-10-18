@@ -124,6 +124,50 @@
           "name" : "Slack",
           "shortcut" : "cmd+ctrl+opt+s",
           "symbolIconName" : "message.fill"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "md.obsidian",
+            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+            "name" : "Obsidian"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "E1A2B3C4-D5E6-F7A8-B9C0-D1E2F3A4B5C6",
+          "name" : "Engineering",
+          "shortcut" : "cmd+ctrl+opt+e",
+          "symbolIconName" : "hammer.fill"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.linear",
+            "iconPath" : "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+            "name" : "Linear"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.linear",
+              "iconPath" : "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+              "name" : "Linear"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "F2B3C4D5-E6F7-A8B9-C0D1-E2F3A4B5C6D7",
+          "name" : "Project",
+          "openAppsOnActivation" : false,
+          "shortcut" : "cmd+ctrl+opt+p",
+          "symbolIconName" : "checklist"
         }
       ]
     },
@@ -265,6 +309,60 @@
           "name" : "Slack",
           "shortcut" : "cmd+ctrl+opt+s",
           "symbolIconName" : "message.fill"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "md.obsidian",
+            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+            "name" : "Obsidian"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "LG HDR 4K",
+          "id" : "A1B2C3D4-E5F6-A7B8-C9D0-E1F2A3B4C5D6",
+          "name" : "Engineering",
+          "shortcut" : "cmd+ctrl+opt+e",
+          "symbolIconName" : "hammer.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "com.linear",
+              "iconPath" : "/Applications/Linear.app/Contents/Resources/icon.icns",
+              "name" : "Linear"
+            }
+          ],
+          "display" : "LG HDR 4K",
+          "id" : "B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7",
+          "name" : "Project",
+          "openAppsOnActivation" : false,
+          "shortcut" : "cmd+ctrl+opt+p",
+          "symbolIconName" : "checklist"
         }
       ]
     }
