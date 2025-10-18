@@ -4,18 +4,16 @@ require 'json'
 
 class Screen
   class << self
-    def visible_rectangle
-      # Get display info from yabai
+    def rectangle
       display_json = `yabai -m query --displays`
       frame = JSON.parse(display_json).first['frame']
 
-      # Calculate usable screen area excluding menu bar and dock
-      Rectangle.new(
-        x: frame['x'].to_i,
-        y: frame['y'].to_i + Configuration.menu_bar_height,
-        width: frame['w'].to_i,
-        height: frame['h'].to_i - Configuration.menu_bar_height - Configuration.dock_height
-      )
+      Rectangle.new(x: frame['x'], y: frame['y'], width: frame['w'], height: frame['h'])
+    end
+
+    def visible_rectangle
+      rectangle.inset(Configuration.menu_bar_height, 0, Configuration.dock_height)
+    end
     end
   end
 end
