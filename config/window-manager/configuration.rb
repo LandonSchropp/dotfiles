@@ -21,9 +21,7 @@ class Configuration
     end
 
     def workspaces
-      @workspaces ||= config['workspaces'].map do |ws|
-        Workspace.new(**ws.transform_keys(&:to_sym))
-      end
+      @workspaces ||= config['workspaces'].map { Workspace.new(**_1) }
     end
 
     def find_workspace(profile, workspace)
