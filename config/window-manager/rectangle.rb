@@ -1,11 +1,24 @@
 Rectangle = Data.define(:x, :y, :width, :height) do
 
-  def inset(inset)
+  # Returns a new Rectangle inset by the specified amount. This function follows the same parameter
+  # patterns as CSS's padding shorthand, anthough it only implements a subset of the available CSS
+  # options.
+  #
+  # @example
+  #   rectangle.inset(10)             # all sides: 10
+  #   rectangle.inset(10, 20, 30)     # top: 10, horizontal: 20, bottom: 30
+  def inset(*insets)
+    top, right, bottom, left = case insets
+    in [all] then [all, all, all, all]
+    in [top, horizontal, bottom] then [top, horizontal, bottom, horizontal]
+    else raise ArgumentError, "Invalid number of arguments (expected 1 or 3, got #{insets.length})"
+    end
+
     Rectangle.new(
-      x: x + inset,
-      y: y + inset,
-      width: width - inset * 2,
-      height: height - inset * 2
+      x: x + left,
+      y: y + top,
+      width: width - left - right,
+      height: height - top - bottom
     )
   end
 
