@@ -4,15 +4,14 @@ require_relative 'window'
 require_relative 'screen'
 require_relative 'configuration'
 require_relative 'layout'
+require_relative 'flashspace'
 
-# Ensure the correct number of arguments
-unless ARGV.length == 2
-  warn "Usage: #{$PROGRAM_NAME} <profile> <workspace>"
-  exit 1
-end
+# Get the current profile and workspace
+profile = ARGV[0] || Flashspace.profile
+workspace = ARGV[1] || Flashspace.workspace
 
 # Get the workspace configuration
-config = Configuration.find_workspace(ARGV[0], ARGV[1])
+config = Configuration.find_workspace(profile, workspace)
 
 # Get all visible windows, filter them to only those in the workspace configuration and sort
 # them by their order in the configuration
