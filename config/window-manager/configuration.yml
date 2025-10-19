@@ -40,7 +40,7 @@ workspaces:
 
   - workspace: Browser
     profile: Split
-    layout: Fullscreen
+    layout: Columns
     applications: [Arc]
 
   - workspace: Terminal
