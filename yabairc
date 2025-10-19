@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Update profile when display changes
+yabai -m signal --add event=display_changed action="~/.dotfiles/config/window-manager/switch-profile"

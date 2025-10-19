@@ -1,6 +1,6 @@
+require 'json'
 require_relative 'rectangle'
 require_relative 'configuration'
-require 'json'
 
 class Screen
   class << self
