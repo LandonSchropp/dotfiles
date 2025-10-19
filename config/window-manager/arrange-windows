@@ -14,11 +14,11 @@ workspace = ARGV[1] || Flashspace.workspace
 config = Configuration.find_workspace(profile, workspace)
 
 # Get all visible windows, filter them to only those in the workspace configuration and sort
-# them by their order in the configuration
+# them by their order in the configuration, then by window ID (oldest to newest)
 windows = Window
   .visible
   .filter { config.applications.include?(_1.application) }
-  .sort_by { config.applications.index(_1.application) || config.applications.length }
+  .sort_by { [config.applications.index(_1.application) || config.applications.length, _1.id] }
 
 # Calculate the layout rectangles
 rectangles = Layout.calculate(config.layout, Screen.visible_rectangle, windows.length)
