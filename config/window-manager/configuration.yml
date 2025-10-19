@@ -38,6 +38,16 @@ workspaces:
     layout: Fullscreen
     applications: [Slack]
 
+  - workspace: Engineering
+    profile: Full
+    layout: Columns
+    applications: [Ghostty, Obsidian]
+
+  - workspace: Project
+    profile: Full
+    layout: Fullscreen
+    applications: [Linear]
+
   - workspace: Browser
     profile: Split
     layout: Columns
@@ -67,3 +77,13 @@ workspaces:
     profile: Split
     layout: Main Stack
     applications: [Arc, Slack]
+
+  - workspace: Engineering
+    profile: Split
+    layout: Main Stack
+    applications: [Arc, Ghostty, Obsidian]
+
+  - workspace: Project
+    profile: Split
+    layout: Columns
+    applications: [Arc, Ghostty, Linear]
