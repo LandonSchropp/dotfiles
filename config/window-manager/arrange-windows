@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative 'window'
 require_relative 'screen'
 require_relative 'configuration'

@@ -29,7 +29,7 @@
   "pipScreenCornerOffset" : 15,
   "restartAppOnWakeUp" : false,
   "restoreHiddenAppsOnSwitch" : true,
-  "runScriptAfterWorkspaceChange" : "$HOME/.dotfiles/bin/window-manager $PROFILE $WORKSPACE",
+  "runScriptAfterWorkspaceChange" : "$HOME/.dotfiles/config/window-manager/arrange-windows $PROFILE $WORKSPACE",
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
   "runScriptOnWorkspaceChange" : "",
