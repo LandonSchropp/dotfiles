@@ -4,7 +4,7 @@ require 'json'
 Window = Data.define(:application, :id, :rectangle) do
   class << self
     def visible
-      json = `yabai -m query --windows`
+      json = `yabai -m query --windows`.force_encoding('UTF-8')
       windows = JSON.parse(json)
 
       windows
