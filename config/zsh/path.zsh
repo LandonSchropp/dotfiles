@@ -10,9 +10,6 @@ eval "$(direnv hook zsh)"
 # mise-en-place
 eval "$(mise activate zsh)"
 
-# thefuck
-eval $(thefuck --alias)
-
 # Local bin scripts
 export PATH="./bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
