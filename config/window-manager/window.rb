@@ -8,17 +8,18 @@ Window = Data.define(:application, :id, :rectangle) do
       windows = JSON.parse(json)
 
       windows
-        .map do |w|
+        .select { _1['is-visible'] && !_1['is-minimized'] }
+        .map do |window|
           rectangle = Rectangle.new(
-            x: w['frame']['x'],
-            y: w['frame']['y'],
-            width: w['frame']['w'],
-            height: w['frame']['h']
+            x: window['frame']['x'],
+            y: window['frame']['y'],
+            width: window['frame']['w'],
+            height: window['frame']['h']
           )
 
           Window.new(
-            application: w['app'],
-            id: w['id'],
+            application: window['app'],
+            id: window['id'],
             rectangle: rectangle
           )
         end
