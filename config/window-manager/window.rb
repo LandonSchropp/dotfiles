@@ -10,17 +10,10 @@ Window = Data.define(:application, :id, :rectangle) do
       windows
         .select { _1['is-visible'] && !_1['is-minimized'] }
         .map do |window|
-          rectangle = Rectangle.new(
-            x: window['frame']['x'],
-            y: window['frame']['y'],
-            width: window['frame']['w'],
-            height: window['frame']['h']
-          )
-
           Window.new(
             application: window['app'],
             id: window['id'],
-            rectangle: rectangle
+            rectangle: Rectangle.from_frame(window['frame'])
           )
         end
     end

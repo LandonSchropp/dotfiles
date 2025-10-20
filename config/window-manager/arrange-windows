@@ -21,7 +21,7 @@ windows = Window
   .sort_by { [config.applications.index(_1.application) || config.applications.length, _1.id] }
 
 # Calculate the layout rectangles
-rectangles = Layout.calculate(config.layout, Screen.visible_rectangle, windows.length)
+rectangles = Layout.calculate(config.layout, Screen.main.visible_rectangle, windows.length)
 
 # Apply the layout to each window
 windows.zip(rectangles).each do |window, rectangle|
