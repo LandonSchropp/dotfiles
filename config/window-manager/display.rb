@@ -2,14 +2,14 @@ require 'json'
 require_relative 'rectangle'
 require_relative 'configuration'
 
-Screen = Data.define(:rectangle, :menu_bar_height, :dock_height) do
+Display = Data.define(:rectangle, :menu_bar_height, :dock_height) do
   class << self
     def main
       @main ||= begin
         display_json = `yabai -m query --displays`
         frame = JSON.parse(display_json).first['frame']
 
-        Screen.new(
+        Display.new(
           rectangle: Rectangle.from_frame(frame),
           menu_bar_height: Configuration.menu_bar_height,
           dock_height: Configuration.dock_height
