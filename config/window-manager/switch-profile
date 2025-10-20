@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative 'screen'
+require_relative 'display'
 
-system('flashspace', 'profile', Screen.main.built_in_display? ? 'Full' : 'Split')
+system('flashspace', 'profile', Display.main.built_in_display? ? 'Full' : 'Split')
