@@ -1,11 +1,20 @@
 margin: 10.0
 
-# TODO: It would be better to query these values dynamically rather than hardcoding them.
-menu_bar_height: 34.0
-dock_height: 0.0
-
-# The width under which the FlashSpace profile should be set to Full.
-full_display_width: 1496.0
+# TODO: Ideally, it'd be better to query these values dynamically instead of pre-populating them.
+# However, for now, this is simpler and faster.
+displays:
+  - name: LG HDR 4K
+    profile: Split
+    width: 2560.0
+    height: 1440.0
+    menu_bar_height: 25.0
+    dock_height: 0.0
+  - name: Built-in Retina Display
+    profile: Full
+    width: 1496.0
+    height: 967.0
+    menu_bar_height: 34.0
+    dock_height: 0.0
 
 workspaces:
   - workspace: Browser
