@@ -26,6 +26,8 @@ Window = Data.define(:application, :id, :rectangle) do
   end
 
   def update_position(rectangle)
+    return if self.rectangle == rectangle
+
     `yabai -m window #{id} --move abs:#{rectangle.x}:#{rectangle.y}`
     `yabai -m window #{id} --resize abs:#{rectangle.width}:#{rectangle.height}`
   end
