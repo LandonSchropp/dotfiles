@@ -2,4 +2,4 @@
 
 require_relative 'display'
 
-system('flashspace', 'profile', Display.main.built_in_display? ? 'Full' : 'Split')
+system('flashspace', 'profile', Display.main.profile)

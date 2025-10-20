@@ -1,9 +1,18 @@
 require 'yaml'
 
 class Configuration
-  Workspace = Data.define(:profile, :workspace, :layout, :applications) do
+  WorkspaceConfiguration = Data.define(:profile, :workspace, :layout, :applications) do
     def matches?(profile, workspace)
       self.profile == profile && self.workspace == workspace
+    end
+  end
+
+  DisplayConfiguration = Data.define(:name, :profile, :width, :height, :menu_bar_height, :dock_height) do
+
+    # TODO: Ideally, we'd match on something more identifable, like the display name. Unfortunately,
+    # yabai doesn't provide that information in its display query output.
+    def matches?(width, height)
+      self.width == width && self.height == height
     end
   end
 
@@ -12,20 +21,22 @@ class Configuration
       config['margin']
     end
 
-    def menu_bar_height
-      config['menu_bar_height']
+    def displays
+      @displays ||= config['displays'].map { DisplayConfiguration.new(**_1) }
     end
 
-    def dock_height
-      config['dock_height']
-    end
+    def find_display(width, height)
+      display_config = displays.find { _1.matches?(width, height) }
 
-    def full_display_width
-      config['full_display_width']
+      unless display_config
+        raise "No configuration found for display #{width}x#{height}"
+      end
+
+      display_config
     end
 
     def workspaces
-      @workspaces ||= config['workspaces'].map { Workspace.new(**_1) }
+      @workspaces ||= config['workspaces'].map { WorkspaceConfiguration.new(**_1) }
     end
 
     def find_workspace(profile, workspace)
