@@ -1,4 +1,7 @@
 Rectangle = Data.define(:x, :y, :width, :height) do
+  def self.from_frame(frame)
+    Rectangle.new(x: frame['x'], y: frame['y'], width: frame['w'], height: frame['h'])
+  end
 
   # Returns a new Rectangle inset by the specified amount. This function follows the same parameter
   # patterns as CSS's padding shorthand, anthough it only implements a subset of the available CSS
