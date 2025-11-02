@@ -1,7 +1,9 @@
 {
   "includeCoAuthoredBy": false,
   "permissions": {
-    "allow": ["WebFetch"],
+    "allow": [
+      "WebFetch(*)"
+    ],
     "deny": [
       "Read(.env)",
       "Read(**/.env*)",
