@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+active_app=$(yabai -m query --windows --window 2>/dev/null | jq -r .app 2>/dev/null || echo "")
+tmux_attached=$(tmux display-message -p '#{session_attached}' 2>/dev/null || echo "0")
+tmux_window=$(tmux display-message -p '#{window_name}')
+
+# If Claude Code is currently open in Ghostty, don't do anything
+if [[ "$active_app" == "Ghostty" && "$tmux_attached" == "1" && "$tmux_window" =~ claude ]]; then
+  exit 0
+fi
+
+# Play a sound
+afplay /System/Library/Sounds/Blow.aiff

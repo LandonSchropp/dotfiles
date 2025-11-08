@@ -2,7 +2,7 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "WebFetch(*)"
+      "WebFetch(domain:*)"
     ],
     "deny": [
       "Read(.env)",
@@ -36,6 +36,26 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/shfmt"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notification"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notification"
           }
         ]
       }
