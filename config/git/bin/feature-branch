@@ -14,7 +14,7 @@ if [[ $# -lt 1 ]]; then
 fi
 
 feature_branch="$1"
-base_branch="${2:-$(git default-base-branch)}"
+base_branch="${2:-$(git default-branch)}"
 
 # Fetch the latest changes
 git fetch

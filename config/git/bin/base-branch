@@ -6,7 +6,7 @@ set -euo pipefail
 CURRENT_BRANCH=$(git branch --show-current)
 
 # Get the default branch (main, master, or development)
-DEFAULT_BRANCH=$(git default-base-branch)
+DEFAULT_BRANCH=$(git default-branch)
 
 # If on the default branch, exit with error
 if [[ "$CURRENT_BRANCH" == "$DEFAULT_BRANCH" ]]; then
