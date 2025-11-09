@@ -12,6 +12,6 @@ fi
 git branch \
   --color="$color" \
   --sort=authordate \
-  --format="%(color:blue)%(authordate:relative);%(color:red)%(authorname);%(color:white)%(color:bold)%(refname:short)" \
+  --format="%(color:white)%(refname:short);%(color:red)%(authorname);%(color:blue)%(authordate:relative)" \
   "$@" |
   column -s ";" -t
