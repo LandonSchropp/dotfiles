@@ -65,12 +65,10 @@
   feature-branch = "!$HOME/.config/git/bin/feature-branch"
   force-pull = "!$HOME/.config/git/bin/force-pull"
   force-push = "!$HOME/.config/git/bin/force-push"
-  local-repos = "!$HOME/.config/git/bin/local-repos"
   my-branches = "!$HOME/.config/git/bin/my-branches"
   rebase-base = "!$HOME/.config/git/bin/rebase-base"
   review = "!$HOME/.config/git/bin/review"
   smart-commit = "!$HOME/.config/git/bin/smart-commit"
-  what-did-i-do = "!$HOME/.config/git/bin/what-did-i-do"
 
   # Deprecated aliases
   co = "!$HOME/.config/git/bin/block-checkout"
