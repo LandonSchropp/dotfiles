@@ -27,6 +27,7 @@ end
 
 -- Start Lazy.nvim
 require("lazy_setup")
+require("socket")
 
 -- HACK: Monkey patch Neovim to prevent deprecation warnings. This can be removed once the
 -- tbl_islist deprecation is fixed in whatever plugins are tripping it.
