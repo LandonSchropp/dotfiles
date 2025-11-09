@@ -13,3 +13,4 @@ tmp/**/*
 mise.toml
 claude.local.md
 /.ai
+/.agents
