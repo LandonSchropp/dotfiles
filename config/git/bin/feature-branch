@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo_cyan() {
+  echo -e "\033[36m$1\033[0m"
+}
+
+if [[ $# -lt 1 ]]; then
+  echo "Creates a new feature branch, or switches to it if it already exists." >&2
+  echo "" >&2
+  echo "Usage: git feature-branch <branch-name> [base-branch]" >&2
+  exit 1
+fi
+
+feature_branch="$1"
+base_branch="${2:-$(git default-base-branch)}"
+
+# Fetch the latest changes
+git fetch
+
+# If the feature branch already exists, switch to it
+if git rev-parse --verify "$feature_branch" >/dev/null 2>&1; then
+  git switch "$feature_branch"
+  echo_cyan "🔀 Switched to '$feature_branch'"
+  exit 0
+fi
+
+# Create the feature branch from the base branch
+git switch "$base_branch"
+git switch -c "$feature_branch"
+echo_cyan "✨ Created '$feature_branch' from '$base_branch'"

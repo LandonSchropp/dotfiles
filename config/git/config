@@ -22,6 +22,7 @@
   c = commit
   cl = clone
   cp = cherry-pick
+  fb = feature-branch
   fp = force-push
   fpu = force-pull
   fu = fixup
@@ -61,6 +62,7 @@
   default-branch = "!$HOME/.config/git/bin/default-base-branch"
   delete-all-branches = "!$HOME/.config/git/bin/delete-branches"
   delete-merged-branches = "!$HOME/.config/git/bin/delete-branches --merged"
+  feature-branch = "!$HOME/.config/git/bin/feature-branch"
   force-pull = "!$HOME/.config/git/bin/force-pull"
   force-push = "!$HOME/.config/git/bin/force-push"
   local-repos = "!$HOME/.config/git/bin/local-repos"
