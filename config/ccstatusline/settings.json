@@ -1,0 +1,71 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "499ec9fa-2755-43a0-813b-4a4c63b2d508",
+        "type": "model",
+        "color": "hex:7DCFFF",
+        "rawValue": true
+      },
+      {
+        "id": "8797bc17-de9b-4093-93a4-56ff4e8acfd2",
+        "type": "separator",
+        "color": "hex:565F89"
+      },
+      {
+        "id": "e9232c67-43e8-430c-b95f-dc2e72cbe79b",
+        "type": "context-percentage-usable",
+        "color": "hex:7AA2F7",
+        "rawValue": true
+      },
+      {
+        "id": "83539429-1794-41d0-babe-088be9e8cdf0",
+        "type": "separator",
+        "color": "hex:565F89"
+      },
+      {
+        "id": "03440018-7950-47f3-8560-cd718535e823",
+        "type": "block-timer",
+        "color": "hex:BB9AF7",
+        "rawValue": true
+      },
+      {
+        "id": "fa3992ed-ebf4-4e1d-bf65-6d3a11db99ee",
+        "type": "separator",
+        "color": "hex:565F89"
+      },
+      {
+        "id": "87f44921-8ce5-471b-a202-0de134a4b0af",
+        "type": "version",
+        "color": "hex:9AA5CE",
+        "rawValue": false
+      }
+    ],
+    [],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [
+      ""
+    ],
+    "endCaps": [
+      ""
+    ],
+    "theme": "tokyonight",
+    "autoAlign": false
+  }
+}
