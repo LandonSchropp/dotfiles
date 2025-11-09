@@ -22,4 +22,4 @@ git local-repos | sort -r | while read -r git_directory; do
     --format="[%Cblue%ad%Creset] %Cgreen$repo%Creset %s (%Cred%h%Creset)" \
     --after "$1 0:00:00" \
     --before "$1 23:59:59"
-done | git page
+done | eval "$(git config --get core.pager)"

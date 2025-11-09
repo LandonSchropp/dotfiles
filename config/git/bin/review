@@ -12,4 +12,4 @@ set -euo pipefail
   git ls-files --others --exclude-standard | while read -r file_path; do
     git diff --color -- /dev/null "$file_path" || true
   done
-) | git page
+) | eval "$(git config --get core.pager)"
