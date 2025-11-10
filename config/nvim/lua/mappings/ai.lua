@@ -46,10 +46,17 @@ local function reference_file()
   send_to_claude_code(generate_reference(vim.fn.expand("%:p")))
 end
 
+local function reference_line()
+  local filepath = vim.fn.expand("%:p")
+  local line_num = vim.fn.line(".")
+  send_to_claude_code(generate_reference(filepath, line_num))
+end
+
 return function(_)
   return {
     n = {
       ["<Leader>aR"] = { reference_file, desc = "Reference file" },
+      ["<Leader>ar"] = { reference_line, desc = "Reference current line" },
     },
     v = {},
   }
