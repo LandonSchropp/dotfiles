@@ -12,7 +12,7 @@ local function send_to_claude_code(text)
   -- Check if claude window exists
   if not tmux.window_exists(session, "claude") then
     vim.notify(
-      "A 'claude' window was not found in the '" .. session .. "' session",
+      "A 'claude' window was not found in the '" .. session .. "' session.",
       vim.log.levels.WARN
     )
     return
@@ -20,7 +20,7 @@ local function send_to_claude_code(text)
 
   -- Send the text to Claude Code
   tmux.send_text_to_window(session, "claude", text)
-  vim.notify("Sent reference to Claude Code.", vim.log.levels.INFO)
+  vim.notify("Sent the reference to Claude Code.", vim.log.levels.INFO)
 end
 
 -- Generate reference string for a file with optional line numbers
@@ -29,13 +29,14 @@ end
 -- @param end_line number|nil: The ending line number (optional)
 -- @return string: The formatted reference string
 local function generate_reference(path, start_line, end_line)
+  end_line = end_line or start_line
   local relative_path = vim.fn.fnamemodify(path, ":.")
 
   if not start_line and not end_line then
     return "@" .. relative_path
   end
 
-  if not end_line then
+  if start_line == end_line then
     return "@" .. relative_path .. "#L" .. start_line
   end
 
