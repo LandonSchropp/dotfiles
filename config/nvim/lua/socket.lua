@@ -1,30 +1,20 @@
 -- Start Neovim's RPC server on a socket for MCP server integration, but only if we're running
 -- in the main tmux pane (in a window named "neovim").
 
-local function get_tmux_window_name()
-  if not vim.env.TMUX_PANE then
-    return nil
-  end
+local tmux = require("utilities/tmux")
 
-  return vim.trim(
-    vim.fn.system("tmux display-message -pt '" .. vim.env.TMUX_PANE .. "' '#{window_name}'")
-  )
-end
-
-local function should_start_socket()
-  return vim.tbl_contains({ "neovim", "vim" }, get_tmux_window_name())
-end
-
-if not should_start_socket() then
+-- Only start the server if we're in a tmux session and in the "neovim" or "vim" window.
+if not vim.tbl_contains({ "neovim", "vim" }, tmux.get_current_window()) then
   return
 end
 
-local socket_dir = vim.fn.getcwd() .. "/.agents"
-local socket_path = socket_dir .. "/neovim.sock"
+-- Determine the socket path
+local socket_directory = vim.fn.getcwd() .. "/.agents"
+local socket_path = socket_directory .. "/neovim.sock"
 
 -- Create the directory if it doesn't exist
-if vim.fn.isdirectory(socket_dir) == 0 then
-  vim.fn.mkdir(socket_dir, "p")
+if vim.fn.isdirectory(socket_directory) == 0 then
+  vim.fn.mkdir(socket_directory, "p")
 end
 
 -- Remove any existing socket file (could be stale from a crash)
