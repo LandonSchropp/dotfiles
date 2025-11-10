@@ -47,4 +47,11 @@ function M.send_text_to_window(session, window, text)
   run_tmux_command("send-keys -t " .. session .. ":" .. window .. " " .. vim.fn.shellescape(text))
 end
 
+--- Sends the Return key to a specific tmux window in a specific session.
+--- @param session string The name of the tmux session.
+--- @param window string The name of the tmux window.
+function M.send_return_to_window(session, window)
+  run_tmux_command("send-keys -t " .. session .. ":" .. window .. " Enter")
+end
+
 return M
