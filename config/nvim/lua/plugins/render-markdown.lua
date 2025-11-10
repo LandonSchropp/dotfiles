@@ -13,7 +13,7 @@ return {
   -- 3. Display element type indicators in side column for easy document scanning
   -- 4. Avoid concealed text that causes layout jumps on hover (checkboxes, inline links)
   opts = {
-    file_types = { "markdown", "codecompanion" },
+    file_types = { "markdown" },
     win_options = { conceallevel = { rendered = 0 } },
     nested = false,
     heading = {
