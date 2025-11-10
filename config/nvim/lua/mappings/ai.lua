@@ -53,12 +53,27 @@ local function reference_line()
   send_to_claude_code(generate_reference(filepath, line_num))
 end
 
+local function reference_selection()
+  local filepath = vim.fn.expand("%:p")
+  local start_line = vim.fn.line("v")
+  local end_line = vim.fn.line(".")
+
+  -- Ensure start_line is always less than end_line
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+
+  send_to_claude_code(generate_reference(filepath, start_line, end_line))
+end
+
 return function(_)
   return {
     n = {
       ["<Leader>aR"] = { reference_file, desc = "Reference file" },
       ["<Leader>ar"] = { reference_line, desc = "Reference current line" },
     },
-    v = {},
+    v = {
+      ["<Leader>ar"] = { reference_selection, desc = "Reference selection" },
+    },
   }
 end
