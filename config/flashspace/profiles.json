@@ -3,7 +3,6 @@
     {
       "id" : "AD3BF276-0E24-46B2-8452-E3116DADD9AA",
       "name" : "Full",
-      "shortcut" : "cmd+ctrl+opt+shift+f",
       "workspaces" : [
         {
           "appToFocus" : {
@@ -40,7 +39,6 @@
           "display" : "Built-in Retina Display",
           "id" : "71D7B803-AC29-46C2-A084-BF4705EEB0E6",
           "name" : "Terminal",
-          "openAppsOnActivation" : false,
           "shortcut" : "cmd+ctrl+opt+t",
           "symbolIconName" : "apple.terminal.fill"
         },
@@ -165,7 +163,6 @@
           "display" : "Built-in Retina Display",
           "id" : "F2B3C4D5-E6F7-A8B9-C0D1-E2F3A4B5C6D7",
           "name" : "Project",
-          "openAppsOnActivation" : false,
           "shortcut" : "cmd+ctrl+opt+p",
           "symbolIconName" : "checklist"
         }
@@ -174,7 +171,6 @@
     {
       "id" : "6C500CC0-E360-4A02-8C0C-83132486144B",
       "name" : "Split",
-      "shortcut" : "cmd+ctrl+opt+shift+s",
       "workspaces" : [
         {
           "appToFocus" : {
@@ -360,7 +356,6 @@
           "display" : "LG HDR 4K",
           "id" : "B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7",
           "name" : "Project",
-          "openAppsOnActivation" : false,
           "shortcut" : "cmd+ctrl+opt+p",
           "symbolIconName" : "checklist"
         }
