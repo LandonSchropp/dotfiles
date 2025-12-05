@@ -38,7 +38,7 @@
   s = status
   sc = smart-commit
   sq = squash
-  sw = switch
+  sw = smart-switch
 
   # Command aliases
   aliases = "config --get-regexp alias"
@@ -69,6 +69,7 @@
   rebase-base = "!$HOME/.config/git/bin/rebase-base"
   review = "!$HOME/.config/git/bin/review"
   smart-commit = "!$HOME/.config/git/bin/smart-commit"
+  smart-switch = "!$HOME/.config/git/bin/smart-switch"
 
   # Deprecated aliases
   co = "!$HOME/.config/git/bin/block-checkout"
