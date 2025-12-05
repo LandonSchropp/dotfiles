@@ -21,3 +21,4 @@ shellcheck path/to/script.sh
 ```
 
 - For GitHub-related resource information, use the `gh` command when possible.
+- Don't use the AskUserQuestion tool. It's annoying. Just ask questions directly.
