@@ -14,7 +14,6 @@
       "Read(.env)",
       "Read(**/.env*)",
       "Read(**/.secret*)",
-      "Read(**/env*)",
       "Read(**/*.pem)",
       "Read(**/*.key)",
       "Read(**/*.crt)",
@@ -26,6 +25,7 @@
       "~/Notes/Areas/AI"
     ]
   },
+  "model": "sonnet",
   "hooks": {
     "PostToolUse": [
       {
@@ -72,5 +72,5 @@
     "command": "npx -y ccstatusline@latest",
     "padding": 0
   },
-  "alwaysThinkingEnabled": false
+  "alwaysThinkingEnabled": true
 }
