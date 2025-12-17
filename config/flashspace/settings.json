@@ -4,7 +4,7 @@
   "centerCursorOnFocusChange" : false,
   "centerCursorOnWorkspaceChange" : false,
   "changeWorkspaceOnAppAssign" : true,
-  "checkForUpdatesAutomatically" : false,
+  "checkForUpdatesAutomatically" : true,
   "displayMode" : "static",
   "enableFocusManagement" : true,
   "enableIntegrations" : true,
