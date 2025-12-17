@@ -96,6 +96,7 @@ return {
         extension = {
           env = "sh",
           ["env.local"] = "sh",
+          ["md.liquid"] = "markdown",
         },
         filename = {
           [".envrc"] = "sh",
