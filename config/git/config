@@ -21,6 +21,7 @@
   bs = branches
   c = commit
   cl = clone
+  co = checkout-with-block
   cp = cherry-pick
   fb = feature-branch
   fp = force-push
@@ -58,6 +59,7 @@
   # Custom script aliases
   base-branch = "!$HOME/.config/git/bin/base-branch"
   branches = "!$HOME/.config/git/bin/branches"
+  checkout-with-block = "!$HOME/.config/git/bin/block-checkout"
   default-branch = "!$HOME/.config/git/bin/default-branch"
   default-branch = "!$HOME/.config/git/bin/default-branch"
   delete-all-branches = "!$HOME/.config/git/bin/delete-branches"
@@ -70,9 +72,6 @@
   review = "!$HOME/.config/git/bin/review"
   smart-commit = "!$HOME/.config/git/bin/smart-commit"
   smart-switch = "!$HOME/.config/git/bin/smart-switch"
-
-  # Deprecated aliases
-  co = "!$HOME/.config/git/bin/block-checkout"
 
 [core]
   excludesfile = "~/.config/git/ignore"
