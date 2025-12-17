@@ -40,6 +40,16 @@
   sc = smart-commit
   sq = squash
   sw = smart-switch
+  ta = town append
+  tb = town branch
+  td = town delete
+  tp = town prepend
+  ts = town sync
+
+  # Command aliases
+  aliases = "config --get-regexp alias"
+  amend = "commit --amend"
+  compact-log = log \
 
   # Command aliases
   aliases = "config --get-regexp alias"
