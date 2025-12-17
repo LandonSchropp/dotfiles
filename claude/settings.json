@@ -7,6 +7,9 @@
     "allow": [
       "WebFetch(domain:*)"
     ],
+    "ask": [
+      "Bash(git commit:*)"
+    ],
     "deny": [
       "Read(.env)",
       "Read(**/.env*)",
