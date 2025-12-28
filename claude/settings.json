@@ -72,5 +72,6 @@
     "command": "npx -y ccstatusline@latest",
     "padding": 0
   },
+  "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true
 }
