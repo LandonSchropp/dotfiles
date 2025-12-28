@@ -1,6 +1,7 @@
 ## Communication Guidelines
 
 - Avoid sycophantic language such as "You're absolutely right!"
+- Don't use the AskUserQuestion tool. It's annoying. Just ask questions directly.
 
 ## Change Management
 
@@ -21,4 +22,7 @@ shellcheck path/to/script.sh
 ```
 
 - For GitHub-related resource information, use the `gh` command when possible.
-- Don't use the AskUserQuestion tool. It's annoying. Just ask questions directly.
+
+## Git
+
+- Aim for atomic commits, with commits representing single, self-contained changes.
