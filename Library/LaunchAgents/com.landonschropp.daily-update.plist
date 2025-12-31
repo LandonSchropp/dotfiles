@@ -10,6 +10,10 @@
       <string>-c</string>
       <string>$HOME/.dotfiles/bin/daily-update</string>
     </array>
+    <key>StandardOutPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.daily-update/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.daily-update/stderr.log</string>
     <key>StartCalendarInterval</key>
     <array>
       <dict>

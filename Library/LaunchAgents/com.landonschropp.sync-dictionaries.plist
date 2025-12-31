@@ -10,6 +10,10 @@
       <string>-c</string>
       <string>$HOME/.dotfiles/bin/sync-dictionaries</string>
     </array>
+    <key>StandardOutPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.sync-dictionaries/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.sync-dictionaries/stderr.log</string>
     <key>StartCalendarInterval</key>
     <array>
       <dict>

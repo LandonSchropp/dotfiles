@@ -10,6 +10,10 @@
       <string>-c</string>
       <string>shortcuts run "Disable Screen Tint"</string>
     </array>
+    <key>StandardOutPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.disable-screen-tint/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.disable-screen-tint/stderr.log</string>
     <key>StartCalendarInterval</key>
     <array>
       <dict>
