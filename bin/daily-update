@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-log_file="$HOME/Library/Logs/com.landonschropp.daily-update.log"
-mkdir -p "$(dirname "$log_file")"
-
 # Function to send notification on error
 notify_error() {
   local error_message="$1"
@@ -15,7 +12,7 @@ notify_error() {
 trap 'notify_error "Check logs at ~/Library/Logs/com.landonschropp.daily-update/"' ERR
 
 log() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$log_file"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
 }
 
 # Runs an update command if the specified command exists on the system
@@ -30,7 +27,7 @@ update() {
 
   log "Updating $name..."
   if command -v "$command_to_check" >/dev/null 2>&1; then
-    eval "$update_command" >>"$log_file" 2>&1
+    eval "$update_command"
   else
     log "$command_to_check not found, skipping..."
   fi
@@ -38,10 +35,10 @@ update() {
 
 log "Starting daily update..."
 
-update "TL/DR" "tldr" "tldr --update"
-update "Claude Code" "brew" "brew upgrade --cask claude"
-update "Mise" "mise" "mise install"
-update "GitHub CLI" "brew" "brew upgrade gh"
-update "Oh My Zsh" "omz" "omz update --unattended"
+update "TL/DR" "/opt/homebrew/bin/tldr" "/opt/homebrew/bin/tldr --update"
+update "Claude Code" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade --cask claude"
+update "Mise" "/opt/homebrew/bin/mise" "/opt/homebrew/bin/mise install"
+update "GitHub CLI" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade gh"
+update "Oh My Zsh" "$HOME/.oh-my-zsh/tools/upgrade.sh" "$HOME/.oh-my-zsh/tools/upgrade.sh -v silent"
 
 log "Daily update completed successfully"

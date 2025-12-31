@@ -45,8 +45,8 @@ done
 rm "$temp_dictionary"
 
 # Regenerate the Neovim spell file
-if command -v nvim &>/dev/null; then
-  nvim --headless -c "mkspell! $nvim_dictionary" -c "quit"
+if command -v /opt/homebrew/bin/nvim &>/dev/null; then
+  /opt/homebrew/bin/nvim --headless -c "mkspell! $nvim_dictionary" -c "quit"
 fi
 
 echo "Dictionary synchronization completed at $(date)."
