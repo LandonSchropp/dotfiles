@@ -4,6 +4,15 @@
 
 set -euo pipefail
 
+# Function to send notification on error
+notify_error() {
+  local error_message="$1"
+  osascript -e "display notification \"$error_message\" with title \"Dictionary Sync Failed\" sound name \"Basso\""
+}
+
+# Trap errors and send notification
+trap 'notify_error "Check logs at ~/Library/Logs/com.landonschropp.sync-dictionaries/"' ERR
+
 # Define the paths to the dictionaries
 local_dictionary="$HOME/Library/Spelling/LocalDictionary"
 nvim_dictionary="$HOME/.config/nvim/spell/en.utf-8.add"
