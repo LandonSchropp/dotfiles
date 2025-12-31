@@ -6,9 +6,9 @@
     <string>com.landonschropp.disable-screen-tint</string>
     <key>ProgramArguments</key>
     <array>
-      <string>sh</string>
-      <string>-c</string>
-      <string>shortcuts run "Disable Screen Tint"</string>
+      <string>/usr/bin/shortcuts</string>
+      <string>run</string>
+      <string>Disable Screen Tint</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.disable-screen-tint/stdout.log</string>

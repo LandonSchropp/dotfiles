@@ -6,9 +6,9 @@
     <string>com.landonschropp.enable-screen-tint</string>
     <key>ProgramArguments</key>
     <array>
-      <string>sh</string>
-      <string>-c</string>
-      <string>shortcuts run "Enable Screen Tint"</string>
+      <string>/usr/bin/shortcuts</string>
+      <string>run</string>
+      <string>Enable Screen Tint</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.enable-screen-tint/stdout.log</string>
