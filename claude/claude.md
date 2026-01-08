@@ -12,6 +12,8 @@
 ## Terminal and System Best Practices
 
 - Use the native `trash` command in place of the `rm` command when removing files.
+- When searching for files or content, prefer the built-in `Grep` tool. If you do have to user
+  `Bash` for some reason, use `rg` instead of `grep`.
 
 ## Shell Script Validation
 
