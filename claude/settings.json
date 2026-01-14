@@ -4,9 +4,6 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "allow": [
-      "WebFetch(domain:*)"
-    ],
     "ask": [
       "Bash(git commit:*)"
     ],
