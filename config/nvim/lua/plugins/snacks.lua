@@ -38,33 +38,8 @@ return {
           " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
         }, "\n"),
 
-        -- Redefine the buttons.
-        keys = {
-          {
-            key = "<leader>n",
-            action = function() end,
-            icon = "",
-            desc = "New File",
-          },
-          {
-            key = "<leader>ff",
-            action = function() end,
-            icon = "󰱽",
-            desc = "Find File",
-          },
-          {
-            key = "<leader>fg",
-            action = function() end,
-            icon = "",
-            desc = "Find",
-          },
-          {
-            key = "<leader>fr",
-            action = function() end,
-            icon = "",
-            desc = "Find and Replace",
-          },
-        },
+        -- FIX: Remove the buttons. These were preventing the mappings from working.
+        keys = {},
       },
 
       -- Override the padding and gaps
