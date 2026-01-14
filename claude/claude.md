@@ -1,3 +1,8 @@
+## REQUIRED Reading
+
+@/Users/landon/Development/agent-toolkit/references/using-skills.md
+@/Users/landon/Development/agent-toolkit/references/test-driven-development.md
+
 ## Communication Guidelines
 
 - Avoid sycophantic language such as "You're absolutely right!"
