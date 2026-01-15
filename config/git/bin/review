@@ -5,11 +5,11 @@
 set -euo pipefail
 
 (
-  # Output the diff of all of the files tracked by Git.
-  git diff --color
+  # Output the diff of all of the files tracked by Git, optionally filtered by paths.
+  git diff --color -- "$@"
 
   # Show the diffs of the untracked files in Git against an empty file (/dev/null).
-  git ls-files --others --exclude-standard | while read -r file_path; do
+  git ls-files --others --exclude-standard -- "$@" | while read -r file_path; do
     git diff --color -- /dev/null "$file_path" || true
   done
 ) | eval "$(git config --get core.pager)"
