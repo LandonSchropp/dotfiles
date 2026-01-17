@@ -32,7 +32,13 @@ end
 --- Prompt the user for input and send it along with a reference to the "claude" tmux window.
 --- @param reference string The reference string to send along with the prompt.
 local function send_prompt_to_claude_code(reference)
-  snacks.input({ prompt = "Your prompt:" }, function(value)
+  snacks.input({
+    prompt = "Your prompt:",
+    win = {
+      width = 80,
+      max_width = 80,
+    },
+  }, function(value)
     if value then
       send_to_claude_code(reference .. "\n\n" .. value)
       tmux.send_return_to_window(tmux.get_current_session(), "claude")
