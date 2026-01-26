@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# This is a temporary workaround to make sure skills are added as slash commands. Once this bug is
+# fixed, this script can be removed: https://github.com/anthropics/claude-code/issues/17271.
+
+skills_configuration_directory="$HOME/.claude/skills"
+
+skill_repositories=(
+  "$HOME/Development/agent-toolkit"
+  "$HOME/Development/writing-toolkit"
+)
+
+mkdir -p "$skills_configuration_directory"
+
+# Remove existing symlinked directories
+for skill in "$skills_configuration_directory"/*/; do
+  [ -d "$skill" ] || continue
+
+  if [ -L "${skill%/}" ]; then
+    rm "${skill%/}"
+    echo "🗑️  Removed symlink: $(basename "${skill%/}")"
+  fi
+done
+
+# Create new symlinks
+for repository in "${skill_repositories[@]}"; do
+  skills_directory="$repository/skills"
+
+  if [ ! -d "$skills_directory" ]; then
+    echo "⚠️  Skipping $repository (no skills directory found)"
+    continue
+  fi
+
+  for skill in "$skills_directory"/*/; do
+    [ -d "$skill" ] || continue
+
+    ln -sf "${skill%/}" "$skills_configuration_directory/"
+    echo "✅ Linked: $(basename "${skill%/}")"
+  done
+done
