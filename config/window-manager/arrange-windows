@@ -6,6 +6,9 @@ require_relative 'configuration'
 require_relative 'layout'
 require_relative 'flashspace'
 
+# Minimum window size as a percentage of screen area
+MIN_WINDOW_SIZE = 100.0 / 8
+
 # Get the current profile and workspace
 profile = ARGV[0] || Flashspace.profile
 workspace = ARGV[1] || Flashspace.workspace
@@ -18,6 +21,7 @@ config = Configuration.find_workspace(profile, workspace)
 windows = Window
   .visible
   .filter { config.applications.include?(_1.application) }
+  .filter { _1.rectangle.percentage_of(Display.main.visible_rectangle) >= MIN_WINDOW_SIZE }
   .sort_by { [config.applications.index(_1.application) || config.applications.length, _1.id] }
 
 # Calculate the layout rectangles

@@ -50,4 +50,12 @@ Rectangle = Data.define(:x, :y, :width, :height) do
   def split_into_rows(number_of_rows, gap)
     transpose.split_into_columns(number_of_rows, gap).map(&:transpose)
   end
+
+  def area
+    width * height
+  end
+
+  def percentage_of(other_rectangle)
+    (area / other_rectangle.area.to_f) * 100
+  end
 end
