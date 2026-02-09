@@ -3,7 +3,6 @@ tap "FelixKratz/formulae"
 
 brew "asciinema"
 brew "bat"
-brew "borders"
 brew "coreutils"
 brew "diff-so-fancy"
 brew "eza"
