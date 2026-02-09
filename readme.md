@@ -50,10 +50,8 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-bat
 ~/.dotfiles/bin/set-up-fzf
 ~/.dotfiles/bin/set-up-launchd
-~/.dotfiles/bin/set-up-mas
 ~/.dotfiles/bin/set-up-mise-en-place
 ~/.dotfiles/bin/set-up-neovim
-~/.dotfiles/bin/set-up-node
 ~/.dotfiles/bin/set-up-tmux
 ```
 
