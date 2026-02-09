@@ -18,6 +18,7 @@ brew "httpie"
 brew "imagemagick"
 brew "jq"
 brew "lazygit"
+brew "meetingbar"
 brew "mise"
 brew "neovim"
 brew "pgcli"
@@ -44,6 +45,7 @@ cask "alcove"
 cask "arc"
 cask "busycal"
 cask "claude"
+cask "colorsnapper"
 cask "cold-turkey-blocker"
 cask "docker-desktop"
 cask "firefox"
@@ -65,10 +67,8 @@ cask "visual-studio-code"
 
 mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580
-mas "ColorSnapper2", id: 969418666
 mas "Dropover", id: 1355679052
 mas "GoodLinks", id: 1474335294
 mas "Kindle", id: 302584613
-mas "Meeter", id: 1510445899
 mas "QuickShade", id: 931571202
 mas "Signal Shifter", id: 6446061552
