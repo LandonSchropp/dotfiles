@@ -36,7 +36,7 @@ sudo xcodebuild -license accept
 First, clone this repo.
 
 ```sh
-git clone git@github.com:LandonSchropp/dotfiles.git $HOME/.dotfiles
+git clone https://github.com/LandonSchropp/dotfiles.git $HOME/.dotfiles
 ```
 
 Next, you'll want to run each of the following scripts in-order. Over the years, I've found that
