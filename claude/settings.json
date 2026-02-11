@@ -4,9 +4,6 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "ask": [
-      "Bash(git commit:*)"
-    ],
     "deny": [
       "Read(.env)",
       "Read(**/.env*)",
@@ -17,6 +14,9 @@
       "Read(**/*.cert)",
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
+    ],
+    "ask": [
+      "Bash(git commit:*)"
     ],
     "additionalDirectories": [
       "~/Notes/Areas/AI"
@@ -68,6 +68,9 @@
     "type": "command",
     "command": "npx -y ccstatusline@latest",
     "padding": 0
+  },
+  "enabledPlugins": {
+    "Notion@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true
