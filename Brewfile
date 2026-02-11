@@ -1,5 +1,6 @@
 tap "thoughtbot/formulae"
 tap "FelixKratz/formulae"
+tap "asmvik/formulae"
 
 brew "asciinema"
 brew "bat"
@@ -37,6 +38,7 @@ brew "tmux"
 brew "tmuxinator"
 brew "tree"
 brew "wget"
+brew "yabai"
 brew "yarn"
 
 cask "1password"
