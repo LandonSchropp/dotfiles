@@ -4,6 +4,22 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
+    "allow": [
+      "Bash(bundle exec *)",
+      "Bash(just *)",
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(bun *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(brew *)",
+      "Bash(mise *)",
+      "Bash(rg *)",
+      "Bash(shellcheck *)",
+      "Bash(trash *)",
+      "Read(./**)"
+    ],
     "deny": [
       "Read(.env)",
       "Read(**/.env*)",
@@ -16,10 +32,15 @@
       "Read(**/credentials/**)"
     ],
     "ask": [
-      "Bash(git commit:*)"
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git rebase *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)"
     ],
     "additionalDirectories": [
-      "~/Notes/Areas/AI"
+      "~/Notes",
+      "~/Development"
     ]
   },
   "model": "sonnet",
@@ -70,7 +91,9 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "Notion@claude-plugins-official": true
+    "Notion@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true
