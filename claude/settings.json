@@ -5,19 +5,20 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
+      "Bash(brew *)",
+      "Bash(bun *)",
       "Bash(bundle exec *)",
-      "Bash(just *)",
+      "Bash(find *)",
       "Bash(git *)",
+      "Bash(just *)",
+      "Bash(mise *)",
       "Bash(npm *)",
       "Bash(npx *)",
-      "Bash(bun *)",
-      "Bash(yarn *)",
       "Bash(pnpm *)",
-      "Bash(brew *)",
-      "Bash(mise *)",
       "Bash(rg *)",
       "Bash(shellcheck *)",
       "Bash(trash *)",
+      "Bash(yarn *)",
       "Read(./**)"
     ],
     "deny": [
