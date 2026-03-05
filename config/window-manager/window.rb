@@ -17,6 +17,17 @@ Window = Data.define(:application, :id, :rectangle) do
           )
         end
     end
+
+    def focused
+      json = `yabai -m query --windows --window`.force_encoding('UTF-8')
+      window = JSON.parse(json)
+
+      Window.new(
+        application: window['app'],
+        id: window['id'],
+        rectangle: Rectangle.from_frame(window['frame'])
+      )
+    end
   end
 
   def update_position(rectangle)

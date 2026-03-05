@@ -4,6 +4,25 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "Toggle fullscreen (Command + Option + Control + F)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": ["left_command", "left_control", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/zsh -c '~/.dotfiles/config/window-manager/toggle-fullscreen'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change globe to COC (Command + Option + Control)",
             "manipulators": [
               {
