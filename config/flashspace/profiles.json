@@ -131,6 +131,30 @@
           },
           "apps": [
             {
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
+            },
+            {
+              "bundleIdentifier": "com.linear",
+              "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+              "name": "Linear"
+            }
+          ],
+          "display": "Built-in Retina Display",
+          "id": "B3059FE4-1D86-4BC9-857C-A0D2CBCFCDA8",
+          "name": "Linear",
+          "shortcut": "cmd+ctrl+opt+l",
+          "symbolIconName": "checklist"
+        },
+        {
+          "appToFocus": {
+            "bundleIdentifier": "com.linear",
+            "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+            "name": "Linear"
+          },
+          "apps": [
+            {
               "bundleIdentifier": "com.linear",
               "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
               "name": "Linear"
@@ -281,6 +305,30 @@
           "name": "Slack",
           "shortcut": "cmd+ctrl+opt+s",
           "symbolIconName": "message.fill"
+        },
+        {
+          "appToFocus": {
+            "bundleIdentifier": "com.linear",
+            "iconPath": "/Applications/Linear.app/Contents/Resources/icon.icns",
+            "name": "Linear"
+          },
+          "apps": [
+            {
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
+            },
+            {
+              "bundleIdentifier": "com.linear",
+              "iconPath": "/Applications/Linear.app/Contents/Resources/icon.icns",
+              "name": "Linear"
+            }
+          ],
+          "display": "LG HDR 4K",
+          "id": "A64E2FDF-4BD6-4513-A58D-D1D6D23C99E8",
+          "name": "Linear",
+          "shortcut": "cmd+ctrl+opt+l",
+          "symbolIconName": "checklist"
         },
         {
           "apps": [

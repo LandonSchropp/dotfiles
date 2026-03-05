@@ -47,6 +47,11 @@ workspaces:
     layout: Fullscreen
     applications: [Slack]
 
+  - workspace: Linear
+    profile: Full
+    layout: Columns
+    applications: [Arc, Linear]
+
   - workspace: Project
     profile: Full
     layout: Fullscreen
@@ -81,6 +86,11 @@ workspaces:
     profile: Split
     layout: Main Stack
     applications: [Arc, Slack]
+
+  - workspace: Linear
+    profile: Split
+    layout: Main Stack
+    applications: [Arc, Linear]
 
   - workspace: Project
     profile: Split
