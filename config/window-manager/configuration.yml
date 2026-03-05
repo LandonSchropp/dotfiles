@@ -54,8 +54,8 @@ workspaces:
 
   - workspace: Project
     profile: Full
-    layout: Fullscreen
-    applications: [Linear]
+    layout: Columns
+    applications: [Ghostty, Linear]
 
   - workspace: Browser
     profile: Split
@@ -94,5 +94,5 @@ workspaces:
 
   - workspace: Project
     profile: Split
-    layout: Columns
-    applications: [Arc, Ghostty, Linear]
+    layout: Main Stack
+    applications: [Ghostty, Linear]

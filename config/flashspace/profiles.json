@@ -155,6 +155,11 @@
           },
           "apps": [
             {
+              "bundleIdentifier": "com.mitchellh.ghostty",
+              "iconPath": "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name": "Ghostty"
+            },
+            {
               "bundleIdentifier": "com.linear",
               "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
               "name": "Linear"
@@ -331,12 +336,12 @@
           "symbolIconName": "checklist"
         },
         {
+          "appToFocus": {
+            "bundleIdentifier": "com.linear",
+            "iconPath": "/Applications/Linear.app/Contents/Resources/icon.icns",
+            "name": "Linear"
+          },
           "apps": [
-            {
-              "bundleIdentifier": "company.thebrowser.Browser",
-              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name": "Arc"
-            },
             {
               "bundleIdentifier": "com.mitchellh.ghostty",
               "iconPath": "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
