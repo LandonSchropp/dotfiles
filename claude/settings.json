@@ -9,6 +9,7 @@
       "Bash(bun *)",
       "Bash(bundle exec *)",
       "Bash(find *)",
+      "Bash(find *)",
       "Bash(git *)",
       "Bash(just *)",
       "Bash(mise *)",
@@ -18,6 +19,7 @@
       "Bash(rg *)",
       "Bash(shellcheck *)",
       "Bash(trash *)",
+      "Bash(wc *)",
       "Bash(yarn *)",
       "Read(./**)"
     ],
