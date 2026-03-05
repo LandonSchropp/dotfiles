@@ -1,363 +1,310 @@
 {
-  "profiles" : [
+  "profiles": [
     {
-      "id" : "AD3BF276-0E24-46B2-8452-E3116DADD9AA",
-      "name" : "Full",
-      "workspaces" : [
+      "id": "AD3BF276-0E24-46B2-8452-E3116DADD9AA",
+      "name": "Full",
+      "workspaces": [
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "company.thebrowser.Browser",
-            "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-            "name" : "Arc"
+          "appToFocus": {
+            "bundleIdentifier": "company.thebrowser.Browser",
+            "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+            "name": "Arc"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "08F8CB4B-2628-4F08-91FB-9E22AE75397D",
-          "name" : "Browser",
-          "shortcut" : "cmd+ctrl+opt+b",
-          "symbolIconName" : "globe.americas.fill"
+          "display": "Built-in Retina Display",
+          "id": "08F8CB4B-2628-4F08-91FB-9E22AE75397D",
+          "name": "Browser",
+          "shortcut": "cmd+ctrl+opt+b",
+          "symbolIconName": "globe.americas.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.mitchellh.ghostty",
-            "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-            "name" : "Ghostty"
+          "appToFocus": {
+            "bundleIdentifier": "com.mitchellh.ghostty",
+            "iconPath": "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+            "name": "Ghostty"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-              "name" : "Ghostty"
+              "bundleIdentifier": "com.mitchellh.ghostty",
+              "iconPath": "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name": "Ghostty"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "71D7B803-AC29-46C2-A084-BF4705EEB0E6",
-          "name" : "Terminal",
-          "shortcut" : "cmd+ctrl+opt+t",
-          "symbolIconName" : "apple.terminal.fill"
+          "display": "Built-in Retina Display",
+          "id": "71D7B803-AC29-46C2-A084-BF4705EEB0E6",
+          "name": "Terminal",
+          "shortcut": "cmd+ctrl+opt+t",
+          "symbolIconName": "apple.terminal.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "md.obsidian",
-            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-            "name" : "Obsidian"
+          "appToFocus": {
+            "bundleIdentifier": "md.obsidian",
+            "iconPath": "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+            "name": "Obsidian"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "md.obsidian",
-              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-              "name" : "Obsidian"
+              "bundleIdentifier": "md.obsidian",
+              "iconPath": "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name": "Obsidian"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "DF353C27-A317-4065-A12E-C38AA6B6FF92",
-          "name" : "Notes",
-          "shortcut" : "cmd+ctrl+opt+n",
-          "symbolIconName" : "text.document.fill"
+          "display": "Built-in Retina Display",
+          "id": "DF353C27-A317-4065-A12E-C38AA6B6FF92",
+          "name": "Notes",
+          "shortcut": "cmd+ctrl+opt+n",
+          "symbolIconName": "text.document.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.busymac.busycal3",
-            "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-            "name" : "BusyCal"
+          "appToFocus": {
+            "bundleIdentifier": "com.busymac.busycal3",
+            "iconPath": "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
+            "name": "BusyCal"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.busymac.busycal3",
-              "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-              "name" : "BusyCal"
+              "bundleIdentifier": "com.busymac.busycal3",
+              "iconPath": "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
+              "name": "BusyCal"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "0C85B627-3627-4EA0-8233-AC660DBC5C97",
-          "name" : "Calendar",
-          "shortcut" : "cmd+ctrl+opt+c",
-          "symbolIconName" : "calendar"
+          "display": "Built-in Retina Display",
+          "id": "0C85B627-3627-4EA0-8233-AC660DBC5C97",
+          "name": "Calendar",
+          "shortcut": "cmd+ctrl+opt+c",
+          "symbolIconName": "calendar"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.spotify.client",
-            "iconPath" : "/Applications/Spotify.app/Contents/Resources/Icon.icns",
-            "name" : "Spotify"
+          "appToFocus": {
+            "bundleIdentifier": "com.spotify.client",
+            "iconPath": "/Applications/Spotify.app/Contents/Resources/Icon.icns",
+            "name": "Spotify"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.spotify.client",
-              "iconPath" : "/Applications/Spotify.app/Contents/Resources/Icon.icns",
-              "name" : "Spotify"
+              "bundleIdentifier": "com.spotify.client",
+              "iconPath": "/Applications/Spotify.app/Contents/Resources/Icon.icns",
+              "name": "Spotify"
             },
             {
-              "bundleIdentifier" : "com.apple.Music",
-              "iconPath" : "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
-              "name" : "Music"
+              "bundleIdentifier": "com.apple.Music",
+              "iconPath": "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
+              "name": "Music"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "F22F26A4-4909-4470-8EF0-EA75BDDEE51D",
-          "name" : "Music",
-          "shortcut" : "cmd+ctrl+opt+m",
-          "symbolIconName" : "music.quarternote.3"
+          "display": "Built-in Retina Display",
+          "id": "F22F26A4-4909-4470-8EF0-EA75BDDEE51D",
+          "name": "Music",
+          "shortcut": "cmd+ctrl+opt+m",
+          "symbolIconName": "music.quarternote.3"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.tinyspeck.slackmacgap",
-            "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
-            "name" : "Slack"
+          "appToFocus": {
+            "bundleIdentifier": "com.tinyspeck.slackmacgap",
+            "iconPath": "/Applications/Slack.app/Contents/Resources/electron.icns",
+            "name": "Slack"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
-              "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
-              "name" : "Slack"
+              "bundleIdentifier": "com.tinyspeck.slackmacgap",
+              "iconPath": "/Applications/Slack.app/Contents/Resources/electron.icns",
+              "name": "Slack"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "73C82CEE-E855-4217-93D7-578EC9484E5F",
-          "name" : "Slack",
-          "shortcut" : "cmd+ctrl+opt+s",
-          "symbolIconName" : "message.fill"
+          "display": "Built-in Retina Display",
+          "id": "73C82CEE-E855-4217-93D7-578EC9484E5F",
+          "name": "Slack",
+          "shortcut": "cmd+ctrl+opt+s",
+          "symbolIconName": "message.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "md.obsidian",
-            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-            "name" : "Obsidian"
+          "appToFocus": {
+            "bundleIdentifier": "com.linear",
+            "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+            "name": "Linear"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "md.obsidian",
-              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-              "name" : "Obsidian"
-            },
-            {
-              "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-              "name" : "Ghostty"
+              "bundleIdentifier": "com.linear",
+              "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
+              "name": "Linear"
             }
           ],
-          "display" : "Built-in Retina Display",
-          "id" : "E1A2B3C4-D5E6-F7A8-B9C0-D1E2F3A4B5C6",
-          "name" : "Engineering",
-          "shortcut" : "cmd+ctrl+opt+e",
-          "symbolIconName" : "hammer.fill"
-        },
-        {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.linear",
-            "iconPath" : "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
-            "name" : "Linear"
-          },
-          "apps" : [
-            {
-              "bundleIdentifier" : "com.linear",
-              "iconPath" : "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
-              "name" : "Linear"
-            }
-          ],
-          "display" : "Built-in Retina Display",
-          "id" : "F2B3C4D5-E6F7-A8B9-C0D1-E2F3A4B5C6D7",
-          "name" : "Project",
-          "shortcut" : "cmd+ctrl+opt+p",
-          "symbolIconName" : "checklist"
+          "display": "Built-in Retina Display",
+          "id": "F2B3C4D5-E6F7-A8B9-C0D1-E2F3A4B5C6D7",
+          "name": "Project",
+          "shortcut": "cmd+ctrl+opt+p",
+          "symbolIconName": "checklist"
         }
       ]
     },
     {
-      "id" : "6C500CC0-E360-4A02-8C0C-83132486144B",
-      "name" : "Split",
-      "workspaces" : [
+      "id": "6C500CC0-E360-4A02-8C0C-83132486144B",
+      "name": "Split",
+      "workspaces": [
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "company.thebrowser.Browser",
-            "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-            "name" : "Arc"
+          "appToFocus": {
+            "bundleIdentifier": "company.thebrowser.Browser",
+            "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+            "name": "Arc"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "7CC8D346-739F-48E2-A77B-65271752B387",
-          "name" : "Browser",
-          "shortcut" : "cmd+ctrl+opt+b",
-          "symbolIconName" : "globe.americas.fill"
+          "display": "LG HDR 4K",
+          "id": "7CC8D346-739F-48E2-A77B-65271752B387",
+          "name": "Browser",
+          "shortcut": "cmd+ctrl+opt+b",
+          "symbolIconName": "globe.americas.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.mitchellh.ghostty",
-            "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-            "name" : "Ghostty"
+          "appToFocus": {
+            "bundleIdentifier": "com.mitchellh.ghostty",
+            "iconPath": "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+            "name": "Ghostty"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-              "name" : "Ghostty"
+              "bundleIdentifier": "com.mitchellh.ghostty",
+              "iconPath": "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name": "Ghostty"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "5E372B69-ED3B-4A4E-9AA3-6C894CC3A73A",
-          "name" : "Terminal",
-          "shortcut" : "cmd+ctrl+opt+t",
-          "symbolIconName" : "apple.terminal.fill"
+          "display": "LG HDR 4K",
+          "id": "5E372B69-ED3B-4A4E-9AA3-6C894CC3A73A",
+          "name": "Terminal",
+          "shortcut": "cmd+ctrl+opt+t",
+          "symbolIconName": "apple.terminal.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "md.obsidian",
-            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-            "name" : "Obsidian"
+          "appToFocus": {
+            "bundleIdentifier": "md.obsidian",
+            "iconPath": "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+            "name": "Obsidian"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "md.obsidian",
-              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-              "name" : "Obsidian"
+              "bundleIdentifier": "md.obsidian",
+              "iconPath": "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name": "Obsidian"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "1A85C1D0-414B-42A0-BB7F-1CBF850DDFDD",
-          "name" : "Notes",
-          "shortcut" : "cmd+ctrl+opt+n",
-          "symbolIconName" : "text.document.fill"
+          "display": "LG HDR 4K",
+          "id": "1A85C1D0-414B-42A0-BB7F-1CBF850DDFDD",
+          "name": "Notes",
+          "shortcut": "cmd+ctrl+opt+n",
+          "symbolIconName": "text.document.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.busymac.busycal3",
-            "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-            "name" : "BusyCal"
+          "appToFocus": {
+            "bundleIdentifier": "com.busymac.busycal3",
+            "iconPath": "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
+            "name": "BusyCal"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.busymac.busycal3",
-              "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-              "name" : "BusyCal"
+              "bundleIdentifier": "com.busymac.busycal3",
+              "iconPath": "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
+              "name": "BusyCal"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "153B28A9-D781-46C3-928C-F162C7302AB9",
-          "name" : "Calendar",
-          "shortcut" : "cmd+ctrl+opt+c",
-          "symbolIconName" : "calendar"
+          "display": "LG HDR 4K",
+          "id": "153B28A9-D781-46C3-928C-F162C7302AB9",
+          "name": "Calendar",
+          "shortcut": "cmd+ctrl+opt+c",
+          "symbolIconName": "calendar"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.spotify.client",
-            "iconPath" : "/Applications/Spotify.app/Contents/Resources/Icon.icns",
-            "name" : "Spotify"
+          "appToFocus": {
+            "bundleIdentifier": "com.spotify.client",
+            "iconPath": "/Applications/Spotify.app/Contents/Resources/Icon.icns",
+            "name": "Spotify"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.spotify.client",
-              "iconPath" : "/Applications/Spotify.app/Contents/Resources/Icon.icns",
-              "name" : "Spotify"
+              "bundleIdentifier": "com.spotify.client",
+              "iconPath": "/Applications/Spotify.app/Contents/Resources/Icon.icns",
+              "name": "Spotify"
             },
             {
-              "bundleIdentifier" : "com.apple.Music",
-              "iconPath" : "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
-              "name" : "Music"
+              "bundleIdentifier": "com.apple.Music",
+              "iconPath": "/System/Applications/Music.app/Contents/Resources/AppIcon.icns",
+              "name": "Music"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "4C8D259C-0B88-4F14-921C-02B76A8D4FB0",
-          "name" : "Music",
-          "shortcut" : "cmd+ctrl+opt+m",
-          "symbolIconName" : "music.quarternote.3"
+          "display": "LG HDR 4K",
+          "id": "4C8D259C-0B88-4F14-921C-02B76A8D4FB0",
+          "name": "Music",
+          "shortcut": "cmd+ctrl+opt+m",
+          "symbolIconName": "music.quarternote.3"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "com.tinyspeck.slackmacgap",
-            "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
-            "name" : "Slack"
+          "appToFocus": {
+            "bundleIdentifier": "com.tinyspeck.slackmacgap",
+            "iconPath": "/Applications/Slack.app/Contents/Resources/electron.icns",
+            "name": "Slack"
           },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
-              "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
-              "name" : "Slack"
+              "bundleIdentifier": "com.tinyspeck.slackmacgap",
+              "iconPath": "/Applications/Slack.app/Contents/Resources/electron.icns",
+              "name": "Slack"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "864719DC-14EC-4F2C-8D4A-BAB30FC12DF7",
-          "name" : "Slack",
-          "shortcut" : "cmd+ctrl+opt+s",
-          "symbolIconName" : "message.fill"
+          "display": "LG HDR 4K",
+          "id": "864719DC-14EC-4F2C-8D4A-BAB30FC12DF7",
+          "name": "Slack",
+          "shortcut": "cmd+ctrl+opt+s",
+          "symbolIconName": "message.fill"
         },
         {
-          "appToFocus" : {
-            "bundleIdentifier" : "md.obsidian",
-            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-            "name" : "Obsidian"
-          },
-          "apps" : [
+          "apps": [
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
+              "bundleIdentifier": "company.thebrowser.Browser",
+              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
+              "name": "Arc"
             },
             {
-              "bundleIdentifier" : "md.obsidian",
-              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
-              "name" : "Obsidian"
+              "bundleIdentifier": "com.mitchellh.ghostty",
+              "iconPath": "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
+              "name": "Ghostty"
             },
             {
-              "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
-              "name" : "Ghostty"
+              "bundleIdentifier": "com.linear",
+              "iconPath": "/Applications/Linear.app/Contents/Resources/icon.icns",
+              "name": "Linear"
             }
           ],
-          "display" : "LG HDR 4K",
-          "id" : "A1B2C3D4-E5F6-A7B8-C9D0-E1F2A3B4C5D6",
-          "name" : "Engineering",
-          "shortcut" : "cmd+ctrl+opt+e",
-          "symbolIconName" : "hammer.fill"
-        },
-        {
-          "apps" : [
-            {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            },
-            {
-              "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
-              "name" : "Ghostty"
-            },
-            {
-              "bundleIdentifier" : "com.linear",
-              "iconPath" : "/Applications/Linear.app/Contents/Resources/icon.icns",
-              "name" : "Linear"
-            }
-          ],
-          "display" : "LG HDR 4K",
-          "id" : "B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7",
-          "name" : "Project",
-          "shortcut" : "cmd+ctrl+opt+p",
-          "symbolIconName" : "checklist"
+          "display": "LG HDR 4K",
+          "id": "B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7",
+          "name": "Project",
+          "shortcut": "cmd+ctrl+opt+p",
+          "symbolIconName": "checklist"
         }
       ]
     }
