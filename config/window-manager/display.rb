@@ -7,10 +7,13 @@ Display = Data.define(:name, :profile, :rectangle, :menu_bar_height, :dock_heigh
     def main
       @main ||= begin
         display_json = `yabai -m query --displays`
-        frame = JSON.parse(display_json).first['frame']
+        display_data = JSON.parse(display_json).first
+
+        frame = display_data['frame']
         rectangle = Rectangle.from_frame(frame)
 
-        display_config = Configuration.find_display(rectangle.width, rectangle.height)
+        uuid = display_data['uuid']
+        display_config = Configuration.find_display(uuid)
 
         Display.new(
           name: display_config.name,

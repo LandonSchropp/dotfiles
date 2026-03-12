@@ -4,16 +4,14 @@ margin: 10.0
 # However, for now, this is simpler and faster.
 displays:
   - name: LG HDR 4K
-    profile: Split
-    width: 2560.0
-    height: 1440.0
+    uuid: 14601E4F-ACEC-49E1-A289-F388BEC05998
+    external: true
     menu_bar_height: 31.0
     dock_height: 0.0
   - name: Built-in Retina Display
-    profile: Full
-    width: 1496.0
-    height: 967.0
-    menu_bar_height: 34.0
+    uuid: 37D8832A-2D66-02CA-B9F7-8F30A301B230
+    external: false
+    menu_bar_height: 30.0
     dock_height: 0.0
 
 workspaces:

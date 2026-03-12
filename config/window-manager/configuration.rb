@@ -7,12 +7,13 @@ class Configuration
     end
   end
 
-  DisplayConfiguration = Data.define(:name, :profile, :width, :height, :menu_bar_height, :dock_height) do
+  DisplayConfiguration = Data.define(:name, :uuid, :external, :menu_bar_height, :dock_height) do
+    def profile
+      external ? 'Split' : 'Full'
+    end
 
-    # TODO: Ideally, we'd match on something more identifable, like the display name. Unfortunately,
-    # yabai doesn't provide that information in its display query output.
-    def matches?(width, height)
-      self.width == width && self.height == height
+    def matches?(uuid)
+      self.uuid == uuid
     end
   end
 
@@ -25,11 +26,11 @@ class Configuration
       @displays ||= config['displays'].map { DisplayConfiguration.new(**_1) }
     end
 
-    def find_display(width, height)
-      display_config = displays.find { _1.matches?(width, height) }
+    def find_display(uuid)
+      display_config = displays.find { _1.matches?(uuid) }
 
       unless display_config
-        raise "No configuration found for display #{width}x#{height}"
+        raise "No configuration found for display with UUID #{uuid}"
       end
 
       display_config
