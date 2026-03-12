@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+commit_file="$1"
+
+# Extract message content, excluding git comment lines
+message=$(grep -v '^#' "$commit_file" || true)
+
+# Get the title (first line)
+title=$(printf '%s' "$message" | head -1)
+
+# Validate title length
+if (( ${#title} > 72 )); then
+  echo "error: commit title is ${#title} characters (max 72)" >&2
+  exit 1
+fi
+
+# Extract body (lines after the blank separator following the title)
+body=$(printf '%s' "$message" | tail -n +3)
+
+# If body has non-whitespace content, reformat it with prettier
+if [[ -n "${body//[[:space:]]/}" ]]; then
+  formatted_body=$(printf '%s\n' "$body" | npx prettier --parser markdown --prose-wrap always --print-width 72)
+
+  # Write back: formatted message, preserving any git comment lines
+  {
+    printf '%s\n\n%s\n' "$title" "$formatted_body"
+    grep '^#' "$commit_file" || true
+  } > "${commit_file}.tmp" && mv "${commit_file}.tmp" "$commit_file"
+fi
