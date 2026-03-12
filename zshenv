@@ -17,3 +17,9 @@ export PATH="$XDG_BIN_HOME:$PATH"
 # pnpm
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  # shellcheck source=/dev/null
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
