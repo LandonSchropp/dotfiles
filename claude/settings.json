@@ -43,7 +43,8 @@
     ],
     "additionalDirectories": [
       "~/Notes",
-      "~/Development"
+      "~/Development",
+      "~/.claude"
     ]
   },
   "model": "sonnet",
