@@ -10,7 +10,6 @@
       "Bash(bun *)",
       "Bash(bundle exec *)",
       "Bash(find *)",
-      "Bash(find *)",
       "Bash(git *)",
       "Bash(just *)",
       "Bash(mise *)",
@@ -102,5 +101,6 @@
     "linear@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "voiceEnabled": true
 }
