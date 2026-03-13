@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Ensure the local environment is up-to-date.
+git fetch
+
+# Determine the list of branches to check.
+default_branch="$(git default-branch)"
+current_branch="$(git current-branch)"
+branches="$(git branch --format="%(refname:short)" | grep -v "^${default_branch}$")"
+
+# If there are no branches to delete, exit early.
+if [ -z "$branches" ]; then
+  echo "There are no branches to delete. 😎"
+  exit 0
+fi
+
+# Remove all branches that have been merged locally (except the current branch).
+merged_branches=$(
+  git branch --merged "$default_branch" --format="%(refname:short)" |
+    grep -v "^${default_branch}$" |
+    grep -v "^${current_branch}$"
+)
+
+if [ -n "$merged_branches" ]; then
+  echo "$merged_branches" | xargs -n 1 git branch -D
+fi
+
+# Iterate through the remaining branches.
+remaining_branches="$(git branch --format="%(refname:short)" | grep -v "^${default_branch}$")"
+
+while IFS= read -r branch; do
+  # Check if the branch has an associated pull request and determine its state.
+  state=$(gh pr view "$branch" --json state --jq '.state' 2>/dev/null || true)
+
+  # If the branch has been merged, delete it.
+  if [ "$state" = "MERGED" ]; then
+
+    # If the branch is currently checked out, switch to the default branch before deleting it.
+    if [ "$branch" = "$current_branch" ]; then
+      git checkout -q "$default_branch"
+    fi
+
+    # Delete the branch.
+    git branch -D "$branch"
+  fi
+done <<<"$remaining_branches"
