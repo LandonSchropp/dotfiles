@@ -20,6 +20,7 @@
       "Bash(shellcheck *)",
       "Bash(trash *)",
       "Bash(wc *)",
+      "Bash(playwright-cli *)",
       "Bash(yarn *)",
       "Read(./**)"
     ],
@@ -41,11 +42,7 @@
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],
-    "additionalDirectories": [
-      "~/Notes",
-      "~/Development",
-      "~/.claude"
-    ]
+    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
   },
   "model": "sonnet",
   "hooks": {
@@ -98,7 +95,7 @@
     "Notion@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
+    "playwright@claude-plugins-official": false,
     "linear@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true
   },
