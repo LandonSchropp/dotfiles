@@ -21,6 +21,7 @@
   `Bash` for some reason, use `rg` instead of `grep`.
 - For GitHub-related resource information, use the `gh` command when possible.
 - Don't prepend Bash commands with `timeout`. Instead, set the timeout on the `Bash` tool.
+- Run Bash commands one at a time. Do not chain multiple commands together with `&&` or `;`. Each command should be a separate Bash tool call so the user can review and approve them individually.
 
 ## Git
 
