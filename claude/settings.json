@@ -42,7 +42,11 @@
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],
-    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
+    "additionalDirectories": [
+      "~/Notes",
+      "~/Development",
+      "~/.claude"
+    ]
   },
   "model": "sonnet",
   "hooks": {
@@ -97,7 +101,8 @@
     "context7@claude-plugins-official": true,
     "playwright@claude-plugins-official": false,
     "linear@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true
+    "ruby-lsp@claude-plugins-official": true,
+    "notion@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
