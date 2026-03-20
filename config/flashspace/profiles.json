@@ -131,11 +131,6 @@
           },
           "apps": [
             {
-              "bundleIdentifier": "company.thebrowser.Browser",
-              "iconPath": "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name": "Arc"
-            },
-            {
               "bundleIdentifier": "com.linear",
               "iconPath": "/Applications/Linear.app/Contents/Resources/AppIcon.icns",
               "name": "Linear"
