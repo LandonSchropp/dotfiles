@@ -8,7 +8,7 @@ Window = Data.define(:application, :id, :rectangle) do
       windows = JSON.parse(json)
 
       windows
-        .select { _1['is-visible'] && !_1['is-minimized'] }
+        .select { _1['is-visible'] && !_1['is-minimized'] && !_1['is-floating'] }
         .map do |window|
           Window.new(
             application: window['app'],
