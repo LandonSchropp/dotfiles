@@ -50,11 +50,6 @@ workspaces:
     layout: Columns
     applications: [Arc, Linear]
 
-  - workspace: Project
-    profile: Full
-    layout: Columns
-    applications: [Ghostty, Linear]
-
   - workspace: Browser
     profile: Split
     layout: Columns
@@ -89,8 +84,3 @@ workspaces:
     profile: Split
     layout: Main Stack
     applications: [Arc, Linear]
-
-  - workspace: Project
-    profile: Split
-    layout: Main Stack
-    applications: [Ghostty, Linear]
