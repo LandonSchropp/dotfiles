@@ -23,3 +23,6 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   # shellcheck source=/dev/null
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
+
+# Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
