@@ -89,7 +89,7 @@ Brewfile                # Homebrew package definitions
 ### Development Tools
 
 - **mise**: Runtime version management for multiple languages (Node, Ruby, Python, etc.) configured in `config/mise/config.toml`
-- **rcm**: Dotfile symlinking with exclusions for specific directories (excludes `config/launchd`, includes `Library`, `claude`, `config`, etc.)
+- **rcm**: Dotfile symlinking — most files in this repo are automatically symlinked to the home directory by `rcup`. After adding or modifying files, run `rcup` to update symlinks. For LaunchAgent plists, also run `set-up-launchd` to load the services.
 - **Brewfile**: Comprehensive package definitions including development tools, CLI utilities, and applications
 
 ## Important Notes
