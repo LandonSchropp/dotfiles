@@ -50,7 +50,6 @@
       "~/.claude"
     ]
   },
-  "model": "sonnet",
   "hooks": {
     "PostToolUse": [
       {
