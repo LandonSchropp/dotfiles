@@ -17,7 +17,6 @@ return function(mappings)
       ["<Leader>bsp"] = false,
       ["<Leader>bsr"] = false,
       ["<Leader>b|"] = false,
-      ["<Leader>c"] = { desc = " Copilot" },
       ["<Leader>q"] = false,
 
       -- Remap mappings

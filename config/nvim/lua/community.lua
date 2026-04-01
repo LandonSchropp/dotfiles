@@ -4,7 +4,6 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
