@@ -2,7 +2,7 @@
 
 # Creates a tmux session if it doesn't already exist.
 function tmux-create {
-  SESSION_NAME="$1"
+  local session_name="$1"
 
   # Ensure the name of a session was provided.
   if [ $# -ne 1 ]; then
@@ -12,43 +12,43 @@ function tmux-create {
 
   # If the session already exists, then don't do anything.
   # https://superuser.com/questions/1174750/tmux-has-session-search-is-prefix-matching
-  if tmux-list-active-sessions | grep -Fx "$SESSION_NAME" >/dev/null; then
+  if tmux-list-active-sessions | grep -Fx "$session_name" >/dev/null; then
     return
   fi
 
   # If the session is available in tmuxinator, start it. Otherwise, fall back to the default
   # tmuxinator configuration.
-  if tmuxinator-list-sessions | grep -Fx "$SESSION_NAME" >/dev/null; then
-    CONFIG_NAME=$(
+  if tmuxinator-list-sessions | grep -Fx "$session_name" >/dev/null; then
+    local config_name=$(
       ruby -r yaml -e 'print YAML.load(STDIN.read)["name"]' \
-        < "$HOME/.config/tmuxinator/$SESSION_NAME.yml"
+        < "$HOME/.config/tmuxinator/$session_name.yml"
     )
 
-    if [ "$SESSION_NAME" != "$CONFIG_NAME" ]; then
-      echo "⛔️ The session name '$CONFIG_NAME' in $SESSION_NAME.yaml must match the file name."
+    if [ "$session_name" != "$config_name" ]; then
+      echo "⛔️ The session name '$config_name' in $session_name.yaml must match the file name."
       return 1
     fi
 
-    tmuxinator start --no-attach "$SESSION_NAME"
+    tmuxinator start --no-attach "$session_name"
   else
-    tmuxinator start --no-attach -n "$SESSION_NAME" default
+    tmuxinator start --no-attach -n "$session_name" default
   fi
 }
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
 function tmux-create-and-attach {
-  SESSION_NAME="$1"
+  local session_name="$1"
 
   # Create the session if it doesn't already exist.
-  tmux-create "$SESSION_NAME" || return 1
+  tmux-create "$session_name" || return 1
 
   # If this command is being run from inside a session, switch to the target session. Otherwise,
   # attach to target session.
   if test -n "$TMUX"; then
-    tmux switch -t "$SESSION_NAME"
+    tmux switch -t "$session_name"
   else
-    tmux attach -t "$SESSION_NAME"
+    tmux attach -t "$session_name"
   fi
 }
 
@@ -63,29 +63,28 @@ function tmux-kill {
 
 # Move a tmux window to another position
 function tmux-move {
+  local target_window="$(echo $argv[1])"
 
-  TARGET_WINDOW="$(echo $argv[1])"
-
-  if [ "$TARGET_WINDOW" -lt 1 ] || [ "$TARGET_WINDOW" -gt "$(tmux-number-of-windows)" ]; then
+  if [ "$target_window" -lt 1 ] || [ "$target_window" -gt "$(tmux-number-of-windows)" ]; then
     echo -e "The target window must be between 1 and $(tmux-number-of-windows)."
     return 1
   fi
 
-  STARTING_WINDOW=$(tmux-current-window)
+  local starting_window=$(tmux-current-window)
 
-  if [ "$TARGET_WINDOW" -lt "$(tmux-current-window)" ]; then
-    for i in $(seq "$TARGET_WINDOW" "$(tmux-current-window)"); do
-      tmux swap-window -s "$STARTING_WINDOW" -t "$i"
+  if [ "$target_window" -lt "$(tmux-current-window)" ]; then
+    for i in $(seq "$target_window" "$(tmux-current-window)"); do
+      tmux swap-window -s "$starting_window" -t "$i"
     done
   fi
 
-  if [ "$TARGET_WINDOW" -gt "$STARTING_WINDOW" ]; then
-    for i in $(seq "$TARGET_WINDOW" "$STARTING_WINDOW"); do
-      tmux swap-window -s "$STARTING_WINDOW" -t "$i"
+  if [ "$target_window" -gt "$starting_window" ]; then
+    for i in $(seq "$target_window" "$starting_window"); do
+      tmux swap-window -s "$starting_window" -t "$i"
     done
   fi
 
-  tmux select-window -t "$TARGET_WINDOW"
+  tmux select-window -t "$target_window"
 }
 
 # Lists all of the preset Tmux sessions.
