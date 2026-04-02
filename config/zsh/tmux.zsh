@@ -21,7 +21,7 @@ function tmux-create {
   if tmuxinator-list-sessions | grep -Fx "$session_name" >/dev/null; then
     local config_name=$(
       ruby -r yaml -e 'print YAML.load(STDIN.read)["name"]' \
-        < "$HOME/.config/tmuxinator/$session_name.yml"
+        <"$HOME/.config/tmuxinator/$session_name.yml"
     )
 
     if [ "$session_name" != "$config_name" ]; then
@@ -35,10 +35,38 @@ function tmux-create {
   fi
 }
 
+# Returns the closest known session name to the input if within edit distance 3, otherwise nothing.
+function tmux-suggest-session {
+  local session_name="$1"
+
+  tmux-sessions | ruby -e '
+    require "did_you_mean"
+
+    input = ARGV[0]
+    candidates = STDIN.read.split("\n").reject(&:empty?)
+
+    best, distance = candidates
+      .map { [_1, DidYouMean::Levenshtein.distance(input, _1)] }
+      .min_by { _2 }
+
+    print best if best && distance <= 3 && best != input
+  ' -- "$session_name"
+}
+
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
 function tmux-create-and-attach {
   local session_name="$1"
+  local suggestion=$(tmux-suggest-session "$session_name")
+
+  # If the suggestion does not match the provided name, ask the user if they'd like to change it.
+  if [ -n "$suggestion" ] && [ "$suggestion" != "$session_name" ]; then
+    local confirm
+    read -r "confirm?$'\e[34m'Did you mean '$suggestion'?$'\e[0m' [y/N] "
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+      session_name="$suggestion"
+    fi
+  fi
 
   # Create the session if it doesn't already exist.
   tmux-create "$session_name" || return 1
@@ -99,8 +127,8 @@ function tmux-list-active-sessions {
 
 # Lists all available sessions from Tmux and Tmuxinator.
 function tmux-sessions {
-  echo "$(tmuxinator-list-sessions)" "$(tmux-list-active-sessions)" \
-    | gsed -e 's/\s\+/\n/g' | sort | uniq
+  echo "$(tmuxinator-list-sessions)" "$(tmux-list-active-sessions)" |
+    gsed -e 's/\s\+/\n/g' | sort | uniq
 }
 
 # Returns the current window number.
