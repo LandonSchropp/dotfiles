@@ -22,6 +22,7 @@
       "Bash(shellcheck *)",
       "Bash(trash *)",
       "Bash(wc *)",
+      "Bash(flashspace *)",
       "Bash(playwright-cli *)",
       "Bash(yarn *)",
       "Read(./**)"
