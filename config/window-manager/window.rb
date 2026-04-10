@@ -18,6 +18,21 @@ Window = Data.define(:application, :id, :rectangle) do
         end
     end
 
+    def non_visible
+      json = `yabai -m query --windows`.force_encoding('UTF-8')
+      windows = JSON.parse(json)
+
+      windows
+        .reject { _1['is-visible'] }
+        .map do |window|
+          Window.new(
+            application: window['app'],
+            id: window['id'],
+            rectangle: Rectangle.from_frame(window['frame'])
+          )
+        end
+    end
+
     def focused
       json = `yabai -m query --windows --window`.force_encoding('UTF-8')
       window = JSON.parse(json)
@@ -28,6 +43,10 @@ Window = Data.define(:application, :id, :rectangle) do
         rectangle: Rectangle.from_frame(window['frame'])
       )
     end
+  end
+
+  def focus
+    `yabai -m window #{id} --focus`
   end
 
   def update_position(rectangle)
