@@ -24,9 +24,13 @@ flashspace_apps = Flashspace.apps(workspace, profile)
 # apps restores the AX reference. We only focus windows FlashSpace has assigned to this workspace
 # to avoid briefly showing apps that are intentionally hidden.
 # See: https://github.com/koekeishiya/yabai/issues (Arc compat)
+previously_focused = Window.focused
+
 Window.non_visible
   .select { flashspace_apps.include?(_1.application) }
   .each(&:focus)
+
+previously_focused.focus
 
 # Get all visible windows, filter them to only those in the workspace configuration and sort
 # them by their order in the configuration, then by window ID (oldest to newest)
