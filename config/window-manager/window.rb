@@ -3,20 +3,18 @@ require 'json'
 
 Window = Data.define(:application, :id, :rectangle) do
   class << self
-    def visible
-      json = `yabai -m query --windows`.force_encoding('UTF-8')
-      windows = JSON.parse(json)
+    def all
+      JSON.parse(`yabai -m query --windows`.force_encoding('UTF-8'))
+    end
 
-      windows
+    def visible
+      all
         .select { _1['is-visible'] && !_1['is-minimized'] && !_1['is-floating'] }
         .map { from_yabai_window(_1) }
     end
 
     def non_visible
-      json = `yabai -m query --windows`.force_encoding('UTF-8')
-      windows = JSON.parse(json)
-
-      windows
+      all
         .reject { _1['is-visible'] }
         .map { from_yabai_window(_1) }
     end
