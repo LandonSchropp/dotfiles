@@ -22,7 +22,7 @@ config = Configuration.find_workspace(profile, workspace)
 # to avoid briefly showing apps that are intentionally hidden.
 # See: https://github.com/koekeishiya/yabai/issues (Arc compat)
 require 'json'
-flashspace_apps = `flashspace list-apps #{workspace} --profile #{profile}`.strip.split("\n")
+flashspace_apps = Flashspace.apps(workspace, profile)
 JSON.parse(`yabai -m query --windows`.force_encoding('UTF-8'))
   .select { flashspace_apps.include?(_1['app']) && !_1['is-visible'] }
   .each { `yabai -m window #{_1['id']} --focus` }
