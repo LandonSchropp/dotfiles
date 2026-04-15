@@ -151,3 +151,10 @@
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
+[git-town]
+	sync-feature-strategy = rebase
+	main-branch = main
+	push-hook = false
+	sync-tags = false
+	ship-delete-tracking-branch = false
+	offline = false
