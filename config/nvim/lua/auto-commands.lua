@@ -12,25 +12,17 @@ return {
       event = { "FocusGained", "TermClose", "TermLeave" },
       desc = "Check if buffers changed on editor focus",
       callback = function()
-        if vim.bo.buftype ~= "nofile" then vim.cmd.checktime() end
+        if vim.bo.buftype ~= "nofile" then
+          vim.cmd.checktime()
+        end
       end,
     },
     {
       event = { "BufEnter", "CursorHold" },
       desc = "Check if buffers changed after external edits",
       callback = function()
-        if vim.bo.buftype ~= "nofile" then vim.cmd.checktime() end
-      end,
-    },
-  },
-  AutoRemoveUnusedImports = {
-    {
-      pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
-      event = { "BufWritePre" },
-      desc = "Remove unused imports from TypeScript/JavaScript files",
-      callback = function()
-        if is_lsp_client_active("vtsls") then
-          vim.cmd("VtsExec remove_unused_imports")
+        if vim.bo.buftype ~= "nofile" then
+          vim.cmd.checktime()
         end
       end,
     },
