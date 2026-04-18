@@ -16,5 +16,5 @@ is_bash_file() {
 }
 
 if is_bash_file "$file_path" && which shfmt >/dev/null; then
-  shfmt -w "$(readlink -f "$file_path")"
+  shfmt -w -i 2 "$(readlink -f "$file_path")"
 fi
