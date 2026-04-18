@@ -67,6 +67,9 @@ return {
           -- https://github.com/AstroNvim/AstroNvim/issues/2725
           modeline = false,
 
+          -- Use rounded borders for all floating windows.
+          winborder = "rounded",
+
           -- Configure hit enter messages
           shortmess = {
             -- Don't show search match messages
@@ -87,6 +90,11 @@ return {
             -- Don't truncate messages if they're too long
             T = false,
           },
+        },
+      },
+      treesitter = {
+        indent = {
+          disable = { "markdown" },
         },
       },
       mappings = mappings(opts.mappings),
