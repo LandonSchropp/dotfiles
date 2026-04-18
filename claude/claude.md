@@ -23,6 +23,11 @@
 - Don't prepend Bash commands with `timeout`. Instead, set the timeout on the `Bash` tool.
 - Run Bash commands one at a time. Do not chain multiple commands together with `&&` or `;`. Each command should be a separate Bash tool call so the user can review and approve them individually.
 
+## Shebangs
+
+- Use `#!/usr/bin/env bash` for Bash scripts.
+- Use `#!/usr/bin/env ruby` for Ruby scripts.
+
 ## Git
 
 - Aim for atomic commits, with commits representing single, self-contained changes.
