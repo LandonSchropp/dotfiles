@@ -12,7 +12,6 @@ return function(mappings)
     require("mappings.home")(mappings),
     require("mappings.language-tools")(mappings),
     require("mappings.search-replace")(mappings),
-    require("mappings.test")(mappings),
     require("mappings.text")(mappings),
     require("mappings.ui")(mappings),
     require("mappings.which-key")(mappings),

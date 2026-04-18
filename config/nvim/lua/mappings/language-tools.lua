@@ -1,7 +1,3 @@
-local function generate_documentation()
-  require("neogen").generate()
-end
-
 local function next_choice()
   local luasnip = require("luasnip")
 
@@ -29,7 +25,6 @@ end
 return function(_)
   return {
     n = {
-      ["<Leader>ld"] = { generate_documentation, desc = "Generate documentation" },
       ["]]"] = { next_diagnostic, desc = "Next diagnostic" },
       ["[["] = { previous_diagnostic, desc = "Previous diagnostic" },
     },
