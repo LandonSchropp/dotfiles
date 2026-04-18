@@ -27,6 +27,20 @@ return {
       end,
     },
   },
+  -- Restart ESLint LSP when a buffer is reloaded from disk. ESLint's type-aware rules use their own
+  -- internal TypeScript program, which doesn't pick up changes to files that aren't open as
+  -- buffers.
+  RestartEslintOnFileChange = {
+    {
+      event = { "FileChangedShellPost" },
+      desc = "Restart ESLint LSP after external file changes",
+      callback = function()
+        if is_lsp_client_active("eslint") then
+          vim.cmd("LspRestart eslint")
+        end
+      end,
+    },
+  },
   DisableFocusNvim = {
     {
       event = { "WinEnter" },
