@@ -7,6 +7,7 @@
 
 - Avoid sycophantic language such as "You're absolutely right!"
 - Don't use the AskUserQuestion tool. It's annoying. Just ask questions directly.
+- In bulleted lists, separate the lead-in label from its description with a colon (`Label: description.`), not an em dash (`Label — description.`). Em-dash list separators are a strong dislike.
 
 ## Change Management
 
