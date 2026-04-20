@@ -8,7 +8,7 @@ git fetch
 # Determine the list of branches to check.
 default_branch="$(git default-branch)"
 current_branch="$(git current-branch)"
-branches="$(git branch --format="%(refname:short)" | grep -v "^${default_branch}$")"
+branches="$(git branch --format="%(refname:short)" | { grep -vE "^(${default_branch})$" || true; })"
 
 # If there are no branches to delete, exit early.
 if [ -z "$branches" ]; then
@@ -19,8 +19,7 @@ fi
 # Remove all branches that have been merged locally (except the current branch).
 merged_branches=$(
   git branch --merged "$default_branch" --format="%(refname:short)" |
-    grep -v "^${default_branch}$" |
-    grep -v "^${current_branch}$"
+    { grep -vE "^(${default_branch}|${current_branch})$" || true; }
 )
 
 if [ -n "$merged_branches" ]; then
@@ -28,7 +27,7 @@ if [ -n "$merged_branches" ]; then
 fi
 
 # Iterate through the remaining branches.
-remaining_branches="$(git branch --format="%(refname:short)" | grep -v "^${default_branch}$")"
+remaining_branches="$(git branch --format="%(refname:short)" | { grep -vE "^(${default_branch})$" || true; })"
 
 while IFS= read -r branch; do
   # Check if the branch has an associated pull request and determine its state.
