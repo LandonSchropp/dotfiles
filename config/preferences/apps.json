@@ -2,5 +2,21 @@
   {
     "name": "MonitorControl",
     "files": ["~/Library/Preferences/app.monitorcontrol.MonitorControl.plist"]
+  },
+  {
+    "name": "Raycast",
+    "files": ["~/Library/Preferences/com.raycast.macos.plist"]
+  },
+  {
+    "name": "Thaw",
+    "files": ["~/Library/Preferences/com.stonerl.Thaw.plist"]
+  },
+  {
+    "name": "Cold Turkey Blocker",
+    "files": ["~/Library/Preferences/com.getcoldturkey.blocker.plist"]
+  },
+  {
+    "name": "Alcove",
+    "files": ["~/Library/Preferences/com.henrikruscon.Alcove.plist"]
   }
 ]
