@@ -19,6 +19,7 @@ local plugins = {
     },
   },
   { import = "community" },
+  { import = "disabled" },
   { import = "plugins" },
 }
 
