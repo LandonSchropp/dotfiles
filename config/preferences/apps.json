@@ -1,5 +1,38 @@
 [
   {
+    "name": "Alcove",
+    "files": ["~/Library/Preferences/com.henrikruscon.Alcove.plist"]
+  },
+  {
+    "name": "Amphetamine",
+    "files": [
+      "~/Library/Containers/com.if.Amphetamine/Data/Library/Preferences/com.if.Amphetamine.plist"
+    ]
+  },
+  {
+    "name": "BetterSnapTool",
+    "files": ["~/Library/Preferences/com.hegenberg.BetterSnapTool.plist"]
+  },
+  {
+    "name": "Cold Turkey Blocker",
+    "files": ["~/Library/Preferences/com.getcoldturkey.blocker.plist"]
+  },
+  {
+    "name": "iStat Menus",
+    "files": [
+      "~/Library/Preferences/com.bjango.istatmenus.plist",
+      "~/Library/Preferences/com.bjango.istatmenus.menubar.7.plist",
+      "~/Library/Preferences/com.bjango.istatmenus.agent.plist",
+      "~/Library/Preferences/com.bjango.istatmenus.status.plist"
+    ]
+  },
+  {
+    "name": "MeetingBar",
+    "files": [
+      "~/Library/Containers/leits.MeetingBar/Data/Library/Preferences/leits.MeetingBar.plist"
+    ]
+  },
+  {
     "name": "MonitorControl",
     "files": ["~/Library/Preferences/app.monitorcontrol.MonitorControl.plist"]
   },
@@ -10,13 +43,5 @@
   {
     "name": "Thaw",
     "files": ["~/Library/Preferences/com.stonerl.Thaw.plist"]
-  },
-  {
-    "name": "Cold Turkey Blocker",
-    "files": ["~/Library/Preferences/com.getcoldturkey.blocker.plist"]
-  },
-  {
-    "name": "Alcove",
-    "files": ["~/Library/Preferences/com.henrikruscon.Alcove.plist"]
   }
 ]
