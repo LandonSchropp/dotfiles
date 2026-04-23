@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Ensure git-town runs without requiring a TTY (e.g. under launchd)
+export TERM=dumb
+
+# Configuration
+repositories=(
+  "$HOME/Development/agent-toolkit"
+  "$HOME/Development/writing-toolkit"
+  "$HOME/.dotfiles"
+)
+
+# Logging
+log() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
+}
+
+# Error notification
+notify_error() {
+  local error_message="$1"
+  osascript -e "display notification \"$error_message\" with title \"Daily Sync Failed\" sound name \"Basso\""
+}
+
+trap 'notify_error "Check logs at ~/Library/Logs/com.landonschropp.daily-sync/"' ERR
+
+# Syncs the default branch of a single repository via git-town, returning to
+# the original branch when done.
+sync_repository() {
+  local repository="$1"
+  local name
+  name=$(basename "$repository")
+
+  if [[ ! -d "$repository" ]]; then
+    log "$name not found at $repository, skipping..."
+    return
+  fi
+
+  log "Syncing $name..."
+  cd "$repository"
+
+  local -r original_branch=$(git branch --show-current)
+
+  git checkout "$(git default-branch)"
+  /opt/homebrew/bin/git-town sync
+  git checkout "$original_branch"
+}
+
+log "Starting daily sync..."
+
+for repository in "${repositories[@]}"; do
+  sync_repository "$repository"
+done
+
+log "Daily sync completed successfully"
