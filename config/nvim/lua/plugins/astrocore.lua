@@ -92,11 +92,6 @@ return {
           },
         },
       },
-      treesitter = {
-        indent = {
-          disable = { "markdown" },
-        },
-      },
       mappings = mappings(opts.mappings),
 
       -- Set the file types for common files I work with (passed to `vim.filetype.add`).
