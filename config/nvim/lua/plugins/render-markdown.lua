@@ -14,6 +14,13 @@ return {
   -- 4. Avoid concealed text that causes layout jumps on hover (checkboxes, inline links)
   opts = {
     file_types = { "markdown" },
+    -- Render in every mode, including insert, rather than only in normal, command, and terminal
+    -- modes. Without this option, the sign column icons and background highlights disappear when
+    -- entering insert mode. This is safe to enable because `conceallevel` is set to `0` below,
+    -- which means no text is actually hidden. As a result, there is no raw-versus-rendered text
+    -- to swap between modes, and only the signs and backgrounds change, which is what we want to
+    -- keep visible at all times.
+    render_modes = true,
     win_options = { conceallevel = { rendered = 0 } },
     nested = false,
     heading = {
