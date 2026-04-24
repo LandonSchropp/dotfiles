@@ -59,3 +59,20 @@ anything that pops up.
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
 [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) on GitHub.
+
+### Preferences
+
+A subset of app preferences are backed up to and restored from iCloud Drive. The list of apps is
+configured in `config/preferences/apps.json`.
+
+To back up preferences:
+
+```sh
+~/.dotfiles/bin/preferences/back-up-preferences
+```
+
+To restore preferences on a new machine:
+
+```sh
+~/.dotfiles/bin/preferences/restore-preferences
+```
