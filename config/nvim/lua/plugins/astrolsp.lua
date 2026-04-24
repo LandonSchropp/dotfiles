@@ -22,13 +22,6 @@ return {
           },
         },
 
-        -- Disable the requirement for using flat config in ESLint.
-        eslint = {
-          settings = {
-            useFlatConfig = false,
-          },
-        },
-
         -- Give vtsls more memory to work with.
         vtsls = {
           settings = {
