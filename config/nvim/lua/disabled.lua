@@ -6,4 +6,5 @@ return {
   { "akinsho/toggleterm.nvim", enabled = false },
   { "stevearc/resession.nvim", enabled = false },
   { "folke/todo-comments.nvim", enabled = false },
+  { "sigmasd/deno-nvim", enabled = false },
 }
