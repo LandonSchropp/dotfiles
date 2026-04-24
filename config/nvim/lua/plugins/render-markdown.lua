@@ -92,5 +92,12 @@ return {
     pipe_table = {
       preset = "round",
     },
+    -- Disable rendering inside YAML frontmatter blocks. By default this plugin renders bullets
+    -- and wiki links inside frontmatter, which is invalid for our use case. With this disabled,
+    -- the frontmatter falls back to standard treesitter YAML syntax highlighting via the
+    -- markdown grammar's built-in YAML injection.
+    yaml = {
+      enabled = false,
+    },
   },
 }
