@@ -76,8 +76,7 @@ return {
       min_width = 100,
       border = "none",
       conceal_delimiters = false,
-      language_icon = false,
-      language_name = false,
+      language = false,
     },
     dash = {
       width = 100,
