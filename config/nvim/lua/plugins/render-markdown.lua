@@ -77,6 +77,11 @@ return {
       border = "none",
       conceal_delimiters = false,
       language = false,
+      -- Extend the code block background across the opening and closing delimiter rows. Without
+      -- this, the delimiters render bare and the block looks like disconnected colored bars.
+      -- Added upstream specifically for the visible-backticks use case in
+      -- https://github.com/MeanderingProgrammer/render-markdown.nvim/issues/643.
+      background_inset = 0,
     },
     dash = {
       width = 100,
