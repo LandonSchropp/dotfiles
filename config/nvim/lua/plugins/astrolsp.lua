@@ -9,6 +9,12 @@ return {
   opts = function(_, opts)
     ---@type AstroLSPOpts
     return deep_extend(opts, {
+      -- Disable LSP code lens. Language servers emit "code lenses" with metadata about symbols
+      -- (reference counts, runnable test markers, etc.) that Neovim renders as virtual text
+      -- above the line. The "0 references" annotations from lua_ls are noisy and not actionable.
+      features = {
+        codelens = false,
+      },
       config = {
         -- Disable emmet-ls to prevent annoying autocompletions in `.tsx` files.
         emmet_ls = {
