@@ -36,7 +36,7 @@ return {
       desc = "Restart ESLint LSP after external file changes",
       callback = function()
         if is_lsp_client_active("eslint") then
-          vim.cmd("LspRestart eslint")
+          vim.cmd("lsp restart eslint")
         end
       end,
     },
