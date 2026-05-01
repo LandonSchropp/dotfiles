@@ -20,7 +20,8 @@ Window = Data.define(:application, :id, :rectangle) do
     end
 
     def focused
-      json = `yabai -m query --windows --window`.force_encoding('UTF-8')
+      json = `yabai -m query --windows --window 2>/dev/null`.force_encoding('UTF-8')
+      return nil unless $?.success?
       from_yabai_window(JSON.parse(json))
     end
 
@@ -36,7 +37,7 @@ Window = Data.define(:application, :id, :rectangle) do
   end
 
   def focus
-    `yabai -m window #{id} --focus`
+    `yabai -m window #{id} --focus 2>/dev/null`
   end
 
   def update_position(rectangle)
