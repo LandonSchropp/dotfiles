@@ -25,6 +25,8 @@
       "Bash(flashspace *)",
       "Bash(playwright-cli *)",
       "Bash(yarn *)",
+      "Bash(/Users/landon/Development/agent-toolkit/*)",
+      "Bash(git rebase *)",
       "Read(./**)"
     ],
     "deny": [
@@ -41,7 +43,6 @@
     "ask": [
       "Bash(git commit *)",
       "Bash(git push *)",
-      "Bash(git rebase *)",
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],
