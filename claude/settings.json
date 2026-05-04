@@ -131,6 +131,6 @@
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
-  "voiceEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
