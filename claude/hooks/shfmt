@@ -15,6 +15,10 @@ is_bash_file() {
   [[ "$first_line" =~ ^#!.*(bash|sh)($|[[:space:]]) ]]
 }
 
-if is_bash_file "$file_path" && which shfmt >/dev/null; then
-  shfmt -w -i 2 "$(readlink -f "$file_path")"
+is_spec_file() {
+  [[ "$1" =~ _spec\.sh$ ]]
+}
+
+if is_bash_file "$file_path" && ! is_spec_file "$file_path" && which shfmt >/dev/null; then
+  shfmt -w "$(readlink -f "$file_path")"
 fi
