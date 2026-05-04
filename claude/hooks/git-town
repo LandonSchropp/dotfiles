@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Prepend TERM=dumb to git town commands so they work without an interactive
+# terminal, which is required since git-town v22.7.0.
+
+command=$(jq -r '.tool_input.command')
+
+if [[ "$command" == *"git town"* ]] && [[ "$command" != "TERM=dumb"* ]]; then
+  jq -cn --arg cmd "TERM=dumb $command" \
+    '{hookSpecificOutput: {hookEventName: "PreToolUse", updatedInput: {command: $cmd}}}'
+fi
