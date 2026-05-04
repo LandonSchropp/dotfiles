@@ -111,41 +111,13 @@
     "command": "npx -y ccstatusline@latest",
     "padding": 0
   },
-  "extraKnownMarketplaces": {
-    "oysterhr": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/oyster-agent-toolkit"
-      }
-    },
-    "landonschropp": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/agent-toolkit"
-      }
-    },
-    "writing": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/writing-toolkit"
-      }
-    }
-  },
   "enabledPlugins": {
-    "Notion@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "playwright@claude-plugins-official": false,
     "linear@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
-    "notion@claude-plugins-official": true,
-    "oyster-development@oyster-agent-toolkit": true,
-    "oyster-backend@oyster-agent-toolkit": true,
-    "oyster-frontend@oyster-agent-toolkit": true,
-    "oyster-agent-toolkit@oyster-agent-toolkit": true,
-    "oyster-team-inex@oyster-agent-toolkit": true,
-    "ls@landonschropp": true,
-    "writing@writing": true
+    "notion@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
