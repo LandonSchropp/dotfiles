@@ -46,8 +46,14 @@
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],
-    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "~/Notes",
+      "~/Development",
+      "~/.claude"
+    ]
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "PostToolUse": [
       {
