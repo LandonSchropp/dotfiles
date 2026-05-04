@@ -111,13 +111,29 @@
     "command": "npx -y ccstatusline@latest",
     "padding": 0
   },
+  "extraKnownMarketplaces": {
+    "landonschropp": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/landon/Development/agent-toolkit"
+      }
+    },
+    "writing": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/landon/Development/writing-toolkit"
+      }
+    }
+  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "playwright@claude-plugins-official": false,
     "linear@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
-    "notion@claude-plugins-official": true
+    "notion@claude-plugins-official": true,
+    "ls@landonschropp": true,
+    "writing@writing": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
