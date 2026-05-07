@@ -40,20 +40,11 @@
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
     ],
-    "ask": [
-      "Bash(git commit *)",
-      "Bash(git push *)",
-      "Bash(git reset *)",
-      "Bash(git clean *)"
-    ],
+    "ask": ["Bash(git commit *)", "Bash(git push *)", "Bash(git reset *)", "Bash(git clean *)"],
     "defaultMode": "auto",
-    "additionalDirectories": [
-      "~/Notes",
-      "~/Development",
-      "~/.claude"
-    ]
+    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
   },
-  "model": "sonnet[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -111,20 +102,6 @@
     "command": "npx -y ccstatusline@latest",
     "padding": 0
   },
-  "extraKnownMarketplaces": {
-    "landonschropp": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/agent-toolkit"
-      }
-    },
-    "writing": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/writing-toolkit"
-      }
-    }
-  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
@@ -132,9 +109,35 @@
     "linear@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
     "notion@claude-plugins-official": true,
-    "ls@landonschropp": true,
-    "writing@writing": true
+    "ls-git@landonschropp": true,
+    "ls-scripting@landonschropp": true,
+    "ls-typescript@landonschropp": true,
+    "ls-ruby@landonschropp": true,
+    "ls-slack@landonschropp": true,
+    "ls-development-environment@landonschropp": true,
+    "ls-planning@landonschropp": true,
+    "ls-agent-toolkit@landonschropp": true,
+    "oyster-development@glorious-oyster-agent-toolkit": true,
+    "oyster-backend@glorious-oyster-agent-toolkit": true,
+    "oyster-frontend@glorious-oyster-agent-toolkit": true,
+    "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
+    "slack@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "landonschropp": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/landon/Development/agent-toolkit"
+      }
+    },
+    "glorious-oyster-agent-toolkit": {
+      "source": {
+        "source": "github",
+        "repo": "oysterhr/glorious-oyster-agent-toolkit"
+      }
+    }
+  },
+  "skillListingBudgetFraction": 0.2,
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
   "skipAutoPermissionPrompt": true,
