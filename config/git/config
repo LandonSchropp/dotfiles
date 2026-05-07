@@ -146,6 +146,9 @@
   commit = true
   rebase = true
 
+[includeIf "gitdir:~/Development/oyster/"]
+  path = ~/.config/git/oyster
+
 [filter "lfs"]
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
