@@ -2,6 +2,15 @@
 
 file_path=$(jq -r '.tool_input.file_path')
 
-if [[ "$file_path" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]; then
-  pnpm dlx prettier --write "$(readlink -f "$file_path")"
+if [[ ! "$file_path" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]; then
+  exit 0
+fi
+
+resolved=$(readlink -f "$file_path")
+dotfiles_root="$HOME/.dotfiles"
+
+if [[ "$resolved" == "$dotfiles_root"/* ]]; then
+  pnpm dlx prettier --ignore-path "$dotfiles_root/.prettierignore" --write "$resolved"
+else
+  pnpm dlx prettier --write "$resolved"
 fi
