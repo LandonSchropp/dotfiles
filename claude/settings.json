@@ -121,6 +121,7 @@
     "ls-development-environment@landonschropp": true,
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
+    "ls-notes@landonschropp": true,
     "slack@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
