@@ -26,6 +26,10 @@
       "Bash(playwright-cli *)",
       "Bash(yarn *)",
       "Bash(/Users/landon/Development/agent-toolkit/*)",
+      "Bash(/Users/landon/Development/*/.claude/skills/*)",
+      "Bash(/Users/landon/Development/*/skills/*)",
+      "Bash(/Users/landon/.claude/skills/*)",
+      "Bash(.claude/skills/*)",
       "Bash(git rebase *)",
       "Read(./**)"
     ],
