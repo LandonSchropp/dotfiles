@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function print_help() {
+  echo "Usage: review [revdiff-args...]"
+  echo
+  echo "Run revdiff and paste its annotations into the first tmux window named"
+  echo "'claude' in the current session, then press Enter."
+  echo
+  echo "All arguments are forwarded to revdiff."
+  echo
+  echo "Options:"
+  echo
+  echo "  --help                Show this help message and exit."
+  echo
+  echo "Examples:"
+  echo
+  echo "  review HEAD~1"
+  echo "  review --staged"
+}
+
+revdiff_args=()
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --help)
+    print_help
+    exit 0
+    ;;
+  *)
+    revdiff_args+=("$1")
+    shift
+    ;;
+  esac
+done
+
+if [[ -z "${TMUX:-}" ]]; then
+  echo "Error: review must be run inside a tmux session." >&2
+  exit 1
+fi
+
+session=$(tmux display-message -p '#{session_name}')
+
+if ! tmux list-windows -t "$session" -F '#{window_name}' | grep -qx 'claude'; then
+  echo "Error: No window named 'claude' found in session '$session'." >&2
+  exit 1
+fi
+
+target="$session:claude"
+
+output_file=$(mktemp)
+trap 'rm -f "$output_file"' EXIT
+
+revdiff --output="$output_file" ${revdiff_args[@]+"${revdiff_args[@]}"}
+
+if [[ ! -s "$output_file" ]]; then
+  exit 0
+fi
+
+tmux load-buffer "$output_file"
+tmux paste-buffer -p -t "$target"
+tmux send-keys -t "$target" Enter
