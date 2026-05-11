@@ -1,0 +1,26 @@
+# name: tokyonight-storm
+# description: tokyonight storm — matches the Neovim colorscheme
+# author: landon
+
+chroma-style = tokyonight-storm
+color-accent = #7aa2f7
+color-border = #3b4261
+color-normal = #c0caf5
+color-muted = #565f89
+color-selected-fg = #1f2335
+color-selected-bg = #7aa2f7
+color-annotation = #e0af68
+color-cursor-fg = #9ece6a
+color-cursor-bg = #24283b
+color-add-fg = #9ece6a
+color-add-bg = #1b3328
+color-remove-fg = #f7768e
+color-remove-bg = #3a1f24
+color-modify-fg = #ff9e64
+color-modify-bg = #3a2a1a
+color-tree-bg = #24283b
+color-diff-bg = #24283b
+color-status-fg = #c0caf5
+color-status-bg = #24283b
+color-search-fg = #1f2335
+color-search-bg = #e0af68
