@@ -58,6 +58,9 @@ if [[ ! -s "$output_file" ]]; then
   exit 0
 fi
 
+# TODO: Remove this stdout fallback once the tmux paste path is reliable.
+cat "$output_file"
+
 tmux load-buffer "$output_file"
 tmux paste-buffer -p -t "$target"
 tmux send-keys -t "$target" Enter
