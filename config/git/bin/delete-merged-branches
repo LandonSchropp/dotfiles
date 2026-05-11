@@ -5,6 +5,9 @@ set -euo pipefail
 # Ensure the local environment is up-to-date.
 git fetch
 
+# Remove stale worktree references so merged worktree branches can be deleted.
+git worktree prune
+
 # Determine the list of branches to check.
 default_branch="$(git default-branch)"
 current_branch="$(git current-branch)"
