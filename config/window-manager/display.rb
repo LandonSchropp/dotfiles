@@ -6,14 +6,14 @@ Display = Data.define(:name, :profile, :rectangle, :menu_bar_height, :dock_heigh
   class << self
     def main
       @main ||= begin
-        display_json = `yabai -m query --displays`
-        display_data = JSON.parse(display_json).first
+        display_json = `yabai -m query --displays --display`
+        display_data = JSON.parse(display_json)
 
         frame = display_data['frame']
         rectangle = Rectangle.from_frame(frame)
 
-        uuid = display_data['uuid']
-        display_config = Configuration.find_display(uuid)
+        name = `flashspace get-display`.strip
+        display_config = Configuration.find_display(name)
 
         Display.new(
           name: display_config.name,

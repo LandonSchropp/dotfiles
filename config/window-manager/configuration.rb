@@ -7,13 +7,13 @@ class Configuration
     end
   end
 
-  DisplayConfiguration = Data.define(:name, :uuid, :external, :menu_bar_height, :dock_height) do
+  DisplayConfiguration = Data.define(:name, :external, :menu_bar_height, :dock_height) do
     def profile
       external ? 'Split' : 'Full'
     end
 
-    def matches?(uuid)
-      self.uuid == uuid
+    def matches?(name)
+      self.name == name
     end
   end
 
@@ -26,11 +26,11 @@ class Configuration
       @displays ||= config['displays'].map { DisplayConfiguration.new(**_1) }
     end
 
-    def find_display(uuid)
-      display_config = displays.find { _1.matches?(uuid) }
+    def find_display(name)
+      display_config = displays.find { _1.matches?(name) }
 
       unless display_config
-        raise "No configuration found for display with UUID #{uuid}"
+        raise "No configuration found for display with name #{name.inspect}"
       end
 
       display_config
