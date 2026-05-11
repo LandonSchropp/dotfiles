@@ -1,3 +1,4 @@
 [Application Options]
 theme = tokyonight-storm
 compact = true
+wrap = true
