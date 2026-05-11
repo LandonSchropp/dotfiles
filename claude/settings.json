@@ -24,6 +24,7 @@
       "Bash(wc *)",
       "Bash(flashspace *)",
       "Bash(playwright-cli *)",
+      "Bash(yabai *)",
       "Bash(yarn *)",
       "Bash(/Users/landon/Development/agent-toolkit/*)",
       "Bash(/Users/landon/Development/*/.claude/skills/*)",
