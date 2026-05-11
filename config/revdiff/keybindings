@@ -1,0 +1,3 @@
+# Mirror Neovim split navigation
+map ctrl+h focus_tree
+map ctrl+l focus_diff
