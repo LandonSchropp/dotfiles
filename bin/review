@@ -42,12 +42,13 @@ fi
 
 session=$(tmux display-message -p '#{session_name}')
 
-if ! tmux list-windows -t "$session" -F '#{window_name}' | grep -qx 'claude'; then
+target=$(tmux list-windows -t "$session" -F '#{window_id}	#{window_name}' \
+  | awk -F'\t' '$2 == "claude" { print $1; exit }')
+
+if [[ -z "$target" ]]; then
   echo "Error: No window named 'claude' found in session '$session'." >&2
   exit 1
 fi
-
-target="$session:claude"
 
 output_file=$(mktemp)
 trap 'rm -f "$output_file"' EXIT
