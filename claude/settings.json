@@ -165,8 +165,7 @@
     "oyster-backend@glorious-oyster-agent-toolkit": true,
     "oyster-frontend@glorious-oyster-agent-toolkit": true,
     "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
-    "slack@claude-plugins-official": true,
-    "caveman@caveman": true
+    "slack@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
@@ -179,12 +178,6 @@
       "source": {
         "source": "github",
         "repo": "oysterhr/glorious-oyster-agent-toolkit"
-      }
-    },
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
       }
     }
   },
