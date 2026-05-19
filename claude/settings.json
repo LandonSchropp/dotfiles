@@ -160,7 +160,8 @@
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
-    "slack@claude-plugins-official": true
+    "slack@claude-plugins-official": true,
+    "sentry@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
