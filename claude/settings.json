@@ -160,10 +160,6 @@
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
-    "oyster-development@glorious-oyster-agent-toolkit": true,
-    "oyster-backend@glorious-oyster-agent-toolkit": true,
-    "oyster-frontend@glorious-oyster-agent-toolkit": true,
-    "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
     "slack@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
@@ -171,12 +167,6 @@
       "source": {
         "source": "directory",
         "path": "/Users/landon/Development/agent-toolkit"
-      }
-    },
-    "glorious-oyster-agent-toolkit": {
-      "source": {
-        "source": "github",
-        "repo": "oysterhr/glorious-oyster-agent-toolkit"
       }
     }
   },
