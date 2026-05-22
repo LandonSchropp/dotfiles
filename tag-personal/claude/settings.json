@@ -148,9 +148,7 @@
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "playwright@claude-plugins-official": false,
-    "linear@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
-    "notion@claude-plugins-official": true,
     "ls-git@landonschropp": true,
     "ls-scripting@landonschropp": true,
     "ls-typescript@landonschropp": true,
@@ -159,9 +157,7 @@
     "ls-development-environment@landonschropp": true,
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
-    "ls-notes@landonschropp": true,
-    "slack@claude-plugins-official": true,
-    "sentry@claude-plugins-official": true
+    "ls-notes@landonschropp": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
