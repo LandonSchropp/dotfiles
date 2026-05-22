@@ -2,8 +2,16 @@
 
 set -euo pipefail
 
-# Create links for the dotfiles
+hostname="$(hostname -s)"
+
+if [[ "$hostname" == OHR* ]]; then
+  tag="oyster"
+else
+  tag="personal"
+fi
+
 rcup \
+  -t "$tag" \
   -v \
   -x config/window-manager \
   -U Library \

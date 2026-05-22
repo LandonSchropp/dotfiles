@@ -1,0 +1,178 @@
+{
+  "skillListingBudgetFraction": 0.2,
+  "env": {
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(brew *)",
+      "Bash(bun *)",
+      "Bash(bundle exec *)",
+      "Bash(cd *)",
+      "Bash(find *)",
+      "Bash(git *)",
+      "Bash(just *)",
+      "Bash(ls *)",
+      "Bash(mise *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(rg *)",
+      "Bash(shellcheck *)",
+      "Bash(trash *)",
+      "Bash(wc *)",
+      "Bash(flashspace *)",
+      "Bash(playwright-cli *)",
+      "Bash(yabai *)",
+      "Bash(yarn *)",
+      "Bash(/Users/landon/Development/agent-toolkit/*)",
+      "Bash(/Users/landon/Development/*/.claude/skills/*)",
+      "Bash(/Users/landon/Development/*/skills/*)",
+      "Bash(/Users/landon/.claude/skills/*)",
+      "Bash(.claude/skills/*)",
+      "Bash(git rebase *)",
+      "Read(./**)",
+      "mcp__context7",
+      "mcp__plugin_context7_context7"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(**/.env*)",
+      "Read(**/.secret*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.crt)",
+      "Read(**/*.cert)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)"
+    ],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)"
+    ],
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "~/Notes",
+      "~/Development",
+      "~/.claude"
+    ]
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/git-town"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/prettier"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/rubocop"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/shfmt"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "orc hook status"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notification"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "orc hook status"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notification"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "orc hook status"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "playwright@claude-plugins-official": false,
+    "linear@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "notion@claude-plugins-official": true,
+    "ls-git@landonschropp": true,
+    "ls-scripting@landonschropp": true,
+    "ls-typescript@landonschropp": true,
+    "ls-ruby@landonschropp": true,
+    "ls-slack@landonschropp": true,
+    "ls-development-environment@landonschropp": true,
+    "ls-planning@landonschropp": true,
+    "ls-agent-toolkit@landonschropp": true,
+    "ls-notes@landonschropp": true,
+    "slack@claude-plugins-official": true,
+    "sentry@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "landonschropp": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/landon/Development/agent-toolkit"
+      }
+    }
+  },
+  "syntaxHighlightingDisabled": true,
+  "alwaysThinkingEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
+}
