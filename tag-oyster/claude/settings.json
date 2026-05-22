@@ -185,7 +185,8 @@
       "source": {
         "source": "directory",
         "path": "/Users/landon/Development/oyster/glorious-oyster-agent-toolkit"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "syntaxHighlightingDisabled": true,
