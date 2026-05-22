@@ -61,6 +61,11 @@
     ]
   },
   "model": "sonnet[1m]",
+  "skillOverrides": {
+    "slack:standup": "off",
+    "slack:summarize-channel": "off",
+    "slack:draft-announcement": "off"
+  },
   "hooks": {
     "PreToolUse": [
       {
