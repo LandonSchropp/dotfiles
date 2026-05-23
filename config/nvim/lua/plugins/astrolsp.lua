@@ -34,6 +34,16 @@ return {
             typescript = {
               tsserver = {
                 maxTsServerMemory = 8192,
+
+                -- Watch parent directories rather than individual files so tsserver picks up
+                -- external edits (e.g. from an agent), including atomic/rename-based writes that
+                -- file-level `fs.watch` misses. Without this, diagnostics in open buffers go stale
+                -- when a referenced file is changed outside Neovim.
+                watchOptions = {
+                  watchFile = "useFsEventsOnParentDirectory",
+                  watchDirectory = "useFsEvents",
+                  fallbackPolling = "dynamicPriority",
+                },
               },
             },
           },
