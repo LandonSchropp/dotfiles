@@ -90,6 +90,11 @@ return {
             "<cmd>VtsExec remove_unused_imports<cr>",
             { desc = "Remove unused imports", buffer = buffer }
           )
+
+          vim.keymap.set("n", "<leader>lR", function()
+            client:exec_cmd({ command = "typescript.reloadProjects" })
+            vim.notify("vtsls: reloaded projects", vim.log.levels.INFO)
+          end, { desc = "Reload TypeScript projects", buffer = buffer })
         end
       end,
     })
