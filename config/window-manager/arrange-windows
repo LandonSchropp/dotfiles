@@ -27,12 +27,12 @@ flashspace_apps = Flashspace.apps(workspace, profile)
 previously_focused = Window.focused
 
 Window.non_visible
-  .select { flashspace_apps.include?(_1.application) }
+  .select { |window| flashspace_apps.any? { |app| window.application?(app) } }
   .each(&:focus)
 
 # If workspace windows are still non-visible after focusing, yabai has lost them entirely.
 # Restart yabai to re-acquire AX references and try again.
-if Window.non_visible.any? { flashspace_apps.include?(_1.application) }
+if Window.non_visible.any? { |window| flashspace_apps.any? { |app| window.application?(app) } }
   `yabai --restart-service`
   sleep 2
   previously_focused = Window.focused
@@ -44,7 +44,7 @@ previously_focused&.focus
 # them by their order in the configuration, then by window ID (oldest to newest)
 windows = Window
   .visible
-  .filter { config.applications.include?(_1.application) }
+  .filter { |window| config.applications.any? { |app| window.application?(app) } }
   .filter { _1.rectangle.percentage_of(Display.main.visible_rectangle) >= MIN_WINDOW_SIZE }
   .sort_by { [config.applications.index(_1.application) || config.applications.length, _1.id] }
 

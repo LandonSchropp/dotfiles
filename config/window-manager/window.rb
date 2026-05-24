@@ -36,6 +36,10 @@ Window = Data.define(:application, :id, :rectangle) do
     end
   end
 
+  def application?(name)
+    application.casecmp?(name)
+  end
+
   def focus
     `yabai -m window #{id} --focus 2>/dev/null`
   end
