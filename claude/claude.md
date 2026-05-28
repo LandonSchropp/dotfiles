@@ -32,4 +32,10 @@
 ## Git
 
 - Aim for atomic commits, with commits representing single, self-contained changes.
+- You MUST invoke the `git-atomic-commit` skill before making any changes and follow its guidelines.
+- Changes must always be presented for review before committing. Never commit without explicit user review and approval. Feedback during review is not approval.
+- Never stage changes for review unless explicitly requested.
+
+## Code Quality
+
 - When editing bash/shell scripts (`.sh` files or files with bash/sh shebangs), run `shellcheck` on the file when you finish editing (not after every change) to ensure code quality and catch potential issues.
