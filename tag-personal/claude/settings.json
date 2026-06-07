@@ -46,19 +46,12 @@
       "Read(**/*.crt)",
       "Read(**/*.cert)",
       "Read(**/secrets/**)",
-      "Read(**/credentials/**)"
+      "Read(**/credentials/**)",
+      "Read(~/Notes/Resources/Journal/**)"
     ],
-    "ask": [
-      "Bash(git commit *)",
-      "Bash(git reset *)",
-      "Bash(git clean *)"
-    ],
+    "ask": ["Bash(git commit *)", "Bash(git reset *)", "Bash(git clean *)"],
     "defaultMode": "auto",
-    "additionalDirectories": [
-      "~/Notes",
-      "~/Development",
-      "~/.claude"
-    ]
+    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
   },
   "model": "opus[1m]",
   "hooks": {
@@ -88,6 +81,14 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/shfmt"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "orc hook status"
           }
         ]
       }
