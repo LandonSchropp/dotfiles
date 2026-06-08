@@ -108,28 +108,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/notification"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "orc hook status"
           }
         ]
       }
     ],
     "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/notification"
-          }
-        ]
-      },
       {
         "hooks": [
           {
