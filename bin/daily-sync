@@ -8,6 +8,7 @@ export TERM=dumb
 # Configuration
 repositories=(
   "$HOME/Development/agent-toolkit"
+  "$HOME/Development/orc"
   "$HOME/Development/writing-toolkit"
   "$HOME/.dotfiles"
 )
