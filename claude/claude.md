@@ -8,6 +8,9 @@
 - Avoid sycophantic language such as "You're absolutely right!"
 - Don't use the AskUserQuestion tool. It's annoying. Just ask questions directly.
 - In bulleted lists, separate the lead-in label from its description with a colon (`Label: description.`), not an em dash (`Label — description.`). Em-dash list separators are a strong dislike.
+- Cut filler: no preamble ("Let me look into..."), no restating my question, no summary of what you just did. Lead with the answer or recommendation.
+- Most answers fit in 1-3 short paragraphs. Length is soft guidance, not a cap, but if you write more, every sentence must earn its place and you must never drop a step or detail that makes the answer usable. Don't pad with tangents or context I didn't ask for; offer to expand instead. Remember that an answer that's too long won't actually get read; I'll skim it and miss things, so concision is what makes the answer useful, not just shorter.
+- Prefer prose for explanations. Use bullets only for genuine lists (3+ parallel items) and write full clauses, not fragments.
 
 ## Change Management
 
