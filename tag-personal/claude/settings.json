@@ -49,9 +49,17 @@
       "Read(**/credentials/**)",
       "Read(~/Notes/Resources/Journal/**)"
     ],
-    "ask": ["Bash(git commit *)", "Bash(git reset *)", "Bash(git clean *)"],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)"
+    ],
     "defaultMode": "auto",
-    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
+    "additionalDirectories": [
+      "~/Notes",
+      "~/Development",
+      "~/.claude"
+    ]
   },
   "model": "opus[1m]",
   "hooks": {
