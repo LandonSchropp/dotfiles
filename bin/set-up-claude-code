@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Installs the Claude Code skills and integrations that rcup can't symlink: the caveman
+# compression skills (installed from GitHub) and peon-ping sound notifications (installed from the
+# Homebrew package defined in the Brewfile). Safe to run repeatedly.
+
+# Install the caveman skills.
+npx -y skills add JuliusBrussee/caveman \
+  --global \
+  --agent claude-code \
+  --yes \
+  --skill caveman \
+  --skill caveman-commit \
+  --skill caveman-compress \
+  --skill caveman-review
+
+# Set up peon-ping. The package itself is installed by set-up-homebrew via the Brewfile; this wires
+# up the sound packs and registers the Claude Code hooks.
+if ! command -v peon-ping-setup >/dev/null 2>&1; then
+  echo "Error: peon-ping-setup was not found. Run set-up-homebrew first to install peon-ping." >&2
+  exit 1
+fi
+
+peon-ping-setup
