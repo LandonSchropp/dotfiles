@@ -9,8 +9,14 @@ fi
 resolved=$(readlink -f "$file_path")
 dotfiles_root="$HOME/.dotfiles"
 
+# Skip Claude harness settings files — the harness writes these with its own
+# formatting and running prettier creates a perpetual formatting diff.
+if [[ "$resolved" == "$dotfiles_root/tag-"*"/claude/settings.json" ]]; then
+  exit 0
+fi
+
 if [[ "$resolved" == "$dotfiles_root"/* ]]; then
   pnpm dlx prettier --ignore-path "$dotfiles_root/.prettierignore" --write "$resolved"
 else
-  pnpm dlx prettier --write "$resolved"
+  pnpm exec prettier --write "$resolved"
 fi
