@@ -5,7 +5,7 @@ set -euo pipefail
 hostname="$(hostname -s)"
 
 if [[ "$hostname" == OHR* ]]; then
-  tag="oyster"
+  tag="work"
 else
   tag="personal"
 fi
