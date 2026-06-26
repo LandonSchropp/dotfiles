@@ -49,11 +49,19 @@
       "Read(**/secrets/**)",
       "Read(**/credentials/**)"
     ],
-    "ask": ["Bash(git commit *)", "Bash(git reset *)", "Bash(git clean *)"],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)"
+    ],
     "defaultMode": "auto",
-    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
+    "additionalDirectories": [
+      "~/Notes",
+      "~/Development",
+      "~/.claude"
+    ]
   },
-  "model": "sonnet[1m]",
+  "model": "opus[1m]",
   "skillOverrides": {
     "slack:standup": "off",
     "slack:summarize-channel": "off",
@@ -245,6 +253,7 @@
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
+    "ls-interactivity@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
     "oyster-development@glorious-oyster-agent-toolkit": true,
@@ -271,6 +280,7 @@
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
+  "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "tui": "fullscreen"
