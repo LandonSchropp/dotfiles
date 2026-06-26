@@ -18,6 +18,11 @@
 - Present changes incrementally to allow for feedback before proceeding
 - Make atomic changes that can be easily understood and validated
 
+## Working Directory
+
+- The session's primary working directory is the source of truth for which checkout to edit. When a repository is checked out in multiple places, such as a dedicated worktree alongside another clone, always edit the copy under the current working directory.
+- Never navigate to a same-named checkout elsewhere on disk (for example `~/Development/<repo>`) to make changes. Resolve repository-relative paths against the working directory.
+
 ## Terminal Best Practices
 
 - Use the native `trash` command in place of the `rm` command when removing files.
