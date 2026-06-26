@@ -266,5 +266,6 @@
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "tui": "fullscreen"
 }
