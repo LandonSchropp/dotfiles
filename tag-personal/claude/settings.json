@@ -50,7 +50,6 @@
       "Read(~/Notes/Resources/Journal/**)"
     ],
     "ask": [
-      "Bash(git commit *)",
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],

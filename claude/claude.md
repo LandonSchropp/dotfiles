@@ -2,6 +2,7 @@
 
 @/Users/landon/Development/agent-toolkit/references/using-skills.md
 @/Users/landon/Development/agent-toolkit/references/test-driven-development.md
+@/Users/landon/Development/agent-toolkit/references/reviews.md
 
 ## Communication Guidelines
 
@@ -41,8 +42,7 @@
 
 - Aim for atomic commits, with commits representing single, self-contained changes.
 - You MUST invoke the `git-atomic-commit` skill before making any changes and follow its guidelines.
-- Changes must always be presented for review before committing. Never commit without explicit user review and approval. Feedback during review is not approval.
-- Never stage changes for review unless explicitly requested.
+- Before creating a commit, follow the review process in `references/reviews.md`: present the changes for review and commit only after the user signs off.
 
 ## Code Quality
 
