@@ -1,0 +1,19 @@
+{
+  "theme": "tokyo-night",
+  "display": {
+    "style": "capsule",
+    "colorCompatibility": "auto",
+    "lines": [
+      {
+        "segments": {
+          "model": { "enabled": true },
+          "version": { "enabled": true },
+          "context": { "enabled": true, "showPercentageOnly": false },
+          "block": { "enabled": true, "type": "weighted", "burnType": "none" },
+          "session": { "enabled": true, "type": "tokens", "costSource": "official" },
+          "today": { "enabled": true, "type": "cost" }
+        }
+      }
+    ]
+  }
+}
