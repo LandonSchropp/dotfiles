@@ -104,4 +104,33 @@ return {
       enabled = false,
     },
   },
+  config = function(_, opts)
+    require("render-markdown").setup(opts)
+
+    -- Monkey patch Render Markdown to pad callout overlays out to the width of the raw line so the
+    -- text underneath is fully covered.
+    --
+    -- NOTE: This is very fragile. This could easily break in the future. I'm only doing it because
+    -- I use Neovim to read and edit markdown so much.
+    local quote = require("render-markdown.render.markdown.quote")
+    ---@diagnostic disable-next-line: invisible -- Allow editing `title` to monkey patch it.
+    local original_title = quote.title
+
+    ---@diagnostic disable-next-line: invisible -- Allow reassigning the `title` to monkey patch it.
+    quote.title = function(node, config)
+      local rendered = original_title(node, config) or config.rendered
+      local content = node:parent("inline")
+
+      if content then
+        local line = vim.split(content.text, "\n", { plain = true })[1]
+        local padding = vim.fn.strdisplaywidth(line) - vim.fn.strdisplaywidth(rendered)
+
+        if padding > 0 then
+          rendered = rendered .. string.rep(" ", padding)
+        end
+      end
+
+      return rendered
+    end
+  end,
 }
