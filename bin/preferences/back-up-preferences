@@ -49,8 +49,8 @@ while IFS= read -r app; do
     source="${file/#\~/$HOME}"
 
     if [[ ! -f "$source" ]]; then
-      echo "Error: $source not found." >&2
-      exit 1
+      echo -e "\033[0;33mSkipping $name: $(basename "$source") not installed\033[0m" >&2
+      continue
     fi
 
     destination="$destination_directory/$(basename "$source")"
