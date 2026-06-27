@@ -41,6 +41,12 @@
     "files": ["~/Library/Preferences/com.raycast.macos.plist"]
   },
   {
+    "name": "Shottr",
+    "files": [
+      "~/Library/Containers/cc.ffitch.shottr/Data/Library/Preferences/cc.ffitch.shottr.plist"
+    ]
+  },
+  {
     "name": "Thaw",
     "files": ["~/Library/Preferences/com.stonerl.Thaw.plist"]
   }
