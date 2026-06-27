@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -Eeuo pipefail
 
 # Ensure git-town runs without requiring a TTY (e.g. under launchd)
 export TERM=dumb
@@ -24,10 +24,13 @@ notify_error() {
   osascript -e "display notification \"$error_message\" with title \"Daily Sync Failed\" sound name \"Basso\""
 }
 
-trap 'notify_error "Check logs at ~/Library/Logs/com.landonschropp.daily-sync/"' ERR
+# Catch unexpected errors outside the per-repository handling below.
+trap 'notify_error "Daily sync failed with unexpected error."' ERR
 
 # Syncs the default branch of a single repository via git-town, returning to
-# the original branch when done.
+# the original branch when done. On failure, backs the sync out with
+# `git town undo` so the repository is left clean for the next run, notifies,
+# and returns non-zero.
 sync_repository() {
   local repository="$1"
   local name
@@ -35,23 +38,46 @@ sync_repository() {
 
   if [[ ! -d "$repository" ]]; then
     log "$name not found at $repository, skipping..."
-    return
+    return 0
   fi
 
   log "Syncing $name..."
-  cd "$repository"
+
+  if ! cd "$repository"; then
+    log "Error: failed to change into $repository." >&2
+    notify_error "Daily sync failed for $name."
+    return 1
+  fi
 
   local -r original_branch=$(git branch --show-current)
 
-  git checkout "$(git default-branch)"
-  /opt/homebrew/bin/git-town sync
+  if ! git checkout "$(git default-branch)"; then
+    log "Error: failed to check out the default branch in $name." >&2
+    notify_error "Daily sync failed for $name."
+    return 1
+  fi
+
+  if ! /opt/homebrew/bin/git-town sync; then
+    log "Error: git-town sync failed in $name, backing out with git town undo." >&2
+    /opt/homebrew/bin/git-town undo || log "Error: git town undo failed in $name." >&2
+    git checkout "$original_branch" || true
+    notify_error "Daily sync failed for $name."
+    return 1
+  fi
+
   git checkout "$original_branch"
 }
 
 log "Starting daily sync..."
 
+exit_code=0
+
 for repository in "${repositories[@]}"; do
-  sync_repository "$repository"
+  sync_repository "$repository" || exit_code=1
 done
+
+if (( exit_code != 0 )); then
+  exit 1
+fi
 
 log "Daily sync completed successfully"
