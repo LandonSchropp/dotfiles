@@ -2,8 +2,12 @@
 
 set -Eeuo pipefail
 
-# Ensure git-town runs without requiring a TTY (e.g. under launchd)
+# Ensure git-town runs without requiring a TTY (e.g. under launchd). TERM=dumb keeps git from
+# invoking a pager; GIT_EDITOR/GIT_SEQUENCE_EDITOR turn any editor launch into a no-op so a rebase
+# step can't fail with "only a dumb terminal available".
 export TERM=dumb
+export GIT_EDITOR=true
+export GIT_SEQUENCE_EDITOR=true
 
 # Configuration
 repositories=(
@@ -27,10 +31,9 @@ notify_error() {
 # Catch unexpected errors outside the per-repository handling below.
 trap 'notify_error "Daily sync failed with unexpected error."' ERR
 
-# Syncs the default branch of a single repository via git-town, returning to
-# the original branch when done. On failure, backs the sync out with
-# `git town undo` so the repository is left clean for the next run, notifies,
-# and returns non-zero.
+# Syncs the default branch of a single repository via git-town, returning to the original branch
+# when done. On failure, backs the sync out with `git town undo` so the repository is left clean for
+# the next run, notifies, and returns non-zero.
 sync_repository() {
   local repository="$1"
   local name
@@ -76,7 +79,7 @@ for repository in "${repositories[@]}"; do
   sync_repository "$repository" || exit_code=1
 done
 
-if (( exit_code != 0 )); then
+if ((exit_code != 0)); then
   exit 1
 fi
 
