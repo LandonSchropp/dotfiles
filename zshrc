@@ -19,7 +19,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # shellcheck disable=SC2034
 plugins=(
   colored-man-pages
-  command-not-found
   httpie
   mise
   rails
