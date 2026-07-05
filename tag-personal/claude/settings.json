@@ -253,7 +253,8 @@
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
-    "ls-orc@landonschropp": true
+    "ls-orc@landonschropp": true,
+    "frontend-design@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
