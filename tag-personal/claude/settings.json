@@ -266,7 +266,7 @@
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
+  "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "voiceEnabled": true
 }
