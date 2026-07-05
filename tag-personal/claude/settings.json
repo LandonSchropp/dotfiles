@@ -252,7 +252,8 @@
     "ls-interactivity@landonschropp": true,
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
-    "ls-notes@landonschropp": true
+    "ls-notes@landonschropp": true,
+    "ls-orc@landonschropp": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
