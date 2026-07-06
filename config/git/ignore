@@ -10,7 +10,7 @@ tmp/**/*
 *.pyc
 .aider*
 **/.claude/settings.local.json
-mise.toml
+mise.local.toml
 claude.local.md
 /.ai
 /.agents
