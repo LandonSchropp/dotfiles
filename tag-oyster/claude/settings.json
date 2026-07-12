@@ -244,6 +244,7 @@
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
+    "ls-writing@landonschropp": true,
     "ls-orc@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
