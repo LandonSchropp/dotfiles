@@ -37,6 +37,7 @@ keybind = command+w=unbind
 keybind = command+n=unbind
 keybind = command+j=unbind
 keybind = command+k=unbind
+keybind = command+shift+w=unbind
 
 # Disable the toggle fullscreen keybinding.
 keybind = super+enter=unbind

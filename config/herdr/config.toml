@@ -5,6 +5,7 @@ new_tab = "cmd+t"
 close_tab = "cmd+w"
 previous_workspace = "cmd+k"
 next_workspace = "cmd+j"
+close_workspace = "cmd+shift+w"
 
 [[keys.command]]
 key = "cmd+n"
