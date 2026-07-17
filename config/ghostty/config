@@ -29,13 +29,11 @@ auto-update = download
 cursor-style = "block"
 shell-integration-features = no-cursor
 
-# Add more accessible keybindings for tmux commands. The `\x13` string is the `control+s` ASDII
-# character.
-#
-# TODO: Figure out how to run the tmux commands directly rather than triggering tmux keybindings.
-keybind = command+h=text:\x13p
-keybind = command+l=text:\x13n
-keybind = command+m=text:\x13s
+# Release these keys instead of letting Ghostty intercept them, so herdr can bind them directly.
+keybind = command+h=unbind
+keybind = command+l=unbind
+keybind = command+t=unbind
+keybind = command+w=unbind
 
 # Disable the toggle fullscreen keybinding.
 keybind = super+enter=unbind

@@ -1,3 +1,9 @@
+[keys]
+previous_tab = "cmd+h"
+next_tab = "cmd+l"
+new_tab = "cmd+t"
+close_tab = "cmd+w"
+
 [ui]
 agent_panel_sort = "spaces"
 show_agent_labels_on_pane_borders = false
