@@ -257,13 +257,15 @@
     "ls-scripting@landonschropp": true,
     "ls-typescript@landonschropp": true,
     "ls-ruby@landonschropp": true,
-    "ls-slack@landonschropp": true,
     "ls-development-environment@landonschropp": true,
     "ls-interactivity@landonschropp": true,
     "ls-planning@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
-    "ls-interactivity@landonschropp": true
+    "ls-writing@landonschropp": true,
+    "ls-orc@landonschropp": true,
+    "frontend-design@claude-plugins-official": true,
+    "impeccable@impeccable": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
@@ -271,11 +273,17 @@
         "source": "directory",
         "path": "/Users/landon/Development/agent-toolkit"
       }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
     }
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
+  "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "voiceEnabled": true
 }
