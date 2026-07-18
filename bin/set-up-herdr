@@ -22,3 +22,6 @@ herdr integration install claude
 cp "$backup" "$settings"
 
 herdr plugin install cloudmanic/herdr-plus --yes
+
+# Install the Herdr agent skill so Claude Code can operate Herdr from inside a pane.
+npx --yes skills add ogulcancelik/herdr --skill herdr -g
