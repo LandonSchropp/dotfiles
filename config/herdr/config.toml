@@ -13,6 +13,9 @@ type = "plugin_action"
 command = "cloudmanic.herdr-plus.projects"
 description = "open project picker"
 
+[theme]
+name = "tokyo-night"
+
 [ui]
 agent_panel_sort = "spaces"
 show_agent_labels_on_pane_borders = false
