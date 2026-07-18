@@ -24,6 +24,7 @@ Run these setup scripts in order after cloning the repository:
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim with AstroNvim
 ~/.dotfiles/bin/set-up-tmux          # Configure tmux
 ~/.dotfiles/bin/set-up-claude-code   # Install caveman skills and peon-ping for Claude Code
+~/.dotfiles/bin/set-up-herdr         # Install and configure Herdr
 ```
 
 ### Development Tools Configuration

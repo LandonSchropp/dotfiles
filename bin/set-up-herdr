@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Installs herdr, its Claude Code integration, and its plugins. Herdr uses its own installer rather
+# than Homebrew so it can self-update. Idempotent and safe to run repeatedly.
+
+if ! command -v herdr >/dev/null 2>&1; then
+  curl -fsSL https://herdr.dev/install.sh | sh
+fi
+
+# The Herdr integration installer reformats Claude's settings, causing a messy diff. Let's create a
+# backup to ensure that they're properly managed.
+settings="$HOME/.claude/settings.json"
+backup="$(mktemp)"
+cp "$settings" "$backup"
+
+# Integrations
+herdr integration install claude
+
+# Restore the previous settings.
+cp "$backup" "$settings"
+
+herdr plugin install cloudmanic/herdr-plus --yes
