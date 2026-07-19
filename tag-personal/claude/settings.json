@@ -264,6 +264,7 @@
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
     "ls-orc@landonschropp": true,
+    "ls-project@landonschropp": true,
     "frontend-design@claude-plugins-official": true,
     "impeccable@impeccable": true,
     "rust-analyzer-lsp@claude-plugins-official": true

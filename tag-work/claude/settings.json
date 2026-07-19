@@ -264,6 +264,7 @@
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
     "ls-orc@landonschropp": true,
+    "ls-project@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
     "oyster-development@glorious-oyster-agent-toolkit": true,
