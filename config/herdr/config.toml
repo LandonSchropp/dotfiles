@@ -1,3 +1,5 @@
+onboarding = false
+
 [keys]
 previous_tab = "cmd+h"
 next_tab = "cmd+l"
