@@ -17,7 +17,7 @@ help = "cmd+/"
 [[keys.command]]
 key = "cmd+n"
 type = "plugin_action"
-command = "cloudmanic.herdr-plus.projects"
+command = "landonschropp.herdr-project.project"
 description = "open project picker"
 
 [theme]
