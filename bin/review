@@ -5,8 +5,8 @@ set -euo pipefail
 function print_help() {
   echo "Usage: review [revdiff-args...]"
   echo
-  echo "Run revdiff and paste its annotations into the first tmux window named"
-  echo "'claude' in the current session, then press Enter."
+  echo "Run revdiff and paste its annotations into the Claude agent in the current"
+  echo "herdr workspace, then press Enter."
   echo
   echo "All arguments are forwarded to revdiff."
   echo
@@ -35,18 +35,19 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -z "${TMUX:-}" ]]; then
-  echo "Error: review must be run inside a tmux session." >&2
+if [[ -z "${HERDR_WORKSPACE_ID:-}" ]]; then
+  echo "Error: review must be run inside herdr." >&2
   exit 1
 fi
 
-session=$(tmux display-message -p '#{session_name}')
-
-target=$(tmux list-windows -t "$session" -F '#{window_id}	#{window_name}' \
-  | awk -F'\t' '$2 == "claude" { print $1; exit }')
+target=$(herdr agent list |
+  jq -r --arg workspace "$HERDR_WORKSPACE_ID" \
+    'first(.result.agents[]
+       | select(.agent == "claude" and .workspace_id == $workspace)
+       | .pane_id) // empty')
 
 if [[ -z "$target" ]]; then
-  echo "Error: No window named 'claude' found in session '$session'." >&2
+  echo "Error: No Claude agent found in workspace '$HERDR_WORKSPACE_ID'." >&2
   exit 1
 fi
 
@@ -59,9 +60,11 @@ if [[ ! -s "$output_file" ]]; then
   exit 0
 fi
 
-# TODO: Remove this stdout fallback once the tmux paste path is reliable.
+# TODO: Remove this stdout fallback once the herdr paste path is reliable.
 cat "$output_file"
 
-tmux load-buffer "$output_file"
-tmux paste-buffer -p -t "$target"
-tmux send-keys -t "$target" Enter
+# Bracketed paste, so newlines don't submit a message each.
+herdr agent send "$target" "$(printf '\033[200~%s\033[201~' "$(cat "$output_file")")" >/dev/null
+
+# Submit the pasted block.
+herdr agent send "$target" $'\n' >/dev/null
