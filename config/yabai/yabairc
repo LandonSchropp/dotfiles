@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-# Update profile when display changes
-yabai -m signal \
-  --add event=display_changed \
-  action="$HOME/.dotfiles/config/window-manager/switch-profile"
+# Update profile when displays are connected, disconnected or focused
+for event in display_added display_removed display_changed; do
+  yabai -m signal \
+    --add event="$event" \
+    action="$HOME/.dotfiles/config/window-manager/switch-profile"
+done
 
 # Arrange windows when window events occur
 for event in window_created window_destroyed window_minimized window_deminimized; do
