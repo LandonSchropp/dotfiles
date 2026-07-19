@@ -18,7 +18,7 @@ help = "cmd+/"
 key = "cmd+n"
 type = "plugin_action"
 command = "landonschropp.herdr-project.project"
-description = "open project picker"
+description = "new workspace"
 
 [[keys.command]]
 key = "cmd+shift+n"
