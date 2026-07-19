@@ -20,6 +20,12 @@ type = "plugin_action"
 command = "landonschropp.herdr-project.project"
 description = "open project picker"
 
+[[keys.command]]
+key = "cmd+shift+n"
+type = "plugin_action"
+command = "landonschropp.herdr-project.worktree"
+description = "new worktree"
+
 [theme]
 name = "tokyo-night"
 
