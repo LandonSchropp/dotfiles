@@ -11,7 +11,7 @@ tmp/**/*
 .aider*
 **/.claude/settings.local.json
 mise.local.toml
-claude.local.md
+*.local.md
 /.ai
 /.agents
 git-town.toml
