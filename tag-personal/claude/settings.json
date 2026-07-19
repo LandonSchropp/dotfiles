@@ -90,25 +90,9 @@
             "command": "~/.claude/hooks/shfmt"
           }
         ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "orc hook status"
-          }
-        ]
       }
     ],
     "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
       {
         "hooks": [
           {
@@ -125,14 +109,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "/Users/landon/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
@@ -141,14 +117,6 @@
       }
     ],
     "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
       {
         "hooks": [
           {
@@ -263,7 +231,6 @@
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
-    "ls-orc@landonschropp": true,
     "ls-project@landonschropp": true,
     "frontend-design@claude-plugins-official": true,
     "impeccable@impeccable": true,

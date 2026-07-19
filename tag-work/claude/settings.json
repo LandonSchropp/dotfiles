@@ -103,14 +103,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "/Users/landon/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
@@ -123,14 +115,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "/Users/landon/.claude/hooks/peon-ping/peon.sh",
             "timeout": 10,
             "async": true
@@ -139,14 +123,6 @@
       }
     ],
     "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "orc hook status"
-          }
-        ]
-      },
       {
         "hooks": [
           {
@@ -263,7 +239,6 @@
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
-    "ls-orc@landonschropp": true,
     "ls-project@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
