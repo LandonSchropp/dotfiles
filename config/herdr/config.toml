@@ -3,9 +3,11 @@ previous_tab = "cmd+h"
 next_tab = "cmd+l"
 new_tab = "cmd+t"
 close_tab = "cmd+w"
+rename_tab = "cmd+r"
 previous_workspace = "cmd+k"
 next_workspace = "cmd+j"
 close_workspace = "cmd+shift+w"
+rename_workspace = "cmd+shift+r"
 
 [[keys.command]]
 key = "cmd+n"
