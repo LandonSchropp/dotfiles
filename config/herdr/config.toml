@@ -8,6 +8,9 @@ previous_workspace = "cmd+k"
 next_workspace = "cmd+j"
 close_workspace = "cmd+shift+w"
 rename_workspace = "cmd+shift+r"
+switch_workspace = "cmd+1..9"
+toggle_sidebar = "cmd+s"
+help = "cmd+/"
 
 [[keys.command]]
 key = "cmd+n"

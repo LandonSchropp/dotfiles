@@ -40,6 +40,28 @@ keybind = command+j=unbind
 keybind = command+k=unbind
 keybind = command+shift+w=unbind
 keybind = command+shift+r=unbind
+keybind = command+s=unbind
+keybind = command+slash=unbind
+# Digits need both forms: Ghostty binds goto_tab on the physical key, and each
+# unbind only clears its own representation.
+keybind = command+1=unbind
+keybind = command+2=unbind
+keybind = command+3=unbind
+keybind = command+4=unbind
+keybind = command+5=unbind
+keybind = command+6=unbind
+keybind = command+7=unbind
+keybind = command+8=unbind
+keybind = command+9=unbind
+keybind = command+digit_1=unbind
+keybind = command+digit_2=unbind
+keybind = command+digit_3=unbind
+keybind = command+digit_4=unbind
+keybind = command+digit_5=unbind
+keybind = command+digit_6=unbind
+keybind = command+digit_7=unbind
+keybind = command+digit_8=unbind
+keybind = command+digit_9=unbind
 
 # Disable the toggle fullscreen keybinding.
 keybind = super+enter=unbind
