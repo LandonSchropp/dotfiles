@@ -19,7 +19,8 @@ function tmux-create {
   # If the session is available in tmuxinator, start it. Otherwise, fall back to the default
   # tmuxinator configuration.
   if tmuxinator-list-sessions | grep -Fx "$session_name" >/dev/null; then
-    local config_name=$(
+    local config_name
+    config_name=$(
       ruby -r yaml -e 'print YAML.load(STDIN.read)["name"]' \
         <"$HOME/.config/tmuxinator/$session_name.yml"
     )
@@ -91,14 +92,16 @@ function tmux-kill {
 
 # Move a tmux window to another position
 function tmux-move {
-  local target_window="$(echo $argv[1])"
+  local target_window
+  target_window="$(echo $argv[1])"
 
   if [ "$target_window" -lt 1 ] || [ "$target_window" -gt "$(tmux-number-of-windows)" ]; then
     echo -e "The target window must be between 1 and $(tmux-number-of-windows)."
     return 1
   fi
 
-  local starting_window=$(tmux-current-window)
+  local starting_window
+  starting_window=$(tmux-current-window)
 
   if [ "$target_window" -lt "$(tmux-current-window)" ]; then
     for i in $(seq "$target_window" "$(tmux-current-window)"); do
