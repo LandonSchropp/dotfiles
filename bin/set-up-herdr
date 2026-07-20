@@ -27,6 +27,9 @@ if [ ! -d "$herdr_project_directory" ]; then
   git clone https://github.com/LandonSchropp/herdr-project.git "$herdr_project_directory"
 fi
 
+# `herdr plugin link` doesn't run the plugin's build step, so install its dependencies directly.
+(cd "$herdr_project_directory" && bun install --frozen-lockfile)
+
 herdr plugin link "$herdr_project_directory"
 
 # Install the Herdr agent skill so Claude Code can operate Herdr from inside a pane.
