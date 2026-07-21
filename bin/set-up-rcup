@@ -13,11 +13,11 @@ fi
 rcup \
   -t "$tag" \
   -v \
-  -x config/window-manager \
   -U Library \
   Library \
   claude \
   config \
+  local \
   tmux.conf \
   zprofile \
   zshenv \
