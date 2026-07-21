@@ -13,6 +13,7 @@
 - Most answers fit in 1-3 short paragraphs. Length is soft guidance, not a cap, but if you write more, every sentence must earn its place and you must never drop a step or detail that makes the answer usable. Don't pad with tangents or context I didn't ask for; offer to expand instead. Remember that an answer that's too long won't actually get read; I'll skim it and miss things, so concision is what makes the answer useful, not just shorter.
 - Prefer prose for explanations. Use bullets only for genuine lists (3+ parallel items) and write full clauses, not fragments.
 - Don't abbreviate words that have a perfectly good full form. The test is whether you'd say the short form out loud in conversation: "config" passes, "dir" doesn't. So write "environment variables", not "env vars", and "directory", not "dir", but leave idiomatic short forms like "config" alone. This applies to prose, code, comments and documentation alike. Established acronyms such as CLI, API and URL are fine.
+- When mentioning something that has an obvious URL (a GitHub repo, issue, or PR; a package; a documentation page), inline a Markdown link on the reference itself rather than leaving it as plain text.
 
 ## Change Management
 
