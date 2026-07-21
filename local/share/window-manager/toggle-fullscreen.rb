@@ -12,7 +12,7 @@ screen = Display.main.visible_rectangle
 # If the window is already fullscreen, restore the workspace layout. Otherwise, expand the window to
 # fill the screen.
 if window.rectangle == screen
-  exec("#{__dir__}/arrange-windows", Flashspace.profile, Flashspace.workspace)
+  exec("#{__dir__}/arrange-windows.rb", Flashspace.profile, Flashspace.workspace)
 else
   window.update_position(screen)
 end

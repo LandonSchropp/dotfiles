@@ -4,12 +4,12 @@
 for event in display_added display_removed display_changed; do
   yabai -m signal \
     --add event="$event" \
-    action="$HOME/.dotfiles/local/share/window-manager/switch-profile"
+    action="switch-profile"
 done
 
 # Arrange windows when window events occur
 for event in window_created window_destroyed window_minimized window_deminimized; do
   yabai -m signal \
     --add event="$event" \
-    action="$HOME/.dotfiles/local/share/window-manager/arrange-windows"
+    action="arrange-windows"
 done
