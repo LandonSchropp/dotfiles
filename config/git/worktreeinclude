@@ -1,0 +1,11 @@
+# Untracked files copied from a repository's main checkout into every new Git worktree, in
+# .gitignore syntax. A repository's own .worktreeinclude layers over this file and can cancel a
+# pattern here by negating it.
+
+.env
+.env.*
+.envrc
+mise.local.toml
+*.local.md
+**/.claude/settings.local.json
+git-town.toml
