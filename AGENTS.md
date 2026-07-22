@@ -48,8 +48,8 @@ The Neovim configuration is based on AstroNvim v5 with extensive customization:
 ## Repository Structure
 
 ```
-bin/                    # Setup scripts for various tools
-config/
+bin/                    # Scripts for setting up and maintaining this repo (not on PATH)
+config/                 # Symlinked to ~/.config (XDG_CONFIG_HOME)
   ├── nvim/             # Neovim configuration (AstroNvim-based)
   │   ├── lua/
   │   │   ├── plugins/  # Custom plugin configurations
@@ -57,6 +57,9 @@ config/
   │   └── init.lua      # Neovim entry point
   ├── mise/             # Runtime version manager config
   └── zsh/              # Zsh configuration files
+local/                  # Symlinked to ~/.local (XDG_DATA_HOME / XDG_BIN_HOME)
+  ├── bin/              # Binstubs for purpose-built utilities, on PATH
+  └── share/            # Purpose-built utility implementations, one folder each
 zshrc                   # Main Zsh configuration
 tmux.conf               # tmux configuration
 Brewfile                # Homebrew package definitions
@@ -87,6 +90,12 @@ Brewfile                # Homebrew package definitions
 
 - LaunchAgent services in `Library/LaunchAgents/` for system automation (screen tint control, dictionary sync)
 - Karabiner keyboard remapping configuration in `config/karabiner/karabiner.json`
+
+### Purpose-Built Utilities
+
+Some tasks are too involved for a single script but not substantial enough to warrant their own repository. These live in `local/share/<name>/`: one file per utility, plus any shared support code and data. These are symlinked to `~/.local/share/<name>` (`$XDG_DATA_HOME`). Each command is exposed on `PATH` by symlinking it into `local/bin/`. Because `local` is rcup-linked to `~/.local`, these symlinks land in `~/.local/bin`, which is on `PATH` via `XDG_BIN_HOME` — no extra wiring needed.
+
+This is distinct from `bin/`, which only holds scripts for setting up and maintaining this repository itself (`set-up-*`, `preferences/*`). Those are invoked by path from within the repo and are never exposed on `PATH`.
 
 ### Development Tools
 
