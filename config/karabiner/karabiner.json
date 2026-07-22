@@ -15,7 +15,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/bin/zsh -c '~/.dotfiles/config/window-manager/toggle-fullscreen'"
+                    "shell_command": "/bin/zsh -c '~/.local/bin/toggle-fullscreen'"
                   }
                 ],
                 "type": "basic"
