@@ -9,11 +9,15 @@ export TERM=dumb
 export GIT_EDITOR=true
 export GIT_SEQUENCE_EDITOR=true
 
-# Configuration
+# Use nullglob so repository glob patterns that match nothing locally drop out silently rather than
+# being passed through as a literal path.
+shopt -s nullglob
+
+# The repositories to sync.
 repositories=(
   "$HOME/Development/agent-toolkit"
-  "$HOME/Development/orc"
-  "$HOME/Development/writing-toolkit"
+  "$HOME/Development/herdr-"*
+  "$HOME/Development/obsidian-"*
   "$HOME/.dotfiles"
 )
 
