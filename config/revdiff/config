@@ -3,4 +3,3 @@ theme = tokyonight-storm
 compact = true
 wrap = true
 vim-motion = true
-untracked = true
