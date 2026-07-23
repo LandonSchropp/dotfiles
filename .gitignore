@@ -4,3 +4,6 @@
 firmware/*.uf2
 repro.lua
 .repro
+
+config/karabiner/*
+!config/karabiner/karabiner.json

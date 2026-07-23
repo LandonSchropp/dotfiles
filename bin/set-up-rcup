@@ -14,6 +14,7 @@ rcup \
   -t "$tag" \
   -v \
   -U Library \
+  -x config/karabiner/karabiner.json \
   Library \
   claude \
   config \
@@ -22,3 +23,9 @@ rcup \
   zprofile \
   zshenv \
   zshrc
+
+# HACK: Karabiner-Elements saves karabiner.json by writing a new file and renaming it over the
+# target, which clobbers any symlink placed at that path. In order to work around this, I have to
+# symlink the config directory instead.
+rm -rf "$HOME/.config/karabiner"
+ln -s "$HOME/.dotfiles/config/karabiner" "$HOME/.config/karabiner"
