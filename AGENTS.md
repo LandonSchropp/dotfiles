@@ -95,7 +95,7 @@ Brewfile                # Homebrew package definitions
 
 Some tasks are too involved for a single script but not substantial enough to warrant their own repository. These live in `local/share/<name>/`: one file per utility, plus any shared support code and data. These are symlinked to `~/.local/share/<name>` (`$XDG_DATA_HOME`). Each command is exposed on `PATH` by symlinking it into `local/bin/`. Because `local` is rcup-linked to `~/.local`, these symlinks land in `~/.local/bin`, which is on `PATH` via `XDG_BIN_HOME` — no extra wiring needed.
 
-This is distinct from `bin/`, which only holds scripts for setting up and maintaining this repository itself (`set-up-*`, `preferences/*`). Those are invoked by path from within the repo and are never exposed on `PATH`.
+This is distinct from `bin/`, which only holds scripts for setting up and maintaining this repository itself (`set-up-*`). Those are invoked by path from within the repo and are never exposed on `PATH`.
 
 ### Development Tools
 
