@@ -6,7 +6,7 @@
     <string>com.landonschropp.daily-update</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/landon/.dotfiles/bin/daily-update</string>
+      <string>/Users/landon/.local/bin/update-tools</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.daily-update/stdout.log</string>
