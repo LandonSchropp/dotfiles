@@ -2,15 +2,6 @@
 
 set -euo pipefail
 
-# Function to send notification on error
-notify_error() {
-  local error_message="$1"
-  osascript -e "display notification \"$error_message\" with title \"Update Tools Failed\" sound name \"Basso\""
-}
-
-# Trap errors and send notification
-trap 'notify_error "Check logs at ~/Library/Logs/com.landonschropp.daily-update/"' ERR
-
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
 }
