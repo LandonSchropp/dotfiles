@@ -5,7 +5,7 @@ set -euo pipefail
 # Function to send notification on error
 notify_error() {
   local error_message="$1"
-  osascript -e "display notification \"$error_message\" with title \"Daily Update Failed\" sound name \"Basso\""
+  osascript -e "display notification \"$error_message\" with title \"Update Tools Failed\" sound name \"Basso\""
 }
 
 # Trap errors and send notification
@@ -26,6 +26,7 @@ update() {
   local update_command="$3"
 
   log "Updating $name..."
+
   if command -v "$command_to_check" >/dev/null 2>&1; then
     eval "$update_command"
   else
@@ -33,7 +34,7 @@ update() {
   fi
 }
 
-log "Starting daily update..."
+log "Starting tool updates..."
 
 update "TL/DR" "/opt/homebrew/bin/tldr" "/opt/homebrew/bin/tldr --update"
 update "Claude Code" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade --cask claude"
@@ -41,4 +42,4 @@ update "Mise" "/opt/homebrew/bin/mise" "/opt/homebrew/bin/mise install"
 update "GitHub CLI" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade gh"
 update "Oh My Zsh" "$HOME/.oh-my-zsh/tools/upgrade.sh" "$HOME/.oh-my-zsh/tools/upgrade.sh -v silent"
 
-log "Daily update completed successfully"
+log "Tool updates completed successfully"

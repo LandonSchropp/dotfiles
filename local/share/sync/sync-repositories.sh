@@ -30,11 +30,11 @@ log() {
 # Error notification
 notify_error() {
   local error_message="$1"
-  osascript -e "display notification \"$error_message\" with title \"Daily Sync Failed\" sound name \"Basso\""
+  osascript -e "display notification \"$error_message\" with title \"Repository Sync Failed\" sound name \"Basso\""
 }
 
 # Catch unexpected errors outside the per-repository handling below.
-trap 'notify_error "Daily sync failed with unexpected error."' ERR
+trap 'notify_error "Repository sync failed with unexpected error."' ERR
 
 # Syncs the default branch of a single repository via git-town, returning to the original branch
 # when done. On failure, backs the sync out with `git town undo` so the repository is left clean for
@@ -53,7 +53,7 @@ sync_repository() {
 
   if ! cd "$repository"; then
     log "Error: failed to change into $repository." >&2
-    notify_error "Daily sync failed for $name."
+    notify_error "Repository sync failed for $name."
     return 1
   fi
 
@@ -61,7 +61,7 @@ sync_repository() {
 
   if ! git checkout "$(git default-branch)"; then
     log "Error: failed to check out the default branch in $name." >&2
-    notify_error "Daily sync failed for $name."
+    notify_error "Repository sync failed for $name."
     return 1
   fi
 
@@ -69,14 +69,14 @@ sync_repository() {
     log "Error: git-town sync failed in $name, backing out with git town undo." >&2
     /opt/homebrew/bin/git-town undo || log "Error: git town undo failed in $name." >&2
     git checkout "$original_branch" || true
-    notify_error "Daily sync failed for $name."
+    notify_error "Repository sync failed for $name."
     return 1
   fi
 
   git checkout "$original_branch"
 }
 
-log "Starting daily sync..."
+log "Starting repository sync..."
 
 exit_code=0
 
@@ -88,4 +88,4 @@ if ((exit_code != 0)); then
   exit 1
 fi
 
-log "Daily sync completed successfully"
+log "Repository sync completed successfully"
