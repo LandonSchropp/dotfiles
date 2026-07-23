@@ -50,7 +50,6 @@
       "Read(**/credentials/**)"
     ],
     "ask": [
-      "Bash(git commit *)",
       "Bash(git reset *)",
       "Bash(git clean *)"
     ],
