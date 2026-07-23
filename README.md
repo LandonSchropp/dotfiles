@@ -60,19 +60,28 @@ anything that pops up.
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
 [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) on GitHub.
 
-### Preferences
+## Utilities
 
-A subset of app preferences are backed up to and restored from iCloud Drive. The list of apps is
-configured in `config/preferences/apps.json`.
+Beyond the setup scripts, this repository includes a handful of small, purpose-built utilities.
+These are too involved for a single script, but not substantial enough to warrant their own
+repository. These live in `local/share/<name>` and are exposed as commands on `PATH` via
+`local/bin`.
 
-To back up preferences:
+### Window Manager
 
-```sh
-~/.dotfiles/bin/preferences/back-up-preferences
-```
+The window manager arranges windows into configurable per-workspace layouts, switches
+[FlashSpace](https://flashspace.dev/) profiles based on the connected display, and toggles the
+focused window between fullscreen and its arranged layout. It's wired into Yabai, FlashSpace, and
+Karabiner and does not need to be run by hand.
 
-To restore preferences on a new machine:
+### sync
 
-```sh
-~/.dotfiles/bin/preferences/restore-preferences
-```
+The sync utilities keep my machines updated an in-sync. They include the following:
+
+- `sync-repositories`: Syncs the default branch of my active development repositories via
+  [git-town](https://www.git-town.com/).
+- `sync-dictionaries`: Merges the local, Neovim, and iCloud spelling dictionaries.
+- `back-up-preferences` / `restore-preferences`: Backs up and restores a subset of app preferences
+  to and from iCloud Drive. The list of apps is configured in `config/preferences/apps.json`. Run
+  `restore-preferences` when setting up a new machine.
+- `update-tools`: Upgrades a handful of installed command-line tools.
