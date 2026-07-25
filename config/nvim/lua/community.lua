@@ -5,6 +5,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.editing-support.other-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.motion.mini-ai" },
