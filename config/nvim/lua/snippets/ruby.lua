@@ -6,6 +6,7 @@ local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
+local insert = luasnip.i
 local restore = luasnip.r
 
 ---Creates a node for Ruby blocks.
@@ -60,6 +61,40 @@ return {
       block_node(2, "text", { "multi-line", "inline" }),
     }),
     { "description", "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "subject",
+    format("subject <>", {
+      block_node(1, "text", { "inline", "multi-line" }),
+    }),
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "before",
+    format("before <>", {
+      block_node(1, "text", { "inline", "multi-line" }),
+    }),
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "let",
+    format("let(<>) <>", {
+      insert(1),
+      block_node(2, "text", { "inline", "multi-line" }),
+    }),
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "let!",
+    format("let!(<>) <>", {
+      insert(1),
+      block_node(2, "text", { "inline", "multi-line" }),
+    }),
+    { "text" },
     { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
