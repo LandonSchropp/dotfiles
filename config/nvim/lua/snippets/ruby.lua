@@ -53,4 +53,24 @@ return {
     { "description", "text" },
     { condition = is_spec, show_condition = is_spec }
   ),
+  snippet_with_stores(
+    "it",
+    format("it <> <>", {
+      string_node(1, "description"),
+      block_node(2, "text", { "multi-line", "inline" }),
+    }),
+    { "description", "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "it { is_expected.to }",
+    format("it { is_expected<> }", {
+      choice(1, {
+        format(".to <>", restore(1, "text")),
+        format(".not_to <>", restore(1, "text")),
+      }, { restore_cursor = true }),
+    }),
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
 }
