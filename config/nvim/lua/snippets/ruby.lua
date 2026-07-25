@@ -1,11 +1,13 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
+local rep = require("luasnip.extras").rep
 
 local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
+local func = luasnip.f
 local insert = luasnip.i
 local restore = luasnip.r
 
@@ -119,5 +121,18 @@ return {
     }),
     { "text" },
     { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
+    "rubocop:disable",
+    format("<>rubocop:disable <>\n<>\n# rubocop:enable <>", {
+      func(function(_, _)
+        local line = vim.api.nvim_get_current_line()
+        return line:match("^%s*#") and "" or "# "
+      end),
+      insert(1),
+      insert(2),
+      rep(1),
+    }),
+    { "text" }
   ),
 }
