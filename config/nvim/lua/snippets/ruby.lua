@@ -39,6 +39,16 @@ end
 
 return {
   snippet_with_stores(
+    "def",
+    choice(1, {
+      format("def <>(<>)\n  <>\nend", { restore(1, "name"), restore(2, "arguments"), restore(3, "body") }),
+      format("def <>\n  <>\nend", { restore(1, "name"), restore(2, "body") }),
+      format("def <>(<>) = <>", { restore(1, "name"), restore(2, "arguments"), restore(3, "body") }),
+      format("def <> = <>", { restore(1, "name"), restore(2, "body") }),
+    }, { restore_cursor = true }),
+    { "name", "arguments", "body" }
+  ),
+  snippet_with_stores(
     "describe",
     format("describe <> <>", {
       string_node(1, "description", { "double", "single", "bare" }),
