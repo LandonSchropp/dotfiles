@@ -1,10 +1,10 @@
 -- Start Neovim's RPC server on a socket for MCP server integration, but only if we're running
--- in the main tmux pane (in a window named "neovim").
+-- in a herdr workspace's main Neovim tab.
 
-local tmux = require("utilities/tmux")
+local herdr = require("utilities/herdr")
 
--- Only start the server if we're in a tmux session and in the "neovim" or "vim" window.
-if not vim.tbl_contains({ "neovim", "vim" }, tmux.get_current_window()) then
+-- Only start the server if we're in a Herdr workspace and in a Neovim tab.
+if not vim.tbl_contains({ "neovim", "nvim", "vim" }, herdr.get_current_tab()) then
   return
 end
 
