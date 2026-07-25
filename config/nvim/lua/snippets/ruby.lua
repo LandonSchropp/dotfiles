@@ -98,6 +98,18 @@ return {
     { condition = is_spec, show_condition = is_spec }
   ),
   snippet_with_stores(
+    "expect",
+    format("expect(<>)<>", {
+      insert(1),
+      choice(2, {
+        format(".to <>", restore(1, "text")),
+        format(".not_to <>", restore(1, "text")),
+      }, { restore_cursor = true }),
+    }),
+    { "text" },
+    { condition = is_spec, show_condition = is_spec }
+  ),
+  snippet_with_stores(
     "it { is_expected.to }",
     format("it { is_expected<> }", {
       choice(1, {
