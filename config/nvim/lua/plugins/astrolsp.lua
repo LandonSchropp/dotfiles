@@ -45,6 +45,13 @@ return {
                   fallbackPolling = "dynamicPriority",
                 },
               },
+
+              -- TypeScript ranks `node:test` above `bun:test`, so auto-imports pull in the wrong
+              -- module for `it`, `describe` and friends. Since I don't use it, I'm excluding it
+              -- globally.
+              preferences = {
+                autoImportSpecifierExcludeRegexes = { "^node:test$" },
+              },
             },
           },
         },
