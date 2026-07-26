@@ -75,7 +75,7 @@ Brewfile                # Homebrew package definitions
 ## Development Workflow
 
 1. **Making changes**: Edit configuration files directly in their respective directories
-2. **Applying changes**: Run the appropriate setup script or use `rcup` to relink dotfiles
+2. **Applying changes**: Run the appropriate setup script, or `bin/set-up-rcup` to relink dotfiles
 3. **Testing Neovim changes**: Restart Neovim or use `:Lazy reload` for plugin changes
 4. **Package updates**: Edit `Brewfile` and run `brew bundle` to install new packages
 
@@ -100,9 +100,10 @@ This is distinct from `bin/`, which only holds scripts for setting up and mainta
 ### Development Tools
 
 - **mise**: Runtime version management for multiple languages (Node, Ruby, Python, etc.) configured in `config/mise/config.toml`
-- **rcm**: Dotfile symlinking — most files in this repo are automatically symlinked to the home directory by `rcup`. After adding or modifying files, run `rcup` to update symlinks. For LaunchAgent plists, also run `set-up-launchd` to load the services.
+- **rcm**: Dotfile symlinking — most files in this repo are automatically symlinked to the home directory by `rcup`. After adding or modifying files, run `bin/set-up-rcup` to update symlinks. **Never run bare `rcup`.**
 - **rcm tags**: Machine-specific files live in `tag-<name>/` directories and are only linked when `set-up-rcup` passes `-t <name>`. Currently: `tag-work/` for work machines (hostnames starting with `OHR`), `tag-personal/` for all others. `set-up-rcup` auto-detects the hostname and selects the correct tag. When updating Claude settings, always evaluate both `tag-work/claude/settings.json` and `tag-personal/claude/settings.json` and apply changes to whichever files are appropriate.
 - **Brewfile**: Comprehensive package definitions including development tools, CLI utilities, and applications
+- **Launch agents:** For LaunchAgent plists, also run `set-up-launchd` to load the services.
 
 ## Important Notes
 
@@ -121,4 +122,4 @@ For example:
 - Edit `~/.dotfiles/config/nvim/init.lua` (NOT `~/.config/nvim/init.lua`)
 - Edit `~/.dotfiles/tmux.conf` (NOT `~/.tmux.conf`)
 
-After making changes, run `rcup` to update the symlinks if needed.
+After making changes, run `bin/set-up-rcup` to update the symlinks if needed. Never run bare `rcup`.
