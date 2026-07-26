@@ -81,6 +81,32 @@ return {
     { "description", "text" },
     { condition = is_test, show_condition = is_test }
   ),
+  snippet_with_stores(
+    "function",
+    choice(1, {
+      format("function <>(<>) {\n  <>\n}", {
+        restore(1, "name"),
+        restore(2, "parameters"),
+        restore(3, "body"),
+      }),
+      format("async function <>(<>) {\n  <>\n}", {
+        restore(1, "name"),
+        restore(2, "parameters"),
+        restore(3, "body"),
+      }),
+    }, { restore_cursor = true }),
+    { "name", "parameters", "body" }
+  ),
+  snippet_with_stores(
+    "function (arrow)",
+    choice(1, {
+      format("(<>) =>> {\n  return <>;\n}", { restore(1, "parameters"), restore(2, "body") }),
+      format("(<>) =>> {\n  <>\n}", { restore(1, "parameters"), restore(2, "body") }),
+      format("(<>) =>> <>", { restore(1, "parameters"), restore(2, "body") }),
+      format("(<>) =>> ({ <> })", { restore(1, "parameters"), restore(2, "body") }),
+    }, { restore_cursor = true }),
+    { "parameters", "body" }
+  ),
   snippet(
     "for... index",
     format("for (let <> = 0; <> << <>.length; <>++) {\n  const <> = <>[<>];<>\n}", {
