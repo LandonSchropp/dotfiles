@@ -1,5 +1,9 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
+local snippet_utils = require("utilities.snippet")
+
+local snippet_with_stores = snippet_utils.snippet_with_stores
+local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
 local restore = luasnip.r
@@ -38,4 +42,40 @@ local function is_test()
   return vim.fn.expand("%:t"):match("%.test%.tsx?$") ~= nil
 end
 
-return {}
+return {
+  snippet_with_stores(
+    "describe",
+    format("describe(<>, <>);", {
+      string_node(1, "description"),
+      typescript_function_node(2, "text", {
+        { block = "multi", synchronicity = "sync" },
+      }),
+    }),
+    { "description", "text" },
+    { condition = is_test, show_condition = is_test }
+  ),
+  snippet_with_stores(
+    "it",
+    format("it(<>, <>);", {
+      string_node(1, "description"),
+      typescript_function_node(2, "text", {
+        { block = "multi", synchronicity = "sync" },
+        { block = "multi", synchronicity = "async" },
+      }),
+    }),
+    { "description", "text" },
+    { condition = is_test, show_condition = is_test }
+  ),
+  snippet_with_stores(
+    "test",
+    format("test(<>, <>);", {
+      string_node(1, "description"),
+      typescript_function_node(2, "text", {
+        { block = "multi", synchronicity = "sync" },
+        { block = "multi", synchronicity = "async" },
+      }),
+    }),
+    { "description", "text" },
+    { condition = is_test, show_condition = is_test }
+  ),
+}
