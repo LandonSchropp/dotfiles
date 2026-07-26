@@ -1,12 +1,15 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmta
 local snippet_utils = require("utilities.snippet")
+local rep = require("luasnip.extras").rep
 
 local snippet_with_stores = snippet_utils.snippet_with_stores
 local string_node = snippet_utils.string_node
 
 local choice = luasnip.c
+local insert = luasnip.i
 local restore = luasnip.r
+local snippet = luasnip.s
 
 ---@alias FunctionNodeBlockOption
 ---| '"single"' # A function whose curly braces are on a single line
@@ -77,5 +80,46 @@ return {
     }),
     { "description", "text" },
     { condition = is_test, show_condition = is_test }
+  ),
+  snippet(
+    "for... index",
+    format("for (let <> = 0; <> << <>.length; <>++) {\n  const <> = <>[<>];<>\n}", {
+      insert(1, "index"),
+      rep(1),
+      insert(2, "collection"),
+      rep(1),
+      insert(3, "value"),
+      rep(2),
+      rep(1),
+      insert(4),
+    })
+  ),
+  snippet(
+    "for... of",
+    format("for (const <> of <>) {\n  <>\n}", {
+      insert(1, "value"),
+      insert(2, "collection"),
+      insert(3),
+    })
+  ),
+  snippet(
+    "for... in",
+    format("for (const <> in <>) {\n  const <> = <>[<>];\n  <>\n}", {
+      insert(1, "key"),
+      insert(2, "object"),
+      insert(3, "value"),
+      rep(2),
+      rep(1),
+      insert(4),
+    })
+  ),
+  snippet(
+    "for... of (entries)",
+    format("for (const [<>, <>] of Object.entries(<>)) {\n  <>\n}", {
+      insert(1, "key"),
+      insert(2, "value"),
+      insert(3, "object"),
+      insert(4),
+    })
   ),
 }
