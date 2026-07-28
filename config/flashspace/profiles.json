@@ -217,6 +217,30 @@
         },
         {
           "appToFocus" : {
+            "bundleIdentifier" : "md.obsidian",
+            "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+            "name" : "Obsidian"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "LG HDR 4K",
+          "id" : "51D753D3-B24B-4842-A79A-553AAAEB1B24",
+          "name" : "Writing",
+          "shortcut" : "cmd+ctrl+opt+w",
+          "symbolIconName" : "square.and.pencil"
+        },
+        {
+          "appToFocus" : {
             "bundleIdentifier" : "com.busymac.busycal3",
             "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
             "name" : "BusyCal"

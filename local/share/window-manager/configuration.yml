@@ -63,6 +63,11 @@ workspaces:
     layout: Main Stack
     applications: [Arc, Obsidian]
 
+  - workspace: Writing
+    profile: Split
+    layout: Main Stack
+    applications: [Obsidian, Ghostty]
+
   - workspace: Calendar
     profile: Split
     layout: Fullscreen
