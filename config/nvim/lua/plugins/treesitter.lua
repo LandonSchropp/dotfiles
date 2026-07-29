@@ -3,11 +3,9 @@
 -- Install the Ruby treesitter parser.
 ---@type LazySpec
 return {
-  "AstroNvim/astrocore",
-  ---@type AstroCoreOpts
+  "nvim-treesitter/nvim-treesitter",
+  opts_extend = { "ensure_installed" },
   opts = {
-    treesitter = {
-      ensure_installed = { "ruby" },
-    },
+    ensure_installed = { "ruby" },
   },
 }
