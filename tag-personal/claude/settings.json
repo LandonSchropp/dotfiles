@@ -229,6 +229,7 @@
     "ls-development-environment@landonschropp": true,
     "ls-interactivity@landonschropp": true,
     "ls-planning@landonschropp": true,
+    "ls-agent@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
