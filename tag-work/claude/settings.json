@@ -248,7 +248,8 @@
     "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
     "oyster-review@glorious-oyster-agent-toolkit": true,
     "oyster-team-ai@glorious-oyster-agent-toolkit": true,
-    "datadog@claude-plugins-official": true
+    "datadog@claude-plugins-official": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
@@ -263,6 +264,12 @@
         "path": "/Users/landon/Development/oyster/glorious-oyster-agent-toolkit"
       },
       "autoUpdate": true
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
     }
   },
   "syntaxHighlightingDisabled": true,
