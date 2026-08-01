@@ -43,6 +43,9 @@
 ## Git
 
 - Aim for atomic commits, with commits representing single, self-contained changes.
+- In my personal repositories, default to working directly on the `main` branch instead of creating a feature branch. (A repository is personal when its `origin` remote is under my `LandonSchropp` GitHub account, or when it has no remote at all.)
+- In a linked worktree, stay on the worktree's own branch.
+- Work repositories will always use a feature branch.
 - You MUST invoke the `git-atomic-commit` skill before making any changes and follow its guidelines.
 - Before creating a commit, follow the review process in `references/reviews.md`: present the changes for review and commit only after the user signs off.
 
