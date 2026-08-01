@@ -246,7 +246,8 @@
     "oyster-frontend@glorious-oyster-agent-toolkit": true,
     "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
     "oyster-review@glorious-oyster-agent-toolkit": true,
-    "oyster-team-ai@glorious-oyster-agent-toolkit": true
+    "oyster-team-ai@glorious-oyster-agent-toolkit": true,
+    "datadog@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
