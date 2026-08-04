@@ -37,6 +37,7 @@ name = "tokyo-night"
 
 [ui]
 agent_panel_sort = "spaces"
+confirm_close = true
 show_agent_labels_on_pane_borders = false
 
 [ui.sidebar.spaces]
