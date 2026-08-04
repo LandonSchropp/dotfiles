@@ -26,6 +26,12 @@ type = "plugin_action"
 command = "landonschropp.herdr-project.worktree"
 description = "new worktree"
 
+[[keys.command]]
+key = "cmd+m"
+type = "shell"
+command = "herdr pane send-keys $HERDR_PANE_ID ctrl+b '['"
+description = "copy mode"
+
 [theme]
 name = "tokyo-night"
 
