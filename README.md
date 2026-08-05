@@ -74,6 +74,14 @@ The window manager arranges windows into configurable per-workspace layouts, swi
 focused window between fullscreen and its arranged layout. It's wired into Yabai, FlashSpace, and
 Karabiner and does not need to be run by hand.
 
+### stamp-screenshots
+
+`stamp-screenshots` points the images in `~/Screenshots` at
+[Shottr](https://shottr.cc/), so opening one from Finder opens it for editing. macOS binds
+applications to file types rather than to folders, so the binding is written per file as a
+`com.apple.LaunchServices.OpenWith` extended attribute. Images outside that folder, and images
+whose handler I've already set by hand, are left alone.
+
 ### sync
 
 The sync utilities keep my machines updated an in-sync. They include the following:
