@@ -19,6 +19,7 @@ Run these setup scripts in order after cloning the repository:
 ~/.dotfiles/bin/set-up-bat           # Configure bat (cat replacement)
 ~/.dotfiles/bin/set-up-fzf           # Configure fzf (fuzzy finder)
 ~/.dotfiles/bin/set-up-launchd       # Set up launchd services
+~/.dotfiles/bin/set-up-macos         # Configure macOS and Shottr screenshot preferences
 ~/.dotfiles/bin/set-up-mas           # Configure Mac App Store CLI
 ~/.dotfiles/bin/set-up-mise-en-place # Configure mise (runtime version manager)
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim with AstroNvim

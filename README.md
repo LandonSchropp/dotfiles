@@ -50,10 +50,14 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-bat
 ~/.dotfiles/bin/set-up-fzf
 ~/.dotfiles/bin/set-up-launchd
+~/.dotfiles/bin/set-up-macos
 ~/.dotfiles/bin/set-up-mise-en-place
 ~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-tmux
 ```
+
+`set-up-macos` finishes by printing the one screenshot setting that can't be scripted. Shottr is
+sandboxed, so its save folder has to be picked through its own file picker, on each machine.
 
 ### Git
 

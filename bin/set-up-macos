@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Configures the macOS system preferences that aren't covered by a dotfile: where screenshots are
+# saved and what happens after a capture. Idempotent and safe to run repeatedly.
+
+screenshots_directory="$HOME/Screenshots"
+
+# Shottr rewrites its preferences when it quits, so anything written while it's running is lost.
+if pgrep -x Shottr > /dev/null; then
+  echo "Error: Shottr is running. Quit it and run this again." >&2
+  exit 1
+fi
+
+mkdir -p "$screenshots_directory"
+
+# Keep the built-in screenshot tool and Shottr pointed at the same folder. Without this they drift
+# apart and captures go missing depending on which shortcut was used.
+defaults write com.apple.screencapture location "$screenshots_directory"
+defaults write com.apple.screencapture show-thumbnail -bool false
+killall SystemUIServer || true
+
+# Capture silently: no preview thumbnail and no confirmation.
+defaults write cc.ffitch.shottr afterGrabShow -bool false
+defaults write cc.ffitch.shottr notificationType none
+
+echo
+echo -e "\033[0;33mShottr's screenshots folder has to be set by hand.\033[0m" >&2
+echo >&2
+echo "Shottr is sandboxed, so it only gets write access to a folder chosen through its own file" >&2
+echo "picker. A security-scoped bookmark grants that access, it can't be forged by a script, and" >&2
+echo "it doesn't survive being copied to another machine." >&2
+echo >&2
+echo "Open Shottr > Settings > General > Screenshots folder and select:" >&2
+echo >&2
+echo "  $screenshots_directory" >&2
