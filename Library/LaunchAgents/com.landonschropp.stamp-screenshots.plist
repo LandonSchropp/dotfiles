@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.landonschropp.stamp-screenshots</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/landon/.local/bin/stamp-screenshots</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.stamp-screenshots/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/landon/Library/Logs/com.landonschropp.stamp-screenshots/stderr.log</string>
+    <key>WatchPaths</key>
+    <array>
+      <string>/Users/landon/Screenshots</string>
+    </array>
+  </dict>
+</plist>
