@@ -4,7 +4,6 @@ onboarding = false
 previous_tab = "cmd+h"
 next_tab = "cmd+l"
 new_tab = "cmd+t"
-close_tab = "cmd+w"
 rename_tab = "cmd+r"
 previous_workspace = "cmd+k"
 next_workspace = "cmd+j"
@@ -25,6 +24,14 @@ key = "cmd+shift+n"
 type = "plugin_action"
 command = "landonschropp.herdr-project.worktree"
 description = "new worktree"
+
+[[keys.command]]
+key = "cmd+w"
+type = "popup"
+command = "confirm-close-tab"
+description = "close tab"
+width = "40%"
+height = "20%"
 
 [[keys.command]]
 key = "cmd+m"
