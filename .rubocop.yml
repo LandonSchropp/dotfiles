@@ -1,6 +1,12 @@
 inherit_gem:
   rubocop-shopify: rubocop.yml
 
+inherit_mode:
+  merge:
+    - Exclude
+
 AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 4.0
+  Exclude:
+    - ".ruby-lsp/**/*"
