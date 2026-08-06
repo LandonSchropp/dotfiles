@@ -39,6 +39,7 @@
       "mcp__plugin_Notion_notion"
     ],
     "deny": [
+      "AskUserQuestion",
       "Read(.env)",
       "Read(**/.env*)",
       "Read(**/.secret*)",
