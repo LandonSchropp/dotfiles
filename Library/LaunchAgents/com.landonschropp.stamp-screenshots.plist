@@ -6,15 +6,10 @@
     <string>com.landonschropp.stamp-screenshots</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/landon/.local/bin/stamp-screenshots</string>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>stamp-screenshots</string>
     </array>
-    <key>EnvironmentVariables</key>
-    <dict>
-      <!-- launchd doesn't run a login shell, so mise's shims have to be on PATH explicitly.
-           Without them `env ruby` finds Apple's Ruby 2.6 instead of the version mise manages. -->
-      <key>PATH</key>
-      <string>/Users/landon/.local/share/mise/shims:/usr/bin:/bin:/usr/sbin:/sbin</string>
-    </dict>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.stamp-screenshots/stdout.log</string>
     <key>StandardErrorPath</key>
