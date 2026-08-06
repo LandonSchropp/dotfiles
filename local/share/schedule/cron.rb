@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Cron
   MAX_INTERVALS = 100
 
-  WEEKDAYS = %i(sunday monday tuesday wednesday thursday friday saturday)
+  WEEKDAYS = %i(sunday monday tuesday wednesday thursday friday saturday).freeze
 
   CRON_REGEX = /\A(\*|(?:\d+)) (\*|(?:\d+)) \* \* (\*|\d+(?:,\d+)*)\z/
-  
+
   Result = Data.define(:minute, :hour, :weekdays)
 
   class << self

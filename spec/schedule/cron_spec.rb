@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../../local/share/schedule/cron"
 
 describe Cron do
