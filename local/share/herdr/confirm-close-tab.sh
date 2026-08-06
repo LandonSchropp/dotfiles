@@ -8,11 +8,11 @@ set -euo pipefail
 # TODO: Drop this and bind cmd+w back to close_tab once Herdr confirms tab closes itself.
 # https://github.com/herdrdev/herdr/issues/1750
 
-if [[ -z "${HERDR_TAB_ID:-}" ]]; then
-  echo "Error: HERDR_TAB_ID is not set." >&2
+if [[ -z "${HERDR_ACTIVE_TAB_ID:-}" ]]; then
+  echo "Error: HERDR_ACTIVE_TAB_ID is not set." >&2
   exit 1
 fi
 
 gum confirm "Close this tab?" || exit 0
 
-herdr tab close "$HERDR_TAB_ID"
+herdr tab close "$HERDR_ACTIVE_TAB_ID"

@@ -21,17 +21,17 @@ describe "confirm-close-tab" do
   end
 
   before do
-    write_fake("gum", exit_status: confirmed ? 0 : 1)
-    write_fake("herdr")
+    write_executable("gum", "exit #{confirmed ? 0 : 1}")
+    write_executable("herdr", "true")
   end
 
-  def write_fake(name, exit_status: 0)
+  def write_executable(name, exit_body)
     path = File.join(@bin_directory, name)
 
     File.write(path, <<~SHELL)
       #!/usr/bin/env bash
       printf '%s\\n' "$*" >> "#{calls_path(name)}"
-      exit #{exit_status}
+      #{exit_body}
     SHELL
 
     File.chmod(0o755, path)
@@ -49,8 +49,8 @@ describe "confirm-close-tab" do
 
   def run_script
     environment = {
-      "HERDR_TAB_ID" => tab_id,
-      "PATH" => "#{@bin_directory}:#{ENV.fetch("PATH")}"
+      "HERDR_ACTIVE_TAB_ID" => tab_id,
+      "PATH" => "#{@bin_directory}:#{ENV.fetch("PATH")}",
     }
 
     Open3.capture3(environment, script_path)
@@ -59,7 +59,7 @@ describe "confirm-close-tab" do
   context "when the user confirms" do
     let(:confirmed) { true }
 
-    it "closes the tab" do
+    it "closes the active tab" do
       result
       expect(calls("herdr")).to eq(["tab close #{tab_id}"])
     end
