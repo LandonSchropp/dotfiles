@@ -67,6 +67,10 @@ keybind = command+digit_9=unbind
 # Disable the toggle fullscreen keybinding.
 keybind = super+enter=unbind
 
+# Don't open splits by accident.
+keybind = command+d=unbind
+keybind = command+shift+d=unbind
+
 # Make the shift+enter keybinding insert a newline
 keybind = shift+enter=text:\n
 
