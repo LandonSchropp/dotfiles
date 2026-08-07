@@ -6,7 +6,9 @@
     <string>com.landonschropp.sync-dictionaries</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/landon/.local/bin/sync-dictionaries</string>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>sync-dictionaries</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.sync-dictionaries/stdout.log</string>

@@ -6,7 +6,9 @@
     <string>com.landonschropp.daily-sync</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/landon/.local/bin/sync-repositories</string>
+      <string>/bin/zsh</string>
+      <string>-lc</string>
+      <string>sync-repositories</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.daily-sync/stdout.log</string>

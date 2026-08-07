@@ -54,9 +54,9 @@ sync_repository() {
     return 1
   fi
 
-  if ! /opt/homebrew/bin/git-town sync; then
+  if ! git-town sync; then
     log "Error: git-town sync failed in $name, backing out with git town undo." >&2
-    /opt/homebrew/bin/git-town undo || log "Error: git town undo failed in $name." >&2
+    git-town undo || log "Error: git town undo failed in $name." >&2
     git checkout "$original_branch" || true
     return 1
   fi

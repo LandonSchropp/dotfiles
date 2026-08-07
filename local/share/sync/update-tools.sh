@@ -27,10 +27,10 @@ update() {
 
 log "Starting tool updates..."
 
-update "TL/DR" "/opt/homebrew/bin/tldr" "/opt/homebrew/bin/tldr --update"
-update "Claude Code" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade --cask claude"
-update "Mise" "/opt/homebrew/bin/mise" "/opt/homebrew/bin/mise install"
-update "GitHub CLI" "/opt/homebrew/bin/brew" "/opt/homebrew/bin/brew upgrade gh"
+update "TL/DR" "tldr" "tldr --update"
+update "Claude Code" "brew" "brew upgrade --cask claude"
+update "Mise" "mise" "mise install"
+update "GitHub CLI" "brew" "brew upgrade gh"
 update "Oh My Zsh" "$HOME/.oh-my-zsh/tools/upgrade.sh" "$HOME/.oh-my-zsh/tools/upgrade.sh -v silent"
 
 log "Tool updates completed successfully"
