@@ -10,8 +10,6 @@ configured with the following tools.
 - **[Git](https://git-scm.com/)**: Everyone's favorite distributed version control system.
 - **[Neovim](https://neovim.io/)**: The world's best text editor. My Neovim configuration includes
   [AstroNvim](https://astronvim.com/), a "distribution", as well as a ton of customization.
-- **[tmux](https://tmux.github.io/)**: A utility that allows you to run multiple windows inside one
-  terminal.
 
 In addition, these dotfiles install a ton of small, useful utilities command-line utilities and
 system applications, which can be viewed in the [Brewfile](Brewfile).
@@ -53,7 +51,6 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-macos
 ~/.dotfiles/bin/set-up-mise-en-place
 ~/.dotfiles/bin/set-up-neovim
-~/.dotfiles/bin/set-up-tmux
 ```
 
 `set-up-macos` finishes by printing the one screenshot setting that can't be scripted. Shottr is

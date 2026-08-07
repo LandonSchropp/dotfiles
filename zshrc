@@ -4,10 +4,6 @@
 # feature request to fix this.
 # shellcheck disable=SC1090,SC1091
 
-# FIX: tmuxinator mangles the $GEM_HOME environment variable. This is a quick and dirty fix.
-# https://github.com/tmuxinator/tmuxinator/issues/841
-unset GEM_HOME
-
 # Configure the ZSH cache directory for autocompletion so Zsh doesn't create a bunch of files in the
 # home directory.
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST

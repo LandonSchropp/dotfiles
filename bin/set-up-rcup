@@ -19,7 +19,6 @@ rcup \
   claude \
   config \
   local \
-  tmux.conf \
   zprofile \
   zshenv \
   zshrc

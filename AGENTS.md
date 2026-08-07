@@ -4,7 +4,7 @@
 
 ## Repository Overview
 
-This is a personal dotfiles repository for setting up a macOS development environment. It contains configuration files and setup scripts for various development tools including Neovim, tmux, Zsh, and other command-line utilities.
+This is a personal dotfiles repository for setting up a macOS development environment. It contains configuration files and setup scripts for various development tools including Neovim, Zsh, and other command-line utilities.
 
 ## Key Setup Commands
 
@@ -23,7 +23,6 @@ Run these setup scripts in order after cloning the repository:
 ~/.dotfiles/bin/set-up-mas           # Configure Mac App Store CLI
 ~/.dotfiles/bin/set-up-mise-en-place # Configure mise (runtime version manager)
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim with AstroNvim
-~/.dotfiles/bin/set-up-tmux          # Configure tmux
 ~/.dotfiles/bin/set-up-claude-code   # Install caveman skills and peon-ping for Claude Code
 ~/.dotfiles/bin/set-up-herdr         # Install and configure Herdr
 ```
@@ -62,7 +61,6 @@ local/                  # Symlinked to ~/.local (XDG_DATA_HOME / XDG_BIN_HOME)
   ├── bin/              # Binstubs for purpose-built utilities, on PATH
   └── share/            # Purpose-built utility implementations, one folder each
 zshrc                   # Main Zsh configuration
-tmux.conf               # tmux configuration
 Brewfile                # Homebrew package definitions
 ```
 
@@ -121,6 +119,5 @@ For example:
 
 - Edit `~/.dotfiles/zshrc` (NOT `~/.zshrc`)
 - Edit `~/.dotfiles/config/nvim/init.lua` (NOT `~/.config/nvim/init.lua`)
-- Edit `~/.dotfiles/tmux.conf` (NOT `~/.tmux.conf`)
 
 After making changes, run `bin/set-up-rcup` to update the symlinks if needed. Never run bare `rcup`.
