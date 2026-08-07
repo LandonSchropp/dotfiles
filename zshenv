@@ -1,22 +1,25 @@
 # Set the default text editor
 export EDITOR="nvim"
 
-# Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
+# The directories that should outrank the system ones in $PATH, highest precedence last.
+zshenv_path=()
 
-# mise-en-place
-eval "$(mise activate zsh --shims)"
+# Homebrew
+zshenv_path=("/opt/homebrew/bin" $zshenv_path)
 
 # Cross-Desktop Group (XDG)
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_BIN_HOME="$HOME/.local/bin"
-export PATH="$XDG_BIN_HOME:$PATH"
+zshenv_path=("$XDG_BIN_HOME" $zshenv_path)
+
+# mise-en-place
+zshenv_path=("$XDG_DATA_HOME/mise/shims" $zshenv_path)
 
 # pnpm
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+zshenv_path=("$PNPM_HOME" $zshenv_path)
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -25,8 +28,8 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 
 # Obsidian
-export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+zshenv_path=($zshenv_path "/Applications/Obsidian.app/Contents/MacOS")
 
-# Login shells run path_helper after this file and lose the ordering above. Export the current path
-# so ~/.zprofile can restore it.
-zshenv_path=($path)
+# macOS's /etc/zprofile reorders $PATH after this file runs, so ~/.zprofile prepends these again.
+typeset -U path
+path=($zshenv_path $path)
