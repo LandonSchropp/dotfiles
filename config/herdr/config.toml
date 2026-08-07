@@ -12,6 +12,7 @@ rename_workspace = "cmd+shift+r"
 switch_workspace = "cmd+1..9"
 toggle_sidebar = "cmd+s"
 help = "cmd+/"
+copy_mode = "cmd+m"
 
 [[keys.command]]
 key = "cmd+n"
@@ -32,12 +33,6 @@ command = "confirm-close-tab"
 description = "close tab"
 width = "40%"
 height = "20%"
-
-[[keys.command]]
-key = "cmd+m"
-type = "shell"
-command = "herdr pane send-keys $HERDR_PANE_ID ctrl+b '['"
-description = "copy mode"
 
 [theme]
 name = "tokyo-night"
