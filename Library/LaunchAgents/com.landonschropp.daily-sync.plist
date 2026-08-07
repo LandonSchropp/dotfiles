@@ -20,6 +20,10 @@
         <key>Hour</key>
         <integer>7</integer>
       </dict>
+      <dict>
+        <key>Hour</key>
+        <integer>13</integer>
+      </dict>
     </array>
   </dict>
 </plist>
