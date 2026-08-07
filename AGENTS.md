@@ -36,7 +36,7 @@ Run these setup scripts in order after cloning the repository:
 
 ### Neovim Setup
 
-The Neovim configuration is based on AstroNvim v5 with extensive customization:
+The Neovim configuration is based on AstroNvim with extensive customization:
 
 - **Base**: AstroNvim template with custom plugin configurations
 - **Plugins**: Located in `config/nvim/lua/plugins/` - each plugin has its own config file
