@@ -160,3 +160,4 @@
 	sync-tags = false
 	ship-delete-tracking-branch = false
 	offline = false
+	github-connector = gh
