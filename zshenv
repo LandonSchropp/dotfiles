@@ -26,3 +26,7 @@ fi
 
 # Obsidian
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
+# Login shells run path_helper after this file and lose the ordering above. Export the current path
+# so ~/.zprofile can restore it.
+zshenv_path=($path)
