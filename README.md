@@ -94,3 +94,6 @@ The sync utilities keep my machines updated an in-sync. They include the followi
   to and from iCloud Drive. The list of apps is configured in `config/preferences/apps.json`. Run
   `restore-preferences` when setting up a new machine.
 - `update-tools`: Upgrades a handful of installed command-line tools.
+- `weekly-update`: Upgrades the packages and runtimes that drift over time — Homebrew formulae and
+  casks, mise runtimes, Mac App Store apps, and Oh My Zsh — then reclaims the disk they leave
+  behind.
