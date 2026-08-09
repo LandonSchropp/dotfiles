@@ -97,5 +97,8 @@ The update utilities keep my machines current and in sync. They include the foll
   cache, and the runtime versions mise pins. Scheduled at 7 AM and 3 PM. Anything slower, or
   anything that moves a pinned version, belongs in `weekly-update` instead.
 - `weekly-update`: Upgrades the packages and runtimes that drift over time — Homebrew formulae and
-  casks, mise runtimes, Mac App Store apps, and Oh My Zsh — then reclaims the disk they leave
-  behind. Scheduled Fridays at 1 PM.
+  casks, mise runtimes, and Oh My Zsh — then reclaims the disk they leave behind. Scheduled Fridays
+  at 1 PM. Mac App Store apps are left to macOS. A cask that installs a `.pkg` prompts for an
+  administrator password the scheduled run can't answer, so the ones named in `MANUAL_CASKS` are
+  skipped and have to be upgraded by hand. That list is maintained by hand — a newly installed pkg
+  cask fails the run until it's added.

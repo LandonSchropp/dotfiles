@@ -10,6 +10,22 @@ log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
 }
 
+# These install a .pkg, which prompts for an administrator password the scheduled run has no
+# terminal to answer. Upgrade them by hand, and add any new one here.
+MANUAL_CASKS='cold-turkey-blocker|docker-desktop|virtualbox'
+
+# Upgrades the outdated casks, minus the ones above. Homebrew already leaves out the casks that
+# update themselves, so what it reports is non-greedy.
+upgrade_casks() {
+  local outdated casks
+
+  outdated=$(brew outdated --cask --quiet) || return 1
+  casks=$(printf '%s' "$outdated" | grep -Evx "$MANUAL_CASKS") || return 0
+
+  # shellcheck disable=SC2086 # Cask names have no spaces, and each needs to be its own argument.
+  brew upgrade --cask $casks
+}
+
 # Runs an update command, recording a failure rather than aborting, so one broken updater can't
 # hold the rest back for a week.
 update() {
@@ -19,12 +35,11 @@ update() {
 
 log "Starting weekly updates..."
 
-# Homebrew skips the casks that update themselves, so this deliberately isn't greedy.
 update brew update
-update brew upgrade
+update brew upgrade --formula
+update upgrade_casks
 
 update mise upgrade
-update mas upgrade
 
 if [[ -x "$HOME/.oh-my-zsh/tools/upgrade.sh" ]]; then
   update "$HOME/.oh-my-zsh/tools/upgrade.sh" -v silent
