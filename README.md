@@ -83,9 +83,9 @@ applications to file types rather than to folders, so the binding is written per
 `com.apple.LaunchServices.OpenWith` extended attribute. Images outside that folder, and images
 whose handler I've already set by hand, are left alone.
 
-### sync
+### update
 
-The sync utilities keep my machines updated an in-sync. They include the following:
+The update utilities keep my machines current and in sync. They include the following:
 
 - `sync-repositories`: Syncs the default branch of my active development repositories via
   [git-town](https://www.git-town.com/).
