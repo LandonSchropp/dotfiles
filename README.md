@@ -95,13 +95,7 @@ The update utilities keep my machines current and in sync. They include the foll
 - `back-up-preferences` / `restore-preferences`: Backs up and restores a subset of app preferences
   to and from iCloud Drive. The list of apps is configured in `config/preferences/apps.json`. Run
   `restore-preferences` when setting up a new machine.
-- `daily-update`: Runs the quick updates — `sync-repositories`, `sync-dictionaries`, the tldr
-  cache, and any tool in mise's config that isn't installed yet. Scheduled at 7 AM and 3 PM.
-  Anything slower, or anything that moves an installed tool to a new version, belongs in
-  `weekly-update` instead.
-- `weekly-update`: Upgrades the packages and runtimes that drift over time — Homebrew formulae and
-  casks, mise runtimes, and Oh My Zsh — then reclaims the disk they leave behind. Scheduled Fridays
-  at 1 PM. Mac App Store apps are left to macOS. A cask that installs a `.pkg` prompts for an
-  administrator password the scheduled run can't answer, so the ones named in `MANUAL_CASKS` are
-  skipped and have to be upgraded by hand. That list is maintained by hand — a newly installed pkg
-  cask fails the run until it's added.
+- `daily-update`: Runs the quick updates — the two syncs above, the tldr cache, and any missing
+  mise tools.
+- `weekly-update`: Upgrades the things that drift — Homebrew packages, mise tools, and Oh My Zsh —
+  then reclaims the disk they leave behind.
