@@ -13,15 +13,15 @@ This is a personal dotfiles repository for setting up a macOS development enviro
 Run these setup scripts in order after cloning the repository:
 
 ```bash
-~/.dotfiles/bin/set-up-homebrew     # Install Homebrew and packages from Brewfile
-~/.dotfiles/bin/set-up-zshell        # Configure Zsh shell
+~/.dotfiles/bin/set-up-homebrew      # Install Homebrew and its packages
+~/.dotfiles/bin/set-up-zshell        # Install Zsh's framework and plugins
 ~/.dotfiles/bin/set-up-rcup          # Link dotfiles using rcm
 ~/.dotfiles/bin/set-up-bat           # Configure bat (cat replacement)
-~/.dotfiles/bin/set-up-fzf           # Configure fzf (fuzzy finder)
+~/.dotfiles/bin/set-up-fzf           # Install fzf's Git integration
 ~/.dotfiles/bin/set-up-launchd       # Set up launchd services
-~/.dotfiles/bin/set-up-macos         # Configure macOS and Shottr screenshot preferences
-~/.dotfiles/bin/set-up-mise-en-place # Install the tools listed in mise's config
-~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim with AstroNvim
+~/.dotfiles/bin/set-up-macos         # Configure macOS preferences
+~/.dotfiles/bin/set-up-mise-en-place # Install the tools mise manages
+~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim
 ~/.dotfiles/bin/set-up-claude-code   # Set up Claude Code's skills and integrations
 ~/.dotfiles/bin/set-up-herdr         # Install and configure Herdr
 ```
