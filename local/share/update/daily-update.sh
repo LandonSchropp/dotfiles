@@ -23,7 +23,7 @@ update sync-repositories
 update sync-dictionaries
 update tldr --update
 
-# Installs the versions mise's config pins.
+# Installs any tool in mise's config that isn't there yet.
 update mise install
 
 if ((exit_code != 0)); then
