@@ -93,7 +93,9 @@ The update utilities keep my machines current and in sync. They include the foll
 - `back-up-preferences` / `restore-preferences`: Backs up and restores a subset of app preferences
   to and from iCloud Drive. The list of apps is configured in `config/preferences/apps.json`. Run
   `restore-preferences` when setting up a new machine.
-- `update-tools`: Upgrades a handful of installed command-line tools.
+- `daily-update`: Runs the quick updates — `sync-repositories`, `sync-dictionaries`, the tldr
+  cache, and the runtime versions mise pins. Scheduled at 7 AM and 3 PM. Anything slower, or
+  anything that moves a pinned version, belongs in `weekly-update` instead.
 - `weekly-update`: Upgrades the packages and runtimes that drift over time — Homebrew formulae and
   casks, mise runtimes, Mac App Store apps, and Oh My Zsh — then reclaims the disk they leave
-  behind.
+  behind. Scheduled Fridays at 1 PM.

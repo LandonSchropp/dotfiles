@@ -8,7 +8,7 @@
     <array>
       <string>/bin/zsh</string>
       <string>-lc</string>
-      <string>update-tools</string>
+      <string>daily-update</string>
     </array>
     <key>StandardOutPath</key>
     <string>/Users/landon/Library/Logs/com.landonschropp.daily-update/stdout.log</string>
@@ -18,7 +18,15 @@
     <array>
       <dict>
         <key>Hour</key>
-        <integer>9</integer>
+        <integer>7</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+      </dict>
+      <dict>
+        <key>Hour</key>
+        <integer>15</integer>
+        <key>Minute</key>
+        <integer>0</integer>
       </dict>
     </array>
   </dict>
