@@ -98,7 +98,7 @@ This is distinct from `bin/`, which only holds scripts for setting up and mainta
 ### Development Tools
 
 - **mise**: Runtime version management for multiple languages (Node, Ruby, Python, etc.) configured in `config/mise/config.toml`
-- **rcm**: Dotfile symlinking — most files in this repo are automatically symlinked to the home directory by `rcup`. After adding or modifying files, run `bin/set-up-rcup` to update symlinks. **Never run bare `rcup`.**
+- **rcm**: Dotfile symlinking — most files in this repo are automatically symlinked to the home directory by `rcup`. After adding or modifying files, run `bin/set-up-rcup` to update symlinks. It also accepts repository-relative paths under the entries it links (`bin/set-up-rcup config/nvim`) to link only part of the tree. **Never run bare `rcup`.**
 - **rcm tags**: Machine-specific files live in `tag-<name>/` directories and are only linked when `set-up-rcup` passes `-t <name>`. Currently: `tag-work/` for work machines (hostnames starting with `OHR`), `tag-personal/` for all others. `set-up-rcup` auto-detects the hostname and selects the correct tag. When updating Claude settings, always evaluate both `tag-work/claude/settings.json` and `tag-personal/claude/settings.json` and apply changes to whichever files are appropriate.
 - **Brewfile**: Comprehensive package definitions including development tools, CLI utilities, and applications
 - **Launch agents:** For LaunchAgent plists, also run `set-up-launchd` to load the services.

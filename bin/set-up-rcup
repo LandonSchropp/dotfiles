@@ -2,31 +2,54 @@
 
 # frozen_string_literal: true
 
-# Links this repository's dotfiles into the home directory with rcm.
+# Links this repository's dotfiles into the home directory with rcm. Given repository-relative
+# paths, links only those.
 
 require 'fileutils'
+require 'pathname'
 require 'socket'
 
 MANAGED_PATHS = %w[Library claude config local zprofile zshenv zshrc].freeze
 
+KARABINER_CONFIGURATION = 'karabiner.json'
+
 KARABINER_SOURCE = File.join(Dir.home, '.dotfiles', 'config', 'karabiner')
 KARABINER_DESTINATION = File.join(Dir.home, '.config', 'karabiner')
+
+# The path characters rcm can't reinterpret as something else.
+SAFE_PATH = %r{\A[\w.-]+(/[\w.-]+)*\z}
+
+# Returns the normalized path, or exits when it isn't one this repository links.
+def managed_path(path)
+  cleaned = Pathname.new(path).cleanpath if path.valid_encoding? && path.match?(SAFE_PATH)
+
+  unless cleaned&.ascend&.any? { MANAGED_PATHS.include?(_1.to_s) }
+    abort "Error: #{path} isn't linked by rcup."
+  end
+
+  cleaned.to_s
+end
+
+paths = ARGV.empty? ? MANAGED_PATHS : ARGV.map { managed_path(_1) }
 
 short_hostname = Socket.gethostname.split('.').first
 tag = short_hostname.start_with?('OHR') ? 'work' : 'personal'
 
 arguments = [
-  '-t', tag,
+  '-t',
+  tag,
   '-v',
-  '-U', 'Library',
-  '-x', 'config/karabiner/karabiner.json',
-  *MANAGED_PATHS
+  '-U',
+  'Library',
+  # Each Library sub-path needs its own -U.
+  *paths.grep(%r{\ALibrary/}).flat_map { ['-U', _1] },
+  '-x',
+  KARABINER_CONFIGURATION,
+  *paths
 ]
 
 abort 'Error: rcup failed.' unless system('rcup', *arguments)
 
-# HACK: Karabiner-Elements saves karabiner.json by writing a new file and renaming it over the
-# target, which clobbers any symlink placed at that path. In order to work around this, I have to
-# symlink the config directory instead.
+# Karabiner's directory is linked by hand rather than through rcup.
 FileUtils.rm_rf(KARABINER_DESTINATION)
 FileUtils.ln_s(KARABINER_SOURCE, KARABINER_DESTINATION)
