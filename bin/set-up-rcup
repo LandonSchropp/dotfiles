@@ -1,30 +1,32 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
 
-set -euo pipefail
+# frozen_string_literal: true
 
-hostname="$(hostname -s)"
+# Links this repository's dotfiles into the home directory with rcm.
 
-if [[ "$hostname" == OHR* ]]; then
-  tag="work"
-else
-  tag="personal"
-fi
+require 'fileutils'
+require 'socket'
 
-rcup \
-  -t "$tag" \
-  -v \
-  -U Library \
-  -x config/karabiner/karabiner.json \
-  Library \
-  claude \
-  config \
-  local \
-  zprofile \
-  zshenv \
-  zshrc
+MANAGED_PATHS = %w[Library claude config local zprofile zshenv zshrc].freeze
+
+KARABINER_SOURCE = File.join(Dir.home, '.dotfiles', 'config', 'karabiner')
+KARABINER_DESTINATION = File.join(Dir.home, '.config', 'karabiner')
+
+short_hostname = Socket.gethostname.split('.').first
+tag = short_hostname.start_with?('OHR') ? 'work' : 'personal'
+
+arguments = [
+  '-t', tag,
+  '-v',
+  '-U', 'Library',
+  '-x', 'config/karabiner/karabiner.json',
+  *MANAGED_PATHS
+]
+
+abort 'Error: rcup failed.' unless system('rcup', *arguments)
 
 # HACK: Karabiner-Elements saves karabiner.json by writing a new file and renaming it over the
 # target, which clobbers any symlink placed at that path. In order to work around this, I have to
 # symlink the config directory instead.
-rm -rf "$HOME/.config/karabiner"
-ln -s "$HOME/.dotfiles/config/karabiner" "$HOME/.config/karabiner"
+FileUtils.rm_rf(KARABINER_DESTINATION)
+FileUtils.ln_s(KARABINER_SOURCE, KARABINER_DESTINATION)
