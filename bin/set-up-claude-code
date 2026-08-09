@@ -2,9 +2,21 @@
 
 set -euo pipefail
 
-# Installs the Claude Code skills and integrations that rcup can't symlink: the caveman
-# compression skills (installed from GitHub) and peon-ping sound notifications (installed from the
-# Homebrew package defined in the Brewfile). Safe to run repeatedly.
+# Installs the Claude Code skills and integrations rcup can't set up on its own: my own skills (a
+# plugin marketplace in a separate repository), the caveman compression skills (installed from
+# GitHub) and peon-ping sound notifications (installed from the Homebrew package defined in the
+# Brewfile). Safe to run repeatedly.
+
+# Clone the agent-toolkit repository, which Claude's settings register as a plugin marketplace by
+# path.
+agent_toolkit_directory="$HOME/Development/agent-toolkit"
+
+if [ ! -d "$agent_toolkit_directory" ]; then
+  git clone https://github.com/LandonSchropp/agent-toolkit.git "$agent_toolkit_directory"
+fi
+
+# The skill scripts import their dependencies, and node_modules isn't checked in.
+(cd "$agent_toolkit_directory" && bun install --frozen-lockfile)
 
 # Install the caveman skills.
 npx -y skills add JuliusBrussee/caveman \
