@@ -235,6 +235,7 @@
     "ls-ruby@landonschropp": true,
     "ls-interactivity@landonschropp": true,
     "ls-planning@landonschropp": true,
+    "ls-code@landonschropp": true,
     "ls-agent@landonschropp": true,
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
