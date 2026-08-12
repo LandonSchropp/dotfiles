@@ -46,6 +46,7 @@
 - In my personal repositories, default to working directly on the `main` branch instead of creating a feature branch. (A repository is personal when its `origin` remote is under my `LandonSchropp` GitHub account, or when it has no remote at all.)
 - In a linked worktree, stay on the worktree's own branch.
 - Work repositories will always use a feature branch.
+- Push after committing: always on a feature branch, and on `main` only in personal repositories. Never push directly to `main` in a work repository.
 - You MUST invoke the `ls-git:git-atomic-commit` skill before making any changes and follow its guidelines.
 - Before creating a commit, follow the review process in `references/reviews.md`: present the changes for review and commit only after the user signs off.
 
