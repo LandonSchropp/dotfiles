@@ -27,6 +27,34 @@
         "rawValue": true
       },
       {
+        "id": "9a71802d-2b40-41aa-afde-ea23ea5606be",
+        "type": "separator",
+        "color": "hex:565F89"
+      },
+      {
+        "id": "288411f6-a00b-47fe-811c-7f2a70110923",
+        "type": "session-cost",
+        "color": "hex:9ECE6A",
+        "rawValue": false
+      },
+      {
+        "id": "0c190a43-3e9e-4602-893b-f7e2425d3656",
+        "type": "separator",
+        "color": "hex:565F89"
+      },
+      {
+        "id": "39fcc905-7d7d-44bb-8042-fc97d9323dc6",
+        "type": "custom-text",
+        "color": "hex:E0AF68",
+        "customText": "Usage: "
+      },
+      {
+        "id": "52ea719c-be45-4bef-b320-d0c94dadfe4e",
+        "type": "session-usage",
+        "color": "hex:E0AF68",
+        "rawValue": true
+      },
+      {
         "id": "83539429-1794-41d0-babe-088be9e8cdf0",
         "type": "separator",
         "color": "hex:565F89"
@@ -46,7 +74,7 @@
         "id": "6c4800d8-7d53-46f7-b785-37b44557f3f4",
         "type": "custom-text",
         "color": "hex:9AA5CE",
-        "customText": "Version: "
+        "customText": "v"
       },
       {
         "id": "87f44921-8ce5-471b-a202-0de134a4b0af",
