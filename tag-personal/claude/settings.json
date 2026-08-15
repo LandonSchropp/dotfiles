@@ -233,6 +233,7 @@
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
+    "ls-browser@landonschropp": true,
     "frontend-design@claude-plugins-official": true,
     "impeccable@impeccable": true,
     "rust-analyzer-lsp@claude-plugins-official": true,

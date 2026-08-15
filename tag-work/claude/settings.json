@@ -239,6 +239,7 @@
     "ls-agent-toolkit@landonschropp": true,
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
+    "ls-browser@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
     "oyster-development@glorious-oyster-agent-toolkit": true,
