@@ -74,6 +74,9 @@ keybind = command+shift+d=unbind
 # Make the shift+enter keybinding insert a newline
 keybind = shift+enter=text:\n
 
+# Scroll one line per wheel notch instead of Ghostty's default of three
+mouse-scroll-multiplier = discrete:1
+
 # Make alt keys behave normally
 macos-option-as-alt = false
 
