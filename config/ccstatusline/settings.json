@@ -66,7 +66,7 @@
         "id": "6c4800d8-7d53-46f7-b785-37b44557f3f4",
         "type": "custom-text",
         "color": "hex:9AA5CE",
-        "customText": "v"
+        "customText": "Version: "
       },
       {
         "id": "87f44921-8ce5-471b-a202-0de134a4b0af",
