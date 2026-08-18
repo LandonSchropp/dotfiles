@@ -32,17 +32,6 @@
         "color": "hex:565F89"
       },
       {
-        "id": "288411f6-a00b-47fe-811c-7f2a70110923",
-        "type": "session-cost",
-        "color": "hex:9ECE6A",
-        "rawValue": false
-      },
-      {
-        "id": "0c190a43-3e9e-4602-893b-f7e2425d3656",
-        "type": "separator",
-        "color": "hex:565F89"
-      },
-      {
         "id": "39fcc905-7d7d-44bb-8042-fc97d9323dc6",
         "type": "custom-text",
         "color": "hex:E0AF68",
