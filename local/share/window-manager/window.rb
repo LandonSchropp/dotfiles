@@ -23,7 +23,7 @@ Window = Data.define(:application, :id, :rectangle) do
 
     def focused
       json = `yabai -m query --windows --window 2>/dev/null`.force_encoding('UTF-8')
-      return nil unless $?.success?
+      return nil if json.strip.empty?
       from_yabai_window(JSON.parse(json))
     end
 
