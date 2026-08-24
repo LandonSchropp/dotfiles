@@ -8,6 +8,7 @@ set -euo pipefail
 local_dictionary="$HOME/Library/Spelling/LocalDictionary"
 nvim_dictionary="$HOME/.config/nvim/spell/en.utf-8.add"
 icloud_dictionary="$HOME/Library/Mobile Documents/com~apple~CloudDocs/dictionaries/LocalDictionary"
+obsidian_dictionary="$HOME/Library/Application Support/obsidian/Custom Dictionary.txt"
 
 dictionaries=(
   "$local_dictionary"
@@ -25,12 +26,25 @@ done
 temp_dictionary=$(mktemp)
 
 # Combine all dictionaries, sort, and remove duplicates
-cat "${dictionaries[@]}" | sort | uniq >"$temp_dictionary"
+{
+  cat "${dictionaries[@]}"
+
+  # Obsidian's word list ends with a checksum line; exclude it from the merge.
+  if [[ -f "$obsidian_dictionary" ]]; then
+    sed '/^checksum_v1 /d' "$obsidian_dictionary"
+  fi
+} | sort -u >"$temp_dictionary"
 
 # Write the combined dictionary back to all files
 for dict in "${dictionaries[@]}"; do
   cp "$temp_dictionary" "$dict"
 done
+
+# Obsidian requires a checksum of the word list.
+if [[ -f "$obsidian_dictionary" ]]; then
+  cp "$temp_dictionary" "$obsidian_dictionary"
+  printf 'checksum_v1 = %s' "$(md5 -q "$temp_dictionary")" >>"$obsidian_dictionary"
+fi
 
 # Clean up
 rm "$temp_dictionary"
