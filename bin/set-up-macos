@@ -3,9 +3,11 @@
 set -euo pipefail
 
 # Configures the macOS system preferences that aren't covered by a dotfile: where screenshots are
-# saved and what happens after a capture. Idempotent and safe to run repeatedly.
+# saved and what happens after a capture, and the iCloud Documents folder that replaces
+# ~/Documents. Idempotent and safe to run repeatedly.
 
 screenshots_directory="$HOME/Screenshots"
+icloud_documents="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents"
 
 # Shottr rewrites its preferences when it quits, so anything written while it's running is lost.
 if pgrep -x Shottr > /dev/null; then
@@ -24,6 +26,19 @@ killall SystemUIServer || true
 # Capture silently: no preview thumbnail and no confirmation.
 defaults write cc.ffitch.shottr afterGrabShow -bool false
 defaults write cc.ffitch.shottr notificationType none
+
+# iCloud's Desktop & Documents sync purges local files, so a plain Documents folder inside iCloud
+# Drive stands in for ~/Documents. Give it the real Documents icon.
+mkdir -p "$icloud_documents"
+ICLOUD_DOCUMENTS="$icloud_documents" swift -e 'import AppKit; NSWorkspace.shared.setIcon(NSImage(contentsOfFile: "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/DocumentsFolderIcon.icns"), forFile: ProcessInfo.processInfo.environment["ICLOUD_DOCUMENTS"]!, options: [])'
+
+echo
+echo -e "\033[0;33mThe Finder sidebar has to be set by hand.\033[0m" >&2
+echo >&2
+echo "There's no defaults key for sidebar items. Drag this folder into the Finder sidebar and drag" >&2
+echo "the old Documents entry out:" >&2
+echo >&2
+echo "  $icloud_documents" >&2
 
 echo
 echo -e "\033[0;33mShottr's screenshots folder has to be set by hand.\033[0m" >&2
