@@ -5,6 +5,9 @@ require_relative 'window'
 require_relative 'display'
 require_relative 'configuration'
 require_relative 'flashspace'
+require_relative 'space'
+
+exit if Space.native_fullscreen?
 
 # Get the focused window and the screen rectangle
 window = Window.focused

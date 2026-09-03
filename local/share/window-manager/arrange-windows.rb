@@ -6,6 +6,9 @@ require_relative 'display'
 require_relative 'configuration'
 require_relative 'layout'
 require_relative 'flashspace'
+require_relative 'space'
+
+exit if Space.native_fullscreen?
 
 # Minimum window size as a percentage of screen area
 MIN_WINDOW_SIZE = 100.0 / 8
