@@ -12,6 +12,7 @@ CRITICAL: Before doing anything else, you MUST invoke the `ls-agent:using-skills
 - Prefer prose for explanations. Use bullets only for genuine lists (3+ parallel items) and write full clauses, not fragments.
 - Don't abbreviate words that have a perfectly good full form. The test is whether you'd say the short form out loud in conversation: "config" passes, "dir" doesn't. So write "environment variables", not "env vars", "directory", not "dir", and "arguments", not "args", but leave idiomatic short forms like "config" alone. This applies to prose, code, comments and documentation alike. Established acronyms such as CLI, API and URL are fine.
 - When mentioning something that has an obvious URL (a GitHub repo, issue, or PR; a package; a documentation page), inline a Markdown link on the reference itself rather than leaving it as plain text.
+- Use title case for every title and heading: document titles, issue and task titles, Markdown headings at any level, and work product names. Body text stays in sentence case.
 
 ## Change Management
 
