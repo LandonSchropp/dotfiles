@@ -2,12 +2,6 @@
 
 CRITICAL: Before doing anything else, you MUST invoke the `ls-agent:instructions` skill.
 
-## Change Management
-
-- Split large changes into smaller, focused chunks that can be reviewed quickly
-- Present changes incrementally to allow for feedback before proceeding
-- Make atomic changes that can be easily understood and validated
-
 ## Working Directory
 
 - The session's primary working directory is the source of truth for which checkout to edit. When a repository is checked out in multiple places, such as a dedicated worktree alongside another clone, always edit the copy under the current working directory.
