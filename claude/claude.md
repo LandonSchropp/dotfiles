@@ -1,6 +1,6 @@
 ## Required Skill
 
-CRITICAL: Before doing anything else, you MUST invoke the `ls-agent:using-skills` skill.
+CRITICAL: Before doing anything else, you MUST invoke the `ls-agent:instructions` skill.
 
 ## Communication Guidelines
 
@@ -47,7 +47,7 @@ CRITICAL: Before doing anything else, you MUST invoke the `ls-agent:using-skills
 - Work repositories will always use a feature branch.
 - Push after committing: always on a feature branch, and on `main` only in personal repositories. Never push directly to `main` in a work repository.
 - You MUST invoke the `ls-git:git-atomic-commit` skill before making any changes and follow its guidelines.
-- Before creating a commit, follow the review process in the `ls-agent:using-skills` skill's reviews reference: present the changes for review and commit only after the user signs off.
+- Before creating a commit, follow the review process in the `ls-agent:instructions` skill's reviews reference: present the changes for review and commit only after the user signs off.
 
 ## Code Quality
 
