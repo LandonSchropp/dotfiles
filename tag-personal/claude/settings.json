@@ -234,6 +234,9 @@
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
     "ls-browser@landonschropp": true,
+    "ls-lose-it@landonschropp-personal": true,
+    "ls-slay-the-spire@landonschropp-personal": true,
+    "ls-ynab@landonschropp-personal": true,
     "frontend-design@claude-plugins-official": true,
     "impeccable@impeccable": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
@@ -244,6 +247,12 @@
       "source": {
         "source": "directory",
         "path": "/Users/landon/Development/agent-toolkit"
+      }
+    },
+    "landonschropp-personal": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/landon/Development/personal-agent-toolkit"
       }
     },
     "impeccable": {
