@@ -21,12 +21,6 @@ command = "landonschropp.herdr-project.project"
 description = "new workspace"
 
 [[keys.command]]
-key = "cmd+shift+n"
-type = "plugin_action"
-command = "landonschropp.herdr-project.worktree"
-description = "new worktree"
-
-[[keys.command]]
 key = "cmd+w"
 type = "popup"
 command = "confirm-close-tab"
