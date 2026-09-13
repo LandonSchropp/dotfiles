@@ -6,6 +6,12 @@ if [[ ! "$file_path" =~ \.(js|ts|jsx|tsx|css|scss|json|md|html|vue|yaml|yml)$ ]]
   exit 0
 fi
 
+# Skip Markdown files that opt out with `prettier: false` in their frontmatter.
+if [[ "$file_path" == *.md ]] &&
+  rg --multiline --pcre2 --quiet '\A---\n(?:(?!---$).*\n)*prettier: false$' "$file_path"; then
+  exit 0
+fi
+
 resolved=$(readlink -f "$file_path")
 dotfiles_root="$HOME/.dotfiles"
 
