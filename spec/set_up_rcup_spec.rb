@@ -59,7 +59,7 @@ describe "set-up-rcup" do
   context "when given no arguments" do
     it "hands rcup every managed path" do
       result
-      expect(rcup_arguments).to eq(flags + %w[Library claude config local zprofile zshenv zshrc])
+      expect(rcup_arguments).to eq(flags + %w[Library claude config local multica zprofile zshenv zshrc])
     end
 
     it "succeeds" do

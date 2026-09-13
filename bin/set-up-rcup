@@ -9,7 +9,7 @@ require 'fileutils'
 require 'pathname'
 require 'socket'
 
-MANAGED_PATHS = %w[Library claude config local zprofile zshenv zshrc].freeze
+MANAGED_PATHS = %w[Library claude config local multica zprofile zshenv zshrc].freeze
 
 KARABINER_CONFIGURATION = 'karabiner.json'
 
