@@ -17,7 +17,6 @@
       "Bash(ls *)",
       "Bash(mise *)",
       "Bash(npm *)",
-      "Bash(npx *)",
       "Bash(pnpm *)",
       "Bash(rg *)",
       "Bash(shellcheck *)",
