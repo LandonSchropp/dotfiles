@@ -17,6 +17,9 @@
       "Read(**/secrets/**)",
       "Read(**/credentials/**)",
       "Read(~/Notes/Resources/Journal/**)"
-    ]
-  }
+    ],
+    "additionalDirectories": ["~/Notes", "~/Development", "~/.claude"]
+  },
+  "model": "opus[1m]",
+  "voiceEnabled": false
 }
