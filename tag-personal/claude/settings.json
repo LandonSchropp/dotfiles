@@ -240,6 +240,7 @@
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
   "tui": "fullscreen",
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true
 }
