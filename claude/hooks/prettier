@@ -17,6 +17,36 @@ fi
 
 if [[ "$resolved" == "$dotfiles_root"/* ]]; then
   pnpm dlx prettier --ignore-path "$dotfiles_root/.prettierignore" --write "$resolved"
+  exit
+fi
+
+# Prints the given directory or its nearest ancestor that contains the given path.
+find_ancestor() {
+  local directory="$1"
+
+  while [[ "$directory" != "/" ]]; do
+    if [[ -e "$directory/$2" ]]; then
+      echo "$directory"
+      return
+    fi
+
+    directory=$(dirname "$directory")
+  done
+
+  return 1
+}
+
+file_directory=$(dirname "$resolved")
+
+if directory=$(find_ancestor "$file_directory" node_modules/.bin/prettier); then
+  "$directory/node_modules/.bin/prettier" --write "$resolved"
+elif directory=$(find_ancestor "$file_directory" bun.lock) ||
+  directory=$(find_ancestor "$file_directory" bun.lockb); then
+  cd "$directory" && bun x prettier --write "$resolved"
+elif directory=$(find_ancestor "$file_directory" package-lock.json); then
+  cd "$directory" && npx prettier --write "$resolved"
+elif directory=$(find_ancestor "$file_directory" pnpm-lock.yaml); then
+  cd "$directory" && pnpm exec prettier --write "$resolved"
 else
-  pnpm exec prettier --write "$resolved"
+  pnpm dlx prettier --write "$resolved"
 fi
