@@ -2,6 +2,7 @@
 
 # frozen_string_literal: true
 
+require_relative "list"
 require_relative "sync"
 
 def print_help
@@ -13,6 +14,7 @@ def print_help
     Commands:
 
       sync    Reconcile installed agents with tasks.yml.
+      list    Show each task's name, description, and live launchctl status.
 
     Options:
 
@@ -25,6 +27,8 @@ command = ARGV.shift
 case command
 when "sync"
   Sync.call
+when "list"
+  List.call
 when "--help"
   print_help
 else
