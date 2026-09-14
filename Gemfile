@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "fugit"
 gem "rspec"
 
 group :development do
