@@ -14,7 +14,7 @@ module Sync
   class << self
     def call
       tasks = Task.all
-      current_labels = tasks.map { LaunchAgent.label(_1.name) }
+      current_labels = tasks.map(&:label)
       removed_labels = read_manifest - current_labels
 
       removed_labels.each { remove(_1) }
@@ -25,12 +25,8 @@ module Sync
 
     private
 
-    def domain
-      "gui/#{Process.uid}"
-    end
-
     def bootout(label)
-      system("launchctl", "bootout", "#{domain}/#{label}", exception: false)
+      system("launchctl", "bootout", "#{LaunchAgent.domain}/#{label}", exception: false)
     end
 
     def remove(label)
@@ -47,7 +43,7 @@ module Sync
       write_plist(plist, path)
 
       bootout(label)
-      system("launchctl", "bootstrap", domain, path, exception: true)
+      system("launchctl", "bootstrap", LaunchAgent.domain, path, exception: true)
     end
 
     def plist_path(label)

@@ -4,6 +4,16 @@ require "tmpdir"
 require_relative "../../local/share/launcher/task"
 
 describe Task do
+  describe "#label" do
+    let(:task) do
+      described_class.new(name: "daily-update", description: "Updates everything", command: "daily-update", cron: "0 7 * * *")
+    end
+
+    it "prefixes the task name" do
+      expect(task.label).to eq("com.landonschropp.daily-update")
+    end
+  end
+
   describe ".all" do
     subject(:tasks) { described_class.all(path: config_path) }
 
@@ -70,6 +80,32 @@ describe Task do
 
       it "raises an error" do
         expect { tasks }.to raise_error(ArgumentError, /Duplicate task names: daily-update/)
+      end
+    end
+  end
+
+  describe ".find" do
+    subject(:find) { described_class.find(name) }
+
+    let(:task) do
+      described_class.new(name: "daily-update", description: "Updates everything", command: "daily-update", cron: "0 7 * * *")
+    end
+
+    before { allow(described_class).to receive(:all).and_return([task]) }
+
+    context "when a task with the given name exists" do
+      let(:name) { "daily-update" }
+
+      it "returns the task" do
+        expect(find).to eq(task)
+      end
+    end
+
+    context "when no task with the given name exists" do
+      let(:name) { "nonexistent" }
+
+      it "raises an error" do
+        expect { find }.to raise_error(ArgumentError, "Unknown task: nonexistent")
       end
     end
   end

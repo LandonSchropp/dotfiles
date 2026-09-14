@@ -7,12 +7,12 @@ require_relative "../../local/share/launcher/sync"
 
 describe Sync do
   describe ".call" do
-    let(:domain) { "gui/#{Process.uid}" }
+    let(:domain) { LaunchAgent.domain }
     let(:task) do
       Task.new(name: "daily-update", description: "Updates everything", command: "daily-update", cron: "0 7 * * *")
     end
     let(:tasks) { [task] }
-    let(:label) { LaunchAgent.label(task.name) }
+    let(:label) { task.label }
     let(:plist_path) { File.join(launch_agents_directory, "#{label}.plist") }
 
     around do |example|

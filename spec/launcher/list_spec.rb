@@ -18,7 +18,7 @@ describe List do
 
       before do
         allow(described_class).to receive(:system).with(
-          "launchctl", "list", LaunchAgent.label(daily_task.name), out: File::NULL, err: File::NULL
+          "launchctl", "list", daily_task.label, out: File::NULL, err: File::NULL
         ).and_return(true)
       end
 
@@ -32,7 +32,7 @@ describe List do
 
       before do
         allow(described_class).to receive(:system).with(
-          "launchctl", "list", LaunchAgent.label(daily_task.name), out: File::NULL, err: File::NULL
+          "launchctl", "list", daily_task.label, out: File::NULL, err: File::NULL
         ).and_return(false)
       end
 
@@ -46,10 +46,10 @@ describe List do
 
       before do
         allow(described_class).to receive(:system).with(
-          "launchctl", "list", LaunchAgent.label(daily_task.name), out: File::NULL, err: File::NULL
+          "launchctl", "list", daily_task.label, out: File::NULL, err: File::NULL
         ).and_return(true)
         allow(described_class).to receive(:system).with(
-          "launchctl", "list", LaunchAgent.label(weekly_task.name), out: File::NULL, err: File::NULL
+          "launchctl", "list", weekly_task.label, out: File::NULL, err: File::NULL
         ).and_return(false)
       end
 

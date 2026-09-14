@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 require_relative "../../local/share/launcher/launch_agent"
+require_relative "../../local/share/launcher/task"
 
 describe LaunchAgent do
   describe ".build" do
     subject(:plist) { described_class.build(task) }
 
-    let(:task_class) { Data.define(:name, :command, :cron) }
-    let(:task) { task_class.new(name: "smoke-test", command: "echo hello", cron: "30 9 * * *") }
+    let(:task) do
+      Task.new(name: "smoke-test", description: "A smoke test", command: "echo hello", cron: "30 9 * * *")
+    end
 
     it "builds the label from the task name" do
       expect(plist["Label"]).to eq("com.landonschropp.smoke-test")
@@ -34,7 +36,9 @@ describe LaunchAgent do
     end
 
     context "when the cron expression has a comma-separated weekday list" do
-      let(:task) { task_class.new(name: "smoke-test", command: "echo hello", cron: "30 9 * * 1,3") }
+      let(:task) do
+        Task.new(name: "smoke-test", description: "A smoke test", command: "echo hello", cron: "30 9 * * 1,3")
+      end
 
       it "returns one interval per weekday" do
         expect(plist["StartCalendarInterval"]).to contain_exactly(
@@ -45,7 +49,9 @@ describe LaunchAgent do
     end
 
     context "when the cron expression restricts the day of month and month" do
-      let(:task) { task_class.new(name: "smoke-test", command: "echo hello", cron: "0 9 1 1 *") }
+      let(:task) do
+        Task.new(name: "smoke-test", description: "A smoke test", command: "echo hello", cron: "0 9 1 1 *")
+      end
 
       it "maps them to the Day and Month keys" do
         expect(plist["StartCalendarInterval"]).to eq(
@@ -55,9 +61,9 @@ describe LaunchAgent do
     end
   end
 
-  describe ".label" do
-    it "prefixes the task name" do
-      expect(described_class.label("smoke-test")).to eq("com.landonschropp.smoke-test")
+  describe ".domain" do
+    it "returns the current user's GUI launchd domain" do
+      expect(described_class.domain).to eq("gui/#{Process.uid}")
     end
   end
 end

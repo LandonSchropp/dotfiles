@@ -4,7 +4,6 @@ require_relative "cron"
 
 # Builds a launchd plist hash for a task.
 module LaunchAgent
-  LABEL_PREFIX = "com.landonschropp."
   LOGS_DIRECTORY = File.expand_path("~/Library/Logs")
 
   PLIST_KEYS = {
@@ -17,26 +16,23 @@ module LaunchAgent
 
   class << self
     def build(task)
-      task_label = label(task.name)
-      task_log_directory = log_directory(task.name)
-
       {
-        "Label" => task_label,
+        "Label" => task.label,
         "ProgramArguments" => ["/bin/zsh", "-lc", task.command],
-        "StandardOutPath" => "#{task_log_directory}/stdout.log",
-        "StandardErrorPath" => "#{task_log_directory}/stderr.log",
+        "StandardOutPath" => "#{log_directory(task.label)}/stdout.log",
+        "StandardErrorPath" => "#{log_directory(task.label)}/stderr.log",
         "StartCalendarInterval" => intervals(task.cron)
       }
     end
 
-    def label(name)
-      "#{LABEL_PREFIX}#{name}"
+    def domain
+      "gui/#{Process.uid}"
     end
 
     private
 
-    def log_directory(name)
-      "#{LOGS_DIRECTORY}/#{label(name)}"
+    def log_directory(label)
+      "#{LOGS_DIRECTORY}/#{label}"
     end
 
     def intervals(expression)

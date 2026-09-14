@@ -4,6 +4,11 @@ require "yaml"
 
 Task = Data.define(:name, :description, :command, :cron) do
   CONFIG_PATH = File.expand_path("~/.config/launcher/tasks.yml")
+  LABEL_PREFIX = "com.landonschropp."
+
+  def label
+    "#{LABEL_PREFIX}#{name}"
+  end
 
   class << self
     def all(path: CONFIG_PATH)
@@ -13,6 +18,13 @@ Task = Data.define(:name, :description, :command, :cron) do
       validate_unique_names!(entries)
 
       entries.map { new(**_1.transform_keys(&:to_sym)) }
+    end
+
+    def find(name)
+      task = all.find { _1.name == name }
+      raise ArgumentError, "Unknown task: #{name}" unless task
+
+      task
     end
 
     private

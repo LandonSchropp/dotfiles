@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "launch_agent"
 require_relative "task"
 
 module List
   class << self
     def call
-      rows = Task.all.map { [_1.name, status(LaunchAgent.label(_1.name)), _1.description] }
+      rows = Task.all.map { [_1.name, status(_1.label), _1.description] }
       name_width = rows.map { _1[0].length }.max
       status_width = rows.map { _1[1].length }.max
 
