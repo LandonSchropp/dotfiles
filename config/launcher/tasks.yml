@@ -1,0 +1,19 @@
+- name: daily-update
+  description: Run the quick, low-risk updates that keep the machine current day-to-day.
+  command: daily-update
+  cron: "0 7,15 * * *"
+
+- name: weekly-update
+  description: Run the slower, less urgent updates once a week.
+  command: weekly-update
+  cron: "0 13 * * 5"
+
+- name: enable-screen-tint
+  description: Enable the screen tint shortcut in the evening.
+  command: 'shortcuts run "Enable Screen Tint"'
+  cron: "0 21 * * *"
+
+- name: disable-screen-tint
+  description: Disable the screen tint shortcut in the morning.
+  command: 'shortcuts run "Disable Screen Tint"'
+  cron: "0 7 * * *"

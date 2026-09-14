@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# Regenerate and reload the launchd agents defined in ~/.config/launcher/tasks.yml.
+launcher sync
+
 # The domain, required by launchctl
 domain="gui/$(id -u)"
 
