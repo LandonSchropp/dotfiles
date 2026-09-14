@@ -14,6 +14,16 @@ describe Task do
     end
   end
 
+  describe "#log_directory" do
+    let(:task) do
+      described_class.new(name: "daily-update", description: "Updates everything", command: "daily-update", cron: "0 7 * * *")
+    end
+
+    it "nests the label under the logs directory" do
+      expect(task.log_directory).to eq(File.expand_path("~/Library/Logs/com.landonschropp.daily-update"))
+    end
+  end
+
   describe ".all" do
     subject(:tasks) { described_class.all(path: config_path) }
 

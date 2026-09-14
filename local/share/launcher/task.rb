@@ -5,9 +5,14 @@ require "yaml"
 Task = Data.define(:name, :description, :command, :cron) do
   CONFIG_PATH = File.expand_path("~/.config/launcher/tasks.yml")
   LABEL_PREFIX = "com.landonschropp."
+  LOGS_DIRECTORY = File.expand_path("~/Library/Logs")
 
   def label
     "#{LABEL_PREFIX}#{name}"
+  end
+
+  def log_directory
+    "#{LOGS_DIRECTORY}/#{label}"
   end
 
   class << self

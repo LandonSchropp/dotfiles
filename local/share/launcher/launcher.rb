@@ -2,7 +2,10 @@
 
 # frozen_string_literal: true
 
+require "optparse"
+
 require_relative "list"
+require_relative "log"
 require_relative "run"
 require_relative "sync"
 
@@ -14,9 +17,11 @@ def print_help
 
     Commands:
 
-      sync         Reconcile installed agents with tasks.yml.
-      list         Show each task's name, description, and live launchctl status.
-      run <name>   Run a task immediately, without waiting for its schedule.
+      sync                Reconcile installed agents with tasks.yml.
+      list                Show each task's name, description, and live launchctl status.
+      run <name>          Run a task immediately, without waiting for its schedule.
+      log <name>          Tail a task's stdout/stderr log files.
+        --lines <count>   Number of trailing lines to show (default #{Log::DEFAULT_LINES}).
 
     Options:
 
@@ -45,6 +50,23 @@ when "run"
   begin
     Run.call(name)
   rescue ArgumentError => e
+    fail_with(e.message)
+  end
+when "log"
+  name = ARGV.shift
+
+  fail_with("A task name is required.") if name.nil?
+
+  options = {}
+
+  parser = OptionParser.new do |opts|
+    opts.on("--lines LINES", Integer) { options[:lines] = _1 }
+  end
+
+  begin
+    parser.parse!(ARGV)
+    Log.call(name, **options)
+  rescue OptionParser::ParseError, ArgumentError => e
     fail_with(e.message)
   end
 when "--help"
