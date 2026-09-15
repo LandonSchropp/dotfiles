@@ -17,3 +17,8 @@
   description: Disable the screen tint shortcut in the morning.
   command: 'shortcuts run "Disable Screen Tint"'
   cron: "0 7 * * *"
+
+- name: plan-morning
+  description: Open the notes workspace and run the morning planning prompt.
+  command: herdr-project open notes --prompt "/plan-morning"
+  cron: "0 7 * * *"
