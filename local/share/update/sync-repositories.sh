@@ -27,9 +27,30 @@ log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"
 }
 
+# Launches a herdr-project fix session for a repository whose sync failed.
+request_fix() {
+  local repository="$1"
+  local name="$2"
+  local project
+
+  if ! project=$(herdr-project list --json | jq -r --arg path "$repository" '.[] | select(.path == $path) | .name'); then
+    log "Error: failed to list herdr-project projects, skipping fix session for $name." >&2
+    return
+  fi
+
+  if [[ -z "$project" ]]; then
+    log "Error: no herdr-project configured for $name, skipping fix session." >&2
+    return
+  fi
+
+  herdr-project open "$project" --worktree fix-sync --no-focus --prompt \
+    "The daily sync's \`git-town sync\` failed in this repository and was backed out with \`git town undo\`. Reproduce and fix the failure (likely a rebase conflict) in the main worktree at $repository, not in this worktree. Once \`git-town sync\` succeeds there, close this worktree." ||
+    log "Error: failed to open a herdr-project fix session for $name." >&2
+}
+
 # Syncs the default branch of a single repository via git-town, returning to the original branch
 # when done. On failure, backs the sync out with `git town undo` so the repository is left clean for
-# the next run, and returns non-zero.
+# the next run, requests a fix session, and returns non-zero.
 sync_repository() {
   local repository="$1"
   local name
@@ -58,6 +79,7 @@ sync_repository() {
     log "Error: git-town sync failed in $name, backing out with git town undo." >&2
     git-town undo || log "Error: git town undo failed in $name." >&2
     git checkout "$original_branch" || true
+    request_fix "$repository" "$name"
     return 1
   fi
 
