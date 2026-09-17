@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
+# Explicit PATH for signal actions, independent of the daemon's own environment.
+action_path="$HOME/.local/share/mise/shims:/opt/homebrew/bin"
+
 # Update profile when displays are connected, disconnected or focused
 for event in display_added display_removed display_changed; do
   yabai -m signal \
     --add event="$event" \
-    action="switch-profile"
+    action="PATH=\"$action_path\" $HOME/.local/bin/switch-profile"
 done
 
 # Arrange windows when window events occur
 for event in window_created window_destroyed window_minimized window_deminimized; do
   yabai -m signal \
     --add event="$event" \
-    action="arrange-windows"
+    action="PATH=\"$action_path\" $HOME/.local/bin/arrange-windows"
 done
