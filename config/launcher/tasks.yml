@@ -20,5 +20,5 @@
 
 - name: plan-morning
   description: Open the notes workspace and run the morning planning prompt.
-  command: herdr-project open notes --prompt "/plan-morning"
+  command: herdr-project open notes --worktree plan-morning --prompt "/plan-morning"
   cron: "0 7 * * *"
