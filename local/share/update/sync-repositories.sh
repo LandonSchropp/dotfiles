@@ -43,8 +43,8 @@ request_fix() {
     return
   fi
 
-  herdr-project open "$project" --worktree fix-sync --no-focus --prompt \
-    "The daily sync's \`git-town sync\` failed in this repository and was backed out with \`git town undo\`. Reproduce and fix the failure (likely a rebase conflict) in the main worktree at $repository, not in this worktree. Once \`git-town sync\` succeeds there, close this worktree." ||
+  herdr-project open --project "$project" --name fix-sync --no-focus --prompt \
+    "The daily sync's \`git-town sync\` failed in this repository and was backed out with \`git town undo\`. Reproduce and fix the failure (likely a rebase conflict) here in $repository. Once \`git-town sync\` succeeds, close this workspace." ||
     log "Error: failed to open a herdr-project fix session for $name." >&2
 }
 
