@@ -8,7 +8,6 @@ db/*.sqlite3
 *.log
 tmp/**/*
 *.pyc
-.aider*
 **/.claude/settings.local.json
 mise.local.toml
 *.local.md
