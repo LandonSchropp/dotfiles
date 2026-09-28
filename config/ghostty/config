@@ -6,8 +6,9 @@ font-style = Medium
 # Disable ligatures
 font-feature = -calt, -liga, -dlig
 
-# Set the theme to Tokyo Night Storm
-theme = "TokyoNight Storm"
+# Set the theme to Tokyo Night Storm, using tokyonight.nvim's version because the built-in theme's
+# bright colors are identical to the normal ones
+theme = "/Users/landon/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_storm"
 
 # Ensure that new windows take up the full screen size.
 window-width = 1000
