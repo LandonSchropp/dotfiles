@@ -88,6 +88,11 @@ sync_repository() {
 
 log "Starting repository sync..."
 
+if ! curl --silent --output /dev/null --max-time 10 https://github.com; then
+  log "GitHub is unreachable, skipping repository sync."
+  exit 0
+fi
+
 exit_code=0
 
 for repository in "${repositories[@]}"; do
