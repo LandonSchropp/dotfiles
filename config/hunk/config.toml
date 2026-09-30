@@ -1,4 +1,4 @@
-theme = "tokyo-night"
+theme = "tokyo-night-storm"
 mode = "unified"
 line_numbers = false
 wrap_lines = true
@@ -10,3 +10,16 @@ cursor_line = "row"
 
 [keybindings]
 "hunk.app.quit" = "ctrl+c"
+
+# Tokyo Night Storm, matching Ghostty and Neovim.
+[themes.tokyo-night-storm]
+base = "tokyo-night"
+label = "Tokyo Night Storm"
+background = "#24283b"
+contextBg = "#24283b"
+contextContentBg = "#24283b"
+lineNumberBg = "#24283b"
+panel = "#1f2335"
+panelAlt = "#292e42"
+noteBackground = "#1f2335"
+noteTitleBackground = "#1f2335"
