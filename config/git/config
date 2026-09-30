@@ -98,9 +98,6 @@
 	empty = drop
 	updateRefs = true
 
-[diff]
-  colorMoved = zebra
-
 [status]
   showUntrackedFiles = all
 
