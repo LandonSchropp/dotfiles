@@ -63,15 +63,15 @@
         },
         {
           "appToFocus" : {
-            "bundleIdentifier" : "com.busymac.busycal3",
-            "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-            "name" : "BusyCal"
+            "bundleIdentifier" : "com.yellowmonkeystudio.gcal",
+            "iconPath" : "/Applications/GCal for Google Calendar.app/Contents/Resources/AppIcon.icns",
+            "name" : "GCal for Google Calendar"
           },
           "apps" : [
             {
-              "bundleIdentifier" : "com.busymac.busycal3",
-              "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-              "name" : "BusyCal"
+              "bundleIdentifier" : "com.yellowmonkeystudio.gcal",
+              "iconPath" : "/Applications/GCal for Google Calendar.app/Contents/Resources/AppIcon.icns",
+              "name" : "GCal for Google Calendar"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -241,15 +241,15 @@
         },
         {
           "appToFocus" : {
-            "bundleIdentifier" : "com.busymac.busycal3",
-            "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-            "name" : "BusyCal"
+            "bundleIdentifier" : "com.yellowmonkeystudio.gcal",
+            "iconPath" : "/Applications/GCal for Google Calendar.app/Contents/Resources/AppIcon.icns",
+            "name" : "GCal for Google Calendar"
           },
           "apps" : [
             {
-              "bundleIdentifier" : "com.busymac.busycal3",
-              "iconPath" : "/Applications/BusyCal.app/Contents/Resources/BusyCal.icns",
-              "name" : "BusyCal"
+              "bundleIdentifier" : "com.yellowmonkeystudio.gcal",
+              "iconPath" : "/Applications/GCal for Google Calendar.app/Contents/Resources/AppIcon.icns",
+              "name" : "GCal for Google Calendar"
             }
           ],
           "display" : "LG HDR 4K",

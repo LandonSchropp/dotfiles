@@ -31,7 +31,7 @@ workspaces:
   - workspace: Calendar
     profile: Full
     layout: Fullscreen
-    applications: [BusyCal]
+    applications: [GCal for Google Calendar]
 
   - workspace: Music
     profile: Full
@@ -71,7 +71,7 @@ workspaces:
   - workspace: Calendar
     profile: Split
     layout: Fullscreen
-    applications: [BusyCal]
+    applications: [GCal for Google Calendar]
 
   - workspace: Music
     profile: Split
