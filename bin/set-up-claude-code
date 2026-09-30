@@ -3,9 +3,9 @@
 set -euo pipefail
 
 # Installs the Claude Code skills and integrations rcup can't set up on its own: my own skills (a
-# plugin marketplace in a separate repository), the caveman compression and Hunk review skills
-# (installed from GitHub) and peon-ping sound notifications (installed from the Homebrew package
-# defined in the Brewfile). Safe to run repeatedly.
+# plugin marketplace in a separate repository), the Hunk review skill (installed from GitHub) and
+# peon-ping sound notifications (installed from the Homebrew package defined in the Brewfile).
+# Safe to run repeatedly.
 
 # Clone the agent-toolkit repository, which Claude's settings register as a plugin marketplace by
 # path.
@@ -17,16 +17,6 @@ fi
 
 # The skill scripts import their dependencies, and node_modules isn't checked in.
 (cd "$agent_toolkit_directory" && bun install --frozen-lockfile)
-
-# Install the caveman skills.
-npx -y skills add JuliusBrussee/caveman \
-  --global \
-  --agent claude-code \
-  --yes \
-  --skill caveman \
-  --skill caveman-commit \
-  --skill caveman-compress \
-  --skill caveman-review
 
 # Set up peon-ping. The package itself is installed by set-up-homebrew via the Brewfile; this wires
 # up the sound packs and registers the Claude Code hooks.
