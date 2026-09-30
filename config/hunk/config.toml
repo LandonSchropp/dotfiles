@@ -1,0 +1,12 @@
+theme = "tokyo-night"
+mode = "unified"
+line_numbers = false
+wrap_lines = true
+hunk_headers = true
+menu_bar = true
+agent_notes = true
+copy_decorations = false
+cursor_line = "row"
+
+[keybindings]
+"hunk.app.quit" = "ctrl+c"
