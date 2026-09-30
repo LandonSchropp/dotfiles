@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Installs the Hunk extensions I use, or updates them when they're already installed. Safe to run
+# repeatedly.
+
+if ! command -v hunk >/dev/null 2>&1; then
+  echo "Error: hunk was not found. Run set-up-homebrew first to install it." >&2
+  exit 1
+fi
+
+extensions=(LandonSchropp/hunk-review LandonSchropp/hunk-backup)
+
+for extension in "${extensions[@]}"; do
+  name="${extension#*/}"
+
+  if hunk extension list | grep --quiet "^$name "; then
+    hunk extension update "$name"
+  else
+    hunk extension install --yes "$extension"
+  fi
+done

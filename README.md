@@ -53,6 +53,7 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-claude-code
 ~/.dotfiles/bin/set-up-herdr
+~/.dotfiles/bin/set-up-hunk
 ```
 
 `set-up-macos` finishes by printing the one screenshot setting that can't be scripted. Shottr is

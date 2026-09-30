@@ -24,6 +24,7 @@ Run these setup scripts in order after cloning the repository:
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim
 ~/.dotfiles/bin/set-up-claude-code   # Set up Claude Code's skills and integrations
 ~/.dotfiles/bin/set-up-herdr         # Install and configure Herdr
+~/.dotfiles/bin/set-up-hunk          # Install Hunk's extensions
 ```
 
 ### Development Tools Configuration
