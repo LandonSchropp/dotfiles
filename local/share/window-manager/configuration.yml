@@ -16,7 +16,7 @@ workspaces:
   - workspace: Browser
     profile: Full
     layout: Fullscreen
-    applications: [Arc]
+    applications: [Zen, Arc]
 
   - workspace: Terminal
     profile: Full
@@ -46,22 +46,22 @@ workspaces:
   - workspace: Linear
     profile: Full
     layout: Columns
-    applications: [Arc, Linear]
+    applications: [Zen, Arc, Linear]
 
   - workspace: Browser
     profile: Split
     layout: Columns
-    applications: [Arc]
+    applications: [Zen, Arc]
 
   - workspace: Terminal
     profile: Split
     layout: Main Stack
-    applications: [Arc, Ghostty]
+    applications: [Zen, Arc, Ghostty]
 
   - workspace: Notes
     profile: Split
     layout: Main Stack
-    applications: [Arc, Obsidian]
+    applications: [Zen, Arc, Obsidian]
 
   - workspace: Writing
     profile: Split
@@ -81,9 +81,9 @@ workspaces:
   - workspace: Slack
     profile: Split
     layout: Main Stack
-    applications: [Arc, Slack]
+    applications: [Zen, Arc, Slack]
 
   - workspace: Linear
     profile: Split
     layout: Main Stack
-    applications: [Arc, Linear]
+    applications: [Zen, Arc, Linear]

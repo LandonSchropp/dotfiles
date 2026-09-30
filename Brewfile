@@ -74,6 +74,7 @@ cask "spotify"
 cask "thaw"
 cask "the-unarchiver"
 cask "visual-studio-code"
+cask "zen"
 
 mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580

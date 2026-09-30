@@ -6,11 +6,16 @@
       "workspaces" : [
         {
           "appToFocus" : {
-            "bundleIdentifier" : "company.thebrowser.Browser",
-            "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-            "name" : "Arc"
+            "bundleIdentifier" : "app.zen-browser.zen",
+            "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+            "name" : "Zen"
           },
           "apps" : [
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
             {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
@@ -150,11 +155,16 @@
       "workspaces" : [
         {
           "appToFocus" : {
-            "bundleIdentifier" : "company.thebrowser.Browser",
-            "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-            "name" : "Arc"
+            "bundleIdentifier" : "app.zen-browser.zen",
+            "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+            "name" : "Zen"
           },
           "apps" : [
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
             {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
@@ -180,6 +190,11 @@
               "name" : "Ghostty"
             },
             {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
+            {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
@@ -202,6 +217,11 @@
               "bundleIdentifier" : "md.obsidian",
               "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
               "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
             },
             {
               "bundleIdentifier" : "company.thebrowser.Browser",
@@ -295,6 +315,11 @@
               "name" : "Slack"
             },
             {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
+            {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
@@ -313,6 +338,11 @@
             "name" : "Linear"
           },
           "apps" : [
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            },
             {
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
