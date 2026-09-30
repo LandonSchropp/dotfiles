@@ -8,6 +8,7 @@ tap "thoughtbot/formulae"
 
 brew "asciinema"
 brew "bat"
+brew "chafa"
 brew "coreutils"
 brew "diff-so-fancy"
 brew "dufs"
