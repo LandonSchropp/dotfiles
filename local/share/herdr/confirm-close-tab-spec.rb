@@ -1,14 +1,21 @@
 # frozen_string_literal: true
 
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "rspec", "~> 3.13"
+end
+
+require "rspec/autorun"
+
 require "open3"
 require "tmpdir"
 
 describe "confirm-close-tab" do
   subject(:result) { run_script }
 
-  let(:script_path) do
-    File.expand_path("../../local/share/herdr/confirm-close-tab.sh", __dir__)
-  end
+  let(:script_path) { File.expand_path("confirm-close-tab.sh", __dir__) }
 
   let(:confirmed) { true }
   let(:tab_id) { "w1S:t3" }
