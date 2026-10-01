@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "../../local/share/launcher/list"
+require_relative "spec-helper"
+
+require_relative "list"
 
 describe List do
   describe ".call" do

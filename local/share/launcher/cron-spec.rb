@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "../../local/share/launcher/cron"
+require_relative "spec-helper"
+
+require_relative "cron"
 
 describe Cron do
   describe ".expand" do

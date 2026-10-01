@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "../../local/share/launcher/run"
+require_relative "spec-helper"
+
+require_relative "run"
 
 describe Run do
   describe ".call" do

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative "spec-helper"
+
 require "tmpdir"
-require_relative "../../local/share/launcher/task"
+require_relative "task"
 
 describe Task do
   describe "#label" do

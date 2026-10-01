@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "../../local/share/launcher/launch_agent"
-require_relative "../../local/share/launcher/task"
+require_relative "spec-helper"
+
+require_relative "launch_agent"
+require_relative "task"
 
 describe LaunchAgent do
   describe ".build" do

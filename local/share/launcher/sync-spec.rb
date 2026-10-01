@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require_relative "spec-helper"
+
 require "fileutils"
 require "json"
 require "tmpdir"
-require_relative "../../local/share/launcher/sync"
+require_relative "sync"
 
 describe Sync do
   describe ".call" do
