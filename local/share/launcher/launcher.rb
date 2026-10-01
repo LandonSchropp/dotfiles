@@ -2,7 +2,13 @@
 
 # frozen_string_literal: true
 
+require "bundler/inline"
 require "optparse"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "fugit"
+end
 
 require_relative "list"
 require_relative "log"
