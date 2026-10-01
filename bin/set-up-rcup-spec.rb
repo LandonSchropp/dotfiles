@@ -10,69 +10,48 @@ end
 require "rspec/autorun"
 
 require "fileutils"
-require "open3"
+require "socket"
 require "tmpdir"
 
+SCRIPT = File.expand_path("set-up-rcup", __dir__)
+
 describe "set-up-rcup" do
-  subject(:result) { run_script }
+  subject(:run_script) do
+    stub_const("ARGV", arguments)
+    load SCRIPT
+  end
 
-  let(:script_path) { File.expand_path("set-up-rcup", __dir__) }
+  let(:main) { TOPLEVEL_BINDING.receiver }
   let(:arguments) { [] }
+  let(:flags) { %w[-t personal -v -U Library -x karabiner.json] }
 
+  # Removes the constants each load defines.
   around do |example|
+    constants = Object.constants
+
     Dir.mktmpdir do |directory|
       @home_directory = directory
       example.run
     end
+  ensure
+    (Object.constants - constants).each { Object.send(:remove_const, _1) }
   end
 
   before do
-    # The real rcup creates this while linking, and the Karabiner hack then links into it.
+    # Stands in for the directory rcup creates.
     FileUtils.mkdir_p(File.join(@home_directory, ".config"))
 
-    File.write(rcup_path, <<~SHELL)
-      #!/usr/bin/env bash
-      printf '%s\\n' "$*" >> "#{calls_path}"
-    SHELL
-
-    File.chmod(0o755, rcup_path)
+    allow(Dir).to receive(:home).and_return(@home_directory)
+    allow(Socket).to receive(:gethostname).and_return("Landons-MacBook-Pro.local")
+    allow(main).to receive(:system).and_return(true)
+    allow($stderr).to receive(:write)
   end
-
-  def rcup_path
-    File.join(@home_directory, "rcup")
-  end
-
-  def calls_path
-    File.join(@home_directory, "rcup-calls")
-  end
-
-  # The single rcup invocation, split back into its arguments.
-  def rcup_arguments
-    return nil unless File.exist?(calls_path)
-
-    File.read(calls_path).chomp.split
-  end
-
-  def run_script
-    environment = {
-      # The script writes into the home directory, so it runs against a throwaway one.
-      "HOME" => @home_directory,
-      "PATH" => "#{@home_directory}:#{ENV.fetch("PATH")}",
-    }
-
-    Open3.capture3(environment, script_path, *arguments)
-  end
-
-  let(:flags) { %w[-t personal -v -U Library -x karabiner.json] }
 
   context "when given no arguments" do
     it "hands rcup every managed path" do
-      result
-      expect(rcup_arguments).to eq(flags + %w[Library claude config local zprofile zshenv zshrc])
-    end
-
-    it "succeeds" do
-      expect(result.last).to be_success
+      run_script
+      expect(main).to have_received(:system)
+        .with("rcup", *flags, *%w[Library claude config local zprofile zshenv zshrc])
     end
   end
 
@@ -80,12 +59,8 @@ describe "set-up-rcup" do
     let(:arguments) { ["config/nvim"] }
 
     it "hands rcup only that path" do
-      result
-      expect(rcup_arguments).to eq(flags + ["config/nvim"])
-    end
-
-    it "succeeds" do
-      expect(result.last).to be_success
+      run_script
+      expect(main).to have_received(:system).with("rcup", *flags, "config/nvim")
     end
   end
 
@@ -93,8 +68,8 @@ describe "set-up-rcup" do
     let(:arguments) { ["config/./nvim"] }
 
     it "hands rcup the cleaned path" do
-      result
-      expect(rcup_arguments).to eq(flags + ["config/nvim"])
+      run_script
+      expect(main).to have_received(:system).with("rcup", *flags, "config/nvim")
     end
   end
 
@@ -102,8 +77,8 @@ describe "set-up-rcup" do
     let(:arguments) { ["config/karabiner/karabiner.json"] }
 
     it "tells rcup to exclude it" do
-      result
-      expect(rcup_arguments).to eq(flags + ["config/karabiner/karabiner.json"])
+      run_script
+      expect(main).to have_received(:system).with("rcup", *flags, "config/karabiner/karabiner.json")
     end
   end
 
@@ -111,12 +86,39 @@ describe "set-up-rcup" do
     let(:arguments) { ["Library/LaunchAgents"] }
 
     it "excludes it from dotting" do
-      result
+      run_script
 
-      expect(rcup_arguments).to eq(
-        %w[-t personal -v -U Library -U Library/LaunchAgents -x karabiner.json
-           Library/LaunchAgents],
+      expect(main).to have_received(:system).with(
+        "rcup", *%w[-t personal -v -U Library -U Library/LaunchAgents -x karabiner.json Library/LaunchAgents]
       )
+    end
+  end
+
+  context "when the machine is a work machine" do
+    before { allow(Socket).to receive(:gethostname).and_return("OHR-12345.local") }
+
+    it "hands rcup the work tag" do
+      run_script
+      expect(main).to have_received(:system).with("rcup", "-t", "work", any_args)
+    end
+  end
+
+  context "when rcup succeeds" do
+    it "links Karabiner's configuration directory" do
+      run_script
+
+      expect(File.readlink(File.join(@home_directory, ".config", "karabiner")))
+        .to eq(File.join(@home_directory, ".dotfiles", "config", "karabiner"))
+    end
+  end
+
+  context "when rcup fails" do
+    before { allow(main).to receive(:system).and_return(false) }
+
+    it "prints an error and fails" do
+      expect { run_script }
+        .to raise_error(SystemExit) { expect(_1).not_to be_success }
+        .and output(/\AError: /).to_stderr
     end
   end
 
@@ -124,16 +126,14 @@ describe "set-up-rcup" do
     let(:arguments) { ["Documents"] }
 
     it "never calls rcup" do
-      result
-      expect(rcup_arguments).to be_nil
+      expect { run_script }.to raise_error(SystemExit)
+      expect(main).not_to have_received(:system)
     end
 
-    it "prints an error" do
-      expect(result[1]).to match(/\AError: /)
-    end
-
-    it "fails" do
-      expect(result.last).not_to be_success
+    it "prints an error and fails" do
+      expect { run_script }
+        .to raise_error(SystemExit) { expect(_1).not_to be_success }
+        .and output(/\AError: /).to_stderr
     end
   end
 
@@ -153,8 +153,8 @@ describe "set-up-rcup" do
         let(:arguments) { [path] }
 
         it "never calls rcup" do
-          result
-          expect(rcup_arguments).to be_nil
+          expect { run_script }.to raise_error(SystemExit)
+          expect(main).not_to have_received(:system)
         end
       end
     end
