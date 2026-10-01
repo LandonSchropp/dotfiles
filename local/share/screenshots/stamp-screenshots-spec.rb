@@ -9,27 +9,52 @@ end
 
 require "rspec/autorun"
 
-require "json"
-require "open3"
-require "tempfile"
 require "tmpdir"
 
+SCRIPT = File.expand_path("stamp-screenshots.rb", __dir__)
+
 describe "stamp-screenshots" do
-  subject(:result) { run_script }
-
-  let(:script_path) { File.expand_path("stamp-screenshots.rb", __dir__) }
-
+  let(:main) { TOPLEVEL_BINDING.receiver }
+  let(:script_path) { SCRIPT }
   let(:attribute) { "com.apple.LaunchServices.OpenWith" }
+  let(:shottr_handler) { "bplist00".unpack1("H*") }
+  let(:conversion) do
+    ["plutil", "-convert", "binary1", "-o", "-", File.expand_path("shottr-handler.plist", __dir__)]
+  end
   let(:cache_home) { nil }
 
   around do |example|
+    @constants = Object.constants
+
     Dir.mktmpdir do |directory|
       @home = directory
       example.run
     end
+  ensure
+    forget_script
   end
 
-  before { Dir.mkdir(screenshots_directory) }
+  before do
+    Dir.mkdir(screenshots_directory)
+
+    allow(Dir).to receive(:home).and_return(@home)
+    allow(ENV).to receive(:[]).and_call_original
+    allow(ENV).to receive(:[]).with("XDG_CACHE_HOME").and_return(cache_home)
+    allow(IO).to receive(:popen).and_return("bplist00")
+    allow(main).to receive(:system).and_return(false)
+    allow(main).to receive(:system).with("xattr", "-w", any_args).and_return(true)
+    allow($stderr).to receive(:write)
+  end
+
+  def run_script
+    forget_script
+    load script_path
+  end
+
+  # Removes the constants earlier loads defined, so the next load doesn't redefine them.
+  def forget_script
+    (Object.constants - @constants).each { Object.send(:remove_const, _1) }
+  end
 
   def screenshots_directory
     File.join(@home, "Screenshots")
@@ -45,56 +70,22 @@ describe "stamp-screenshots" do
     path
   end
 
-  def write_handler(path, bundle_identifier)
-    plist = <<~XML
-      <?xml version="1.0" encoding="UTF-8"?>
-      <plist version="1.0">
-        <dict>
-          <key>version</key><integer>0</integer>
-          <key>path</key><string>/Applications/Preview.app</string>
-          <key>bundleidentifier</key><string>#{bundle_identifier}</string>
-        </dict>
-      </plist>
-    XML
-
-    binary, _, _status = Open3.capture3("plutil", "-convert", "binary1", "-o", "-", "-",
-      stdin_data: plist)
-
-    Open3.capture3("xattr", "-w", "-x", attribute, binary.unpack1("H*"), path)
-  end
-
-  def handler(path)
-    hexadecimal, _, status = Open3.capture3("xattr", "-p", "-x", attribute, path)
-    return nil unless status.success?
-
-    Tempfile.create("handler") do |file|
-      file.binmode
-      file.write([hexadecimal.gsub(/\s/, "")].pack("H*"))
-      file.close
-
-      JSON.parse(Open3.capture3("plutil", "-convert", "json", "-o", "-", file.path).first)
-    end
-  end
-
-  def run_script
-    Open3.capture3({ "HOME" => @home, "XDG_CACHE_HOME" => cache_home }, script_path)
+  def stamp(path)
+    have_received(:system).with("xattr", "-w", "-x", attribute, shottr_handler, path, exception: true)
   end
 
   context "when the directory contains an image" do
     let!(:screenshot) { create_screenshot("Screenshot 2026-08-05 at 9.00.00 AM.png") }
 
     it "points the image at Shottr" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(screenshot)
     end
 
-    it "records Shottr's path" do
-      result
-      expect(handler(screenshot)).to include("path" => "/Applications/Shottr.app")
-    end
+    it "converts Shottr's handler for xattr" do
+      run_script
 
-    it "succeeds" do
-      expect(result.last).to be_success
+      expect(IO).to have_received(:popen).with(conversion, "rb")
     end
   end
 
@@ -103,13 +94,13 @@ describe "stamp-screenshots" do
     let!(:heic) { create_screenshot("screenshot.heic") }
 
     it "points the JPEG at Shottr" do
-      result
-      expect(handler(jpeg)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(jpeg)
     end
 
     it "points the HEIC at Shottr" do
-      result
-      expect(handler(heic)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(heic)
     end
   end
 
@@ -118,8 +109,13 @@ describe "stamp-screenshots" do
     let!(:screenshot) { create_screenshot("screenshot.png") }
 
     it "points the image at Shottr" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(screenshot)
+    end
+
+    it "finds Shottr's handler beside the script" do
+      run_script
+      expect(IO).to have_received(:popen).with(conversion, "rb")
     end
   end
 
@@ -127,8 +123,8 @@ describe "stamp-screenshots" do
     let!(:screenshot) { create_screenshot("weird\nname.png") }
 
     it "points the image at Shottr" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(screenshot)
     end
   end
 
@@ -136,19 +132,23 @@ describe "stamp-screenshots" do
     let!(:recording) { create_screenshot("Screen Recording 2026-08-05 at 9.00.00 AM.mov") }
 
     it "leaves the recording alone" do
-      result
-      expect(handler(recording)).to be_nil
+      run_script
+      expect(main).not_to stamp(recording)
     end
   end
 
   context "when an image already has a handler" do
     let!(:screenshot) { create_screenshot("screenshot.png") }
 
-    before { write_handler(screenshot, "com.apple.Preview") }
+    before do
+      allow(main).to receive(:system)
+        .with("xattr", "-p", attribute, screenshot, out: File::NULL, err: File::NULL)
+        .and_return(true)
+    end
 
     it "preserves the existing handler" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "com.apple.Preview")
+      run_script
+      expect(main).not_to stamp(screenshot)
     end
   end
 
@@ -157,13 +157,12 @@ describe "stamp-screenshots" do
 
     before do
       run_script
-      Open3.capture3("xattr", "-d", attribute, screenshot)
       File.utime(Time.now - 3600, Time.now - 3600, screenshot)
     end
 
     it "leaves the image alone" do
       run_script
-      expect(handler(screenshot)).to be_nil
+      expect(main).to stamp(screenshot).once
     end
 
     it "still points a newly added image at Shottr" do
@@ -171,7 +170,7 @@ describe "stamp-screenshots" do
       added = create_screenshot("added.png")
       run_script
 
-      expect(handler(added)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      expect(main).to stamp(added)
     end
   end
 
@@ -182,18 +181,14 @@ describe "stamp-screenshots" do
     end
 
     it "leaves the image alone" do
-      result
-      expect(handler(screenshot)).to be_nil
+      run_script
+      expect(main).not_to stamp(screenshot)
     end
   end
 
   context "when the directory is empty" do
-    it "succeeds" do
-      expect(result.last).to be_success
-    end
-
     it "creates the marker" do
-      result
+      run_script
       expect(File.exist?(marker_path)).to be(true)
     end
   end
@@ -203,13 +198,13 @@ describe "stamp-screenshots" do
     let!(:screenshot) { create_screenshot("screenshot.png") }
 
     it "puts the marker in the cache directory" do
-      result
+      run_script
       expect(File.exist?(File.join(cache_home, "stamp-screenshots", "marker"))).to be(true)
     end
 
     it "points the image at Shottr" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "cc.ffitch.shottr")
+      run_script
+      expect(main).to stamp(screenshot)
     end
   end
 
@@ -218,29 +213,23 @@ describe "stamp-screenshots" do
     let!(:screenshot) { create_screenshot("screenshot.png") }
 
     it "falls back to the default cache directory" do
-      result
+      run_script
       expect(File.exist?(marker_path)).to be(true)
     end
 
     it "points the image at Shottr" do
-      result
-      expect(handler(screenshot)).to include("bundleidentifier" => "cc.ffitch.shottr")
-    end
-
-    it "succeeds" do
-      expect(result.last).to be_success
+      run_script
+      expect(main).to stamp(screenshot)
     end
   end
 
   context "when the directory does not exist" do
     before { Dir.rmdir(screenshots_directory) }
 
-    it "prints an error" do
-      expect(result[1]).to match(/\AError: /)
-    end
-
-    it "fails" do
-      expect(result.last).not_to be_success
+    it "prints an error and fails" do
+      expect { run_script }
+        .to raise_error(SystemExit) { expect(_1).not_to be_success }
+        .and output(/\AError: /).to_stderr
     end
   end
 end
