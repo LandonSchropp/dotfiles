@@ -11,6 +11,13 @@ cursor_line = "row"
 [keybindings]
 "hunk.app.quit" = "ctrl+c"
 "hunk-review.review" = ["q", "ctrl+r"]
+"hunk.review.halfPageDown" = "ctrl+d"
+"hunk.review.halfPageUp" = "ctrl+u"
+"hunk.review.replyToActiveNote" = "r"
+"hunk.app.refresh" = "R"
+"hunk.review.editActiveNote" = "e"
+"hunk.review.editSelectedFile" = "E"
+"hunk.review.deleteActiveNote" = "d"
 
 # Not linked by rcup: Hunk's React shim doesn't follow symlinks.
 [extensions]
