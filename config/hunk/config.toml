@@ -10,6 +10,7 @@ cursor_line = "row"
 
 [keybindings]
 "hunk.app.quit" = "ctrl+c"
+"hunk-review.review" = ["q", "ctrl+r"]
 
 # Tokyo Night Storm, matching Ghostty and Neovim.
 [themes.tokyo-night-storm]
