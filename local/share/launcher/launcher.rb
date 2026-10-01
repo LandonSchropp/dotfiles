@@ -7,7 +7,7 @@ require "optparse"
 
 gemfile do
   source "https://rubygems.org"
-  gem "fugit"
+  gem "fugit", "~> 1.14"
 end
 
 require_relative "list"
