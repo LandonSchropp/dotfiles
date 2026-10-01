@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "rspec", "~> 3.13"
+end
+
+require "rspec/autorun"
+
 require "json"
 require "open3"
 require "tempfile"
@@ -8,9 +17,7 @@ require "tmpdir"
 describe "stamp-screenshots" do
   subject(:result) { run_script }
 
-  let(:script_path) do
-    File.expand_path("../../local/share/screenshots/stamp-screenshots.rb", __dir__)
-  end
+  let(:script_path) { File.expand_path("stamp-screenshots.rb", __dir__) }
 
   let(:attribute) { "com.apple.LaunchServices.OpenWith" }
   let(:cache_home) { nil }
@@ -107,7 +114,7 @@ describe "stamp-screenshots" do
   end
 
   context "when the script is run through its binstub" do
-    let(:script_path) { File.expand_path("../../local/bin/stamp-screenshots", __dir__) }
+    let(:script_path) { File.expand_path("../../bin/stamp-screenshots", __dir__) }
     let!(:screenshot) { create_screenshot("screenshot.png") }
 
     it "points the image at Shottr" do
