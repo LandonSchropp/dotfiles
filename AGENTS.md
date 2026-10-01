@@ -104,6 +104,8 @@ This is distinct from `bin/`, which only holds scripts for setting up and mainta
 - **rcm tags**: Machine-specific files live in `tag-<name>/` directories and are only linked when `set-up-rcup` passes `-t <name>`. Currently: `tag-work/` for work machines (hostnames starting with `OHR`), `tag-personal/` for all others. `set-up-rcup` auto-detects the hostname and selects the correct tag. When updating Claude settings, always evaluate both `tag-work/claude/settings.json` and `tag-personal/claude/settings.json` and apply changes to whichever files are appropriate.
 - **Brewfile**: Comprehensive package definitions including development tools, CLI utilities, and applications
 - **Launch agents:** For LaunchAgent plists, also run `set-up-launchd` to load the services.
+- **Ruby gems:** There's no Gemfile. Scripts declare their gems with inline Bundler, and each spec sits beside its script as `<name>-spec.rb`, declaring RSpec the same way. Run a spec with `ruby <name>-spec.rb`.
+- **RuboCop:** Run `rubocop` directly, not through Bundler. mise installs it and `rubocop-shopify` with every Ruby from `config/mise/default-gems`.
 
 ## Important Notes
 
