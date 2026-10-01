@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "rspec", "~> 3.13"
+end
+
+require "rspec/autorun"
+
 require "fileutils"
 require "open3"
 require "tmpdir"
@@ -7,7 +16,7 @@ require "tmpdir"
 describe "set-up-rcup" do
   subject(:result) { run_script }
 
-  let(:script_path) { File.expand_path("../bin/set-up-rcup", __dir__) }
+  let(:script_path) { File.expand_path("set-up-rcup", __dir__) }
   let(:arguments) { [] }
 
   around do |example|
