@@ -12,6 +12,10 @@ cursor_line = "row"
 "hunk.app.quit" = "ctrl+c"
 "hunk-review.review" = ["q", "ctrl+r"]
 
+# Not linked by rcup: Hunk's React shim doesn't follow symlinks.
+[extensions]
+paths = ["~/.dotfiles/hunk/extensions"]
+
 # Tokyo Night Storm, matching Ghostty and Neovim.
 [themes.tokyo-night-storm]
 base = "tokyo-night"

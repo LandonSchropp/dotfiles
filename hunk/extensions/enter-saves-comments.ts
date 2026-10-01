@@ -1,6 +1,7 @@
 // HACK: Makes Enter save a comment and Shift+Enter start a new line by reaching into Hunk's
-// renderer, which extensions aren't meant to touch. Delete this file once Hunk lets the comment
-// editor's keys be remapped (https://github.com/modem-dev/hunk/issues/846).
+// renderer, which extensions aren't meant to touch. Delete this file, and the [extensions] paths
+// entry that loads it, once Hunk lets the comment editor's keys be remapped
+// (https://github.com/modem-dev/hunk/issues/846).
 
 import type { HunkExtensionAPI } from "hunkdiff/extension";
 import { createElement } from "react";

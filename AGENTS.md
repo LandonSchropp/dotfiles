@@ -57,6 +57,7 @@ config/                 # Symlinked to ~/.config (XDG_CONFIG_HOME)
   │   └── init.lua      # Neovim entry point
   ├── mise/             # Runtime version manager config
   └── zsh/              # Zsh configuration files
+hunk/                   # Hunk extensions, loaded in place from ~/.dotfiles (not linked by rcup)
 local/                  # Symlinked to ~/.local (XDG_DATA_HOME / XDG_BIN_HOME)
   ├── bin/              # Binstubs for purpose-built utilities, on PATH
   └── share/            # Purpose-built utility implementations, one folder each
