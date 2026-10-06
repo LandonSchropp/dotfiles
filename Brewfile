@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-tap "FelixKratz/formulae"
 tap "asmvik/formulae"
 tap "PeonPing/tap"
 tap "keith/formulae"
-tap "thoughtbot/formulae"
 
 brew "asciinema"
 brew "bat"
