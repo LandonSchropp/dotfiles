@@ -142,8 +142,8 @@
   commit = true
   rebase = true
 
-[includeIf "gitdir:~/Development/oyster/"]
-  path = ~/.config/git/oyster
+[includeIf "gitdir:~/Development/babylist/"]
+  path = ~/.config/git/babylist
 
 [filter "lfs"]
   smudge = git-lfs smudge -- %f
