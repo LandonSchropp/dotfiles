@@ -1,0 +1,31 @@
+{
+  "projectPaths": ["~/Development/*", "~/Development/babylist/*"],
+  "flat": true,
+  "projects": [
+    {
+      "name": "default",
+      "focusedTab": "claude",
+      "tabs": [
+        { "name": "shell" },
+        { "name": "neovim", "command": "nvim" },
+        { "name": "claude", "command": "claude" }
+      ]
+    },
+    { "name": "dotfiles", "path": "~/.dotfiles" },
+    { "name": "notes", "path": "~/Notes" },
+    {
+      "name": "orchestrate",
+      "path": "~/Development",
+      "prompt": "/ls-notes:orchestrate-day"
+    },
+    {
+      "path": "~/Development/obsidian-plugins",
+      "tabs": [
+        { "name": "shell" },
+        { "name": "neovim", "command": "nvim" },
+        { "name": "dev", "command": "pnpm dev" },
+        { "name": "claude", "command": "claude" }
+      ]
+    }
+  ]
+}
