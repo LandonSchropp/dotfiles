@@ -64,6 +64,12 @@ sandboxed, so its save folder has to be picked through its own file picker, on e
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the
 [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) on GitHub.
 
+Then authenticate the GitHub CLI, which the Git skills depend on.
+
+```sh
+gh auth login
+```
+
 On a work machine, set the email address for the repositories in `~/Development/babylist`. It isn't
 committed to this repository.
 
