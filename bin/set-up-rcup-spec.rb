@@ -95,7 +95,7 @@ describe "set-up-rcup" do
   end
 
   context "when the machine is a work machine" do
-    before { allow(Socket).to receive(:gethostname).and_return("OHR-12345.local") }
+    before { allow(Socket).to receive(:gethostname).and_return("BL-12345.local") }
 
     it "hands rcup the work tag" do
       run_script

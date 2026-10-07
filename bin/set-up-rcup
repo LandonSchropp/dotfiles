@@ -33,7 +33,7 @@ end
 paths = ARGV.empty? ? MANAGED_PATHS : ARGV.map { managed_path(_1) }
 
 short_hostname = Socket.gethostname.split('.').first
-tag = short_hostname.start_with?('OHR') ? 'work' : 'personal'
+tag = short_hostname.start_with?('BL') ? 'work' : 'personal'
 
 arguments = [
   '-t',
