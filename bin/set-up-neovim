@@ -8,5 +8,24 @@ rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 # Link the Neovim configuration.
 "$(dirname "$0")/set-up-rcup" config/nvim
 
-# Run Neovim to do a headless installation.
-nvim --headless +q
+# Run Neovim headless until the parsers and Mason packages are installed.
+nvim --headless -c "lua $(
+  cat <<'LUA'
+local installed = require("astrocore.treesitter").installed
+local parsers = require("astrocore").config.treesitter.ensure_installed
+
+local finished = vim.wait(600000, function()
+  for _, parser in ipairs(parsers) do
+    if not installed(true)[parser] then return false end
+  end
+
+  for _, package in ipairs(require("mason-registry").get_all_packages()) do
+    if package:is_installing() then return false end
+  end
+
+  return true
+end, 500)
+
+vim.cmd(finished and "qa!" or "cquit")
+LUA
+)"
