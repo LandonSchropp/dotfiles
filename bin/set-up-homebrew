@@ -13,6 +13,16 @@ fi
 # Update Homebrew and installed packages.
 brew update
 
+# Add the third-party taps.
+brew tap peonping/tap
+brew tap keith/formulae
+brew tap asmvik/formulae
+
+# Trust the third-party formulas.
+brew trust --formula peonping/tap/peon-ping
+brew trust --formula keith/formulae/reminders-cli
+brew trust --formula asmvik/formulae/yabai
+
 # Install all of the Homebrew applications.
 brew bundle --file="$HOME/.dotfiles/Brewfile"
 
