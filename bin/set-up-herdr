@@ -24,7 +24,7 @@ cp "$backup" "$settings"
 herdr_project_directory="$HOME/Development/herdr-project"
 
 if [ ! -d "$herdr_project_directory" ]; then
-  git clone https://github.com/LandonSchropp/herdr-project.git "$herdr_project_directory"
+  git clone git@github.com:LandonSchropp/herdr-project.git "$herdr_project_directory"
 fi
 
 # `herdr plugin link` doesn't run the plugin's build step, so install its dependencies directly.
