@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Clones the repositories that the commands in local/bin point into and builds the ones that need
+# it. Idempotent and safe to run repeatedly.
+
+development_directory="$HOME/Development"
+
+for link in "$HOME/.dotfiles/local/bin/"*; do
+  target="$(readlink "$link")"
+
+  case "$target" in
+  "$development_directory"/*) ;;
+  *) continue ;;
+  esac
+
+  repository="${target#"$development_directory"/}"
+  repository="${repository%%/*}"
+
+  if [ ! -d "$development_directory/$repository" ]; then
+    git clone "git@github.com:LandonSchropp/$repository.git" "$development_directory/$repository"
+  fi
+done
+
+# Build plan-day's gitignored binary.
+plan_day_directory="$development_directory/plan-day"
+
+if [ -d "$plan_day_directory" ] && [ ! -x "$plan_day_directory/bin/plan-day" ]; then
+  (cd "$plan_day_directory" && mise trust && mise install && mise exec -- go build -o bin/plan-day .)
+fi
