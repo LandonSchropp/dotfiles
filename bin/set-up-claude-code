@@ -25,11 +25,14 @@ if ! command -v peon-ping-setup >/dev/null 2>&1; then
   exit 1
 fi
 
-# Install the configured pack, keeping the setup from overwriting the committed config.
+# Install the configured pack without overwriting the committed config or Claude settings.
 config="$HOME/.claude/hooks/peon-ping/config.json"
 backup="$(mktemp)"
 cp "$config" "$backup"
-trap 'cp "$backup" "$config"' EXIT
+settings="$HOME/.claude/settings.json"
+settings_backup="$(mktemp)"
+cp "$settings" "$settings_backup"
+trap 'cp "$backup" "$config"; cp "$settings_backup" "$settings"' EXIT
 
 peon-ping-setup --packs="$(jq -r .default_pack "$backup")"
 
