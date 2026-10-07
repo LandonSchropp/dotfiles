@@ -209,7 +209,9 @@
     "agent-lint@babylist": true,
     "devin@babylist": true,
     "contribution-report@babylist": true,
-    "graphite@babylist": true
+    "graphite@babylist": true,
+    "project-workflow@babylist": true,
+    "superpowers@babylist": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
