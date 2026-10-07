@@ -213,13 +213,11 @@
     "ls-browser@landonschropp": true,
     "slack@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
-    "oyster-development@glorious-oyster-agent-toolkit": true,
-    "oyster-backend@glorious-oyster-agent-toolkit": true,
-    "oyster-frontend@glorious-oyster-agent-toolkit": true,
-    "glorious-oyster-agent-toolkit@glorious-oyster-agent-toolkit": true,
-    "oyster-review@glorious-oyster-agent-toolkit": true,
-    "oyster-team-ai@glorious-oyster-agent-toolkit": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "agent-lint@babylist": true,
+    "devin@babylist": true,
+    "contribution-report@babylist": true,
+    "graphite@babylist": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
@@ -227,13 +225,6 @@
         "source": "directory",
         "path": "/Users/landon/Development/agent-toolkit"
       }
-    },
-    "glorious-oyster-agent-toolkit": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/landon/Development/oyster/glorious-oyster-agent-toolkit"
-      },
-      "autoUpdate": true
     },
     "ponytail": {
       "source": {
