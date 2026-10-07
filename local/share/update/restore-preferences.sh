@@ -8,7 +8,7 @@ CONFIG="$HOME/.dotfiles/config/preferences/apps.json"
 function print_help() {
   echo "Usage: restore-preferences [options]"
   echo
-  echo "Restores macOS app preferences from iCloud Drive."
+  echo "Restores macOS app preferences from iCloud Drive. Running apps are quit and reopened."
   echo
   echo "Options:"
   echo
@@ -38,11 +38,18 @@ fi
 icloud_root="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 while IFS= read -r app; do
-  name=$(jq -r '.name' <<< "$app")
+  name=$(jq -r '.name' <<<"$app")
+  running=false
 
   echo
   echo -e "\033[0;36m$name\033[0m"
   echo
+
+  # Close the app so the preferences are not restored.
+  if pgrep -f "/$name\\.app/" &>/dev/null; then
+    running=true
+    pkill -f "/$name\\.app/"
+  fi
 
   while IFS= read -r file; do
     destination="${file/#\~/$HOME}"
@@ -55,7 +62,12 @@ while IFS= read -r app; do
       continue
     fi
 
-    cp "$source" "$destination"
+    mkdir -p "$(dirname "$destination")"
+    defaults import "${destination%.plist}" "$source"
     echo "$display_source → $display_destination"
-  done < <(jq -r '.files[]' <<< "$app")
+  done < <(jq -r '.files[]' <<<"$app")
+
+  if [[ "$running" == true ]]; then
+    open -a "$name"
+  fi
 done < <(jq -c '.[]' "$CONFIG")
