@@ -35,6 +35,12 @@ if ! command -v jq &>/dev/null; then
   exit 1
 fi
 
+if ! plutil -convert json -o - "$HOME/Library/Preferences/MobileMeAccounts.plist" 2>/dev/null |
+  jq -e '.Accounts[].Services[]? | select(.Name == "MOBILE_DOCUMENTS" and .status == "active")' &>/dev/null; then
+  echo "Error: iCloud Drive isn't available on this machine." >&2
+  exit 1
+fi
+
 icloud_root="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 while IFS= read -r app; do

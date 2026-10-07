@@ -13,8 +13,13 @@ obsidian_dictionary="$HOME/Library/Application Support/obsidian/Custom Dictionar
 dictionaries=(
   "$local_dictionary"
   "$nvim_dictionary"
-  "$icloud_dictionary"
 )
+
+# Skip when iCloud Drive is disabled, such as on an MDM-managed Mac.
+if plutil -convert json -o - "$HOME/Library/Preferences/MobileMeAccounts.plist" 2>/dev/null |
+  jq -e '.Accounts[].Services[]? | select(.Name == "MOBILE_DOCUMENTS" and .status == "active")' &>/dev/null; then
+  dictionaries+=("$icloud_dictionary")
+fi
 
 # Ensure the directories exist and create files if they don't exist
 for dict in "${dictionaries[@]}"; do
