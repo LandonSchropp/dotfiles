@@ -47,9 +47,9 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-rcup
 ~/.dotfiles/bin/set-up-bat
 ~/.dotfiles/bin/set-up-fzf
+~/.dotfiles/bin/set-up-mise-en-place
 ~/.dotfiles/bin/set-up-launchd
 ~/.dotfiles/bin/set-up-macos
-~/.dotfiles/bin/set-up-mise-en-place
 ~/.dotfiles/bin/set-up-neovim
 ~/.dotfiles/bin/set-up-claude-code
 ~/.dotfiles/bin/set-up-herdr
