@@ -237,5 +237,6 @@
   "alwaysThinkingEnabled": true,
   "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "theme": "auto"
 }
