@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Lays out the Dock's apps, then the Downloads and Screenshots folders. Apps that aren't installed
+# are skipped. Idempotent and safe to run repeatedly.
+
+# Slack stays out of the personal Dock.
+slack=""
+if [[ $(hostname -s) == BL* ]]; then
+  slack="/Applications/Slack.app"
+fi
+
+apps=(
+  # Core tools
+  "/Applications/Zen.app"
+  "/Applications/Ghostty.app"
+  "/Applications/Obsidian.app"
+  "/Applications/Google Calendar.app"
+
+  # Work and planning
+  "$slack"
+  "/Applications/Linear.app"
+  "/Applications/Claude.app"
+  "/Applications/Bloks.app"
+
+  # Personal
+  "/Applications/Spotify.app"
+  "/System/Applications/Messages.app"
+  "$HOME/Applications/Toggle Tint.app"
+)
+
+dockutil --remove all --no-restart
+
+for app in "${apps[@]}"; do
+  if [[ -e "$app" ]]; then
+    dockutil --add "$app" --no-restart
+  fi
+done
+
+dockutil --add "$HOME/Downloads" --display folder --view fan --sort dateadded --no-restart
+dockutil --add "$HOME/Screenshots" --display folder --view fan --sort dateadded --no-restart
+
+killall Dock
