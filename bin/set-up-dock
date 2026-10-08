@@ -16,7 +16,7 @@ apps=(
   "/Applications/Zen.app"
   "/Applications/Ghostty.app"
   "/Applications/Obsidian.app"
-  "/Applications/Google Calendar.app"
+  "/Applications/GCal for Google Calendar.app"
 
   # Work and planning
   "$slack"
