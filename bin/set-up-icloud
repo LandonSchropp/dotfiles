@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Creates the iCloud Documents folder that replaces ~/Documents. Skipped when iCloud Drive is
+# disabled, such as on an MDM-managed Mac. Idempotent and safe to run repeatedly.
+
+icloud_documents="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents"
+
+if ! plutil -convert json -o - "$HOME/Library/Preferences/MobileMeAccounts.plist" 2>/dev/null |
+  jq -e '.Accounts[].Services[]? | select(.Name == "MOBILE_DOCUMENTS" and .status == "active")' &>/dev/null; then
+  echo "iCloud Drive is disabled. Skipping." >&2
+  exit 0
+fi
+
+# iCloud's Desktop & Documents sync purges local files, so a plain Documents folder inside iCloud
+# Drive stands in for ~/Documents. Give it the real Documents icon.
+mkdir -p "$icloud_documents"
+ICLOUD_DOCUMENTS="$icloud_documents" swift -e 'import AppKit; NSWorkspace.shared.setIcon(NSImage(contentsOfFile: "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/DocumentsFolderIcon.icns"), forFile: ProcessInfo.processInfo.environment["ICLOUD_DOCUMENTS"]!, options: [])'
+
+echo
+echo -e "\033[0;33mThe Finder sidebar has to be set by hand.\033[0m" >&2
+echo >&2
+echo "There's no defaults key for sidebar items. Drag this folder into the Finder sidebar and drag" >&2
+echo "the old Documents entry out:" >&2
+echo >&2
+echo "  $icloud_documents" >&2
