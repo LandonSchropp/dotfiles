@@ -5,10 +5,13 @@ set -euo pipefail
 # Lays out the Dock's apps, then the Downloads and Screenshots folders. Apps that aren't installed
 # are skipped. Idempotent and safe to run repeatedly.
 
-# Slack stays out of the personal Dock.
+# Slack stays out of the personal Dock, and Toggle Tint stays out of the work Dock.
 slack=""
+toggle_tint=""
 if [[ $(hostname -s) == BL* ]]; then
   slack="/Applications/Slack.app"
+else
+  toggle_tint="$HOME/Applications/Toggle Tint.app"
 fi
 
 apps=(
@@ -27,7 +30,7 @@ apps=(
   # Personal
   "/Applications/Spotify.app"
   "/System/Applications/Messages.app"
-  "$HOME/Applications/Toggle Tint.app"
+  "$toggle_tint"
 )
 
 dockutil --remove all --no-restart
