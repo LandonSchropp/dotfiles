@@ -91,4 +91,17 @@ defaults write com.apple.finder FXPreferredViewStyle Nlsv
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
+# Desktop > View > Sort By: Name. Finder discards a partial IconViewSettings, so the key is edited
+# in place, and the block only exists once the desktop's view options have been changed.
+finder_preferences=$(mktemp)
+defaults export com.apple.finder "$finder_preferences"
+
+if plutil -replace DesktopViewSettings.IconViewSettings.arrangeBy -string name "$finder_preferences" 2>/dev/null; then
+  defaults import com.apple.finder "$finder_preferences"
+else
+  echo -e "\033[0;33mThe desktop's sort order has to be set by hand.\033[0m" >&2
+  echo "Click the desktop, open View > Sort By, and select Name." >&2
+fi
+
+
 killall Dock Finder ControlCenter
