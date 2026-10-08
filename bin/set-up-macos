@@ -37,6 +37,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Language & Region > First day of week: Monday
 defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
 
+# Sound > Play feedback when volume is changed: On
+defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 1
+
 # Trackpad > Tap to click: On
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -102,6 +105,5 @@ else
   echo -e "\033[0;33mThe desktop's sort order has to be set by hand.\033[0m" >&2
   echo "Click the desktop, open View > Sort By, and select Name." >&2
 fi
-
 
 killall Dock Finder ControlCenter
