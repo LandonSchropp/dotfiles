@@ -34,6 +34,13 @@ PATCHED_WRAPPER = <<~BASH
   fi
 BASH
 
+MOD_THE_SPIRE_WRAPPER = <<~'BASH'
+  #!/bin/bash
+
+  pgrep -xq steam_osx || open -g -a Steam --args -silent
+  open "$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/ModTheSpire.app"
+BASH
+
 describe "set-up-steam" do
   subject(:run_script) { Open3.capture3({ "HOME" => @home_directory }, SCRIPT) }
 
@@ -80,6 +87,15 @@ describe "set-up-steam" do
     it "leaves it alone" do
       run_script
       expect(File.read(wrapper)).to eq(contents)
+    end
+  end
+
+  context "when the Slay the Spire wrapper exists" do
+    let!(:wrapper) { write_wrapper("Slay the Spire", STEAM_WRAPPER.sub("2868840", "646570")) }
+
+    it "launches ModTheSpire" do
+      run_script
+      expect(File.read(wrapper)).to eq(MOD_THE_SPIRE_WRAPPER)
     end
   end
 
