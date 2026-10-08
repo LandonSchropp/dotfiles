@@ -19,6 +19,11 @@
   cron: "0 7 * * *"
 
 - name: plan-day
-  description: Open the notes workspace and run the daily planning prompt.
-  command: herdr-project open --project notes --name plan-day --prompt "/plan-day"
+  description: Run the daily planning prompt, on weekdays at work and on weekends at home.
+  command: |
+    if [[ $(hostname -s) == BL* ]]; then days=12345; else days=67; fi
+
+    if [[ $days == *$(date +%u)* ]]; then
+      herdr-project open --project notes --name plan-day --prompt "/plan-day"
+    fi
   cron: "0 7 * * *"
