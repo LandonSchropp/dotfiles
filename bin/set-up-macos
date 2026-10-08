@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Configures System Settings. Idempotent and safe to run repeatedly. Refuses to run when the script
+# hasn't been updated in three months, since macOS may have renamed its keys in the meantime.
+
+last_updated=$(git -C "$(dirname "$0")" log -1 --format=%ct -- "$(basename "$0")")
+last_updated=${last_updated:-$(date +%s)}
+
+if (($(date +%s) - last_updated > 90 * 24 * 60 * 60)); then
+  echo "Error: This script was last updated on $(date -r "$last_updated" +%F), and macOS may have" >&2
+  echo "renamed its keys since. Update it on another Mac that's already set up and configured by" >&2
+  echo "pulling that Mac's current preferences into it, then run it here." >&2
+  exit 1
+fi
+
+# Appearance > Appearance: Auto
+defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
+
+# Desktop & Dock > Double-click a window's title bar to: Fill
+defaults write NSGlobalDomain AppleActionOnDoubleClick Maximize
+
+# Keyboard > Key repeat rate and Delay until repeat: Fastest and shortest
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Keyboard > Keyboard navigation: On
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Keyboard > Press 🌐 key to: Show Emoji & Symbols
+defaults write com.apple.HIToolbox AppleFnUsageType -int 2
+
+# Keyboard > Text Input > Edit > Add period with double-space: Off
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Language & Region > First day of week: Monday
+defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
+
+# Trackpad > Tap to click: On
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Desktop & Dock > Dock: Size, magnification, and automatically hide
+defaults write com.apple.dock tilesize -float 68
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -float 128
+defaults write com.apple.dock autohide -bool true
+
+# Desktop & Dock > Show suggested and recent apps in Dock: Off
+defaults write com.apple.dock show-recents -bool false
+
+# Desktop & Dock > Automatically rearrange Spaces based on most recent use: Off
+defaults write com.apple.dock mru-spaces -bool false
+
+# Desktop & Dock > Drag windows to top of screen to enter Mission Control: Off
+defaults write com.apple.dock enterMissionControlByTopWindowDrag -bool false
+
+# Desktop & Dock > Hot Corners > Bottom right: None
+defaults write com.apple.dock wvous-br-corner -int 1
+
+# Trackpad > More Gestures > Apps: Off
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+
+# Desktop & Dock > Click wallpaper to reveal desktop: Only in Stage Manager
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
+# Desktop & Dock > Windows > Tiling: All off
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+
+# Control Center > Clock Options > Show date: Always
+defaults write com.apple.menuextra.clock ShowDate -int 1
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+
+# Finder > Settings > New Finder windows show: Home folder
+defaults write com.apple.finder NewWindowTarget PfHm
+defaults write com.apple.finder NewWindowTargetPath "file://$HOME/"
+
+# Finder > Settings > Remove items from the Trash after 30 days: On
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
+# Finder > Settings > Show recent tags in sidebar: Off
+defaults write com.apple.finder ShowRecentTags -bool false
+
+# Finder > View: As List, Show Path Bar, and Show Status Bar
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+
+killall Dock Finder ControlCenter

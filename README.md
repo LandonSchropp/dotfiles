@@ -49,6 +49,7 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-fzf           # Install fzf's Git integration
 ~/.dotfiles/bin/set-up-mise-en-place # Install the tools mise manages
 ~/.dotfiles/bin/set-up-launchd       # Set up launchd services
+~/.dotfiles/bin/set-up-macos         # Configure System Settings
 ~/.dotfiles/bin/set-up-screenshots   # Configure where screenshots are saved
 ~/.dotfiles/bin/set-up-icloud        # Set up iCloud Drive
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim
