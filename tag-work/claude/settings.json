@@ -232,5 +232,6 @@
   "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "theme": "auto"
+  "theme": "auto",
+  "feedbackDrafts": "off"
 }
