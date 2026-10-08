@@ -17,11 +17,3 @@ fi
 # Drive stands in for ~/Documents. Give it the real Documents icon.
 mkdir -p "$icloud_documents"
 ICLOUD_DOCUMENTS="$icloud_documents" swift -e 'import AppKit; NSWorkspace.shared.setIcon(NSImage(contentsOfFile: "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/DocumentsFolderIcon.icns"), forFile: ProcessInfo.processInfo.environment["ICLOUD_DOCUMENTS"]!, options: [])'
-
-echo
-echo -e "\033[0;33mThe Finder sidebar has to be set by hand.\033[0m" >&2
-echo >&2
-echo "There's no defaults key for sidebar items. Drag this folder into the Finder sidebar and drag" >&2
-echo "the old Documents entry out:" >&2
-echo >&2
-echo "  $icloud_documents" >&2

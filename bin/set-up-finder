@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Sets the Finder sidebar's favorites, in order, and removes any others. Folders that don't exist
+# are skipped. Idempotent and safe to run repeatedly.
+
+candidates=(
+  "/Applications"
+  "$HOME/Development"
+  "$HOME/Downloads"
+  "$HOME/Desktop"
+  "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents"
+)
+
+favorites=()
+
+for candidate in "${candidates[@]}"; do
+  if [[ -d "$candidate" ]]; then
+    favorites+=("$candidate")
+  fi
+done
+
+swift -suppress-warnings - "${favorites[@]}" <<'SWIFT'
+import CoreServices
+import Foundation
+
+let favorites = CommandLine.arguments.dropFirst().map { URL(fileURLWithPath: $0).standardizedFileURL }
+let list = LSSharedFileListCreate(nil, kLSSharedFileListFavoriteItems.takeUnretainedValue(), nil)!.takeRetainedValue()
+
+func items() -> [LSSharedFileListItem] {
+  LSSharedFileListCopySnapshot(list, nil)!.takeRetainedValue() as! [LSSharedFileListItem]
+}
+
+// Passing the list's position markers from Swift crashes, so inserts anchor on real items.
+var anchor = items().last!
+
+for favorite in favorites {
+  anchor = LSSharedFileListInsertItemURL(list, anchor, nil, nil, favorite as CFURL, nil, nil)!
+}
+
+for item in items() {
+  let url = LSSharedFileListItemCopyResolvedURL(item, 0, nil)?.takeRetainedValue() as URL?
+  if !favorites.contains(where: { $0.path == url?.standardizedFileURL.path }) {
+    LSSharedFileListItemRemove(list, item)
+  }
+}
+SWIFT
