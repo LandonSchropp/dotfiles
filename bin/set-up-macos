@@ -48,8 +48,8 @@ defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -float 128
 defaults write com.apple.dock autohide -bool true
 
-# Desktop & Dock > Show suggested and recent apps in Dock: Off
-defaults write com.apple.dock show-recents -bool false
+# Desktop & Dock > Show suggested and recent apps in Dock: On
+defaults write com.apple.dock show-recents -bool true
 
 # Desktop & Dock > Automatically rearrange Spaces based on most recent use: Off
 defaults write com.apple.dock mru-spaces -bool false
