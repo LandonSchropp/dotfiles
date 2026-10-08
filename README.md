@@ -42,22 +42,19 @@ _something_ usually breaks every year or two, so it's best to run them individua
 anything that pops up.
 
 ```sh
-~/.dotfiles/bin/set-up-homebrew
-~/.dotfiles/bin/set-up-zshell
-~/.dotfiles/bin/set-up-rcup
-~/.dotfiles/bin/set-up-bat
-~/.dotfiles/bin/set-up-fzf
-~/.dotfiles/bin/set-up-mise-en-place
-~/.dotfiles/bin/set-up-launchd
-~/.dotfiles/bin/set-up-macos
-~/.dotfiles/bin/set-up-neovim
-~/.dotfiles/bin/set-up-claude-code
-~/.dotfiles/bin/set-up-herdr
-~/.dotfiles/bin/set-up-hunk
+~/.dotfiles/bin/set-up-homebrew      # Install Homebrew and its packages
+~/.dotfiles/bin/set-up-zshell        # Install Zsh's framework and plugins
+~/.dotfiles/bin/set-up-rcup          # Link dotfiles using rcm
+~/.dotfiles/bin/set-up-bat           # Configure bat (cat replacement)
+~/.dotfiles/bin/set-up-fzf           # Install fzf's Git integration
+~/.dotfiles/bin/set-up-mise-en-place # Install the tools mise manages
+~/.dotfiles/bin/set-up-launchd       # Set up launchd services
+~/.dotfiles/bin/set-up-macos         # Configure macOS preferences
+~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim
+~/.dotfiles/bin/set-up-claude-code   # Set up Claude Code's skills and integrations
+~/.dotfiles/bin/set-up-herdr         # Install and configure Herdr
+~/.dotfiles/bin/set-up-hunk          # Install Hunk's extensions
 ```
-
-`set-up-macos` finishes by printing the one screenshot setting that can't be scripted. Shottr is
-sandboxed, so its save folder has to be picked through its own file picker, on each machine.
 
 ### Git
 
