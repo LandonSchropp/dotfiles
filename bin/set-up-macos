@@ -34,6 +34,17 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 2
 # Keyboard > Text Input > Edit > Add period with double-space: Off
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
+# Keyboard > Keyboard Shortcuts > App Shortcuts.
+#
+# Shortcuts that get in the way are disabled by moving them to unusable function keys. Each key's
+# code point (U+F715 through U+F717) is spelled out as UTF-8 bytes.
+defaults write com.apple.universalaccess com.apple.custommenu.apps -array \
+  NSGlobalDomain com.mitchellh.ghostty com.ngocluu.goodlinks notion.id
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add Minimize $'\xef\x9c\x95'
+defaults write com.mitchellh.ghostty NSUserKeyEquivalents -dict-add 'Hide Ghostty' $'\xef\x9c\x96'
+defaults write com.ngocluu.goodlinks NSUserKeyEquivalents -dict-add 'Hide GoodLinks' $'\xef\x9c\x97'
+defaults write notion.id NSUserKeyEquivalents -dict-add 'Copy Link to Current Page' '@$c'
+
 # Language & Region > First day of week: Monday
 defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
 
