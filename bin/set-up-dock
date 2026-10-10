@@ -8,7 +8,7 @@ set -euo pipefail
 # Slack stays out of the personal Dock, and Toggle Tint stays out of the work Dock.
 slack=""
 toggle_tint=""
-if [[ $(hostname -s) == BL* ]]; then
+if "$(dirname "$0")/../local/share/computer/is-work-computer.sh"; then
   slack="/Applications/Slack.app"
 else
   toggle_tint="$HOME/Applications/Toggle Tint.app"

@@ -21,7 +21,7 @@
 - name: plan-day
   description: Run the daily planning prompt, on weekdays at work and on weekends at home.
   command: |
-    if [[ $(hostname -s) == BL* ]]; then days=12345; else days=67; fi
+    if is-work-computer; then days=12345; else days=67; fi
 
     if [[ $days == *$(date +%u)* ]]; then
       herdr-project open --project notes --name plan-day --prompt "/plan-day"

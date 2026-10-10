@@ -10,7 +10,6 @@ end
 require "rspec/autorun"
 
 require "fileutils"
-require "socket"
 require "tmpdir"
 
 SCRIPT = File.expand_path("set-up-rcup", __dir__)
@@ -23,6 +22,7 @@ describe "set-up-rcup" do
 
   let(:main) { TOPLEVEL_BINDING.receiver }
   let(:arguments) { [] }
+  let(:is_work_computer) { File.expand_path("../local/share/computer/is-work-computer.sh", __dir__) }
   let(:flags) { %w[-t personal -v -U Library -x karabiner.json] }
 
   # Removes the constants each load defines.
@@ -42,8 +42,8 @@ describe "set-up-rcup" do
     FileUtils.mkdir_p(File.join(@home_directory, ".config"))
 
     allow(Dir).to receive(:home).and_return(@home_directory)
-    allow(Socket).to receive(:gethostname).and_return("Landons-MacBook-Pro.local")
     allow(main).to receive(:system).and_return(true)
+    allow(main).to receive(:system).with(is_work_computer).and_return(false)
     allow($stderr).to receive(:write)
   end
 
@@ -94,8 +94,8 @@ describe "set-up-rcup" do
     end
   end
 
-  context "when the machine is a work machine" do
-    before { allow(Socket).to receive(:gethostname).and_return("BL-12345.local") }
+  context "when the computer is a work computer" do
+    before { allow(main).to receive(:system).with(is_work_computer).and_return(true) }
 
     it "hands rcup the work tag" do
       run_script
