@@ -52,6 +52,7 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-macos         # Configure System Settings
 ~/.dotfiles/bin/set-up-screenshots   # Configure where screenshots are saved
 ~/.dotfiles/bin/set-up-icloud        # Set up iCloud Drive
+~/.dotfiles/bin/set-up-folder-icons  # Give folders custom icons
 ~/.dotfiles/bin/set-up-finder        # Set the Finder sidebar favorites
 ~/.dotfiles/bin/set-up-dock          # Lay out the Dock
 ~/.dotfiles/bin/set-up-neovim        # Install and configure Neovim

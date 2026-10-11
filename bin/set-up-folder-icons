@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Puts an SF Symbol on folders, the way Finder's Customize Folder does. Folders that don't exist are
+# skipped. Idempotent and safe to run repeatedly.
+
+folders=(
+  "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents" doc
+  "$HOME/Screenshots" camera.viewfinder
+  "$HOME/Development" hammer
+  "$HOME/Media" play.rectangle
+  "$HOME/Notes" text.page
+)
+
+for ((index = 0; index < ${#folders[@]}; index += 2)); do
+  folder="${folders[index]}"
+  symbol="${folders[index + 1]}"
+
+  if [[ -d "$folder" ]]; then
+    xattr -w 'com.apple.icon.folder#S' "{\"sym\":\"$symbol\"}" "$folder"
+    SetFile -a C "$folder"
+  fi
+done
+
+# Clear the Dock's icon cache and restart it.
+rm -rf "$(getconf DARWIN_USER_CACHE_DIR)com.apple.dock.iconcache"
+killall Dock
