@@ -6,11 +6,13 @@ set -euo pipefail
 # are skipped. Idempotent and safe to run repeatedly.
 
 candidates=(
+  "$HOME"
   "/Applications"
-  "$HOME/Development"
-  "$HOME/Downloads"
   "$HOME/Desktop"
+  "$HOME/Development"
   "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents"
+  "$HOME/Downloads"
+  "$HOME/Notes"
 )
 
 favorites=()
