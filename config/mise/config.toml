@@ -12,3 +12,6 @@ uv = "latest"
 [settings]
 ruby.default_packages_file = "~/.config/mise/default-gems"
 idiomatic_version_file_enable_tools = ["node", "ruby", "elixir", "yarn"]
+
+[env]
+GOMODCACHE = "{{env.HOME}}/.cache/go/mod"
