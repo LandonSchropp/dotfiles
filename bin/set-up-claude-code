@@ -37,8 +37,8 @@ trap 'cp "$backup" "$config"; cp "$settings_backup" "$settings"' EXIT
 peon-ping-setup --packs="$(jq -r .default_pack "$backup")"
 
 # Install the skill for reviewing changes in Hunk.
-npx -y skills add LandonSchropp/hunk-review \
+npx -y skills add LandonSchropp/hunk-verdict \
   --global \
   --agent claude-code \
   --yes \
-  --skill hunk-review-loop
+  --skill hunk-verdict

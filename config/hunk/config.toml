@@ -10,7 +10,7 @@ cursor_line = "row"
 
 [keybindings]
 "hunk.app.quit" = "ctrl+c"
-"hunk-review.review" = ["q", "ctrl+r"]
+"hunk-verdict.review" = ["q", "ctrl+r"]
 "hunk.review.halfPageDown" = "ctrl+d"
 "hunk.review.halfPageUp" = "ctrl+u"
 "hunk.review.replyToActiveNote" = "r"

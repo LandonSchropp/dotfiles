@@ -10,7 +10,7 @@ if ! command -v hunk >/dev/null 2>&1; then
   exit 1
 fi
 
-extensions=(LandonSchropp/hunk-review LandonSchropp/hunk-backup)
+extensions=(LandonSchropp/hunk-verdict LandonSchropp/hunk-backup)
 
 for extension in "${extensions[@]}"; do
   name="${extension#*/}"
