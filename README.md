@@ -11,7 +11,7 @@ configured with the following tools.
 - **[Neovim](https://neovim.io/)**: The world's best text editor. My Neovim configuration includes
   [AstroNvim](https://astronvim.com/), a "distribution", as well as a ton of customization.
 
-In addition, these dotfiles install a ton of small, useful utilities command-line utilities and
+In addition, these dotfiles install a ton of small, useful command-line utilities and
 system applications, which can be viewed in the [Brewfile](Brewfile).
 
 ## Prerequisites
