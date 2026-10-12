@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Sets the Finder sidebar's favorites, in order, and removes any others. Folders that don't exist
-# are skipped. Idempotent and safe to run repeatedly.
+# are skipped. Also hides unused folders. Idempotent and safe to run repeatedly.
 
 candidates=(
   "$HOME"
@@ -30,21 +30,35 @@ import Foundation
 let favorites = CommandLine.arguments.dropFirst().map { URL(fileURLWithPath: $0).standardizedFileURL }
 let list = LSSharedFileListCreate(nil, kLSSharedFileListFavoriteItems.takeUnretainedValue(), nil)!.takeRetainedValue()
 
-func items() -> [LSSharedFileListItem] {
+func items(_ list: LSSharedFileList) -> [LSSharedFileListItem] {
   LSSharedFileListCopySnapshot(list, nil)!.takeRetainedValue() as! [LSSharedFileListItem]
 }
 
 // Passing the list's position markers from Swift crashes, so inserts anchor on real items.
-var anchor = items().last!
+var anchor = items(list).last!
 
 for favorite in favorites {
   anchor = LSSharedFileListInsertItemURL(list, anchor, nil, nil, favorite as CFURL, nil, nil)!
 }
 
-for item in items() {
+for item in items(list) {
   let url = LSSharedFileListItemCopyResolvedURL(item, 0, nil)?.takeRetainedValue() as URL?
   if !favorites.contains(where: { $0.path == url?.standardizedFileURL.path }) {
     LSSharedFileListItemRemove(list, item)
   }
 }
+
+// Hide Recents and Shared.
+let topSection = LSSharedFileListCreate(nil, "com.apple.LSSharedFileList.TopSidebarSection" as CFString, nil)!
+  .takeRetainedValue()
+
+for item in items(topSection) {
+  LSSharedFileListItemSetProperty(item, "com.apple.LSSharedFileList.ItemIsHidden" as CFString, kCFBooleanTrue)
+}
 SWIFT
+
+for folder in "$HOME/Public" "$HOME/Sites"; do
+  if [[ -d "$folder" ]]; then
+    chflags hidden "$folder"
+  fi
+done
