@@ -5,6 +5,9 @@ set -euo pipefail
 # Regenerate and reload the launchd agents defined in ~/.config/launcher/tasks.yml.
 launcher sync
 
+# Install and load yabai's launch agent
+yabai --start-service
+
 # The domain, required by launchctl
 domain="gui/$(id -u)"
 
