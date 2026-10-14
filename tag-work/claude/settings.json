@@ -58,11 +58,6 @@
     ]
   },
   "model": "opus",
-  "skillOverrides": {
-    "slack:standup": "off",
-    "slack:summarize-channel": "off",
-    "slack:draft-announcement": "off"
-  },
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -203,8 +198,6 @@
     "ls-notes@landonschropp": true,
     "ls-writing@landonschropp": true,
     "ls-browser@landonschropp": true,
-    "slack@claude-plugins-official": true,
-    "sentry@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "agent-lint@babylist": true,
     "devin@babylist": true,
