@@ -19,7 +19,6 @@ repositories=(
   "$HOME/Development/herdr-"*
   "$HOME/Development/obsidian-"*
   "$HOME/.dotfiles"
-  "$HOME/Notes"
 )
 
 # Logging
