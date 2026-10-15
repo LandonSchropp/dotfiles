@@ -90,6 +90,21 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 defaults write com.apple.menuextra.clock ShowDate -int 1
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
 
+# Menu Bar > Menu bar controls: Hide unused items
+for item in Battery Display NowPlaying Siri Sound Spotlight VoiceControl; do
+  defaults -currentHost write com.apple.controlcenter "$item" -int 8
+done
+
+# Menu Bar > Menu bar controls: Show Bluetooth and Weather
+for item in Bluetooth Weather; do
+  defaults -currentHost write com.apple.controlcenter "$item" -int 2
+done
+
+control_center_group="$HOME/Library/Group Containers/group.com.apple.controlcenter/Library/Preferences/group.com.apple.controlcenter"
+defaults write "$control_center_group" showSiri -bool false
+defaults write "$control_center_group" showSpotlight -bool false
+defaults write "$control_center_group" showWeather -bool true
+
 # Finder > Settings > New Finder windows show: Home folder
 defaults write com.apple.finder NewWindowTarget PfHm
 defaults write com.apple.finder NewWindowTargetPath "file://$HOME/"
