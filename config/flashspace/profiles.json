@@ -20,6 +20,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -169,6 +174,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             }
           ],
           "display" : "LG HDR 4K",
@@ -198,6 +208,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             }
           ],
           "display" : "LG HDR 4K",
@@ -227,6 +242,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             }
           ],
           "display" : "LG HDR 4K",
@@ -323,6 +343,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             }
           ],
           "display" : "LG HDR 4K",
@@ -347,6 +372,11 @@
               "bundleIdentifier" : "company.thebrowser.Browser",
               "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
               "name" : "Arc"
+            },
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
             },
             {
               "bundleIdentifier" : "com.linear",
