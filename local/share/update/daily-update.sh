@@ -21,6 +21,7 @@ log "Starting daily updates..."
 
 update sync-repositories
 update sync-dictionaries
+update check-notes-file-sizes
 update tldr --update
 
 # Installs any tool in mise's config that isn't there yet.
