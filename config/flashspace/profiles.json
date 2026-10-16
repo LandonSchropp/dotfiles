@@ -17,11 +17,6 @@
               "name" : "Zen"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            },
-            {
               "bundleIdentifier" : "com.google.Chrome",
               "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
               "name" : "Google Chrome"
@@ -171,11 +166,6 @@
               "name" : "Zen"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            },
-            {
               "bundleIdentifier" : "com.google.Chrome",
               "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
               "name" : "Google Chrome"
@@ -205,11 +195,6 @@
               "name" : "Zen"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            },
-            {
               "bundleIdentifier" : "com.google.Chrome",
               "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
               "name" : "Google Chrome"
@@ -237,11 +222,6 @@
               "bundleIdentifier" : "app.zen-browser.zen",
               "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
               "name" : "Zen"
-            },
-            {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
             },
             {
               "bundleIdentifier" : "com.google.Chrome",
@@ -340,11 +320,6 @@
               "name" : "Zen"
             },
             {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
-            },
-            {
               "bundleIdentifier" : "com.google.Chrome",
               "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
               "name" : "Google Chrome"
@@ -367,11 +342,6 @@
               "bundleIdentifier" : "app.zen-browser.zen",
               "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
               "name" : "Zen"
-            },
-            {
-              "bundleIdentifier" : "company.thebrowser.Browser",
-              "iconPath" : "/Applications/Arc.app/Contents/Resources/AppIcon.icns",
-              "name" : "Arc"
             },
             {
               "bundleIdentifier" : "com.google.Chrome",

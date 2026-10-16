@@ -53,7 +53,6 @@ brew "yarn"
 
 cask "1password"
 cask "alcove"
-cask "arc"
 cask "claude"
 cask "cold-turkey-blocker"
 cask "docker-desktop"
