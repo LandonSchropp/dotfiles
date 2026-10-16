@@ -105,6 +105,58 @@ defaults write "$control_center_group" showSiri -bool false
 defaults write "$control_center_group" showSpotlight -bool false
 defaults write "$control_center_group" showWeather -bool true
 
+# Hides an app's menu bar item, even when the app isn't installed yet.
+#
+# Arguments:
+#   $1: The app's bundle ID, such as com.1password.1password.
+hide_from_menu_bar() {
+  local tracked_applications='[]'
+
+  if defaults read "$control_center_group" trackedApplications &>/dev/null; then
+    tracked_applications=$(
+      defaults export "$control_center_group" - |
+        plutil -extract trackedApplications raw -o - - |
+        base64 --decode |
+        plutil -convert json -o - -
+    )
+  fi
+
+  tracked_applications=$(
+    jq --compact-output --arg bundle "$1" '
+      if any(.[]; .location.bundle._0 == $bundle) then
+        map(if .location.bundle._0 == $bundle then .isAllowed = false end)
+      else
+        . + [
+          {bundle: {_0: $bundle}},
+          {isAllowed: false, location: {bundle: {_0: $bundle}}, menuItemLocations: [{bundle: {_0: $bundle}}]}
+        ]
+      end
+    ' <<<"$tracked_applications" |
+      plutil -convert binary1 -o - - |
+      xxd -p |
+      tr -d '\n'
+  )
+
+  defaults write "$control_center_group" trackedApplications -data "$tracked_applications"
+}
+
+# Menu Bar > Allow in the Menu Bar: Off
+hide_from_menu_bar app.monitorcontrol.MonitorControl
+hide_from_menu_bar app.tuple.app
+hide_from_menu_bar app.zen-browser.zen
+hide_from_menu_bar cc.ffitch.shottr
+hide_from_menu_bar com.1password.1password
+hide_from_menu_bar com.anthropic.claudefordesktop
+hide_from_menu_bar com.getcoldturkey.blocker
+hide_from_menu_bar com.hegenberg.BetterSnapTool
+hide_from_menu_bar com.henrikruscon.Alcove
+hide_from_menu_bar com.jamf.selfserviceplus
+hide_from_menu_bar com.okta.mobile
+hide_from_menu_bar com.raycast.macos
+hide_from_menu_bar leits.MeetingBar
+hide_from_menu_bar notion.id
+hide_from_menu_bar org.pqrs.Karabiner-Console-User-Server
+
 # Finder > Settings > New Finder windows show: Home folder
 defaults write com.apple.finder NewWindowTarget PfHm
 defaults write com.apple.finder NewWindowTargetPath "file://$HOME/"
