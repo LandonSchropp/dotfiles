@@ -16,7 +16,7 @@
     {
       "name": "orchestrate",
       "path": "~/Development",
-      "prompt": "/ls-notes:orchestrate-day"
+      "prompt": "/ls-agent:orchestrate"
     },
     {
       "path": "~/Development/obsidian-plugins",
