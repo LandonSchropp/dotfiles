@@ -1,16 +1,29 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+shopt -s inherit_errexit nullglob
 
 # Opens a herdr-project fix session when a Notes vault file is over Obsidian Sync Standard's 5 MB
 # limit.
 
 vault="$HOME/Notes"
+config="$vault/.obsidian"
 
 [[ -d "$vault" ]] || exit 0
 
-# Sync ignores hidden files and folders, except for the .obsidian config folder.
-files=$(find "$vault" -name '.*' ! -path "$vault/.obsidian" -prune -o -type f -size +5242880c -print)
+# The config files Obsidian Sync uploads.
+config_files=(
+  "$config"/*.json
+  "$config"/themes/*/{theme.css,manifest.json}
+  "$config"/snippets/*.css
+  "$config"/plugins/*/{manifest.json,main.js,styles.css,data.json}
+)
+
+files=$(
+  find "$vault" -name '.*' -prune -o -type f -size +5242880c -print
+  find "${config_files[@]}" -maxdepth 0 -type f -size +5242880c \
+    ! -name workspace.json ! -name workspace-mobile.json
+)
 
 [[ -z "$files" ]] && exit 0
 
