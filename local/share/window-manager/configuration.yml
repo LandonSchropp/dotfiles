@@ -48,6 +48,11 @@ workspaces:
     layout: Columns
     applications: [Zen, Google Chrome, Linear]
 
+  - workspace: AI
+    profile: Full
+    layout: Fullscreen
+    applications: [Google Chrome, Claude]
+
   - workspace: Browser
     profile: Split
     layout: Columns
@@ -87,3 +92,8 @@ workspaces:
     profile: Split
     layout: Main Stack
     applications: [Zen, Google Chrome, Linear]
+
+  - workspace: AI
+    profile: Split
+    layout: Columns
+    applications: [Google Chrome, Claude]

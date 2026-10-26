@@ -146,6 +146,30 @@
           "name" : "Linear",
           "shortcut" : "cmd+ctrl+opt+l",
           "symbolIconName" : "checklist"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.anthropic.claudefordesktop",
+            "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+            "name" : "Claude"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
+            },
+            {
+              "bundleIdentifier" : "com.anthropic.claudefordesktop",
+              "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+              "name" : "Claude"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "C98C5802-27C7-4294-ACBA-B3D503BE37BE",
+          "name" : "AI",
+          "shortcut" : "cmd+ctrl+opt+i",
+          "symbolIconName" : "sparkles"
         }
       ]
     },
@@ -359,6 +383,30 @@
           "name" : "Linear",
           "shortcut" : "cmd+ctrl+opt+l",
           "symbolIconName" : "checklist"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.anthropic.claudefordesktop",
+            "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+            "name" : "Claude"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.google.Chrome",
+              "iconPath" : "/Applications/Google Chrome.app/Contents/Resources/app.icns",
+              "name" : "Google Chrome"
+            },
+            {
+              "bundleIdentifier" : "com.anthropic.claudefordesktop",
+              "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+              "name" : "Claude"
+            }
+          ],
+          "display" : "LG HDR 4K",
+          "id" : "A66689BE-7320-424E-B4DD-EE24260968C4",
+          "name" : "AI",
+          "shortcut" : "cmd+ctrl+opt+i",
+          "symbolIconName" : "sparkles"
         }
       ]
     }
