@@ -74,6 +74,10 @@ describe "stamp-screenshots" do
     have_received(:system).with("xattr", "-w", "-x", attribute, shottr_handler, path, exception: true)
   end
 
+  def lift_quarantine(path)
+    have_received(:system).with("xattr", "-d", "com.apple.quarantine", path, err: File::NULL)
+  end
+
   context "when the directory contains an image" do
     let!(:screenshot) { create_screenshot("Screenshot 2026-08-05 at 9.00.00 AM.png") }
 
@@ -86,6 +90,11 @@ describe "stamp-screenshots" do
       run_script
 
       expect(IO).to have_received(:popen).with(conversion, "rb")
+    end
+
+    it "lifts the quarantine" do
+      run_script
+      expect(main).to lift_quarantine(screenshot)
     end
   end
 
@@ -149,6 +158,11 @@ describe "stamp-screenshots" do
     it "preserves the existing handler" do
       run_script
       expect(main).not_to stamp(screenshot)
+    end
+
+    it "lifts the quarantine" do
+      run_script
+      expect(main).to lift_quarantine(screenshot)
     end
   end
 

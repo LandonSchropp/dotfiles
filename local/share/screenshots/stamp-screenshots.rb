@@ -56,6 +56,9 @@ FileUtils.touch("#{MARKER_FILE}.next")
 shottr_handler = handler
 
 new_images.each do |image|
+  # Lift the quarantine Shottr's sandbox adds, which makes Gatekeeper refuse to open the image.
+  system('xattr', '-d', 'com.apple.quarantine', image, err: File::NULL)
+
   next if stamped?(image)
 
   system('xattr', '-w', '-x', ATTRIBUTE, shottr_handler, image, exception: true)
