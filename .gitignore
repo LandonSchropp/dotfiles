@@ -7,3 +7,5 @@ repro.lua
 
 config/karabiner/*
 !config/karabiner/karabiner.json
+
+config/herdr/.*.gpui-lock
