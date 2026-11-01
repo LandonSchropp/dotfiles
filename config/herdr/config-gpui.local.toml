@@ -9,6 +9,7 @@ show_system_load = false
 tab_layout = "curved"
 show_agents = false
 show_sidebar_search = false
+show_listening_ports = false
 
 [sidebar]
 device_footer = "auto"
