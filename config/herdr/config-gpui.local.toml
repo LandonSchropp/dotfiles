@@ -9,3 +9,7 @@ show_system_load = false
 tab_layout = "curved"
 show_agents = false
 show_sidebar_search = false
+
+[sidebar]
+device_footer = "auto"
+change_counts = "local"
