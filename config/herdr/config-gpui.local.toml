@@ -22,6 +22,8 @@ size = 16.0
 family = "JetBrainsMono Nerd Font"
 size = 18.0
 line_height = 1.65
+padding_y = 6
+padding_x = 6
 
 [tabs]
 family = "JetBrainsMono Nerd Font"
