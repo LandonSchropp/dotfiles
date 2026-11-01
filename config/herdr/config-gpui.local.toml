@@ -25,5 +25,11 @@ line_height = 1.65
 family = "JetBrainsMono Nerd Font"
 size = 16.0
 
+[status_bar]
+theme = "hidden"
+shortcuts = "hidden"
+report_issue = "hidden"
+keep_awake_scope = "system"
+
 [ui]
 size = 16.0
