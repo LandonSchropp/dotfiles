@@ -2,6 +2,7 @@
 
 tap "asmvik/formulae"
 tap "PeonPing/tap"
+tap "penso/tap"
 tap "keith/formulae"
 
 brew "asciinema"
@@ -64,6 +65,7 @@ cask "font-roboto"
 cask "font-sauce-code-pro-nerd-font"
 cask "ghostty"
 cask "google-chrome"
+cask "herdr-gpui"
 cask "istat-menus"
 cask "karabiner-elements"
 cask "meetingbar"
