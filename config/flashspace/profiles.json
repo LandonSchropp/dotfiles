@@ -39,6 +39,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "so.pen.herdr-gpui",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -214,6 +219,11 @@
               "name" : "Ghostty"
             },
             {
+              "bundleIdentifier" : "so.pen.herdr-gpui",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
+            },
+            {
               "bundleIdentifier" : "app.zen-browser.zen",
               "iconPath" : "/Applications/Zen.app/Contents/Resources/firefox.icns",
               "name" : "Zen"
@@ -275,6 +285,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "so.pen.herdr-gpui",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "LG HDR 4K",
