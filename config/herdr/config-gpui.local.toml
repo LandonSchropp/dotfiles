@@ -4,3 +4,8 @@
 # New installs start with the roomy rounded sidebar. Remove this line for
 # the managed default, or pick another layout listed in config-gpui.toml.
 layout = "comfortable-rounded"
+theme = "TokyoNight Storm"
+show_system_load = false
+tab_layout = "curved"
+show_agents = false
+show_sidebar_search = false
