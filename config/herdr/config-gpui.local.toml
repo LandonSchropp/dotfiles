@@ -6,7 +6,7 @@
 layout = "comfortable-rounded"
 theme = "TokyoNight Storm"
 show_system_load = false
-tab_layout = "curved"
+tab_layout = "cards"
 show_agents = false
 show_sidebar_search = false
 show_listening_ports = false
