@@ -18,10 +18,7 @@ cursor_line = "row"
 "hunk.review.editActiveNote" = "e"
 "hunk.review.editSelectedFile" = "E"
 "hunk.review.deleteActiveNote" = "d"
-
-# Not linked by rcup: Hunk's React shim doesn't follow symlinks.
-[extensions]
-paths = ["~/.dotfiles/hunk/extensions"]
+"hunk.review.saveNote" = "enter"
 
 # Tokyo Night Storm, matching Ghostty and Neovim.
 [themes.tokyo-night-storm]
