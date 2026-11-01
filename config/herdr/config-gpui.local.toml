@@ -13,3 +13,17 @@ show_sidebar_search = false
 [sidebar]
 device_footer = "auto"
 change_counts = "local"
+family = "JetBrainsMono Nerd Font"
+size = 16.0
+
+[terminal]
+family = "JetBrainsMono Nerd Font"
+size = 18.0
+line_height = 1.65
+
+[tabs]
+family = "JetBrainsMono Nerd Font"
+size = 16.0
+
+[ui]
+size = 16.0
