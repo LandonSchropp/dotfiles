@@ -10,6 +10,7 @@ tab_layout = "curved"
 show_agents = false
 show_sidebar_search = false
 show_listening_ports = false
+show_repository_icons = false
 
 [sidebar]
 device_footer = "auto"
