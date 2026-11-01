@@ -34,3 +34,6 @@ keep_awake_scope = "system"
 
 [ui]
 size = 16.0
+
+[pane_keys]
+"shift-enter" = "text:\n"
