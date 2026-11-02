@@ -157,6 +157,51 @@ hide_from_menu_bar leits.MeetingBar
 hide_from_menu_bar notion.id
 hide_from_menu_bar org.pqrs.Karabiner-Console-User-Server
 
+# Adds an installed app to the login items unless it's already there.
+#
+# Arguments:
+#   $1: The app's name, such as MonitorControl.
+open_at_login() {
+  [[ -d "/Applications/$1.app" ]] || return 0
+
+  osascript - "/Applications/$1.app" >/dev/null <<'APPLESCRIPT'
+on run {appPath}
+  tell application "System Events"
+    if (count of (login items whose path is appPath)) is 0 then
+      make login item at end with properties {path:appPath}
+    end if
+  end tell
+end run
+APPLESCRIPT
+}
+
+# Removes an app from the login items, for apps that add themselves on launch.
+#
+# Arguments:
+#   $1: The login item's name, such as Notion.
+remove_from_login_items() {
+  osascript - "$1" >/dev/null <<'APPLESCRIPT'
+on run {itemName}
+  tell application "System Events" to delete (login items whose name is itemName)
+end run
+APPLESCRIPT
+}
+
+# General > Login Items & Extensions > Open at Login
+open_at_login Alcove
+open_at_login BetterSnapTool
+open_at_login "GCal for Google Calendar"
+open_at_login "iStat Menus"
+open_at_login MeetingBar
+open_at_login MonitorControl
+open_at_login Raycast
+open_at_login Shottr
+open_at_login Thaw
+remove_from_login_items Notion
+remove_from_login_items Spotify
+remove_from_login_items Steam
+remove_from_login_items Tuple
+
 # Finder > Settings > New Finder windows show: Home folder
 defaults write com.apple.finder NewWindowTarget PfHm
 defaults write com.apple.finder NewWindowTargetPath "file://$HOME/"
