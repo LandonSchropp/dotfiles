@@ -31,6 +31,7 @@ fi
 (cd "$herdr_project_directory" && bun install --frozen-lockfile)
 
 herdr plugin link "$herdr_project_directory"
+npx --yes skills add LandonSchropp/herdr-project --skill herdr-project --global --agent claude-code --yes
 
 herdr_group_directory="$HOME/Development/herdr-group"
 
@@ -41,6 +42,7 @@ fi
 (cd "$herdr_group_directory" && bun install --frozen-lockfile)
 
 herdr plugin link "$herdr_group_directory"
+npx --yes skills add LandonSchropp/herdr-group --skill herdr-group --global --agent claude-code --yes
 
 herdr_pull_request_status_directory="$HOME/Development/herdr-pull-request-status"
 
