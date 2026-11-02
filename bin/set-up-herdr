@@ -42,5 +42,16 @@ fi
 
 herdr plugin link "$herdr_group_directory"
 
+herdr_pull_request_status_directory="$HOME/Development/herdr-pull-request-status"
+
+if [ ! -d "$herdr_pull_request_status_directory" ]; then
+  git clone git@github.com:LandonSchropp/herdr-pull-request-status.git "$herdr_pull_request_status_directory"
+fi
+
+# Installs the plugin's dependencies and the LaunchAgent that checks GitHub once a minute.
+"$herdr_pull_request_status_directory/scripts/setup.sh"
+
+herdr plugin link "$herdr_pull_request_status_directory"
+
 # Install the Herdr agent skill so Claude Code can operate Herdr from inside a pane.
 npx --yes skills add ogulcancelik/herdr --skill herdr --global --agent claude-code --yes
