@@ -32,5 +32,15 @@ fi
 
 herdr plugin link "$herdr_project_directory"
 
+herdr_group_directory="$HOME/Development/herdr-group"
+
+if [ ! -d "$herdr_group_directory" ]; then
+  git clone git@github.com:LandonSchropp/herdr-group.git "$herdr_group_directory"
+fi
+
+(cd "$herdr_group_directory" && bun install --frozen-lockfile)
+
+herdr plugin link "$herdr_group_directory"
+
 # Install the Herdr agent skill so Claude Code can operate Herdr from inside a pane.
 npx --yes skills add ogulcancelik/herdr --skill herdr --global --agent claude-code --yes
