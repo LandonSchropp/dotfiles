@@ -56,10 +56,10 @@ rows = [
   [
     "state_icon",
     { token = "workspace", rules = [{ contains = "───", fg = "#565f89" }, { contains = "", hide = true }] },
-    "$name",
+    { token = "$name", fg = "#c0caf5" },
     { token = "$parked", fg = "#565f89" },
   ],
-  ["$project"],
+  ["$project_name", { token = "$parked_project", fg = "#565f89" }],
   [
     { token = "$pull_request_status_broken", fg = "#f7768e" },
     { token = "$pull_request_status_feedback", fg = "#7aa2f7" },
