@@ -5,11 +5,8 @@ previous_tab = "cmd+h"
 next_tab = "cmd+l"
 new_tab = "cmd+t"
 rename_tab = "cmd+r"
-previous_workspace = "cmd+k"
-next_workspace = "cmd+j"
 close_workspace = "cmd+shift+w"
 rename_workspace = "cmd+shift+r"
-switch_workspace = "cmd+1..9"
 toggle_sidebar = "cmd+s"
 help = "cmd+/"
 copy_mode = "cmd+m"
@@ -19,6 +16,24 @@ key = "cmd+n"
 type = "plugin_action"
 command = "landonschropp.herdr-project.project"
 description = "new workspace"
+
+[[keys.command]]
+key = "cmd+j"
+type = "plugin_action"
+command = "landonschropp.herdr-group.next"
+description = "next workspace"
+
+[[keys.command]]
+key = "cmd+k"
+type = "plugin_action"
+command = "landonschropp.herdr-group.previous"
+description = "previous workspace"
+
+[[keys.command]]
+key = "cmd+p"
+type = "plugin_action"
+command = "landonschropp.herdr-group.park"
+description = "toggle parked"
 
 [[keys.command]]
 key = "cmd+w"
@@ -37,7 +52,15 @@ confirm_close = true
 show_agent_labels_on_pane_borders = false
 
 [ui.sidebar.spaces]
-rows = [["state_icon", "workspace"], ["$project"]]
+rows = [
+  [
+    "state_icon",
+    { token = "workspace", rules = [{ contains = "───", fg = "#565f89" }, { contains = "", hide = true }] },
+    "$name",
+    { token = "$parked", fg = "#565f89" },
+  ],
+  ["$project"],
+]
 
 [ui.sidebar.agents]
 rows = []
