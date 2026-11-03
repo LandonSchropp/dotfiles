@@ -15,18 +15,18 @@ show_repository_icons = false
 [sidebar]
 device_footer = "auto"
 change_counts = "local"
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 size = 16.0
 
 [terminal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 size = 18.0
 line_height = 1.65
 padding_y = 6
 padding_x = 6
 
 [tabs]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 size = 16.0
 
 [status_bar]
