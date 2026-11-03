@@ -60,13 +60,19 @@ rows = [
     { token = "$parked", fg = "#565f89" },
   ],
   ["$project_name", { token = "$parked_project", fg = "#565f89" }],
+  # Pull request statuses, in Tokyo Night colors. Warm colors mean someone has work to do: red is
+  # broken, orange is a person's feedback and yellow is a bot's. Cool colors mean nothing is needed
+  # yet: blue is CI or the merge queue running and cyan is waiting on a reviewer. Draft is gray,
+  # ready is green and merged is purple, like GitHub. Every group gets its own color. Pink
+  # (#fca7ea) is held in reserve for a future status, since it fits the palette and looks unlike
+  # every color in use.
   [
     { token = "$pull_request_status_broken", fg = "#f7768e" },
-    { token = "$pull_request_status_feedback", fg = "#7aa2f7" },
+    { token = "$pull_request_status_feedback", fg = "#ff9e64" },
     { token = "$pull_request_status_bot", fg = "#e0af68" },
-    { token = "$pull_request_status_running", fg = "#565f89" },
+    { token = "$pull_request_status_running", fg = "#7aa2f7" },
     { token = "$pull_request_status_waiting", fg = "#7dcfff" },
-    { token = "$pull_request_status_draft", fg = "#565f89" },
+    { token = "$pull_request_status_draft", fg = "#737aa2" },
     { token = "$pull_request_status_ready", fg = "#9ece6a" },
     { token = "$pull_request_status_merged", fg = "#bb9af7" },
   ],
