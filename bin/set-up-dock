@@ -25,6 +25,7 @@ apps=(
   "$slack"
   "/Applications/Linear.app"
   "/Applications/Claude.app"
+  "/Applications/Google Chrome.app"
 
   # Personal
   "/Applications/Spotify.app"
