@@ -45,6 +45,7 @@ height = "20%"
 
 [theme]
 name = "tokyo-night"
+auto_switch = false
 
 [ui]
 agent_panel_sort = "spaces"
