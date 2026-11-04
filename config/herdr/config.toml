@@ -76,6 +76,7 @@ rows = [
     { token = "$pull_request_status_draft", fg = "#737aa2" },
     { token = "$pull_request_status_ready", fg = "#9ece6a" },
     { token = "$pull_request_status_merged", fg = "#bb9af7" },
+    { token = "$pull_request_status_closed", fg = "#f7768e" },
   ],
 ]
 
