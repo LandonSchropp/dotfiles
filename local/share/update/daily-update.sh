@@ -17,6 +17,11 @@ update() {
   "$@" || exit_code=1
 }
 
+# Waits for a full wake, when the display is on, rather than running during a brief dark wake.
+until [[ $(pmset -g systemstate) == *Graphics* ]]; do
+  sleep 60
+done
+
 log "Starting daily updates..."
 
 update sync-repositories

@@ -113,6 +113,6 @@ The update utilities keep my machines current and in sync. They include the foll
   to and from iCloud Drive. The list of apps is configured in `config/preferences/apps.json`. Run
   `restore-preferences` when setting up a new machine.
 - `daily-update`: Runs the quick updates — the two syncs above, the tldr cache, and any missing
-  mise tools.
+  mise tools. It waits until the Mac is fully awake with the display on before it starts.
 - `weekly-update`: Upgrades the things that drift — Homebrew packages, mise tools, and Oh My Zsh —
   then reclaims the disk they leave behind.
