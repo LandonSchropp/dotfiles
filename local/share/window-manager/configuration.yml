@@ -16,7 +16,7 @@ workspaces:
   - workspace: Browser
     profile: Full
     layout: Fullscreen
-    applications: [Zen, Google Chrome]
+    applications: [Zen]
 
   - workspace: Terminal
     profile: Full
@@ -46,27 +46,27 @@ workspaces:
   - workspace: Linear
     profile: Full
     layout: Columns
-    applications: [Zen, Google Chrome, Linear]
+    applications: [Zen, Linear]
 
   - workspace: AI
     profile: Full
     layout: Fullscreen
-    applications: [Google Chrome, Claude]
+    applications: [Claude]
 
   - workspace: Browser
     profile: Split
     layout: Columns
-    applications: [Zen, Google Chrome]
+    applications: [Zen]
 
   - workspace: Terminal
     profile: Split
     layout: Main Stack
-    applications: [Zen, Google Chrome, Ghostty, Herdr]
+    applications: [Zen, Ghostty, Herdr]
 
   - workspace: Notes
     profile: Split
     layout: Main Stack
-    applications: [Zen, Google Chrome, Obsidian]
+    applications: [Zen, Obsidian]
 
   - workspace: Writing
     profile: Split
@@ -86,14 +86,14 @@ workspaces:
   - workspace: Slack
     profile: Split
     layout: Main Stack
-    applications: [Zen, Google Chrome, Slack]
+    applications: [Zen, Slack]
 
   - workspace: Linear
     profile: Split
     layout: Main Stack
-    applications: [Zen, Google Chrome, Linear]
+    applications: [Zen, Linear]
 
   - workspace: AI
     profile: Split
     layout: Columns
-    applications: [Google Chrome, Claude]
+    applications: [Claude]

@@ -19,7 +19,7 @@
   "focusLeft" : "opt+h",
   "focusRight" : "opt+l",
   "focusUp" : "opt+k",
-  "keepUnassignedAppsOnSwitch" : false,
+  "keepUnassignedAppsOnSwitch" : true,
   "loopWorkspaces" : true,
   "menuBarDisplayAliases" : "",
   "menuBarTitleTemplate" : "$WORKSPACE",
