@@ -86,7 +86,7 @@ This is distinct from `bin/`, which only holds scripts for setting up and mainta
 - **macOS settings:** `bin/set-up-macos` writes System Settings with `defaults`, which can't validate keys, and macOS renames them without notice. Before running it on a new Mac, update it on a Mac that's already configured: read each key's current value with `defaults read` and update the script to match. Each comment names the System Settings control its key maps to; when a key no longer exists, toggle that control and diff `defaults read` before and after to find its replacement. The script refuses to run when it hasn't been committed in three months.
 - **Launch agents:** For LaunchAgent plists, also run `set-up-launchd` to load the services.
 - **Ruby gems:** There's no Gemfile. Scripts declare their gems with inline Bundler, and each spec sits beside its script as `<name>-spec.rb`, declaring RSpec the same way. Run a spec with `ruby <name>-spec.rb`.
-- **RuboCop:** Run `rubocop` directly, not through Bundler. mise installs it and `rubocop-shopify` with every Ruby from `config/mise/default-gems`.
+- **RuboCop:** Run `rubocop` directly, not through Bundler. mise installs it and `rubocop-shopify` with every Ruby through the Ruby postinstall hook in `config/mise/config.toml`.
 
 ## Important Notes
 
