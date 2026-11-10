@@ -15,6 +15,22 @@ if (($(date +%s) - last_updated > 90 * 24 * 60 * 60)); then
   exit 1
 fi
 
+# Privacy & Security > Full Disk Access: Herdr.
+#
+# Verify that the terminal running this script is granted full disk access. Uses reading the TCC
+# folder as a test, which would fail without full disk access.
+if ! ls "$HOME/Library/Application Support/com.apple.TCC" &>/dev/null; then
+  echo "Error: This script doesn't have Full Disk Access. Agents in Herdr run under the Herdr" >&2
+  echo "server, so the server and the app both need it." >&2
+  echo >&2
+  echo "1. Open System Settings > Privacy & Security > Full Disk Access." >&2
+  echo "2. Turn on Herdr." >&2
+  echo "3. Click +, press Cmd+Shift+G, enter ~/.local/bin/herdr and turn it on." >&2
+  echo "4. Run 'herdr server stop', then reopen Herdr. This closes every pane." >&2
+  echo "5. Run this script again from Herdr." >&2
+  exit 1
+fi
+
 # Appearance > Appearance: Auto
 defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 
