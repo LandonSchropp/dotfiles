@@ -47,7 +47,6 @@
       "Read(**/credentials/**)"
     ],
     "ask": [
-      "Bash(git reset *)",
       "Bash(git clean *)"
     ],
     "defaultMode": "auto",
