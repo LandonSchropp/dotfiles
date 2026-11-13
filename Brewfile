@@ -77,6 +77,7 @@ cask "spotify"
 cask "thaw"
 cask "the-unarchiver"
 cask "visual-studio-code"
+cask "vorssaint"
 cask "zen"
 
 mas "Amphetamine", id: 937984704
