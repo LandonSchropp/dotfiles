@@ -62,6 +62,9 @@ anything that pops up.
 ~/.dotfiles/bin/set-up-steam         # Launch Steam games without the Steam window
 ```
 
+Some settings have no script. Have an agent follow each file in [`instructions/`](instructions)
+once the scripts above have run.
+
 ### Git
 
 In order to connect with GitHub, you'll need to generate an SSH key. Follow the

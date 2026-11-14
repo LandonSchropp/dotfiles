@@ -38,6 +38,7 @@ config/                 # Symlinked to ~/.config (XDG_CONFIG_HOME)
   │   └── init.lua      # Neovim entry point
   ├── mise/             # Runtime version manager config
   └── zsh/              # Zsh configuration files
+instructions/           # How agents configure settings that have no script
 local/                  # Symlinked to ~/.local (XDG_DATA_HOME / XDG_BIN_HOME)
   ├── bin/              # Binstubs for purpose-built utilities, on PATH
   └── share/            # Purpose-built utility implementations, one folder each
@@ -90,6 +91,7 @@ This is distinct from `bin/`, which only holds scripts for setting up and mainta
 
 ## Important Notes
 
+- Before configuring anything a file in `instructions/` covers, read it and make the Mac match it
 - The repository uses `rcm` (rcup) for dotfile management, not manual symlinks
 - Neovim configuration is heavily customized on top of AstroNvim
 - All setup scripts are idempotent and can be run multiple times safely
