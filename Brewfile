@@ -53,6 +53,7 @@ brew "yabai"
 brew "yarn"
 
 cask "1password"
+cask "1password-cli"
 cask "alcove"
 cask "claude"
 cask "cold-turkey-blocker"
