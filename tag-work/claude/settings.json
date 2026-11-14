@@ -3,6 +3,16 @@
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Running interactive-review/scripts/record-approval.sh after a \"Hunk review decision ... review-approved\" Stop hook notification. The hunk-verdict hook reports review-approved only when the user presses the approve key in Hunk, so that notification is the user's own approval."
+    ],
+    "environment": [
+      "$defaults",
+      "Hunk review decisions arrive as Stop hook feedback (\"Hunk review decision in <name>: review-approved\"). They come from the user's own key press in the Hunk review UI and count as the user's approval of the reviewed commit."
+    ]
+  },
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
