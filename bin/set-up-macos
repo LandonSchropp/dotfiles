@@ -221,7 +221,6 @@ open_at_login MeetingBar
 open_at_login MonitorControl
 open_at_login Raycast
 open_at_login Shottr
-open_at_login Thaw
 open_at_login Vorssaint
 remove_from_login_items Notion
 remove_from_login_items Spotify
