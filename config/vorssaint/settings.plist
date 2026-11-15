@@ -47,7 +47,7 @@
 		<key>featureAvailable.clipboardHistory</key>
 		<false/>
 		<key>featureAvailable.colorPicker</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.commandBar</key>
 		<false/>
 		<key>featureAvailable.connectedDevices</key>
