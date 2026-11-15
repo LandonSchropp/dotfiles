@@ -10,7 +10,7 @@ rust = { version = "latest", components = "rust-analyzer" }
 uv = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node", "ruby", "elixir", "yarn"]
+idiomatic_version_file_enable_tools = ["node", "python", "ruby", "elixir", "yarn"]
 
 [env]
 GOMODCACHE = "{{env.HOME}}/.cache/go/mod"
