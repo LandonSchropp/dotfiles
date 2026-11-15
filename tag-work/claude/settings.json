@@ -213,7 +213,8 @@
     "contribution-report@babylist": true,
     "graphite@babylist": true,
     "project-workflow@babylist": true,
-    "superpowers@babylist": true
+    "superpowers@babylist": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {

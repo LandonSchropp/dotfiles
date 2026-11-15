@@ -219,7 +219,8 @@
     "impeccable@impeccable": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "ls-health@landonschropp-personal": true
+    "ls-health@landonschropp-personal": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {
