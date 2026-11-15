@@ -109,7 +109,7 @@
 		<key>featureAvailable.mouseNavigation</key>
 		<false/>
 		<key>featureAvailable.musicBlock</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.notch</key>
 		<false/>
 		<key>featureAvailable.notchAccessories</key>
@@ -206,6 +206,8 @@
 		<string>control+option+command:40</string>
 		<key>keepAwakeSwitchUsesUntil</key>
 		<false/>
+		<key>musicBlockEnabled</key>
+		<true/>
 		<key>showCountdownInMenuBar</key>
 		<false/>
 	</dict>
