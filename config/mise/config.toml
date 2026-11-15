@@ -11,6 +11,7 @@ uv = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby", "elixir", "yarn"]
+python.uv_venv_auto = true
 
 [env]
 GOMODCACHE = "{{env.HOME}}/.cache/go/mod"
