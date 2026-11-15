@@ -206,8 +206,14 @@
 		<string>control+option+command:40</string>
 		<key>keepAwakeSwitchUsesUntil</key>
 		<false/>
+		<key>launchAtLoginWanted</key>
+		<true/>
+		<key>liquidGlassEnabled</key>
+		<false/>
 		<key>musicBlockEnabled</key>
 		<true/>
+		<key>notchLiquidGlassEnabled</key>
+		<false/>
 		<key>panelShowControls</key>
 		<false/>
 		<key>panelShowUtilities</key>
