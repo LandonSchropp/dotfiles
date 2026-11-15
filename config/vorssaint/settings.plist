@@ -189,7 +189,7 @@
 		<key>featureAvailable.windowLayout</key>
 		<false/>
 		<key>featureAvailable.windowMaximizer</key>
-		<false/>
+		<true/>
 		<key>hasOnboarded</key>
 		<true/>
 		<key>keepAwakeActiveIcon</key>
@@ -288,6 +288,8 @@
 		<key>uninstallerWatchesTrash</key>
 		<true/>
 		<key>urlCleanerEnabled</key>
+		<true/>
+		<key>windowMaximizeEnabled</key>
 		<true/>
 	</dict>
 	<key>vorssaintBackupVersion</key>
