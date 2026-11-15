@@ -181,7 +181,7 @@
 		<key>featureAvailable.textSnippets</key>
 		<true/>
 		<key>featureAvailable.uninstaller</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.urlCleaner</key>
 		<false/>
 		<key>featureAvailable.wallpaper</key>
@@ -284,6 +284,8 @@
 		Zm9sZGVyIjoiIiwic2hvd3NJbkxpYnJhcnkiOnRydWV9XQ==
 		</data>
 		<key>textSnippetsEnabled</key>
+		<true/>
+		<key>uninstallerWatchesTrash</key>
 		<true/>
 	</dict>
 	<key>vorssaintBackupVersion</key>
