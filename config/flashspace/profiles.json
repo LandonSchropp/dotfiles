@@ -37,8 +37,8 @@
             },
             {
               "bundleIdentifier" : "so.pen.herdr-gpui",
-              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
-              "name" : "Herdr"
+              "iconPath" : "/Applications/Sheprd.app/Contents/Resources/Sheprd.icns",
+              "name" : "Sheprd"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -205,8 +205,8 @@
             },
             {
               "bundleIdentifier" : "so.pen.herdr-gpui",
-              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
-              "name" : "Herdr"
+              "iconPath" : "/Applications/Sheprd.app/Contents/Resources/Sheprd.icns",
+              "name" : "Sheprd"
             },
             {
               "bundleIdentifier" : "app.zen-browser.zen",
@@ -263,8 +263,8 @@
             },
             {
               "bundleIdentifier" : "so.pen.herdr-gpui",
-              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
-              "name" : "Herdr"
+              "iconPath" : "/Applications/Sheprd.app/Contents/Resources/Sheprd.icns",
+              "name" : "Sheprd"
             }
           ],
           "display" : "LG HDR 4K",

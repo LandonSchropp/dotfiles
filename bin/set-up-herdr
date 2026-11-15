@@ -64,7 +64,7 @@ icon="$(cd "$(dirname "$0")/.." && pwd)/config/herdr/sheprd-icon.png"
 osascript -l JavaScript -e "
   ObjC.import('AppKit');
   const image = \$.NSImage.alloc.initWithContentsOfFile('$icon');
-  if (image.isNil() || !\$.NSWorkspace.sharedWorkspace.setIconForFileOptions(image, '/Applications/Herdr.app', 0)) {
+  if (image.isNil() || !\$.NSWorkspace.sharedWorkspace.setIconForFileOptions(image, '/Applications/Sheprd.app', 0)) {
     throw new Error('Could not set the Sheprd icon');
   }
 " >/dev/null

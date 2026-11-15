@@ -1,4 +1,4 @@
-# Herdr UI overrides. Saved changes reload automatically.
+# Sheprd overrides. Saved changes reload automatically.
 # Unset keys inherit config-gpui.toml; tables merge key by key.
 
 # New installs start with the roomy rounded sidebar. Remove this line for
