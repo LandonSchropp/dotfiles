@@ -15,12 +15,6 @@ Window = Data.define(:application, :id, :rectangle) do
         .map { from_yabai_window(_1) }
     end
 
-    def non_visible
-      all
-        .reject { _1['is-visible'] }
-        .map { from_yabai_window(_1) }
-    end
-
     def focused
       json = `yabai -m query --windows --window 2>/dev/null`.force_encoding('UTF-8')
       return nil if json.strip.empty?
@@ -40,10 +34,6 @@ Window = Data.define(:application, :id, :rectangle) do
 
   def application?(name)
     application.casecmp?(name)
-  end
-
-  def focus
-    `yabai -m window #{id} --focus 2>/dev/null`
   end
 
   def update_position(rectangle)

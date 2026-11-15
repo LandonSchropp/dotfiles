@@ -20,30 +20,6 @@ workspace = ARGV[1] || Flashspace.workspace
 # Get the workspace configuration
 config = Configuration.find_workspace(profile, workspace)
 
-# Fetch the apps for the current workspace.
-flashspace_apps = Flashspace.apps(workspace, profile)
-
-# HACK: Arc loses its yabai AX reference after recreating its window, which causes yabai to mark it
-# as not-visible and prevents moving/resizing it. Focusing each non-visible window for the workspace
-# apps restores the AX reference. We only focus windows FlashSpace has assigned to this workspace
-# to avoid briefly showing apps that are intentionally hidden.
-# See: https://github.com/koekeishiya/yabai/issues (Arc compat)
-previously_focused = Window.focused
-
-Window.non_visible
-  .select { |window| flashspace_apps.any? { |app| window.application?(app) } }
-  .each(&:focus)
-
-# If workspace windows are still non-visible after focusing, yabai has lost them entirely.
-# Restart yabai to re-acquire AX references and try again.
-if Window.non_visible.any? { |window| flashspace_apps.any? { |app| window.application?(app) } }
-  `yabai --restart-service`
-  sleep 2
-  previously_focused = Window.focused
-end
-
-previously_focused&.focus
-
 # Get all visible windows, filter them to only those in the workspace configuration and sort
 # them by their order in the configuration, then by window ID (oldest to newest)
 windows = Window
