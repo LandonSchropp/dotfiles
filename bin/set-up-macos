@@ -61,6 +61,11 @@ defaults write com.mitchellh.ghostty NSUserKeyEquivalents -dict-add 'Hide Ghostt
 defaults write com.ngocluu.goodlinks NSUserKeyEquivalents -dict-add 'Hide GoodLinks' $'\xef\x9c\x97'
 defaults write notion.id NSUserKeyEquivalents -dict-add 'Copy Link to Current Page' '@$c'
 
+# Keyboard > Keyboard Shortcuts > Screenshots > Save picture of selected area as a file (⇧⌘4): Off
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 30 \
+  '<dict><key>enabled</key><false/></dict>'
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
 # Language & Region > First day of week: Monday
 defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
 
