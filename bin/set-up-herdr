@@ -57,3 +57,14 @@ herdr plugin link "$herdr_pull_request_status_directory"
 
 # Install the Herdr agent skill so Claude Code can operate Herdr from inside a pane.
 npx --yes skills add ogulcancelik/herdr --skill herdr --global --agent claude-code --yes
+
+# Give Sheprd a terminal-style icon.
+icon="$(cd "$(dirname "$0")/.." && pwd)/config/herdr/sheprd-icon.png"
+
+osascript -l JavaScript -e "
+  ObjC.import('AppKit');
+  const image = \$.NSImage.alloc.initWithContentsOfFile('$icon');
+  if (image.isNil() || !\$.NSWorkspace.sharedWorkspace.setIconForFileOptions(image, '/Applications/Herdr.app', 0)) {
+    throw new Error('Could not set the Sheprd icon');
+  }
+" >/dev/null
