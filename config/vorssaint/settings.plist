@@ -4,10 +4,32 @@
 <dict>
 	<key>settings</key>
 	<dict>
+		<key>audioPriorityDeviceNames</key>
+		<dict>
+			<key>32013CAD-9477-438F-A31E-565700000003</key>
+			<string>Landon’s iPhone Microphone</string>
+			<key>BuiltInMicrophoneDevice</key>
+			<string>MacBook Pro Microphone</string>
+			<key>BuiltInSpeakerDevice</key>
+			<string>MacBook Pro Speakers</string>
+		</dict>
+		<key>audioPriorityInputEnabled</key>
+		<true/>
+		<key>audioPriorityInputUIDs</key>
+		<array>
+			<string>BuiltInMicrophoneDevice</string>
+			<string>32013CAD-9477-438F-A31E-565700000003</string>
+		</array>
+		<key>audioPriorityOutputEnabled</key>
+		<true/>
+		<key>audioPriorityOutputUIDs</key>
+		<array>
+			<string>BuiltInSpeakerDevice</string>
+		</array>
 		<key>featureAvailable.appUpdates</key>
 		<false/>
 		<key>featureAvailable.audioPriority</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.autoQuit</key>
 		<false/>
 		<key>featureAvailable.bluetoothSleep</key>
