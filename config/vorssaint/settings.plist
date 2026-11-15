@@ -28,6 +28,8 @@
 		<array>
 			<string>BuiltInSpeakerDevice</string>
 		</array>
+		<key>defaultDurationMinutes</key>
+		<integer>30</integer>
 		<key>featureAvailable.appUpdates</key>
 		<true/>
 		<key>featureAvailable.audioPriority</key>
@@ -71,7 +73,7 @@
 		<key>featureAvailable.homebrew</key>
 		<false/>
 		<key>featureAvailable.keepAwake</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.keyboardDebounce</key>
 		<false/>
 		<key>featureAvailable.killProcess</key>
@@ -190,6 +192,22 @@
 		<false/>
 		<key>hasOnboarded</key>
 		<true/>
+		<key>keepAwakeActiveIcon</key>
+		<string>vorssaint</string>
+		<key>keepAwakeIconTint</key>
+		<string>blue</string>
+		<key>keepAwakeMouseJiggleIntervalMinutes</key>
+		<integer>5</integer>
+		<key>keepAwakePauseWhenLocked</key>
+		<false/>
+		<key>keepAwakeRightClickToggle</key>
+		<true/>
+		<key>keepAwakeShortcut</key>
+		<string>control+option+command:40</string>
+		<key>keepAwakeSwitchUsesUntil</key>
+		<false/>
+		<key>showCountdownInMenuBar</key>
+		<false/>
 	</dict>
 	<key>vorssaintBackupVersion</key>
 	<integer>1</integer>
