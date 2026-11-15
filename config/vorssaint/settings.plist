@@ -141,7 +141,7 @@
 		<key>featureAvailable.portManager</key>
 		<false/>
 		<key>featureAvailable.quickLauncher</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.quickToggles</key>
 		<false/>
 		<key>featureAvailable.quitApps</key>
@@ -208,6 +208,14 @@
 		<false/>
 		<key>musicBlockEnabled</key>
 		<true/>
+		<key>panelShowControls</key>
+		<false/>
+		<key>panelShowUtilities</key>
+		<false/>
+		<key>panelUtilityWindowLayout</key>
+		<false/>
+		<key>quickLauncherShortcut</key>
+		<string>control+option+command:9</string>
 		<key>showCountdownInMenuBar</key>
 		<false/>
 	</dict>
