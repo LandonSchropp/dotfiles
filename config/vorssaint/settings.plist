@@ -179,7 +179,7 @@
 		<key>featureAvailable.switcher</key>
 		<false/>
 		<key>featureAvailable.textSnippets</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.uninstaller</key>
 		<false/>
 		<key>featureAvailable.urlCleaner</key>
@@ -228,6 +228,63 @@
 		<false/>
 		<key>showCountdownInMenuBar</key>
 		<false/>
+		<key>snippetLibraryShortcut</key>
+		<string>none</string>
+		<key>snippetSoundEnabled</key>
+		<false/>
+		<key>snippetSoundName</key>
+		<string>Glass</string>
+		<key>textSnippets</key>
+		<data>
+		W3siaWQiOiI0NzgxMDYzQS1FNEFELTQ2RDgtQUMxMC1DNzQwRjVDQjQ4NEYi
+		LCJuYW1lIjoiU2hydWciLCJ0cmlnZ2VyIjoiIXNocnVnIiwicmVwbGFjZW1l
+		bnQiOiLCr1xcXyjjg4QpXy/CryIsImV4cGFuc2lvbiI6ImFmdGVyRGVsaW1p
+		dGVyIiwiZW5hYmxlZCI6dHJ1ZSwiaWdub3Jlc0Nhc2UiOmZhbHNlLCJmb2xk
+		ZXIiOiIiLCJzaG93c0luTGlicmFyeSI6dHJ1ZX0seyJpZCI6IjFBOEFCNkNG
+		LTk3MDMtNDYzMC1BQTIzLUQwNjcxOUY2NjU0QiIsIm5hbWUiOiJMZWZ0IEFy
+		cm93IiwidHJpZ2dlciI6IiFsZWZ0IiwicmVwbGFjZW1lbnQiOiLihpAiLCJl
+		eHBhbnNpb24iOiJhZnRlckRlbGltaXRlciIsImVuYWJsZWQiOnRydWUsImln
+		bm9yZXNDYXNlIjpmYWxzZSwiZm9sZGVyIjoiIiwic2hvd3NJbkxpYnJhcnki
+		OnRydWV9LHsiaWQiOiIwMTdBMEE5Mi0xQzIyLTRBQzQtQkMwRS0zNzlBMjg5
+		MUM4M0UiLCJuYW1lIjoiUmlnaHQgQXJyb3ciLCJ0cmlnZ2VyIjoiIXJpZ2h0
+		IiwicmVwbGFjZW1lbnQiOiLihpIiLCJleHBhbnNpb24iOiJhZnRlckRlbGlt
+		aXRlciIsImVuYWJsZWQiOnRydWUsImlnbm9yZXNDYXNlIjpmYWxzZSwiZm9s
+		ZGVyIjoiIiwic2hvd3NJbkxpYnJhcnkiOnRydWV9LHsiaWQiOiI5OTcxRDI4
+		NC1FMkIxLTQyQzMtQTYxRC02Qzc1REZCOTVCNjgiLCJuYW1lIjoiVXAgQXJy
+		b3ciLCJ0cmlnZ2VyIjoiIXVwIiwicmVwbGFjZW1lbnQiOiLihpEiLCJleHBh
+		bnNpb24iOiJhZnRlckRlbGltaXRlciIsImVuYWJsZWQiOnRydWUsImlnbm9y
+		ZXNDYXNlIjpmYWxzZSwiZm9sZGVyIjoiIiwic2hvd3NJbkxpYnJhcnkiOnRy
+		dWV9LHsiaWQiOiIzOURDQzM1RS05Rjg1LTRCMTctODAzMC1EQjBCODA2MDMz
+		MTciLCJuYW1lIjoiRG93biBBcnJvdyIsInRyaWdnZXIiOiIhZG93biIsInJl
+		cGxhY2VtZW50Ijoi4oaTIiwiZXhwYW5zaW9uIjoiYWZ0ZXJEZWxpbWl0ZXIi
+		LCJlbmFibGVkIjp0cnVlLCJpZ25vcmVzQ2FzZSI6ZmFsc2UsImZvbGRlciI6
+		IiIsInNob3dzSW5MaWJyYXJ5Ijp0cnVlfSx7ImlkIjoiMzhCMUIyOTYtNjk2
+		NS00NkZBLTk5N0UtMTFCNENBMzI4NzZCIiwibmFtZSI6IkxlZnQtUmlnaHQg
+		QXJyb3ciLCJ0cmlnZ2VyIjoiIWxlZnRyaWdodCIsInJlcGxhY2VtZW50Ijoi
+		4oaUIiwiZXhwYW5zaW9uIjoiYWZ0ZXJEZWxpbWl0ZXIiLCJlbmFibGVkIjp0
+		cnVlLCJpZ25vcmVzQ2FzZSI6ZmFsc2UsImZvbGRlciI6IiIsInNob3dzSW5M
+		aWJyYXJ5Ijp0cnVlfSx7ImlkIjoiQTU5MTM0OTktOUY4Ni00MDc1LUIyRTAt
+		NkJBMkI0NkVDMDlBIiwibmFtZSI6IlVwLURvd24gQXJyb3ciLCJ0cmlnZ2Vy
+		IjoiIXVwZG93biIsInJlcGxhY2VtZW50Ijoi4oaVIiwiZXhwYW5zaW9uIjoi
+		YWZ0ZXJEZWxpbWl0ZXIiLCJlbmFibGVkIjp0cnVlLCJpZ25vcmVzQ2FzZSI6
+		ZmFsc2UsImZvbGRlciI6IiIsInNob3dzSW5MaWJyYXJ5Ijp0cnVlfSx7Imlk
+		IjoiNzAzNzhGNDAtRTM4Ri00ODNELTkxMUEtRTcyMDZBMjRGRDgyIiwibmFt
+		ZSI6Ik1pbnVzIFNpZ24iLCJ0cmlnZ2VyIjoiIW1pbnVzIiwicmVwbGFjZW1l
+		bnQiOiLiiJIiLCJleHBhbnNpb24iOiJhZnRlckRlbGltaXRlciIsImVuYWJs
+		ZWQiOnRydWUsImlnbm9yZXNDYXNlIjpmYWxzZSwiZm9sZGVyIjoiIiwic2hv
+		d3NJbkxpYnJhcnkiOnRydWV9LHsiaWQiOiI2NEVDNjRBMy1EMzhFLTQ1OTgt
+		QjcwMS05OERENjFBRUVENkYiLCJuYW1lIjoiTXVsdGlwbGljYXRpb24gU2ln
+		biIsInRyaWdnZXIiOiIhbXVsdGlwbHkiLCJyZXBsYWNlbWVudCI6IsOXIiwi
+		ZXhwYW5zaW9uIjoiYWZ0ZXJEZWxpbWl0ZXIiLCJlbmFibGVkIjp0cnVlLCJp
+		Z25vcmVzQ2FzZSI6ZmFsc2UsImZvbGRlciI6IiIsInNob3dzSW5MaWJyYXJ5
+		Ijp0cnVlfSx7ImlkIjoiNzMxRTRENTgtMkI3RS00NDVDLUExMkMtNTdGMkMy
+		QTJEQUQ2IiwibmFtZSI6IkRpdmlzaW9uIFNpZ24iLCJ0cmlnZ2VyIjoiIWRp
+		dmlkZSIsInJlcGxhY2VtZW50Ijoiw7ciLCJleHBhbnNpb24iOiJhZnRlckRl
+		bGltaXRlciIsImVuYWJsZWQiOnRydWUsImlnbm9yZXNDYXNlIjpmYWxzZSwi
+		Zm9sZGVyIjoiIiwic2hvd3NJbkxpYnJhcnkiOnRydWV9XQ==
+		</data>
+		<key>textSnippetsEnabled</key>
+		<true/>
 	</dict>
 	<key>vorssaintBackupVersion</key>
 	<integer>1</integer>
