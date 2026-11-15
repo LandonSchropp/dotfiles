@@ -167,7 +167,7 @@
 		<key>featureAvailable.scrollZoom</key>
 		<false/>
 		<key>featureAvailable.shelf</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.smoothScroll</key>
 		<false/>
 		<key>featureAvailable.soundOutputSwitcher</key>
@@ -216,6 +216,16 @@
 		<false/>
 		<key>quickLauncherShortcut</key>
 		<string>control+option+command:9</string>
+		<key>shelfCloseAfterDrop</key>
+		<true/>
+		<key>shelfDockPlacement</key>
+		<string>menuBar</string>
+		<key>shelfDropZoneEnabled</key>
+		<false/>
+		<key>shelfEnabled</key>
+		<true/>
+		<key>shelfShortcutEnabled</key>
+		<false/>
 		<key>showCountdownInMenuBar</key>
 		<false/>
 	</dict>
