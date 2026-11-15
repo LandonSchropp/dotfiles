@@ -69,7 +69,7 @@ Brewfile                # Homebrew package definitions
 
 ### System Automation
 
-- LaunchAgent services in `Library/LaunchAgents/` for system automation (screen tint control, dictionary sync)
+- LaunchAgent services in `Library/LaunchAgents/` for system automation
 - Karabiner keyboard remapping configuration in `config/karabiner/karabiner.json`
 
 ### Purpose-Built Utilities
