@@ -17,7 +17,7 @@ fi
 apps=(
   # Core tools
   "/Applications/Zen.app"
-  "/Applications/Ghostty.app"
+  "/Applications/Sheprd.app"
   "/Applications/Obsidian.app"
   "/Applications/GCal for Google Calendar.app"
 
