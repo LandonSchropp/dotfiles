@@ -80,11 +80,8 @@ cask "visual-studio-code"
 cask "vorssaint"
 cask "zen"
 
-mas "Amphetamine", id: 937984704
 mas "BetterSnapTool", id: 417375580
-mas "Dropover", id: 1355679052
 mas "GCal for Google Calendar", id: 1107163858
 mas "GoodLinks", id: 1474335294
 mas "Kindle", id: 302584613
 mas "QuickShade", id: 931571202
-mas "Signal Shifter", id: 6446061552

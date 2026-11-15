@@ -4,12 +4,6 @@
     "files": ["~/Library/Preferences/com.henrikruscon.Alcove.plist"]
   },
   {
-    "name": "Amphetamine",
-    "files": [
-      "~/Library/Containers/com.if.Amphetamine/Data/Library/Preferences/com.if.Amphetamine.plist"
-    ]
-  },
-  {
     "name": "BetterSnapTool",
     "files": ["~/Library/Preferences/com.hegenberg.BetterSnapTool.plist"]
   },
