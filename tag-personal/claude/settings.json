@@ -220,7 +220,9 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ponytail@ponytail": true,
     "ls-health@landonschropp-personal": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "landonschropp": {

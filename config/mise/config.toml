@@ -5,8 +5,8 @@ erlang = "latest"
 node = "latest"
 pnpm = "latest"
 python = "latest"
-ruby = { version = "latest", postinstall = "gem install rubocop rubocop-shopify" }
-rust = "latest"
+ruby = { version = "latest", postinstall = "gem install rubocop rubocop-shopify ruby-lsp" }
+rust = { version = "latest", components = "rust-analyzer" }
 uv = "latest"
 
 [settings]
