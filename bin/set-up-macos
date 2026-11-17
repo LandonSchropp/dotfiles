@@ -183,7 +183,6 @@ hide_from_menu_bar com.loom.desktop.native
 hide_from_menu_bar com.okta.mobile
 hide_from_menu_bar com.raycast.macos
 hide_from_menu_bar com.yellowmonkeystudio.gcal
-hide_from_menu_bar leits.MeetingBar
 hide_from_menu_bar notion.id
 hide_from_menu_bar org.pqrs.Karabiner-Console-User-Server
 

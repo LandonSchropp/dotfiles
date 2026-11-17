@@ -11,6 +11,7 @@
 7. iStat Menus: battery, memory pressure and CPU, in that order
 8. FlashSpace
 9. Vorssaint
+10. MeetingBar. It goes leftmost so the icons to its right don't move when its width changes with the next meeting's title.
 
 ## Arranging the Icons
 
