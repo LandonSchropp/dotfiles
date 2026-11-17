@@ -11,3 +11,13 @@ Agents can't grant these themselves. Ask the user to add each missing one: click
 Each Herdr update replaces the binary and drops its permissions. After an update, ask the user to remove the old `herdr` entries and add the binary again.
 
 macOS asks for Automation access the first time an agent controls each app. Tell the user to approve those prompts.
+
+## Vorssaint
+
+Vorssaint needs these in System Settings → Privacy & Security:
+
+- **Accessibility**
+- **Full Disk Access**
+- **Screen Recording**
+
+Ask the user to grant any that are missing. macOS also asks for Automation access to Finder the first time the uninstaller moves files to the Trash, so tell the user to approve that prompt.
