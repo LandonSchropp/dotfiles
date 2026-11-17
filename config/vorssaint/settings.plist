@@ -8,24 +8,42 @@
 		<string>weekly</string>
 		<key>audioPriorityDeviceNames</key>
 		<dict>
-			<key>32013CAD-9477-438F-A31E-565700000003</key>
-			<string>Landon’s iPhone Microphone</string>
+			<key>04-52-C7-33-4C-96:input</key>
+			<string>Landon's Headphones</string>
+			<key>04-52-C7-33-4C-96:output</key>
+			<string>Landon's Headphones</string>
+			<key>1E6D2277-0000-0000-0B1E-0104B53C2278</key>
+			<string>LG HDR 4K</string>
+			<key>AppleUSBAudioEngine:Unknown Manufacturer:HD Pro Webcam C920:47D7BBAF:3</key>
+			<string>HD Pro Webcam C920</string>
+			<key>BuiltInHeadphoneOutputDevice</key>
+			<string>External Headphones</string>
 			<key>BuiltInMicrophoneDevice</key>
 			<string>MacBook Pro Microphone</string>
 			<key>BuiltInSpeakerDevice</key>
 			<string>MacBook Pro Speakers</string>
+			<key>F8-4D-89-44-8C-B5:input</key>
+			<string>Landon’s AirPods</string>
+			<key>F8-4D-89-44-8C-B5:output</key>
+			<string>Landon’s AirPods</string>
 		</dict>
 		<key>audioPriorityInputEnabled</key>
 		<true/>
 		<key>audioPriorityInputUIDs</key>
 		<array>
+			<string>AppleUSBAudioEngine:Unknown Manufacturer:HD Pro Webcam C920:47D7BBAF:3</string>
 			<string>BuiltInMicrophoneDevice</string>
-			<string>32013CAD-9477-438F-A31E-565700000003</string>
+			<string>F8-4D-89-44-8C-B5:input</string>
+			<string>04-52-C7-33-4C-96:input</string>
 		</array>
 		<key>audioPriorityOutputEnabled</key>
 		<true/>
 		<key>audioPriorityOutputUIDs</key>
 		<array>
+			<string>BuiltInHeadphoneOutputDevice</string>
+			<string>04-52-C7-33-4C-96:output</string>
+			<string>F8-4D-89-44-8C-B5:output</string>
+			<string>1E6D2277-0000-0000-0B1E-0104B53C2278</string>
 			<string>BuiltInSpeakerDevice</string>
 		</array>
 		<key>defaultDurationMinutes</key>
