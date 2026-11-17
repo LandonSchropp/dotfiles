@@ -17,11 +17,13 @@ brew update
 brew tap peonping/tap
 brew tap keith/formulae
 brew tap asmvik/formulae
+brew tap sheprd-labs/tap
 
-# Trust the third-party formulas.
+# Trust the third-party formulas and casks.
 brew trust --formula peonping/tap/peon-ping
 brew trust --formula keith/formulae/reminders-cli
 brew trust --formula asmvik/formulae/yabai
+brew trust --cask sheprd-labs/tap/sheprd
 
 # Install all of the Homebrew applications.
 brew bundle --file="$HOME/.dotfiles/Brewfile"
