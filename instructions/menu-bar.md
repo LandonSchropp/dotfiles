@@ -20,4 +20,4 @@ macOS ignores the `NSStatusItem Preferred Position` keys apps save, so writing t
 
 Accessibility doesn't expose Apple's icons, such as Wi-Fi, Bluetooth and Focus. Ask the user to ⌘-drag those into place.
 
-Agents run under the herdr server binary, so it needs Accessibility access in System Settings → Privacy & Security. Accessibility calls fail with "osascript is not allowed assistive access" without it.
+Driving these icons needs the Accessibility access described in [Privacy Permissions](privacy-permissions.md).
