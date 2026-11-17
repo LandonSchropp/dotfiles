@@ -219,6 +219,7 @@ APPLESCRIPT
 # General > Login Items & Extensions > Open at Login
 open_at_login Alcove
 open_at_login BetterSnapTool
+open_at_login FlashSpace
 open_at_login "GCal for Google Calendar"
 open_at_login "iStat Menus"
 open_at_login MeetingBar
