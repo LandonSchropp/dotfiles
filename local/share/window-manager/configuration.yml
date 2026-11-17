@@ -21,7 +21,7 @@ workspaces:
   - workspace: Terminal
     profile: Full
     layout: Fullscreen
-    applications: [Ghostty, Herdr]
+    applications: [Ghostty, Sheprd]
 
   - workspace: Notes
     profile: Full
@@ -61,7 +61,7 @@ workspaces:
   - workspace: Terminal
     profile: Split
     layout: Main Stack
-    applications: [Zen, Ghostty, Herdr]
+    applications: [Zen, Ghostty, Sheprd]
 
   - workspace: Notes
     profile: Split
@@ -71,7 +71,7 @@ workspaces:
   - workspace: Writing
     profile: Split
     layout: Main Stack
-    applications: [Obsidian, Ghostty, Herdr]
+    applications: [Obsidian, Ghostty, Sheprd]
 
   - workspace: Calendar
     profile: Split
