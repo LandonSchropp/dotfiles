@@ -214,6 +214,7 @@
     "graphite@babylist": true,
     "project-workflow@babylist": true,
     "superpowers@babylist": true,
+    "review@babylist": true,
     "swift-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
