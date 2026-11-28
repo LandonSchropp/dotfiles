@@ -28,10 +28,18 @@ return {
           },
         },
 
-        -- Give vtsls more memory to work with.
         vtsls = {
           settings = {
+            javascript = {
+              -- Disable the JavaScript formatter so Prettier can step in.
+              format = { enable = false },
+            },
+
             typescript = {
+              -- Disable the TypeScript formatter so Prettier can step in.
+              format = { enable = false },
+
+              -- Give vtsls more memory to work with.
               tsserver = {
                 maxTsServerMemory = 8192,
 
